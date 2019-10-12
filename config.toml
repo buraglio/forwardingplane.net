@@ -1,7 +1,7 @@
 baseURL = "https://forwardingplane.net/"
 languageCode = "en-us"
 title = "Nick Buraglio"
-theme = "Binario"
+theme = "indigo"
 #disqusShortname = "https-soehlert-com"
 
 [params]

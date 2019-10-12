@@ -1,4 +1,6 @@
-
 [submodule "themes/Binario"]
 	path = themes/Binario
 	url = https://github.com/Vimux/Binario
+[submodule "themes/indigo"]
+	path = themes/indigo
+	url = https://github.com/AngeloStavrow/indigo

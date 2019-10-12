@@ -5,6 +5,7 @@ copyright = "Copyright (c) 2019, all rights reserved."
 canonifyurls = true
 theme = "hugo-dusk"
 disqusShortname = "forwwardingplane"
+pygmentsCodeFences = "true"
 
 [author]
   name = "Nick Buraglio"

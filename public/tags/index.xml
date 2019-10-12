@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Nick Buraglio</title>
+    <title>Tags on ForwardingPlane.net</title>
     <link>https://forwardingplane.net/tags/</link>
-    <description>Recent content in Tags on Nick Buraglio</description>
+    <description>Recent content in Tags on ForwardingPlane.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     
 	<atom:link href="https://forwardingplane.net/tags/index.xml" rel="self" type="application/rss+xml" />
     

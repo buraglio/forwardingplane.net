@@ -7,3 +7,6 @@
 [submodule "themes/Midnight"]
 	path = themes/Midnight
 	url = https://gitlab.com/BluestNight/Midnight
+[submodule "themes/hugo-dusk"]
+	path = themes/hugo-dusk
+	url = https://github.com/gyorb/hugo-dusk

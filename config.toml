@@ -1,8 +1,8 @@
 baseURL = "https://forwardingplane.net/"
 languageCode = "en-us"
 title = "ForwardingPlane.net"
-theme = "Midnight"
-#disqusShortname = "https-soehlert-com"
+theme = "hugo-dusk"
+disqusShortname = "forwwardingplane"
 
 [params]
   author = "Nick Buraglio"

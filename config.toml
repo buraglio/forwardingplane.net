@@ -1,66 +1,66 @@
 baseURL = "https://forwardingplane.net/"
 languageCode = "en-us"
 title = "ForwardingPlane.net"
+copyright = "Copyright (c) 2019, all rights reserved."
+canonifyurls = true
 theme = "hugo-dusk"
 disqusShortname = "forwwardingplane"
 
+[author]
+  name = "Nick Buraglio"
+
+SectionPagesMenu = "main"
+
+# use Chroma for syntax highlight
+pygmentsStyle = "native" # other dark style options: vim, fruity, monokai
+# enable syntax highlight for code blocks
+pygmentsCodeFences = true
+
+[[menu.main]]
+  name = "Posts"
+  weight = -120
+  identifier = "post"
+  url = "/post/"
+
+[[menu.main]]
+  name = "Tags"
+  weight = -110
+  identifier = "tag"
+  url = "/tags/"
+
+[params.meta]
+  keywords = "blog, tech"
+  description = "A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…."
+
 [params]
-  author = "Nick Buraglio"
-  description = "I do stuff with things and sometimes I do things with stuff"
-  GitHubUser = "buraglio"
+  github = "buraglio"
+  twitter = "forwardingplane"
+  linkedin = "buraglio"
+  email = "my lastname at forwardingplane dot net"
+  theme_colors = "default-dark" # uses color css file under static/css/default-dark.css
 
-  [[params.social]]
-    name = "github"
-    url = "https://github.com/buraglio"
-
-  [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/forwardingplane"
-
-  [[params.social]]
-    name = "instagram"
-    url = "https://www.instagram.com/buraglio/"
-
-  [[params.social]]
-    name = "linkedin"
-    url = "https://www.linkedin.com/in/buraglio"
-
-  [params.style]
-    # Sidebar
-    darkestColor = "#314C59"
-    # Background
-    darkColor = "#253031"
-    # Primary accents
-    primaryColor = "#6EA4BF"
-    # Description
-    lightColor = "#808080"
-    # Title
-    lightestColor = "#fff"
-
-[menu]
-
-  [[menu.main]]
-    identifier = "about"
-    name = "about"
-    url = "/about"
+#[menu]
+#
+#  [[menu.main]]
+#    identifier = "about"
+#    name = "about"
+#    url = "/about"
 
 #  [[menu.main]]
 #    identifier = "posts"
 #    name = "blog"
 #    url = "/posts"
 
-  [[menu.main]]
-    identifier = "tags"
-    name = "tags"
-    url = "/tags"
+#  [[menu.main]]
+#    identifier = "tags"
+#    name = "tags"
+#    url = "/tags"
 
-  [[menu.main]]
-    identifier = "categories"
-    name = "categories"
-    url = "/categories"
+#  [[menu.main]]
+#    identifier = "categories"
+#    name = "categories"
+#    url = "/categories"
 
 [permalinks]
   posts = "/:year/:month/:title/"
 
-[blackfriday]
-  hrefTargetBlank = true

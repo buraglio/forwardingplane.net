@@ -1,0 +1,70 @@
+.form-container {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+input:not([type="file"]):not([type="radio"]):not([type="checkbox"]), textarea,
+input[readonly]:not([type="file"]):not([type="radio"]):not([type="checkbox"]),
+select, select:focus {
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--color-bg-alt);
+  color: var(--color-fg-alt);
+  border: 1px solid var(--color-bg-main);
+  padding: 0.5rem;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline-color: var(--color-bg-accent);
+}
+
+.form-container label {
+  vertical-align: middle;
+}
+
+.form-container textarea { resize: none; }
+
+.form-container ul {
+  list-style-type: none;
+}
+
+.form-container button {
+  border: none;
+}
+@media only screen and (min-width: 640px) {
+  .form-container button[type="submit"] {
+    margin-left: auto;
+  }
+}
+
+input[type="checkbox"][value="other"]:checked ~ input.hide,
+input[type="radio"][value="other"]:checked ~ input.hide {
+  display: inline;
+}
+
+label {
+  color: var(--color-fg-main);
+}
+
+[type="text"], [type="password"], [type="date"], [type="datetime"], [type="datetime-local"],
+[type="month"], [type="week"], [type="email"], [type="number"], [type="search"], [type="tel"],
+[type="time"], [type="url"], [type="color"], textarea {
+    outline-style:none;
+    box-shadow:none;
+    border-color:none;
+    background-color: var(--color-bg-alt);
+    color: var(--color-fg-alt);
+    transition: unset;
+}
+
+[type="text"]:focus, [type="password"]:focus, [type="date"]:focus, [type="datetime"]:focus, [type="datetime-local"]:focus,
+[type="month"]:focus, [type="week"]:focus, [type="email"]:focus, [type="number"]:focus, [type="search"]:focus, [type="tel"]:focus,
+[type="time"]:focus, [type="url"]:focus, [type="color"]:focus, textarea:focus {
+    outline-style:none;
+    box-shadow:none;
+    border: none;
+    background-color: var(--color-bg-alt);
+    color: var(--color-fg-alt);
+    transition: unset;
+}

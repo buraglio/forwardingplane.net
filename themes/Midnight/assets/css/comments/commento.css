@@ -1,0 +1,94 @@
+.commento-root, .commento-root .commento-logged-container .commento-logged-in-as .commento-name,
+.commento-root .commento-logged-container .commento-logout,
+.commento-root .commento-card .commento-name, .commento-root .commento-card .commento-subtitle,
+.commento-root .commento-card .commento-score, .commento-root .commento-create-container::before {
+    color: var(--color-fg-main);
+}
+
+.commento-root textarea {
+    background-color: var(--color-bg-alt);
+    color: var(--color-fg-alt);
+    border-radius: 0;
+}
+
+.commento-root code {
+    background-color: var(--color-bg-code);
+    color: var(--color-bg-accent);
+}
+
+.commento-root .commento-submit-button,
+.commento-root .commento-create-button,
+.commento-root .commento-login-button,
+.commento-root .commento-login-box-container .commento-login-box .commento-email-container .commento-email .commento-email-button,
+.commento-root .commento-login-box-container .commento-login-box .commento-email-container .commento-email .commento-email-button:hover {
+    background-color: var(--color-bg-accent);
+    color: var(--color-fg-accent);
+    border-radius: 0;
+    border: none;
+}
+
+h1, h2, h3, h4, h5, h6, p,
+.commento-root .commento-account-buttons-question{
+    color: var(--color-fg-main);
+}
+
+.commento-root a {
+    border-bottom: none;
+}
+
+.commento-root .commento-option-button {
+    color: var(--color-fg-main);
+    background-color: var(--color-fg-main);
+    outline-color: var(--color-fg-main);
+    border-color: var(--color-fg-main);
+}
+
+/* Login/Register Dialog */
+.commento-root .commento-login-box-container .commento-login-box {
+    background-color: var(--color-bg-alt);
+    color: var(--color-fg-alt);
+    border: 1px solid var(--color-fg-alt);
+}
+
+.commento-root .commento-login-box-container .commento-login-box .commento-email-container .commento-email {
+    background-color: var(--color-bg-alt);
+    color: var(--color-fg-alt);
+}
+
+.commento-root .commento-login-box-container .commento-login-box .commento-login-box-subtitle {
+    color: var(--color-fg-alt);
+}
+
+.commento-root .commento-login-box-container .commento-login-box .commento-login-box-header {
+    color: var(--color-fg-main);
+}
+
+.commento-root .commento-login-box-container .commento-login-box .commento-email-container .commento-email .commento-input {
+    background-color: var(--color-bg-main);
+    color: var(--color-fg-main);
+}
+
+.commento-root .commento-login-box-container .commento-login-box .commento-login-box-close::before,
+.commento-root .commento-login-box-container .commento-login-box .commento-login-box-close::after {
+    background-color: var(--color-fg-alt);
+}
+
+#commento-textarea-container-root {
+    position: relative;
+}
+
+.commento-root .commento-account-buttons-question {
+    top: 0.5rem;
+}
+
+.commento-account-buttons-container {
+    top: 3rem;
+}
+
+.commento-account-buttons-container .commento-account-buttons {
+    position: static;
+}
+
+.commento-root .commento-logged-container .commento-logout:hover {
+    text-decoration: underline;
+}

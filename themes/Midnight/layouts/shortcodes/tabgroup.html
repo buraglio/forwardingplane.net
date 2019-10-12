@@ -1,0 +1,14 @@
+{{- if eq (.Get "id") "" -}}
+    {{- errorf "(%s) Tabbed box must have a unique title" .Position -}}
+{{- end -}}
+{{- $regexp := "<li class=\"tab.*?>(.|\n)*?</li>" -}}
+<div class="tabgroup">
+    <ul class="tabs" data-tabs id="{{ .Get "id" }}">
+        {{- range $elem := findRE $regexp .Inner -}}
+            {{- $elem | safeHTML }}
+        {{- end -}}
+    </ul>
+    <div class="tabs-content" data-tabs-content="{{ .Get "id" }}">
+    {{ replaceRE $regexp "" .Inner | safeHTML }}
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{{- $found := false -}}
+{{- range $format := (.Site.GetPage "home").OutputFormats -}}
+    {{ if eq $format.Name "JSON" }}
+        {{- $found = true -}}
+    {{ end }}
+{{- end -}}
+{{- if not $found -}}
+    {{- errorf "\"home\" needs to have an output format of \"JSON\" for search to work!" -}}
+{{- end -}}
+<div class="widget" id="search-container">
+    <header>
+        <span class="widget-header"><span class="fas fa-search fa-xs" aria-hidden></span> {{ i18n "searchLabel" | title }}</span>
+    </header>
+    <input type="search" name="search" id="searchbox" placeholder="{{ i18n "searchLabel" | title }}..." autocomplete="off"/>
+    <div id="search-results" class="grid-y hide"></div>
+</div>

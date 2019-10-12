@@ -1,0 +1,39 @@
+{{- $server := default (default "" $.Site.Params.forms.server) (.Get "server") -}}
+{{- if not $server -}}
+    {{- errorf "(%s) A server must be defined for the form" $.Position -}}
+{{- end -}}
+{{- if not (.Get "name") -}}
+    {{- errorf "(%s) Form must have the name property set" $.Position -}}
+{{- end -}}
+
+{{- $path := .Get "path" -}}
+{{- if not $path -}}
+    {{- errorf "(%s) A path on the server must be defined for the form" -}}
+{{- end -}}
+{{- $multipart := gt (len (findRE "<input .*type=\"file\"" .Inner)) 0 -}}
+{{- $enc := cond $multipart "multipart/form-data" "application/x-www-form-urlencoded" -}}
+<form method="POST" class="form-container" name="{{ .Get "name" }}" action="{{ printf "%s%s" $server $path }}" enctype="{{ $enc }}">
+    {{ .Inner }}
+    {{ with (.Get "honeypot") }}
+    <div class="grid-x grid-padding-x hide">
+        <div class="cell small-text-center medium-4 medium-text-right">
+            <label for="{{ . }}">Leave empty:</label>
+        </div>
+        <div class="cell small-text-center medium-8 medium-text-left">
+            <input type="text" id="{{ . }}" name="{{ . }}" />
+        </div>
+    </div>
+    {{ end }}
+    <div class="grid-x grid-padding-x">
+        <div class="cell callout hide" id="{{ .Get "name" }}-status">
+        </div>
+    </div>
+    <div class="grid-x grid-margin-x">
+        <button class="cell medium-4 large-3 left button" type="reset">
+            Reset
+        </button>
+        <button class="cell medium-4 medium-offset-4 large-3 large-offset-6 right button" id="{{ .Get "name" }}-submit" type="submit">
+            Submit
+        </button>
+    </div>
+</form>

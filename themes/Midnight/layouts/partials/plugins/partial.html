@@ -1,0 +1,25 @@
+{{- /* Add partial from other plugins */ -}}
+{{- range $.Root.Site.Params.plugins.enabled -}}
+    {{- $.Root.Scratch.Set "plugin_name" . -}}
+    {{- partial "plugins/definition.html" $.Root -}}
+    {{- $prop := $.Root.Scratch.Get "plugin" -}}
+    {{- $exists := true -}}
+    {{- range split $.Prop "." -}}
+        {{- if $exists -}}
+            {{- with index $prop . -}}
+                {{- $prop = . -}}
+            {{- else -}}
+                {{- $exists = false -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if $exists -}}
+        {{- if $prop.path -}}
+            {{- if and $prop.cache (ne $.Root.Site.Params.ref_type "relative") -}}
+                {{- partial $prop.path $.Root -}}
+            {{- else -}}
+                {{- partial $prop.path $.Root -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

@@ -1,0 +1,61 @@
+<article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+    {{- if .Page.Params.thumbnail -}}
+    <div>
+        <figure>
+            <a href="{{ .Permalink }}">
+                <img src="{{ partial "make_link" (dict "URL" .Page.Params.thumbnail "Root" $.Root) }}" alt="{{ .Title }}" />
+            </a>
+        </figure>
+    </div>
+    {{- end -}}
+    <div>
+        <header class="post-list-title">
+            <a href="{{ partial "make_link" (dict "URL" .Page.RelPermalink "Root" $.Root) }}">
+                <h2 itemprop="headline">{{ .Page.Title }}</h2>
+            </a>
+            <div class="metadata">
+                {{- if not .Page.Date.IsZero -}}
+                <div>
+                <span class="far fa-clock" aria-hidden></span>
+                <span class="sr-text">{{ i18n "publishedLabel" | title }}: </span>
+                <time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{ .Page.Date.Format "January 02, 2006" }}</time>
+                </div>
+                {{- end -}}
+                {{- if $.Root.Site.Data.members -}}
+                    {{- if gt (len $.Root.Site.Data.members) 1 -}}
+                        {{- $author := $.Root.Site.Params.author -}}
+                        {{- with $.Page.Params.author -}}
+                            {{- /* Verify author actually exists */ -}}
+                            {{- $.Scratch.Set "member" "" -}}
+                            {{- partial "get_member" (dict "Members" $.Root.Site.Data.members "Name" . "Scratch" $.Root.Scratch) -}}
+                            {{- $author = ($.Root.Scratch.Get "member").Name -}}
+                        {{- end -}}
+                        {{- with $author -}}
+                        <div>
+                            <span class="fas fa-user" aria-hidden></span>
+                            By: <span itemprop="author">{{ . }}</span>
+                        </div>
+                        {{- end -}}
+                    {{- end -}}
+                {{- end -}}
+            </div>
+        </header>
+        <div class="post-list-summary" itemprop="description">
+            <p>
+                {{- with .Page.Description -}}
+                    {{ . | plainify | htmlUnescape | replaceRE "(?m)(\\s+)" " " }}
+                    <a href="{{ partial "make_link" (dict "URL" $.Page.RelPermalink "Root" $.Root) }}">
+                        [{{ i18n "readMore" ($.Page.Title | title) | safeHTML }}...]
+                    </a>
+                {{- else -}}
+                    {{ .Page.Summary | plainify | htmlUnescape | replaceRE "(?m)(\\s+)" " " }}
+                    {{ if .Page.Truncated }}
+                        <a href="{{ partial "make_link" (dict "URL" $.Page.RelPermalink "Root" $.Root) }}">
+                            [{{ i18n "readMore" ($.Page.Title | title) | safeHTML }}...]
+                        </a>
+                    {{ end }}
+                {{- end -}}
+            </p>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,20 @@
+{{- $name := $.Scratch.Get "comments_name" -}}
+
+{{- $comments := $.Site.Params.comments -}}
+{{- $mncomments := $.Site.Params.Midnight.comments -}}
+
+{{- if (not (isset $.Site.Params "comments")) -}}
+    {{- $comments = $mncomments -}}
+{{- else if (not (isset $.Site.Params.comments $name)) -}}
+    {{- $comments = $mncomments -}}
+{{- else if (not (isset (index $.Site.Params.comments $name) "path")) -}}
+    {{- $comments = $mncomments -}}
+{{- end -}}
+
+{{- if eq nil $comments -}}
+    {{- errorf "comments definitions are empty: %#v" $comments -}}
+{{- else if eq nil (index $comments $name) -}}
+    {{- errorf "Could not find definition for comment provider: %s" $name -}}
+{{- end -}}
+
+{{- $.Scratch.Set "comments" (index $comments $name) -}}

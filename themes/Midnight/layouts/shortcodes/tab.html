@@ -1,0 +1,19 @@
+{{- if eq .Parent nil -}}
+    {{- errorf "(%s) The tab shortcode must be used within a tabgroup shortcode" .Position -}}
+{{- end -}}
+{{- $parentId := .Parent.Get "id" -}}
+{{- $title := .Get "title" -}}
+{{- $id := default $title (.Get "id") -}}
+{{- if eq $title "" -}}
+    {{- errorf "(%s) Tabbed section must have a unique title within the tabgroup %s" .Position (.Parent.Get "id") -}}
+{{- end -}}
+{{- if eq $id "" -}}
+    {{- errorf "(%s) Tabbed section must have a unique id within the tabgroup %s" .Position (.Parent.Get "id") -}}
+{{- end -}}
+{{ $anchor := printf "tab-%s-%s" (anchorize $parentId) (anchorize $id) }}
+<li class="tabs-title{{ if eq .Ordinal 0 }} is-active{{ end }}">
+    <a href="#{{ $anchor }}"{{ if eq .Ordinal 0 }} aria-selected="true"{{ end }}>{{ $title }}</a>
+</li>
+<section id="{{ $anchor }}" class="tabs-panel{{ if eq .Ordinal 0 }} is-active{{ end }}">
+    {{ .Inner | safeHTML }}
+</section>

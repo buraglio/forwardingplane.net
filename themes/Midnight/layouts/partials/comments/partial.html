@@ -1,0 +1,27 @@
+{{- /* Include any code from comments provider */ -}}
+{{- $is_page := and ($.Root.IsPage) (not $.Root.Params.disable_comments) -}}
+{{- $is_netlify := and (in $.Root.OutputFormats "NetlifyHeaders") (not (in $.Root.AlternativeOutputFormats "NetlifyHeaders")) -}}
+{{- $is_nginx := and (in $.Root.OutputFormats "nginx") (not (in $.Root.AlternativeOutputFormats "nginx")) -}}
+{{- $is_headers := and (eq $.Root.Kind "home") (or $is_netlify $is_nginx) -}}
+{{- if and ($.Root.Site.Params.comments.provider) (or $is_page $is_headers) -}}
+    {{- $.Root.Scratch.Set "comments_name" $.Root.Site.Params.comments.provider -}}
+    {{- partial "comments/definition.html" $.Root -}}
+    {{- $prop := $.Root.Scratch.Get "comments" -}}
+    {{- $exists := true -}}
+    {{- range split $.Prop "." -}}
+        {{- if $exists -}}
+            {{- with index $prop . -}}
+                {{- $prop = . -}}
+            {{- else -}}
+                {{- $exists = false -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if $exists -}}
+        {{- if and $prop.cache (ne $.Root.Site.Params.ref_type "relative") -}}
+            {{- partialCached $prop.path $.Root -}}
+        {{- else -}}
+            {{- partial $prop.path $.Root -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

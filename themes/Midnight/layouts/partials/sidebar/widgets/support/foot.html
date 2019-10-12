@@ -1,0 +1,4 @@
+{{ if $.Site.Params.sidebar.support.monero -}}
+    {{- partial "script" (dict "Asset" "js/widgets/clipboard.js" "Defer" true "Root" $) -}}
+{{- end }}
+{{- partial "script" (dict "Asset" "js/widgets/support-sidebar.js" "Defer" true "Root" $) -}}

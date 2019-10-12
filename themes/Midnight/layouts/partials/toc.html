@@ -1,0 +1,10 @@
+{{- if and .Params.enable_toc (eq .Params.enable_toc true) -}}
+    {{- $toc := .TableOfContents -}}
+    {{- $toc := replaceRE "hahahugoshortcode\\-0x[0-9a-f]{10}-\\d+\\-hbhb\\-" "" $toc -}}
+    {{- $toc := replaceRE "HAHAHUGOSHORTCODE\\-0x[0-9a-f]{10}-\\d+\\-HBHB\\s" "" $toc -}}
+    {{- $toc := replaceRE "\\-hahahugoshortcode\\-0x[0-9a-f]{10}-\\d+\\-hbhb" "" $toc -}}
+    {{- $toc := replaceRE "\\sHAHAHUGOSHORTCODE\\-0x[0-9a-f]{10}-\\d+\\-HBHB" "" $toc -}}
+    {{- $toc := replaceRE "hahahugoshortcode\\-0x[0-9a-f]{10}-\\d+\\-hbhb" "" $toc -}}
+    {{- $toc := replaceRE "HAHAHUGOSHORTCODE\\-0x[0-9a-f]{10}-\\d+\\-HBHB" "" $toc -}}
+    {{- $toc | safeHTML -}}
+{{- end -}}

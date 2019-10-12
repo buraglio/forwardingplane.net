@@ -1,0 +1,14 @@
+{{ if .URL }}
+<a href="{{ replace .URL "%USER%" .User }}" class="cell shrink" {{ .Attrs | default "" | safeHTMLAttr }} title="{{ .Title }}" aria-title="{{ replace (replace .ReaderText "%TITLE%" .Title) "%PRONOUN%" .Pronoun }}">
+{{ else }}
+<span class="cell shrink clickable" {{ with .ID }}{{ printf "id=\"%s\"" . | safeHTMLAttr }}{{ end }} {{ .Attrs | default "" | safeHTMLAttr }} title="{{ .Title }}" aria-title="{{ replace (replace .ReaderText "%TITLE%" .Title) "%PRONOUN%" .Pronoun }}">
+{{ end }}
+    <span class="fa-stack fa-xs">
+        <span class="fas fa-{{ .Style }} fa-stack-2x"></span>
+        <span class="{{ .Icon }} fa-stack-1x fa-inverse"></span>
+    </span>
+{{ if .URL }}
+</a>
+{{ else }}
+</span>
+{{ end }}

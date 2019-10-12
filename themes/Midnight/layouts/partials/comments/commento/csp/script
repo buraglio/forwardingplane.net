@@ -1,0 +1,2 @@
+{{- $url := urls.Parse $.Site.Params.comments.commento.base_url -}}
+{{- $url.Scheme -}}://{{ $url.Host }}

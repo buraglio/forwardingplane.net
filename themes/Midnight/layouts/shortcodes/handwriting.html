@@ -1,0 +1,7 @@
+{{ $font := .Get 0 }}
+{{ $fonts := slice "aquiline-two" "blokletters" "calligraffiti" "felipa" "note-this" "over-the-rainbow" }}
+{{ if in $fonts $font }}
+    {{ partial "set_class.html" (dict "Inner" .Inner "Class" (add "handwriting " $font)) }}
+{{ else }}
+    {{ errorf "(%s) \"%s\" is not a valid handwriting font. Valid values are:\n    %s" .Position $font (delimit $fonts ", ") }}
+{{ end }}

@@ -1,0 +1,117 @@
+{{ define "main_content" }}
+<main id="post-list" class="cell{{ if not (or .Site.Params.sidebar.disable .Params.sidebar.disable) }} medium-8{{ end }}">
+    {{ if or (not .IsHome) (ne .Title .Site.Title) }}
+        <header id="page-header">
+            <h1 id="page-title">{{ .Title }}</h1>
+        </header>
+    {{ end }}
+    {{ with .Params.alert }}
+        <div class="callout">
+            {{ . | markdownify }}
+        </div>
+    {{ end }}
+    {{ partial "content.html" $ }}
+    {{ if and (not .Params.hide_list) (gt .WordCount 0) }}
+        <hr/>
+    {{ end }}
+
+    {{ if not .Params.hide_list }}
+        {{/* If showing nested sections, show those first */}}
+        {{ if .Params.list_subsections }}
+            {{ $section := trim .URL "/" }}
+            {{ range (.Site.GetPage (add "/" $section)).Sections }}
+                {{ partial "list_item.html" (dict "Page" . "Root" $) }}
+            {{ end }}
+        {{ end }}
+
+        {{/* Show normal pages */}}
+        {{ $index_only := default false .Params.index_only }}
+        {{ $pages := .Pages }}
+
+        {{ if .IsHome }}
+            {{ if $.Site.Params.home_section }}    
+                {{ $pages = strings.TrimPrefix "/" $.Site.Params.home_section | where $.Pages "Section" }}
+                {{ if eq (len $pages) 0 }}
+                    {{ errorf "Section \"%s\" is empty or does not exist" .Site.Params.home_section }}
+                {{ end }}
+            {{ else if ($.Site.GetPage "/news") }}
+                {{ $pages = where .Pages "Section" "news" }}
+            {{ else if ($.Site.GetPage "/posts") }}
+                {{ $pages = where .Pages "Section" "posts" }}
+            {{ else if ($.Site.GetPage "/post") }}
+                {{ $pages = where .Pages "Section" "post" }}
+            {{ end }}
+        {{ end }}
+
+        {{ if or .Params.sort_field .Params.sort_order }}
+            {{ if in .Params.sort_field "Params." }}
+                {{ $pages = $pages.ByParam (replace .Params.sort_field "Params." "") }}
+            {{ else }}
+                {{/* This long if-chain is necessary because Paginate wants type Pages, not []*Page */}}
+                {{ $order := lower (default "" .Params.sort_order) }}
+                {{ $field := lower (default "" .Params.sort_field) }}
+                {{ if ne $field "" }}
+                    {{ if eq $field "weight" }}
+                        {{ if eq $order "desc" }}
+                            {{ $pages = $pages.ByWeight.Reverse }}
+                        {{ else }}
+                            {{ $pages = $pages.ByWeight }}
+                        {{ end }}
+                    {{ else if eq $field "date" }}
+                        {{ if eq $order "asc" }}
+                            {{ $pages = $pages.ByDate.Reverse }}
+                        {{ else }}
+                            {{ $pages = $pages.ByDate }}
+                        {{ end }}
+                    {{ else if eq $field "publishdate" }}
+                        {{ if eq $order "asc" }}
+                            {{ $pages = $pages.ByPublishDate.Reverse }}
+                        {{ else }}
+                            {{ $pages = $pages.ByPublishDate }}
+                        {{ end }}
+                    {{ else if eq $field "expirydate" }}
+                        {{ if eq $order "asc" }}
+                            {{ $pages = $pages.ByExpiryDate.Reverse }}
+                        {{ else }}
+                            {{ $pages = $pages.ByExpiryDate }}
+                        {{ end }}
+                    {{ else if eq $field "lastmod" }}
+                        {{ if eq $order "asc" }}
+                            {{ $pages = $pages.ByLastmod.Reverse }}
+                        {{ else }}
+                            {{ $pages = $pages.ByLastmod }}
+                        {{ end }}
+                    {{ else if eq $field "length" }}
+                        {{ if eq $order "desc" }}
+                            {{ $pages = $pages.ByLength.Reverse }}
+                        {{ else }}
+                            {{ $pages = $pages.ByLength }}
+                        {{ end }}
+                    {{ else if eq $field "title" }}
+                        {{ if eq $order "desc" }}
+                            {{ $pages = $pages.ByTitle.Reverse }}
+                        {{ else }}
+                            {{ $pages = $pages.ByTitle }}
+                        {{ end }}
+                    {{ else if eq $field "linktitle" }}
+                        {{ if eq $order "desc" }}
+                            {{ $pages = $pages.ByLinkTitle.Reverse }}
+                        {{ else }}
+                            {{ $pages = $pages.ByLinkTitle }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ $paginator := .Paginate $pages }}
+        {{ range $paginator.Pages }}
+            {{ if or (not $index_only) (in .File.Path "index.md") }}
+                {{ partial "list_item.html" (dict "Page" . "Root" $) }}
+            {{ end }}
+        {{ end }}
+
+        {{ partial "pagination.html" (dict "Paginator" $paginator "Root" $) }}
+    {{ end }}
+</main>
+{{ end }}

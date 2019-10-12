@@ -1,0 +1,6 @@
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
+<!-- Cache the scripts and JSON index -->
+<link rel="preload" href="{{ partial "make_link" (dict "URL" "/index.json" "Root" $) }}" as="fetch" />
+
+{{ partial "styles" (dict "Asset" "css/widgets/search.css" "Root" $) }}

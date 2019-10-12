@@ -1,0 +1,22 @@
+{{- $files := readDir "/static/" -}}
+{{- $regex := "favicon\\-\\d+x\\d+.png" -}}
+{{- partial "css/color/parse_color" .Scratch -}}
+{{- $accent := .Scratch.Get "accent" -}}
+{{ range $files }}
+    {{- $reg := findRE $regex .Name 1 -}}
+    {{- if eq .Name "apple-touch-icon.png" -}}
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ partial "make_link" (dict "URL" "/apple-touch-icon.png" "Root" $) }}">
+    {{- else if eq .Name "favicon.ico" -}}
+        <link rel="icon" {{ partial "make_link" (dict "URL" "favicon.ico" "Root" $) | printf "href=\"%s?nocache\"" | safeHTMLAttr }} />
+    {{- else if (eq (len $reg) 1) -}}
+        {{- $str := (strings.TrimSuffix ".png" (strings.TrimPrefix "favicon-" .Name)) -}}
+        <link rel="icon" type="image/png" {{ printf "sizes=\"%v\"" $str | safeHTMLAttr }} {{ partial "make_link" (dict "URL" .Name "Root" $) | printf "href=\"%s?nocache\"" | safeHTMLAttr }} />
+    {{- else if eq .Name "site.webmanifest" -}}
+    <link rel="manifest" href="{{ partial "make_link" (dict "URL" "/site.webmanifest" "Root" $) }}">
+    {{- else if eq .Name "safari-pinned-tab.svg" -}}
+    <link rel="mask-icon" href="{{ partial "make_link" (dict "URL" "/safari-pinned-tab.svg" "Root" $) }}" color="{{ $accent }}">
+    {{- end -}}
+{{ end }}
+    <meta name="theme-color" content="{{ $accent }}">
+    <meta name="apple-mobile-web-app-title" content="{{ $.Site.Title }}">
+    <meta name="application-name" content="{{ $.Site.Title }}">

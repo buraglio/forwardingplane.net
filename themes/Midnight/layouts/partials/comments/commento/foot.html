@@ -1,0 +1,7 @@
+{{- $url := printf "%s/js/commento.js" $.Site.Params.comments.commento.base_url -}}
+{{- $res := resources.Get "css/comments/commento.css" -}}
+{{- if not $.Site.Params.no_minify -}}
+    {{- $res = $res | minify -}}
+{{- end -}}
+{{- $attrs := printf "data-css-override=\"%s\"" $res.RelPermalink -}}
+{{- partial "script" (dict "Src" $url "Tracks" true "Attrs" $attrs "Defer" true "Async" true "Root" $) -}}

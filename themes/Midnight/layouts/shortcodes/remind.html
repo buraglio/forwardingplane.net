@@ -1,0 +1,3 @@
+{{- if and (not $.Page.Draft) (not $.Site.IsServer) -}}
+    {{- errorf "REMINDER (%v): %v" $.Position (trim .Inner "\r\n") -}}
+{{- end -}}

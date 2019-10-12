@@ -1,0 +1,3 @@
+{{- .Set "transparent_alpha" (.Get "transparent_alpha" | default 0.5) -}}
+{{- partial "css/color/get_rgb_numbers" . -}}
+rgba({{ .Get "red" }}, {{ .Get "green" }}, {{ .Get "blue" }}, {{ .Get "transparent_alpha" }})

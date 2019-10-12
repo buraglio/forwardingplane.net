@@ -1,0 +1,113 @@
+/* Base classes */
+.button, .drilldown a, .pagination .button, .dropdown.menu .is-active > a, .dropdown.menu a {
+    background-color: var(--color-bg-alt);
+    color: var(--color-fg-alt);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.7rem 0.5rem;
+    font-size: 1rem;
+    transition: unset;
+}
+
+.button.disabled, .button:disabled {
+    background-color: var(--color-bg-alt-transparent);
+    color: var(--color-fg-alt-transparent);
+}
+
+.button:hover:not(.disabled):not(disabled), .button:focus:not(.disabled):not(disabled),
+.button:active:not(.disabled):not(disabled), .button.active,
+.drilldown a:hover:not(.disabled):not(disabled), .drilldown a:focus:not(.disabled):not(disabled),
+.drilldown a:active:not(.disabled):not(disabled), .drilldown a.active,
+.dropdown.menu a.button.active {
+    background-color: var(--color-bg-accent);
+    color: var(--color-fg-accent) !important;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.no-select {
+    /* Thanks to https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting-using-css#4407335 */
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.no-border {
+    border: 0 !important;
+}
+
+.hcenter {
+    justify-content: center;
+}
+
+.vcenter {
+    align-items: center;
+}
+
+.left  { order: -1; }
+.right { order:  1; }
+.hide { display: none !important; }
+
+.disabled {
+    /*pointer-events: none;*/
+    cursor: default;
+}
+
+/* Non-button elements that can be clicked for behavior */
+.clickable {
+    color: var(--color-bg-accent-transparent);
+}
+
+.clickable:hover {
+    color: var(--color-bg-accent);
+    cursor: pointer;
+}
+
+.badge {
+    background-color: var(--color-bg-alt);
+    color: var(--color-fg-alt);
+}
+
+a:hover .badge, .badge:hover {
+    background-color: var(--color-bg-accent);
+    color: var(--color-fg-accent);
+}
+
+/* Hide text meant for screen readers */
+/* Copied from https://rianrietveld.com/2015/04/04/the-screen-reader-text-class-why-and-how/ */
+.sr-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    /* Not (currently) supported by browsers */
+    speak: none;
+}
+
+@media screen and (max-width: 39.9375em) {
+    .small-text-right { text-align: right; }
+    .small-text-center { text-align: center; }
+    .small-text-left { text-align: left; }
+}
+
+@media screen and (min-width: 40em) {
+    .medium-text-right { text-align: right; }
+    .medium-text-center { text-align: center; }
+    .medium-text-left { text-align: left; }
+}
+
+@media screen and (min-width: 64em) {
+    .large-text-right { text-align: right; }
+    .large-text-center { text-align: center; }
+    .large-text-left { text-align: left; }
+}

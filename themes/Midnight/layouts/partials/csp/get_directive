@@ -1,0 +1,74 @@
+{{- $hosts := "" -}}
+{{- $ctx := dict "Prop" (add "csp." $.Directive) "Root" $.Root -}}
+
+{{- $plugins := partial "plugins/partial.html" $ctx -}}
+{{- range split $plugins " " -}}
+    {{- /* Avoid empty strings */ -}}
+    {{- if . -}}
+        {{- $url := trim . " \n\t\r\v\f" | urls.Parse -}}
+        {{- $h := add "://" $url.Host | add $url.Scheme -}}
+        {{- $hosts = add " " $h | add $hosts -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $comments := partial "comments/partial.html" $ctx -}}
+{{- range split $comments " " -}}
+    {{- /* Avoid empty strings */ -}}
+    {{- if . -}}
+        {{- $url := trim . " \n\t\r\v\f" | urls.Parse -}}
+        {{- $h := add "://" $url.Host | add $url.Scheme -}}
+        {{- $hosts = add " " $h | add $hosts -}}
+    {{- end -}}
+{{- end -}}
+
+{{- partial "shortcodes/get_list.html" $.Root -}}
+{{- $shortcodes := $.Root.Scratch.Get "shortcodes" -}}
+{{- range $name := $shortcodes -}}
+    {{- $.Root.Scratch.Set $name false -}}
+{{- end -}}
+{{- range $name := $shortcodes -}}
+    {{- range $page := $.Root.Site.Pages -}}
+        {{- if not ($.Root.Scratch.Get $name) -}}
+            {{- if $page.HasShortcode $name -}}
+                {{- $.Root.Scratch.Set "shortcode_name" $name -}}
+                {{- partial "shortcodes/definition.html" $.Root -}}
+                {{- $shortcode := $.Root.Scratch.Get "shortcode" -}}
+                {{- with (index $shortcode "csp") -}}
+                    {{- with (index . $.Directive) -}}
+                        {{- $directive := partial .path $.Root -}}
+                        {{- range split $directive " " -}}
+                            {{- if . -}}
+                                {{- $url := trim . " \n\t\r\v\f" | urls.Parse -}}
+                                {{- $h := add "://" $url.Host | add $url.Scheme -}}
+                                {{- $hosts = add " " $h | add $hosts -}}
+                            {{- end -}}
+                        {{- end -}}
+                    {{- end -}}
+                {{- end -}}
+                {{- $.Root.Scratch.Set $name true -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $sidebar := partial "sidebar/partial.html" $ctx -}}
+{{- range split $sidebar " " -}}
+    {{- if . -}}
+        {{- $url := trim . " \n\t\r\v\f" | urls.Parse -}}
+        {{- $h := add "://" $url.Host | add $url.Scheme -}}
+        {{- $hosts = add " " $h | add $hosts -}}
+    {{- end -}}
+{{- end -}}
+
+{{- range split $hosts " " -}}
+    {{- $.Root.Scratch.Set . false -}}
+{{- end -}}
+
+{{- $hoststr := "" -}}
+{{- range split $hosts " " -}}
+    {{- if not ($.Scratch.Get .) -}}
+        {{- $hoststr = add " " . | add $hoststr -}}
+        {{- $.Scratch.Set . true -}}
+    {{- end -}}
+{{- end -}}
+{{- with (trim $hoststr " ") -}}{{- . -}}{{- end -}}

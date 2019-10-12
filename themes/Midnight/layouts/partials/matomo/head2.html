@@ -1,0 +1,6 @@
+{{ if and (not $.Site.IsServer) (and (.Scratch.Get "matomo_enable") (.Scratch.Get "matomo_host")) -}}
+    {{ if (.Scratch.Get "matomo_track_nojs") -}}
+        {{- $host := $.Site.Params.matomo.host -}}
+        <noscript><p><img src="{{ $host }}/piwik.php?idsite={{ $.Site.Params.matomo.site_id }}&rec=1" style="border:0;" alt="" /></p></noscript>
+    {{ end -}}
+{{- end -}}

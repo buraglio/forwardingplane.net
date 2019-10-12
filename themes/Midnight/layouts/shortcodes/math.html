@@ -1,0 +1,12 @@
+{{ if or (hasPrefix .Inner "\n") (hasPrefix .Inner "<p>") }}
+    <div class="katex-container">
+    {{- $inner := replace (.Inner | htmlUnescape) "\n" "$$\n$$" -}}
+    {{- $inner := replace $inner "<p>" "<p>$$" -}}
+    {{- $inner := replace $inner "</p>" "$$<p>" -}}
+    {{- $inner := replace $inner "\n$$$$\n" "\n" -}}
+    {{ trim $inner "$" }}
+    </div>
+{{ else -}}
+    <span class="katex-container">${{ .Inner | htmlUnescape }}$</span>
+{{- end }}
+  

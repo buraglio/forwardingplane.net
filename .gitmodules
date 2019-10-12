@@ -4,3 +4,6 @@
 [submodule "themes/indigo"]
 	path = themes/indigo
 	url = https://github.com/AngeloStavrow/indigo
+[submodule "themes/Midnight"]
+	path = themes/Midnight
+	url = https://gitlab.com/BluestNight/Midnight

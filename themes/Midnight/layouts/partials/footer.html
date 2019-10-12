@@ -1,0 +1,90 @@
+<footer class="cell grid-x full align-middle">
+    <div class="cell medium-4 small-text-center medium-text-left medium-left small-order-1 grid-x">
+        <div class="cell">
+            <small>
+                &copy; {{now.Format "2006"}}
+                <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                    <span itemprop="name">
+                        {{ with $.Site.Copyright -}}
+                            {{ . -}}
+                        {{ else -}}
+                            {{ with $.Site.Author -}}
+                                {{ . -}}
+                            {{ else -}}
+                                {{ with $.Site.Params.Author -}}
+                                    {{ . -}}
+                                {{ else -}}
+                                    {{ .Site.Title -}}
+                                {{ end -}}
+                            {{ end -}}
+                        {{ end -}}.
+                    </span>
+                </span>
+            </small>
+        </div>
+        {{ if not $.Site.Params.hide_attribution -}}
+        <div class="cell">
+            <small>
+                {{ i18n "attribution" (dict "Hugo" "<a href=\"https://gohugo.io\">Hugo</a>" "Midnight" "<a href=\"https://bluestnight.com/products/midnight/\">Midnight</a>") | safeHTML }}
+            </small>
+        </div>
+        {{ end }}
+    </div>
+    <div class="cell medium-4 small-text-center medium-text-center small-order-2 grid-x">
+        {{ if and (.Scratch.Get "matomo_enable") (.Scratch.Get "matomo_enable_optout") -}}
+        {{- with (.Scratch.Get "matomo_host") -}}
+        <div class="cell small-text-center small-text-center grid-x align-center">
+            <small>
+                {{ i18n "matomoFooter" | safeHTML }}
+            </small>
+        </div>
+        {{- end -}}
+        {{- end }}
+        <div class="cell small-full small-text-center grid-x">
+            {{ $iubenda := and $.Site.Params.iubenda.id (or (not $.Site.Params.iubenda.pro.enable_pro) (not $.Site.Params.iubenda.pro.disable_footer_link)) }}
+            {{ if or (or ($.Site.GetPage "page" "/privacy-policy.md") ($.Site.GetPage "page" "/cookie-policy.md")) $iubenda }}
+            <div class="cell medium-auto">
+                {{ if $iubenda }}
+                {{ partial "iubenda/privacy-button.html" . }}
+                {{ if and (and $.Site.Params.iubenda.pro.enable_pro $.Site.Params.iubenda.pro.no_button_style) $.Site.Params.iubenda.enable_cookie_policy -}}
+                |
+                {{- end }}
+                {{ if $.Site.Params.iubenda.enable_cookie_policy -}}
+                {{ partial "iubenda/cookie-button.html" . }}
+                {{- end -}}
+                {{ else }}
+                {{ with $.Site.GetPage "page" "/privacy-policy.md" }}
+                <small>
+                    <a href="{{- partial "make_link" (dict "URL" (relref $ "/privacy-policy.md") "Root" $) -}}">{{ i18n "privacyPolicyLabel" | title }}</a>
+                </small>
+                {{ end }}
+                {{ if and ($.Site.GetPage "page" "/privacy-policy.md") ($.Site.GetPage "page" "/cookie-policy.md") -}}
+                |
+                {{- end }}
+                {{ with $.Site.GetPage "page" "/cookie-policy.md" }}
+                <small>
+                    <a href="{{- partial "make_link" (dict "URL" (relref $ "/cookie-policy.md") "Root" $) -}}">{{ i18n "cookiePolicyLabel" | title }}</a>
+                </small>
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+            {{ if ($.Site.GetPage "page" "/terms-of-use.md") }}
+            <div class="cell medium-auto{{ if $iubenda }} iubenda-compat{{ end }}">
+                {{ with $.Site.GetPage "page" "/terms-of-use.md" -}}
+                {{ if not $iubenda }}
+                <small>
+                    {{ end }}
+                    <a href="{{- partial "make_link" (dict "URL" (relref . "/terms-of-use.md") "Root" $) -}}">{{ i18n "termsOfUseLabel" | title }}</a>
+                    {{ if not $iubenda }}
+                </small>
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    <div id="social-icons" class="grid-x cell medium-4 small-text-center small-order-3 medium-text-right">
+        {{- partial "social-icons.html" (dict "Scratch" .Scratch "Social" .Site.Params.social "IsMember" false) .Site.Params.social -}}
+    </div>
+</footer>

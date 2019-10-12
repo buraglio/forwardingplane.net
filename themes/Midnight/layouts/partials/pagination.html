@@ -1,0 +1,17 @@
+{{- if or .Paginator.HasPrev .Paginator.HasNext -}}
+<ul class="pagination grid-x full">
+    <li class="pagination-previous cell small-order-3 medium-auto medium-order-1">
+        <a class="button{{ if .Paginator.HasPrev }}" href="{{ partial "make_link" (dict "URL" .Paginator.Prev.URL "Root" .Root) }}"{{ else }} disabled"{{ end }}>
+        {{ i18n "previousPage" | title }}
+        </a>
+    </li>
+    <li class="button disabled current cell small-order-1 medium-auto medium-order-2">
+        {{ i18n "pageXofX" (dict "Current" .Paginator.PageNumber "Total" .Paginator.TotalPages) }}
+    </li>
+    <li class="pagination-next cell auto small-order-2 medium-auto medium-order-3">
+        <a class="button{{ if .Paginator.HasNext }}" href="{{ partial "make_link" (dict "URL" .Paginator.Next.URL "Root" .Root) }}"{{ else }} disabled"{{ end }}>
+            {{ i18n "nextPage" | title }}
+        </a>
+    </li>
+</ul>
+{{- end -}}

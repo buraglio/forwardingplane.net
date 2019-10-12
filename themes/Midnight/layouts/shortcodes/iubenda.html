@@ -1,0 +1,20 @@
+{{- if $.Site.Params.iubenda.pro.enable_pro -}}
+    {{- with $.Site.Params.iubenda.id -}}
+        {{- $url := (add "http://www.iubenda.com/api/privacy-policy/" .) -}}
+        {{- if eq (lower ($.Get 0)) "cookie" -}}
+            {{- $url = add $url "/cookie-policy" -}}
+        {{- end -}}
+        {{- $content := getJSON (add $url "/no-markup") -}}
+        {{- if $content.success -}}
+            {{- $content.content | replaceRE "<h1>(.*)</h1>" "" | safeHTML -}}
+        {{- else -}}
+            {{- if $.Site.Params.iubenda.pro.ignore_failed_download -}}
+                {{- errorf "(%s) Failed to fetch the content of the Privacy Policy." $.Position -}}
+            {{- end -}}
+        {{- end -}}
+    {{- else -}}
+        {{- errorf "(%s) Iubenda id is necessary to use Iubenda features." .Position -}}
+    {{- end -}}
+{{- else -}}
+    {{- errorf "(%s) Iubenda pro features are not enabled. Pro features must be enabled to use the iubenda shortcode." .Page.File.Path -}}
+{{- end -}}

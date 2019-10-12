@@ -1,0 +1,105 @@
+[404title]
+    other = "Page Not Found"
+
+[404body]
+    other = "<p>We’re sorry, we couldn’t find the page you were looking for. We’ll put our best sleuths to work finding it.</p><p>In the meantime, go ahead and {{ if .HasSearch }}type what you were looking for in the <strong>search bar</strong>, or {{ end }}visit our <a href=\"{{ .BaseURL }}\">home page</a> and take a look around?<p>"
+
+[aboutLabel]
+    other = "about"
+
+[attribution]
+    other = "Built with {{ .Hugo }} and {{ .Midnight }}."
+
+[categoryLabel]
+    one = "category"
+    other = "categories"
+
+[cookie_banner]
+    other = "This website or its third party tools use cookies, which are necessary to its functioning and required to achieve the purposes illustrated in the %{cookie_policy_link}. If you want to know more or withdraw your consent to all or some of the cookies, please refer to the cookie policy. By closing this banner, scrolling this page, clicking a link, or continuing to browse otherwise, you agree to the use of cookies."
+
+[cookiePolicyLabel]
+    other = "cookie policy"
+
+[dateLabel]
+    other = "date"
+
+[doorsOpenLabel]
+    other = "doors open"
+
+[endLabel]
+    other = "end"
+
+[estimatedTimeLabel]
+    other = "Estimated reading time"
+
+[estimatedTime]
+    one = "1 minute"
+    other = "{{ .Count }} minutes"
+
+[icalSubscribe]
+    other = "subscribe with iCal"
+
+[lastUpdatedLabel]
+    other = "last updated"
+
+[locationLabel]
+    other = "location"
+
+[matomoFooter]
+    other = "<p>This site uses <a href=\"http://matomo.org/\" rel=\"nofollow noreferrer\">Matomo Analytics</a> - <a href=\"#\" id=\"toggle-tracking\">Opt Out</a></p>"
+
+[nextPage]
+    other = "next"
+
+[optIn]
+    other = "opt in"
+
+[optOut]
+    other = "opt out"
+
+[ownerPronoun]
+    one = "me"
+    other = "us"
+
+[pageXofX]
+    other = "Page {{ .Current }} of {{ .Total }}"
+
+[previousPage]
+    other = "previous"
+
+[privacyPolicyLabel]
+    other = "privacy policy"
+
+[publishedLabel]
+    other = "published"
+
+[readMore]
+    other = "Read more<span class=\"sr-text\"> from {{ .Count }}</span>"
+
+[recentPostsLabel]
+    other = "recent posts"
+
+[rssSectionSubscribe]
+    other = "subscribe to {{ .Count }}"
+
+[rssSiteSubscribe]
+    other = "subscribe to the site"
+
+[searchLabel]
+    other = "search"
+
+[startLabel]
+    other = "start"
+
+[tagLabel]
+one = "tag"
+other = "tags"
+
+[termsOfUseLabel]
+    other = "terms of use"
+
+[timeLabel]
+    other = "time"
+
+[upcomingEventsLabel]
+    other = "upcoming events"

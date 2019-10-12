@@ -1,0 +1,24 @@
+{{- /* Include any code from sidebar widgets */ -}}
+{{- partial "sidebar/widget_list.html" .Root -}}
+{{- range $name := $.Root.Scratch.Get "widget_list" -}}
+    {{- $.Root.Scratch.Set "widget_name" $name -}}
+    {{- partial "sidebar/widget_definition.html" $.Root -}}
+    {{- $prop := $.Root.Scratch.Get "widget" -}}
+    {{- $exists := true -}}
+    {{- range split $.Prop "." -}}
+        {{- if $exists -}}
+            {{- with index $prop . -}}
+                {{- $prop = . -}}
+            {{- else -}}
+                {{- $exists = false -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{ if $exists }}
+        {{- if and $prop.cache (ne $.Root.Site.Params.ref_type "relative") -}}
+            {{- partialCached $prop.path $.Root -}}
+        {{- else -}}
+            {{- partial $prop.path $.Root -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

@@ -1,0 +1,51 @@
+/* Normal tables */
+
+table {
+  font-size: 90%;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  overflow-x: auto;
+  border: none !important;
+}
+
+table, table thead th, table tbody td {
+  border: 1px solid var(--color-fg-main);
+  border-collapse: collapse;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+table thead th {
+  background-color: var(--color-bg-accent);
+  color: var(--color-fg-accent);
+}
+
+table thead th a, table thead th a:hover {
+  color: var(--color-fg-accent);
+  text-decoration: underline;
+}
+
+table thead, table tbody {
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: inherit;
+}
+
+table tbody tr {
+  color: var(--color-fg-main);
+  background-color: var(--color-bg-main);
+  width: 100%;
+  max-width: 100%;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-alt);
+  color: var(--color-fg-alt);
+}
+
+table tbody tr:nth-child(even) .button:not(:hover):not(:focus):not(:active) {
+  background-color: var(--color-bg-main);
+  color: var(--color-fg-main);
+}

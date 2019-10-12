@@ -1,0 +1,9 @@
+{{- partial "script" (dict "Asset" "js/iubenda.js" "Root" $ "IsTemplate" true "Defer" false) -}}
+{{ if and $.Site.Params.iubenda.id (or (not $.Site.Params.iubenda.pro.enable_pro) (not $.Site.Params.iubenda.pro.disable_footer_link)) }}
+{{- partial "script" (dict "Src" "https://cdn.iubenda.com/iubenda.js" "Async" true "Root" $) -}}
+{{ end }}
+
+{{- if and (not $.Site.IsServer) (and $.Site.Params.iubenda.pro.enable_cookie_banner (and $.Site.Params.iubenda.id $.Site.Params.iubenda.pro.site_id)) -}}
+{{- partial "script" (dict "Src" "https://cdn.iubenda.com/cookie_solution/iubenda_cs/core-fcf8c9eac36aece9d290934b54a63296.js" "Attrs" "charset=\"UTF-8\"" "Async" true "Root" $) -}}
+{{- end }}
+

@@ -1,0 +1,61 @@
+{{- if or (and (.Site.Params.post_navigation) (not (eq .Params.post_navigation false))) (.Params.post_navigation) -}}
+    {{- $prevlink := "" -}}
+    {{- $prevtitle := "" -}}
+    {{- $nextlink := "" -}}
+    {{- $nexttitle := "" -}}
+
+    {{- with .Params.custom_prev -}}
+        {{- if not (eq . "none") -}}
+            {{- with ($.Site.GetPage .) -}}
+                {{- $prevlink = .Permalink -}}
+                {{- $prevtitle = .LinkTitle -}}
+            {{- else -}}
+                {{- errorf "Could not find the file at \"%s\" linked from \"%s\"" . $.File.Path -}}
+            {{- end -}}
+        {{- end -}}
+    {{- else -}}
+        {{- with .PrevInSection -}}
+            {{- $prevlink = .Permalink -}}
+            {{- $prevtitle = .LinkTitle -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- with .Params.custom_next -}}
+        {{- if not (eq . "none") -}}
+            {{- with ($.Site.GetPage .) -}}
+                {{- $nextlink = .Permalink -}}
+                {{- $nexttitle = .LinkTitle -}}
+            {{- else -}}
+                {{- errorf "Could not find the file at \"%s\" linked from \"%s\"" . $.File.Path -}}
+            {{- end -}}
+        {{- end -}}
+    {{- else -}}
+        {{- with .NextInSection -}}
+            {{- $nextlink = .Permalink -}}
+            {{- $nexttitle = .LinkTitle -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- if or $nextlink $prevlink -}}
+        <nav id="post-nav" aria-label="Pagination">
+            <ul class="pagination grid-x grid-x-padding full">
+                {{ if $prevlink }}
+                <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
+                    <a class="button" href="{{ $prevlink }}" rel="prev">
+                        <span class="sr-text">{{ i18n "previousPage" | title }}:</span>
+                        {{ $prevtitle -}}
+                    </a>
+                </li>
+                {{ end }}
+                {{ if $nextlink }}
+                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-{{ if or $prevlink .PrevInSection }}2{{ else }}7{{ end }}">
+                    <a class="button" href="{{ $nextlink }}" rel="next">
+                        <span class="sr-text">{{ i18n "nextPage" | title }}:</span>
+                        {{- $nexttitle }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
+    {{- end -}}
+{{- end -}}

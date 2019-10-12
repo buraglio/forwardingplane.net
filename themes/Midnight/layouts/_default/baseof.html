@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{- .Title -}}</title>
+
+        {{- $desc := "" -}}
+        {{- with $.Site.Params.description -}}{{- $desc = . -}}{{- end -}}
+        {{- with .Summary -}}{{- $desc = . -}}{{- end -}}
+        {{- with $.Params.description -}}{{- $desc = . -}}{{- end -}}
+        {{- with $desc -}}
+        <meta name="description" itemprop="description" content="{{ replace $desc "\n" " " }}" id="desc">
+        {{- end -}}
+
+        {{ hugo.Generator }}
+
+        {{- with .OutputFormats.Get "RSS" -}}
+                <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }} Feed" href="
+                {{- partialCached "make_link" (dict "Root" $ "URL" .Permalink) .Permalink }}">
+        {{- end }}
+
+        {{- if .Params.tags -}}
+          <meta name="keywords" itemprop="keywords" content="{{ delimit .Params.tags "," }}" id="keywords">
+        {{- end -}}
+
+        <link rel="canonical" href="{{ .Permalink }}">
+        {{ partial "head.html" . }}
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        {{ if $.Site.Menus.main -}}
+        <div class="off-canvas-wrapper">
+            <button id="off-canvas-toggle" type="button" class="button hide-for-medium" aria-label="Open Menu" data-toggle="main-nav-off-canvas">
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="off-canvas position-left" id="main-nav-off-canvas" data-off-canvas>
+                <nav>
+                    <ul class="vertical menu drilldown" data-drilldown>
+                        {{- partial "nested_menu.html" (dict "menu" .Site.Menus.main "page" . "root" $) . -}}
+                    </ul>
+                </nav>
+            </div>
+        {{ end -}}
+            <div id="site-container" class="grid-container full off-canvas-content">
+                <div class="grid-x full grid-container data-off-canvas-content">
+                    <div id="site-header" class="cell">
+                        <a href="{{ partial "make_link" (dict "URL" "/" "Root" $) }}">
+                            <header class="small-text-{{ if $.Site.Params.thumbnail }}left{{ else }}center{{ end }} medium-text-left grid-x">
+                                {{ with $.Site.Params.thumbnail -}}
+                                    {{- $thmb := resources.Get . -}}
+                                    {{- if ne $thmb.ResourceType "image" -}}
+                                        {{- errorf "Resource %s is not an image" . -}}
+                                    {{- end -}}
+                                    {{- /* 93px is the max-width/height of the thumbnail in rems times 1rem */ -}}
+                                    {{- $width := 93 -}}
+                                    {{- if eq "true" (partial "has_suffix" (dict "String" . "Suffixes" (slice "jpg" "jpeg" "png") "CaseSensitive" false)) -}}
+                                        {{- if eq "true" (partial "has_suffix" (dict "String" . "Suffixes" (slice "jpg" "jpeg") "CaseSensitive" false)) -}}
+                                            {{- $thmb = $thmb.Resize (printf "%dx%d" $thmb.Width $thmb.Height) -}}
+                                        {{- end -}}
+                                        {{- $width = (cond (gt 93 $thmb.Width) 93 $thmb.Width) -}}
+                                    {{- end -}}
+                                    <img id="site-thumbnail" class="cell shrink" src="{{ partial "make_link" (dict "URL" $thmb.RelPermalink "Root" $) }}" data-width="{{ $width }}">
+                                {{ end -}}
+                                <div id="site-title-container" class="cell shrink grid-y">
+                                    <div id="site-title" class="cell shrink" itemprop="name">{{ .Site.Title }}</div>
+                                    {{ with .Site.Params.tagline }}<div class="cell shrink" id="site-tagline">{{ . }}</div>{{ end }}
+                                </div>
+                            </header>
+                        </a>
+                        {{ if .Site.Menus.main -}}
+                        <nav id="main-nav" class="small-hide">
+                          <ul class="dropdown menu" data-dropdown-menu>
+                          {{- partial "nested_menu.html" (dict "menu" .Site.Menus.main "page" . "root" $) . -}}
+                          </ul>
+                        </nav>
+                        {{ end -}}
+                    </div>
+                    <div id="main-container" class="cell grid-x grid-padding-x grid-container" role="main" itemprop="mainContentOfPage">
+                        {{ with $.Site.Params.alert }}
+                            <div class="callout cell text-center">
+                                {{ . | markdownify }}
+                            </div>
+                        {{ end }}
+                        {{ $sbdisable := or .Site.Params.sidebar.disable .Params.sidebar.disable }}
+                        {{ $sbalign := default "right" (default .Site.Params.sidebar.align .Params.sidebar.align) }}
+                        {{ if and (not $sbdisable) (and (ne $sbalign "left") (ne $sbalign "right")) }}
+                            {{- errorf "\"%v\" is not a valid value for params.sidebar.align. Valid values are \"left\", \"right\", or \"\" (defaults to \"right\")" -}}
+                        {{ end }}
+                        {{ if and (not $sbdisable) (eq $sbalign "left") }}{{ partial "sidebar/sidebar.html" . }}{{ end }}
+                        {{ block "main_content" . }}{{ end }}
+                        {{ if and (not $sbdisable) (eq $sbalign "right") }}{{ partial "sidebar/sidebar.html" . }}{{ end }}
+                    </div>
+                    {{ partial "footer.html" . }}
+                </div>
+            </div>
+            {{ partial "foot.html" . }}
+        {{ if $.Site.Menus.main }}</div>{{ end }}
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{{- $str := .String -}}
+{{- $suffixes := .Suffixes -}}
+{{- $found := false -}}
+{{- if not (.CaseSensitive | default true) -}}
+    {{- $str = lower $str -}}
+{{- end -}}
+{{- range $suffixes -}}
+    {{- $suffix := lower . -}}
+    {{- if not $found -}}
+        {{- $trimmed := strings.TrimSuffix $suffix $str -}}
+        {{- $found = not (eq $str $trimmed) -}}
+    {{- end -}}
+{{- end -}}
+{{- $found -}}

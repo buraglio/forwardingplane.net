@@ -1,0 +1,10 @@
+frame-src 'self'
+{{- if $.Site.Params.iubenda.id }}
+   {{- if not $.Site.Params.iubenda.pro.disable_footer_link }} https://www.iubenda.com{{ end }}
+   {{- if $.Site.Params.iubenda.pro.enable_cookie_banner }} https://cdn.iubenda.com{{ end }}
+{{- end }}
+{{- $recaptcha := false -}}
+{{- range $page := $.Site.Pages -}}
+{{- if and (not $recaptcha) (in (string $page.Content) "<div netlify-recaptcha>") -}}
+    {{- $recaptcha = true }} https://www.google.com {{ end -}}
+{{- end }} {{ partial "csp/get_directive" (dict "Directive" "frame-src" "Root" $) -}};

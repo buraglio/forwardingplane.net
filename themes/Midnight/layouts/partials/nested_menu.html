@@ -1,0 +1,14 @@
+{{- $page := .page -}}
+{{- $site := .root.Site -}}
+{{- range sort .menu -}}
+    <li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button{{if or ($page.IsMenuCurrent "main" .) ($page.HasMenuCurrent "main" .) }} active{{end}}" tabindex="0" href="{{ partial "make_link" (dict "URL" .URL "Root" $.root) }}" >
+            {{ .Name | upper }}
+        </a>
+        {{- if .HasChildren -}}
+            <ul class="vertical menu">
+                {{ partial "nested_menu.html" (dict "menu" .Children "page" $page "root" $.root) }}
+            </ul>
+        {{- end -}}
+    </li>
+{{- end -}}

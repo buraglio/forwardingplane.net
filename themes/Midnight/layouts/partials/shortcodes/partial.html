@@ -1,0 +1,26 @@
+{{- /* Include any code from shortcodes */ -}}
+{{- partial "shortcodes/get_list.html" $.Root -}}
+{{- range $name := ($.Root.Scratch.Get "shortcodes") -}}
+    {{- if $.Root.Page.HasShortcode $name -}}
+        {{- $.Root.Scratch.Set "shortcode_name" $name -}}
+        {{- partial "shortcodes/definition.html" $.Root -}}
+        {{- $prop := $.Root.Scratch.Get "shortcode" -}}
+        {{- $exists := true -}}
+        {{- range split $.Prop "." -}}
+            {{- if $exists -}}
+                {{- with index $prop . -}}
+                    {{- $prop = . -}}
+                {{- else -}}
+                    {{- $exists = false -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+        {{- if $exists -}}
+            {{- if and $prop.cache (ne $.Root.Site.Params.ref_type "relative") -}}
+                {{- partialCached $prop.path $.Root -}}
+            {{- else -}}
+                {{- partial $prop.path $.Root -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

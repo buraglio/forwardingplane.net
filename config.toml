@@ -1,7 +1,7 @@
 baseURL = "https://forwardingplane.net/"
 languageCode = "en-us"
 title = "ForwardingPlane.net"
-theme = "indigo"
+theme = "Midnight"
 #disqusShortname = "https-soehlert-com"
 
 [params]
@@ -44,10 +44,10 @@ theme = "indigo"
     name = "about"
     url = "/about"
 
-  [[menu.main]]
-    identifier = "posts"
-    name = "blog"
-    url = "/posts"
+#  [[menu.main]]
+#    identifier = "posts"
+#    name = "blog"
+#    url = "/posts"
 
   [[menu.main]]
     identifier = "tags"

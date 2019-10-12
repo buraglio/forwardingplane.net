@@ -1,0 +1,5 @@
+{{- if or (not $.Site.Params.sidebar) (not $.Site.Params.sidebar.order) -}}
+    {{- errorf "No sidebar widgets are enabled. If this was intentional, set params.sidebar.disabled to true" -}}
+{{- else -}}
+    {{- $.Scratch.Set "widget_list" $.Site.Params.sidebar.order -}}
+{{- end -}}

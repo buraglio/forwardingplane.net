@@ -1,0 +1,12 @@
+{{ define "main_content" }}
+    <main class="cell medium-8">
+        <article id="post-article">
+            <header id="post-header">
+                <h1>{{ i18n "404title" | title }}</h1>
+            </header>
+            <div id="post-content">
+                {{ i18n "404body" (dict "HasSearch" (in $.Site.Params.sidebar.order "search") "BaseURL" $.Site.BaseURL) | safeHTML }}
+            </div>
+        </article>
+    </main>
+{{ end }}

@@ -1,0 +1,21 @@
+{{ define "main_content" }}
+<main class="cell{{ if not (or .Site.Params.sidebar.disable .Params.sidebar.disable) }} medium-8{{ end }}">
+    <header id="page-header">
+        <h1 id="page-title">{{ .Title }}</h1>
+    </header>
+
+    {{ partial "content.html" $ }}
+
+    <ul id="taxonomy-list" class="grid-x">
+        {{- $data := .Data -}}
+        {{ range $key, $val := .Data.Terms.Alphabetical }}
+            <div class="cell small-full medium-6 large-4">
+                <li class="taxonomy-item">
+                    {{- $link := printf "/%s/%s" $data.Plural $val.Name -}}
+                    <a href="{{ partial "make_link" (dict "URL" ($link | urlize) "Root" $) }}">{{ $val.Name }}</a> ({{ $val.Count }})
+                </li>
+            </div>
+        {{ end }}
+    </ul>
+  </main>
+{{- end -}}

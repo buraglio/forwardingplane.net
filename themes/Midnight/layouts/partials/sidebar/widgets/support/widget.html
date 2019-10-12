@@ -1,0 +1,41 @@
+{{ $style := (default "square" $.Site.Params.sidebar.support.style) -}}
+<div class="widget">
+    <header>
+        <span class="widget-header">
+            <span class="fas fa-credit-card fa-xs" aria-hidden></span>
+            {{ with $.Site.Params.sidebar.support.support_page -}}
+            {{- if not (hasPrefix . "/") -}}
+                {{- errorf "Sidebar support widget's \"support_page\" must be set to a root-relative path (i.e. start with a \"/\")" -}}
+            {{- end -}}
+            <a href="{{ partial "make_link" (dict "URL" (relref $ .) "Root" $) }}">
+            {{- end -}}
+            Support {{ i18n "ownerPronoun" (len $.Site.Data.members) | title }} On
+            {{- if $.Site.Params.sidebar.support.support_page }}</a>{{ end }}
+        </span>
+    </header>
+    <div class="social grid-x small-text-center medium-text-left">
+        {{ $params := $.Site.Params.sidebar.support -}}
+        {{ with $params.patreon -}}
+            {{ partial "social-icon.html" (dict "URL" "https://patreon.com/%USER%" "User" . "Title" "Patreon" "Style" $style "Icon" "fab fa-patreon") }}
+        {{- end }}
+        {{ with $params.liberapay -}}
+            {{ partial "social-icon.html" (dict "URL" "https://liberapay.com/%USER%" "User" . "Title" "Liberapay" "Style" $style "Icon" "fab fa-gratipay") }}
+        {{- end }}
+        {{ with $params.square -}}
+            {{ partial "social-icon.html" (dict "ID" "square-sidebar-button" "User" . "Title" "Square" "Style" $style "Icon" "fas fa-credit-card") }}
+        {{- end }}
+        {{ with $params.monero -}}
+            {{ partial "social-icon.html" (dict "ID" "monero-sidebar-button" "User" . "Title" "Monero" "Style" $style "Icon" "fab fa-monero") }}
+        {{- end }}
+    </div>
+    {{ with $params.monero -}}
+    <div id="monero-sidebar-box" class="grid-x hide">
+        <input type="text" id="monero-wallet-address" value="{{ . }}" class="cell auto input-group-field" readonly/>
+        <div class="cell shrink input-group-button">
+        <button id="copy-monero-wallet" class="button" data-clipboard-target="#monero-wallet-address">
+            <span class="fas fa-copy"></span>
+        </button>
+        </div>
+    </div>
+    {{- end }}
+</div>

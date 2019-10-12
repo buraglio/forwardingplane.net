@@ -1,0 +1,10 @@
+{{- $name := "" -}}
+{{- $noborder := false -}}
+{{ if .IsNamedParams }}
+	{{ $name = .Get "name" }}
+	{{ $noborder = (eq "true" (.Get "noborder")) }}
+{{ else }}
+	{{ $name = .Get 0 }}
+{{ end }}
+
+{{- partial "memberbox.html" (dict "Scratch" .Scratch "Members" $.Site.Data.members "Name" $name "NoBorder" $noborder) -}}

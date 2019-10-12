@@ -1,0 +1,24 @@
+{{- .Scratch.Set "sitevar" $.Site -}}
+{{- partial "iubenda/color.html" .Scratch -}}
+{{- $color := add " iubenda-" (.Scratch.Get "iub_color") -}}
+{{- $class := "iubenda-embed" -}}
+{{- if $.Site.Params.iubenda.pro.enable_pro -}}
+    {{- if $.Site.Params.iubenda.pro.white_label -}}
+        {{- $class = add $class " no-brand" -}}
+    {{- end -}}
+    {{- if $.Site.Params.iubenda.pro.legal_only -}}
+        {{- $class = add $class " iub-legal-only" -}}
+    {{- end -}}
+    {{- if $.Site.Params.iubenda.pro.no_button_style -}}
+        {{- $class = add $class " iubenda-nostyle" -}}
+        <small>
+    {{- else -}}
+        {{- $class = add $class $color -}}
+    {{- end -}}
+{{- else -}}
+    {{- $class = add $class $color -}}
+{{- end -}}
+<a href="//www.iubenda.com/privacy-policy/{{ $.Site.Params.iubenda.id }}/cookie-policy" class="{{ $class }}" title="{{ i18n "cookiePolicyLabel" | title }}">{{ i18n "cookiePolicyLabel" | title }}</a>
+{{- if and $.Site.Params.iubenda.pro.enable_pro $.Site.Params.iubenda.pro.no_button_style -}}
+    </small>
+{{- end -}}

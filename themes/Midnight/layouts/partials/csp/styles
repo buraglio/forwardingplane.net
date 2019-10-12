@@ -1,0 +1,2 @@
+style-src 'self' 'unsafe-inline' https://use.fontawesome.com
+{{- if $.Site.Params.iubenda.id }} https://cdn.iubenda.com{{ end }} {{ partial "csp/get_directive" (dict "Directive" "style-src" "Root" $) -}};

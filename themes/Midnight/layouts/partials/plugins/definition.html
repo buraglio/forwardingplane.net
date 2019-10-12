@@ -1,0 +1,20 @@
+{{- $name := $.Scratch.Get "plugin_name" -}}
+
+{{- $plugins := $.Site.Params.plugins -}}
+{{- $mnplugins := $.Site.Params.Midnight.plugins -}}
+
+{{- if (not (isset $.Site.Params "plugins")) -}}
+    {{- $plugins = $mnplugins -}}
+{{- else if (not (isset $.Site.Params.plugins $name)) -}}
+    {{- $plugins = $mnplugins -}}
+{{- else if (not (isset (index $.Site.Params.plugins $name) "path")) -}}
+    {{- $plugins = $mnplugins -}}
+{{- end -}}
+
+{{- if eq nil $plugins -}}
+    {{- errorf "plugins definitions are empty: %#v" $plugins -}}
+{{- else if eq nil (index $plugins $name) -}}
+    {{- errorf "Could not find definition for plugin: %s" $name -}}
+{{- end -}}
+
+{{- $.Scratch.Set "plugin" (index $plugins $name) -}}

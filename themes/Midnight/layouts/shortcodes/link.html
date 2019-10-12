@@ -1,0 +1,36 @@
+{{- $type := "" -}}
+{{- $path := "" -}}
+{{- if .IsNamedParams -}}
+    {{- $type = .Get "type" -}}
+    {{- $path = .Get "path" -}}
+{{- else -}}
+    {{- $path = .Get 0 -}}
+    {{- $type = "content" -}}
+{{- end -}}
+
+{{- if not $path -}}
+{{- errorf "(%s) missing path parameter in link shortcode" $.Position -}}
+{{- end -}}
+
+{{- $valid := true -}}
+{{- $url := "" -}}
+{{- if eq $type "content" -}}
+    {{- $url = relref $.Page $path -}}
+{{- else if eq $type "resource" -}}
+    {{- $res := .Page.GetMatch $path -}}
+    {{- $url = $res.RelPermalink -}} 
+{{- else if eq $type "asset" -}}
+    {{- $res := resources.Get $path -}}
+    {{- $url = $res.RelPermalink -}}
+{{- else if eq $type "static" -}}
+    {{- $url = $path -}}
+{{- else if not $type -}}
+    {{- errorf "(%s) missing type for link shortcode with path \"%s\"" $.Position $path -}}
+{{- else -}}
+    {{- errorf "(%s) Invalid resource type \"%s\". Valid types are \"content\", \"resource\", \"asset\", and \"static\"" $.Position $type -}}
+    {{- $valid = false -}}
+{{- end -}}
+
+{{- if $valid -}}
+{{- partial "make_link" (dict "URL" $url "Root" $.Page) -}}
+{{- end -}}

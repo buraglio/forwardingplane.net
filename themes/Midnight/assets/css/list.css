@@ -1,0 +1,20 @@
+#post-list article {
+  border-bottom: 1px solid var(--color-fg-main);
+}
+
+#post-list .media-object-section {
+  padding: 0;
+}
+
+#post-list article h4 {
+  font-weight: bold;
+}
+
+#post-list article h2 {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.metadata {
+  line-height: 1.5;
+}

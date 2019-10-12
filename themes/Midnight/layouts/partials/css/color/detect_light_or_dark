@@ -1,0 +1,3 @@
+{{- partial "css/color/get_rgb_numbers" . -}}
+{{- partial "css/color/rgb_to_hsl" . -}}
+{{- .Set (add (.Get "label") "_is_dark") (lt (.Get "lightness") 50) -}}

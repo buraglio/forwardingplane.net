@@ -1,0 +1,35 @@
+/* Handwriting styles */
+
+.aquiline-two {
+  font-family: "aquiline-two";
+  font-size: 1.2rem;
+}
+
+.blokletters {
+  font-family: "blokletters";
+}
+
+.calligraffiti {
+  font-family: "calligraffiti";
+  font-size: 1.1rem;
+}
+
+.felipa {
+  font-family: "felipa";
+  font-size: 1.3rem;
+}
+
+.note-this {
+  font-family: "note-this";
+  font-size: 1.3em;
+  line-height: 1.2em;
+}
+
+.over-the-rainbow {
+  font-family: "over-the-rainbow";
+  font-size: 1.3rem;
+}
+
+.handwriting p {
+  text-indent: 2em;
+}

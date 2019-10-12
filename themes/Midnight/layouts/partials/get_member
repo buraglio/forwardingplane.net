@@ -1,0 +1,12 @@
+{{- $missing := true -}}
+{{- $member := "" -}}
+{{- range $.Members -}}
+    {{- if eq .Name ($.Name) -}}
+        {{- $missing = false -}}
+        {{- $.Scratch.Set "member" . -}}
+    {{- end -}}
+{{- end -}}
+{{- if $missing -}}
+    {{- errorf "Could not find member with name %s" $.Member -}}
+{{- end -}}
+

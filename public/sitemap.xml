@@ -3,6 +3,121 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://forwardingplane.net/configuration-archive/</loc>
+    <lastmod>2019-05-28T07:23:50-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/</loc>
+    <lastmod>2019-05-28T07:23:50-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/renaming-interfaces-under-linux/</loc>
+    <lastmod>2019-05-28T07:23:50-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/dhcp-and-dhcpv6-relay/</loc>
+    <lastmod>2019-03-16T10:00:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/enabling-lldp/</loc>
+    <lastmod>2019-03-06T20:00:11-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/freertr-basic-configurations/</loc>
+    <lastmod>2019-03-02T11:00:49-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/enable-telnet-access-on-macos-high-sierra/</loc>
+    <lastmod>2019-03-02T10:11:38-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/</loc>
+    <lastmod>2019-02-20T14:05:58-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/</loc>
+    <lastmod>2019-02-20T13:58:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/nokia-sros-useful-commands/</loc>
+    <lastmod>2019-02-19T08:30:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/mikrotik-openvpn-example/</loc>
+    <lastmod>2019-02-18T14:14:40-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/edgeos-openvpn/</loc>
+    <lastmod>2019-02-18T14:05:37-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/mikrotik-ipv6-dhcpv6-pd-configuration/</loc>
+    <lastmod>2019-02-18T13:26:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/</loc>
+    <lastmod>2019-02-18T12:58:29-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/mikrotik-routed-vlans-non-crs/</loc>
+    <lastmod>2019-02-18T11:57:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/edgeos-weighted-load-balance/</loc>
+    <lastmod>2019-02-18T11:37:39-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/about/</loc>
+    <lastmod>2015-01-19T11:13:14-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/about/publications/</loc>
+    <lastmod>2015-01-19T11:13:14-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/about/disclaimer/</loc>
+    <lastmod>2014-03-20T18:00:44-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/about/resume/</loc>
+    <lastmod>2014-03-11T08:37:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/about/calendar/</loc>
+    <lastmod>2013-12-05T10:16:36-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/</loc>
+    <lastmod>2013-06-30T08:08:11-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/configuration-archive/kvm-virsh-command-referenc/</loc>
+    <lastmod>2013-03-01T14:28:32-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://forwardingplane.net/post/2010-08-31-juniper-srx-cluster/</loc>
     <priority>0</priority>
   </url>
@@ -754,10 +869,6 @@
   
   <url>
     <loc>https://forwardingplane.net/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/</loc>
   </url>
   
   <url>

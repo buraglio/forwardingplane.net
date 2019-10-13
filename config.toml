@@ -40,12 +40,18 @@ pygmentsCodeFences = true
   email = "my lastname at forwardingplane dot net"
   theme_colors = "default-dark" # uses color css file under static/css/default-dark.css
 
-#[menu]
-#
-#  [[menu.main]]
-#    identifier = "about"
-#    name = "about"
-#    url = "/about"
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    url = "/about"
+  
+  [[menu.main]]
+    identifier = "configuration-archive"
+    name = "configuration-archive"
+    url = "/configuration-archive"
+
 
 #  [[menu.main]]
 #    identifier = "posts"

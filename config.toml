@@ -48,25 +48,14 @@ pygmentsCodeFences = true
     url = "/about"
   
   [[menu.main]]
+    identifier = "resume"
+    name = "resume"
+    url = "/resume"
+  
+  [[menu.main]]
     identifier = "configuration-archive"
     name = "configuration-archive"
     url = "/configuration-archive"
-
-
-#  [[menu.main]]
-#    identifier = "posts"
-#    name = "blog"
-#    url = "/posts"
-
-#  [[menu.main]]
-#    identifier = "tags"
-#    name = "tags"
-#    url = "/tags"
-
-#  [[menu.main]]
-#    identifier = "categories"
-#    name = "categories"
-#    url = "/categories"
 
 [permalinks]
   posts = "/:year/:month/:title/"

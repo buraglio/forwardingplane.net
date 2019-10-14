@@ -1,5 +1,5 @@
 [context.production.environment]
   HUGO_VERSION = "v0.58.3"
-[[redirects]]
-  from = "/"
-  to = "/public"
+#[[redirects]]
+#  from = "/"
+#  to = "/public"

@@ -23,11 +23,11 @@ pygmentsCodeFences = true
   identifier = "post"
   url = "/post/"
 
-[[menu.main]]
-  name = "Tags"
-  weight = -110
-  identifier = "tag"
-  url = "/tags/"
+#[[menu.main]]
+#  name = "Tags"
+#  weight = -110
+#  identifier = "tag"
+#  url = "/tags/"
 
 [params.meta]
   keywords = "blog, tech"

@@ -1,7 +1,0 @@
-{{- $connectsrc := trim (partial "csp/connect" $) " \n\t\v\f\r" -}}
-{{- $stylesrc := trim (partial "csp/styles" $) " \n\t\v\f\r" -}}
-{{- $scriptsrc := trim (partial "csp/scripts" $) " \n\t\v\f\r" -}}
-{{- $framesrc := trim (partial "csp/frames" $) " \n\t\v\f\r" -}}
-{{- $fontsrc := trim (partial "csp/fonts" $) " \n\t\v\f\r" -}}
-{{- $imagesrc := trim (partial "csp/images" $) " \n\t\v\f\r" -}}
-default-src 'self'; {{ $connectsrc }} {{ $framesrc }} {{ $fontsrc }} {{ $imagesrc }} {{ $stylesrc }} {{ $scriptsrc -}}

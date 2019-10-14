@@ -1,7 +1,0 @@
-{{- if findRE "<p([^>]*)(class=\")" .Inner -}}
-    {{ replaceRE "<p([^>]*)(class=\")" (add (add "<p class=\"" .Class) " ") .Inner }}
-{{- else if in (string .Inner) "<p" -}}
-    {{ replace .Inner "<p" (add (add "<p class=\"" .Class) "\"") | safeHTML }}
-{{- else -}}
-<span class="{{ .Class }}">{{ .Inner }}</span>
-{{- end -}}

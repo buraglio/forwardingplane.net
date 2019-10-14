@@ -1,8 +1,0 @@
-{{- if and ($.Site.Params.authorbox) (not $.Params.hide_authorbox) -}}
-    {{- $author := "" -}}
-    {{- with $.Site.Params.author -}}{{- $author = . -}}{{- end -}}
-    {{- with .Params.author -}}{{- $author = . -}}{{- end -}}
-    {{- if $author -}}
-        {{- partial "memberbox.html" (dict "Scratch" .Scratch "Members" $.Site.Data.members "Name" $author "IsAuthor" true "ItemProp" "author") -}}
-    {{- end -}}
-{{- end -}}

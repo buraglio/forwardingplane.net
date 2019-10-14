@@ -1,7 +1,0 @@
-/* Small displays */
-@media screen and (max-width: 39.9375em) {
-    #sidebar-tags {
-        justify-content: center;
-        align-items: center;
-    }
-}

@@ -1,5 +1,0 @@
-connect-src 'self'
-{{- if $.Site.Params.iubenda.id }} https://hits-i.iubenda.com {{ end }} {{ with $.Site.Params.matomo.host -}}
-    {{- $url := urls.Parse . -}}
-    {{- add "://" $url.Host | add $url.Scheme | add " " -}}
-{{- end }} {{ partial "csp/get_directive" (dict "Directive" "connect-src" "Root" $) -}};

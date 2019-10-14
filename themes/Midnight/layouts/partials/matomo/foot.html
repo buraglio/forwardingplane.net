@@ -1,4 +1,0 @@
-{{- if and (not $.Site.IsServer) (and (.Scratch.Get "matomo_enable") (.Scratch.Get "matomo_enable_ajax")) -}}
-{{- partial "script" (dict "Asset" "js/matomo.js" "Root" $ "Tracks" true "Async" true "IsTemplate" true) -}}
-{{- end -}}
-

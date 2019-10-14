@@ -1,1 +1,0 @@
-font-src 'self' https://use.fontawesome.com {{ partial "csp/get_directive" (dict "Directive" "font-src" "Root" $) -}};

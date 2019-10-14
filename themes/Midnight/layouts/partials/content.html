@@ -1,7 +1,0 @@
-{{- $content := .Content -}}
-{{- if $.HasShortcode "fa" -}}
-    {{- $content = replaceRE "hahahugoshortcode\\-0x[0-9a-f]{10}-\\d+\\-hbhb\\-" "" $content -}}
-    {{- $content = replaceRE "\\-hahahugoshortcode\\-0x[0-9a-f]{10}-\\d+\\-hbhb" "" $content -}}
-    {{- $content = replaceRE "hahahugoshortcode\\-0x[0-9a-f]{10}-\\d+\\-hbhb" "" $content -}}
-{{- end -}}
-{{ $content | safeHTML }}

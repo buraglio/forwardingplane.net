@@ -4,9 +4,9 @@
 [submodule "themes/indigo"]
 	path = themes/indigo
 	url = https://github.com/AngeloStavrow/indigo
-[submodule "themes/Midnight"]
-	path = themes/Midnight
-	url = https://gitlab.com/BluestNight/Midnight
 [submodule "themes/hugo-dusk"]
 	path = themes/hugo-dusk
 	url = https://github.com/gyorb/hugo-dusk
+[submodule "themes/hugo-future-imperfect"]
+	path = themes/hugo-future-imperfect
+	url = https://github.com/jpescador/hugo-future-imperfect

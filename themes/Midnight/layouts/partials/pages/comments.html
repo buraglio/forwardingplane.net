@@ -1,5 +1,0 @@
-{{- if and ($.Site.Params.comments.provider) (not .Params.disable_comments) -}}
-<div class="post-comments">
-    {{- partial "comments/partial.html" (dict "Prop" "partial" "Root" $) -}}
-</div>
-{{- end -}}

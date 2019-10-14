@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "ForwardingPlane.net"
 copyright = "Copyright (c) 2019, all rights reserved."
 canonifyurls = true
-theme = "hugo-dusk"
+theme = "hugo-future-imperfect"
 disqusShortname = "forwwardingplane"
 pygmentsCodeFences = "true"
 

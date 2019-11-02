@@ -21,7 +21,7 @@
         "articleSection" : "posts",
         "name" : "Strategy Series: What is your netflow strategy?",
         "headline" : "Strategy Series: What is your netflow strategy?",
-        "description" : "You have one, right? Even if your entire strategy is “collect some flow data”, there is absolutely NO reason not to have a netflow implementation, and frankly, it will save you time and money over time if you make the effort to do it. I love network data and analytics and I have waxed poetic about how important they are at every opportunity. There are a myriad of options for analytics and flow data.",
+        "description" : "What is your netflow strategy? - Tech Field Day - Dec 2, 2017\n[…] What is your netflow strategy? […] [Robert Cowart]( \x26ldquo;robacj@gmail.com\x26rdquo;) - Dec 4, 2017\nNick, thanks for the mention of ElastiFlow. Back when I created it I knew from my past experience that there was a lot of value in flow data. However, I must admit to being surprised with how popular the solution has become. Your criticism of the lacking documentation is fair, and will be addressed in the near future.",
         "inLanguage" : "en",
         "author" : "Nick Buragliotruenativemain",
         "creator" : "Nick Buragliotruenativemain",
@@ -32,7 +32,7 @@
         "datePublished": "2017-12-18 11:15:30 \x2b0000 \x2b0000",
         "dateModified" : "2017-12-18 11:15:30 \x2b0000 \x2b0000",
         "url" : "https:\/\/forwardingplane.net\/2017\/12\/strategy-series-what-is-your-netflow-strategy\/",
-        "wordCount" : "1272",
+        "wordCount" : "1179",
         "keywords" : [ "How-To","Musings","Security","Strategy Series","Blog" ]
     }
     </script>
@@ -53,10 +53,14 @@
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Strategy Series: What is your netflow strategy?"/>
-<meta name="twitter:description" content="You have one, right? Even if your entire strategy is “collect some flow data”, there is absolutely NO reason not to have a netflow implementation, and frankly, it will save you time and money over time if you make the effort to do it. I love network data and analytics and I have waxed poetic about how important they are at every opportunity. There are a myriad of options for analytics and flow data."/>
+<meta name="twitter:description" content="What is your netflow strategy? - Tech Field Day - Dec 2, 2017
+[…] What is your netflow strategy? […] [Robert Cowart]( &ldquo;robacj@gmail.com&rdquo;) - Dec 4, 2017
+Nick, thanks for the mention of ElastiFlow. Back when I created it I knew from my past experience that there was a lot of value in flow data. However, I must admit to being surprised with how popular the solution has become. Your criticism of the lacking documentation is fair, and will be addressed in the near future."/>
 
         <meta property="og:title" content="Strategy Series: What is your netflow strategy?" />
-<meta property="og:description" content="You have one, right? Even if your entire strategy is “collect some flow data”, there is absolutely NO reason not to have a netflow implementation, and frankly, it will save you time and money over time if you make the effort to do it. I love network data and analytics and I have waxed poetic about how important they are at every opportunity. There are a myriad of options for analytics and flow data." />
+<meta property="og:description" content="What is your netflow strategy? - Tech Field Day - Dec 2, 2017
+[…] What is your netflow strategy? […] [Robert Cowart]( &ldquo;robacj@gmail.com&rdquo;) - Dec 4, 2017
+Nick, thanks for the mention of ElastiFlow. Back when I created it I knew from my past experience that there was a lot of value in flow data. However, I must admit to being surprised with how popular the solution has become. Your criticism of the lacking documentation is fair, and will be addressed in the near future." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/" />
 <meta property="article:published_time" content="2017-12-18T11:15:30+00:00" />
@@ -67,12 +71,14 @@
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         <meta itemprop="name" content="Strategy Series: What is your netflow strategy?">
-<meta itemprop="description" content="You have one, right? Even if your entire strategy is “collect some flow data”, there is absolutely NO reason not to have a netflow implementation, and frankly, it will save you time and money over time if you make the effort to do it. I love network data and analytics and I have waxed poetic about how important they are at every opportunity. There are a myriad of options for analytics and flow data.">
+<meta itemprop="description" content="What is your netflow strategy? - Tech Field Day - Dec 2, 2017
+[…] What is your netflow strategy? […] [Robert Cowart]( &ldquo;robacj@gmail.com&rdquo;) - Dec 4, 2017
+Nick, thanks for the mention of ElastiFlow. Back when I created it I knew from my past experience that there was a lot of value in flow data. However, I must admit to being surprised with how popular the solution has become. Your criticism of the lacking documentation is fair, and will be addressed in the near future.">
 
 
 <meta itemprop="datePublished" content="2017-12-18T11:15:30&#43;00:00" />
 <meta itemprop="dateModified" content="2017-12-18T11:15:30&#43;00:00" />
-<meta itemprop="wordCount" content="1272">
+<meta itemprop="wordCount" content="1179">
 
 
 
@@ -220,45 +226,80 @@
 </header>
 
             <div id="content">
-                
+                <p><a href="http://techfieldday.com/2017/netflow-strategy/">What is your netflow strategy? - Tech Field Day</a> - <time datetime="2017-12-19 08:11:53">Dec 2, 2017</time></p>
 
-<p>You have one, right? Even if your entire strategy is “collect some flow data”, there is absolutely NO reason not to have a netflow implementation, and frankly, it will save you time and money over time if you make the effort to do it. I love network data and analytics and I have waxed poetic about how important they are at every opportunity. There are a myriad of options for analytics and flow data. If you’re not doing something, you’re doing it wrong. I can go on and on about the importance of network data for budgeting, security, capacity planing, and general knowledge of what your network is actually doing, but that’s for another day (contact me directly if you really want to chat details on that subject). Today is about network flow data - the foundational bits and pieces of what the heck your network, big or small, is actually doing. I’ve been having a breakdance fight with flow data packages for almost two decades, and I’ve jotted down a few of my more notable experiences. Regardless of your needs, budget, abilities, or time, there is a solution for you.</p>
+<p>[…] What is your netflow strategy? […]
+<hr /></p>
 
-<p> </p>
+<p>[Robert Cowart]( &ldquo;robacj@gmail.com&rdquo;) - <time datetime="2017-12-21 04:24:00">Dec 4, 2017</time></p>
 
-<p><a href="https://giphy.com/gifs/breakin-boogaloo-shrimp-11FirB7GcukiwU">via GIPHY</a></p>
+<p>Nick, thanks for the mention of ElastiFlow. Back when I created it I knew from my past experience that there was a lot of value in flow data. However, I must admit to being surprised with how popular the solution has become. Your criticism of the lacking documentation is fair, and will be addressed in the near future. Additionally, I am available to help any organization looking to leverage the Elastic Stack (formerly ELK) for network infrastructure management, whether that be flow data, SNMP, logs and more.
+<hr /></p>
 
-<h2 id="arbor-https-www-arbornetworks-com"><strong><a href="https://www.arbornetworks.com/">Arbor</a></strong></h2>
+<p>[Stefan Fouant]( &ldquo;sfouant@shortestpathfirst.net&rdquo;) - <time datetime="2017-12-26 13:07:00">Dec 2, 2017</time></p>
 
-<p>Arbor is the Rolls Royce of flow analytics (and DDoS mitigation) solutions. It does almost everything, has options for managed objects, DDoS scrubbing and alerting capabilities, a magnificent interface, role based access, rainbows and gumdrop houses with lollipop trees. This system is pretty darned amazing - it truly is, and that likely comes from the fact that they were one of the first, and had/have one of the largest install bases for this kind of system. They have turnkey solutions and have the unique position of being in roughly 90% of the worlds legacy tier 1 ISPs, so their DDoS and other security options are strong, fast to update, and <strong><em>very</em></strong> good. I’ve had great experience with this platform and its API. I like to think of arbor as the commercial ISP brass ring for flow data analytics. They have other solutions for enterprise and campus, but their roots are in strong ISP solutions. They’re pricey, but very, very good. Expect to need at least an FTE to really take full advantage of their very capable ecosystem, but if you dedicated the money and manpower to it, you won’t be sad.</p>
+<p>Seconded this. Kentik should have been on the list. First to market w/ a SaaS based detection offering&hellip; clearly an innovative approach that should not have been overlooked.
+<hr /></p>
 
-<h2 id="splunk-https-www-splunk-com"><a href="https://www.splunk.com/">Splunk</a></h2>
+<p><a href="http://www.forwardingplane.net/" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2017-12-26 14:53:00">Dec 2, 2017</time></p>
 
-<p>We all know spunk as a really nice log and analytic system but what many may not realize is that Splunk is really, really good at network data and analytics as well. It’s pricey, but it’s as close as you’ll get to a turkey solution for a SIEM that can actually scale. It has the notion of customizable dashboards and visualization, as a huge amount of plugins and add on’s, but they come with a legendarily steep price tag. The saying I have always heard is “if you can afford spunk, buy spunk. If you can’t use an ELK stack (noe elastic stack)”. My experience backs this up.</p>
+<p>I don&rsquo;t disagree. As stated, my experience with Kentik is lacking so doing a review of it would have been lacking. Given the amount of heck I&rsquo;ve received for *not* including it, it certainly has a larger market than I knew of. I will fully admit that my current stance on cloud based flow solutions is evolving, they require a risk assessment that others do not and unless there is diverse connectivity there is a potential to lose access to your analytics (think triage of a DDoS). My plan is to give this a reasonable amount of attention in the next 6-8 weeks.
+<hr /></p>
 
-<h2 id="elk-elastic-stack-https-www-elastic-co"><a href="https://www.elastic.co/">ELK /Elastic Stack</a></h2>
+<p>[samoehlert]( &ldquo;sam.oehlert@gmail.com&rdquo;) - <time datetime="2017-12-18 13:59:00">Dec 1, 2017</time></p>
 
-<p>I’m a big fan of this not only because it’s essentially free, but because it’s so extremely flexible and has so many existing projects built around it. I’ve moved my go-to for net flow collection from nfdump to Elastic Stack built around the <a href="https://www.manitonetworks.com/about-flow-analyzer/">Manito Networks flowanalyzer</a> install.   This platform takes a bit more command line jockeying and isn’t entirely turnkey, but it’s crazy flexible, had great eye candy and building the visualizations and dashboards is easy. Notable mention is <a href="https://github.com/robcowart/elastiflow">Elastiflow</a>, which is similar but has a bit more eye candy and leverages log stash. Elastiflow doesn’t have nearly as turnkey of an install (and really has almost no “newbie” install instructions at all - but it’s a strong offering if you already know how to spin up an ELK stack and tune it.</p>
+<p>I think of Arbor more like a Jaguar. Beautiful machine, but very expensive and quite often needs attention from a (specialized) mechanic. I have a hard time liking it because if I&rsquo;m throwing that much money into it, I don&rsquo;t want to do that much hand holding. I like to look at solutions on a continuum of inversely related time and money (ie Splunk vs Elastic Stack). Arbor requiring both is a tough sell.
+<hr /></p>
 
-<h2 id="nfdump-http-nfdump-sourceforge-net"><a href="http://nfdump.sourceforge.net/">Nfdump</a></h2>
+<p>[Mark Milinkovich]( &ldquo;mark_milinko@yahoo.com&rdquo;) - <time datetime="2017-12-18 18:34:00">Dec 1, 2017</time></p>
 
-<p>The venerable nfdump. This is what so many large networks were using (and probably still are) for their raw flow collections. This package scales exceptionally well to huge networks and has so many tools available for the CLI that it’s the de facto standard for raw flow analytics and forensics. I love this system and ran it for many, many, MANY years. It takes a but of time to learn, and may not be the right tool for you if you want a modern GUI, lots of eye candy, or are inexperienced with the UNIX/LINIX command line, but it’s got it where it counts, supports IPFix, Netflow v5, v9 and IPFIX and you can’t dog wrong with it. I have a handy how-to getting it up and running Under CentOS <a href="https://www.forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/">here</a>. When you couple this with something like <a href="https://github.com/JustinAzoff/flow-indexer">Justin Azoff’s flow indexer</a> and <a href="https://sourceforge.net/projects/nfsen/">nfsen</a> on the front end, you’ve got an enviable power user setup ripe for both forensics, tactical work as well as baseline generation.</p>
+<p>Nick - Thank you for the shout out for LiveAction LiveUX ! Just a note that LiveNX is our network performance and analytics platform that collects flow data (NetFlow, IPFIX, S-Flow, jflow, NetStream,etc) and SNMP, Cisco AVC, PerfMon, NBAR2, etc telemetry data directly from the underlay infrastructure and with LiveInsight, our machine learning module, provides real-time visibility into the applications across the environment for proactive management. In addition today we publicly announced a key acquisition to expand the portfolio to address service provider requirements. Super stoked, and so are our customers. We would welcome the opportunity to give you a an update. /Mark
+<hr /></p>
 
-<h2 id="solarwinds-https-www-solarwinds-com"><a href="https://www.solarwinds.com/">SolarWinds</a></h2>
+<p><a href="http://www.forwardingplane.net/" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2017-12-18 11:25:00">Dec 1, 2017</time></p>
 
-<p>Solarwinds Orion is the go-to for windows based monitoring. It’s not cheap, but if you’re running a windows based monitoring system, you’re likely an enterprise and have budget for it. I have been impressed with the visualizations of this system and like that it does all of the monitoring in one package - once installed I never have to see windows (and since I can’t efficiently support windows, that’s probably a good thing - someone else will handle the OS work). The price tag can be a bit steep depending on number of nodes monitored, but it does what it claims and commercial support is decent. My one complaint is that I can’t seem to find a way to do raw data queries in a straightforward way. This may be possible and I have just not had the time or mental power to workout out. Overall it’s a worthy monitoring platform if you need your system to run on windows and can afford it. There are some older but still good videos from several Network Field Day events <a href="http://techfieldday.com/companies/solarwinds/">here</a> and I wrote about it from a UNIX users perspective <a href="https://www.forwardingplane.net/2015/07/solarwinds-orion-from-a-unix-user-point-of-view/">here</a>.</p>
+<p>A great option for sure. My experience with pmacctd is sadly lacking, but i&rsquo;d put it up there near nfdump in style but far surpassing it in ability. I am a fan of what I&rsquo;ve seen and done with pmacctd but was never able to really give it the time it deserved in replacing my legacy installs. From my point of view it&rsquo;s as much of a flow generation tool in the vein of softflowd or nprobe (both honorable mentionsfor that service). As far as ELK, my opinion is that I don&rsquo;t care what generates the flow data as long as I can collect it, and I&rsquo;m definitely a fan of ELK for this.
+<hr /></p>
 
-<h2 id="live-action-networks-live-ux-https-www-liveaction-com-products-live-ux"><a href="https://www.liveaction.com/products/live-ux/">Live Action Networks Live UX</a></h2>
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2017-12-18 11:19:34">Dec 1, 2017</time></p>
 
-<p>Another commercial option that has good support and a lot of eye candy. This was born out of work with the US Government and is a really interesting system. I’ve met with these guys several times and their team is super open to taking and feature requests and they have a good product. I first heard about them at <a href="http://techfieldday.com/appearance/liveaction-presents-at-networking-field-day-7/">Network Field day 7</a>, their product was intriguing there and they’ve come a long way since then. Worth looking at for a turnkey solution for things like network analytics, IP-SLA,</p>
+<p>I went back and forth on mentioning Kentik. I like what I have seen so far but have very little to no experience with it. It is at the top of my list of platforms to spend some quality time with in the upcoming months. My take was that it was bucking to be a competitor to Arbor, with an original focus on service providers and expanding into enterprise markets. The cloud SaaS offering is interesting and compelling if one can justify and get approval to push flow data into an external infrastructure. My desire would be to work out soft and hard failure modes (as I do with any cloud based service) and then to really exercise the analytics and anomaly detection. I have had several comment on the robustness of the Kentik API, which is very, very high on the list of desirables.
+<hr /></p>
 
-<h2 id="my-take">My take</h2>
+<p><a href="http://www.forwardingplane.net/" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2017-12-18 11:24:00">Dec 1, 2017</time></p>
 
-<p>I like the power that an indexed set of data provides and I am willing and capable of plowing through the install of a linux based system. I’m also frugal, and for a product to really warrant my money it needs to do something that nothing else does [translated: I am willing and able to support open source solutions].</p>
+<p>I went back and forth on mentioning Kentik. I like what I have seen so far but have very little to no experience with it. It is at the top of my list of platforms to spend some quality time with in the upcoming months. My take was that it was bucking to be a competitor to Arbor, with an original focus on service providers and expanding into enterprise markets. The cloud SaaS offering is interesting and compelling if one can justify and get approval to push flow data into an external infrastructure. My desire would be to work out soft and hard failure modes (as I do with any cloud based service) and then to really exercise the analytics and anomaly detection. I have had several comment on the robustness of the Kentik API, which is very, very high on the list of desirables.
+<hr /></p>
 
-<p><img src="http://www.forwardingplane.net/wp-content/uploads/2017/12/Screenshot-2017-12-15-20.32.57.png" alt="" /></p>
+<p>[Justin Ryburn]( &ldquo;justin@ryburn.org&rdquo;) - <time datetime="2017-12-18 10:10:00">Dec 1, 2017</time></p>
 
-<p>That said, the Manito Networks install of Elk + Kibana (no logstash in this default install) is where I typically land due to the fact that I can get indexed flow data, nice, configurable graphs and trending statistics, and can integrate things like syslog into another index on the same system giving me the tools to do forensics on a number of topics on that system. <a href="https://gitlab.com/thart/flowanalyzer/blob/master/Install/README.md">The setup is crazy easy</a> and really well documented, too. Someone linux-inclined can have it up and collecting flow data (sflow, netflow v5/9 or IPFIX) in an order of about 30 minutes - probably less. The take aways really, though, is that there are options available no matter your skill level or budget, so there is really no reason not to have something.</p>
+<p>You might also take a look at Kentik Detect. It is a SaaS based approach to flow collection and analysis. No hardware/software to manage/maintain. Constant improvement in feature set without having to download/upgrade to pick them up. It is a commercial offering but might be worth evaluating if you want more of an easy button. It also provided a RestAPI to allow for integration with other tools. Free trial: <a href="https://portal.kentik.com/signup">https://portal.kentik.com/signup</a>
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2017-12-18 11:14:14">Dec 1, 2017</time></p>
+
+<p>A great option for sure. My experience with pmacctd is sadly lacking, but i&rsquo;d put it up there near nfdump in style but far surpassing it in ability. I am a big fan of pmacctd but was never able to really give it the time it deserved in replacing my legacy ndfump installs. From my point of view it&rsquo;s as much of a flow generation tool in the vein of softflowd or nprobe (both honorable mentions in my eyes). As far as ELK, my opinion is that I don&rsquo;t care what generates the flow data as long as I can collect it, and I&rsquo;m a fan of ELK for this.
+<hr /></p>
+
+<p>[Lorenzo Mainardi]( &ldquo;lormayna@gmail.com&rdquo;) - <time datetime="2017-12-18 07:37:00">Dec 1, 2017</time></p>
+
+<p>Why not thinking about pmacct + ELK? pmacct is very powerful and easy to setup and mantain.
+<hr /></p>
+
+<p>[Colin]( &ldquo;cstubbs@gmail.com&rdquo;) - <time datetime="2018-01-24 04:00:00">Jan 3, 2018</time></p>
+
+<p>Hi Nick, no mention of vFlow&hellip;intentional? Or you just havn&rsquo;t used it? <a href="https://github.com/VerizonDigital/vflow">https://github.com/VerizonDigital/vflow</a>
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net/" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2018-01-24 16:09:00">Jan 3, 2018</time></p>
+
+<p>This one is totally new to me. I&rsquo;ll add it to the list!
+<hr /></p>
+
+<p><a href="https://www.forwardingplane.net/2018/02/strategy-series-view-outside-network/">Strategy Series: How do you view outside of your network? - The Forwarding Plane | The Forwarding Plane</a> - <time datetime="2018-02-10 10:58:39">Feb 6, 2018</time></p>
+
+<p>[…] network works, you have graphing, up/down statistics, traffic baselines and visibility into traffic flow and configurations. Don’t worry, if you don’t have those things you can link to a few […]
+<hr /></p>
 
             </div>
         </article>
@@ -349,13 +390,6 @@
       <script src="//yihui.name/js/math-code.js"></script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
-  </body>
-</html>
-
-s?config=TeX-MML-AM_CHTML">
 </script>
 
 

@@ -14,105 +14,105 @@
     
     <item>
       <title>Building a dynamic security infrastructure [in a box - with SDN]</title>
-      <link>https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</link>
+      <link>https://forwardingplane.net/blog/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</link>
       <pubDate>Wed, 29 May 2019 18:17:13 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</guid>
+      <guid>https://forwardingplane.net/blog/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</guid>
       <description>Years ago I wrote about building a secure network in a box. Over a weekend I decided to revisit this concept thanks to a colleague at work wanting to do something similar. It got me thinking “a lot has changed since I last did this” and it felt like time to revisit it. Well, disappointment wasn’t in the cards because it’s easier, smarter, and more flexible now that it was back then.</description>
     </item>
     
     <item>
       <title>DNS - the treasure trove of information your ISP can see</title>
-      <link>https://forwardingplane.net/post/dns-the-treasure-trove-of-information-your-isp-can-see-comments/</link>
+      <link>https://forwardingplane.net/blog/dns-the-treasure-trove-of-information-your-isp-can-see-comments/</link>
       <pubDate>Mon, 10 Dec 2018 10:23:42 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/dns-the-treasure-trove-of-information-your-isp-can-see-comments/</guid>
+      <guid>https://forwardingplane.net/blog/dns-the-treasure-trove-of-information-your-isp-can-see-comments/</guid>
       <description>Link Propagation 147: We Don&amp;#8217;t Need No Stinking Badges! - Dec 5, 2018
 […] Read more here […] </description>
     </item>
     
     <item>
       <title>DNS - the treasure trove of information your ISP can see</title>
-      <link>https://forwardingplane.net/post/dns-the-treasure-trove-of-information-your-isp-can-see/</link>
+      <link>https://forwardingplane.net/blog/dns-the-treasure-trove-of-information-your-isp-can-see/</link>
       <pubDate>Mon, 10 Dec 2018 10:23:42 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
+      <guid>https://forwardingplane.net/blog/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
       <description>In recent years, the nature of privacy on the internet has become a very important topic amongst those concerned with the now lack of net neutrality. The de-facto mechanism for dealing with privacy has been to &amp;ldquo;SSL all the things&amp;rdquo;, which I am very much in favor of. What many do not realize, though, is that simply using SSL for the traffic that transits a given ISP still leaves a wealth of thick, rich, delicious personal data still easily available to your ISP to harvest, sell, and do with as they please.</description>
     </item>
     
     <item>
       <title>Faucet: Enterprise OpenFlow in production</title>
-      <link>https://forwardingplane.net/post/faucet-enterprise-openflow-in-production-comments/</link>
+      <link>https://forwardingplane.net/blog/faucet-enterprise-openflow-in-production-comments/</link>
       <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/faucet-enterprise-openflow-in-production-comments/</guid>
+      <guid>https://forwardingplane.net/blog/faucet-enterprise-openflow-in-production-comments/</guid>
       <description>Faucet &amp;#8211; Enterprise SDN from an office to multi-terabit SCinet at SC18 | - Nov 1, 2018
 […] Then my colleague, Nick Buraglio, and I decided, why not wire our satellite branch office with faucet based networking than buy traditional switches? With Josh (Bailey)’s help, Nick has now wired the lives of eight of ESnet’s key employees to be dependent on faucet and he has been having a blast (no downtime there either)!</description>
     </item>
     
     <item>
       <title>Faucet: Enterprise OpenFlow in production</title>
-      <link>https://forwardingplane.net/post/faucet-enterprise-openflow-in-production/</link>
+      <link>https://forwardingplane.net/blog/faucet-enterprise-openflow-in-production/</link>
       <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/faucet-enterprise-openflow-in-production/</guid>
+      <guid>https://forwardingplane.net/blog/faucet-enterprise-openflow-in-production/</guid>
       <description>Remember OpenFlow? It was the media and marketing darling for the better part of 5 years as “the machine” conflated OpenFlow with SDN and SDN with - almost literally - everything. &amp;ldquo;Still Does Nothing&amp;rdquo; was a common phrase uttered around those of us that had run large scale, complex networks for a long time. Quietly, and mostly, out of the fickle media and blogosphere eye, a scrappy little SDN project called faucet has been diligently plugging away &amp;ndash; making easy to use, production quality, well documented, and very stable code that runs OpenFlow networks quite happily in production and at scale.</description>
     </item>
     
     <item>
       <title>DDoS mitigation podcast, black hole routing</title>
-      <link>https://forwardingplane.net/post/ddos-mitigation-podcast-black-hole-routing/</link>
+      <link>https://forwardingplane.net/blog/ddos-mitigation-podcast-black-hole-routing/</link>
       <pubDate>Thu, 01 Nov 2018 10:53:08 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/ddos-mitigation-podcast-black-hole-routing/</guid>
+      <guid>https://forwardingplane.net/blog/ddos-mitigation-podcast-black-hole-routing/</guid>
       <description>As an often-security-engineer and an individual that has been working on large networks for quite a while, dealing with DDoS, or the threat of DDoS is a well traveled path. Recently I was invited to discuss some of the basics of DDoS mitigation on the Network Collective Podcast. This was a really fun and insightful chat with a wealth of great information for engineers and operators of any skill level. Ep38 - DDoS Mitigation from Network Collective on Vimeo.</description>
     </item>
     
     <item>
       <title>Trouble with Tribbles .....errr NAT</title>
-      <link>https://forwardingplane.net/post/trouble-with-tribbles-errr-nat-comments/</link>
+      <link>https://forwardingplane.net/blog/trouble-with-tribbles-errr-nat-comments/</link>
       <pubDate>Mon, 16 Jul 2018 10:24:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/trouble-with-tribbles-errr-nat-comments/</guid>
+      <guid>https://forwardingplane.net/blog/trouble-with-tribbles-errr-nat-comments/</guid>
       <description>Link Propagation 130: Two-Factor Authentication Pays Off - Aug 6, 2018
 […] Read more here […] </description>
     </item>
     
     <item>
       <title>Trouble with Tribbles .....errr NAT</title>
-      <link>https://forwardingplane.net/post/trouble-with-tribbles-errr-nat/</link>
+      <link>https://forwardingplane.net/blog/trouble-with-tribbles-errr-nat/</link>
       <pubDate>Mon, 16 Jul 2018 10:24:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/trouble-with-tribbles-errr-nat/</guid>
+      <guid>https://forwardingplane.net/blog/trouble-with-tribbles-errr-nat/</guid>
       <description>As a follow up to my last post, I wanted to dive a little deeper into the world of address translation and to suss out some of the more compelling details.
 As I&amp;rsquo;ve said on many occasions, it pains me to see NAT referenced as a security mechanism. That said, where PNAT can be beneficial is in an overall privacy strategy, however, even that is comparatively low value and given the current state of global IPv4 allocations, arguably a detriment to usability - we’ll get to that - before we do, it is important to understand what ’NAT” as we call it today actually is, and to do that we need to explain all of the types of address translation (yes, there are several).</description>
     </item>
     
     <item>
       <title>NAT discussions, fact checking, and debate</title>
-      <link>https://forwardingplane.net/post/nat-discussions-comments/</link>
+      <link>https://forwardingplane.net/blog/nat-discussions-comments/</link>
       <pubDate>Mon, 11 Jun 2018 09:41:15 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/nat-discussions-comments/</guid>
+      <guid>https://forwardingplane.net/blog/nat-discussions-comments/</guid>
       <description>Trouble with Tribbles &amp;hellip;..errr NAT - The Forwarding Plane | The Forwarding Plane - Jul 1, 2018
 […] Buraglio / July 16, 2018 / No Comments As a follow up to my last post, I wanted to dive a little deeper into the world of address translation and to suss out some of the […] </description>
     </item>
     
     <item>
       <title>NAT discussions, fact checking, and debate</title>
-      <link>https://forwardingplane.net/post/nat-discussions/</link>
+      <link>https://forwardingplane.net/blog/nat-discussions/</link>
       <pubDate>Mon, 11 Jun 2018 09:41:15 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/nat-discussions/</guid>
+      <guid>https://forwardingplane.net/blog/nat-discussions/</guid>
       <description>I’ve been very vocal about the misinterpretation of NAT for many, many years. Since it&amp;rsquo;s inception, NAT has been slowly perverted into what many now believe to be a security mechanism. While I do see a reasonable use of IP masquerading in a larger security strategy, this is not the original intent (or implementation) of NAT. What mosts network engineers call &amp;ldquo;NAT&amp;rdquo; is actually one to many network port address translation - or taking one public address and &amp;ldquo;hiding&amp;rdquo; a number of private (likely RFC1918) addresses &amp;ldquo;behind&amp;rdquo; it, using ports to translate traffic and keeping the state of those connections.</description>
     </item>
     
     <item>
       <title>Strategy Series: What is your netflow strategy?</title>
-      <link>https://forwardingplane.net/post/what-is-your-netflow-strategy-comments/</link>
+      <link>https://forwardingplane.net/blog/what-is-your-netflow-strategy-comments/</link>
       <pubDate>Mon, 18 Dec 2017 11:15:30 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/what-is-your-netflow-strategy-comments/</guid>
+      <guid>https://forwardingplane.net/blog/what-is-your-netflow-strategy-comments/</guid>
       <description>What is your netflow strategy? - Tech Field Day - Dec 2, 2017
 […] What is your netflow strategy? […] [Robert Cowart]( &amp;ldquo;robacj@gmail.com&amp;rdquo;) - Dec 4, 2017
 Nick, thanks for the mention of ElastiFlow. Back when I created it I knew from my past experience that there was a lot of value in flow data. However, I must admit to being surprised with how popular the solution has become. Your criticism of the lacking documentation is fair, and will be addressed in the near future.</description>
@@ -120,122 +120,122 @@ Nick, thanks for the mention of ElastiFlow. Back when I created it I knew from m
     
     <item>
       <title>Strategy Series: What is your netflow strategy?</title>
-      <link>https://forwardingplane.net/post/what-is-your-netflow-strategy/</link>
+      <link>https://forwardingplane.net/blog/what-is-your-netflow-strategy/</link>
       <pubDate>Mon, 18 Dec 2017 11:15:30 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/what-is-your-netflow-strategy/</guid>
+      <guid>https://forwardingplane.net/blog/what-is-your-netflow-strategy/</guid>
       <description>You have one, right? Even if your entire strategy is “collect some flow data”, there is absolutely NO reason not to have a netflow implementation, and frankly, it will save you time and money over time if you make the effort to do it. I love network data and analytics and I have waxed poetic about how important they are at every opportunity. There are a myriad of options for analytics and flow data.</description>
     </item>
     
     <item>
       <title>No privacy may be the new privacy.</title>
-      <link>https://forwardingplane.net/post/no-privacy-may-new-privacy/</link>
+      <link>https://forwardingplane.net/blog/no-privacy-may-new-privacy/</link>
       <pubDate>Sat, 25 Mar 2017 18:06:01 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/no-privacy-may-new-privacy/</guid>
+      <guid>https://forwardingplane.net/blog/no-privacy-may-new-privacy/</guid>
       <description>Taking politics and putting them aside, what the new administration has been attempting to change with regard to internet privacy is something we should all be informed about. Wether you have a tin foil hat or don&amp;rsquo;t care, &amp;ldquo;knowing is half the battle&amp;rdquo;. The other half is doing - which I will also lend some brief insight to (sorta). What&amp;rsquo;s changing? Nothing yet (as of the time of this writing). What will likely change?</description>
     </item>
     
     <item>
       <title>Creating an internal span port inside proxmox OVS</title>
-      <link>https://forwardingplane.net/post/creating-internal-span-port-inside-proxmox-ovs/</link>
+      <link>https://forwardingplane.net/blog/creating-internal-span-port-inside-proxmox-ovs/</link>
       <pubDate>Tue, 21 Mar 2017 03:49:58 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/creating-internal-span-port-inside-proxmox-ovs/</guid>
+      <guid>https://forwardingplane.net/blog/creating-internal-span-port-inside-proxmox-ovs/</guid>
       <description>In the last few years I have moved all of my virtualization to proxmox and docker. Seeing as I like to look at packets because I am a closet security guy, and being as I have been working off-and-on on a security project in recent times, I wanted to be able to span a port not only from a hardware switch, but also within my software switches. I had been using linux bridge, which I am not a fan of, so when I started down this path I did not look hard to find a way to do so under that platform.</description>
     </item>
     
     <item>
       <title>BGP RPKI - why aren&#39;t we using it more?</title>
-      <link>https://forwardingplane.net/post/bgp-rpki-why-arent-we-using-it-comments/</link>
+      <link>https://forwardingplane.net/blog/bgp-rpki-why-arent-we-using-it-comments/</link>
       <pubDate>Sat, 21 May 2016 16:33:44 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/bgp-rpki-why-arent-we-using-it-comments/</guid>
+      <guid>https://forwardingplane.net/blog/bgp-rpki-why-arent-we-using-it-comments/</guid>
       <description>[SilentLennie]( &amp;ldquo;disqus@consolejunkie.net&amp;rdquo;) - May 6, 2016
 It&amp;rsquo;s almost always the organisational part that is the hard part. Look at DNSSEC, the technical part is easy to deploy these days: see PowerDNS for example. Now getting someone in your organisation to deal with DS-record and know what to do when migrating a domain&amp;hellip; well, that&amp;rsquo;s a whole process, that&amp;rsquo;s the difficult part of the story. I do however believe it could be simpler though.</description>
     </item>
     
     <item>
       <title>BGP RPKI - why aren&#39;t we using it more?</title>
-      <link>https://forwardingplane.net/post/bgp-rpki-why-arent-we-using-it/</link>
+      <link>https://forwardingplane.net/blog/bgp-rpki-why-arent-we-using-it/</link>
       <pubDate>Sat, 21 May 2016 16:33:44 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/bgp-rpki-why-arent-we-using-it/</guid>
+      <guid>https://forwardingplane.net/blog/bgp-rpki-why-arent-we-using-it/</guid>
       <description>Image created from SURFNet RPKI page.         I was recently at a meeting where BGP RPKI was the topic de jour. While this has been a topic that I have visited on occasion of the last few years and something I wanted to spend significant time on, I have found that setting aside the time has been difficult and sparse, much like the deployment of BGP RPKI.</description>
     </item>
     
     <item>
       <title>OpenDNS acquires BGPMon and the future of route monitoring</title>
-      <link>https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring-comments/</link>
+      <link>https://forwardingplane.net/blog/opendns-acquires-bgpmon-and-the-future-of-route-monitoring-comments/</link>
       <pubDate>Fri, 20 Mar 2015 05:18:30 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring-comments/</guid>
+      <guid>https://forwardingplane.net/blog/opendns-acquires-bgpmon-and-the-future-of-route-monitoring-comments/</guid>
       <description>[David Ulevitch]( &amp;ldquo;david@opendns.com&amp;rdquo;) - Mar 5, 2015
 Hi Nick &amp;ndash; Thanks for the compliments on our track record in your post and appreciate the thoughtful commentary on the acquisition. Looking forward to delivering more good stuff in the future. </description>
     </item>
     
     <item>
       <title>OpenDNS acquires BGPMon and the future of route monitoring</title>
-      <link>https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</link>
+      <link>https://forwardingplane.net/blog/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</link>
       <pubDate>Fri, 20 Mar 2015 05:18:30 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</guid>
+      <guid>https://forwardingplane.net/blog/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</guid>
       <description>For those that run BGP networks, BGPmon is often a tool they turn to for some really unique and hard to find information. Remember back in February 2008 when Pakistan Telecom &amp;ldquo;blocked&amp;rdquo; Youtube? That one was a really, really public example of something that BGPMon caught. BGPmon has been around for a long, long time. Quietly watching prefixes. Silently noting changes and reporting them to the ones lucky enough to know of its existence.</description>
     </item>
     
     <item>
       <title>NIX4NetEng #5 - GeoIP tools</title>
-      <link>https://forwardingplane.net/post/nix4neteng-5-geoip-tools/</link>
+      <link>https://forwardingplane.net/blog/nix4neteng-5-geoip-tools/</link>
       <pubDate>Sun, 21 Dec 2014 18:22:15 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/nix4neteng-5-geoip-tools/</guid>
+      <guid>https://forwardingplane.net/blog/nix4neteng-5-geoip-tools/</guid>
       <description>Sometimes in networking and security it becomes necessary to do lookups of location data on IP addresses and prefixes. On my Mac I use homebrew to manage packages, but most of these tools are available with thetypocal apt, yum and port package management systems. For this post, I&amp;rsquo;m going to shift gears and show the install on my mac:``` sliver:~ buraglio$ brew install geoip ==&amp;gt; Downloading https://downloads.sf.net/project/machomebrew/Bottles/geoip-1.6.3.mavericks.bottle.tar.gz ######################################################################## 100.0% ==&amp;gt; Pouring geoip-1.</description>
     </item>
     
     <item>
       <title>NIX4Neteng #4: POODLE and SSLv3, scanning and updating</title>
-      <link>https://forwardingplane.net/post/nix4neteng-4-poodle-and-sslv3-scanning-and-updating-comments/</link>
+      <link>https://forwardingplane.net/blog/nix4neteng-4-poodle-and-sslv3-scanning-and-updating-comments/</link>
       <pubDate>Wed, 15 Oct 2014 17:36:54 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/nix4neteng-4-poodle-and-sslv3-scanning-and-updating-comments/</guid>
+      <guid>https://forwardingplane.net/blog/nix4neteng-4-poodle-and-sslv3-scanning-and-updating-comments/</guid>
       <description>[Ryan Harden]( &amp;ldquo;ancker@ancker.net&amp;rdquo;) - Oct 3, 2014
 I whipped up something in bash. It isn&amp;rsquo;t as automated, but works if you have a list of hostnames/IPs you want to check. #!/bin/sh for i in host1.blah.net host2.blah.net do echo $i echo Q | openssl s_client -connect $i:443 -ssl3 2&amp;gt; /dev/null | grep Protocol done </description>
     </item>
     
     <item>
       <title>NIX4Neteng #4: POODLE and SSLv3, scanning and updating</title>
-      <link>https://forwardingplane.net/post/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</link>
+      <link>https://forwardingplane.net/blog/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</link>
       <pubDate>Wed, 15 Oct 2014 17:36:54 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</guid>
+      <guid>https://forwardingplane.net/blog/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</guid>
       <description>With the recent release of the POODLE SSLv3 vulnerability, folks are scrambling around trying to figure out what runs what and where. Running a handful of things that do SSL, I was obligated, both personally and professionally, to figure out an easy way to drill down and figure out what does what and then fix the vulnerable services. When there are a lot of devices, this can seem like a daunting task, and it is if you&amp;rsquo;re trying to do it manually.</description>
     </item>
     
     <item>
       <title>sonrancid: A [very] basic RANCID module for sonicwall</title>
-      <link>https://forwardingplane.net/post/sonrancid-a-very-basic-rancid-module-for-sonicwall-comments/</link>
+      <link>https://forwardingplane.net/blog/sonrancid-a-very-basic-rancid-module-for-sonicwall-comments/</link>
       <pubDate>Mon, 15 Sep 2014 09:05:13 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/sonrancid-a-very-basic-rancid-module-for-sonicwall-comments/</guid>
+      <guid>https://forwardingplane.net/blog/sonrancid-a-very-basic-rancid-module-for-sonicwall-comments/</guid>
       <description>[Les Begnaud]( &amp;ldquo;lesbegnaud@gmail.com&amp;rdquo;) - Dec 4, 2014
 Hi there, I just implemented your set of scripts and had a couple comments: 1) seems to work just fine on an NSA 3600 2) have you attempted to rebuild a sonicwall based on the output of &amp;lsquo;show current-config&amp;rsquo;? 3) any luck with getting the ever-changing passwords to behave themselves? I am not a fan of constant diffs&amp;hellip; defeats the purpose of diffs 4) your github sonrancid script references clogin, and not sonlogin 5) Thanks so much for doing this!</description>
     </item>
     
     <item>
       <title>sonrancid: A [very] basic RANCID module for sonicwall</title>
-      <link>https://forwardingplane.net/post/sonrancid-a-very-basic-rancid-module-for-sonicwall/</link>
+      <link>https://forwardingplane.net/blog/sonrancid-a-very-basic-rancid-module-for-sonicwall/</link>
       <pubDate>Mon, 15 Sep 2014 09:05:13 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/sonrancid-a-very-basic-rancid-module-for-sonicwall/</guid>
+      <guid>https://forwardingplane.net/blog/sonrancid-a-very-basic-rancid-module-for-sonicwall/</guid>
       <description>I know, I know, I&amp;rsquo;m always saying that you don&amp;rsquo;t need a firewall. That&amp;rsquo;s mostly to get your attention to push my agenda of sane security architecture, I do actually believe that firewalls are appropriate in a great many use cases and I&amp;rsquo;ve managed them big and small ranging from Juniper SRX 5800 clusters to tiny purpose built BSD distros on custom hardware. I even managed Checkpoint and gauntlet firewall back in the 1990s.</description>
     </item>
     
     <item>
       <title>Why you don&#39;t need a firewall [how to secure an open perimeter network]</title>
-      <link>https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network-comments/</link>
+      <link>https://forwardingplane.net/blog/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network-comments/</link>
       <pubDate>Mon, 08 Sep 2014 07:30:07 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network-comments/</guid>
+      <guid>https://forwardingplane.net/blog/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network-comments/</guid>
       <description>[cryptochrome]( &amp;ldquo;sascha@picchiantano.de&amp;rdquo;) - Sep 1, 2014
 Wow. I completely disagree. Just because a firewall can give you some headaches in your network environment it shouldn&amp;rsquo;t be a reason to just dump it. A very dangerous proposition, and your &amp;ldquo;alternatives&amp;rdquo; will not be enough. Fix your firewall if it causes issues. Nick Buraglio - Sep 1, 2014
 Like I said, it&amp;rsquo;s not for everyone, but there are very real use cases where there is no hardware firewall that does what is necessary.</description>
@@ -243,38 +243,38 @@ Like I said, it&amp;rsquo;s not for everyone, but there are very real use cases 
     
     <item>
       <title>Why you don&#39;t need a firewall [how to secure an open perimeter network]</title>
-      <link>https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
+      <link>https://forwardingplane.net/blog/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
       <pubDate>Mon, 08 Sep 2014 07:30:07 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
+      <guid>https://forwardingplane.net/blog/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
       <description>I admit that the title was meant to be inflammatory. However, there are use cases that aren&amp;rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &amp;ldquo;a firewall protects a network like a fuse protects an electrical circuit&amp;rdquo;, and it&amp;rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.</description>
     </item>
     
     <item>
       <title>NIX4NetEng #2 IPv4/6 address investigation tools - whois &#43; dig</title>
-      <link>https://forwardingplane.net/post/nix4neteng-2-ipv46-address-investigation-tools-whois-dig-comments/</link>
+      <link>https://forwardingplane.net/blog/nix4neteng-2-ipv46-address-investigation-tools-whois-dig-comments/</link>
       <pubDate>Sat, 07 Jun 2014 19:54:41 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/nix4neteng-2-ipv46-address-investigation-tools-whois-dig-comments/</guid>
+      <guid>https://forwardingplane.net/blog/nix4neteng-2-ipv46-address-investigation-tools-whois-dig-comments/</guid>
       <description>[SilentLennie]( &amp;ldquo;disqus@consolejunkie.net&amp;rdquo;) - Jun 0, 2014
 I actually use the DNS version, not the whois versions of the Cymru tools like frequently: dig +short AS$ASN.asn.cymru.com TXT dig +short $REVIP.origin.asn.cymru.com TXT dig +short $REVIP6.origin6.asn.cymru.com TXT In case I use it with some small automated script it at least gets cached. Technology Short Take #44 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, networking, cloud, servers, &amp;amp; Macs - Sep 3, 2014</description>
     </item>
     
     <item>
       <title>NIX4NetEng #2 IPv4/6 address investigation tools - whois &#43; dig</title>
-      <link>https://forwardingplane.net/post/nix4neteng-2-ipv46-address-investigation-tools-whois-dig/</link>
+      <link>https://forwardingplane.net/blog/nix4neteng-2-ipv46-address-investigation-tools-whois-dig/</link>
       <pubDate>Sat, 07 Jun 2014 19:54:41 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/nix4neteng-2-ipv46-address-investigation-tools-whois-dig/</guid>
+      <guid>https://forwardingplane.net/blog/nix4neteng-2-ipv46-address-investigation-tools-whois-dig/</guid>
       <description>I don&amp;rsquo;t care what your vendor alignment of choice is, Cisco, Juniper, Brocade, Alcatel&amp;hellip;.it doesn&amp;rsquo;t matter. At one point or another you&amp;rsquo;re going to need to bird dog an address to see where it&amp;rsquo;s coming from, who owns it, what it&amp;rsquo;s DNS name is or what path you&amp;rsquo;re taking to get to it. We&amp;rsquo;ve already talked about BGP tools, they&amp;rsquo;re a great choice for checking routes across the internet. Hunting down addresses is an interesting one, though, as address management and lookups can bleed into other aspects of networking like path selection, latency, jitter and many other things.</description>
     </item>
     
     <item>
       <title>Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection</title>
-      <link>https://forwardingplane.net/post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection-comments/</link>
+      <link>https://forwardingplane.net/blog/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection-comments/</link>
       <pubDate>Sat, 11 Jan 2014 21:55:24 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection-comments/</guid>
+      <guid>https://forwardingplane.net/blog/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection-comments/</guid>
       <description>Internets of Interest for 20th January 2014 — EtherealMind - Jan 1, 2014
 […] Drink from the firehose! Implement NetFlow data on your network with nfdump and nfsen – Nick Buraglio on open source sFlow/NetFlow tool nfsen : […] Technology Short Take #38 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, networking, storage, and servers - Feb 4, 2014
 […] Nick Buraglio takes away all your reasons for not collecting flow-based data from your environment with his write-up on installing nfsen and nfdump for NetFlow and/or sFlow collection.</description>
@@ -282,66 +282,66 @@ I actually use the DNS version, not the whois versions of the Cymru tools like f
     
     <item>
       <title>Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection</title>
-      <link>https://forwardingplane.net/post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/</link>
+      <link>https://forwardingplane.net/blog/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/</link>
       <pubDate>Sat, 11 Jan 2014 21:55:24 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/</guid>
+      <guid>https://forwardingplane.net/blog/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/</guid>
       <description>I am an absolutely huge fan of statistical and instrumentation data, especially when it comes to traffic analysis, visualization and baselining. I&amp;rsquo;ve rambled on about the importance of it at every opportunity. As a result of that, I have been doing work with netflow and netflow-like data for a fairly long time. My first collector was the OSU Flow tools based stuff back around 13 years ago. From there I played with all kinds of netflow tools, both commercial and open source, finally settling most of my focus on nfdump and nfsen.</description>
     </item>
     
     <item>
       <title>Speculation and soapboxing about the leaked NSA spy catalog.</title>
-      <link>https://forwardingplane.net/post/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog-comments/</link>
+      <link>https://forwardingplane.net/blog/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog-comments/</link>
       <pubDate>Sat, 04 Jan 2014 17:15:40 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog-comments/</guid>
+      <guid>https://forwardingplane.net/blog/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog-comments/</guid>
       <description>[Ryan Harden]( &amp;ldquo;ancker@ancker.net&amp;rdquo;) - Jan 1, 2014
 Not trying to brush this off as not-scary or not-happening, but I&amp;rsquo;m skeptical of the reality of some of this. Not only would you have to alter the code on a JNPR/CSCO/etc router or switch, but you&amp;rsquo;d also have to alter the code of any inline firewalls to pass the secret traffic without filtering and/or logging, and alter the code of any flow generation/aggregation/analyzation software to not report on the secret traffic that it might have observed via tap/SPAN/etc.</description>
     </item>
     
     <item>
       <title>Speculation and soapboxing about the leaked NSA spy catalog.</title>
-      <link>https://forwardingplane.net/post/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog/</link>
+      <link>https://forwardingplane.net/blog/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog/</link>
       <pubDate>Sat, 04 Jan 2014 17:15:40 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog/</guid>
+      <guid>https://forwardingplane.net/blog/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog/</guid>
       <description>The buzz as of late around the security and networking communities has been about the NSA and their catalog or spy toolkit. I&amp;rsquo;ve spent time in my career thinking about and doing infosec and I did a brief stint working for the FBI in a project called NCDIR. I like to think that I can provide at least a peripherally competent commentary about it [take it with a grain of salt].</description>
     </item>
     
     <item>
       <title>Sonicwall revisited - Now with IPv6 - and way too much licensing cruft.</title>
-      <link>https://forwardingplane.net/post/sonicwall-revisited-now-with-ipv6-and-way-too-much-licensing-cruft/</link>
+      <link>https://forwardingplane.net/blog/sonicwall-revisited-now-with-ipv6-and-way-too-much-licensing-cruft/</link>
       <pubDate>Sat, 07 Dec 2013 15:45:06 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/sonicwall-revisited-now-with-ipv6-and-way-too-much-licensing-cruft/</guid>
+      <guid>https://forwardingplane.net/blog/sonicwall-revisited-now-with-ipv6-and-way-too-much-licensing-cruft/</guid>
       <description>About a year ago I did a brief review of the &amp;ldquo;new Sonicwall&amp;rdquo;, specifically a smaller branch office device that was said should have had all of the features of the larger devices. I proposed that it had some significant limitations (much to the disagreement of a great deal of folks). However, I stand by my statements. If you ignore the fact that firewalls often cause more problems than they solve, that NAT is a nightmarish kludge (and not a security mechanism), and will likely be phased out for better options eventually, the SonicOS I tested was pretty limited as far as what I believe should be features.</description>
     </item>
     
     <item>
       <title>Inline-jflow on MX series Juniper</title>
-      <link>https://forwardingplane.net/post/inline-jflow-on-mx-series-juniper-comments/</link>
+      <link>https://forwardingplane.net/blog/inline-jflow-on-mx-series-juniper-comments/</link>
       <pubDate>Sun, 01 Sep 2013 15:40:29 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/inline-jflow-on-mx-series-juniper-comments/</guid>
+      <guid>https://forwardingplane.net/blog/inline-jflow-on-mx-series-juniper-comments/</guid>
       <description>[poohead]( &amp;ldquo;stuff@stuff.com&amp;rdquo;) - Sep 5, 2013
 Great post! Like all SolarWinds products, the Netflow Analyzer is subpar at best. It has major scalability and performance problems (most likely due to to way it uses its SQL database) that make it unusable for actual troubleshooting. And no matter how many new widgets and features they add to their interface, the graphs are still unreadable. I am of the opinion that any network reporting tool that doesn&amp;rsquo;t use the RRD/MRTG-style graphs is almost worthless.</description>
     </item>
     
     <item>
       <title>Inline-jflow on MX series Juniper</title>
-      <link>https://forwardingplane.net/post/inline-jflow-on-mx-series-juniper/</link>
+      <link>https://forwardingplane.net/blog/inline-jflow-on-mx-series-juniper/</link>
       <pubDate>Sun, 01 Sep 2013 15:40:29 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/inline-jflow-on-mx-series-juniper/</guid>
+      <guid>https://forwardingplane.net/blog/inline-jflow-on-mx-series-juniper/</guid>
       <description>One of the things that I&amp;rsquo;ve always lamented about using non-Cisco hardware is the lack of true 1:1 netflow support. Say what you will about jflow, cflow, sflow&amp;hellip;.there is no substitute for netflow, with sflow being the exception to that since it is a protocol that inherently supports ipv6 and can transport far more than simple network information if configured in certain ways on certain devices. On newer MX series Juniper routers the game has changed.</description>
     </item>
     
     <item>
       <title>Building a secured network in a box</title>
-      <link>https://forwardingplane.net/post/building-a-secured-network-in-a-box-comments/</link>
+      <link>https://forwardingplane.net/blog/building-a-secured-network-in-a-box-comments/</link>
       <pubDate>Fri, 26 Jul 2013 05:28:15 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/building-a-secured-network-in-a-box-comments/</guid>
+      <guid>https://forwardingplane.net/blog/building-a-secured-network-in-a-box-comments/</guid>
       <description>Depenetration, whuaat? | JRLZN - Sep 4, 2013
 […] Photo Credit: http://www.forwardingplane.net/2013/07/building-a-secured-network-in-a-box/ […] [Aaron]( &amp;ldquo;Iamenabled@hotmail.com&amp;rdquo;) - Jul 5, 2013
 Nick, can you share the server hardware you are using for your VMware host? Nick Buraglio - Jul 5, 2013
@@ -351,47 +351,47 @@ On a reliability note, uptime has been fantastic Nick Buraglio - Jul 0, 2013</de
     
     <item>
       <title>Building a secured network in a box</title>
-      <link>https://forwardingplane.net/post/building-a-secured-network-in-a-box/</link>
+      <link>https://forwardingplane.net/blog/building-a-secured-network-in-a-box/</link>
       <pubDate>Fri, 26 Jul 2013 05:28:15 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/building-a-secured-network-in-a-box/</guid>
+      <guid>https://forwardingplane.net/blog/building-a-secured-network-in-a-box/</guid>
       <description>In many environments, the move to virtualization is a path well traveled. My home and lab networks are no exception to this and I&amp;rsquo;m sure nearly everyone who reads these pages has at least been exposed to it in one way or another. I have played with nearly all of the virtualization platforms and am firmly in the camp that there will be a large segment of networking that will move to a virtualized platform especially in the data center and campus segments.</description>
     </item>
     
     <item>
       <title>Why hardware firewalls are the walking dead</title>
-      <link>https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead-comments/</link>
+      <link>https://forwardingplane.net/blog/why-hardware-firewalls-are-the-walking-dead-comments/</link>
       <pubDate>Mon, 18 Mar 2013 11:02:42 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead-comments/</guid>
+      <guid>https://forwardingplane.net/blog/why-hardware-firewalls-are-the-walking-dead-comments/</guid>
       <description>[cryptochrome (@cryptochrome)]( &amp;ldquo;sascha@picchiantano.de&amp;rdquo;) - Mar 4, 2013
 What everybody seems to forget is that actually simple stateful inspection firewalls are the walking dead. Modern firewalls do a lot of inspection at layer 7 (think Palo Alto Networks). I want to see one of those white box Intel boxes push 20 gigabit of application level firewalled traffic. I highly doubt it. And I am also curious how you want to put OpenFlow to use here, when basically every flow would need to be forwarded to the Controller and passed on to the &amp;ldquo;OpenFlow Firewall&amp;rdquo; for inspection.</description>
     </item>
     
     <item>
       <title>Why hardware firewalls are the walking dead</title>
-      <link>https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead/</link>
+      <link>https://forwardingplane.net/blog/why-hardware-firewalls-are-the-walking-dead/</link>
       <pubDate>Mon, 18 Mar 2013 11:02:42 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead/</guid>
+      <guid>https://forwardingplane.net/blog/why-hardware-firewalls-are-the-walking-dead/</guid>
       <description>OK, maybe they&amp;rsquo;re not totally dead, but they&amp;rsquo;re being demoted. To the mail room. During the course of my career I&amp;rsquo;ve always had at least some responsibility for firewall and security devices. In those ~15 years, how these boxes are built and function has shifted. From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint.</description>
     </item>
     
     <item>
       <title>IPv6 Toolkit 1.3 fun - scan6</title>
-      <link>https://forwardingplane.net/post/ipv6-toolkit-1-3-fun-scan6/</link>
+      <link>https://forwardingplane.net/blog/ipv6-toolkit-1-3-fun-scan6/</link>
       <pubDate>Wed, 20 Feb 2013 10:53:38 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/ipv6-toolkit-1-3-fun-scan6/</guid>
+      <guid>https://forwardingplane.net/blog/ipv6-toolkit-1-3-fun-scan6/</guid>
       <description>Recently SI6 released the IPv6 Toolkit 1.3  This release is on the heels of this IETF draft  on IPv6 host scanning. It was long thought that scanning an IPv6 network was impossible. The address space was too large and reliably ascertaining the hosts from it would be too time consuming to even attempt. However, as Dr. Hans Zarkov says in the 1980 classic cult film of my youth, Flash Gordon, &amp;ldquo;You can&amp;rsquo;t beat the human spirit!</description>
     </item>
     
     <item>
       <title>Watch out, Gigamon (and others), Arista is bringing their A game</title>
-      <link>https://forwardingplane.net/post/watch-out-gigamon-and-others-arista-is-bringing-their-a-game-comments/</link>
+      <link>https://forwardingplane.net/blog/watch-out-gigamon-and-others-arista-is-bringing-their-a-game-comments/</link>
       <pubDate>Sat, 16 Feb 2013 03:11:20 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/watch-out-gigamon-and-others-arista-is-bringing-their-a-game-comments/</guid>
+      <guid>https://forwardingplane.net/blog/watch-out-gigamon-and-others-arista-is-bringing-their-a-game-comments/</guid>
       <description>Technology Short Take #30 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, storage, and servers - Mar 2, 2013
 [&amp;hellip;] Buraglio has a good post on the potential impact of Arista’s new DANZ functionality on tap aggregation solutions in the security market. It will be interesting to see how this shapes [&amp;hellip;] [Darrin Thomason]( &amp;ldquo;Darrin@thethomasons.org&amp;rdquo;) - Feb 6, 2013
 Great post&amp;hellip;this is just the beginning of what can be done with a highly extensible platform&amp;hellip;I am looking forward to other creative deployments that people come up with!</description>
@@ -399,19 +399,19 @@ Great post&amp;hellip;this is just the beginning of what can be done with a high
     
     <item>
       <title>Watch out, Gigamon (and others), Arista is bringing their A game</title>
-      <link>https://forwardingplane.net/post/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</link>
+      <link>https://forwardingplane.net/blog/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</link>
       <pubDate>Sat, 16 Feb 2013 03:11:20 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</guid>
+      <guid>https://forwardingplane.net/blog/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</guid>
       <description>It&amp;rsquo;s no secret that I&amp;rsquo;m a fan of the model Arista Networks is using to make gear and provide innovative services and products. In my opinion, they&amp;rsquo;re changing the landscape of campus and data center networking gear. I&amp;rsquo;m always a fan of the little guy trying to change the world and this falls under that category. For those that don&amp;rsquo;t know, Arista Networks is a &amp;ldquo;hardware&amp;rdquo; networking company that is using merchant silicon wrapped in their custom linux based operating system (which is very much like IOS).</description>
     </item>
     
     <item>
       <title>Identify and remedy problem IKE and eventd processes on Juniper SRX</title>
-      <link>https://forwardingplane.net/post/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx-comments/</link>
+      <link>https://forwardingplane.net/blog/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx-comments/</link>
       <pubDate>Mon, 04 Feb 2013 12:45:18 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx-comments/</guid>
+      <guid>https://forwardingplane.net/blog/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx-comments/</guid>
       <description>Nick Buraglio - Feb 4, 2013
 11.2R7.4. Soon to be upgraded to 11.4.x [Kelly mcdowell]( &amp;ldquo;ocdune@gmail.com&amp;rdquo;) - Feb 2, 2013
 What version of Junos? </description>
@@ -419,86 +419,86 @@ What version of Junos? </description>
     
     <item>
       <title>Identify and remedy problem IKE and eventd processes on Juniper SRX</title>
-      <link>https://forwardingplane.net/post/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/</link>
+      <link>https://forwardingplane.net/blog/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/</link>
       <pubDate>Mon, 04 Feb 2013 12:45:18 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/</guid>
+      <guid>https://forwardingplane.net/blog/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/</guid>
       <description>Recently we encountered a very strange behavior on an SRX 5800 cluster. The cluster, which is in active/active mode, started dropping OSPF adjacencies to it&amp;rsquo;s neighboring routing equipment, in this case, Juniper MX480 and Brocade/Foundry MLX8. Strange behavior indeed, since for us, these had been rock solid for around 2 years and we&amp;rsquo;d never seen this odd behavior before. Honestly, we started looking at the routers first since this was something the SRX has never done before.</description>
     </item>
     
     <item>
       <title>Sonicwall - Old dog learns [some] new tricks</title>
-      <link>https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks-comments/</link>
+      <link>https://forwardingplane.net/blog/sonicwall-old-dog-learns-some-new-tricks-comments/</link>
       <pubDate>Sat, 08 Dec 2012 00:00:26 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks-comments/</guid>
+      <guid>https://forwardingplane.net/blog/sonicwall-old-dog-learns-some-new-tricks-comments/</guid>
       <description>[Paul Leet]( &amp;ldquo;paul.leet@gmail.com&amp;rdquo;) - Dec 6, 2012
 Having worked on both and done POC for 5800 and Supermassive, if you enable any DPI function or SSL offload, the SRX chokes while the Supermassive hums along. There are only a couple configurations where the SRX has the SonicWALL beat. Check out Network testing and NSS labs results for independent testing. I can send them to you if you wish. /p Nick Buraglio - Dec 1, 2012</description>
     </item>
     
     <item>
       <title>Sonicwall - Old dog learns [some] new tricks</title>
-      <link>https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks-comments/</link>
+      <link>https://forwardingplane.net/blog/sonicwall-old-dog-learns-some-new-tricks-comments/</link>
       <pubDate>Sat, 08 Dec 2012 00:00:26 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks-comments/</guid>
+      <guid>https://forwardingplane.net/blog/sonicwall-old-dog-learns-some-new-tricks-comments/</guid>
       <description>[Paul Leet]( &amp;ldquo;paul.leet@gmail.com&amp;rdquo;) - Dec 6, 2012
 Having worked on both and done POC for 5800 and Supermassive, if you enable any DPI function or SSL offload, the SRX chokes while the Supermassive hums along. There are only a couple configurations where the SRX has the SonicWALL beat. Check out Network testing and NSS labs results for independent testing. I can send them to you if you wish. /p Nick Buraglio - Dec 1, 2012</description>
     </item>
     
     <item>
       <title>Sonicwall - Old dog learns [some] new tricks</title>
-      <link>https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks/</link>
+      <link>https://forwardingplane.net/blog/sonicwall-old-dog-learns-some-new-tricks/</link>
       <pubDate>Sat, 08 Dec 2012 00:00:26 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks/</guid>
+      <guid>https://forwardingplane.net/blog/sonicwall-old-dog-learns-some-new-tricks/</guid>
       <description>~12 years ago I had a drinking buddy that worked with me at the regional ISP. We had a lot in common, he had been an icon back in the didjits era of punk rock in Champaign Urbana and we had briefly been in a terrible band together. He introduced me to a dude that to this day I just knew as &amp;ldquo;Ravi Sonicwall&amp;rdquo;. He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying &amp;ldquo;when I&amp;rsquo;m in town, I buy the beers&amp;rdquo;).</description>
     </item>
     
     <item>
       <title>Sonicwall - Old dog learns [some] new tricks</title>
-      <link>https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks/</link>
+      <link>https://forwardingplane.net/blog/sonicwall-old-dog-learns-some-new-tricks/</link>
       <pubDate>Sat, 08 Dec 2012 00:00:26 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks/</guid>
+      <guid>https://forwardingplane.net/blog/sonicwall-old-dog-learns-some-new-tricks/</guid>
       <description>~12 years ago I had a drinking buddy that worked with me at the regional ISP. We had a lot in common, he had been an icon back in the didjits era of punk rock in Champaign Urbana and we had briefly been in a terrible band together. He introduced me to a dude that to this day I just knew as &amp;ldquo;Ravi Sonicwall&amp;rdquo;. He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying &amp;ldquo;when I&amp;rsquo;m in town, I buy the beers&amp;rdquo;).</description>
     </item>
     
     <item>
       <title>Using a Brocade MLXe as a replicator to an IDS</title>
-      <link>https://forwardingplane.net/post/using-a-brocade-mlxe-as-a-replicator-to-an-ids/</link>
+      <link>https://forwardingplane.net/blog/using-a-brocade-mlxe-as-a-replicator-to-an-ids/</link>
       <pubDate>Sun, 25 Nov 2012 17:26:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/using-a-brocade-mlxe-as-a-replicator-to-an-ids/</guid>
+      <guid>https://forwardingplane.net/blog/using-a-brocade-mlxe-as-a-replicator-to-an-ids/</guid>
       <description>Have you ever needed to replicate a lot of data transparently to an IDS without the use of a rack of optical taps? Not enough budget for a Gigamon or cPacket? Have a spare MLXe laying around? you&amp;rsquo;re in luck, we were in that boat too. Let me first preface this by saying that this would be fairly trivial using OpenFlow / SDN. That being said, we didn&amp;rsquo;t have the time to set that up, so this is what we came with.</description>
     </item>
     
     <item>
       <title>ftps (secure ftp) from the command line</title>
-      <link>https://forwardingplane.net/post/ftps-secure-ftp-from-the-command-line-comments/</link>
+      <link>https://forwardingplane.net/blog/ftps-secure-ftp-from-the-command-line-comments/</link>
       <pubDate>Tue, 04 Oct 2011 04:31:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/ftps-secure-ftp-from-the-command-line-comments/</guid>
+      <guid>https://forwardingplane.net/blog/ftps-secure-ftp-from-the-command-line-comments/</guid>
       <description>Nick Buraglio - Oct 2, 2011
 Blogger auto formatting is killing the &amp;lt; </description>
     </item>
     
     <item>
       <title>ftps (secure ftp) from the command line</title>
-      <link>https://forwardingplane.net/post/ftps-secure-ftp-from-the-command-line/</link>
+      <link>https://forwardingplane.net/blog/ftps-secure-ftp-from-the-command-line/</link>
       <pubDate>Tue, 04 Oct 2011 04:31:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/ftps-secure-ftp-from-the-command-line/</guid>
+      <guid>https://forwardingplane.net/blog/ftps-secure-ftp-from-the-command-line/</guid>
       <description>I have recently enabled Duo Security for many of my personal services, and I can&amp;rsquo;t recommend them enough. Personal two factor authentication is very useful and really powerful. It works on my iPhone and I have yet to run into any real issues&amp;hellip;.except for one. I can&amp;rsquo;t use automation to scp or sftp anything anymore and keep my two factor auth working in a way I&amp;rsquo;m comfortable with.
 Enter ftps. FTP is a terrible, yet immensely useful protocol.</description>
     </item>
     
     <item>
       <title>Black Hole routing</title>
-      <link>https://forwardingplane.net/post/black-hole-routing-comments/</link>
+      <link>https://forwardingplane.net/blog/black-hole-routing-comments/</link>
       <pubDate>Tue, 04 Oct 2011 01:00:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/black-hole-routing-comments/</guid>
+      <guid>https://forwardingplane.net/blog/black-hole-routing-comments/</guid>
       <description>Timmy.Norris - Nov 4, 2011
 Great tutorial on black hole routing, I learned a lot from it. Thanks.
 us vpn erwicker - Feb 5, 2012
@@ -508,10 +508,10 @@ portable wireless router </description>
     
     <item>
       <title>Black Hole routing</title>
-      <link>https://forwardingplane.net/post/black-hole-routing/</link>
+      <link>https://forwardingplane.net/blog/black-hole-routing/</link>
       <pubDate>Tue, 04 Oct 2011 01:00:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/black-hole-routing/</guid>
+      <guid>https://forwardingplane.net/blog/black-hole-routing/</guid>
       <description>It&amp;rsquo;s no secret or ground breaking area to do black hole routing.
 ISPs and NSPs have been doing it forever to allow for a very low cost, very scriptable and very effective way to wholesale block a layer3 address. However, it can seem like a bit of a black box to anyone who has never done it.
 I recently did some work spinning this up in a good sized network that it didn&amp;rsquo;t currently exist, and remembered how monumentally useful (and simple) it actually is.</description>
@@ -519,10 +519,10 @@ I recently did some work spinning this up in a good sized network that it didn&a
     
     <item>
       <title>Upgrading a new SRX 3600</title>
-      <link>https://forwardingplane.net/post/upgrading-a-new-srx-3600/</link>
+      <link>https://forwardingplane.net/blog/upgrading-a-new-srx-3600/</link>
       <pubDate>Mon, 07 Feb 2011 22:29:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/upgrading-a-new-srx-3600/</guid>
+      <guid>https://forwardingplane.net/blog/upgrading-a-new-srx-3600/</guid>
       <description>We are putting a few new SRX 3600 clusters into production soon, and we&amp;rsquo;ve had them for about 6 months in boxes. This presented a fairly significant issue, one that I didn&amp;rsquo;t think about until it smacked me in the face.
 The code on these boxes was old. Very old. JunOS 9.2 old.
 No problem, lets just upgrade them to 10.4R something.
@@ -532,29 +532,29 @@ the code that shipped on these boxes was so old, and we waited so long to upgrad
     
     <item>
       <title>Moving JunOS code between SRX cluster nodes</title>
-      <link>https://forwardingplane.net/post/moving-junos-code-between-srx-cluster-nodes/</link>
+      <link>https://forwardingplane.net/blog/moving-junos-code-between-srx-cluster-nodes/</link>
       <pubDate>Sat, 08 Jan 2011 02:11:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/moving-junos-code-between-srx-cluster-nodes/</guid>
+      <guid>https://forwardingplane.net/blog/moving-junos-code-between-srx-cluster-nodes/</guid>
       <description>Regardless of the fact that there is now a good ISSU-like service for the SRX (named Low-Impact Cluster Upgrade; LICU for short), if you&amp;rsquo;re upgrading your Active/Active cluster from something that isn&amp;rsquo;t 10.4, or if you just aren&amp;rsquo;t comfortable with how baked LICU actually is, you&amp;rsquo;ll need to know how to move the junos code around. This is easy if you have physical access to both nodes, but for those that have.</description>
     </item>
     
     <item>
       <title>Enabling IPv6 on Juniper SRX 5800 cluster</title>
-      <link>https://forwardingplane.net/post/enabling-ipv6-on-juniper-srx-5800-cluster/</link>
+      <link>https://forwardingplane.net/blog/enabling-ipv6-on-juniper-srx-5800-cluster/</link>
       <pubDate>Wed, 20 Oct 2010 21:59:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/enabling-ipv6-on-juniper-srx-5800-cluster/</guid>
+      <guid>https://forwardingplane.net/blog/enabling-ipv6-on-juniper-srx-5800-cluster/</guid>
       <description>After enabling the IPv6 Flow based processing, we decided to get rolling with making our IPv6 path congruent with everything else (IPv4 unicast and multicast). With all of the other things we had going on, we thought this would be a low hanging fruit that would be easily plucked from the routing tree. Well, a minor oversight on our part caught us by surprise.
 According to this handy dandy matrix for JunOS 10.</description>
     </item>
     
     <item>
       <title>Multicast through Juniper SRX 5800</title>
-      <link>https://forwardingplane.net/post/multicast-through-juniper-srx-5800-comments/</link>
+      <link>https://forwardingplane.net/blog/multicast-through-juniper-srx-5800-comments/</link>
       <pubDate>Sun, 17 Oct 2010 23:56:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/multicast-through-juniper-srx-5800-comments/</guid>
+      <guid>https://forwardingplane.net/blog/multicast-through-juniper-srx-5800-comments/</guid>
       <description>D.C. - Sep 4, 2011
 Question&amp;hellip;was this enabled on the cluster? If so are you enabling PIM/IGMP on the reth interfaces or just on the physical ones?
 Thanks,
@@ -565,10 +565,10 @@ Thanks. I&amp;rsquo;am sure our professional services team can take this knowled
     
     <item>
       <title>Multicast through Juniper SRX 5800</title>
-      <link>https://forwardingplane.net/post/multicast-through-juniper-srx-5800/</link>
+      <link>https://forwardingplane.net/blog/multicast-through-juniper-srx-5800/</link>
       <pubDate>Sun, 17 Oct 2010 23:56:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/multicast-through-juniper-srx-5800/</guid>
+      <guid>https://forwardingplane.net/blog/multicast-through-juniper-srx-5800/</guid>
       <description>We&amp;rsquo;ve been working toward a more simplified model for our network path, and in doing so, we desired a congruent path for IPv6, IPv4 Multicast and IPv4 Unicast.
 However, this is actually pretty hard when dealing with the link speeds, amounts of traffic and flows that we do, in conjunction with Firewall&amp;hellip;..and IDP/IPS&amp;hellip;
 Lots of research, reading and testing was done.
@@ -577,10 +577,10 @@ Juniper SRX series has full support for 90% of this, with IPv6 IDP coming in Q2 
     
     <item>
       <title>SRX IPv6 flow based processing</title>
-      <link>https://forwardingplane.net/post/srx-ipv6-flow-based-processing-comments/</link>
+      <link>https://forwardingplane.net/blog/srx-ipv6-flow-based-processing-comments/</link>
       <pubDate>Thu, 16 Sep 2010 17:18:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/srx-ipv6-flow-based-processing-comments/</guid>
+      <guid>https://forwardingplane.net/blog/srx-ipv6-flow-based-processing-comments/</guid>
       <description>Nick Buraglio - Sep 6, 2010
 We&amp;rsquo;ve found a at least one issue after this change. Apparently, our IKE ALG is no longer functioning as it was before.
 I&amp;rsquo;m not terribly confident in the SRX ALG implementations, so I&amp;rsquo;ll be poking at juniper a but about that as I get time. they&amp;rsquo;ve been very responsive to our questions and issues so ar, I expect that this will either be fixed ASAP or pointed out as a problem on our end.</description>
@@ -588,48 +588,48 @@ I&amp;rsquo;m not terribly confident in the SRX ALG implementations, so I&amp;rs
     
     <item>
       <title>SRX IPv6 flow based processing</title>
-      <link>https://forwardingplane.net/post/srx-ipv6-flow-based-processing/</link>
+      <link>https://forwardingplane.net/blog/srx-ipv6-flow-based-processing/</link>
       <pubDate>Thu, 16 Sep 2010 17:18:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/srx-ipv6-flow-based-processing/</guid>
+      <guid>https://forwardingplane.net/blog/srx-ipv6-flow-based-processing/</guid>
       <description>One of our plans is to consolidate as many of the egress trafic paths as possible. To facilitate this, we had to do some things like buy carrier grade equipment. Enter the SRX 5800. No one really does IPS/IDP+Firewall quite like the SRX. After extensive research and exhaustive hands on testing with quite a bit of equipment, that is what we settled on. Even the IBM &amp;ldquo;technical evangelist&amp;rdquo; guy that came to talk to us said &amp;ldquo;No one really does it like they do&amp;rdquo; when referring to Juniper and 10G firewall/IPS.</description>
     </item>
     
     <item>
       <title>Updating SRX IDP signatures</title>
-      <link>https://forwardingplane.net/post/updating-srx-idp-signatures-comments/</link>
+      <link>https://forwardingplane.net/blog/updating-srx-idp-signatures-comments/</link>
       <pubDate>Thu, 02 Sep 2010 18:16:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/updating-srx-idp-signatures-comments/</guid>
+      <guid>https://forwardingplane.net/blog/updating-srx-idp-signatures-comments/</guid>
       <description>Ken - Aug 4, 2011
 Nick - a question for you regarding SRX IDP signature database updates on a Cluster. The &amp;lsquo;successful&amp;rsquo; message you list above indicates both nodes will be updated, however, my understanding is that only the Primary node will be updated,not the Secondary node and that it is necessary to fail over the Primary function and repeat the update procedure in order to update both nodes. The RE is not running on the secondary node, which is the reason for this procedure, as I understand it.</description>
     </item>
     
     <item>
       <title>Updating SRX IDP signatures</title>
-      <link>https://forwardingplane.net/post/updating-srx-idp-signatures/</link>
+      <link>https://forwardingplane.net/blog/updating-srx-idp-signatures/</link>
       <pubDate>Thu, 02 Sep 2010 18:16:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/updating-srx-idp-signatures/</guid>
+      <guid>https://forwardingplane.net/blog/updating-srx-idp-signatures/</guid>
       <description>*IDP signatures need to be updated often. On the SRX platform, there is also the notion of a &amp;ldquo;detector&amp;rdquo;. This also meeds to be updated on a regular basis. it seems. Over the past few weeks, we&amp;rsquo;ve needed to update the IDP signatures and detector on our SRX 5800 cluster several times, and the results have normally been fine.
 Updating the IDP signatures has never been that big of a problem (see postings about updating stuff on cluster nodes).</description>
     </item>
     
     <item>
       <title>SRX Timeouts and the differences with Netscreen</title>
-      <link>https://forwardingplane.net/post/srx-timeouts-and-the-differences-with-netscreen/</link>
+      <link>https://forwardingplane.net/blog/srx-timeouts-and-the-differences-with-netscreen/</link>
       <pubDate>Wed, 01 Sep 2010 04:05:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/srx-timeouts-and-the-differences-with-netscreen/</guid>
+      <guid>https://forwardingplane.net/blog/srx-timeouts-and-the-differences-with-netscreen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Juniper SRX Cluster</title>
-      <link>https://forwardingplane.net/post/juniper-srx-cluster/</link>
+      <link>https://forwardingplane.net/blog/juniper-srx-cluster/</link>
       <pubDate>Wed, 01 Sep 2010 04:04:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/juniper-srx-cluster/</guid>
+      <guid>https://forwardingplane.net/blog/juniper-srx-cluster/</guid>
       <description>I have had the opportunity to work pretty extensively on the Juniper SRX firewall/IDS platform over the last few months. In doing so, I&amp;rsquo;ve found many &amp;ldquo;gotchas&amp;rdquo; the hard way.
 Here are a few that I&amp;rsquo;ve found so far:
 Clustering is a beast in and of itself. I think it needs a bit more polishing, but it could be that we just need to refine our design.
@@ -638,10 +638,10 @@ On the SRX 650 it works, but you must be on the right code version (I got it to 
     
     <item>
       <title>SRX ALGs</title>
-      <link>https://forwardingplane.net/post/srx-algs/</link>
+      <link>https://forwardingplane.net/blog/srx-algs/</link>
       <pubDate>Wed, 01 Sep 2010 04:04:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/srx-algs/</guid>
+      <guid>https://forwardingplane.net/blog/srx-algs/</guid>
       <description></description>
     </item>
     

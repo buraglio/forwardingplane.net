@@ -1,0 +1,477 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "posts",
+        "name" : "A missing link in small MPLS, 10G devices.",
+        "headline" : "A missing link in small MPLS, 10G devices.",
+        "description" : "Lately I\x26rsquo;ve been lamenting the fact that there seems to be a lack of options in a very specific product level. Lets say you have a network that looks like this: Right Away you\x26rsquo;re limited since you need MPLS and more than 2 10G interfaces. Even more so if you require full support for IPv6 and ISIS. If budget is of any concern, you\x26rsquo;re in real trouble. For many, Cisco pricing and smartnet is potentially going to exclude anything reasonable from them.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-03-29 04:43:17 \x2b0000 \x2b0000",
+        "dateModified" : "2013-03-29 04:43:17 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/2013\/03\/a-missing-link-in-small-mpls-10g-devices.\/",
+        "wordCount" : "578",
+        "keywords" : [ "IPv6","Musings","Routing","Blog" ]
+    }
+    </script>
+        
+            <title>A missing link in small MPLS, 10G devices. - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A missing link in small MPLS, 10G devices."/>
+<meta name="twitter:description" content="Lately I&rsquo;ve been lamenting the fact that there seems to be a lack of options in a very specific product level. Lets say you have a network that looks like this: Right Away you&rsquo;re limited since you need MPLS and more than 2 10G interfaces. Even more so if you require full support for IPv6 and ISIS. If budget is of any concern, you&rsquo;re in real trouble. For many, Cisco pricing and smartnet is potentially going to exclude anything reasonable from them."/>
+
+        <meta property="og:title" content="A missing link in small MPLS, 10G devices." />
+<meta property="og:description" content="Lately I&rsquo;ve been lamenting the fact that there seems to be a lack of options in a very specific product level. Lets say you have a network that looks like this: Right Away you&rsquo;re limited since you need MPLS and more than 2 10G interfaces. Even more so if you require full support for IPv6 and ISIS. If budget is of any concern, you&rsquo;re in real trouble. For many, Cisco pricing and smartnet is potentially going to exclude anything reasonable from them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./" />
+<meta property="article:published_time" content="2013-03-29T04:43:17+00:00" />
+<meta property="article:modified_time" content="2013-03-29T04:43:17+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="A missing link in small MPLS, 10G devices.">
+<meta itemprop="description" content="Lately I&rsquo;ve been lamenting the fact that there seems to be a lack of options in a very specific product level. Lets say you have a network that looks like this: Right Away you&rsquo;re limited since you need MPLS and more than 2 10G interfaces. Even more so if you require full support for IPv6 and ISIS. If budget is of any concern, you&rsquo;re in real trouble. For many, Cisco pricing and smartnet is potentially going to exclude anything reasonable from them.">
+
+
+<meta itemprop="datePublished" content="2013-03-29T04:43:17&#43;00:00" />
+<meta itemprop="dateModified" content="2013-03-29T04:43:17&#43;00:00" />
+<meta itemprop="wordCount" content="578">
+
+
+
+<meta itemprop="keywords" content="IPv6,Musings,Routing," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/posts/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/posts/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./">A missing link in small MPLS, 10G devices.</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>Lately I&rsquo;ve been lamenting the fact that there seems to be a lack of options in a very specific product level.  Lets say you have a network that looks like this:   <a href="http://www.forwardingplane.net/wp-content/uploads/2013/03/10G-Bldg1.jpg"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/03/10G-Bldg1.jpg" alt="10G-Bldg" /></a>Right Away you&rsquo;re limited since you need MPLS and more than 2 10G interfaces. Even more so if you require full support for IPv6 and ISIS. If budget is of any concern, you&rsquo;re in real trouble. For many, Cisco pricing and smartnet is potentially going to exclude anything reasonable from them.  There are a substantial amount of non-enterprise folks out there that can&rsquo;t afford the significant Cisco price tag but need the features.  I am here to say, this is a problem.  The attitude of &ldquo;if you want the best you have to pay for it&rdquo; doesn&rsquo;t apply.  There is a real need for viable alternatives, not just because we need them, but because competition is a good thing for everyone. Juniper has the MX80, but it has a carrier grade price tag as well.  Juniper has limited MPLS support on the EX series, but the EX4200, which is arguably the most tried and true, has only 2 ports of 10G and, as mentioned, limited MPLS support.  The EX4500 is a tad better with its huge amount of 10G ports, but it has the same limited MPLS support and a crippled ARP and FIB table.  The 4550 with it&rsquo;s single PFE sounds exciting but it has even less. Then you have the Brocade CES/R.  It is close.  The newer version has  4 x 10G ports, MPLS support (with a license), more appropriately priced support and, as a value add, very good OpenFlow support.  It is still limited as far as 10G scalability, so adding more access switches could be problematic. HP has some great products in the Procurve series.  They&rsquo;re inexpensive, rock solid and packed with features. Unfortunately, the ones that meet the port density are fairly good sized chassis and none of them have MPLS.  Now, they do have an intriguing line up in the H3C series.  I believe there may be an option there, however, I have no idea on pricing and have yet to see one actually do MPLS (although they claim support).  I&rsquo;m cautiously optimistic. Then you have Alcatel Lucent.   They do MPLS, they&rsquo;re carrier devices.  They offer a 1U ( (<a href="http://www.alcatel-lucent.com/products/7210-service-access-switch">7210 Service Access Switch</a>) device but I have no idea on cost and I&rsquo;m still looking for 10G port density.  I suspect it is very reasonable.  Their <a href="http://www.forwardingplane.net/2010/12/alcatel-lucent-rancid-scripts/" title="Alcatel Lucent RANCID scripts">CLI is a bit different</a> but they&rsquo;re very robust devices.  I&rsquo;ve not used any but the 7750, so I cant comment as to how the smaller ones look.  It&rsquo;s a possibility if it has the 10G ports. Arista is very close but they fall short on the MPLS support.   The primary take away from this commentary is that there are not a lot of options that meet the following criteria:</p>
+
+<ul>
+<li>1-2U</li>
+<li>&gt; 4 10G ports</li>
+<li>MPLS</li>
+<li>Dual power supplies</li>
+<li>&gt; 16,000/4,000 IPv4/IPv6 routes</li>
+<li>IPv6 support</li>
+<li>ISIS</li>
+<li>40G uplink</li>
+<li>OpenFlow support or roadmap</li>
+<li><strong>Reasonably priced</strong></li>
+</ul>
+
+<p>I keep coming back to the old adage of &ldquo;Cheap, Fast, Reliable.  Pick Two&rdquo; and it drives me crazy.  We should have more options but I don&rsquo;t think we do.  I would absolutely <strong>love</strong> to be wrong, but every time I look at this I feel like I am picking out a cell phone plan.  The affordable ones are never quite enough and the plan above is overkill and too expensive.</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+
+e remembered (seconds) smart-optimize-timer Path optimization interval after a link traversed by the path goes down standby Keep backup paths in continuous standby &gt; static-label-switched-path Static label-switched path &gt; statistics Collect statistics for signaled label-switched paths &gt; traceoptions Trace options for MPLS traffic-engineering Protocols to perform traffic engineering &gt; transit-lsp-association Transit label switch path assoication ultimate-hop-popping Request ultimate hop popping from egress [edit protocols]
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-03-30 20:51:27">Mar 6, 2013</time></p>
+
+<p>That is great info. I&rsquo;d love to hear more about your deployment because honestly the qfx didn&rsquo;t even come onto my radar since my experience was strictly within qfabric. I agree, &ldquo;buy a router&rdquo; is a ridiculous statement to hear when you talk about a 380 building campus. 300+ MX80s? Riiiiight. Let me put those in the back of my company provided Maserati and drive them out to install.
+<hr /></p>
+
+<p>[Duane]( &ldquo;Duaneogrant@gmail.com&rdquo;) - <time datetime="2013-03-30 20:22:19">Mar 6, 2013</time></p>
+
+<p>Hi Nick, I didn&rsquo;t mean to suggest that you use the box in a fabric but rather standalone. Qfabric uses MPLS and ISIS under the hood to accomplish the qfabric magic, so I&rsquo;m hoping that fact coupled with the trident chips ability to deal with multiple tags might result in pretty complete MPLS support. The asic in the EX has a single tag limitation. i&rsquo;ve asked my SE about formal MPLS support and he&rsquo;s going to be talking to the BU next week. Have a look at the control plane on these things: 3Gb of RAM and a 12 core 1.2Ghz processor. That&rsquo;s quite a bit of control plane for a TOR&hellip; I&rsquo;m using the qfx in a relatively complicated ip edge roll. It&rsquo;s still cabled up to the Ixia, but so far, so good. When i ask some other vendors about specific features, they tell me to buy a router to do that job. Given the port counts and speeds that i&rsquo;m talking about, that pushes me into a pretty big box at 10X the cost. if i get around to looking at the qfx with MPLS enabled, i&rsquo;ll be sure to let you know. &ndash;Duane
+<hr /></p>
+
+<p>[Duane]( &ldquo;Duaneogrant@gmail.com&rdquo;) - <time datetime="2013-06-23 18:54:20">Jun 0, 2013</time></p>
+
+<p>Hi Nick, We&rsquo;ve got ex4550s running as well and they are nice boxes too (if you don&rsquo;t need mpls). I had to upgrade to the latest release to get DOM working and stop some spurious PSU messages from being sent, other than that, pretty smooth sailing. RE: Ex9200, there are 3 sizes, and they equate to mx240, mx480 and mx960. That said, the prices tag (and features) do not match the MX. These boxes are tailor made for a use case I have that doesn&rsquo;t require fancy hqos but does require some deep buffers. The REs in the box are 16G of memory and a quad core Intel chip for SDN uses. I don&rsquo;t need that today, but for the price, it makes the box even more useful for me as i look around the network.
+<hr /></p>
+
+<p><a href="http://www.netcraftsmen.net/about-us/bios/staff-articles-and-blogs/pete-welcher.html" title="pjw@netcraftsmen.net">Pete Welcher</a> - <time datetime="2013-04-18 18:27:36">Apr 4, 2013</time></p>
+
+<p>I&rsquo;ve thought along similar lines for quite a while, mostly re Cisco. It might be cost, it might be turf defense by the 6500 team (lots of internal clout until recently). But it might just be positioning &ndash; not anticipating a use case like this, and/or not having models with sufficient CPU / RAM / forwarding chips / whatever. Its a small enough market (?) that engineering something specifically for it is probably not cost effective? The use case I&rsquo;ve seen is small rural provider networks, where a Cisco 6500 costs too much. And where folks want MPLS to eventually scale up better than L2 techniques do. The ME series was perennially overly costly and an order of magnitude slow. 3560-G partially worked in the 1 G edge / 10 G core space for a while. Using VRF Lite, not MPLS.
+<hr /></p>
+
+<p>[Duaneo]( &ldquo;Duaneogrant@gmail.com&rdquo;) - <time datetime="2013-06-23 10:24:53">Jun 0, 2013</time></p>
+
+<p>Hi Nick, After asking my SE a couple of times, the answer I received was, &ldquo;it works, but its not officially supported and I&rsquo;m not sure it&rsquo;s gonna be.&rdquo; That said, have you had a look at the ex9200? It seems to have the mpls support you need and a 32 port 10ge card as well. The box come with a huge RE, mostly to support SDN I suspect and a pretty modest price tag and support costs. Compared to our 7600s and asr9k, the 9200 is a compelling buy if you can make do with the feature set. For fancy hqos, we&rsquo;re stuck with the 9k or mx as the advanced features just aren&rsquo;t there and we&rsquo;re not buying new 7600s. I&rsquo;m hearing some interesting things about the next gen qfx box as well, which is due out later this year.
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-06-23 12:02:45">Jun 0, 2013</time></p>
+
+<p>Check out the ex4550 running 12.3. It has a larger route / TCAM table. The ex9200 is essentially an mx960, and while it does have the ports it is far too expensive and huge or what we need.
+<hr /></p>
+
+<p><a href="http://thenetworksherpa.com" title="johnharr.ie@gmail.com">John Harrington (@networksherpa)</a> - <time datetime="2013-04-11 23:27:49">Apr 4, 2013</time></p>
+
+<p>I agree with Duane. The QFX is a rocking standalone box, and I believe MPLS is a committed feature.
+<hr /></p>
+
+<p>[Jawaid Bazyar]( &ldquo;jawaid.bazyar@forethought.net&rdquo;) - <time datetime="2015-05-24 20:38:00">May 0, 2015</time></p>
+
+<p>Check out Telco Systems, www.telco.com. We&rsquo;ve been using their inexpensive MPLS for a couple years.
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net/" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2015-06-20 08:15:00">Jun 6, 2015</time></p>
+
+<p>I&rsquo;ve actually seen these in production but never actually used one myself. I&rsquo;ll give them another look, thanks!
+<hr /></p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

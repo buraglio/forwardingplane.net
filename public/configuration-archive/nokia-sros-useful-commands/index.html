@@ -1,0 +1,407 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "configuration-archive",
+        "name" : "Nokia SROS useful commands",
+        "headline" : "Nokia SROS useful commands",
+        "description" : "Nokia (formerly Alcatel-Lucent, formerly Timetra) have an extremely robust routing platform, but it has some notable differences if you\x26#8217;re coming from a vendor such as Cisco or Juniper (or any vendor platform in the enterprise space, really). Things like \x26#8220;VLANs\x26#8221; don\x26#8217;t really exist, as this is more of a metro \/ carrier \/ customer provisioning style device, so modular concepts are expected and baked into the OS at the deepest layers, unlike many of the other vendor platforms that support it but it feels like an add-in or addendum to the base routing instance.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-02-19 08:30:08 -0600 CST",
+        "dateModified" : "2019-02-19 08:30:08 -0600 CST",
+        "url" : "https:\/\/forwardingplane.net\/configuration-archive\/nokia-sros-useful-commands\/",
+        "wordCount" : "415",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            <title>Nokia SROS useful commands - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+            <meta name="author" content="Nick Buraglio">
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nokia SROS useful commands"/>
+<meta name="twitter:description" content="Nokia (formerly Alcatel-Lucent, formerly Timetra) have an extremely robust routing platform, but it has some notable differences if you&#8217;re coming from a vendor such as Cisco or Juniper (or any vendor platform in the enterprise space, really). Things like &#8220;VLANs&#8221; don&#8217;t really exist, as this is more of a metro / carrier / customer provisioning style device, so modular concepts are expected and baked into the OS at the deepest layers, unlike many of the other vendor platforms that support it but it feels like an add-in or addendum to the base routing instance."/>
+
+        <meta property="og:title" content="Nokia SROS useful commands" />
+<meta property="og:description" content="Nokia (formerly Alcatel-Lucent, formerly Timetra) have an extremely robust routing platform, but it has some notable differences if you&#8217;re coming from a vendor such as Cisco or Juniper (or any vendor platform in the enterprise space, really). Things like &#8220;VLANs&#8221; don&#8217;t really exist, as this is more of a metro / carrier / customer provisioning style device, so modular concepts are expected and baked into the OS at the deepest layers, unlike many of the other vendor platforms that support it but it feels like an add-in or addendum to the base routing instance." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/configuration-archive/nokia-sros-useful-commands/" />
+<meta property="article:published_time" content="2019-02-19T08:30:08-06:00" />
+<meta property="article:modified_time" content="2019-02-19T08:30:08-06:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Nokia SROS useful commands">
+<meta itemprop="description" content="Nokia (formerly Alcatel-Lucent, formerly Timetra) have an extremely robust routing platform, but it has some notable differences if you&#8217;re coming from a vendor such as Cisco or Juniper (or any vendor platform in the enterprise space, really). Things like &#8220;VLANs&#8221; don&#8217;t really exist, as this is more of a metro / carrier / customer provisioning style device, so modular concepts are expected and baked into the OS at the deepest layers, unlike many of the other vendor platforms that support it but it feels like an add-in or addendum to the base routing instance.">
+
+
+<meta itemprop="datePublished" content="2019-02-19T08:30:08-06:00" />
+<meta itemprop="dateModified" content="2019-02-19T08:30:08-06:00" />
+<meta itemprop="wordCount" content="415">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/posts/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/posts/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/configuration-archive/nokia-sros-useful-commands/">Nokia SROS useful commands</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>Nokia (formerly Alcatel-Lucent, formerly Timetra) have an extremely robust routing platform, but it has some notable differences if you&#8217;re coming from a vendor such as Cisco or Juniper (or any vendor platform in the enterprise space, really). Things like &#8220;VLANs&#8221; don&#8217;t really exist, as this is more of a metro / carrier / customer provisioning style device, so modular concepts are expected and baked into the OS at the deepest layers, unlike many of the other vendor platforms that support it but it feels like an add-in or addendum to the base routing instance. Here are a few useful commands that I threw together when I was learning SROS. As Nokia has begun rebuilding the SROS CLI to be less of a one-off, these will become less important, but until SROS is totally gone, someone will need to know them.</p>
+
+<p>Show all installed line cards</p>
+
+<pre class="wp-block-preformatted">show card</pre>
+
+<p>Contextual configuration display. From anywhere in the hierarchy, to show that sections configuration simply type</p>
+
+<pre class="wp-block-preformatted">info</pre>
+
+<p>To ascertain the service ID of a given SAP (service access point)</p>
+
+<pre class="wp-block-preformatted">show service sap-using</pre>
+
+<p>Similar to a juniper rollback compare, the SROS environment keeps candidate configurations and they can by compared, or diff&#8217;d to the running configuration. This is super useful.</p>
+
+<pre class="wp-block-preformatted">admin rollback compare active-cfg to latest-rb</pre>
+
+<p>Also similar to juniper, it is possible to monitor the statistics of a given port in near real time</p>
+
+<pre class="wp-block-preformatted">monitor port 3/2/1 interval 3 repeat 999 rate</pre>
+
+<p>SROS is an MPLS powerhouse, knowing how to look at the LSPs is pretty critical</p>
+
+<pre class="wp-block-preformatted">show router mpls lsp terminate <br />show router mpls lsp transit <br />show router mpls lsp<br />show service id &lt;vpls-id&gt; all<br />show service id &lt;vpls-id&gt; fdb detail </pre>
+
+<p>VPRN commands</p>
+
+<pre class="wp-block-preformatted">show port &lt;port&gt; associations <br />show service id &lt;vprn-id&gt; all <br />show router &lt;vprn-id&gt; interface <br />show router &lt;vprn-id&gt; bgp summary <br />show router &lt;vprn-id&gt; route-table <br />show router &lt;vprn-id&gt; route-table protocol bgp-vpn <br />show router &lt;vprn-id&gt; route-table &lt;ip-address&gt; <br />show router &lt;vprn-id&gt; bgp routes &lt;ip-prefix&gt;/&lt;net-size&gt; detail <br />show router &lt;vprn-id&gt; bgp next-hop <br />show router &lt;vprn-id&gt; bgp neighbor &lt;ip-address&gt; received-routes <br />show router &lt;vprn-id&gt; bgp neighbor &lt;ip-address&gt; advertised-routes <br />oam vprn-ping &lt;vprn-id&gt; source &lt;ip-address&gt; destination &lt;ip-address&gt; <br />oam vprn-trace &lt;vprn-id&gt; source &lt;ip-address&gt; destination &lt;ip-address&gt; <br /></pre>
+
+<p>Useful BGP commands</p>
+
+<pre class="wp-block-preformatted">show router bgp summary&nbsp; <br />show router bgp neighbor &lt;neighbor&gt; received-routes &lt;ipv6&gt;&nbsp; </pre>
+
+<p>Showing logs</p>
+
+<pre class="wp-block-preformatted">show log log-id &lt;id&gt;<br />show log log-id 99<br />show log event-control<br /></pre>
+
+<p>Showing environmentals</p>
+
+<pre class="wp-block-preformatted">show chassis environment [power-supply]<br />show router interface [detail] <br />show port&nbsp;&lt;port&gt;&nbsp;optical</pre>
+
+<p>Showing and saving the configuration</p>
+
+<pre class="wp-block-preformatted">admin display-config<br />admin save<br />admin save rollback</pre>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-1608" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/nokia-sros-useful-commands/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/nokia-sros-useful-commands/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/nokia-sros-useful-commands/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-1608" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/nokia-sros-useful-commands/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-1608" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/nokia-sros-useful-commands/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/nokia-sros-useful-commands/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/nokia-sros-useful-commands/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-1608" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/nokia-sros-useful-commands/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/nokia-sros-useful-commands/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

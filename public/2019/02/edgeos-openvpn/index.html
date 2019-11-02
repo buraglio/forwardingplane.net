@@ -1,0 +1,496 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "posts",
+        "name" : "EdgeOS OpenVPN",
+        "headline" : "EdgeOS OpenVPN",
+        "description" : "OpenVPN is a great technology but can be a bit of a bear to configure. A large part of the complexity with OpenVPN is the certificates, many are put off my them and for good reason. They can be confusing and hard to follow. The certificates can be generated off box pretty easily and that\x26rsquo;s how I tend to do it. This configuration should work on both EdgeMAX and Unifi USG devices, although the latter will require some additional work to make it persist across provisioning events.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-02-18 20:05:37 \x2b0000 \x2b0000",
+        "dateModified" : "2019-02-18 20:05:37 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/2019\/02\/edgeos-openvpn\/",
+        "wordCount" : "1011",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            <title>EdgeOS OpenVPN - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="EdgeOS OpenVPN"/>
+<meta name="twitter:description" content="OpenVPN is a great technology but can be a bit of a bear to configure. A large part of the complexity with OpenVPN is the certificates, many are put off my them and for good reason. They can be confusing and hard to follow. The certificates can be generated off box pretty easily and that&rsquo;s how I tend to do it. This configuration should work on both EdgeMAX and Unifi USG devices, although the latter will require some additional work to make it persist across provisioning events."/>
+
+        <meta property="og:title" content="EdgeOS OpenVPN" />
+<meta property="og:description" content="OpenVPN is a great technology but can be a bit of a bear to configure. A large part of the complexity with OpenVPN is the certificates, many are put off my them and for good reason. They can be confusing and hard to follow. The certificates can be generated off box pretty easily and that&rsquo;s how I tend to do it. This configuration should work on both EdgeMAX and Unifi USG devices, although the latter will require some additional work to make it persist across provisioning events." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/2019/02/edgeos-openvpn/" />
+<meta property="article:published_time" content="2019-02-18T20:05:37+00:00" />
+<meta property="article:modified_time" content="2019-02-18T20:05:37+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="EdgeOS OpenVPN">
+<meta itemprop="description" content="OpenVPN is a great technology but can be a bit of a bear to configure. A large part of the complexity with OpenVPN is the certificates, many are put off my them and for good reason. They can be confusing and hard to follow. The certificates can be generated off box pretty easily and that&rsquo;s how I tend to do it. This configuration should work on both EdgeMAX and Unifi USG devices, although the latter will require some additional work to make it persist across provisioning events.">
+
+
+<meta itemprop="datePublished" content="2019-02-18T20:05:37&#43;00:00" />
+<meta itemprop="dateModified" content="2019-02-18T20:05:37&#43;00:00" />
+<meta itemprop="wordCount" content="1011">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/posts/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/posts/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/2019/02/edgeos-openvpn/">EdgeOS OpenVPN</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>OpenVPN is a great technology but can be a bit of a bear to configure. A large part of the complexity with OpenVPN is the certificates, many are put off my them and for good reason. They can be confusing and hard to follow. The certificates can be generated off box pretty easily and that&rsquo;s how I tend to do it. This configuration should work on both <a href="https://www.ui.com/products/#edgemax">EdgeMAX</a> and <a href="https://www.ui.com/unifi-routing/unifi-security-gateway-pro-4/">Unifi USG</a> devices, although the latter will require some additional work to make it persist across provisioning events.</p>
+
+<p>On the linux/mac/unix host:</p>
+
+<pre><code>cd /usr/share/easy-rsa   
+./build-ca
+</code></pre>
+
+<p>The following is the output from a test run, you will need some information or be willing to make it up.</p>
+
+<pre><code> Generating a 2048 bit RSA private key  
+ ……………+++++  
+ …………………+++++  
+ writing new private key to 'ca.key'  
+ You are about to be asked to enter information that will be incorporated  
+ into your certificate request.  
+ What you are about to enter is what is called a Distinguished Name or a DN.  
+ There are quite a few fields but you can leave some blank  
+ For some fields there will be a default value,  
+ If you enter '.', the field will be left blank.  
+ Country Name (2 letter code) \[US\]:US  
+ State or Province Name (full name) \[CA\]:IL  
+ Locality Name (eg, city) \[SanFrancisco\]:Champaign  
+ Organization Name (eg, company) \[Fort-Funston\]:Your ORG Name  
+ Organizational Unit Name (eg, section) \[MyOrganizationalUnit\]:Network engineering  
+ Common Name (eg, your name or your server's hostname) \[Fort-Funston CA\]:gw.yourcompany.com  
+ Name \[EasyRSA\]:OpenVPN CA  
+ Email Address \[me@myhost.mydomain\]:yourgroupemail@yourcompany.com
+</code></pre>
+
+<p>Now build the next pieces:</p>
+
+<pre><code> ./build-key-server server   
+Generating a 2048 bit RSA private key  
+ …..+++++  
+ ……………………+++++  
+ writing new private key to 'server.key'  
+ You are about to be asked to enter information that will be incorporated  
+ into your certificate request.  
+ What you are about to enter is what is called a Distinguished Name or a DN.  
+ There are quite a few fields but you can leave some blank  
+ For some fields there will be a default value,  
+ If you enter '.', the field will be left blank.  
+ Country Name (2 letter code) \[US\]:  
+ State or Province Name (full name) \[CA\]: IL  
+ Locality Name (eg, city) \[SanFrancisco\]:Champaign  
+ Organization Name (eg, company) \[Fort-Funston\]:Your ORG Name  
+ Organizational Unit Name (eg, section) \[MyOrganizationalUnit\]:Network engineering  
+ Common Name (eg, your name or your server's hostname) \[server\]:  
+ Name \[EasyRSA\]:OpenVPN Server  
+ Email Address \[me@myhost.mydomain\]:yourgroupemail@yourcompany.com  
+ Please enter the following 'extra' attributes  
+ to be sent with your certificate request  
+ A challenge password \[\]:  
+ An optional company name \[\]:  
+ Using configuration from /usr/share/easy-rsa/openssl.cnf  
+ Can't open /usr/share/easy-rsa/keys/index.txt.attr for reading, No such file or directory  
+ 139640007534336:error:02001002:system library:fopen:No such file or directory:../crypto/bio/bss\_file.c:72:fopen('/usr/share/easy-rsa/keys/index.txt.attr','r')  
+ 139640007534336:error:2006D080:BIO routines:BIO\_new\_file:no such file:../crypto/bio/bss\_file.c:79:  
+ Check that the request matches the signature  
+ Signature ok  
+ The Subject's Distinguished Name is as follows  
+ countryName           :PRINTABLE:'US'  
+ stateOrProvinceName   :PRINTABLE:'IL'  
+ localityName          :PRINTABLE:'Champaign'  
+ organizationName      :PRINTABLE:'Your ORG Name'  
+ organizationalUnitName:PRINTABLE:'Network engineering'  
+ commonName            :PRINTABLE:'server'  
+ name                  :PRINTABLE:'OpenVPN Server'  
+ emailAddress          :IA5STRING:'yourgroupemail@yourcompany.com'  
+ Certificate is to be certified until Feb 15 19:49:14 2029 GMT (3650 days)  
+ Sign the certificate? \[y/n\]:y  
+ 1 out of 1 certificate requests certified, commit? \[y/n\]y  
+ Write out database with 1 new entries  
+ Data Base Updated
+</code></pre>
+
+<p>Now build the client certificates</p>
+
+<pre><code>./build-key client1  
+ Generating a 2048 bit RSA private key  
+ .+++++  
+ ……………………………………………………………………….+++++  
+ writing new private key to 'client1.key'  
+ You are about to be asked to enter information that will be incorporated  
+ into your certificate request.  
+ What you are about to enter is what is called a Distinguished Name or a DN.  
+ There are quite a few fields but you can leave some blank  
+ For some fields there will be a default value,  
+ If you enter '.', the field will be left blank.  
+ Country Name (2 letter code) \[US\]:  
+ State or Province Name (full name) \[CA\]:IL  
+ Locality Name (eg, city) \[SanFrancisco\]:Champaign  
+ Organization Name (eg, company) \[Fort-Funston\]:Your ORG Name  
+ Organizational Unit Name (eg, section) \[MyOrganizationalUnit\]:Network Engineering  
+ Common Name (eg, your name or your server's hostname) \[client1\]:  
+ Name \[EasyRSA\]:OpenVPN Client  
+ Email Address \[me@myhost.mydomain\]:yourgroupemail@yourcompany.com  
+ Please enter the following 'extra' attributes  
+ to be sent with your certificate request  
+ A challenge password \[\]:  
+ An optional company name \[\]:  
+ Using configuration from /usr/share/easy-rsa/openssl.cnf  
+ Check that the request matches the signature  
+ Signature ok  
+ The Subject's Distinguished Name is as follows  
+ countryName           :PRINTABLE:'US'  
+ stateOrProvinceName   :PRINTABLE:'IL'  
+ localityName          :PRINTABLE:'Champaign'  
+ organizationName      :PRINTABLE:'Your ORG Name'  
+ organizationalUnitName:PRINTABLE:'Network Engineering'  
+ commonName            :PRINTABLE:'client1'  
+ name                  :PRINTABLE:'OpenVPN Client'  
+ emailAddress          :IA5STRING:'yourgroupemail@yourcompany.com'  
+ Certificate is to be certified until Feb 15 19:53:55 2029 GMT (3650 days)  
+ Sign the certificate? \[y/n\]:y  
+ 1 out of 1 certificate requests certified, commit? \[y/n\]y  
+ Write out database with 1 new entries  
+ Data Base Updated  
+  
+  
+
+</code></pre>
+
+<p>Generate the last piece:</p>
+
+<pre><code>./build-dh  
+ Generating DH parameters, 2048 bit long safe prime, generator 2  
+ This is going to take a long time  
+ …………………………………………………………………+…………………………………………………………………..+…………………….+……………………………………………………………………………….+……………………………………..+………..+………………………………………………………………….+…………………………..+…………………………………………..+……………………………………………………………..+…………………………………….+…………………………………..+……………………………+…………………………………………………..+……………………………………+……………………………………………………………………………………..+………………………………………………………………………………………………………………………………………………………………………………+……+…………………………………………………………………………………………………………………………………………….+……………………………….+……………………………….+………………………………………………………………………………………………………………………………………….+………………………………………………………………….+…+……………………………………………+……………………………………………………………………………………………………….+…………………………………………………………………..+…………………………………………………………………………………………………………………..+……………………………..+….+……………………………………………………………………………………………………………………………………………………………………………………………………………………………………………..+…………………………………………………………………………………………………………………………………………………………………………+………………..++_++_++_++_  
+
+</code></pre>
+
+<p>On the UBNT:</p>
+
+<pre><code>mkdir /config/auth/keys/  
+
+</code></pre>
+
+<p>Now that you have all of the files and directory structure, head back to your host and scp them over to the ubiquity into /config/auth/keys</p>
+
+<pre><code>cd /usr/share/easy-rsa/keys  
+scp  \* username@ubnt.net:/config/auth/keys/  
+
+</code></pre>
+
+<p>Now that the keys are all created and safe, head back over to the UBNT and start configuring the device to support what you just made</p>
+
+<pre><code>set interfaces openvpn vtun0 mode server   
+set interfaces openvpn vtun0 server subnet 172.16.61.0/27   
+set interfaces openvpn vtun0 tls ca-cert-file /config/auth/keys/ca.crt   
+set interfaces openvpn vtun0 tls cert-file /config/auth/keys/server.crt   
+set interfaces openvpn vtun0 tls key-file /config/auth/keys/server.key   
+set interfaces openvpn vtun0 tls dh-file /config/auth/keys/dh2048.pem   
+set interfaces openvpn vtun0 encryption aes192   
+  
+set interfaces openvpn vtun0 openvpn-option &quot;--keepalive 8 30&quot;   
+set interfaces openvpn vtun0 openvpn-option &quot;--comp-lzo&quot;   
+set interfaces openvpn vtun0 openvpn-option &quot;--duplicate-cn&quot;   
+set interfaces openvpn vtun0 openvpn-option &quot;--user nobody - group nogroup&quot;   
+set interfaces openvpn vtun0 openvpn-option &quot;--verb 1&quot;   
+set interfaces openvpn vtun0 openvpn-option &quot;--proto udp6&quot;   
+set interfaces openvpn vtun0 openvpn-option &quot;--port 1194&quot;   
+set interfaces openvpn vtun0 server push-route 10.2.0.0/16   
+set interfaces openvpn vtun0 server name-server 10.2.9.10   
+set firewall name WAN\_LOCAL rule 20 action accept   
+set firewall name WAN\_LOCAL rule 20 description &quot;Allow OpenVPN clients in&quot;   
+set firewall name WAN\_LOCAL rule 20 destination port 1194   
+set firewall name WAN\_LOCAL rule 20 log disable   
+set firewall name WAN\_LOCAL rule 20 protocol udp   
+set service nat rule 5010 description &quot;Masquerade for WAN&quot;   
+set service nat rule 5010 outbound-interface eth0   
+set service nat rule 5010 type masquerade 
+</code></pre>
+
+<p>I recommend <a href="https://www.sparklabs.com/viscosity/">Viscosity</a> as the client - it&rsquo;s inexpensive and very reliable.</p>
+
+<p>My configuration was largely based on the reference <a href="https://medium.com/server-guides/how-to-setup-an-openvpn-server-on-a-unifi-usg-e33ea2f6725d">here</a>.</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

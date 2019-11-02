@@ -1,0 +1,341 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "posts",
+        "name" : "Seagate FreeAgent 3T drive on a mac",
+        "headline" : "Seagate FreeAgent 3T drive on a mac",
+        "description" : "I was recently helping my brother-in-law out with the new Seagate FreeAgent GoFlex Desk 3 TB USB 3.0 External Hard Drivehe had purchased to do time machine backups on his mac. I personally have the 2t version and have been pretty happy with it, save for one small incident that I think was my fault that required some basic data recovery.\nSince the drive comes in a file system that is not HFS\x2b Journaled, it needed to be reformatted to support time machine backups.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2011",
+        "datePublished": "2011-02-04 20:00:00 \x2b0000 \x2b0000",
+        "dateModified" : "2011-02-04 20:00:00 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/2011\/02\/seagate-freeagent-3t-drive-on-a-mac\/",
+        "wordCount" : "361",
+        "keywords" : [ "How-To","Blog" ]
+    }
+    </script>
+        
+            <title>Seagate FreeAgent 3T drive on a mac - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Seagate FreeAgent 3T drive on a mac"/>
+<meta name="twitter:description" content="I was recently helping my brother-in-law out with the new Seagate FreeAgent GoFlex Desk 3 TB USB 3.0 External Hard Drivehe had purchased to do time machine backups on his mac. I personally have the 2t version and have been pretty happy with it, save for one small incident that I think was my fault that required some basic data recovery.
+Since the drive comes in a file system that is not HFS&#43; Journaled, it needed to be reformatted to support time machine backups."/>
+
+        <meta property="og:title" content="Seagate FreeAgent 3T drive on a mac" />
+<meta property="og:description" content="I was recently helping my brother-in-law out with the new Seagate FreeAgent GoFlex Desk 3 TB USB 3.0 External Hard Drivehe had purchased to do time machine backups on his mac. I personally have the 2t version and have been pretty happy with it, save for one small incident that I think was my fault that required some basic data recovery.
+Since the drive comes in a file system that is not HFS&#43; Journaled, it needed to be reformatted to support time machine backups." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/2011/02/seagate-freeagent-3t-drive-on-a-mac/" />
+<meta property="article:published_time" content="2011-02-04T20:00:00+00:00" />
+<meta property="article:modified_time" content="2011-02-04T20:00:00+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Seagate FreeAgent 3T drive on a mac">
+<meta itemprop="description" content="I was recently helping my brother-in-law out with the new Seagate FreeAgent GoFlex Desk 3 TB USB 3.0 External Hard Drivehe had purchased to do time machine backups on his mac. I personally have the 2t version and have been pretty happy with it, save for one small incident that I think was my fault that required some basic data recovery.
+Since the drive comes in a file system that is not HFS&#43; Journaled, it needed to be reformatted to support time machine backups.">
+
+
+<meta itemprop="datePublished" content="2011-02-04T20:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-02-04T20:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="361">
+
+
+
+<meta itemprop="keywords" content="How-To," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/posts/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/posts/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/2011/02/seagate-freeagent-3t-drive-on-a-mac/">Seagate FreeAgent 3T drive on a mac</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>I was recently helping my brother-in-law out with the new <a href="http://www.amazon.com/gp/product/B0045JLPNI?ie=UTF8&amp;tag=nickburaglioc-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B0045JLPNI">Seagate FreeAgent GoFlex Desk 3 TB USB 3.0 External Hard Drive</a><img src="http://www.assoc-amazon.com/e/ir?t=nickburaglioc-20&amp;l=as2&amp;o=1&amp;a=B0045JLPNI" alt="" /> he had purchased to do time machine backups on his mac. I personally have the 2t version and have been pretty happy with it, save for one small incident that I think was my fault that required some basic data recovery.<br />
+Since the drive comes in a file system that is not HFS+ Journaled, it needed to be reformatted to support time machine backups.<br />
+Simple, right? &ldquo;A five minute process&rdquo; I told him.<br />
+Well, I was wrong. This drive just could not be formatted or re-partitioned using the standard OSX disk utility. I walked him through it on the phone. Partition failure. It threw some cryptic error that I had not seen before in 15 years of using a mac. I kinda figured it was something he was missing since I&rsquo;m pretty awful at phone support, and if it wasn&rsquo;t, I wanted to see the error, so I drive over there.<br />
+Upon arriving, low and behold, it was in fact an error I&rsquo;d never seen. I tried 3 more times to partition and format the drive and once just to format it. Same errors every time, it would start and then throw an error that it had failed or that it had lost communication with the drive.<br />
+So, to test, I dropped to the trusty cli to see if I could do it from there.</p>
+
+<p>From the Terminal app (/Applications/Utilities/Terminal) I issued the command</p>
+
+<p>diskutil eraseDisk HFS+ Backup disk1</p>
+
+<p>Which was able to quickly accomplish the task. From there, I was able to mount and manipulate it in the Disk Utility (/Applicaations/Utilities/Disk Utility). Since I had not enabled the journal from the original command I reformatted the drive with MacOS X Entended (Journaled) and then it was ready to be a Time machine disk.</p>
+
+<p>I believe I could have done this all in one step using the command</p>
+
+<p>diskutil eraseDisk &ldquo;Journaled HFS+&rdquo; Backup disk1.</p>
+
+<p>I&rsquo;m still unsure why Disk Utility would not work.</p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

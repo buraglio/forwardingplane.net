@@ -1,0 +1,404 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "configuration-archive",
+        "name" : "Basic IOS-XR command cheat sheet",
+        "headline" : "Basic IOS-XR command cheat sheet",
+        "description" : "Some basic commands that I have found useful in managing an ASR9K \/ IOS-XR device. This page is likely to grow and change over time.\nClear ARP\nclear arp-cache \x26lt;interface\x26gt; \x26lt;IPv4 addr\x26gt; location all  BGP\nshow bgp all unicast summary  BGP Routes\nshow bgp ipv[4\/6] unicast neighbors \x26lt;neighbor\x26gt; received route\nshow bgp ipv[4\/6] unicast advertised neighbor \x26lt;neighbor\x26gt; show bgp ipv[4\/6] unicast summary\nshow bgp ipv[4\/6] unicast summary\nclear bgp ipv[4\/6] unicast \x26lt;neighbor\x26gt; soft in",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-02-20 14:05:58 -0600 CST",
+        "dateModified" : "2019-02-20 14:05:58 -0600 CST",
+        "url" : "https:\/\/forwardingplane.net\/configuration-archive\/basic-ios-xr-command-cheat-sheet\/",
+        "wordCount" : "111",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            <title>Basic IOS-XR command cheat sheet - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+            <meta name="author" content="Nick Buraglio">
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Basic IOS-XR command cheat sheet"/>
+<meta name="twitter:description" content="Some basic commands that I have found useful in managing an ASR9K / IOS-XR device. This page is likely to grow and change over time.
+Clear ARP
+clear arp-cache &lt;interface&gt; &lt;IPv4 addr&gt; location all  BGP
+show bgp all unicast summary  BGP Routes
+show bgp ipv[4/6] unicast neighbors &lt;neighbor&gt; received route
+show bgp ipv[4/6] unicast advertised neighbor &lt;neighbor&gt; show bgp ipv[4/6] unicast summary
+show bgp ipv[4/6] unicast summary
+clear bgp ipv[4/6] unicast &lt;neighbor&gt; soft in"/>
+
+        <meta property="og:title" content="Basic IOS-XR command cheat sheet" />
+<meta property="og:description" content="Some basic commands that I have found useful in managing an ASR9K / IOS-XR device. This page is likely to grow and change over time.
+Clear ARP
+clear arp-cache &lt;interface&gt; &lt;IPv4 addr&gt; location all  BGP
+show bgp all unicast summary  BGP Routes
+show bgp ipv[4/6] unicast neighbors &lt;neighbor&gt; received route
+show bgp ipv[4/6] unicast advertised neighbor &lt;neighbor&gt; show bgp ipv[4/6] unicast summary
+show bgp ipv[4/6] unicast summary
+clear bgp ipv[4/6] unicast &lt;neighbor&gt; soft in" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/" />
+<meta property="article:published_time" content="2019-02-20T14:05:58-06:00" />
+<meta property="article:modified_time" content="2019-02-20T14:05:58-06:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Basic IOS-XR command cheat sheet">
+<meta itemprop="description" content="Some basic commands that I have found useful in managing an ASR9K / IOS-XR device. This page is likely to grow and change over time.
+Clear ARP
+clear arp-cache &lt;interface&gt; &lt;IPv4 addr&gt; location all  BGP
+show bgp all unicast summary  BGP Routes
+show bgp ipv[4/6] unicast neighbors &lt;neighbor&gt; received route
+show bgp ipv[4/6] unicast advertised neighbor &lt;neighbor&gt; show bgp ipv[4/6] unicast summary
+show bgp ipv[4/6] unicast summary
+clear bgp ipv[4/6] unicast &lt;neighbor&gt; soft in">
+
+
+<meta itemprop="datePublished" content="2019-02-20T14:05:58-06:00" />
+<meta itemprop="dateModified" content="2019-02-20T14:05:58-06:00" />
+<meta itemprop="wordCount" content="111">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/posts/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/posts/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/">Basic IOS-XR command cheat sheet</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>Some basic commands that I have found useful in managing an ASR9K / IOS-XR device. This page is likely to grow and change over time.</p>
+
+<p>Clear ARP</p>
+
+<pre class="wp-block-preformatted">clear arp-cache &lt;interface&gt; &lt;IPv4 addr&gt; location all </pre>
+
+<p>BGP</p>
+
+<pre class="wp-block-preformatted">show bgp all unicast summary </pre>
+
+<p>BGP Routes</p>
+
+<pre class="wp-block-preformatted"><br />show bgp ipv[4/6] unicast neighbors &lt;neighbor&gt; received route<br />show bgp ipv[4/6] unicast advertised neighbor &lt;neighbor&gt; <br />show bgp ipv[4/6] unicast summary<br />show bgp ipv[4/6] unicast summary<br />clear bgp ipv[4/6] unicast &lt;neighbor&gt; soft in<br />show bgp all unicast summary<br />show bgp ipv[4/6] unicast bestpath-compare</pre>
+
+<p>NetFlow</p>
+
+<pre class="wp-block-preformatted">show flow exporter <em>&lt;exporter&gt;</em> location 0/RSP0/CPU0 </pre>
+
+<p>Show all hardware linecards</p>
+
+<pre class="wp-block-preformatted">show hw-module fpd location all</pre>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-1618" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-1618" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-1618" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-1618" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

@@ -1,0 +1,335 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "posts",
+        "name" : "Building a Floodlight OpenFlow controller on CentOS 6",
+        "headline" : "Building a Floodlight OpenFlow controller on CentOS 6",
+        "description" : "A bit of back history: I came from BSD land. I was a FreeBSD user from way back in the 1990s. BSD land is a land of secure boxes and very high uptimes. It\x26rsquo;s also a land of arguably clunky package support, a lot of compiling by hand and these days, not nearly as encompassing package and network tuning support. I decided to move to Linux\x26rdquo;) a while ago, reluctantly, and chose Debian as my flavor of choice.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-02-04 13:10:24 \x2b0000 \x2b0000",
+        "dateModified" : "2013-02-04 13:10:24 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/2013\/02\/building-a-floodlight-openflow-controller-on-centos-6\/",
+        "wordCount" : "330",
+        "keywords" : [ "Lab Time","SDN","UNIX","Blog" ]
+    }
+    </script>
+        
+            <title>Building a Floodlight OpenFlow controller on CentOS 6 - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Building a Floodlight OpenFlow controller on CentOS 6"/>
+<meta name="twitter:description" content="A bit of back history: I came from BSD land. I was a FreeBSD user from way back in the 1990s. BSD land is a land of secure boxes and very high uptimes. It&rsquo;s also a land of arguably clunky package support, a lot of compiling by hand and these days, not nearly as encompassing package and network tuning support. I decided to move to Linux&rdquo;) a while ago, reluctantly, and chose Debian as my flavor of choice."/>
+
+        <meta property="og:title" content="Building a Floodlight OpenFlow controller on CentOS 6" />
+<meta property="og:description" content="A bit of back history: I came from BSD land. I was a FreeBSD user from way back in the 1990s. BSD land is a land of secure boxes and very high uptimes. It&rsquo;s also a land of arguably clunky package support, a lot of compiling by hand and these days, not nearly as encompassing package and network tuning support. I decided to move to Linux&rdquo;) a while ago, reluctantly, and chose Debian as my flavor of choice." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/" />
+<meta property="article:published_time" content="2013-02-04T13:10:24+00:00" />
+<meta property="article:modified_time" content="2013-02-04T13:10:24+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Building a Floodlight OpenFlow controller on CentOS 6">
+<meta itemprop="description" content="A bit of back history: I came from BSD land. I was a FreeBSD user from way back in the 1990s. BSD land is a land of secure boxes and very high uptimes. It&rsquo;s also a land of arguably clunky package support, a lot of compiling by hand and these days, not nearly as encompassing package and network tuning support. I decided to move to Linux&rdquo;) a while ago, reluctantly, and chose Debian as my flavor of choice.">
+
+
+<meta itemprop="datePublished" content="2013-02-04T13:10:24&#43;00:00" />
+<meta itemprop="dateModified" content="2013-02-04T13:10:24&#43;00:00" />
+<meta itemprop="wordCount" content="330">
+
+
+
+<meta itemprop="keywords" content="Lab Time,SDN,UNIX," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/posts/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/posts/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/">Building a Floodlight OpenFlow controller on CentOS 6</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>A bit of back history: I came from BSD land. I was a FreeBSD user from way back in the 1990s. BSD land is a land of secure boxes and very high uptimes. It&rsquo;s also a land of arguably clunky package support, a lot of compiling by hand and these days, not nearly as encompassing package and network tuning support. <a href="http://www.forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/ &quot;Better support for Linux (and annoyed about it">I decided to move to Linux</a>&rdquo;) a while ago, reluctantly, and chose Debian as my flavor of choice. I do love debian, however, I very quiuckly realized that even debian is a bit of a fringe OS build of Linux. Commercial support is nearly all based on RHEL. Folks that run RHEL also run CentOS. We run both in my day job. About a year ago to I, once again, decided I needed to learn CentOS. There are a lot of posts about building floodlight as an openflow controller. I used this tutorial <a href="http://networkstatic.net/floodlight-openflow-controller-gui-applet/">Brent Salisbury did</a> to build mine. There is a good one on the <a href="http://floodlight.openflowhub.org/getting-started/">openflow hub</a> site as well. I&rsquo;ve found that many are based on Debian or Ubuntu, which can be subtly different than a CentOS / RHEL experience.   In CentOS, log in and sudo -s or su to root. Install the prereqs: <em>yum -y install build-essential default-jdk ant python-dev eclipse git</em> <em>mkdir /services/floodlight</em> <em>cd /services/floodlight/</em> <em>git clone git://github.com/floodlight/floodlight.git ant</em> Start floodlight in the background. <em>./floodlight.sh &amp;</em> Because I&rsquo;m terrible at looking at directions, I went to the base URL. This will yield an error that looks something like this: <em>{&ldquo;name&rdquo;:&ldquo;Not Found&rdquo;,&ldquo;error&rdquo;:true,&ldquo;throwable&rdquo;:null,&ldquo;description&rdquo;:&ldquo;The server has not found anything matching the request URI&rdquo;,&ldquo;success&rdquo;:false,&ldquo;informational&rdquo;:false,&ldquo;code&rdquo;:404,&ldquo;reasonPhrase&rdquo;:&ldquo;Not Found&rdquo;,&ldquo;uri&rdquo;:&ldquo;<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5&quot;,&quot;serverError&quot;:false,&quot;connectorError&quot;:false,&quot;clientError&quot;:true,&quot;globalError&quot;:false,&quot;redirection&quot;:false,&quot;recoverableError&quot;:false">http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5&quot;,&quot;serverError&quot;:false,&quot;connectorError&quot;:false,&quot;clientError&quot;:true,&quot;globalError&quot;:false,&quot;redirection&quot;:false,&quot;recoverableError&quot;:false</a>}</em> The right way to access floodlight is to use the entire URL: http://<address>:8080/ui/index.html Learn from my stupidity.   Here is a script to build it for you:```
+#!/bin/bash</p>
+
+<p>echo &ldquo;Installing prerequisits:&rdquo;
+yum -y install build-essential default-jdk ant python-dev eclipse git</p>
+
+<p>echo &ldquo;Installing floodlight to /services/floodight/&rdquo;
+mkdir /services/floodlight
+cd /services/floodlight/
+git clone git://github.com/floodlight/floodlight.git
+ant</p>
+
+<p>echo &ldquo;Starting floodlight:&rdquo;</p>
+
+<p>./floodlight.sh&amp;
+echo &ldquo;Floodlight started, point your beowser at http://<address>:8080/ui/index.html&rdquo;
+```</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

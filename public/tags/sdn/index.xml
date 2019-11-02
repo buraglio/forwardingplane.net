@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SDN on ForwardingPlane.net</title>
+    <link>https://forwardingplane.net/tags/sdn/</link>
+    <description>Recent content in SDN on ForwardingPlane.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2019, all rights reserved.</copyright>
+    <lastBuildDate>Wed, 29 May 2019 18:17:13 +0000</lastBuildDate>
+    
+	<atom:link href="https://forwardingplane.net/tags/sdn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building a dynamic security infrastructure [in a box - with SDN]</title>
+      <link>https://forwardingplane.net/2019/05/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</link>
+      <pubDate>Wed, 29 May 2019 18:17:13 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2019/05/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</guid>
+      <description>Years ago I wrote about building a secure network in a box. Over a weekend I decided to revisit this concept thanks to a colleague at work wanting to do something similar. It got me thinking “a lot has changed since I last did this” and it felt like time to revisit it. Well, disappointment wasn’t in the cards because it’s easier, smarter, and more flexible now that it was back then.</description>
+    </item>
+    
+    <item>
+      <title>Faucet: Enterprise OpenFlow in production</title>
+      <link>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</link>
+      <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</guid>
+      <description>Faucet &amp;#8211; Enterprise SDN from an office to multi-terabit SCinet at SC18 | - Nov 1, 2018
+[…] Then my colleague, Nick Buraglio, and I decided, why not wire our satellite branch office with faucet based networking than buy traditional switches? With Josh (Bailey)’s help, Nick has now wired the lives of eight of ESnet’s key employees to be dependent on faucet and he has been having a blast (no downtime there either)!</description>
+    </item>
+    
+    <item>
+      <title>Faucet: Enterprise OpenFlow in production</title>
+      <link>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</link>
+      <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</guid>
+      <description>Faucet &amp;#8211; Enterprise SDN from an office to multi-terabit SCinet at SC18 | - Nov 1, 2018
+[…] Then my colleague, Nick Buraglio, and I decided, why not wire our satellite branch office with faucet based networking than buy traditional switches? With Josh (Bailey)’s help, Nick has now wired the lives of eight of ESnet’s key employees to be dependent on faucet and he has been having a blast (no downtime there either)!</description>
+    </item>
+    
+    <item>
+      <title>Faucet: Enterprise OpenFlow in production</title>
+      <link>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</link>
+      <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</guid>
+      <description>Remember OpenFlow? It was the media and marketing darling for the better part of 5 years as “the machine” conflated OpenFlow with SDN and SDN with - almost literally - everything. &amp;ldquo;Still Does Nothing&amp;rdquo; was a common phrase uttered around those of us that had run large scale, complex networks for a long time. Quietly, and mostly, out of the fickle media and blogosphere eye, a scrappy little SDN project called faucet has been diligently plugging away &amp;ndash; making easy to use, production quality, well documented, and very stable code that runs OpenFlow networks quite happily in production and at scale.</description>
+    </item>
+    
+    <item>
+      <title>Faucet: Enterprise OpenFlow in production</title>
+      <link>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</link>
+      <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</guid>
+      <description>Remember OpenFlow? It was the media and marketing darling for the better part of 5 years as “the machine” conflated OpenFlow with SDN and SDN with - almost literally - everything. &amp;ldquo;Still Does Nothing&amp;rdquo; was a common phrase uttered around those of us that had run large scale, complex networks for a long time. Quietly, and mostly, out of the fickle media and blogosphere eye, a scrappy little SDN project called faucet has been diligently plugging away &amp;ndash; making easy to use, production quality, well documented, and very stable code that runs OpenFlow networks quite happily in production and at scale.</description>
+    </item>
+    
+    <item>
+      <title>The rush to automation and the IT pendulum</title>
+      <link>https://forwardingplane.net/2018/10/the-rush-to-automation-and-the-it-pendulum/</link>
+      <pubDate>Thu, 18 Oct 2018 14:20:52 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/10/the-rush-to-automation-and-the-it-pendulum/</guid>
+      <description>Recently, the venerable Ivan Pepelnjak published a very insightful article about automation becoming such a popular topic that was spawned by an email from one of his readers. I found this article to be spot on, and wanted to add a bit of my own opinion into the automation pie, as I have been spending a lot of time on automation as it related to existing networks as well as into SDN based environments.</description>
+    </item>
+    
+    <item>
+      <title>Creating an internal span port inside proxmox OVS</title>
+      <link>https://forwardingplane.net/2017/03/creating-an-internal-span-port-inside-proxmox-ovs/</link>
+      <pubDate>Tue, 21 Mar 2017 03:49:58 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2017/03/creating-an-internal-span-port-inside-proxmox-ovs/</guid>
+      <description>In the last few years I have moved all of my virtualization to proxmox and docker. Seeing as I like to look at packets because I am a closet security guy, and being as I have been working off-and-on on a security project in recent times, I wanted to be able to span a port not only from a hardware switch, but also within my software switches. I had been using linux bridge, which I am not a fan of, so when I started down this path I did not look hard to find a way to do so under that platform.</description>
+    </item>
+    
+    <item>
+      <title>Why I care about Segment Routing</title>
+      <link>https://forwardingplane.net/2016/10/why-i-care-about-segment-routing/</link>
+      <pubDate>Tue, 04 Oct 2016 00:54:27 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2016/10/why-i-care-about-segment-routing/</guid>
+      <description>Worth Reading: Why I care about Segment Routing - &amp;#039;net work - Oct 3, 2016
+[…] As a WAN guy by chance and opportunity, and a service provider engineer and architect by choice (and… […] [Mike Fratto]( &amp;ldquo;mfratto@techweb.com&amp;rdquo;) - Oct 4, 2016
+Hi Nick, I&amp;rsquo;m not a WAN routing guy so this may be a ridiculous question but I&amp;rsquo;m curious how you would compare/contrast segment routing with shortest path bridging. From the little I know, the goals seem awfully similar.</description>
+    </item>
+    
+    <item>
+      <title>Why I care about Segment Routing</title>
+      <link>https://forwardingplane.net/2016/10/why-i-care-about-segment-routing/</link>
+      <pubDate>Tue, 04 Oct 2016 00:54:27 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2016/10/why-i-care-about-segment-routing/</guid>
+      <description>Edit: Going against my normal “just get the content out there” methodology, I’ve been mulling over this blog post since July of 2016. Segment routing is such a beautifully elegant solution I have had trouble articulating that fact. WAN technologies are squarely within my wheelhouse, and this one fits in so well I was going over and over the post never really satisfied with it, continuing to find mistakes and decided to just get it out there.</description>
+    </item>
+    
+    <item>
+      <title>Buzzwords, technology, terminology, and the interconnection of modern networking</title>
+      <link>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</link>
+      <pubDate>Mon, 18 Jan 2016 16:33:09 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</guid>
+      <description>[Jshaffer]( &amp;ldquo;jshaffer@hummingbirdnetworks.com&amp;rdquo;) - Jan 4, 2016
+Great post! I definitely feel overwhelmed and thanks for the mindnote recommend definitely going to check that out! Nick Buraglio - Feb 6, 2016
+Hey, thanks for reading! There is so much stuff out there no one can keep up. Know a lot about a little and a little about a lot, but most importantly, enjoy what you do. A person that enjoys their job will never work a day in their lives.</description>
+    </item>
+    
+    <item>
+      <title>Buzzwords, technology, terminology, and the interconnection of modern networking</title>
+      <link>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</link>
+      <pubDate>Mon, 18 Jan 2016 16:33:09 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</guid>
+      <description>I&amp;rsquo;m way overdue for a soapbox session &amp;ndash; I found this one in my drafts and thought it was something I needed to put out there. It&amp;rsquo;s already dated in terminology but that actually helps make the point - it&amp;rsquo;s hard to keep up. 
+Lets throw this out there: social media can be exhausting. Do not misunderstand me, it’s a great tool for communication, obtaining and disseminating information as well as standard goofing around.</description>
+    </item>
+    
+    <item>
+      <title>Building Interdomain SDN part 3</title>
+      <link>https://forwardingplane.net/2015/11/building-interdomain-sdn-part-3/</link>
+      <pubDate>Fri, 06 Nov 2015 04:37:23 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/11/building-interdomain-sdn-part-3/</guid>
+      <description>A few years ago I wrote some text on interdomain SDN. Years later, work is being done, smart people are thinking about it and building ways to make it a reality. Not being one to give up on an idea, I gave this presentation in may at ChiNOG on what my take on what that architecture should be. I (we) propose that the use of existing protocols such as BGP FlowSpec will make this realistically deployable and maintainable given some simple, pluggable middleware.</description>
+    </item>
+    
+    <item>
+      <title>Brocade Vyatta Install and OpenFlow 1.3 on ICX 7450</title>
+      <link>https://forwardingplane.net/2015/06/brocade-vyatta-install-and-openflow-1.3-on-icx-7450/</link>
+      <pubDate>Sat, 20 Jun 2015 16:06:03 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/06/brocade-vyatta-install-and-openflow-1.3-on-icx-7450/</guid>
+      <description>I recently had a need to test OpenFlow on the brocade ICX 7450 for a fairly good sized, high visibility project. The basic goal is pretty simple, Layer2 path provisioning. Straightforward and fairly well supported in OpenFlow, even from the early days. To do this, the idea was to use a turnkey platform, that way there is one throat to choke if there are issues. I landed on the Brocade Vyatta controller (which is essentially ODL), and the ICX.</description>
+    </item>
+    
+    <item>
+      <title>Brocade does a double down on SDN</title>
+      <link>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</link>
+      <pubDate>Sat, 28 Mar 2015 16:09:11 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</guid>
+      <description>Brocade does a double down on SDN - Tech Field Day - Mar 6, 2015
+[…] Brocade does a double down on SDN […] </description>
+    </item>
+    
+    <item>
+      <title>Brocade does a double down on SDN</title>
+      <link>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</link>
+      <pubDate>Sat, 28 Mar 2015 16:09:11 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</guid>
+      <description>Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.
+This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is.</description>
+    </item>
+    
+    <item>
+      <title>The NEC surprise</title>
+      <link>https://forwardingplane.net/2015/02/the-nec-surprise/</link>
+      <pubDate>Fri, 20 Feb 2015 06:52:33 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/02/the-nec-surprise/</guid>
+      <description>NEC brings a strong offering to the SDN table - Tech Field Day - Feb 5, 2015
+[…] NEC brings a strong offering to the SDN table […] </description>
+    </item>
+    
+    <item>
+      <title>The NEC surprise</title>
+      <link>https://forwardingplane.net/2015/02/the-nec-surprise/</link>
+      <pubDate>Fri, 20 Feb 2015 06:52:33 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/02/the-nec-surprise/</guid>
+      <description>When NEC began talking about SDN at Network Field Day 9, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments.</description>
+    </item>
+    
+    <item>
+      <title>BigSwitch Networks BigCloud Fabric 2.5</title>
+      <link>https://forwardingplane.net/2015/01/bigswitch-networks-bigcloud-fabric-2.5/</link>
+      <pubDate>Thu, 29 Jan 2015 01:04:46 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/01/bigswitch-networks-bigcloud-fabric-2.5/</guid>
+      <description>BigSwitch Networks Unveils Big Cloud Fabric 2.5 - Tech Field Day - Jan 4, 2015
+[…] BigSwitch Networks Unveils Big Cloud Fabric 2.5 […] </description>
+    </item>
+    
+    <item>
+      <title>BigSwitch Networks BigCloud Fabric 2.5</title>
+      <link>https://forwardingplane.net/2015/01/bigswitch-networks-bigcloud-fabric-2.5/</link>
+      <pubDate>Thu, 29 Jan 2015 01:04:46 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/01/bigswitch-networks-bigcloud-fabric-2.5/</guid>
+      <description>BigSwitch is making waves again, this time with its Big Cloud Fabric product update. I was lucky enough to get a bit of a preview of what was coming and was pleasantly surprised by the new features, finding them functionally useful for both operators, security folks and management alike.
+Not only is the fabric fit to operate at hyper scale proportions, they&amp;rsquo;ve paid close attention to making such operations even easier.</description>
+    </item>
+    
+    <item>
+      <title>Network Field Day #9</title>
+      <link>https://forwardingplane.net/2015/01/network-field-day-#9/</link>
+      <pubDate>Sat, 24 Jan 2015 15:55:48 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/01/network-field-day-#9/</guid>
+      <description>What&amp;#039;s Network Field Day 9 (NFD9) About? - Feb 1, 2015
+[…] Nick Buraglio: Networking Field Day 9 […] </description>
+    </item>
+    
+    <item>
+      <title>Network Field Day #9</title>
+      <link>https://forwardingplane.net/2015/01/network-field-day-#9/</link>
+      <pubDate>Sat, 24 Jan 2015 15:55:48 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/01/network-field-day-#9/</guid>
+      <description>In a few weeks I&amp;rsquo;ll have the opportunity to participate in another Network Field Day. I&amp;rsquo;ve been lucky enough to have the opportunity to attendin the past and have done some remote participation when possible, but like some of the other rare opportunities I have had in my career, NFD is fairly unique in that it is constantly evolving in both the information provided and the individuals involved. As the saying goes, variety is the spice of life.</description>
+    </item>
+    
+    <item>
+      <title>OpenVswitch 2.3.0 RPMs</title>
+      <link>https://forwardingplane.net/2014/10/openvswitch-2.3.0-rpms/</link>
+      <pubDate>Fri, 10 Oct 2014 21:06:50 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/10/openvswitch-2.3.0-rpms/</guid>
+      <description>I was wanting to do a few quick mock-ups with OpenvSwitch and OpenDayLight and wanted to use CentOS since I have templates for it that I replicate. Just like with the debian stuff I had been doing, I wasn&amp;rsquo;t able to find any in some quick searches. I stumbled upon This site, which had a great how to for building them, so I just used that. Seeing as that the debian packages actually got downloaded a lot, I figured I&amp;rsquo;d post these RPMs as well.</description>
+    </item>
+    
+    <item>
+      <title>BigSwitch Labs for SDN learning: a sneak peek!</title>
+      <link>https://forwardingplane.net/2014/09/bigswitch-labs-for-sdn-learning-a-sneak-peek/</link>
+      <pubDate>Mon, 22 Sep 2014 10:24:34 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/09/bigswitch-labs-for-sdn-learning-a-sneak-peek/</guid>
+      <description>Big Switch Labs for SDN Learning: A Sneak Peek! - Sep 1, 2014
+[…] Big Switch Labs for SDN Learning: A Sneak Peek! […] </description>
+    </item>
+    
+    <item>
+      <title>BigSwitch Labs for SDN learning: a sneak peek!</title>
+      <link>https://forwardingplane.net/2014/09/bigswitch-labs-for-sdn-learning-a-sneak-peek/</link>
+      <pubDate>Mon, 22 Sep 2014 10:24:34 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/09/bigswitch-labs-for-sdn-learning-a-sneak-peek/</guid>
+      <description>I was recently granted access to the beta BigSwitch Networks lab site, a purpose built classroom in the cloud focused on teaching the BigSwitch SDN environment. I had seen some of the BSN offerings in the past and always held them in high regard, but I was thoroughly impressed with both the completeness of the lab and how polished the controller environment was.At the time of this writing, the lab consists of 3 modules: Building cloud fabric, monitoring fabric and dynamic provisioning of monitoring fabric.</description>
+    </item>
+    
+    <item>
+      <title>Why you don&#39;t need a firewall [how to secure an open perimeter network]</title>
+      <link>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
+      <pubDate>Mon, 08 Sep 2014 07:30:07 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
+      <description>[cryptochrome]( &amp;ldquo;sascha@picchiantano.de&amp;rdquo;) - Sep 1, 2014
+Wow. I completely disagree. Just because a firewall can give you some headaches in your network environment it shouldn&amp;rsquo;t be a reason to just dump it. A very dangerous proposition, and your &amp;ldquo;alternatives&amp;rdquo; will not be enough. Fix your firewall if it causes issues. Nick Buraglio - Sep 1, 2014
+Like I said, it&amp;rsquo;s not for everyone, but there are very real use cases where there is no hardware firewall that does what is necessary.</description>
+    </item>
+    
+    <item>
+      <title>Why you don&#39;t need a firewall [how to secure an open perimeter network]</title>
+      <link>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
+      <pubDate>Mon, 08 Sep 2014 07:30:07 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
+      <description>I admit that the title was meant to be inflammatory. However, there are use cases that aren&amp;rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &amp;ldquo;a firewall protects a network like a fuse protects an electrical circuit&amp;rdquo;, and it&amp;rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.</description>
+    </item>
+    
+    <item>
+      <title>Crystal Ball: Cisco buying tail-f.  What does it mean?</title>
+      <link>https://forwardingplane.net/2014/06/crystal-ball-cisco-buying-tail-f.-what-does-it-mean/</link>
+      <pubDate>Mon, 23 Jun 2014 16:24:44 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/06/crystal-ball-cisco-buying-tail-f.-what-does-it-mean/</guid>
+      <description>With the recent announcement of Cisco Systems intent to purchase tail-f, proponents of a multi-vendor environment are waiting with baited breath to see how the networking giant will deal with support of competitor hardware and CLIs. Yang is here to stay, there is no doubt about that. As is netconf. Both of these are good things for the industry as a whole, having a standard way to communicate with network hardware [that isn&amp;rsquo;t openflow] is necessary and immeasurably useful.</description>
+    </item>
+    
+    <item>
+      <title>Tail-F NCS: upsetting network management...in a good way.</title>
+      <link>https://forwardingplane.net/2014/02/tail-f-ncs-upsetting-network-management...in-a-good-way./</link>
+      <pubDate>Thu, 27 Feb 2014 04:36:26 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/02/tail-f-ncs-upsetting-network-management...in-a-good-way./</guid>
+      <description>Tail-F NCS can change the way existing and future networks are managed - Feb 4, 2014
+[…] Tail-F NCS can change the way existing and future networks are managed […] One CLI to rule them all? It&amp;#8217;s more than that. | NetworkN3rd | Ed Henry&amp;#039;s Blog - Mar 1, 2014
+[…] seem they’ve developed an appliance that can effectively, as Nick Buraglio wrote in his post here, the Rosetta Stone for all of the vendor NOSes that exist […] </description>
+    </item>
+    
+    <item>
+      <title>Tail-F NCS: upsetting network management...in a good way.</title>
+      <link>https://forwardingplane.net/2014/02/tail-f-ncs-upsetting-network-management...in-a-good-way./</link>
+      <pubDate>Thu, 27 Feb 2014 04:36:26 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/02/tail-f-ncs-upsetting-network-management...in-a-good-way./</guid>
+      <description>“Hopefully there are some things here that will make you really upset in a very good way” is how Carl Moberg of Swedish based company tail-f opened up to the crowd at Networking Field Day 7 on Feb 19, 2014. Tail-f is a sleeper, I had actually never heard of them before NFD7, but they&amp;rsquo;ve got a very unique product in NCS and in my opinion it can change the way existing and future networks are managed.</description>
+    </item>
+    
+    <item>
+      <title>Network Field Day 7</title>
+      <link>https://forwardingplane.net/2014/02/network-field-day-7/</link>
+      <pubDate>Tue, 11 Feb 2014 02:50:24 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/02/network-field-day-7/</guid>
+      <description>Network Field Day 7 - Feb 2, 2014
+[…] Network Field Day 7 […] </description>
+    </item>
+    
+    <item>
+      <title>Network Field Day 7</title>
+      <link>https://forwardingplane.net/2014/02/network-field-day-7/</link>
+      <pubDate>Tue, 11 Feb 2014 02:50:24 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/02/network-field-day-7/</guid>
+      <description>A while ago I got an email asking me to participate in Network Field Day 7. I was very happy and humbled to get asked again since I wasn&amp;rsquo;t able to attend NFD5 or NFD6 for various reasons outside of my control (although I did try to participate with NFD5 remotely). If you&amp;rsquo;re unfamiliar with the tech field day series, you should spend a little time and learn about the value it brings.</description>
+    </item>
+    
+    <item>
+      <title>OpenvSwitch 2.0 Debian packages</title>
+      <link>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</link>
+      <pubDate>Fri, 29 Nov 2013 20:15:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</guid>
+      <description>[Brent Salisbury]( &amp;ldquo;brent.salisbury@gmail.com&amp;rdquo;) - Dec 6, 2013
+Thanks bro, just used this. I always forget how to build binaries cause I&amp;rsquo;m dumb. Laters, -B [Derick Winkworth]( &amp;ldquo;ccie15672@gmail.com&amp;rdquo;) - Feb 6, 2014
+Excellent! Works like a charm&amp;hellip; </description>
+    </item>
+    
+    <item>
+      <title>OpenvSwitch 2.0 Debian packages</title>
+      <link>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</link>
+      <pubDate>Fri, 29 Nov 2013 20:15:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</guid>
+      <description>As part of a larger fun project I&amp;rsquo;m working on (OVS for the ALIX platform; more to come on that once I have it 100% working), I have been playing a lot with OVS. It&amp;rsquo;s a great platform, and as others have mentioned, it&amp;rsquo;s as close to an SDN reference data plane implementation as we have. I&amp;rsquo;d be surprised if many if not all commercial implementations of OpenFlow aren&amp;rsquo;t based on OVS.</description>
+    </item>
+    
+    <item>
+      <title>Basic reference openflow controller VMs running in CentOS 6 for KVM.</title>
+      <link>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</link>
+      <pubDate>Fri, 26 Apr 2013 04:56:07 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</guid>
+      <description>johnathanczxm.gather.com - Jun 1, 2013
+I&amp;rsquo;m truly enjoying the design and layout of your blog. It&amp;rsquo;s a very easy on the eyes which makes it much more enjoyable for me to come here and visit more often. Did you hire out a designer to create your theme? Great work! Resorts at travelsupermarket | assess and e book low cost Hotels online - travelsupermarket.com - Jun 5, 2013
+Hello! I&amp;rsquo;m at work surfing around your blog from my new iphone!</description>
+    </item>
+    
+    <item>
+      <title>Basic reference openflow controller VMs running in CentOS 6 for KVM.</title>
+      <link>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</link>
+      <pubDate>Fri, 26 Apr 2013 04:56:07 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</guid>
+      <description>I had been working, off and on, on a how-to for building the daylight openflow controller under CentOS. Most openflow docs and dev are done under ubuntu or debian, and while those are both fantastic alternatives, there are a huge number of folks that will want or need to use RHEL or CentOS. So, seeing as that is the case, having someone be mindful of that is important. When I saw the write up by Jon Langemak, I scrapped my attempt at a how-to since his was so much better.</description>
+    </item>
+    
+    <item>
+      <title>OpenFlow Hybrid.  It&#39;s a must, not an option.</title>
+      <link>https://forwardingplane.net/2013/04/openflow-hybrid.-its-a-must-not-an-option./</link>
+      <pubDate>Thu, 18 Apr 2013 16:17:37 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/04/openflow-hybrid.-its-a-must-not-an-option./</guid>
+      <description>[Brent Salisbury]( &amp;ldquo;brent.salisbury@gmail.com&amp;rdquo;) - Apr 4, 2013
+Great post Nick. You are spot on. Without an incremental integration path it stays unicorns. Vendors are reluctant to own reference architectures so we will. Hey, its more fun that way anyways. The axis of state is being opened up which will need creative designs to leverage OF/SDN [Lennie]( &amp;ldquo;forwardingplaneblog@consolejunkie.net&amp;rdquo;) - Apr 1, 2013
+I don&amp;rsquo;t believe the hardware vendors ever had our interrests in mind.</description>
+    </item>
+    
+    <item>
+      <title>OpenFlow Hybrid.  It&#39;s a must, not an option.</title>
+      <link>https://forwardingplane.net/2013/04/openflow-hybrid.-its-a-must-not-an-option./</link>
+      <pubDate>Thu, 18 Apr 2013 16:17:37 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/04/openflow-hybrid.-its-a-must-not-an-option./</guid>
+      <description>OpenFlow is, of course, a hot buzzword. It&amp;rsquo;s the newest, and in my opinion, the most innovative thing to hit data networking since dynamic routing. The ability to programmatically, systematically and potentially dynamically control traffic at the flow level through a network is innovative, exciting and terrifying [to many network engineers and architects] at the same time. Allowing applications to touch the network change behavior is something that many engineers are not terribly comfortable with.</description>
+    </item>
+    
+    <item>
+      <title>Daylight, a new dawn is approaching.</title>
+      <link>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</link>
+      <pubDate>Tue, 09 Apr 2013 04:25:59 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</guid>
+      <description>Nancee Waddick - May 5, 2013
+One frequent perceived technical problem with FeedBurner is the reduced number of subscribers being reported for the blogs using the service. This is not actually a technical problem with FeedBurner, but by the feed readers and aggregators that report to FeedBurner, as FeedBurner collects and tallies from those partners. Usually this problem is connected with one specific RSS reader or client. -^ Make sure you visit our own website as well Nick Buraglio - Apr 1, 2013</description>
+    </item>
+    
+    <item>
+      <title>Daylight, a new dawn is approaching.</title>
+      <link>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</link>
+      <pubDate>Tue, 09 Apr 2013 04:25:59 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</guid>
+      <description>The SDN world is abuzz with the announcement that the OpenDaylight controller came from stealth mode today. Why is this important? Well, SDN and OpenFlow are fractured. It is Mac vs. PC, Beta vs VHS, Coke vs. Pepsi all over again&amp;hellip;&amp;hellip;multiplied by 100x and with a handful of players.  Vendor zealots and brand loyalists will nearly always side with their camp. Heck, even I have some biases of personal preference.</description>
+    </item>
+    
+    <item>
+      <title>My SDN soapbox (now with IPv6!)</title>
+      <link>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</link>
+      <pubDate>Sat, 23 Mar 2013 21:45:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</guid>
+      <description>Nick Buraglio - Mar 6, 2013
+Totally agree. Work smarter not harder, it&amp;rsquo;s a good idea and it makes sense. Is it different? Yup. Is it better? Maybe not now, but eventually it will be. Look at the state of routing hardware in 1995. Now look at it. It was a totally different experience and it was not even a real shift in thinking. 10 years from now we will be saying &amp;ldquo;remember when we had to touch every device&amp;rdquo; just like we did with wireless APs not 7-8 years ago.</description>
+    </item>
+    
+    <item>
+      <title>My SDN soapbox (now with IPv6!)</title>
+      <link>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</link>
+      <pubDate>Sat, 23 Mar 2013 21:45:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</guid>
+      <description>This week there was a lot of buzz about SDN (as usual). There was alightreading thread that I commented on and a fantastic read by Brent Salisbury about being the steamroller and not the road that got me thinking about OpenFlow and SDN in a way I had not before.   All that is old is new again. I remember when internal networks were small and routing protocols were taboo in many internal environments.</description>
+    </item>
+    
+    <item>
+      <title>Network Field Day 5 - Participate Remotely</title>
+      <link>https://forwardingplane.net/2013/03/network-field-day-5-participate-remotely/</link>
+      <pubDate>Wed, 06 Mar 2013 14:59:05 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/network-field-day-5-participate-remotely/</guid>
+      <description>Last year, Networking Field Day was something that I&amp;rsquo;d heard of but wasn&amp;rsquo;t really aware of what is really was. I occasionally looked at Twitter and saw the hash tags but did not know much about how it was set up or what it was about. In fact, I actually thought it was supposed to be like the HAM radio field day stuff where you go out and build out an emergency network on the fly.</description>
+    </item>
+    
+    <item>
+      <title>Building a Floodlight OpenFlow controller on CentOS 6</title>
+      <link>https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/</link>
+      <pubDate>Mon, 04 Feb 2013 13:10:24 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/</guid>
+      <description>[Ian]( &amp;ldquo;ian.collett@tekelec.com&amp;rdquo;) - Feb 4, 2013
+Tks - nice short article that just got me going. Two thinks I found; 1) When you &amp;ldquo;git&amp;rdquo; floodlight is now builds a directory called floodlight that you have to drop down into to run ant. 2) The current version of floodlight needs 64 bit Java to run. Not sure if you can hack it to run with 32 bit, I just reloaded a 64 bit version.</description>
+    </item>
+    
+    <item>
+      <title>Building a Floodlight OpenFlow controller on CentOS 6</title>
+      <link>https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/</link>
+      <pubDate>Mon, 04 Feb 2013 13:10:24 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/</guid>
+      <description>A bit of back history: I came from BSD land. I was a FreeBSD user from way back in the 1990s. BSD land is a land of secure boxes and very high uptimes. It&amp;rsquo;s also a land of arguably clunky package support, a lot of compiling by hand and these days, not nearly as encompassing package and network tuning support. I decided to move to Linux&amp;rdquo;) a while ago, reluctantly, and chose Debian as my flavor of choice.</description>
+    </item>
+    
+    <item>
+      <title>SDN Across the WAN, part deux.  Primitives.</title>
+      <link>https://forwardingplane.net/2013/01/sdn-across-the-wan-part-deux.-primitives./</link>
+      <pubDate>Fri, 11 Jan 2013 03:18:47 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/01/sdn-across-the-wan-part-deux.-primitives./</guid>
+      <description>I&amp;rsquo;ve been lamenting about the SDN WAN options for a while now. Having SDN/OpenFlow in a data center or campus is relatively well documented and already widely deployed. Google has been doing SDN across their private WAN in production. These pieces are easy. What isn&amp;rsquo;t easy is the ability to plumb SDN across many domains that are under disparate control. This part is hard. What is lacking is a fundamental framework, or set of primitives to build from.</description>
+    </item>
+    
+    <item>
+      <title>Random Tech Predictions for 2013</title>
+      <link>https://forwardingplane.net/2012/12/random-tech-predictions-for-2013/</link>
+      <pubDate>Thu, 20 Dec 2012 19:39:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/12/random-tech-predictions-for-2013/</guid>
+      <description>I have a love-hate feeling about &amp;ldquo;predictions&amp;rdquo; about the upcoming year, especially tech predictions. I don&amp;rsquo;t like media sensationalism of any kind, and a lot of the tech predctions are just that, sensational, extreme talk to draw in readers or viewers. I&amp;rsquo;m choosing to go down a more subtle path, these are things I&amp;rsquo;ve thought about lately but will likely forget in the upcoming year, unless they actually happen, in which case I&amp;rsquo;d likely do an &amp;ldquo;ah, I remember thinking that may happen&amp;rdquo; gesture.</description>
+    </item>
+    
+    <item>
+      <title>Random Tech Predictions for 2013</title>
+      <link>https://forwardingplane.net/2012/12/random-tech-predictions-for-2013/</link>
+      <pubDate>Thu, 20 Dec 2012 19:39:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/12/random-tech-predictions-for-2013/</guid>
+      <description>I have a love-hate feeling about &amp;ldquo;predictions&amp;rdquo; about the upcoming year, especially tech predictions. I don&amp;rsquo;t like media sensationalism of any kind, and a lot of the tech predctions are just that, sensational, extreme talk to draw in readers or viewers. I&amp;rsquo;m choosing to go down a more subtle path, these are things I&amp;rsquo;ve thought about lately but will likely forget in the upcoming year, unless they actually happen, in which case I&amp;rsquo;d likely do an &amp;ldquo;ah, I remember thinking that may happen&amp;rdquo; gesture.</description>
+    </item>
+    
+    <item>
+      <title>Plexxi could be WDM for the rest of us.</title>
+      <link>https://forwardingplane.net/2012/12/plexxi-could-be-wdm-for-the-rest-of-us./</link>
+      <pubDate>Tue, 11 Dec 2012 05:15:42 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/12/plexxi-could-be-wdm-for-the-rest-of-us./</guid>
+      <description>| The Forwarding Plane - Jan 3, 2013
+[&amp;hellip;] post on Plexxi and the post on SDN across the WAN are also pretty popular and both are subjects I will likely [&amp;hellip;] </description>
+    </item>
+    
+    <item>
+      <title>Plexxi could be WDM for the rest of us.</title>
+      <link>https://forwardingplane.net/2012/12/plexxi-could-be-wdm-for-the-rest-of-us./</link>
+      <pubDate>Tue, 11 Dec 2012 05:15:42 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/12/plexxi-could-be-wdm-for-the-rest-of-us./</guid>
+      <description>Plexxi is an interesting product that has recently emerged in the data center space. While data center, fabric and cloud are all the rage in the buzzword world of data networking, this one caught my attention because it was something unique that I&amp;rsquo;d not seen before. Their TOR boxes have a few interesting additions to them, the first of which is a WDM port on the back. Now, I&amp;rsquo;m not really a stranger to the WDM world.</description>
+    </item>
+    
+    <item>
+      <title>SDN across domains in the WAN - a novice look</title>
+      <link>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</link>
+      <pubDate>Tue, 27 Nov 2012 05:04:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</guid>
+      <description>Brent Salisbury - Nov 3, 2012
+Nice thoughts Nick. The SP is moving quickly on this. You keyed in on the part that is such a question mark. How do inter-domain exchange information safely and usefully. Good thing is the content providers have been doing similar things for a long time. When I click post your site will do an OAUTH to Google. APIs and open source might be the ticket.</description>
+    </item>
+    
+    <item>
+      <title>SDN across domains in the WAN - a novice look</title>
+      <link>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</link>
+      <pubDate>Tue, 27 Nov 2012 05:04:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</guid>
+      <description>Brent Salisbury - Nov 3, 2012
+Nice thoughts Nick. The SP is moving quickly on this. You keyed in on the part that is such a question mark. How do inter-domain exchange information safely and usefully. Good thing is the content providers have been doing similar things for a long time. When I click post your site will do an OAUTH to Google. APIs and open source might be the ticket.</description>
+    </item>
+    
+    <item>
+      <title>SDN across domains in the WAN - a novice look</title>
+      <link>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</link>
+      <pubDate>Tue, 27 Nov 2012 05:04:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</guid>
+      <description>There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how. Brent Salsbury laid out a few use cases here. The why seems pretty straightforward. I do believe it will happen, however, the how is the interesting part. Admittedly, I&amp;rsquo;m a tad of a greenhorn in the SDN space, I&amp;rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.</description>
+    </item>
+    
+    <item>
+      <title>SDN across domains in the WAN - a novice look</title>
+      <link>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</link>
+      <pubDate>Tue, 27 Nov 2012 05:04:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</guid>
+      <description>There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how. Brent Salsbury laid out a few use cases here. The why seems pretty straightforward. I do believe it will happen, however, the how is the interesting part. Admittedly, I&amp;rsquo;m a tad of a greenhorn in the SDN space, I&amp;rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.</description>
+    </item>
+    
+    <item>
+      <title>SDN, the disjointed project we all need to know about</title>
+      <link>https://forwardingplane.net/2012/10/sdn-the-disjointed-project-we-all-need-to-know-about/</link>
+      <pubDate>Sat, 27 Oct 2012 08:48:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/10/sdn-the-disjointed-project-we-all-need-to-know-about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RYU OpenFlow controller</title>
+      <link>https://forwardingplane.net/1/01/ryu-openflow-controller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/1/01/ryu-openflow-controller/</guid>
+      <description>Ryu, an openflow controller, was new to me. After doing 5 minutes of reading I knew I needed to get it up in the lab. The thing that caught my eye was that the project page was boasting support for OpenStack. Now, I don;t really have much experience with openstack, but it has a cult like following and it&amp;rsquo;s on my short list of stuff to get involved with. This seemed like a great excuse.</description>
+    </item>
+    
+  </channel>
+</rss>

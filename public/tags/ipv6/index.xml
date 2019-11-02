@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IPv6 on ForwardingPlane.net</title>
+    <link>https://forwardingplane.net/tags/ipv6/</link>
+    <description>Recent content in IPv6 on ForwardingPlane.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2019, all rights reserved.</copyright>
+    <lastBuildDate>Sun, 31 Mar 2019 17:35:10 +0000</lastBuildDate>
+    
+	<atom:link href="https://forwardingplane.net/tags/ipv6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Soap Box: Mikrotik &#34;IPv6 Apocalypse&#34;, or maybe not.</title>
+      <link>https://forwardingplane.net/2019/03/soap-box-mikrotik-ipv6-apocalypse-or-maybe-not./</link>
+      <pubDate>Sun, 31 Mar 2019 17:35:10 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2019/03/soap-box-mikrotik-ipv6-apocalypse-or-maybe-not./</guid>
+      <description>Over the last few days there has been a huge amount of FUD and panic surrounding two as-yet-to-be-published CVEs (found here and here) related to Mikrotik&amp;rsquo;s IPv6 implementation.It is my opinion that this entire process has been poorly handled, and that the community involved tends to be fairly sensitive to issues such as, and the cloak and dagger nature of the two issues has only exacerbated it. Mikrotik, as a company, is well known for being terse in their responses and tight lipped with their internal workings and dealings with these kinds of issues.</description>
+    </item>
+    
+    <item>
+      <title>Soap Box: Mikrotik &#34;IPv6 Apocalypse&#34;, or maybe not.</title>
+      <link>https://forwardingplane.net/2019/03/soap-box-mikrotik-ipv6-apocalypse-or-maybe-not./</link>
+      <pubDate>Sun, 31 Mar 2019 17:35:10 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2019/03/soap-box-mikrotik-ipv6-apocalypse-or-maybe-not./</guid>
+      <description>Over the last few days there has been a huge amount of FUD and panic surrounding two as-yet-to-be-published CVEs (found here and here) related to Mikrotik&amp;rsquo;s IPv6 implementation.It is my opinion that this entire process has been poorly handled, and that the community involved tends to be fairly sensitive to issues such as, and the cloak and dagger nature of the two issues has only exacerbated it. Mikrotik, as a company, is well known for being terse in their responses and tight lipped with their internal workings and dealings with these kinds of issues.</description>
+    </item>
+    
+    <item>
+      <title>IPv6 Q&amp;A for ISPs</title>
+      <link>https://forwardingplane.net/2018/12/ipv6-qa-for-isps/</link>
+      <pubDate>Sat, 15 Dec 2018 01:21:09 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/12/ipv6-qa-for-isps/</guid>
+      <description>As a follow on to my post on why small to medium ISPs should deploy IPv6 and the associated APNIC blog post, I have begun to compile a list of commonly asked questions IPv6 and their answers in relation to how a small to medium sized ISP can (and should) deploy IPv6. Expect this list to change and grow over time. -&amp;mdash;&amp;ndash;
+Q: Is there DHCP in IPv6? 
+-&amp;mdash;&amp;ndash;</description>
+    </item>
+    
+    <item>
+      <title>IPv6 Q&amp;A for ISPs</title>
+      <link>https://forwardingplane.net/2018/12/ipv6-qa-for-isps/</link>
+      <pubDate>Sat, 15 Dec 2018 01:21:09 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/12/ipv6-qa-for-isps/</guid>
+      <description>As a follow on to my post on why small to medium ISPs should deploy IPv6 and the associated APNIC blog post, I have begun to compile a list of commonly asked questions IPv6 and their answers in relation to how a small to medium sized ISP can (and should) deploy IPv6. Expect this list to change and grow over time. -&amp;mdash;&amp;ndash;
+Q: Is there DHCP in IPv6? 
+-&amp;mdash;&amp;ndash;</description>
+    </item>
+    
+    <item>
+      <title>As a small to medium ISP, why you should deploy IPv6</title>
+      <link>https://forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/</link>
+      <pubDate>Sat, 01 Sep 2018 16:47:23 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/</guid>
+      <description>TheBrothersWISP 75 &amp;#8211; VoIP Acquisitions, Unifi XG, A Hashing Story | Greg Sowell Consulting - Sep 0, 2018
+[…] cast we talk about: SECURE YOUR ROUTERS!!!!!!!!! Ignite net new firmware TBW IPv6 podcast Nicks notes on IPv6 All of the pickles Sangoma acquires Digium Inc Unifi super high density deployment radios – […] </description>
+    </item>
+    
+    <item>
+      <title>As a small to medium ISP, why you should deploy IPv6</title>
+      <link>https://forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/</link>
+      <pubDate>Sat, 01 Sep 2018 16:47:23 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/</guid>
+      <description>TheBrothersWISP 75 &amp;#8211; VoIP Acquisitions, Unifi XG, A Hashing Story | Greg Sowell Consulting - Sep 0, 2018
+[…] cast we talk about: SECURE YOUR ROUTERS!!!!!!!!! Ignite net new firmware TBW IPv6 podcast Nicks notes on IPv6 All of the pickles Sangoma acquires Digium Inc Unifi super high density deployment radios – […] </description>
+    </item>
+    
+    <item>
+      <title>As a small to medium ISP, why you should deploy IPv6</title>
+      <link>https://forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/</link>
+      <pubDate>Sat, 01 Sep 2018 16:47:23 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/</guid>
+      <description>IPv6 has been a crusade of mine for well over a decade. Wether it is teaching IPv6 workshops, offering advice to new users, answering questions, or evangelizing it ad nauseam, it is an important topic to me. The ISP world holds a special place in my heart since a good deal of my early experience came from building or assisting regional ISPs. Recently I had a fun opportunity to talk about deploying IPv6 on The Brothers WISP podcast.</description>
+    </item>
+    
+    <item>
+      <title>As a small to medium ISP, why you should deploy IPv6</title>
+      <link>https://forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/</link>
+      <pubDate>Sat, 01 Sep 2018 16:47:23 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/</guid>
+      <description>IPv6 has been a crusade of mine for well over a decade. Wether it is teaching IPv6 workshops, offering advice to new users, answering questions, or evangelizing it ad nauseam, it is an important topic to me. The ISP world holds a special place in my heart since a good deal of my early experience came from building or assisting regional ISPs. Recently I had a fun opportunity to talk about deploying IPv6 on The Brothers WISP podcast.</description>
+    </item>
+    
+    <item>
+      <title>Trouble with Tribbles .....errr NAT</title>
+      <link>https://forwardingplane.net/2018/07/trouble-with-tribbles-.....errr-nat/</link>
+      <pubDate>Mon, 16 Jul 2018 10:24:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/07/trouble-with-tribbles-.....errr-nat/</guid>
+      <description>Link Propagation 130: Two-Factor Authentication Pays Off - Aug 6, 2018
+[…] Read more here […] </description>
+    </item>
+    
+    <item>
+      <title>Trouble with Tribbles .....errr NAT</title>
+      <link>https://forwardingplane.net/2018/07/trouble-with-tribbles-.....errr-nat/</link>
+      <pubDate>Mon, 16 Jul 2018 10:24:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/07/trouble-with-tribbles-.....errr-nat/</guid>
+      <description>As a follow up to my last post, I wanted to dive a little deeper into the world of address translation and to suss out some of the more compelling details.
+As I&amp;rsquo;ve said on many occasions, it pains me to see NAT referenced as a security mechanism. That said, where PNAT can be beneficial is in an overall privacy strategy, however, even that is comparatively low value and given the current state of global IPv4 allocations, arguably a detriment to usability - we’ll get to that - before we do, it is important to understand what ’NAT” as we call it today actually is, and to do that we need to explain all of the types of address translation (yes, there are several).</description>
+    </item>
+    
+    <item>
+      <title>Field Area Networking</title>
+      <link>https://forwardingplane.net/2018/05/field-area-networking/</link>
+      <pubDate>Fri, 04 May 2018 13:38:15 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/05/field-area-networking/</guid>
+      <description>Field Area Networking - Tech Field Day - May 0, 2018
+[…] Field Area Networking […] </description>
+    </item>
+    
+    <item>
+      <title>Field Area Networking</title>
+      <link>https://forwardingplane.net/2018/05/field-area-networking/</link>
+      <pubDate>Fri, 04 May 2018 13:38:15 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/05/field-area-networking/</guid>
+      <description>It&amp;rsquo;s no secret that RF technologies and what like to call &amp;ldquo;specialty networking&amp;rdquo; are two of my favorite things in the networking space. Put them together and it is like chocolate and peanut butter! Now, some may not consider Field Area Networking (FAN) to be &amp;ldquo;unconventional&amp;rdquo;, but it certainly falls well outside of the space of what is typically traditional enterprise networking. That said, Cisco&amp;rsquo;s FAN briefing at Network Field Day 17 really got me excited and thinking about the alternatives for the IoT space.</description>
+    </item>
+    
+    <item>
+      <title>Why you don&#39;t need a firewall [how to secure an open perimeter network]</title>
+      <link>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
+      <pubDate>Mon, 08 Sep 2014 07:30:07 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
+      <description>[cryptochrome]( &amp;ldquo;sascha@picchiantano.de&amp;rdquo;) - Sep 1, 2014
+Wow. I completely disagree. Just because a firewall can give you some headaches in your network environment it shouldn&amp;rsquo;t be a reason to just dump it. A very dangerous proposition, and your &amp;ldquo;alternatives&amp;rdquo; will not be enough. Fix your firewall if it causes issues. Nick Buraglio - Sep 1, 2014
+Like I said, it&amp;rsquo;s not for everyone, but there are very real use cases where there is no hardware firewall that does what is necessary.</description>
+    </item>
+    
+    <item>
+      <title>Why you don&#39;t need a firewall [how to secure an open perimeter network]</title>
+      <link>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
+      <pubDate>Mon, 08 Sep 2014 07:30:07 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
+      <description>I admit that the title was meant to be inflammatory. However, there are use cases that aren&amp;rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &amp;ldquo;a firewall protects a network like a fuse protects an electrical circuit&amp;rdquo;, and it&amp;rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.</description>
+    </item>
+    
+    <item>
+      <title>Aging hardware, IPv6 and the growing route table</title>
+      <link>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</link>
+      <pubDate>Wed, 13 Aug 2014 05:00:56 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</guid>
+      <description>[Prince Bjork Zappa]( &amp;ldquo;bozhidar@gmail.com&amp;rdquo;) - Aug 3, 2014
+http://arstechnica.com/security/2014/08/internet-routers-hitting-512k-limit-some-become-unreliable/ Nick Buraglio - Aug 3, 2014
+&amp;ldquo;I would like to say that it will help the adoption of IPv6, because it may bring some attention to the fact that IPv4 addresses are being exhausted, but IPv6 has completely failed to take off,&amp;rdquo; Cowie said. &amp;ldquo;If anything, it really shows you that IPv4 has really never been healthier.&amp;rdquo; I&amp;rsquo;d like to think that this is a true statement, but history has shown that people only try to prolong the inevitable IPv6 deployment.</description>
+    </item>
+    
+    <item>
+      <title>Aging hardware, IPv6 and the growing route table</title>
+      <link>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</link>
+      <pubDate>Wed, 13 Aug 2014 05:00:56 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</guid>
+      <description>I&amp;rsquo;ve blathered on about BGP forever. Say what you will about the venerable protocol, it runs the interwebs, is reliable, extendable and well documented. I&amp;rsquo;ve also espoused&amp;rdquo;) ad nauseam about IPv6, so none of this [admitted] rant should really be a surprise coming from me. As of 8/12/2014, according to the CIRD report (and many mailing lists), the default free global ipv4 routing table has reached 512k routes. This is a milestone from many perspectives, but more importantly, it solidifies the fact that there is a great deal of equipment in critical points in the internet that is out of date and cannot perform as intended in its current configuration or function.</description>
+    </item>
+    
+    <item>
+      <title>NIX4NetEng 3: IP Addressing and Subnet Tools</title>
+      <link>https://forwardingplane.net/2014/07/nix4neteng-3-ip-addressing-and-subnet-tools/</link>
+      <pubDate>Sat, 26 Jul 2014 16:46:07 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/07/nix4neteng-3-ip-addressing-and-subnet-tools/</guid>
+      <description>IP addressing and subnetting is a common interview subject. I assert that memorizing these things is useful for learning the concepts but ultimately futile in that it is time consuming and inefficient use of engineering time when tools can be utilized to accomplish the same goals in less time with fewer errors. Honestly, I gave up doing this kind of work manually around 10 years ago and have never regretted it, and in actuality, I&amp;rsquo;d probably struggle to do it at this point because it&amp;rsquo;s a repetitive process better suited by code.</description>
+    </item>
+    
+    <item>
+      <title>Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection</title>
+      <link>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</link>
+      <pubDate>Sat, 11 Jan 2014 21:55:24 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</guid>
+      <description>Internets of Interest for 20th January 2014 — EtherealMind - Jan 1, 2014
+[…] Drink from the firehose! Implement NetFlow data on your network with nfdump and nfsen – Nick Buraglio on open source sFlow/NetFlow tool nfsen : […] Technology Short Take #38 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, networking, storage, and servers - Feb 4, 2014
+[…] Nick Buraglio takes away all your reasons for not collecting flow-based data from your environment with his write-up on installing nfsen and nfdump for NetFlow and/or sFlow collection.</description>
+    </item>
+    
+    <item>
+      <title>Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection</title>
+      <link>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</link>
+      <pubDate>Sat, 11 Jan 2014 21:55:24 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</guid>
+      <description>I am an absolutely huge fan of statistical and instrumentation data, especially when it comes to traffic analysis, visualization and baselining. I&amp;rsquo;ve rambled on about the importance of it at every opportunity. As a result of that, I have been doing work with netflow and netflow-like data for a fairly long time. My first collector was the OSU Flow tools based stuff back around 13 years ago. From there I played with all kinds of netflow tools, both commercial and open source, finally settling most of my focus on nfdump and nfsen.</description>
+    </item>
+    
+    <item>
+      <title>Sonicwall revisited - Now with IPv6 - and way too much licensing cruft.</title>
+      <link>https://forwardingplane.net/2013/12/sonicwall-revisited-now-with-ipv6-and-way-too-much-licensing-cruft./</link>
+      <pubDate>Sat, 07 Dec 2013 15:45:06 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/12/sonicwall-revisited-now-with-ipv6-and-way-too-much-licensing-cruft./</guid>
+      <description>About a year ago I did a brief review of the &amp;ldquo;new Sonicwall&amp;rdquo;, specifically a smaller branch office device that was said should have had all of the features of the larger devices. I proposed that it had some significant limitations (much to the disagreement of a great deal of folks). However, I stand by my statements. If you ignore the fact that firewalls often cause more problems than they solve, that NAT is a nightmarish kludge (and not a security mechanism), and will likely be phased out for better options eventually, the SonicOS I tested was pretty limited as far as what I believe should be features.</description>
+    </item>
+    
+    <item>
+      <title>The sad state of IPv6 and why you need to learn it.</title>
+      <link>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</link>
+      <pubDate>Mon, 05 Aug 2013 11:18:03 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</guid>
+      <description>[Engineer Z]( &amp;ldquo;zawada@ieee.org&amp;rdquo;) - Aug 1, 2013
+I agree fully. As you may recall Nick, for a long time I&amp;rsquo;ve said &amp;ldquo;NAT is a turd&amp;rdquo; and &amp;ldquo;Carrier-grade NAT is a polished turd.&amp;rdquo; At least at first glance &amp;ldquo;Enhanced IP&amp;rdquo; looks like more turd polishing to me. How do we break folks&amp;rsquo; habit of working around the shortcomings of NAT and show the value of truly global address space? Why do folks keep hacking on the NAT kludge?</description>
+    </item>
+    
+    <item>
+      <title>The sad state of IPv6 and why you need to learn it.</title>
+      <link>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</link>
+      <pubDate>Mon, 05 Aug 2013 11:18:03 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</guid>
+      <description>I have been learning and using IPv6 for a quite a while, even before I worked in research and education, back in the ISP days. I thought I should learn it because, frankly, I figured we&amp;rsquo;d all be converted to it by now, already whole hog using it like it was the layer 3 addressing mechanism that it is. Flashback: My first IPv6 access was via a tunnel to HE a long, long time ago and before that I was reading what I could about it.</description>
+    </item>
+    
+    <item>
+      <title>IPv6 Feature Matrix (Again)</title>
+      <link>https://forwardingplane.net/2013/05/ipv6-feature-matrix-again/</link>
+      <pubDate>Fri, 17 May 2013 22:01:27 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/05/ipv6-feature-matrix-again/</guid>
+      <description>There has been some recent chatter on the IPv6 Ops mailing list about the feature matrix. Sadly, I&amp;rsquo;ve let this sort of wither on the vine for a while in favor of OpenFlow and SDN. At the end of the day, though, as a whole we actually need IPv6 more than SDN and OpenFlow at this moment in time, so I&amp;rsquo;m resurrecting it. It is available here. A few additions have been made and there is now a &amp;ldquo;last edited&amp;rdquo; cell so folks can tell if the data is stale or not.</description>
+    </item>
+    
+    <item>
+      <title>A missing link in small MPLS, 10G devices.</title>
+      <link>https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./</link>
+      <pubDate>Fri, 29 Mar 2013 04:43:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./</guid>
+      <description>Nick Buraglio - Mar 6, 2013
+The qfabric stuff seems even more green than the EX series. Perhaps i should give it another look, but I didn&amp;rsquo;t have the best experience with it in testing. My guess is the mpls support will be about the same as the EX series, but it&amp;rsquo;s certainly one I did not consider. Thanks, I will give it another once over. EtherealMind - Apr 1, 2013</description>
+    </item>
+    
+    <item>
+      <title>A missing link in small MPLS, 10G devices.</title>
+      <link>https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./</link>
+      <pubDate>Fri, 29 Mar 2013 04:43:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./</guid>
+      <description>Lately I&amp;rsquo;ve been lamenting the fact that there seems to be a lack of options in a very specific product level. Lets say you have a network that looks like this: Right Away you&amp;rsquo;re limited since you need MPLS and more than 2 10G interfaces. Even more so if you require full support for IPv6 and ISIS. If budget is of any concern, you&amp;rsquo;re in real trouble. For many, Cisco pricing and smartnet is potentially going to exclude anything reasonable from them.</description>
+    </item>
+    
+    <item>
+      <title>My SDN soapbox (now with IPv6!)</title>
+      <link>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</link>
+      <pubDate>Sat, 23 Mar 2013 21:45:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</guid>
+      <description>Nick Buraglio - Mar 6, 2013
+Totally agree. Work smarter not harder, it&amp;rsquo;s a good idea and it makes sense. Is it different? Yup. Is it better? Maybe not now, but eventually it will be. Look at the state of routing hardware in 1995. Now look at it. It was a totally different experience and it was not even a real shift in thinking. 10 years from now we will be saying &amp;ldquo;remember when we had to touch every device&amp;rdquo; just like we did with wireless APs not 7-8 years ago.</description>
+    </item>
+    
+    <item>
+      <title>My SDN soapbox (now with IPv6!)</title>
+      <link>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</link>
+      <pubDate>Sat, 23 Mar 2013 21:45:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</guid>
+      <description>This week there was a lot of buzz about SDN (as usual). There was alightreading thread that I commented on and a fantastic read by Brent Salisbury about being the steamroller and not the road that got me thinking about OpenFlow and SDN in a way I had not before.   All that is old is new again. I remember when internal networks were small and routing protocols were taboo in many internal environments.</description>
+    </item>
+    
+    <item>
+      <title>Tuning BGP installed IPv6 routes</title>
+      <link>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</link>
+      <pubDate>Sat, 02 Mar 2013 13:15:37 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</guid>
+      <description>Tyler Christiansen - Mar 6, 2013
+So what happens when the circuit to the one transit provider providing a default IPv6 route drops? Or if instability is otherwise introduced? Nick Buraglio - Mar 6, 2013
+That is a known limit. One could have default from &amp;gt;1 provider or not have had to do this in the first place, ideally. In this particular instance, there is only one provider that can truly give default (cogent isn&amp;rsquo;t a full v6 table regardless of what they say) and the rest are close but not full.</description>
+    </item>
+    
+    <item>
+      <title>Tuning BGP installed IPv6 routes</title>
+      <link>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</link>
+      <pubDate>Sat, 02 Mar 2013 13:15:37 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</guid>
+      <description>I&amp;rsquo;ve recently run into a situation where there was no longer enough space in the FIB to handle both the full IPv4 global table and the full IPv6 global table. We prefer to run a default-free network within this particular SP network, but in this case, until a hardware refresh can happen, we&amp;rsquo;ll need to adjust that. Given what we knew about the size of both tables, it made more sense to take a default IPv6 route from one transit provider and filter the rest.</description>
+    </item>
+    
+    <item>
+      <title>IPv6 Toolkit 1.3 fun - scan6</title>
+      <link>https://forwardingplane.net/2013/02/ipv6-toolkit-1.3-fun-scan6/</link>
+      <pubDate>Wed, 20 Feb 2013 10:53:38 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/02/ipv6-toolkit-1.3-fun-scan6/</guid>
+      <description>Recently SI6 released the IPv6 Toolkit 1.3  This release is on the heels of this IETF draft  on IPv6 host scanning. It was long thought that scanning an IPv6 network was impossible. The address space was too large and reliably ascertaining the hosts from it would be too time consuming to even attempt. However, as Dr. Hans Zarkov says in the 1980 classic cult film of my youth, Flash Gordon, &amp;ldquo;You can&amp;rsquo;t beat the human spirit!</description>
+    </item>
+    
+    <item>
+      <title>How to install and use the Airport utility under Mountain Lion</title>
+      <link>https://forwardingplane.net/2013/01/how-to-install-and-use-the-airport-utility-under-mountain-lion/</link>
+      <pubDate>Wed, 09 Jan 2013 09:58:47 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/01/how-to-install-and-use-the-airport-utility-under-mountain-lion/</guid>
+      <description>Ben - Jan 2, 2013
+//One of your args slipped down a line. pkgutil &amp;ndash;expand /Volumes/AirPortUtility/AirPortUtility56.pkg ~/Desktop/AirPortTemp cd ~/Desktop/AirPortTemp~/Desktop/AirPortTemp/AirPortUtility56Lion.pkg/ open Payload cd &amp;ldquo;Payload 2 2/Applications/Utilities/&amp;rdquo; open . </description>
+    </item>
+    
+    <item>
+      <title>How to install and use the Airport utility under Mountain Lion</title>
+      <link>https://forwardingplane.net/2013/01/how-to-install-and-use-the-airport-utility-under-mountain-lion/</link>
+      <pubDate>Wed, 09 Jan 2013 09:58:47 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/01/how-to-install-and-use-the-airport-utility-under-mountain-lion/</guid>
+      <description>I have a bunch of Apple wireless gear at my house. It&amp;rsquo;s inexpensive, feature rich and easy to maintain. However, with the update to mountain lion a while ago, the ability to install the older Airport Utility stopped. This is annoying since I have what apple now considers &amp;ldquo;advanced&amp;rdquo; features like IPv6 at my home and essentially all my gear here is a lab (except for the plex server =) I&amp;rsquo;ve been spending a lot of time on cacti lately, and I wanted to test out the syslog plugin&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>A day with only IPv6</title>
+      <link>https://forwardingplane.net/2012/12/a-day-with-only-ipv6/</link>
+      <pubDate>Thu, 13 Dec 2012 17:58:46 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/12/a-day-with-only-ipv6/</guid>
+      <description>IPv6 is coming. Like SDN, we can&amp;rsquo;t ignore it. Are you ready? Are you apps ready? I&amp;rsquo;ll wager the answer is no. Mine aren&amp;rsquo;t. I&amp;rsquo;ve been working on IPv6 for about 11 years, from early days of tunnels to full native IPv6 at home and at work. In teaching the IPv6 workshop for internet2, one of the things that I always suggest is to have a dual stacked host and an IPv6 only host available for testing.</description>
+    </item>
+    
+    <item>
+      <title>MacOS 10.7 and IPv6 privacy addressing</title>
+      <link>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</link>
+      <pubDate>Sun, 31 Jul 2011 02:40:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</guid>
+      <description>Charley - Aug 2, 2011
+I think the real security issue with EUI-64 address assignment is that your IPv6 address contains your same MAC address, wherever you go. So your movements are trackable between home, work, and coffee shop networks. It has less to do with what the L2 address actually is. Charley - Aug 2, 2011
+Also, you missed a part of the command to turn it off; it&amp;rsquo;s:</description>
+    </item>
+    
+    <item>
+      <title>MacOS 10.7 and IPv6 privacy addressing</title>
+      <link>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</link>
+      <pubDate>Sun, 31 Jul 2011 02:40:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</guid>
+      <description>I&amp;rsquo;m not a fan of IPv6 privacy addressing. I understand the logic behind it, I really doo, obfuscate the LLADDR (MAC address) of the host in question, but I really dont&amp;rsquo;t see the realistic purpose. If someone wanted to use my mac address, what good would that really get them, unless they&amp;rsquo;re on the same layer 2 segment? More importantly, if they;re on the same layer 2 segment, they have my MAC address anyway.</description>
+    </item>
+    
+    <item>
+      <title>OSX (10.7; Lion) DHCPv6 client working with pfsense server.</title>
+      <link>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</link>
+      <pubDate>Tue, 26 Jul 2011 18:20:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</guid>
+      <description>Nick Buraglio - Jul 4, 2011
+Sorry, I thought it best to sanitize my ipv6 space even though it&amp;rsquo;s not too hard to enumerate it. </description>
+    </item>
+    
+    <item>
+      <title>OSX (10.7; Lion) DHCPv6 client working with pfsense server.</title>
+      <link>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</link>
+      <pubDate>Tue, 26 Jul 2011 18:20:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</guid>
+      <description>It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&amp;rsquo;s about time.
+Before:
+
+After:
+
+pfSense setup:
+
+Using Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.
+I didn&amp;rsquo;t do anything except use the &amp;ldquo;Automatic&amp;rdquo; setting in the network control panel, so out of the box OSX 10.</description>
+    </item>
+    
+    <item>
+      <title>Joint Techs Summer 2011 IPv6 talks</title>
+      <link>https://forwardingplane.net/2011/07/joint-techs-summer-2011-ipv6-talks/</link>
+      <pubDate>Mon, 18 Jul 2011 09:54:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/07/joint-techs-summer-2011-ipv6-talks/</guid>
+      <description>If anyone is interested in the talks I participated in at Joint Techs in Fairbanks, AK, they are now on the internet2 sites.
+IPv6 feature support
+IPv6 campus panel discussion
+They&amp;rsquo;re apparently not embeddable, but can be watched from the Joint Techs site.
+[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</description>
+    </item>
+    
+    <item>
+      <title>IPv6 Features matrix for Network Hardware</title>
+      <link>https://forwardingplane.net/2011/03/ipv6-features-matrix-for-network-hardware/</link>
+      <pubDate>Wed, 16 Mar 2011 21:55:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/03/ipv6-features-matrix-for-network-hardware/</guid>
+      <description>Chris64 - Jul 2, 2011
+http://en.wikipedia.org/wiki/Comparison_of_stackable_switches
+OSPFv3/RIPng/multicast routing/&amp;hellip; Nick Buraglio - Aug 0, 2011
+This is a decent list for the stackable stuff. Routing protocols should really be broken out into another list, or maybe the lists should be reworked into stackable and chassis. I&amp;rsquo;m personally more interested in the chassis stuff because thats what I use, but all of it is important and relevant. bcscomputercity - Sep 5, 2011</description>
+    </item>
+    
+    <item>
+      <title>IPv6 Features matrix for Network Hardware</title>
+      <link>https://forwardingplane.net/2011/03/ipv6-features-matrix-for-network-hardware/</link>
+      <pubDate>Wed, 16 Mar 2011 21:55:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/03/ipv6-features-matrix-for-network-hardware/</guid>
+      <description>I&amp;rsquo;ve been doing a lot of IPv6 stuff lately, and one of the things I didn&amp;rsquo;t find (and kinda just wanted to put one together for my own benefit) is a matrix of features I thought were important to have on the IPv6 side for common network hardware. Below is a work in progress of what I have so far, which will automatically publish changes from this spreadsheet. Please email me if you&amp;rsquo;re interested in adding to this or correcting anything I may be incorrect on.</description>
+    </item>
+    
+    <item>
+      <title>A bit of IPv6 humor for the holidays</title>
+      <link>https://forwardingplane.net/2010/12/a-bit-of-ipv6-humor-for-the-holidays/</link>
+      <pubDate>Fri, 24 Dec 2010 03:15:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/12/a-bit-of-ipv6-humor-for-the-holidays/</guid>
+      <description>A quick screen grab from here
+[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</description>
+    </item>
+    
+    <item>
+      <title>Enabling IPv6 on Juniper SRX 5800 cluster</title>
+      <link>https://forwardingplane.net/2010/10/enabling-ipv6-on-juniper-srx-5800-cluster/</link>
+      <pubDate>Wed, 20 Oct 2010 21:59:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/10/enabling-ipv6-on-juniper-srx-5800-cluster/</guid>
+      <description>After enabling the IPv6 Flow based processing, we decided to get rolling with making our IPv6 path congruent with everything else (IPv4 unicast and multicast). With all of the other things we had going on, we thought this would be a low hanging fruit that would be easily plucked from the routing tree. Well, a minor oversight on our part caught us by surprise.
+According to this handy dandy matrix for JunOS 10.</description>
+    </item>
+    
+    <item>
+      <title>SRX IPv6 flow based processing</title>
+      <link>https://forwardingplane.net/2010/09/srx-ipv6-flow-based-processing/</link>
+      <pubDate>Thu, 16 Sep 2010 17:18:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/09/srx-ipv6-flow-based-processing/</guid>
+      <description>Nick Buraglio - Sep 6, 2010
+We&amp;rsquo;ve found a at least one issue after this change. Apparently, our IKE ALG is no longer functioning as it was before.
+I&amp;rsquo;m not terribly confident in the SRX ALG implementations, so I&amp;rsquo;ll be poking at juniper a but about that as I get time. they&amp;rsquo;ve been very responsive to our questions and issues so ar, I expect that this will either be fixed ASAP or pointed out as a problem on our end.</description>
+    </item>
+    
+    <item>
+      <title>SRX IPv6 flow based processing</title>
+      <link>https://forwardingplane.net/2010/09/srx-ipv6-flow-based-processing/</link>
+      <pubDate>Thu, 16 Sep 2010 17:18:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/09/srx-ipv6-flow-based-processing/</guid>
+      <description>One of our plans is to consolidate as many of the egress trafic paths as possible. To facilitate this, we had to do some things like buy carrier grade equipment. Enter the SRX 5800. No one really does IPS/IDP+Firewall quite like the SRX. After extensive research and exhaustive hands on testing with quite a bit of equipment, that is what we settled on. Even the IBM &amp;ldquo;technical evangelist&amp;rdquo; guy that came to talk to us said &amp;ldquo;No one really does it like they do&amp;rdquo; when referring to Juniper and 10G firewall/IPS.</description>
+    </item>
+    
+    <item>
+      <title>Viewing ipv6 router advertisements</title>
+      <link>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</link>
+      <pubDate>Fri, 03 Sep 2010 19:00:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</guid>
+      <description>Peter - Feb 3, 2012
+Really helpful. I am not a very computer literate person and you always make things easy to understand. Thanks so much
+portable wireless router </description>
+    </item>
+    
+    <item>
+      <title>Viewing ipv6 router advertisements</title>
+      <link>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</link>
+      <pubDate>Fri, 03 Sep 2010 19:00:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</guid>
+      <description>I knew a tool like this had to exist, but I had never needed to look in the past. While debugging a RA problem, I come upon the need to view IPv6 router advertisements. How can one do this? tcpdump? Yeah, I guess that could work. It&amp;rsquo;s almost like using a bulldozer when a wheelbarrow is all you need, though. I could use ndpmon, I suppose, but that, too seems like overkill.</description>
+    </item>
+    
+  </channel>
+</rss>

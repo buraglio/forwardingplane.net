@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>How-To on ForwardingPlane.net</title>
+    <link>https://forwardingplane.net/tags/how-to/</link>
+    <description>Recent content in How-To on ForwardingPlane.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2019, all rights reserved.</copyright>
+    <lastBuildDate>Sun, 08 Sep 2019 18:11:58 +0000</lastBuildDate>
+    
+	<atom:link href="https://forwardingplane.net/tags/how-to/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ElastiFlow Template VM</title>
+      <link>https://forwardingplane.net/2019/09/elastiflow-template-vm/</link>
+      <pubDate>Sun, 08 Sep 2019 18:11:58 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2019/09/elastiflow-template-vm/</guid>
+      <description>Flow data is a critical piece of understanding how your network works what what it is actively doing. It also provides a great baseline and capacity planning tool. However, some of the more feature rich NetFlow and/or sFlow collectors can be quite daunting in their cost and/or complexity to install. ElastiFlow is a great alternative for flow analytics and is built on the well traveled and robust ElasticStack, meaning, its back end is well documented, well supported, and scales exceptionally well.</description>
+    </item>
+    
+    <item>
+      <title>Basic automation for WISPs and small to medium ISPs</title>
+      <link>https://forwardingplane.net/2019/07/basic-automation-for-wisps-and-small-to-medium-isps/</link>
+      <pubDate>Mon, 29 Jul 2019 09:39:35 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2019/07/basic-automation-for-wisps-and-small-to-medium-isps/</guid>
+      <description>Small to medium ISPs are an interesting phenomenon. Early in my career I was pretty heavily involved in that space, so much of my current thought processes and methodologies are heavily informed by that experience. Something that never ceases to amaze me today is that the practice of scripting and “automating” things seems to have become somewhat of a lost art, or at the very least it is not part of an initial deployment plan.</description>
+    </item>
+    
+    <item>
+      <title>The value of measurements: Network Latency</title>
+      <link>https://forwardingplane.net/2019/04/the-value-of-measurements-network-latency/</link>
+      <pubDate>Mon, 29 Apr 2019 10:23:32 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2019/04/the-value-of-measurements-network-latency/</guid>
+      <description>There is no shortage of network telemetry data that can be collected, recorded, graphed, and stored for cross reference and triage. Not one to be underestimated, latency at a can be incredibly powerful when leveraged for baseline and deviation notification. As I have eluded to in the past, there are many tools in this space. I have written about a few of them in detail and touched on others in passing.</description>
+    </item>
+    
+    <item>
+      <title>DNS - the treasure trove of information your ISP can see</title>
+      <link>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</link>
+      <pubDate>Mon, 10 Dec 2018 10:23:42 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
+      <description>Link Propagation 147: We Don&amp;#8217;t Need No Stinking Badges! - Dec 5, 2018
+[…] Read more here […] </description>
+    </item>
+    
+    <item>
+      <title>DNS - the treasure trove of information your ISP can see</title>
+      <link>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</link>
+      <pubDate>Mon, 10 Dec 2018 10:23:42 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
+      <description>In recent years, the nature of privacy on the internet has become a very important topic amongst those concerned with the now lack of net neutrality. The de-facto mechanism for dealing with privacy has been to &amp;ldquo;SSL all the things&amp;rdquo;, which I am very much in favor of. What many do not realize, though, is that simply using SSL for the traffic that transits a given ISP still leaves a wealth of thick, rich, delicious personal data still easily available to your ISP to harvest, sell, and do with as they please.</description>
+    </item>
+    
+    <item>
+      <title>Faucet: Enterprise OpenFlow in production</title>
+      <link>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</link>
+      <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</guid>
+      <description>Faucet &amp;#8211; Enterprise SDN from an office to multi-terabit SCinet at SC18 | - Nov 1, 2018
+[…] Then my colleague, Nick Buraglio, and I decided, why not wire our satellite branch office with faucet based networking than buy traditional switches? With Josh (Bailey)’s help, Nick has now wired the lives of eight of ESnet’s key employees to be dependent on faucet and he has been having a blast (no downtime there either)!</description>
+    </item>
+    
+    <item>
+      <title>Faucet: Enterprise OpenFlow in production</title>
+      <link>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</link>
+      <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</guid>
+      <description>Remember OpenFlow? It was the media and marketing darling for the better part of 5 years as “the machine” conflated OpenFlow with SDN and SDN with - almost literally - everything. &amp;ldquo;Still Does Nothing&amp;rdquo; was a common phrase uttered around those of us that had run large scale, complex networks for a long time. Quietly, and mostly, out of the fickle media and blogosphere eye, a scrappy little SDN project called faucet has been diligently plugging away &amp;ndash; making easy to use, production quality, well documented, and very stable code that runs OpenFlow networks quite happily in production and at scale.</description>
+    </item>
+    
+    <item>
+      <title>Strategy Series: What is your netflow strategy?</title>
+      <link>https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/</link>
+      <pubDate>Mon, 18 Dec 2017 11:15:30 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/</guid>
+      <description>What is your netflow strategy? - Tech Field Day - Dec 2, 2017
+[…] What is your netflow strategy? […] [Robert Cowart]( &amp;ldquo;robacj@gmail.com&amp;rdquo;) - Dec 4, 2017
+Nick, thanks for the mention of ElastiFlow. Back when I created it I knew from my past experience that there was a lot of value in flow data. However, I must admit to being surprised with how popular the solution has become. Your criticism of the lacking documentation is fair, and will be addressed in the near future.</description>
+    </item>
+    
+    <item>
+      <title>Strategy Series: What is your netflow strategy?</title>
+      <link>https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/</link>
+      <pubDate>Mon, 18 Dec 2017 11:15:30 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/</guid>
+      <description>You have one, right? Even if your entire strategy is “collect some flow data”, there is absolutely NO reason not to have a netflow implementation, and frankly, it will save you time and money over time if you make the effort to do it. I love network data and analytics and I have waxed poetic about how important they are at every opportunity. There are a myriad of options for analytics and flow data.</description>
+    </item>
+    
+    <item>
+      <title>Creating an internal span port inside proxmox OVS</title>
+      <link>https://forwardingplane.net/2017/03/creating-an-internal-span-port-inside-proxmox-ovs/</link>
+      <pubDate>Tue, 21 Mar 2017 03:49:58 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2017/03/creating-an-internal-span-port-inside-proxmox-ovs/</guid>
+      <description>In the last few years I have moved all of my virtualization to proxmox and docker. Seeing as I like to look at packets because I am a closet security guy, and being as I have been working off-and-on on a security project in recent times, I wanted to be able to span a port not only from a hardware switch, but also within my software switches. I had been using linux bridge, which I am not a fan of, so when I started down this path I did not look hard to find a way to do so under that platform.</description>
+    </item>
+    
+    <item>
+      <title>Brocade Vyatta Install and OpenFlow 1.3 on ICX 7450</title>
+      <link>https://forwardingplane.net/2015/06/brocade-vyatta-install-and-openflow-1.3-on-icx-7450/</link>
+      <pubDate>Sat, 20 Jun 2015 16:06:03 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/06/brocade-vyatta-install-and-openflow-1.3-on-icx-7450/</guid>
+      <description>I recently had a need to test OpenFlow on the brocade ICX 7450 for a fairly good sized, high visibility project. The basic goal is pretty simple, Layer2 path provisioning. Straightforward and fairly well supported in OpenFlow, even from the early days. To do this, the idea was to use a turnkey platform, that way there is one throat to choke if there are issues. I landed on the Brocade Vyatta controller (which is essentially ODL), and the ICX.</description>
+    </item>
+    
+    <item>
+      <title>Monitoring VMware ESXi with SNMP and Cacti</title>
+      <link>https://forwardingplane.net/2015/01/monitoring-vmware-esxi-with-snmp-and-cacti/</link>
+      <pubDate>Mon, 19 Jan 2015 10:02:10 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2015/01/monitoring-vmware-esxi-with-snmp-and-cacti/</guid>
+      <description>VMWare is a powerful tool, and monitoring is a critical service. How does one monitor such an integral piece of infrastructure, and what do they monitor it with? There are powerful commercial ways of monitoring VMware, however, for those with existing SNMP based systems in place, specifically cacti, there are options. To that end, I&amp;rsquo;ll set aside my strong distaste for SNMP [yet again], because those are for a larger, less useful series of posts.</description>
+    </item>
+    
+    <item>
+      <title>NIX4Neteng 4: POODLE and SSLv3, scanning and updating</title>
+      <link>https://forwardingplane.net/2014/10/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</link>
+      <pubDate>Wed, 15 Oct 2014 17:36:54 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/10/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</guid>
+      <description>With the recent release of the POODLE SSLv3 vulnerability, folks are scrambling around trying to figure out what runs what and where. Running a handful of things that do SSL, I was obligated, both personally and professionally, to figure out an easy way to drill down and figure out what does what and then fix the vulnerable services. When there are a lot of devices, this can seem like a daunting task, and it is if you&amp;rsquo;re trying to do it manually.</description>
+    </item>
+    
+    <item>
+      <title>sonrancid: A [very] basic RANCID module for sonicwall</title>
+      <link>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</link>
+      <pubDate>Mon, 15 Sep 2014 09:05:13 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</guid>
+      <description>[Les Begnaud]( &amp;ldquo;lesbegnaud@gmail.com&amp;rdquo;) - Dec 4, 2014
+Hi there, I just implemented your set of scripts and had a couple comments: 1) seems to work just fine on an NSA 3600 2) have you attempted to rebuild a sonicwall based on the output of &amp;lsquo;show current-config&amp;rsquo;? 3) any luck with getting the ever-changing passwords to behave themselves? I am not a fan of constant diffs&amp;hellip; defeats the purpose of diffs 4) your github sonrancid script references clogin, and not sonlogin 5) Thanks so much for doing this!</description>
+    </item>
+    
+    <item>
+      <title>sonrancid: A [very] basic RANCID module for sonicwall</title>
+      <link>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</link>
+      <pubDate>Mon, 15 Sep 2014 09:05:13 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</guid>
+      <description>I know, I know, I&amp;rsquo;m always saying that you don&amp;rsquo;t need a firewall. That&amp;rsquo;s mostly to get your attention to push my agenda of sane security architecture, I do actually believe that firewalls are appropriate in a great many use cases and I&amp;rsquo;ve managed them big and small ranging from Juniper SRX 5800 clusters to tiny purpose built BSD distros on custom hardware. I even managed Checkpoint and gauntlet firewall back in the 1990s.</description>
+    </item>
+    
+    <item>
+      <title>NIX4NetEng 3: IP Addressing and Subnet Tools</title>
+      <link>https://forwardingplane.net/2014/07/nix4neteng-3-ip-addressing-and-subnet-tools/</link>
+      <pubDate>Sat, 26 Jul 2014 16:46:07 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/07/nix4neteng-3-ip-addressing-and-subnet-tools/</guid>
+      <description>IP addressing and subnetting is a common interview subject. I assert that memorizing these things is useful for learning the concepts but ultimately futile in that it is time consuming and inefficient use of engineering time when tools can be utilized to accomplish the same goals in less time with fewer errors. Honestly, I gave up doing this kind of work manually around 10 years ago and have never regretted it, and in actuality, I&amp;rsquo;d probably struggle to do it at this point because it&amp;rsquo;s a repetitive process better suited by code.</description>
+    </item>
+    
+    <item>
+      <title>NIX4NetEng 1 Managing dotfiles; pwn the unspoken pain of UNIX administration</title>
+      <link>https://forwardingplane.net/2014/05/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration/</link>
+      <pubDate>Thu, 01 May 2014 02:58:20 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/05/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration/</guid>
+      <description>Many network engineers are also tasked with maintaining systems that provide network services, those things that make the network easier to use such as DNS and DHCP or management systems that perform useful things like monitor the network, collect flow data or bestow access to the equipment by acting as bastion or jump hosts. In many instances, robust and high availability services run on UNIX, Linux or BSD systems for stability and reliability, so those that manage these systems need to be well versed system admins as well as whatever their other job functions are.</description>
+    </item>
+    
+    <item>
+      <title>BGP tools; troubleshooting and monitoring external routing in a nutshell</title>
+      <link>https://forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/</link>
+      <pubDate>Fri, 21 Mar 2014 04:51:06 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/</guid>
+      <description>[svētā govs!]( &amp;ldquo;saulstari@gmail.com&amp;rdquo;) - Mar 3, 2014
+great, thank you Nick Buraglio - Apr 6, 2014
+Another great site that should probably be on the &amp;ldquo;notable mentions&amp;rdquo; is the CIDR report. CIDR report provides a nice, easy to read and up to date breakdown of the global routing table for both IPv4 and IPv6. Great to utilize for trending and planning if you&amp;rsquo;re not monitoring your own tables (which you should be) and as an impartial data source for the global table.</description>
+    </item>
+    
+    <item>
+      <title>BGP tools; troubleshooting and monitoring external routing in a nutshell</title>
+      <link>https://forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/</link>
+      <pubDate>Fri, 21 Mar 2014 04:51:06 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/</guid>
+      <description>Time to rewind from the new and shiny and get back to roots of networking. BGP is one of those odd protocols that is foundational to the functioning of the internet but yet somewhat hard to get experience with. Say what you will about this venerable protocol, it&amp;rsquo;s been here a while and it is not going anywhere any time soon. I&amp;rsquo;ve been doing BGP since around late 1999, and I completely fell into it by accident, having only the Cisco Internet Routing Architectures book (which I literally read cover to cover) and the Ulysses Black Routing Protocols Book and whatever I could find on a random search engine to guide me, and that was only after having to learn on the CLI for the first 6-7 months.</description>
+    </item>
+    
+    <item>
+      <title>Replace ZFS RAIDZ1 disk</title>
+      <link>https://forwardingplane.net/2014/03/replace-zfs-raidz1-disk/</link>
+      <pubDate>Tue, 11 Mar 2014 01:01:58 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/03/replace-zfs-raidz1-disk/</guid>
+      <description>I recently had the displeasure of dealing with a series of failed disks in my newly created ZFS based NAS. I had cobbled together roughly 12TB of disk space and jammed them into an old PC, stretching the limits of the platform when I decided to go with ZFS. I broke all of the rules, underpowered, single core PC, only a handful of GIG of non-ECC RAM, etc. I&amp;rsquo;m sure storage guys are having a coronary after reading that, but it works for me and has minimal issues since I just relatively redundant need bulk storage and it doesn&amp;rsquo;t need to be fast (the ethernet connection is only 100M).</description>
+    </item>
+    
+    <item>
+      <title>Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection</title>
+      <link>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</link>
+      <pubDate>Sat, 11 Jan 2014 21:55:24 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</guid>
+      <description>Internets of Interest for 20th January 2014 — EtherealMind - Jan 1, 2014
+[…] Drink from the firehose! Implement NetFlow data on your network with nfdump and nfsen – Nick Buraglio on open source sFlow/NetFlow tool nfsen : […] Technology Short Take #38 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, networking, storage, and servers - Feb 4, 2014
+[…] Nick Buraglio takes away all your reasons for not collecting flow-based data from your environment with his write-up on installing nfsen and nfdump for NetFlow and/or sFlow collection.</description>
+    </item>
+    
+    <item>
+      <title>Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection</title>
+      <link>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</link>
+      <pubDate>Sat, 11 Jan 2014 21:55:24 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</guid>
+      <description>I am an absolutely huge fan of statistical and instrumentation data, especially when it comes to traffic analysis, visualization and baselining. I&amp;rsquo;ve rambled on about the importance of it at every opportunity. As a result of that, I have been doing work with netflow and netflow-like data for a fairly long time. My first collector was the OSU Flow tools based stuff back around 13 years ago. From there I played with all kinds of netflow tools, both commercial and open source, finally settling most of my focus on nfdump and nfsen.</description>
+    </item>
+    
+    <item>
+      <title>OpenvSwitch 2.0 Debian packages</title>
+      <link>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</link>
+      <pubDate>Fri, 29 Nov 2013 20:15:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</guid>
+      <description>[Brent Salisbury]( &amp;ldquo;brent.salisbury@gmail.com&amp;rdquo;) - Dec 6, 2013
+Thanks bro, just used this. I always forget how to build binaries cause I&amp;rsquo;m dumb. Laters, -B [Derick Winkworth]( &amp;ldquo;ccie15672@gmail.com&amp;rdquo;) - Feb 6, 2014
+Excellent! Works like a charm&amp;hellip; </description>
+    </item>
+    
+    <item>
+      <title>OpenvSwitch 2.0 Debian packages</title>
+      <link>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</link>
+      <pubDate>Fri, 29 Nov 2013 20:15:17 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</guid>
+      <description>As part of a larger fun project I&amp;rsquo;m working on (OVS for the ALIX platform; more to come on that once I have it 100% working), I have been playing a lot with OVS. It&amp;rsquo;s a great platform, and as others have mentioned, it&amp;rsquo;s as close to an SDN reference data plane implementation as we have. I&amp;rsquo;d be surprised if many if not all commercial implementations of OpenFlow aren&amp;rsquo;t based on OVS.</description>
+    </item>
+    
+    <item>
+      <title>Inline-jflow on MX series Juniper</title>
+      <link>https://forwardingplane.net/2013/09/inline-jflow-on-mx-series-juniper/</link>
+      <pubDate>Sun, 01 Sep 2013 15:40:29 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/09/inline-jflow-on-mx-series-juniper/</guid>
+      <description>[poohead]( &amp;ldquo;stuff@stuff.com&amp;rdquo;) - Sep 5, 2013
+Great post! Like all SolarWinds products, the Netflow Analyzer is subpar at best. It has major scalability and performance problems (most likely due to to way it uses its SQL database) that make it unusable for actual troubleshooting. And no matter how many new widgets and features they add to their interface, the graphs are still unreadable. I am of the opinion that any network reporting tool that doesn&amp;rsquo;t use the RRD/MRTG-style graphs is almost worthless.</description>
+    </item>
+    
+    <item>
+      <title>Inline-jflow on MX series Juniper</title>
+      <link>https://forwardingplane.net/2013/09/inline-jflow-on-mx-series-juniper/</link>
+      <pubDate>Sun, 01 Sep 2013 15:40:29 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/09/inline-jflow-on-mx-series-juniper/</guid>
+      <description>One of the things that I&amp;rsquo;ve always lamented about using non-Cisco hardware is the lack of true 1:1 netflow support. Say what you will about jflow, cflow, sflow&amp;hellip;.there is no substitute for netflow, with sflow being the exception to that since it is a protocol that inherently supports ipv6 and can transport far more than simple network information if configured in certain ways on certain devices. On newer MX series Juniper routers the game has changed.</description>
+    </item>
+    
+    <item>
+      <title>Building FlowVisor on Centos 6 - quick and dirty</title>
+      <link>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</link>
+      <pubDate>Fri, 05 Jul 2013 10:22:23 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</guid>
+      <description>Technology Short Take #34 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, storage, and servers - Jul 1, 2013
+[&amp;hellip;] Nick Buraglio provides some quick-and-dirty instructions for building FlowVisor on CentOS 6. [&amp;hellip;] Technology Short Take #34 | Strategic HR - Jul 6, 2013
+[&amp;hellip;] Nick Buraglio provides some quick-and-dirty instructions for building FlowVisor on CentOS 6. [&amp;hellip;] # - Aug 4, 2013
+At the end of the nail with your hammer to avoid splitting the wood when you drive the nail.</description>
+    </item>
+    
+    <item>
+      <title>Building FlowVisor on Centos 6 - quick and dirty</title>
+      <link>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</link>
+      <pubDate>Fri, 05 Jul 2013 10:22:23 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</guid>
+      <description>I had the need to build a FlowVisor instance under CentOS. Since nearly all of the docs I could find were for debian, I threw this together. I utilized this GENI doc and the github docs as a simple reference. This is the quick and dirty method I used: Install the prerequisites:``` sudo yum -y install ant eclipse java-1.6.0-openjdk.x86_64 git sudo yum -y groupinstall &amp;ldquo;Development Tools&amp;rdquo;
+mkdir /services cd /services git clone git://github.</description>
+    </item>
+    
+    <item>
+      <title>VMWare ESXi CLI reference</title>
+      <link>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</link>
+      <pubDate>Sun, 30 Jun 2013 14:24:51 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</guid>
+      <description>[mike]( &amp;ldquo;mike@marseglia.org&amp;rdquo;) - Sep 4, 2013
+You would be happy to hear that William Lam, engineer at VMware, has an excellent blog at http://www.virtuallyghetto.com/ where he comes up with useful scripts/tools. Also, you should check out the vSphere Management Assistant (vMA) at http://www.vmware.com/support/developer/vima/ </description>
+    </item>
+    
+    <item>
+      <title>VMWare ESXi CLI reference</title>
+      <link>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</link>
+      <pubDate>Sun, 30 Jun 2013 14:24:51 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</guid>
+      <description>One of my biggest complaints about VMware is that it is an enterprise application. It has historically catered to the masses, which I completely understand, but those of us that aren&amp;rsquo;t a fortune 500 company are figuratively and operationally shoved into a corner and forced to find hackish ways of doing things to work around the enterprise nature. One really, really good example of this is OS dependency. I hated architecture dependencies back in the old days (x86, SPARC, PPC) and I absolutely despise things that are OS platform dependent now.</description>
+    </item>
+    
+    <item>
+      <title>Broadcast input with iTerm</title>
+      <link>https://forwardingplane.net/2013/06/broadcast-input-with-iterm/</link>
+      <pubDate>Sat, 22 Jun 2013 15:56:12 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/06/broadcast-input-with-iterm/</guid>
+      <description>psn code generator free download - Aug 5, 2013
+I leave a response when I like a article on a site or I have something to add to the discussion. It&amp;rsquo;s caused by the fire displayed in the post I browsed. And on this article Broadcast input with iTerm2. I was actually excited enough to drop a commenta response :) I actually do have a couple of questions for you if you don&amp;rsquo;t mind.</description>
+    </item>
+    
+    <item>
+      <title>Broadcast input with iTerm</title>
+      <link>https://forwardingplane.net/2013/06/broadcast-input-with-iterm/</link>
+      <pubDate>Sat, 22 Jun 2013 15:56:12 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/06/broadcast-input-with-iterm/</guid>
+      <description>As much as I like to think I automate everything, I&amp;rsquo;m pretty bad at writing code to make my life easier since it tends to take me longer to write the code and it tends to make be a bit grumpy (this is eomthing I&amp;rsquo;m fixing by learning as much code dev as I can during my limited spare time). However, I like to think I can be fairly smart about working around my limited programming skills (think boba fett rather than jedi) by using the tools available to common folk.</description>
+    </item>
+    
+    <item>
+      <title>Debugging Brocade MLX/XMR ip_rx CPU issues</title>
+      <link>https://forwardingplane.net/2013/06/debugging-brocade-mlx/xmr-ip_rx-cpu-issues/</link>
+      <pubDate>Mon, 17 Jun 2013 00:35:42 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/06/debugging-brocade-mlx/xmr-ip_rx-cpu-issues/</guid>
+      <description>I recently had the need to debug a run away ip_rx process on an older Brocade MLX. For anyone that has had to do any type of low level debugging on the Brocade (Foundry) platform, you know that there many somewhat deep level diagnostics that are possible. The debug (like cisco debug) is a bit lacking, but the dm, LP and MP commands are very useful (and a tad scary). Regardless, I&amp;rsquo;ve had to utilize them a lot in the last few years so my aversion to using them has been pretty much completely callused over.</description>
+    </item>
+    
+    <item>
+      <title>MPLS Bootstrap</title>
+      <link>https://forwardingplane.net/2013/06/mpls-bootstrap/</link>
+      <pubDate>Fri, 07 Jun 2013 13:04:02 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/06/mpls-bootstrap/</guid>
+      <description>I&amp;rsquo;ve been doing a lot of MPLS in the last 45 or so days (which is one of the reasons I have been absentee in the OpenFlow world lately). Having had almost no real world MPLS experience aside from a handful of pseudo-wires and a very small LDP signaled network, I had to spend some time reading, hacking at routers and essentially learning. In doing so, I found a few things.</description>
+    </item>
+    
+    <item>
+      <title>VNC Console on VMware ESXi</title>
+      <link>https://forwardingplane.net/2013/04/vnc-console-on-vmware-esxi/</link>
+      <pubDate>Sun, 28 Apr 2013 03:39:54 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/04/vnc-console-on-vmware-esxi/</guid>
+      <description>tom - Jun 6, 2013
+Hi Is the port same for all? RemoteDisplay.vnc.enabled = &amp;ldquo;TRUE&amp;rdquo; RemoteDisplay.vnc.port = 5910 RemoteDisplay.vnc.password = &amp;ldquo;VNCPassword&amp;rdquo; You say port 5910 but is it same port for everyone? Nick Buraglio - Jun 0, 2013
+Port should be different for each VM. </description>
+    </item>
+    
+    <item>
+      <title>VNC Console on VMware ESXi</title>
+      <link>https://forwardingplane.net/2013/04/vnc-console-on-vmware-esxi/</link>
+      <pubDate>Sun, 28 Apr 2013 03:39:54 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/04/vnc-console-on-vmware-esxi/</guid>
+      <description>Let me preface this post by saying that I am absolutely not an enterprise IT or systems guy, take everything that I write here on out with that as a side dish. I&amp;rsquo;m also very, very cheap. That said, one of the things I really like about KVM is the ability to easily view the console of a guest system using free, non-windows software like VNC. However, much like everything in life, there are reasons to do one thing or another.</description>
+    </item>
+    
+    <item>
+      <title>Building a Bridge Domain on MX series JunOS</title>
+      <link>https://forwardingplane.net/2013/03/building-a-bridge-domain-on-mx-series-junos/</link>
+      <pubDate>Sat, 09 Mar 2013 16:48:48 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/building-a-bridge-domain-on-mx-series-junos/</guid>
+      <description>Nick Buraglio - Mar 3, 2013
+Yes. Yes indeed. [Ryan]( &amp;ldquo;convention@gmail.com&amp;rdquo;) - Mar 2, 2013
+You just wanted to mention the 100G interface. </description>
+    </item>
+    
+    <item>
+      <title>Building a Bridge Domain on MX series JunOS</title>
+      <link>https://forwardingplane.net/2013/03/building-a-bridge-domain-on-mx-series-junos/</link>
+      <pubDate>Sat, 09 Mar 2013 16:48:48 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/building-a-bridge-domain-on-mx-series-junos/</guid>
+      <description>I started working on Juniper equipment around 2002. At my employer, we had an M40 with the serial number 256. We did Layer3 only. I had no idea if the Juniper even did layer2. It certainly wasn&amp;rsquo;t a layer3 switch like a 6500 like I was used to. It was like a deliciously robust version of any Layer 3 router I&amp;rsquo;d worked on previously. Over the years Juniper has added a switching line utilizing their FreeBSD based OS, JunOS.</description>
+    </item>
+    
+    <item>
+      <title>Tuning BGP installed IPv6 routes</title>
+      <link>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</link>
+      <pubDate>Sat, 02 Mar 2013 13:15:37 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</guid>
+      <description>Tyler Christiansen - Mar 6, 2013
+So what happens when the circuit to the one transit provider providing a default IPv6 route drops? Or if instability is otherwise introduced? Nick Buraglio - Mar 6, 2013
+That is a known limit. One could have default from &amp;gt;1 provider or not have had to do this in the first place, ideally. In this particular instance, there is only one provider that can truly give default (cogent isn&amp;rsquo;t a full v6 table regardless of what they say) and the rest are close but not full.</description>
+    </item>
+    
+    <item>
+      <title>Tuning BGP installed IPv6 routes</title>
+      <link>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</link>
+      <pubDate>Sat, 02 Mar 2013 13:15:37 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</guid>
+      <description>I&amp;rsquo;ve recently run into a situation where there was no longer enough space in the FIB to handle both the full IPv4 global table and the full IPv6 global table. We prefer to run a default-free network within this particular SP network, but in this case, until a hardware refresh can happen, we&amp;rsquo;ll need to adjust that. Given what we knew about the size of both tables, it made more sense to take a default IPv6 route from one transit provider and filter the rest.</description>
+    </item>
+    
+    <item>
+      <title>CentOS KVM Install - Quick Start to a VM</title>
+      <link>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</link>
+      <pubDate>Sat, 02 Mar 2013 01:12:02 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</guid>
+      <description>Nick Buraglio - Mar 4, 2013
+Fixed a typo in the ifcfg-br0 section. Networking Field Day 5, participation. - Mar 3, 2013
+[&amp;hellip;] old blog (which became this site). I’m working more on OpenFlow, virtualization stuff like KVM, VirtualBox and VMware and bringing up 100G WAN links. I even had the extremely cool opportunity [&amp;hellip;] vps - Mar 4, 2013
+I really like your blog. You write about very interesting things.</description>
+    </item>
+    
+    <item>
+      <title>CentOS KVM Install - Quick Start to a VM</title>
+      <link>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</link>
+      <pubDate>Sat, 02 Mar 2013 01:12:02 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</guid>
+      <description>I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I&amp;rsquo;d shelved years ago. Now, I&amp;rsquo;ve been a virtualization user forever. From VMware (Fusion, ESX), VirtualBox, to Parallels, I&amp;rsquo;ve used them at least in testing if not in production environments. I&amp;rsquo;d not really spent any mentionable amount of time with XEN, qEMU or KVM, but some projects I was working on suggested it for the virtualization mechanism, so I figured I&amp;rsquo;d try to pick it up.</description>
+    </item>
+    
+    <item>
+      <title>Headless VirtualBox host on CentOS</title>
+      <link>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</link>
+      <pubDate>Thu, 31 Jan 2013 21:48:47 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</guid>
+      <description>[Matt Kazmar]( &amp;ldquo;mkazmar@uic.edu&amp;rdquo;) - Feb 3, 2013
+Why use VirtualBox as opposed to KVM? KVM is included with CentOS and fits your quite well into your Windows-less world&amp;hellip; Nick Buraglio - Feb 3, 2013
+Just simple experience. I know the vbox CLI pretty well already. Additionally, if I build a VM in VirtualBox on another platform I can easily import and export it. KVM is on my [very] short list to learn, I think it is actually better based on some talkes I&amp;rsquo;ve had, I just don&amp;rsquo;t know it yet.</description>
+    </item>
+    
+    <item>
+      <title>Headless VirtualBox host on CentOS</title>
+      <link>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</link>
+      <pubDate>Thu, 31 Jan 2013 21:48:47 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</guid>
+      <description>Starting from a base CentOS system with nothing configured, and referencing the CentOS wiki, here is how I like to set up a headless virtualbox environment: Disable selinux. It&amp;rsquo;s overly cumbersome and is enabled by default in CentOS. I like to permanently disable it even though the default is permissive. I ride the edge, I know.``` vi /etc/selinux/config
+ and change  SELINUX=enabled
+ to  SELINUX=disabled
+ Then reboot. Using the methodology I originally found found [here](http://stackoverflow.</description>
+    </item>
+    
+    <item>
+      <title>Diff RANCID router configs with SVN</title>
+      <link>https://forwardingplane.net/2013/01/diff-rancid-router-configs-with-svn/</link>
+      <pubDate>Fri, 25 Jan 2013 00:27:09 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/01/diff-rancid-router-configs-with-svn/</guid>
+      <description>[Oliver Gorwits]( &amp;ldquo;oliver@cpan.org&amp;rdquo;) - Jan 4, 2013
+I wrote a utility to intelligently diff IOS style config which might be interesting: https://metacpan.org/module/iosdiff Jones sabo regular those tend to consider the necklaces it d - Apr 1, 2013
+I was looking through some of your content on this site and I believe this website is really informative! Keep posting. </description>
+    </item>
+    
+    <item>
+      <title>Diff RANCID router configs with SVN</title>
+      <link>https://forwardingplane.net/2013/01/diff-rancid-router-configs-with-svn/</link>
+      <pubDate>Fri, 25 Jan 2013 00:27:09 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2013/01/diff-rancid-router-configs-with-svn/</guid>
+      <description>If you are running a network and aren&amp;rsquo;t using RANCID, you should give it a serious look. RANCID is a cross platform configuration management toolkit for backing up router configurations and certain environmental and hardware information into version control. It&amp;rsquo;s been around for as long as I can remember and supports nearly every platform I can think of, including a few modules that I cobbled together myself. There is are a few nice web based front ends for CVS and SVN, I prefer to use ViewVC because I have a lot of experience with it, however, there may be cases where a web server isn&amp;rsquo;t a good option, unavailable or just too much work.</description>
+    </item>
+    
+    <item>
+      <title>Workflow and my mobile device setups.</title>
+      <link>https://forwardingplane.net/2012/12/workflow-and-my-mobile-device-setups./</link>
+      <pubDate>Tue, 04 Dec 2012 21:28:53 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/12/workflow-and-my-mobile-device-setups./</guid>
+      <description>Like many others, I rely heavily on my mobile devices to get my work done. I&amp;rsquo;ve been a user of the iPhone since the original, with a year on a Nexus one android device. I don&amp;rsquo;t have a strong preference and there are no &amp;ldquo;religious arguments&amp;rdquo; to be had with me on platform. In fact, I&amp;rsquo;d probably choose PamlOS if I had a choice, it&amp;rsquo;s simple elegance and stability were a comfort to me&amp;hellip;it just didn&amp;rsquo;t make it to modernization.</description>
+    </item>
+    
+    <item>
+      <title>Workflow and my every day workstation setup.</title>
+      <link>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</link>
+      <pubDate>Sun, 25 Nov 2012 00:03:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</guid>
+      <description>How I Work | Notebook Heavy - Jan 3, 2013
+[&amp;hellip;] by others who’ve written something similar, I thought I’d have some fun and write down the tools and setups that I’m use at the [&amp;hellip;] </description>
+    </item>
+    
+    <item>
+      <title>Workflow and my every day workstation setup.</title>
+      <link>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</link>
+      <pubDate>Sun, 25 Nov 2012 00:03:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</guid>
+      <description>Recently, there was a thread over at Packet Pushers about what folks use for their daily workflow. I quickly realized that my setup is pretty simple (as I like it) and relied on a large amount of terminal based tools, which makes sense since I have been a UNIX (or UNIX based) OS user since my migration from the original MacOS back in the 1990s. Anyway, Since I wrote most of this up already, I thought I&amp;rsquo;d post it here:</description>
+    </item>
+    
+    <item>
+      <title>A security oversight in Mail.app, or, a hidden bcc: field</title>
+      <link>https://forwardingplane.net/2011/10/a-security-oversight-in-mail.app-or-a-hidden-bcc-field/</link>
+      <pubDate>Sat, 22 Oct 2011 08:40:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/10/a-security-oversight-in-mail.app-or-a-hidden-bcc-field/</guid>
+      <description>Janice Clements - Dec 4, 2011
+Well there might be something you can do besides the default apple Mail.app. You might want to consider other alternatives.
+PC Fix Anita - May 4, 2012
+It&amp;rsquo;s good to know that you are always backing up your emails and other data. That&amp;rsquo;s a good practice which I also always do. I don&amp;rsquo;t use Mac, but I&amp;rsquo;ve heard the same problems from some users. Anyway, it&amp;rsquo;s good that you were able to figure it out.</description>
+    </item>
+    
+    <item>
+      <title>A security oversight in Mail.app, or, a hidden bcc: field</title>
+      <link>https://forwardingplane.net/2011/10/a-security-oversight-in-mail.app-or-a-hidden-bcc-field/</link>
+      <pubDate>Sat, 22 Oct 2011 08:40:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/10/a-security-oversight-in-mail.app-or-a-hidden-bcc-field/</guid>
+      <description>Recently I was poking around Mail.app, setting up my new machine. I like to keep redundant copies of everything, email being no exception. I have backups of all of my email dating back to 1998, for the most part. It has come in handy from time to time and I like it for reference reasons. It&amp;rsquo;s a small amount of actual data as far as space goes, and it&amp;rsquo;s easy to do.</description>
+    </item>
+    
+    <item>
+      <title>Switching from MacPorts to Homebrew</title>
+      <link>https://forwardingplane.net/2011/08/switching-from-macports-to-homebrew/</link>
+      <pubDate>Sat, 06 Aug 2011 17:22:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/08/switching-from-macports-to-homebrew/</guid>
+      <description>I&amp;rsquo;ve recently decided that even though I love the BSD style MacPorts system, it can be too clunky to maintain and doesn&amp;rsquo;t handle dependancies as well as I&amp;rsquo;d like (much like the actual BSD ports collection). So, in doing a little looking I found that Fink is still out of date, but Homebrew is very simple and also really elegant comparatively speaking.
+Since homebrew doesn&amp;rsquo;t wrk well with other packge systems installed, and I already</description>
+    </item>
+    
+    <item>
+      <title>Sync catalogs (iPhoto, iTunes) on a mac</title>
+      <link>https://forwardingplane.net/2011/02/sync-catalogs-iphoto-itunes-on-a-mac/</link>
+      <pubDate>Fri, 18 Feb 2011 12:46:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/02/sync-catalogs-iphoto-itunes-on-a-mac/</guid>
+      <description>I have huge iPhoto and iTunes catalogs. This can present a problem for both loading the applications and for backup. I have learned to deal with the Application load times, but backups are very important to me.
+I&amp;rsquo;d gone through the iPhoto backup process and restore more than once, and I didn&amp;rsquo;t like the fact that I didn&amp;rsquo;t have an offsite backup, so I paid for a flickr pro account ($24/yr, supports iPhoto export and RAW format).</description>
+    </item>
+    
+    <item>
+      <title>Seagate FreeAgent 3T drive on a mac</title>
+      <link>https://forwardingplane.net/2011/02/seagate-freeagent-3t-drive-on-a-mac/</link>
+      <pubDate>Fri, 04 Feb 2011 20:00:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/02/seagate-freeagent-3t-drive-on-a-mac/</guid>
+      <description>I was recently helping my brother-in-law out with the new Seagate FreeAgent GoFlex Desk 3 TB USB 3.0 External Hard Drivehe had purchased to do time machine backups on his mac. I personally have the 2t version and have been pretty happy with it, save for one small incident that I think was my fault that required some basic data recovery.
+Since the drive comes in a file system that is not HFS+ Journaled, it needed to be reformatted to support time machine backups.</description>
+    </item>
+    
+    <item>
+      <title>Moving JunOS code between SRX cluster nodes</title>
+      <link>https://forwardingplane.net/2011/01/moving-junos-code-between-srx-cluster-nodes/</link>
+      <pubDate>Sat, 08 Jan 2011 02:11:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2011/01/moving-junos-code-between-srx-cluster-nodes/</guid>
+      <description>Regardless of the fact that there is now a good ISSU-like service for the SRX (named Low-Impact Cluster Upgrade; LICU for short), if you&amp;rsquo;re upgrading your Active/Active cluster from something that isn&amp;rsquo;t 10.4, or if you just aren&amp;rsquo;t comfortable with how baked LICU actually is, you&amp;rsquo;ll need to know how to move the junos code around. This is easy if you have physical access to both nodes, but for those that have.</description>
+    </item>
+    
+    <item>
+      <title>JunOS ISSU</title>
+      <link>https://forwardingplane.net/2010/12/junos-issu/</link>
+      <pubDate>Thu, 30 Dec 2010 00:26:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/12/junos-issu/</guid>
+      <description>I recently needed to upgrade a few MX480 routers and decided that it would be a good opportunity to get some experience with Juniper&amp;rsquo;s in service software upgrade.
+I&amp;rsquo;d read a bit about it but I&amp;rsquo;d not had the chance to really use it. It&amp;rsquo;s pretty straightforward and it does what it claims. The following are my notes from rolling through this on my test lab MX480.
+A few things are necessary to get going with ISSU, first and foremost, you need to have a box with two routing engines.</description>
+    </item>
+    
+    <item>
+      <title>NFS mounting a NAS with MacOS 10.6 (Snow Leopard)</title>
+      <link>https://forwardingplane.net/2010/09/nfs-mounting-a-nas-with-macos-10.6-snow-leopard/</link>
+      <pubDate>Mon, 06 Sep 2010 11:00:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/09/nfs-mounting-a-nas-with-macos-10.6-snow-leopard/</guid>
+      <description>I know this is documented elsewhere, but this was a pain for me, so I wanted to take some notes. I have several Snow Leopard (MAcOS 10.6) Macs and a Netgear DNS-323. I want to mount the drive using NFS and any good UNIX admin would.
+Unlike older versions of the Mac OS, NFS mounts are now handled under the Disk Utility application (which seems odd to me, but whatever).</description>
+    </item>
+    
+    <item>
+      <title>Viewing ipv6 router advertisements</title>
+      <link>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</link>
+      <pubDate>Fri, 03 Sep 2010 19:00:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</guid>
+      <description>Peter - Feb 3, 2012
+Really helpful. I am not a very computer literate person and you always make things easy to understand. Thanks so much
+portable wireless router </description>
+    </item>
+    
+    <item>
+      <title>Viewing ipv6 router advertisements</title>
+      <link>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</link>
+      <pubDate>Fri, 03 Sep 2010 19:00:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</guid>
+      <description>I knew a tool like this had to exist, but I had never needed to look in the past. While debugging a RA problem, I come upon the need to view IPv6 router advertisements. How can one do this? tcpdump? Yeah, I guess that could work. It&amp;rsquo;s almost like using a bulldozer when a wheelbarrow is all you need, though. I could use ndpmon, I suppose, but that, too seems like overkill.</description>
+    </item>
+    
+    <item>
+      <title>Updating SRX IDP signatures</title>
+      <link>https://forwardingplane.net/2010/09/updating-srx-idp-signatures/</link>
+      <pubDate>Thu, 02 Sep 2010 18:16:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/09/updating-srx-idp-signatures/</guid>
+      <description>Ken - Aug 4, 2011
+Nick - a question for you regarding SRX IDP signature database updates on a Cluster. The &amp;lsquo;successful&amp;rsquo; message you list above indicates both nodes will be updated, however, my understanding is that only the Primary node will be updated,not the Secondary node and that it is necessary to fail over the Primary function and repeat the update procedure in order to update both nodes. The RE is not running on the secondary node, which is the reason for this procedure, as I understand it.</description>
+    </item>
+    
+    <item>
+      <title>Updating SRX IDP signatures</title>
+      <link>https://forwardingplane.net/2010/09/updating-srx-idp-signatures/</link>
+      <pubDate>Thu, 02 Sep 2010 18:16:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2010/09/updating-srx-idp-signatures/</guid>
+      <description>*IDP signatures need to be updated often. On the SRX platform, there is also the notion of a &amp;ldquo;detector&amp;rdquo;. This also meeds to be updated on a regular basis. it seems. Over the past few weeks, we&amp;rsquo;ve needed to update the IDP signatures and detector on our SRX 5800 cluster several times, and the results have normally been fine.
+Updating the IDP signatures has never been that big of a problem (see postings about updating stuff on cluster nodes).</description>
+    </item>
+    
+    <item>
+      <title>RYU OpenFlow controller</title>
+      <link>https://forwardingplane.net/1/01/ryu-openflow-controller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/1/01/ryu-openflow-controller/</guid>
+      <description>Ryu, an openflow controller, was new to me. After doing 5 minutes of reading I knew I needed to get it up in the lab. The thing that caught my eye was that the project page was boasting support for OpenStack. Now, I don;t really have much experience with openstack, but it has a cult like following and it&amp;rsquo;s on my short list of stuff to get involved with. This seemed like a great excuse.</description>
+    </item>
+    
+  </channel>
+</rss>

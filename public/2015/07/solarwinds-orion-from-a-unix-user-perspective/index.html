@@ -1,0 +1,356 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "posts",
+        "name" : "Solarwinds Orion from a UNIX user perspective",
+        "headline" : "Solarwinds Orion from a UNIX user perspective",
+        "description" : "Back in February of this year (2015) I was introduced to Solarwinds when they presented to us at Networking Field day 9. Until then I knew of SolarWinds products but only at a cursory level; I had never really seen or used their stuff since it was mostly focused on environments that were either smaller or outside of the networking world that I generally operate in. However, I am a[n insufferable] network monitoring \x26ldquo;aficionado\x26rdquo; so when the opportunity to play around with it arose, I happily took it.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2015",
+        "datePublished": "2015-07-07 04:08:30 \x2b0000 \x2b0000",
+        "dateModified" : "2015-07-07 04:08:30 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/2015\/07\/solarwinds-orion-from-a-unix-user-perspective\/",
+        "wordCount" : "757",
+        "keywords" : [ "Musings","Blog" ]
+    }
+    </script>
+        
+            <title>Solarwinds Orion from a UNIX user perspective - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Solarwinds Orion from a UNIX user perspective"/>
+<meta name="twitter:description" content="Back in February of this year (2015) I was introduced to Solarwinds when they presented to us at Networking Field day 9. Until then I knew of SolarWinds products but only at a cursory level; I had never really seen or used their stuff since it was mostly focused on environments that were either smaller or outside of the networking world that I generally operate in. However, I am a[n insufferable] network monitoring &ldquo;aficionado&rdquo; so when the opportunity to play around with it arose, I happily took it."/>
+
+        <meta property="og:title" content="Solarwinds Orion from a UNIX user perspective" />
+<meta property="og:description" content="Back in February of this year (2015) I was introduced to Solarwinds when they presented to us at Networking Field day 9. Until then I knew of SolarWinds products but only at a cursory level; I had never really seen or used their stuff since it was mostly focused on environments that were either smaller or outside of the networking world that I generally operate in. However, I am a[n insufferable] network monitoring &ldquo;aficionado&rdquo; so when the opportunity to play around with it arose, I happily took it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/2015/07/solarwinds-orion-from-a-unix-user-perspective/" />
+<meta property="article:published_time" content="2015-07-07T04:08:30+00:00" />
+<meta property="article:modified_time" content="2015-07-07T04:08:30+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Solarwinds Orion from a UNIX user perspective">
+<meta itemprop="description" content="Back in February of this year (2015) I was introduced to Solarwinds when they presented to us at Networking Field day 9. Until then I knew of SolarWinds products but only at a cursory level; I had never really seen or used their stuff since it was mostly focused on environments that were either smaller or outside of the networking world that I generally operate in. However, I am a[n insufferable] network monitoring &ldquo;aficionado&rdquo; so when the opportunity to play around with it arose, I happily took it.">
+
+
+<meta itemprop="datePublished" content="2015-07-07T04:08:30&#43;00:00" />
+<meta itemprop="dateModified" content="2015-07-07T04:08:30&#43;00:00" />
+<meta itemprop="wordCount" content="757">
+
+
+
+<meta itemprop="keywords" content="Musings," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/posts/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/posts/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/2015/07/solarwinds-orion-from-a-unix-user-perspective/">Solarwinds Orion from a UNIX user perspective</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>Back in February of this year (2015) I was introduced to <a href="http://www.solarwinds.com/">Solarwinds</a> when they presented to us at <a href="http://techfieldday.com/event/nfd9/">Networking Field day 9</a>. Until then I knew of SolarWinds products but only at a cursory level; I had never really seen or used their stuff since it was mostly focused on environments that were either smaller or outside of the networking world that I generally operate in. However, I am a[n insufferable] network monitoring &ldquo;aficionado&rdquo; so when the opportunity to play around with it arose, I happily took it. Now, let me preface what comes next by laying out a few things:</p>
+
+<ol>
+<li>I am not a fan of SNMP. In fact, I hate it. It&rsquo;s the least intuitive, overly complex protocol used for management that we can&rsquo;t get away from. It sucks and is CPU intensive. It is cryptic, dated and we&rsquo;ve tried to fix it by bolting on crude, poorly supported security features.</li>
+<li>I don&rsquo;t do windows systems. I have not managed as much as a windows desktop other than an on-demand VM for the occasional DWDM network element manager since 1999. I have no issue with it as a platform but a unix based platform is a better tool for my every day workflow (see <a href="https://www.forwardingplane.net/topics/nix4neteng/">NIX4NetEng</a>)  so I don&rsquo;t have it in my wheelhouse and have no business managing such a system.</li>
+<li>I went into this project completely and totally open minded. These were the canvas, brushes and subject I had to work with and it needed to do what needed done.</li>
+</ol>
+
+<p>With that out of the way, my impressions of SolarWinds Orion platform at first glance were: &ldquo;Wow, this is pretty good&rdquo;.<img src="http://www.forwardingplane.net/wp-content/uploads/2015/07/Screen-Shot-2015-07-06-at-10.48.05-PM.png" alt="Screen Shot 2015-07-06 at 10.48.05 PM" /> I must admit, I was surprised. Although I went in open minded, I knew that Orion is a tool that seemed to be enterprise focused, which was not the application it was being used for. It runs on windows systems, it had &ldquo;rumored&rdquo; scaling issues in large environments, and they market it mostly to the enterprise demographic, at least from my point of view. Admittedly I struggled with the configuration. I&rsquo;m a little old school and I like to kick the tires of a GUI and then to most of the heavy lifting in a conf file or set of files using VI, which I was not able to do here. I found the management a little clunky and sluggish at times, but the data presentation was top shelf and once I figured out the where and how I was able to set up netflow, syslog collection and up/down monitoring in pretty short order. In this environment I didn&rsquo;t yet have IPv6 so no sflow or IPFIX in the mix yet; not sure about IPv6 support in practice. A rough breakdown of the pros and cons from my inaugural run: <strong>Pros:</strong></p>
+
+<ul>
+<li>Elegant Interface</li>
+<li>Eye candy</li>
+<li>One stop shop***</li>
+<li>Good support for common stuff, seems expandable.</li>
+<li>Great <a href="https://thwack.solarwinds.com">community of support</a>; very &ldquo;FOSS-Like&rdquo;</li>
+<li>Lots of knobs and dials for tuning.</li>
+<li>Did I say good interface?</li>
+<li>Automated netflow database maintenance is cool.</li>
+<li>Search for flows and syslogs is reasonably fast. - a litmus test for real use.</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+
+<ul>
+<li>It&rsquo;s SNMP. We&rsquo;re mostly stuck with that, unfortunately.</li>
+<li>Interface configuration took a little getting used to coming from a CLI background (this is a &ldquo;me problem&rdquo;)</li>
+<li>Cost; it&rsquo;s a reasonably noticeable capital expenditure.</li>
+</ul>
+
+<p><strong>Unknowns: </strong></p>
+
+<ul>
+<li>I didn&rsquo;t get to play with the SNMP trap management.</li>
+<li>I kept RANCID for configurations management.</li>
+</ul>
+
+<p>The key for this for me was that I did not need to manage the server. I had no access whatsoever to the underlying OS, meaning the responsibility of managing this host OS was completely off the table. I was able to manage the SolarWinds instance from its web interface without issue. <a href="http://www.forwardingplane.net/wp-content/uploads/2015/07/Screen-Shot-2015-07-06-at-10.47.36-PM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2015/07/Screen-Shot-2015-07-06-at-10.47.36-PM.png" alt="Screen Shot 2015-07-06 at 10.47.36 PM" /></a> My summary: If you are comfortable in a windows environment or do not manage the underlying system, don&rsquo;t need granular flow and syslog analysis for forensics and have the cash, it&rsquo;s a full featured, supported platform. I continue to learn more and more about the seemingly endless stuff this platform can do. If you are strapped for cash and/or are comfortable going the FOSS route, you have a lot of options at the expense of configuration time and possible learning curve. You&rsquo;ll spend the money wither way, either on people time or on licensing. In some cases possibly both. ** I&rsquo;ve heard that as a rumor. In my experience with the devices and other network elements it managed it seemed to work pretty well and I had no scaling issues. *** Depends heavily on needs and requirements.</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

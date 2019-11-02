@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on ForwardingPlane.net</title>
+    <link>https://forwardingplane.net/tags/automation/</link>
+    <description>Recent content in Automation on ForwardingPlane.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2019, all rights reserved.</copyright>
+    <lastBuildDate>Mon, 29 Jul 2019 09:39:35 +0000</lastBuildDate>
+    
+	<atom:link href="https://forwardingplane.net/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Basic automation for WISPs and small to medium ISPs</title>
+      <link>https://forwardingplane.net/2019/07/basic-automation-for-wisps-and-small-to-medium-isps/</link>
+      <pubDate>Mon, 29 Jul 2019 09:39:35 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/2019/07/basic-automation-for-wisps-and-small-to-medium-isps/</guid>
+      <description>Small to medium ISPs are an interesting phenomenon. Early in my career I was pretty heavily involved in that space, so much of my current thought processes and methodologies are heavily informed by that experience. Something that never ceases to amaze me today is that the practice of scripting and “automating” things seems to have become somewhat of a lost art, or at the very least it is not part of an initial deployment plan.</description>
+    </item>
+    
+  </channel>
+</rss>

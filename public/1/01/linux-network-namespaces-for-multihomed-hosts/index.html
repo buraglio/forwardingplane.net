@@ -1,0 +1,317 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "posts",
+        "name" : "Linux Network Namespaces for multihomed hosts",
+        "headline" : "Linux Network Namespaces for multihomed hosts",
+        "description" : "sudo ip netns exec uc2b ip link list ip netns exec uc2b ifconfig uc2b1 192.80.111.58\x26frasl;24 up sudo ip netns exec uc2b ifconfig uc2b1 192.80.111.58\x26frasl;24 up sudo ovs-vsctl add-port br-int uc2b1 ip netns exec uc2b ip link set uc2b1 up sudo ip netns exec uc2b ip link set uc2b1 up sudo brctl addbr uc2bbr sudo brctl ifbr uc2bbr uc2b1 sudo brctl addif uc2bbr uc2b1 sudo brctl delbr uc2bbr sudo ovs-vsctl add-port br-int uc2b1 sudo ovs-vsctl add-port br-int uc2b1 sudo ovs-vsctl add-br uc2bbr uc2b1 sudo ovs-vsctl add-br uc2bbr sudo ovs-vsctl add-port uc2bbr uc2b1 sudo ovs-vsctl add-port uc2bbr eth1 sudo ip netns exec uc2b ifconfig uc2b1 192.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "0001",
+        "datePublished": "0001-01-01 00:00:00 \x2b0000 UTC",
+        "dateModified" : "0001-01-01 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/forwardingplane.net\/1\/01\/linux-network-namespaces-for-multihomed-hosts\/",
+        "wordCount" : "485",
+        "keywords" : [ "Musings","Blog" ]
+    }
+    </script>
+        
+            <title>Linux Network Namespaces for multihomed hosts - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux Network Namespaces for multihomed hosts"/>
+<meta name="twitter:description" content="sudo ip netns exec uc2b ip link list ip netns exec uc2b ifconfig uc2b1 192.80.111.58&frasl;24 up sudo ip netns exec uc2b ifconfig uc2b1 192.80.111.58&frasl;24 up sudo ovs-vsctl add-port br-int uc2b1 ip netns exec uc2b ip link set uc2b1 up sudo ip netns exec uc2b ip link set uc2b1 up sudo brctl addbr uc2bbr sudo brctl ifbr uc2bbr uc2b1 sudo brctl addif uc2bbr uc2b1 sudo brctl delbr uc2bbr sudo ovs-vsctl add-port br-int uc2b1 sudo ovs-vsctl add-port br-int uc2b1 sudo ovs-vsctl add-br uc2bbr uc2b1 sudo ovs-vsctl add-br uc2bbr sudo ovs-vsctl add-port uc2bbr uc2b1 sudo ovs-vsctl add-port uc2bbr eth1 sudo ip netns exec uc2b ifconfig uc2b1 192."/>
+
+        <meta property="og:title" content="Linux Network Namespaces for multihomed hosts" />
+<meta property="og:description" content="sudo ip netns exec uc2b ip link list ip netns exec uc2b ifconfig uc2b1 192.80.111.58&frasl;24 up sudo ip netns exec uc2b ifconfig uc2b1 192.80.111.58&frasl;24 up sudo ovs-vsctl add-port br-int uc2b1 ip netns exec uc2b ip link set uc2b1 up sudo ip netns exec uc2b ip link set uc2b1 up sudo brctl addbr uc2bbr sudo brctl ifbr uc2bbr uc2b1 sudo brctl addif uc2bbr uc2b1 sudo brctl delbr uc2bbr sudo ovs-vsctl add-port br-int uc2b1 sudo ovs-vsctl add-port br-int uc2b1 sudo ovs-vsctl add-br uc2bbr uc2b1 sudo ovs-vsctl add-br uc2bbr sudo ovs-vsctl add-port uc2bbr uc2b1 sudo ovs-vsctl add-port uc2bbr eth1 sudo ip netns exec uc2b ifconfig uc2b1 192." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/1/01/linux-network-namespaces-for-multihomed-hosts/" />
+
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Linux Network Namespaces for multihomed hosts">
+<meta itemprop="description" content="sudo ip netns exec uc2b ip link list ip netns exec uc2b ifconfig uc2b1 192.80.111.58&frasl;24 up sudo ip netns exec uc2b ifconfig uc2b1 192.80.111.58&frasl;24 up sudo ovs-vsctl add-port br-int uc2b1 ip netns exec uc2b ip link set uc2b1 up sudo ip netns exec uc2b ip link set uc2b1 up sudo brctl addbr uc2bbr sudo brctl ifbr uc2bbr uc2b1 sudo brctl addif uc2bbr uc2b1 sudo brctl delbr uc2bbr sudo ovs-vsctl add-port br-int uc2b1 sudo ovs-vsctl add-port br-int uc2b1 sudo ovs-vsctl add-br uc2bbr uc2b1 sudo ovs-vsctl add-br uc2bbr sudo ovs-vsctl add-port uc2bbr uc2b1 sudo ovs-vsctl add-port uc2bbr eth1 sudo ip netns exec uc2b ifconfig uc2b1 192.">
+
+
+
+<meta itemprop="wordCount" content="485">
+
+
+
+<meta itemprop="keywords" content="Musings," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/posts/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/posts/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/1/01/linux-network-namespaces-for-multihomed-hosts/">Linux Network Namespaces for multihomed hosts</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>sudo ip netns exec uc2b ip link list ip netns exec uc2b ifconfig uc2b1 192.80.111.<sup>58</sup>&frasl;<sub>24</sub> up sudo ip netns exec uc2b ifconfig uc2b1 192.80.111.<sup>58</sup>&frasl;<sub>24</sub> up sudo ovs-vsctl add-port br-int uc2b1 ip netns exec uc2b ip link set uc2b1 up sudo ip netns exec uc2b ip link set uc2b1 up sudo brctl addbr uc2bbr sudo brctl ifbr uc2bbr uc2b1 sudo brctl addif uc2bbr uc2b1 sudo brctl delbr uc2bbr sudo ovs-vsctl add-port br-int uc2b1 sudo ovs-vsctl add-port br-int uc2b1 sudo ovs-vsctl add-br uc2bbr uc2b1 sudo ovs-vsctl add-br uc2bbr sudo ovs-vsctl add-port uc2bbr uc2b1 sudo ovs-vsctl add-port uc2bbr eth1 sudo ip netns exec uc2b ifconfig uc2b1 192.80.111.<sup>58</sup>&frasl;<sub>24</sub> up sudo ovs-vsctl add-port uc2bbr uc2b0 sudo ip netns exec uc2b ip link set uc2b1 up sudo ip netns exec uc2b ping 192.80.111.58 sudo ip netns exec uc2b ifconfig uc2b1 up sudo ip netns exec uc2b ifconfig uc2b0 up sudo ip netns exec uc2b arp -an sudo ip netns exec uc2b arp sudo ip netns exec uc2b ip route sudo ip netns exec uc2b ip route add 0.0.0.0 192.80.111.1 sudo ip netns exec uc2b ip route add 0.0.0.0 to 192.80.111.1 sudo ip netns exec uc2b ip route add 0.0.0.0/0 to 192.80.111.1 sudo ip netns exec uc2b ip route add default via 192.80.111.1 sudo ip netns exec uc2b ip route sudo ip netns exec uc2b ping 192.80.111.1 sudo ovs-vsctl list-br uc2bbr sudo ovs-vsctl list-ports uc2bbr sudo ip netns exec uc2b ifconfig sudo ip netns exec uc2b ping history | grep uc2b sudo ip netns exec uc2b ip link list sudo ip netns exec uc2b ip link list history | grep uc2b ip netns exec uc2b ip link set uc2b1 up sudo ip netns exec uc2b ip link set uc2b1 up sudo ip netns exec uc2b ip link set eth1 up sudo ip netns exec uc2b ip link set uc2b0 up sudo ip netns exec uc2b ip link list sudo ip link add uc2b0 type veth peer name uc2b1 sudo ip netns exec uc2b ip link list sudo ip netns exec uc2b ifconfig uc2b0 192.80.111.<sup>59</sup>&frasl;<sub>24</sub> up sudo ip netns exec uc2b ip link list history | grep uc2b sudo ovs-vsctl add-port uc2bbr uc2b0 history | grep uc2b0 history | grep uc2b1 sudo ip netns exec uc2b ip link list ip link set uc2b1 netns uc2b ip link set uc2bbr netns uc2b sudo ip link set uc2bbr netns uc2b sudo ip link set uc2bbr netns uc2b0 sudo ip link set uc2b0 netns uc2b sudo ip netns exec uc2b ip link list sudo ip netns exec uc2b ifconfig uc2bbr up sudo ip netns exec uc2b ifconfig uc2b0 up sudo ip netns exec uc2b ip link list sudo ip netns exec uc2b ping arpo sudo ip netns exec uc2b ping arp -an sudo ip netns exec uc2b arp -an sudo ip netns exec uc2b ping 192.80.111.1 sudo ip netns exec uc2b ping 4.2.2.1 sudo ip netns exec uc2b traceroute 4.2.2.1 sudo ip netns exec uc2b /usr/sbin/sshd</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

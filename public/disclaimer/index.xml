@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Disclaimers on ForwardingPlane.net</title>
+    <link>https://forwardingplane.net/disclaimer/</link>
+    <description>Recent content in Disclaimers on ForwardingPlane.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2019, all rights reserved.</copyright>
+    <lastBuildDate>Fri, 21 Mar 2014 00:00:44 +0000</lastBuildDate>
+    
+	<atom:link href="https://forwardingplane.net/disclaimer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Disclaimer</title>
+      <link>https://forwardingplane.net/disclaimer/disclaimer/</link>
+      <pubDate>Fri, 21 Mar 2014 00:00:44 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/disclaimer/disclaimer/</guid>
+      <description>I don&amp;rsquo;t endorse or condemn products for free or for money [and if I did I would disclose it in bold lettering for the world to see]. I will strive to provide a fact based description, experience or assessment of any given technology or product based on my particular experience. I may provide opinions as to what I believe is the right or wrong $item, $idea, $process, or $procedure on any given subject again based on my personal experiences.</description>
+    </item>
+    
+  </channel>
+</rss>

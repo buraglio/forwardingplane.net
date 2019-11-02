@@ -1,0 +1,426 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "posts",
+        "name" : "Scripting the build of OpenDayight Controller under CentOS",
+        "headline" : "Scripting the build of OpenDayight Controller under CentOS",
+        "description" : "Jon Langemak has a great write up on building the OpenDaylight controller under CentOS. Since I\x26rsquo;ll have to do this a bunch of times, I though tI\x26rsquo;d take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the OpenDaylight GIT repo and that you disable SELinux. Here is the script:``` #!",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-05-03 21:45:41 \x2b0000 \x2b0000",
+        "dateModified" : "2013-05-03 21:45:41 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/2013\/05\/scripting-the-build-of-opendayight-controller-under-centos\/",
+        "wordCount" : "444",
+        "keywords" : [ "Lab Time","OpenFlow","UNIX","Blog" ]
+    }
+    </script>
+        
+            <title>Scripting the build of OpenDayight Controller under CentOS - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scripting the build of OpenDayight Controller under CentOS"/>
+<meta name="twitter:description" content="Jon Langemak has a great write up on building the OpenDaylight controller under CentOS. Since I&rsquo;ll have to do this a bunch of times, I though tI&rsquo;d take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the OpenDaylight GIT repo and that you disable SELinux. Here is the script:``` #!"/>
+
+        <meta property="og:title" content="Scripting the build of OpenDayight Controller under CentOS" />
+<meta property="og:description" content="Jon Langemak has a great write up on building the OpenDaylight controller under CentOS. Since I&rsquo;ll have to do this a bunch of times, I though tI&rsquo;d take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the OpenDaylight GIT repo and that you disable SELinux. Here is the script:``` #!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/2013/05/scripting-the-build-of-opendayight-controller-under-centos/" />
+<meta property="article:published_time" content="2013-05-03T21:45:41+00:00" />
+<meta property="article:modified_time" content="2013-05-03T21:45:41+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Scripting the build of OpenDayight Controller under CentOS">
+<meta itemprop="description" content="Jon Langemak has a great write up on building the OpenDaylight controller under CentOS. Since I&rsquo;ll have to do this a bunch of times, I though tI&rsquo;d take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the OpenDaylight GIT repo and that you disable SELinux. Here is the script:``` #!">
+
+
+<meta itemprop="datePublished" content="2013-05-03T21:45:41&#43;00:00" />
+<meta itemprop="dateModified" content="2013-05-03T21:45:41&#43;00:00" />
+<meta itemprop="wordCount" content="444">
+
+
+
+<meta itemprop="keywords" content="Lab Time,OpenFlow,UNIX," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/posts/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/posts/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/2013/05/scripting-the-build-of-opendayight-controller-under-centos/">Scripting the build of OpenDayight Controller under CentOS</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                
+
+<p><a href="https://twitter.com/blinken_lichten">Jon Langemak</a> has a great write up on <a href="http://www.dasblinkenlichten.com/installing-opendaylight-on-centos/">building the OpenDaylight controller under CentOS</a>. Since I&rsquo;ll have to do this a bunch of times, I though tI&rsquo;d take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the <a href="https://git.opendaylight.org/">OpenDaylight GIT repo</a> and that you <a href="http://www.revsys.com/writings/quicktips/turn-off-selinux.html">disable SELinux</a>. Here is the script:```
+#!/bin/bash</p>
+
+<h1 id="install-opendaylight-controller-under-centos">Install Opendaylight controller under CentOS</h1>
+
+<h1 id="by-nick-at-buraglio-com-http-www-twitter-com-buraglio">by nick [at] buraglio.com <a href="http://www.twitter.com/buraglio">http://www.twitter.com/buraglio</a></h1>
+
+<h1 id="http-www-forwardingplane-net"><a href="http://www.forwardingplane.net">http://www.forwardingplane.net</a></h1>
+
+<h1 id="based-on-post-by-jon-langemak-http-www-twitter-com-blinken-lichten">Based on post by Jon Langemak (<a href="http://www.twitter.com/blinken_lichten">http://www.twitter.com/blinken_lichten</a>)</h1>
+
+<h1 id="http-www-dasblinkenlichten-com-installing-opendaylight-on-centos"><a href="http://www.dasblinkenlichten.com/installing-opendaylight-on-centos/">http://www.dasblinkenlichten.com/installing-opendaylight-on-centos/</a></h1>
+
+<p>yum=&ldquo;/usr/bin/yum&rdquo;
+servivce=&ldquo;/sbin/service&rdquo;
+chkconfig=&ldquo;/sbin/chkconfig&rdquo;</p>
+
+<p>echo &ldquo;************************&ldquo;
+echo &ldquo;************************&ldquo;
+echo &ldquo;Disable SELINUX before starting this process&rdquo;
+echo &ldquo;Edit the /etc/selinux/config file and restart the server&rdquo;
+echo &ldquo;************************&ldquo;
+echo &ldquo;************************&ldquo;
+echo &ldquo;Change the username in the GIT section to your own&rdquo;
+echo &ldquo;you&rsquo;ll need to create it and upload&rdquo;
+echo &ldquo;your ssh key at git.opendaylight.org&rdquo;
+echo &ldquo;************************&ldquo;
+echo &ldquo;************************&ldquo;</p>
+
+<p>echo &ldquo;************************&ldquo;
+echo &ldquo;Installing Development tools and other deps&rdquo;
+echo &ldquo;************************&ldquo;
+yum install -y wget vim java ant python eclipse-platform git
+yum groupinstall -y “Development tools”A</p>
+
+<p>echo &ldquo;************************&ldquo;
+echo &ldquo;Downloading and installing maven&rdquo;
+echo &ldquo;************************&ldquo;
+wget <a href="http://www.poolsaboveground.com/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.zip">http://www.poolsaboveground.com/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.zip</a>
+unzip apache-maven-3.0.5-bin.zip -d /usr/share/
+ln -s /usr/share/apache-maven-3.0.5/bin/mvn /usr/bin/mvn</p>
+
+<p>echo &ldquo;************************&ldquo;
+echo &ldquo;Downloading GIT code&rdquo;
+echo &ldquo;************************&ldquo;</p>
+
+<h1 id="change-the-username-here-to-your-own-you-ll-need-to-create-it-and-upload">Change the username here to your own, you&rsquo;ll need to create it and upload</h1>
+
+<h1 id="your-ssh-key-at-git-opendaylight-org">your ssh key at git.opendaylight.org</h1>
+
+<p>mkdir -p /services/opendaylight/
+cd /services/opendaylight/
+git clone <a href="https://buraglio@git.opendaylight.org/gerrit/p/controller.git">https://buraglio@git.opendaylight.org/gerrit/p/controller.git</a></p>
+
+<p>echo &ldquo;************************&ldquo;
+echo &ldquo;Building OpenDaylight Controller with Maven&rdquo;
+echo &ldquo;************************&ldquo;
+cd controller/opendaylight/distribution/opendaylight/
+mvn clean install</p>
+
+<p>echo &ldquo;************************&ldquo;
+echo &ldquo;Configure Java Env variables&rdquo;
+echo &ldquo;************************&ldquo;
+export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk.x86_64
+echo &ldquo;JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk.x86_64&rdquo; &gt;&gt; /etc/environment</p>
+
+<p>echo &ldquo;************************&ldquo;
+echo &ldquo;Load the controller&rdquo;
+echo &ldquo;************************&ldquo;
+cd /services/opendaylight/controller/opendaylight/distribution/opendaylight/target/distribution.opendaylight-0.1.0-SNAPSHOT-osgipackage/opendaylight</p>
+
+<p>echo &ldquo;************************&ldquo;
+echo &ldquo;Start OpenDaylight OF controller&rdquo;
+echo &ldquo;************************&ldquo;
+./run.sh</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Once up and running, it's pretty trivial to point something like an HP switch at the controller. For an HP5400, just decide what VLAN(s) you want to use OpenFlow on. I chose 999 as my test VLAN.```" data-lang="Once up and running, it's pretty trivial to point something like an HP switch at the controller. For an HP5400, just decide what VLAN(s) you want to use OpenFlow on. I chose 999 as my test VLAN.```">sw-5400-of# conf t
+sw-5400-of(config)# vlan 999 name test-openflow999
+sw-5400-of(vlan-999)# untagged A3-A4 
+sw-5400-of(vlan-999)# exit
+sw-5400-of(config)# openflow vlan 999
+sw-5400-of(openFlow vlan-999)# enable
+sw-5400-of(openFlow vlan-999)# controller &#34;tcp:10.17.4.22:6633&#34;
+sw-5400-of(openFlow vlan-999)# exit       
+sw-5400-of(openFlow)# exit
+sw-5400-of(config)# 
+w-5400-of(config)# exit
+sw-5400-of# show openflow 
+
+sw-5400-of# show openflow 
+
+ Openflow Configuration
+
+  Openflow aggregate VLANs \[Disabled\] :           
+  Openflow aggregate management VlanId \[0\] : 0     
+  Openflow second aggregate management VlanId \[0\] : 0     
+  Openflow aggregate configuration VlanId \[0\] : 0     
+
+  VID  State HW  Active controller Pseudo-URL                       Conn
+  ---- ----- --- -------------------------------------------------- ----
+  666  Off   On                                                     No  
+  999  On    On  tcp:10.17.4.22:6633                                Yes</code></pre></div>
+<p>From here we can see the box in the openflow controller.    </p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2013/05/Screen-Shot-2013-05-03-at-4.20.03-PM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/05/Screen-Shot-2013-05-03-at-4.20.03-PM.png" alt="Screen Shot 2013-05-03 at 4.20.03 PM" /></a></p>
+
+<p>  I&rsquo;m still having some issues pushing flows, I&rsquo;m sure I can work it out but here is a quick screencast of me trying to push a flow.  More posts will be added as soon as I can get the flows to push correctly. I suspect it is user error and I just need to read the docs.  More to come for sure.  This controller is very, very slick.</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

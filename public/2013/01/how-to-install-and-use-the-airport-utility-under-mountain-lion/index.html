@@ -1,0 +1,325 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "posts",
+        "name" : "How to install and use the Airport utility under Mountain Lion",
+        "headline" : "How to install and use the Airport utility under Mountain Lion",
+        "description" : "I have a bunch of Apple wireless gear at my house. It\x26rsquo;s inexpensive, feature rich and easy to maintain. However, with the update to mountain lion a while ago, the ability to install the older Airport Utility stopped. This is annoying since I have what apple now considers \x26ldquo;advanced\x26rdquo; features like IPv6 at my home and essentially all my gear here is a lab (except for the plex server =) I\x26rsquo;ve been spending a lot of time on cacti lately, and I wanted to test out the syslog plugin\x26hellip;.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-01-09 09:58:47 \x2b0000 \x2b0000",
+        "dateModified" : "2013-01-09 09:58:47 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/2013\/01\/how-to-install-and-use-the-airport-utility-under-mountain-lion\/",
+        "wordCount" : "304",
+        "keywords" : [ "IPv6","Lab Time","Musings","Blog" ]
+    }
+    </script>
+        
+            <title>How to install and use the Airport utility under Mountain Lion - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to install and use the Airport utility under Mountain Lion"/>
+<meta name="twitter:description" content="I have a bunch of Apple wireless gear at my house. It&rsquo;s inexpensive, feature rich and easy to maintain. However, with the update to mountain lion a while ago, the ability to install the older Airport Utility stopped. This is annoying since I have what apple now considers &ldquo;advanced&rdquo; features like IPv6 at my home and essentially all my gear here is a lab (except for the plex server =) I&rsquo;ve been spending a lot of time on cacti lately, and I wanted to test out the syslog plugin&hellip;."/>
+
+        <meta property="og:title" content="How to install and use the Airport utility under Mountain Lion" />
+<meta property="og:description" content="I have a bunch of Apple wireless gear at my house. It&rsquo;s inexpensive, feature rich and easy to maintain. However, with the update to mountain lion a while ago, the ability to install the older Airport Utility stopped. This is annoying since I have what apple now considers &ldquo;advanced&rdquo; features like IPv6 at my home and essentially all my gear here is a lab (except for the plex server =) I&rsquo;ve been spending a lot of time on cacti lately, and I wanted to test out the syslog plugin&hellip;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/2013/01/how-to-install-and-use-the-airport-utility-under-mountain-lion/" />
+<meta property="article:published_time" content="2013-01-09T09:58:47+00:00" />
+<meta property="article:modified_time" content="2013-01-09T09:58:47+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="How to install and use the Airport utility under Mountain Lion">
+<meta itemprop="description" content="I have a bunch of Apple wireless gear at my house. It&rsquo;s inexpensive, feature rich and easy to maintain. However, with the update to mountain lion a while ago, the ability to install the older Airport Utility stopped. This is annoying since I have what apple now considers &ldquo;advanced&rdquo; features like IPv6 at my home and essentially all my gear here is a lab (except for the plex server =) I&rsquo;ve been spending a lot of time on cacti lately, and I wanted to test out the syslog plugin&hellip;.">
+
+
+<meta itemprop="datePublished" content="2013-01-09T09:58:47&#43;00:00" />
+<meta itemprop="dateModified" content="2013-01-09T09:58:47&#43;00:00" />
+<meta itemprop="wordCount" content="304">
+
+
+
+<meta itemprop="keywords" content="IPv6,Lab Time,Musings," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/posts/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/posts/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/2013/01/how-to-install-and-use-the-airport-utility-under-mountain-lion/">How to install and use the Airport utility under Mountain Lion</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>I have a bunch of Apple wireless gear  at my house.  It&rsquo;s inexpensive, feature rich and easy to maintain.  However, with the update to mountain lion a while ago, the ability to install  the older Airport Utility stopped.  This is annoying since I have what apple now considers &ldquo;advanced&rdquo; features like IPv6 at my home and essentially all my gear here is a lab (except for the plex server =) I&rsquo;ve been spending a lot of time on <a href="http://www.cacti.net">cacti</a> lately, and I wanted to test out the syslog plugin&hellip;.ok, easy.  It&rsquo;s all set up.  Then I got to thinking &ldquo;why not just let this run and syslog all my gear like the good &lsquo;ol days?&rdquo;  Nerdy?  Yes, but hey, I collect flow data at home and have a <a href="http://www.forwardingplane.net/homenet/">weathermap</a> of my home network.  It keeps me eating my own dog food with the netflow exporter plugin on <a href="http://www.pfsense.org">pfSense</a> and it&rsquo;s fun. Uh, oh.  No ability to set syslog receiver on the airport gear anymore.  Not cool.  [Guess what, no way to change IPv6 settings anymore either] No way to do a standard install of the old utility. Lame, Apple, Lame.  After poking around a bit I found a pretty easy way to do it as long as you&rsquo;re not afraid of the command line. Since at least a few other folks will want to do this, here it is: <a href="http://support.apple.com/kb/DL1536">Download the App</a> from Apple. Mount the Downloaded disk. Open Terminal. Type:<code>
+pkgutil --expand /Volumes/AirPortUtility/AirPortUtility56.pkg
+cd ~/Desktop/AirPortTemp~/Desktop/AirPortTemp/AirPortUtility56Lion.pkg/
+open Payload
+cd &quot;Payload 2 2/Applications/Utilities/&quot;
+open .
+</code><a href="http://www.forwardingplane.net/wp-content/uploads/2013/01/Screen-Shot-2013-01-08-at-11.32.08-PM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/01/Screen-Shot-2013-01-08-at-11.32.08-PM.png" alt="" title="Screen Shot 2013-01-08 at 11.32.08 PM" /></a> Done.  That should open a finder window with the App in it.  You can copy it to you /Applications/Utilities folder and use it alongside the newer one.  You&rsquo;ll need to authenticate to copy into the /Applications/Utilities directory. Edits made and Poof!  Now I can see my syslogs from within cacti.</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

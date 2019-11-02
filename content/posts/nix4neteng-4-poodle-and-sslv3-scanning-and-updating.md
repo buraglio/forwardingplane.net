@@ -1,5 +1,5 @@
 ---
-title: 'NIX4Neteng #4: POODLE and SSLv3, scanning and updating'
+title: 'NIX4Neteng 4: POODLE and SSLv3, scanning and updating'
 date: Wed, 15 Oct 2014 17:36:54 +0000
 draft: false
 tags: [How-To, NIX4NetEng, Security, UNIX]

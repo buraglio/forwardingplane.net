@@ -1,5 +1,5 @@
 ---
-title: 'NIX4NetEng #2 IPv4/6 address investigation tools - whois + dig'
+title: 'NIX4NetEng 2 IPv4/6 address investigation tools - whois + dig'
 date: Sat, 07 Jun 2014 19:54:41 +0000
 draft: false
 tags: [NIX4NetEng, Routing, Security, UNIX]

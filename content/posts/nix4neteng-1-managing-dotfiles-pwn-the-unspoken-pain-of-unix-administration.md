@@ -1,5 +1,5 @@
 ---
-title: 'NIX4NetEng #1 Managing dotfiles; pwn the unspoken pain of UNIX administration'
+title: 'NIX4NetEng 1 Managing dotfiles; pwn the unspoken pain of UNIX administration'
 date: Thu, 01 May 2014 02:58:20 +0000
 draft: false
 tags: [How-To, NIX4NetEng, UNIX]

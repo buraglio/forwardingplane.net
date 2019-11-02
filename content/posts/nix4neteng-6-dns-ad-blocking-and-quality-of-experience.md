@@ -1,5 +1,5 @@
 ---
-title: 'NIX4NetEng #6 DNS, ad-blocking, and quality of experience'
+title: 'NIX4NetEng 6 DNS, ad-blocking, and quality of experience'
 date: Sat, 27 Feb 2016 16:40:04 +0000
 draft: false
 tags: [NIX4NetEng, UNIX]

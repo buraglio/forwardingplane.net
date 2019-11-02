@@ -1,5 +1,5 @@
 ---
-title: 'NIX4NetEng #3: IP Addressing and Subnet Tools'
+title: 'NIX4NetEng 3: IP Addressing and Subnet Tools'
 date: Sat, 26 Jul 2014 16:46:07 +0000
 draft: false
 tags: [How-To, IPv6, NIX4NetEng, UNIX]

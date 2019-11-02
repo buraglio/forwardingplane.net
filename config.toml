@@ -20,8 +20,8 @@ pygmentsCodeFences = true
 [[menu.main]]
   name = "Posts"
   weight = -120
-  identifier = "post"
-  url = "/post/"
+  identifier = "blog"
+  url = "/blog/"
 
 #[[menu.main]]
 #  name = "Tags"
@@ -31,7 +31,7 @@ pygmentsCodeFences = true
 
 [params.meta]
   keywords = "blog, tech"
-  description = "A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…."
+  description = "A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy….The Lunatic fringe."
 
 [params]
   github = "buraglio"

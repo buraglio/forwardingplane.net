@@ -3,12 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://forwardingplane.net/post/elastiflow-template-vm/</loc>
-    <lastmod>2019-09-08T18:11:58+00:00</lastmod>
+    <loc>https://forwardingplane.net/</loc>
+    <lastmod>2019-11-02T18:11:58+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/</loc>
+    <loc>https://forwardingplane.net/tags/musings/</loc>
+    <lastmod>2019-11-02T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/</loc>
+    <lastmod>2019-11-02T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/tags/podcasts/</loc>
+    <lastmod>2019-11-02T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/post/</loc>
+    <lastmod>2019-11-02T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/tags/</loc>
+    <lastmod>2019-11-02T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/post/elastiflow-template-vm/</loc>
     <lastmod>2019-09-08T18:11:58+00:00</lastmod>
   </url>
   
@@ -19,21 +44,6 @@
   
   <url>
     <loc>https://forwardingplane.net/tags/lab-time/</loc>
-    <lastmod>2019-09-08T18:11:58+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/tags/musings/</loc>
-    <lastmod>2019-09-08T18:11:58+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/post/</loc>
-    <lastmod>2019-09-08T18:11:58+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/tags/</loc>
     <lastmod>2019-09-08T18:11:58+00:00</lastmod>
   </url>
   
@@ -628,17 +638,17 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/about/</loc>
-    <lastmod>2015-01-19T11:13:14-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/about/publications/</loc>
-    <lastmod>2015-01-19T11:13:14-06:00</lastmod>
+    <loc>https://forwardingplane.net/publications/</loc>
+    <lastmod>2015-01-19T17:13:14+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://forwardingplane.net/post/publications/</loc>
+    <lastmod>2015-01-19T17:13:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/publications/publications/</loc>
     <lastmod>2015-01-19T17:13:14+00:00</lastmod>
   </url>
   
@@ -768,8 +778,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/about/disclaimer/</loc>
-    <lastmod>2014-03-20T18:00:44-06:00</lastmod>
+    <loc>https://forwardingplane.net/disclaimer/disclaimer/</loc>
+    <lastmod>2014-03-21T00:00:44+00:00</lastmod>
   </url>
   
   <url>
@@ -783,12 +793,22 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/about/resume/</loc>
-    <lastmod>2014-03-11T08:37:02-06:00</lastmod>
+    <loc>https://forwardingplane.net/disclaimer/</loc>
+    <lastmod>2014-03-21T00:00:44+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://forwardingplane.net/post/resume/</loc>
+    <lastmod>2014-03-11T14:37:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/resume/resume/</loc>
+    <lastmod>2014-03-11T14:37:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/resume/</loc>
     <lastmod>2014-03-11T14:37:02+00:00</lastmod>
   </url>
   
@@ -858,12 +878,17 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/about/calendar/</loc>
-    <lastmod>2013-12-05T10:16:36-06:00</lastmod>
+    <loc>https://forwardingplane.net/calendar/calendar/</loc>
+    <lastmod>2013-12-05T16:16:36+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://forwardingplane.net/post/calendar/</loc>
+    <lastmod>2013-12-05T16:16:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/calendar/</loc>
     <lastmod>2013-12-05T16:16:36+00:00</lastmod>
   </url>
   
@@ -1393,7 +1418,12 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/post/about/</loc>
+    <loc>https://forwardingplane.net/about/about/</loc>
+    <lastmod>2012-11-26T03:27:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forwardingplane.net/about/</loc>
     <lastmod>2012-11-26T03:27:54+00:00</lastmod>
   </url>
   

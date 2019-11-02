@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
-    <lastBuildDate>Sun, 08 Sep 2019 18:11:58 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Nov 2019 18:11:58 +0000</lastBuildDate>
     
 	<atom:link href="https://forwardingplane.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Packet Pushers Weekend Edition Number 1</title>
+      <link>https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/</link>
+      <pubDate>Sat, 02 Nov 2019 18:11:58 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/</guid>
+      <description>We all know the Packet Pushers. Recently, I had the pleasure of sitting in on the inagural &amp;ldquo;[Packet Pushers Weekend Editioni]&amp;ldquo;(https://www.youtube.com/watch?v=goQ9ppGwrEo&amp;amp;t=1668s) - an informal, video round table where we discuss fun and relevant topics in the space of networking and other related IT topics. Much discussion was had on SR-MPLS, Service providers, SD-WAN, and Cloud. I hope to participate again, as I found the experience both entertaining and informative, I hope you will too.</description>
+    </item>
     
     <item>
       <title>ElastiFlow Template VM</title>
@@ -2177,15 +2186,6 @@ Nice thoughts Nick. The SP is moving quickly on this. You keyed in on the part t
       
       <guid>https://forwardingplane.net/post/sdn-across-domains-in-the-wan-a-novice-look/</guid>
       <description>There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how. Brent Salsbury laid out a few use cases here. The why seems pretty straightforward. I do believe it will happen, however, the how is the interesting part. Admittedly, I&amp;rsquo;m a tad of a greenhorn in the SDN space, I&amp;rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.</description>
-    </item>
-    
-    <item>
-      <title>About Nick Buraglio</title>
-      <link>https://forwardingplane.net/post/about/</link>
-      <pubDate>Mon, 26 Nov 2012 03:27:54 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/post/about/</guid>
-      <description>This site is maintained by the domain owner, me, Nick Buraglio. It is intended to be a journal and notebook for things I find useful, problems I&amp;rsquo;m working on or general technology rambling.  It should be noted, however, that these pages are really just a personal notebook to me, stuff I find useful and things I may want to remember. Please don&amp;rsquo;t expect them to always be correct or complete .</description>
     </item>
     
     <item>

@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
-    <lastBuildDate>Sun, 08 Sep 2019 18:11:58 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Nov 2019 18:11:58 +0000</lastBuildDate>
     
 	<atom:link href="https://forwardingplane.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Musings</title>
+      <link>https://forwardingplane.net/tags/musings/</link>
+      <pubDate>Sat, 02 Nov 2019 18:11:58 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/tags/musings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Podcasts</title>
+      <link>https://forwardingplane.net/tags/podcasts/</link>
+      <pubDate>Sat, 02 Nov 2019 18:11:58 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/tags/podcasts/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>How-To</title>
@@ -27,15 +45,6 @@
       <pubDate>Sun, 08 Sep 2019 18:11:58 +0000</pubDate>
       
       <guid>https://forwardingplane.net/tags/lab-time/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Musings</title>
-      <link>https://forwardingplane.net/tags/musings/</link>
-      <pubDate>Sun, 08 Sep 2019 18:11:58 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/tags/musings/</guid>
       <description></description>
     </item>
     

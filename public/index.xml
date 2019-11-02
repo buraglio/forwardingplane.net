@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
-    <lastBuildDate>Sun, 08 Sep 2019 18:11:58 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Nov 2019 18:11:58 +0000</lastBuildDate>
     
 	<atom:link href="https://forwardingplane.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Packet Pushers Weekend Edition Number 1</title>
+      <link>https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/</link>
+      <pubDate>Sat, 02 Nov 2019 18:11:58 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/</guid>
+      <description>We all know the Packet Pushers. Recently, I had the pleasure of sitting in on the inagural &amp;ldquo;[Packet Pushers Weekend Editioni]&amp;ldquo;(https://www.youtube.com/watch?v=goQ9ppGwrEo&amp;amp;t=1668s) - an informal, video round table where we discuss fun and relevant topics in the space of networking and other related IT topics. Much discussion was had on SR-MPLS, Service providers, SD-WAN, and Cloud. I hope to participate again, as I found the experience both entertaining and informative, I hope you will too.</description>
+    </item>
     
     <item>
       <title>ElastiFlow Template VM</title>
@@ -984,23 +993,23 @@ Not only is the fabric fit to operate at hyper scale proportions, they&amp;rsqu
     
     <item>
       <title>Publications</title>
-      <link>https://forwardingplane.net/about/publications/</link>
-      <pubDate>Mon, 19 Jan 2015 11:13:14 -0600</pubDate>
-      
-      <guid>https://forwardingplane.net/about/publications/</guid>
-      <description>Work Profile
-Nick Buraglio, Anita Nikolich, Dale Carder, Securing the SDN WAN, October 30, 2014 Nick Buraglio,Vincent Stoffer, Adam Slagell, Jim Eyrich, Scott Campbell, Von Welch, Securing the Science DMZ: a discussion,October 28, 2014 Nick Buraglio, Best practices for securing an open perimeter network, August 18, 2014  &amp;nbsp;
-Video 
-&amp;nbsp;
-Nick Buraglio, Securing the Science DMZ, June 14, 2014 Nick Buraglio, Real world IPv6 deployments, Westnet, June 9, 2014 Nick Buraglio, Tracy Smith, Mary Stevens, Paul Hixon:National Science Foundation CC-NIE award 1341025, 2013 Nick Buraglio, OpenFlow as a network control protocol, TechTarget, March 2014 Nick Buraglio, BGP still lacks security foundation, TechTarget, May, 2014 Nick Buraglio, Why monitoring will require a networking engineer, TechTarget, March, 2015 Nick Buraglio, Secure Layer 3 SDX (Interdomain SDN): A Concept, ChiNOG 05, May, 2015 Nick Buraglio, Network engineer qualifications trump coding hype, TechTarget, November, 2015 Nick Buraglio, SDN and OpenFlow improve broadband deployment, TechTarget, October, 2015 Share this:   Twitter  Email  Print  LinkedIn  Facebook  Reddit  Tumblr  Pinterest  Pocket       </description>
-    </item>
-    
-    <item>
-      <title>Publications</title>
       <link>https://forwardingplane.net/post/publications/</link>
       <pubDate>Mon, 19 Jan 2015 17:13:14 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/publications/</guid>
+      <description>Work Profile
+Nick Buraglio, Anita Nikolich, Dale Carder, Securing the SDN WAN, October 30, 2014
+Nick Buraglio,Vincent Stoffer, Adam Slagell, Jim Eyrich, Scott Campbell, Von Welch, Securing the Science DMZ: a discussion,October 28, 2014
+Nick Buraglio, Best practices for securing an open perimeter network, August 18, 2014   Video   Nick Buraglio, Securing the Science DMZ, June 14, 2014
+Nick Buraglio, Real world IPv6 deployments, Westnet, June 9, 2014</description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>https://forwardingplane.net/publications/publications/</link>
+      <pubDate>Mon, 19 Jan 2015 17:13:14 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/publications/publications/</guid>
       <description>Work Profile
 Nick Buraglio, Anita Nikolich, Dale Carder, Securing the SDN WAN, October 30, 2014
 Nick Buraglio,Vincent Stoffer, Adam Slagell, Jim Eyrich, Scott Campbell, Von Welch, Securing the Science DMZ: a discussion,October 28, 2014
@@ -1248,12 +1257,11 @@ Another great site that should probably be on the &amp;ldquo;notable mentions&am
     
     <item>
       <title>Disclaimer</title>
-      <link>https://forwardingplane.net/about/disclaimer/</link>
-      <pubDate>Thu, 20 Mar 2014 18:00:44 -0600</pubDate>
+      <link>https://forwardingplane.net/disclaimer/disclaimer/</link>
+      <pubDate>Fri, 21 Mar 2014 00:00:44 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/about/disclaimer/</guid>
-      <description>I don&amp;#8217;t endorse or condemn products for free or for money [and if I did I would disclose it in bold lettering for the world to see].
-I will strive to provide a fact based description, experience or assessment of any given technology or product based on my particular experience. I may provide opinions as to what I believe is the right or wrong $item, $idea, $process, or $procedure on any given subject again based on my personal experiences.</description>
+      <guid>https://forwardingplane.net/disclaimer/disclaimer/</guid>
+      <description>I don&amp;rsquo;t endorse or condemn products for free or for money [and if I did I would disclose it in bold lettering for the world to see]. I will strive to provide a fact based description, experience or assessment of any given technology or product based on my particular experience. I may provide opinions as to what I believe is the right or wrong $item, $idea, $process, or $procedure on any given subject again based on my personal experiences.</description>
     </item>
     
     <item>
@@ -1277,19 +1285,19 @@ I will strive to provide a fact based description, experience or assessment of a
     
     <item>
       <title>Resume</title>
-      <link>https://forwardingplane.net/about/resume/</link>
-      <pubDate>Tue, 11 Mar 2014 08:37:02 -0600</pubDate>
-      
-      <guid>https://forwardingplane.net/about/resume/</guid>
-      <description>Share this:   Twitter  Email  Print  LinkedIn  Facebook  Reddit  Tumblr  Pinterest  Pocket       </description>
-    </item>
-    
-    <item>
-      <title>Resume</title>
       <link>https://forwardingplane.net/post/resume/</link>
       <pubDate>Tue, 11 Mar 2014 14:37:02 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/resume/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>https://forwardingplane.net/resume/resume/</link>
+      <pubDate>Tue, 11 Mar 2014 14:37:02 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/resume/resume/</guid>
       <description></description>
     </item>
     
@@ -1418,13 +1426,11 @@ Not trying to brush this off as not-scary or not-happening, but I&amp;rsquo;m sk
     
     <item>
       <title>Calendar</title>
-      <link>https://forwardingplane.net/about/calendar/</link>
-      <pubDate>Thu, 05 Dec 2013 10:16:36 -0600</pubDate>
+      <link>https://forwardingplane.net/calendar/calendar/</link>
+      <pubDate>Thu, 05 Dec 2013 16:16:36 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/about/calendar/</guid>
-      <description>Free/Busy Calendar:
-The best way to schedule time with me is via my Doodle MeetMe Page.
-Share this:   Twitter  Email  Print  LinkedIn  Facebook  Reddit  Tumblr  Pinterest  Pocket       </description>
+      <guid>https://forwardingplane.net/calendar/calendar/</guid>
+      <description>Free/Busy Calendar: The best way to schedule time with me is via my Doodle MeetMe Page.</description>
     </item>
     
     <item>
@@ -2430,10 +2436,10 @@ Nice thoughts Nick. The SP is moving quickly on this. You keyed in on the part t
     
     <item>
       <title>About Nick Buraglio</title>
-      <link>https://forwardingplane.net/post/about/</link>
+      <link>https://forwardingplane.net/about/about/</link>
       <pubDate>Mon, 26 Nov 2012 03:27:54 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/post/about/</guid>
+      <guid>https://forwardingplane.net/about/about/</guid>
       <description>This site is maintained by the domain owner, me, Nick Buraglio. It is intended to be a journal and notebook for things I find useful, problems I&amp;rsquo;m working on or general technology rambling.  It should be noted, however, that these pages are really just a personal notebook to me, stuff I find useful and things I may want to remember. Please don&amp;rsquo;t expect them to always be correct or complete .</description>
     </item>
     

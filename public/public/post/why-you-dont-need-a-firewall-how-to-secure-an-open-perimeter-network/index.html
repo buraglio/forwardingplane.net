@@ -1,0 +1,389 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "public",
+        "name" : "Why you don\x27t need a firewall [how to secure an open perimeter network]",
+        "headline" : "Why you don\x27t need a firewall [how to secure an open perimeter network]",
+        "description" : "I admit that the title was meant to be inflammatory. However, there are use cases that aren\x26rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me \x26ldquo;a firewall protects a network like a fuse protects an electrical circuit\x26rdquo;, and it\x26rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2014",
+        "datePublished": "2014-09-08 07:30:07 \x2b0000 \x2b0000",
+        "dateModified" : "2014-09-08 07:30:07 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/public\/post\/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network\/",
+        "wordCount" : "572",
+        "keywords" : [ "IPv6","Routing","SDN","Security","Soap Box","Blog" ]
+    }
+    </script>
+        
+            <title>Why you don&#39;t need a firewall [how to secure an open perimeter network] - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why you don&#39;t need a firewall [how to secure an open perimeter network]"/>
+<meta name="twitter:description" content="I admit that the title was meant to be inflammatory. However, there are use cases that aren&rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &ldquo;a firewall protects a network like a fuse protects an electrical circuit&rdquo;, and it&rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake."/>
+
+        <meta property="og:title" content="Why you don&#39;t need a firewall [how to secure an open perimeter network]" />
+<meta property="og:description" content="I admit that the title was meant to be inflammatory. However, there are use cases that aren&rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &ldquo;a firewall protects a network like a fuse protects an electrical circuit&rdquo;, and it&rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/public/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/" />
+<meta property="article:published_time" content="2014-09-08T07:30:07+00:00" />
+<meta property="article:modified_time" content="2014-09-08T07:30:07+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Why you don&#39;t need a firewall [how to secure an open perimeter network]">
+<meta itemprop="description" content="I admit that the title was meant to be inflammatory. However, there are use cases that aren&rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &ldquo;a firewall protects a network like a fuse protects an electrical circuit&rdquo;, and it&rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.">
+
+
+<meta itemprop="datePublished" content="2014-09-08T07:30:07&#43;00:00" />
+<meta itemprop="dateModified" content="2014-09-08T07:30:07&#43;00:00" />
+<meta itemprop="wordCount" content="572">
+
+
+
+<meta itemprop="keywords" content="IPv6,Routing,SDN,Security,Soap Box," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/public/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/">Why you don&#39;t need a firewall [how to secure an open perimeter network]</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>I admit that the title was meant to be inflammatory.  However, there are use cases that aren&rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job.  Someone once told me &ldquo;a firewall protects a network like a fuse protects an electrical circuit&rdquo;, and it&rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.  I can say, though, that the use of a firewall, IPS or other inline security appliance has presented many problems in many environments in my years as a network and security engineer and architect.    To that end, there are mechanisms for replacing the functions of a firewall and IPS with other options, which in many cases have a lower capital expense [although they may have a higher <em>initial</em> operational expense].  I&rsquo;ll outline them here, but before I do I want to re-iterate that NAT (PAT) is not a security tool, it&rsquo;s a translation tool.  Nothing more.  So, I will leave that out.  If you don&rsquo;t have appropriate IPv4 or IPv6 address space some of these things may need adjustments although they are still accomplishable by doing NAT on a border Layer 3 device.     Below is a talk that I gave at BroCon14 that is a rough outline of how to do this, if you don&rsquo;t want to spend 30 minutes listening to me talk about it, the clifs notes are bulleted below, but the context is all in the video so I encourage you to watch it before responding to my post. For those that want to take a look, here is the talk. Here are the bullets.</p>
+
+<ul>
+<li><strong>Announce only necessary resources </strong></li>
+</ul>
+
+<p>One can utilize routing to only expose the pieces of the network that need to be exposed.  If you have a /16 and on;y a /24 needs to be exposed, only announce that prefix.  This is not that different than a typical DMZ.</p>
+
+<ul>
+<li><strong>Filter access to network, storage and management hardware</strong></li>
+</ul>
+
+<p>Utilize best practice ingress filtering.  Follow <a href="http://tools.ietf.org/html/bcp38">BCP38</a>. You should be doing this anyway.</p>
+
+<ul>
+<li><strong>Utilize host based firewalls</strong></li>
+</ul>
+
+<p>This is a no-brainer.  Firewall as close to the resource as possible.</p>
+
+<ul>
+<li><strong>Employ central host management</strong></li>
+</ul>
+
+<p>Make your life easy.  Cloud providers do it and it&rsquo;s well documented nowadays.  There are <a href="http://cfengine.com/">many</a> <a href="http://puppetlabs.com/">options</a>.</p>
+
+<ul>
+<li><strong>Centralize logging and flow data collection</strong></li>
+</ul>
+
+<p>Another no brainer, you should be doing this anyway.</p>
+
+<ul>
+<li><strong>Create baselines for traffic and activity</strong></li>
+</ul>
+
+<p>Data is good.  Knowledge is power.  Baselines are useful for both anomaly detection and forecasting and it&rsquo;s not that hard to do it.</p>
+
+<ul>
+<li><strong>Deploy and tune IDS</strong></li>
+</ul>
+
+<p>Passive IDS system[s] off of a TAP or SPAN are key to this kind of architecture.  See video for more details but there are a bunch of good options. I prefer <a href="http://www.bro.org">Bro IDS</a> but there are many players both commercial and FOSS.</p>
+
+<ul>
+<li><strong>Filter with black hole routing</strong></li>
+</ul>
+
+<p>I&rsquo;ve <a href="http://www.forwardingplane.net/2011/10/black-hole-routing/" title="Black Hole routing">talked about this before</a>.  Automating this is key to making it function efficiently and it is a fantastic tool.  This can be done with BGP (traditionally) or with something innovative like OpenFlow.</p>
+
+<ul>
+<li><strong>Make use of regularly scheduled external vulnerability scanning</strong></li>
+</ul>
+
+<p>This is a great way to verify your exposure and works for any sized network.  Highly recommended.</p>
+
+<p>  Clearly this isn&rsquo;t for everyone, and that&rsquo;s ok.  For anyone that has struggled with issues involving security appliances either based on protocol, horsepower or interface speeds, there are options.</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

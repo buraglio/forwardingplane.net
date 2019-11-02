@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/care-segment-routing/">
+<meta property="og:title" content="Why I care about Segment Routing" />
+<meta property="og:description" content="Edit: Going against my normal “just get the content out there” methodology, I’ve been mulling over this blog post since July of 2016. Segment routing is such a beautifully elegant solution I have had trouble articulating that fact. WAN technologies are squarely within my wheelhouse, and this one fits in so well I was going over and over the post never really satisfied with it, continuing to find mistakes and decided to just get it out there." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/care-segment-routing/" />
+<meta property="article:published_time" content="2016-10-04T00:54:27+00:00" />
+<meta property="article:modified_time" content="2016-10-04T00:54:27+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why I care about Segment Routing"/>
+<meta name="twitter:description" content="Edit: Going against my normal “just get the content out there” methodology, I’ve been mulling over this blog post since July of 2016. Segment routing is such a beautifully elegant solution I have had trouble articulating that fact. WAN technologies are squarely within my wheelhouse, and this one fits in so well I was going over and over the post never really satisfied with it, continuing to find mistakes and decided to just get it out there."/>
+
+
+<meta itemprop="name" content="Why I care about Segment Routing">
+<meta itemprop="description" content="Edit: Going against my normal “just get the content out there” methodology, I’ve been mulling over this blog post since July of 2016. Segment routing is such a beautifully elegant solution I have had trouble articulating that fact. WAN technologies are squarely within my wheelhouse, and this one fits in so well I was going over and over the post never really satisfied with it, continuing to find mistakes and decided to just get it out there.">
+
+
+<meta itemprop="datePublished" content="2016-10-04T00:54:27&#43;00:00" />
+<meta itemprop="dateModified" content="2016-10-04T00:54:27&#43;00:00" />
+<meta itemprop="wordCount" content="1155">
+
+
+
+<meta itemprop="keywords" content="Routing,SDN," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Why I care about Segment Routing 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Why I care about Segment Routing </h1>
+    <div class="content"> <p>Edit: <em>Going against my normal “just get the content out there” methodology, I’ve been mulling over this blog post since July of 2016.  Segment routing is such a beautifully elegant solution I have had trouble articulating that fact. WAN technologies are squarely within my wheelhouse, and this one fits in so well I was going over and over the post never really satisfied with it, continuing to find mistakes and decided to just get it out there. </em></p>
+
+<p>As a WAN guy by chance and opportunity, and a service provider engineer and architect by choice (and also chance and opportunity), segment routing (SR) is one of those wonderful new technologies that keeps rearing its head over and over in recent days - and it&rsquo;s already playing in the big leagues. SR is supported by many of the large network equipment providers including Cisco, Juniper, and Nokia (Alcatel-Lucent), and as I have just learned, Arista.</p>
+
+<p>Why is this a notable tech you may want to pay attention to? Wide area and service provider networks have a longer mean time before replacement. They don’t change topology or architecture nearly as often and the gear typically has higher cost due to things like deeper interface buffers, more complex feature sets, larger TCAM for things like route tables, as well as increased redundancy features. Managing a WAN has a different feel and a different set of problems. Complex overlays and traffic engineering often play a role in wide area networks. Many an attempt to reduce the the complexity of WANs has been made and SDN is creeping its way into some pretty large networks. When a network of any size is built, there comes a tipping point when managing things by hand, even with great documentation, is too daunting and cannot be done efficiently. Automation is key. Simplicity is paramount. Anyone that has ever managed a large MPLS network knows this. So, when I started looking at segment routing, I was cautiously optimistic - it had many attributes that were comfortable to a seasoned WAN engineer and yet abstracted many of the complexities of the networks that we&rsquo;d been running for years. In order to really understand the benefits that SR brings to the table, it&rsquo;s important to understand the current landscape. When one builds a large MPLS network there are incremental elements that all build from each other in order to work. If one is broken or problematic, the problem will trickle up the stack. Fundamentally, the stack for a very vanilla MPLs WAN contains the following elements (top down):</p>
+
+<ul>
+<li>Client service interface</li>
+<li>Overlay, L3VPN, VPLS, ePIPE/PseudoWire/VLL</li>
+<li>BGP</li>
+<li>Label Distribution, LDP, etc.</li>
+<li>IGP, IS-IS or OSPFv2/3</li>
+<li>Ethernet, SONET, DS1/DS3/E1</li>
+<li>Optical transport or other last mile and long haul outside plant</li>
+</ul>
+
+<p>Add into this list the complications of traffic engineering, and you&rsquo;ve got a mix of things that are fairly daunting to all but the most experienced engineers. What segment routing provides is a way to remove several layers of this and simplify what is arguably the most complex and least understood element: Traffic Engineering. Segment routing allows for the selection of an entire path, from the ingress of the network to the egress port, all outside of the IGPs shortest path table. It is often labeled as &ldquo;source routing&rdquo; which will inevitably create feeling of disgust, dread, and distain from a network engineer and panic from the security folks. I choose not to label SR as &ldquo;source routing&rdquo; because of the negative connotation associated with that technological approach. Instead, I would rather use the term &ldquo;deliberate path selection&rdquo;.</p>
+
+<p>Oh, and this can be automated. That&rsquo;s right. It&rsquo;s &ldquo;SDN&rdquo;. Utilizing a tool called a path computational engine or &ldquo;PCE&rdquo;, these paths can be selected based on any number of criteria including latency, hop count, load, time of day, phase of the moon, mood of the boss, etc.</p>
+
+<p>I was lucky enough to get to spend some quality time at a <a href="http://techfieldday.com/event/srr1/">special event</a> recently. Interesting discussions were had, many a thing was learned. A few of the other attendees wrote up some great info on segment routing, including some use cases, which can be found here</p>
+
+<p>Terry Slattery on No Jitter</p>
+
+<p><a href="http://www.nojitter.com/post/240171828/segment-routing-inside-a-new-sdn-technology">http://www.nojitter.com/post/240171828/segment-routing-inside-a-new-sdn-technology</a></p>
+
+<p>Carl Niger on Come Route With Me</p>
+
+<p><a href="https://comeroutewithme.com/2016/07/24/post-tfd-segment-routing-roundtable-thoughts/">https://comeroutewithme.com/2016/07/24/post-tfd-segment-routing-roundtable-thoughts/</a></p>
+
+<p>Russ White on Net Work</p>
+
+<p><a href="http://ntwrk.guru/dc-fabric-segment-routing-use-case-1/">http://ntwrk.guru/dc-fabric-segment-routing-use-case-1/</a></p>
+
+<p><a href="http://ntwrk.guru/dc-fabric-segment-routing-use-case-2/">http://ntwrk.guru/dc-fabric-segment-routing-use-case-2/</a></p>
+
+<p>I highly recommend taking a view of the talks from some folks using SR on some pretty significant networks - it&rsquo;s worth your time if you&rsquo;re really interested in throwing down with segment routing.  But what did this tell <strong><em>me</em></strong>? Lets look further into SR and see why it&rsquo;s become so attractive to large, geographically diverse networks. First, SR builds on an existing knowledgeable. Far more people exist in the market that already know MPLS. The understand labels, they understand overlays, and they have vast experience with virtual circuits. Service providers are very likely MPLS based if they operate at any scale and offer typical ISP services. MPLS is well traveled, and even though there may be reasons that&rsquo;s not perfect, it&rsquo;s the devil we know. Other SDN technologies are either fairly green (l<a href="http://blog.ipspace.net/2015/12/running-open-daylight-in-production.html#more">et me tell you about running a production openflow experience</a>) or are primarily focused on the data center, which as I will adamantly insist is a very different beast.</p>
+
+<p>Large scale service providers have a very different redundancy model. Attempting to apply campus or enterprise redundancy to a service provider does not scale and it certainly isn&rsquo;t affordable. SR leverages the same models that MPLS does, it realies heavily on the IGP, leveraging a TLV within IS-IS. That brings me to IS-IS. Most service providers leverage IS-IS as their internal gateway protocol due to it&rsquo;s ability to carry multiple routed protocols at once, leverage multi-topology, and the fact that it does not rely on the protocol it is routing for connectivity like OSPF does. SR is more-or-less an extension to IS-IS. Overlapping skill set #2. The other option, and this is a big one, is that there are multiple vendors that supported, as stated above. This is a big deal as int provides that &ldquo;throat to choke&rdquo; that a lot of emerging technologies just do not really have yet.</p>
+
+<p>Did I mention that it &ldquo;fails open”? What’s not to love about falling back to an IGP rather than ceasing to process packets?  Lets do a for-instance use-case. Within your SR network you provision a path that takes a path with more hops but has less congestion. Create your label stack and away you go* Of that path fails, the traffic falls back to the standard routing table.</p>
+
+<p>Much like MPLS (of which I am a fan, FWIW), this technology is better suited for a larger network with multiple paths, this could be any number of  environments such as large camps networks, large scale data centers geographically diverse environments connected by multiple WAN circuits, and of course, service and content providers. This tech is quite simply full of win. </p>
+
+<p>*greatly simplified =)</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/sdn">#SDN</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 4 Oct 2016 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

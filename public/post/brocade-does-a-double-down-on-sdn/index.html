@@ -1,0 +1,691 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "Brocade does a double down on SDN",
+        "headline" : "Brocade does a double down on SDN",
+        "description" : "Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.\nThis is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2015",
+        "datePublished": "2015-03-28 16:09:11 \x2b0000 \x2b0000",
+        "dateModified" : "2015-03-28 16:09:11 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/brocade-does-a-double-down-on-sdn\/",
+        "wordCount" : "691",
+        "keywords" : [ "Crystal Ball","SDN","Soap Box","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Brocade does a double down on SDN</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Brocade does a double down on SDN"/>
+<meta name="twitter:description" content="Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.
+This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is."/>
+
+        <meta property="og:title" content="Brocade does a double down on SDN" />
+<meta property="og:description" content="Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.
+This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/brocade-does-a-double-down-on-sdn/" />
+<meta property="article:published_time" content="2015-03-28T16:09:11+00:00" />
+<meta property="article:modified_time" content="2015-03-28T16:09:11+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Brocade does a double down on SDN">
+<meta itemprop="description" content="Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.
+This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is.">
+
+
+<meta itemprop="datePublished" content="2015-03-28T16:09:11&#43;00:00" />
+<meta itemprop="dateModified" content="2015-03-28T16:09:11&#43;00:00" />
+<meta itemprop="wordCount" content="691">
+
+
+
+<meta itemprop="keywords" content="Crystal Ball,SDN,Soap Box," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/resume">
+                            <i class="resume">&nbsp;</i>resume
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/resume">
+                            <h3>
+                                <i class="resume">&nbsp;</i>resume
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fbrocade-does-a-double-down-on-sdn%2f&amp;text=Brocade%20does%20a%20double%20down%20on%20SDN&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fbrocade-does-a-double-down-on-sdn%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fbrocade-does-a-double-down-on-sdn%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fbrocade-does-a-double-down-on-sdn%2f&amp;title=Brocade%20does%20a%20double%20down%20on%20SDN" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fbrocade-does-a-double-down-on-sdn%2f&amp;title=Brocade%20does%20a%20double%20down%20on%20SDN" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fbrocade-does-a-double-down-on-sdn%2f&amp;title=Brocade%20does%20a%20double%20down%20on%20SDN" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fbrocade-does-a-double-down-on-sdn%2f&amp;description=Brocade%20does%20a%20double%20down%20on%20SDN" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fbrocade-does-a-double-down-on-sdn%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/brocade-does-a-double-down-on-sdn/">Brocade does a double down on SDN</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-03-28'>
+            March 28, 2015</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>Since <a href="http://techfieldday.com/event/nfd9/">Network Field Day 9</a>, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.<br />
+This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is. I tend to be a pretty harsh critic and have (more than once) been labeled as irreverent when it comes to what is stated in the network and security industry, instead focusing on what is actually necessary in a production network. Brocade has added some good products and features, keeping their SDN features at the forefront, as expected. These are great, but while useful and innovataive, I am less interested in those technical abilities. Brocade has been a long standing icon in the SDN and specifically in the openflow and <a href="http://www.opendaylight.org">OpenDayLight</a> space since the very early days. In fact, from an outsiders perspective they&rsquo;ve bet their networking arm on it. They were one of the first to market and are able to make software changes quickly and add significant features due to the fact that their larger boxes are FPGA based. This is where it gets interesting for me as someone that had to manage large Foundry/Brocade networks for a number of years and who sports the scars and experiences to prove it. Knowing that the majority of the issues with their platform were software related things like lack of full featured protocols, buggy Layer 3 features and their infamously poor multicast support, the fact that they are laser focused on software defined networking has my wheels turning, and let me tell you why:</p>
+
+<ul>
+<li><p><em>Brocade is slurping up pretty much all of the thought leaders, idea producers, and game changers in the SDN community. This isn&rsquo;t exactly ground breaking news, but it is worth repeating because it is significant. It signals, in a very public way, that they are not messing around. They&rsquo;re embracing SDN and they are ready to stop selling sugar water and change the [networking]world. There is a related branch to this, bear with me, I&rsquo;ll come back to it.</em></p></li>
+
+<li><p><em>Brocade purchased <a href="http://www.brocade.com/launch/vyatta/">Vyatta</a>, a completely software based company and they did not just absorb the IP and rebadge it. They are actively integrating it, as a product, into their portfolio.</em></p></li>
+
+<li><p><em>Brocade is <strong>supporting</strong> an open sourced based commercialized SDN controller. This signals that they are ready for someone to buy it, deploy it and use it in production. And to answer support questions.</em></p></li>
+</ul>
+
+<p>Circling back to my first point:</p>
+
+<ul>
+<li><em>Brocade hired <a href="https://www.linkedin.com/in/michaelbushong">Michael Bushong</a>.</em></li>
+</ul>
+
+<p>You may ask, why does that really matter? I assert that this indicates a very key element inside of Brocade: they know that they need to adapt and that they need a visionary to help direct that change. Bushong has a long history of enacting significant change. He is also a smart guy (see degree from UC Berkeley in advanced heat transfer &amp; fluid dynamics). Bushong was responsible for the SDN group and the One Junos initiative at Juniper. He was also a key player at Plexxi, a very innovative networking company with a unique product. He knows how to motivate and promote change and has built a culture that is open to it. In fact, after the NFD9 presentation several of the team members approached a handful of us and asked us to elaborate on the things we were asking about and requesting. I have also received follow ups on those items. These things may seem insignificant, but give some serious thought to how often network vendors ask these questions, follow up and actually <em>listen</em> to needs and requirements that are non-standard.</p>
+
+<p>All of that opinion aside, Brocade is also bringing good featues and really thinking about how to change and more importantly, improve, a key element in a sucessful company (see H.G Wells: &ldquo;Adapt or perish, now as ever, is nature&rsquo;s inexorable imperative.&rdquo;)</p>
+
+<p>I remain intrigued.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/crystal-ball">Crystal Ball</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/sdn">SDN</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/soap-box">Soap Box</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/1247/"
+                class="button big previous"></a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/brocade-does-a-double-down-on-sdn-comments/"
+                class="button big next">Brocade does a double down on SDN</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

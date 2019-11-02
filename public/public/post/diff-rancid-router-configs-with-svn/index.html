@@ -1,0 +1,381 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "public",
+        "name" : "Diff RANCID router configs with SVN",
+        "headline" : "Diff RANCID router configs with SVN",
+        "description" : "If you are running a network and aren\x26rsquo;t using RANCID, you should give it a serious look. RANCID is a cross platform configuration management toolkit for backing up router configurations and certain environmental and hardware information into version control. It\x26rsquo;s been around for as long as I can remember and supports nearly every platform I can think of, including a few modules that I cobbled together myself. There is are a few nice web based front ends for CVS and SVN, I prefer to use ViewVC because I have a lot of experience with it, however, there may be cases where a web server isn\x26rsquo;t a good option, unavailable or just too much work.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-01-25 00:27:09 \x2b0000 \x2b0000",
+        "dateModified" : "2013-01-25 00:27:09 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/public\/post\/diff-rancid-router-configs-with-svn\/",
+        "wordCount" : "348",
+        "keywords" : [ "How-To","Lab Time","UNIX","Blog" ]
+    }
+    </script>
+        
+            <title>Diff RANCID router configs with SVN - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Diff RANCID router configs with SVN"/>
+<meta name="twitter:description" content="If you are running a network and aren&rsquo;t using RANCID, you should give it a serious look. RANCID is a cross platform configuration management toolkit for backing up router configurations and certain environmental and hardware information into version control. It&rsquo;s been around for as long as I can remember and supports nearly every platform I can think of, including a few modules that I cobbled together myself. There is are a few nice web based front ends for CVS and SVN, I prefer to use ViewVC because I have a lot of experience with it, however, there may be cases where a web server isn&rsquo;t a good option, unavailable or just too much work."/>
+
+        <meta property="og:title" content="Diff RANCID router configs with SVN" />
+<meta property="og:description" content="If you are running a network and aren&rsquo;t using RANCID, you should give it a serious look. RANCID is a cross platform configuration management toolkit for backing up router configurations and certain environmental and hardware information into version control. It&rsquo;s been around for as long as I can remember and supports nearly every platform I can think of, including a few modules that I cobbled together myself. There is are a few nice web based front ends for CVS and SVN, I prefer to use ViewVC because I have a lot of experience with it, however, there may be cases where a web server isn&rsquo;t a good option, unavailable or just too much work." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/public/post/diff-rancid-router-configs-with-svn/" />
+<meta property="article:published_time" content="2013-01-25T00:27:09+00:00" />
+<meta property="article:modified_time" content="2013-01-25T00:27:09+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Diff RANCID router configs with SVN">
+<meta itemprop="description" content="If you are running a network and aren&rsquo;t using RANCID, you should give it a serious look. RANCID is a cross platform configuration management toolkit for backing up router configurations and certain environmental and hardware information into version control. It&rsquo;s been around for as long as I can remember and supports nearly every platform I can think of, including a few modules that I cobbled together myself. There is are a few nice web based front ends for CVS and SVN, I prefer to use ViewVC because I have a lot of experience with it, however, there may be cases where a web server isn&rsquo;t a good option, unavailable or just too much work.">
+
+
+<meta itemprop="datePublished" content="2013-01-25T00:27:09&#43;00:00" />
+<meta itemprop="dateModified" content="2013-01-25T00:27:09&#43;00:00" />
+<meta itemprop="wordCount" content="348">
+
+
+
+<meta itemprop="keywords" content="How-To,Lab Time,UNIX," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/public/post/diff-rancid-router-configs-with-svn/">Diff RANCID router configs with SVN</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                
+
+<p>If you are running a network and aren&rsquo;t using <a href="http://shrubbery.net/rancid/">RANCID</a>, you should give it a serious look.  RANCID is a cross platform configuration management toolkit for backing up router configurations and certain environmental and hardware information into version control.  It&rsquo;s been around for as long as I can remember and supports nearly every platform I can think of, including a <a href="http://www.forwardingplane.net/2012/11/vdxrancid-contrib-scripts/" title="VDXrancid contrib scripts">few</a> <a href="http://www.forwardingplane.net/2011/06/alurancid-and-pfrancid/" title="alurancid and pfrancid">modules</a> that I cobbled together myself.  There is are a few nice web based front ends for CVS and SVN, I prefer to use <a href="http://www.viewvc.org">ViewVC</a> because I have a lot of experience with it, however, there may be cases where a web server isn&rsquo;t a good option, unavailable or just too much work.  In this case, you&rsquo;ll want to know how to diff those configs from the CLI using the existing tools.  I find myself always forgetting the exact syntax of how to do this, so here it is. I prefer to use SVN, so we&rsquo;ll talk about that one here.   svn list will give a list of current devices in version control:<code>
+svn list
+</code>```
+rtr1.company.com
+rtr2.company.com
+rtr3.company.com
+sw1.company.com
+sw2.company.com</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-To look at a router config:```" data-lang="To look at a router config:```">svn cat &lt;router&gt;
+svn cat rtr1.company.com</code></pre></div>
+<p>See all revisions: svn log <router>```</p>
+
+<h2 id="svn-log-rtr1-company-com">svn log rtr1.company.com</h2>
+
+<p>r863 | _rancid | 2013-01-18 12:51:59 -0600 (Fri, 18 Jan 2013) | 1 line</p>
+
+<h2 id="updates-change-made-by-buraglio">updates - Change made by: buraglio</h2>
+
+<p>r848 | _rancid | 2013-01-09 14:00:27 -0600 (Wed, 09 Jan 2013) | 1 line</p>
+
+<h2 id="updates">updates</h2>
+
+<p>r847 | _rancid | 2013-01-09 02:07:42 -0600 (Wed, 09 Jan 2013) | 1 line</p>
+
+<h2 id="updates-1">updates</h2>
+
+<p>r832 | _rancid | 2012-12-12 09:42:33 -0600 (Wed, 12 Dec 2012) | 1 line</p>
+
+<h2 id="updates-change-made-by-buraglio-1">updates - Change made by: buraglio</h2>
+
+<p>r804 | _rancid | 2012-11-27 14:00:28 -0600 (Tue, 27 Nov 2012) | 1 line
+updates</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Diff revisions: svn diff -r <version1>:<version2> <router>```" data-lang="Diff revisions: svn diff -r <version1>:<version2> <router>```">svn diff -r r863:r847 rtr1.company.com
+
+Index: 710rtr.ui-iccn.org
+===================================================================
+--- rtr1.company.com	(revision 863)
++++ rtr1.company.com	(revision 847)
+@@ -497,7 +497,6 @@
+ !
+ interface ethernet 1/1
+  port-name rtr2 (1-1-11-2:e1/2)
+- enable
+  ip ospf area 0
+  ip ospf cost 8
+  ip address 10.209.143.1/30</code></pre></div>
+<p>That&rsquo;s basically it. Anything you can do from svn, you can do with your RANCID gathered SVN data.</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

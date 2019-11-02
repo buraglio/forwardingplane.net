@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/2012-12-13-a-day-with-only-ipv6/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="IPv6 is coming. Like SDN, we can&#8217;t ignore it. Are you ready? Are you apps ready? I&#8217;ll wager the answer is no. Mine aren&#8217;t. I&#8217;ve been working on IPv6 for about 11 years, from early days of tunnels to full native IPv6 at home and at work. In teaching the IPv6 workshop for internet2, one of the things that I always suggest is to have a dual stacked host and an IPv6 only host available for testing." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/2012-12-13-a-day-with-only-ipv6/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="IPv6 is coming. Like SDN, we can&#8217;t ignore it. Are you ready? Are you apps ready? I&#8217;ll wager the answer is no. Mine aren&#8217;t. I&#8217;ve been working on IPv6 for about 11 years, from early days of tunnels to full native IPv6 at home and at work. In teaching the IPv6 workshop for internet2, one of the things that I always suggest is to have a dual stacked host and an IPv6 only host available for testing."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="IPv6 is coming. Like SDN, we can&#8217;t ignore it. Are you ready? Are you apps ready? I&#8217;ll wager the answer is no. Mine aren&#8217;t. I&#8217;ve been working on IPv6 for about 11 years, from early days of tunnels to full native IPv6 at home and at work. In teaching the IPv6 workshop for internet2, one of the things that I always suggest is to have a dual stacked host and an IPv6 only host available for testing.">
+
+
+
+<meta itemprop="wordCount" content="1185">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> <p>IPv6 is coming.  Like SDN, we can&#8217;t ignore it.  Are you ready?  Are you apps ready?  I&#8217;ll wager the answer is no.  Mine aren&#8217;t.  I&#8217;ve been working on IPv6 for about 11 years, from early days of tunnels to full native IPv6 at home and at work.  In teaching the IPv6 workshop for internet2, one of the things that I always suggest is to have a dual stacked host and an IPv6 only host available for testing.  These can be virtual machines or physical host, the important detail is that that need to be something that is deployed and a known working configuration. Ideally they&#8217;re a mirror or an analog of a typical workstation and or server on your network.</p>
+
+<p>I&#8217;ve been doing this for some time, but I must admit I&#8217;m a little ashamed that I&#8217;ve never tried to do this for my personal day to day workstation, only for one off testing.  Well, that ends now, and the results aren&#8217;t pretty.</p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/noipv42.png"><img class="aligncenter size-full wp-image-258" title="noipv4" src="http://www.forwardingplane.net/wp-content/uploads/2012/12/noipv42.png" alt="" width="431" height="230" srcset="http://www.forwardingplane.net/wp-content/uploads/2012/12/noipv42.png 431w, http://www.forwardingplane.net/wp-content/uploads/2012/12/noipv42-300x160.png 300w" sizes="(max-width: 431px) 100vw, 431px" /></a></p>
+
+<p style="text-align: center;">
+  <p>
+    My every day workstation is a mac. So, to remain productive, I didn&#8217;t use my primary workstation, but instead I attempted to mirror it as closely as possible.  The chosen analog was a mac mini running MacOS 10.7.  It was immediately clear that this wasn&#8217;t going to be a fully functional workstation.
+  </p>
+  
+
+<p><p>
+    Right from the get go there was an issue.  IPv6 doesn&#8217;t do any options in the SLACC implementation that 90% of folks doing dual stack are going to use.  DHCPv6 is still not widely deployed, DHCPv6 relay isn&#8217;t available in a vast swath of network hardware and most folks are going to initially start with stateless auto config, at least until they realize it&#8217;s more or less unmanageable.  Translated: you have no DNS without explicitly setting it statically.
+  </p></p>
+
+<p><p>
+    Yuck.  I strongly discourage statically assigning things.  It makes changes far more painful than they need to be, is a support nightmare at nearly any scale  and decentralizes control. However, I had to for this test.  Fine, an IPv6 resolver was added.
+  </p></p>
+
+<p><p>
+    Next step, run patching.  Nope.  Apple doesn&#8217;t support patching via their automated process via IPv6.  Most of this should be served by Akamai, which does support v6 in many cases, but not this one.  I can&#8217;t even patch the workstation without either running my own IPv6 enabled patch service (which requires manual configuration of a host to utilize), using a thumb drive or IPv6 enabled network mapping to grab the patches or plumbing IPv4 into it.
+  </p></p>
+
+<p><p>
+    After fighting through patching the host, I wanted to actually use it.  This was mostly an exercise in patience as well.  The google based services I used all just worked.  Searches, gmail, blogger, etc.  I didn&#8217;t notice any difference whatsoever. One interesting thing that I noticed right away was that many ads and images on pages I was able to surf to weren&#8217;t working at all.  Ad content providers are behind the curve on delivering over IPv6.  This surprised me a bit since this is a revenue stream that is going to grow, and they&#8217;re missing the boat.  The upside was that I didn&#8217;t need to look at a bunch of ads, potentially distracting images and marketing hype.
+  </p></p>
+
+<p><p>
+    Many of my work services such as exchange aren&#8217;t yet IPv6 enabled, I knew that wasn&#8217;t going to work because it&#8217;s actually on my teams list to remedy, however, I gave it a try anyway.  No go on OWA.  No go on any of the exchange access whatsoever.  NTP sync worked just fine after adding in our NTP server, its been IPv6 ready for a very long time.
+  </p></p>
+
+<p><p>
+    Luckily for me, most of what I do is CLI based and the equipment I need to get into and help maintain has been IPv6 enabled for years.  SSH on this mac worked with absolutely no issues, as expected.  It&#8217;s one of those nice things that I&#8217;d been using IPv6 for in a dual stacked environment for years and is essentially transparent.
+  </p></p>
+
+<p><p>
+    I was able to work on this blog post, since<a href="http://www.forwardingplane.net"> forwardingplane.net</a> has been IPv6 compliant since it&#8217;s inception thanks to the hosting provider, <a href="http://www.arpnetworks.com">arp networks</a>.
+  </p></p>
+
+<p><p>
+    Other services that I use regularly, are a mixed bag.  <a href="http://www.box.net">Box.net</a> has no IPv6 support. <a href="http://www.dropbox.com">Dropbox</a>, which I expected to work since it is hosted in the amazon cloud, doesn&#8217;t but probably trivially could.  <a href="https://spideroak.com">Spideroak</a> didn&#8217;t work with only IPv6.  <a href="http://www.crashplan.com">Crashplan</a> didn&#8217;t work to the cloud or my NAS.  NAS was expected since it doesn&#8217;t do v6.  This is a frightening wake-up call.  Enabling IPv6 support into these every day apps should have been done from the beginning or at the very least before IPv6 day.
+  </p></p>
+
+<p><p>
+    Some other things I noticed, my <a href="http://www.amazon.com/D-Link-DNS-343-Network-Attached-Enclosure/dp/B0019VSU88">2 NAS</a> at home don&#8217;t do IPv6 at all.  The aging Dell powerconnect gig switch I have at home doesn&#8217;t do IPv6.  My <a href="http://o-www.sonicwall.com/us/en/products/TZ_210.html">Sonicwall TZ 210 wireless-N</a> that I&#8217;ve been testing at home has no IPv6 support by default although I think there is Beta code that I&#8217;ve been trying to get my hands on.
+  </p></p>
+
+<p><p>
+    My appleTV, however, does do IPv6 as do my Linux VMs, Windows 7 VM and host Linux system.  My normal gateway device, a <a href="http://www.pfsense.org">pfSense</a> install running on a <a href="http://pcengines.ch/alix.htm">PC Engines ALIX</a> board has done IPv6, correctly mind you, for years, either by code I hacked into it (in the early days) or fully supported by the project.  It supports dhcpv6 server, dhcpv6-pd from my upstream provider and SLAAC.  It also does IPv6 firewall functions better than most commercial firewall devices.
+  </p></p>
+
+<p><p>
+    I&#8217;m 100% sure it&#8217;s just the tip of the iceberg. If you&#8217;re a networking professional and you&#8217;re not learning IPv6, you&#8217;re already 10 years behind.  Head in the sand won&#8217;t make it go away, it&#8217;s happening, just like SDN is happening.  In fact, they&#8217;ll <a href="http://www.openflow.org/wk/index.php/OpenFlow_1_2_proposal#IPv6_support">be happening together in some cases</a>.  Learning new things is fun, and IPv6 is a necessity.  You can hide behind NAT and existing allocations for a while, but believe me, you&#8217;re doing yourself a disservice as well as missing out on some cool stuff if you&#8217;re not talking about your IPv6 plans and learning about this inevitable reality.
+  </p></p>
+
+<p><div class="sharedaddy sd-sharing-enabled">
+    <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+      <h3 class="sd-title">
+        Share this:
+      </h3></p>
+
+<pre><code>  &lt;div class=&quot;sd-content&quot;&gt;
+    &lt;ul&gt;
+      &lt;li class=&quot;share-twitter&quot;&gt;
+        &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;sharing-twitter-172&quot; class=&quot;share-twitter sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2012/12/a-day-with-only-ipv6/?share=twitter&quot; target=&quot;_blank&quot; title=&quot;Click to share on Twitter&quot;&gt;&lt;span&gt;Twitter&lt;/span&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;share-email&quot;&gt;
+        &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;&quot; class=&quot;share-email sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2012/12/a-day-with-only-ipv6/?share=email&quot; target=&quot;_blank&quot; title=&quot;Click to email this to a friend&quot;&gt;&lt;span&gt;Email&lt;/span&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;share-print&quot;&gt;
+        &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;&quot; class=&quot;share-print sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2012/12/a-day-with-only-ipv6/&quot; target=&quot;_blank&quot; title=&quot;Click to print&quot;&gt;&lt;span&gt;Print&lt;/span&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;share-linkedin&quot;&gt;
+        &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;sharing-linkedin-172&quot; class=&quot;share-linkedin sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2012/12/a-day-with-only-ipv6/?share=linkedin&quot; target=&quot;_blank&quot; title=&quot;Click to share on LinkedIn&quot;&gt;&lt;span&gt;LinkedIn&lt;/span&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;share-facebook&quot;&gt;
+        &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;sharing-facebook-172&quot; class=&quot;share-facebook sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2012/12/a-day-with-only-ipv6/?share=facebook&quot; target=&quot;_blank&quot; title=&quot;Click to share on Facebook&quot;&gt;&lt;span&gt;Facebook&lt;/span&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;share-reddit&quot;&gt;
+        &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;&quot; class=&quot;share-reddit sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2012/12/a-day-with-only-ipv6/?share=reddit&quot; target=&quot;_blank&quot; title=&quot;Click to share on Reddit&quot;&gt;&lt;span&gt;Reddit&lt;/span&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;share-tumblr&quot;&gt;
+        &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;&quot; class=&quot;share-tumblr sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2012/12/a-day-with-only-ipv6/?share=tumblr&quot; target=&quot;_blank&quot; title=&quot;Click to share on Tumblr&quot;&gt;&lt;span&gt;Tumblr&lt;/span&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;share-pinterest&quot;&gt;
+        &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;sharing-pinterest-172&quot; class=&quot;share-pinterest sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2012/12/a-day-with-only-ipv6/?share=pinterest&quot; target=&quot;_blank&quot; title=&quot;Click to share on Pinterest&quot;&gt;&lt;span&gt;Pinterest&lt;/span&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;share-pocket&quot;&gt;
+        &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;&quot; class=&quot;share-pocket sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2012/12/a-day-with-only-ipv6/?share=pocket&quot; target=&quot;_blank&quot; title=&quot;Click to share on Pocket&quot;&gt;&lt;span&gt;Pocket&lt;/span&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;share-end&quot;&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p></div></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

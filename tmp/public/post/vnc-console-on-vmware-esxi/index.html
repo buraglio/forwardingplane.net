@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/vnc-console-on-vmware-esxi/">
+<meta property="og:title" content="VNC Console on VMware ESXi" />
+<meta property="og:description" content="Let me preface this post by saying that I am absolutely not an enterprise IT or systems guy, take everything that I write here on out with that as a side dish. I&rsquo;m also very, very cheap. That said, one of the things I really like about KVM is the ability to easily view the console of a guest system using free, non-windows software like VNC. However, much like everything in life, there are reasons to do one thing or another." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/vnc-console-on-vmware-esxi/" />
+<meta property="article:published_time" content="2013-04-28T03:39:54+00:00" />
+<meta property="article:modified_time" content="2013-04-28T03:39:54+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VNC Console on VMware ESXi"/>
+<meta name="twitter:description" content="Let me preface this post by saying that I am absolutely not an enterprise IT or systems guy, take everything that I write here on out with that as a side dish. I&rsquo;m also very, very cheap. That said, one of the things I really like about KVM is the ability to easily view the console of a guest system using free, non-windows software like VNC. However, much like everything in life, there are reasons to do one thing or another."/>
+
+
+<meta itemprop="name" content="VNC Console on VMware ESXi">
+<meta itemprop="description" content="Let me preface this post by saying that I am absolutely not an enterprise IT or systems guy, take everything that I write here on out with that as a side dish. I&rsquo;m also very, very cheap. That said, one of the things I really like about KVM is the ability to easily view the console of a guest system using free, non-windows software like VNC. However, much like everything in life, there are reasons to do one thing or another.">
+
+
+<meta itemprop="datePublished" content="2013-04-28T03:39:54&#43;00:00" />
+<meta itemprop="dateModified" content="2013-04-28T03:39:54&#43;00:00" />
+<meta itemprop="wordCount" content="442">
+
+
+
+<meta itemprop="keywords" content="How-To,Lab Time,Virtualization," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     VNC Console on VMware ESXi 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> VNC Console on VMware ESXi </h1>
+    <div class="content"> <p>Let me preface this post by saying that I am absolutely not an enterprise IT or systems guy, take everything that I write here on out with that as a side dish.  I&rsquo;m also very, very cheap. That said, one of the things I really like about KVM is the ability to easily view the console of a guest system using free, non-windows software like VNC. However, much like everything in life, there are reasons to do one thing or another. I love VMware as well. It&rsquo;s refined, well documented, incredibly feature rich and works phenomenally well. It&rsquo;s also an enterprise app and to get a lot of the elegant features you either need a windows machine or the expensive paid version. Or both. I generally have neither money to spend on lab stuff or software licenses, which is why I generally use OSS. VMware, does, however, allow for free limited use of ESXi in such a way that is more than I need for my lab environments.  This is a great compliment to the XEN, KVM and other virtualization stuff I use for entertaining myself, learning new tech and labbing things up. So, when I wanted to see if I could get to the console of a few VMs I have without the paid app or a windows machine running vsphere, <a href="http://t3chnot3s.blogspot.com/2012/03/how-to-enable-vnc-access-to-vms-on.html">the internets took care of me</a>.  This is actually really straight forward and takes very little time.  I made a quick screen cast of adding it to one of my template VMs. There are, of course, a few caveats.  Knowing how to <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1714">properly edit the VMX file</a> is important.  Knowing that VNC is insecure is also very important. In my lab, this is all behind my security perimeter and it&rsquo;s fairly safe to open it up. In a nutshell, Here is what you need to do:```
+chmod 777 /etc/vmware/firewall/service.xml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Edit the firewall file:```" data-lang="Edit the firewall file:```">vi /etc/vmware/firewall/service.xml</code></pre></div>
+<p>Add this to the bottom before the last line:```
+ VNC
+    outbound
+        tcp
+        dst
+        5800
+           5999
+     inbound
+        tcp
+        dst
+        5800
+           5999
+     true
+     false</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Make sure the ports are configured at you want them to be. I chose 5900 - 5999 since it made sense to me. Then:```" data-lang="Make sure the ports are configured at you want them to be. I chose 5900 - 5999 since it made sense to me. Then:```">esxcli network firewall refresh
+esxcli network firewall ruleset list</code></pre></div>
+<p>Should now see:```
+VNC true</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-at the very bottom. In the .vmx file of each VM:```" data-lang="at the very bottom. In the .vmx file of each VM:```">RemoteDisplay.vnc.enabled = &#34;TRUE&#34;
+RemoteDisplay.vnc.port = 5910
+RemoteDisplay.vnc.password = &#34;VNCPassword&#34;</code></pre></div>
+<p>Directly from the VMware site: Any manual additions to the .vmx file from ESX/ESXi are overwritten by the entries stored in the vCenter Server database. If you need to edit a virtual machine&rsquo;s .vmx file, first remove it from vCenter Server&rsquo;s inventory (right-click it and choose Remove from Inventory). After you edit it, register the virtual machine again from the ESX command line.```
+vmware-cmd -s register /vmfs/volumes/datastore/virtual machine directory/virtual machine name.vmx</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Where datastore is the datastore name, virtual machine directory is the directory containing the virtual machine files, and virtual machine name is the name of the virtual machine files. This needs to be the full path, it gave me a weird error trying to do it in the directory without the full path. For example:```" data-lang="Where datastore is the datastore name, virtual machine directory is the directory containing the virtual machine files, and virtual machine name is the name of the virtual machine files. This needs to be the full path, it gave me a weird error trying to do it in the directory without the full path. For example:```">vim-cmd solo/registervm /vmfs/volumes/Storage1/vm1/vm1.vmx</code></pre></div>
+<p>Start the VM and connect to the VNC console configured.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/virtualization">#Virtualization</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 28 Apr 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

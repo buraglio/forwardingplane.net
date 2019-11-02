@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/juniper-interface-type-naming-convention/">
+<meta property="og:title" content="Juniper interface type naming convention" />
+<meta property="og:description" content="I found most of this on a web page somewhere tha tI can&rsquo;t seem to find again. Below are some common useful junos tidbits regarding routing tables and interface types/names:
+JunOS CLI supports the basic grep command (like | include) so any show commands can be grepped. I believe the grep command implies the -i flag for case insensitivity.
+The routing table is presented in such a way to group types of routes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/juniper-interface-type-naming-convention/" />
+<meta property="article:published_time" content="2011-04-13T01:04:00+00:00" />
+<meta property="article:modified_time" content="2011-04-13T01:04:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Juniper interface type naming convention"/>
+<meta name="twitter:description" content="I found most of this on a web page somewhere tha tI can&rsquo;t seem to find again. Below are some common useful junos tidbits regarding routing tables and interface types/names:
+JunOS CLI supports the basic grep command (like | include) so any show commands can be grepped. I believe the grep command implies the -i flag for case insensitivity.
+The routing table is presented in such a way to group types of routes."/>
+
+
+<meta itemprop="name" content="Juniper interface type naming convention">
+<meta itemprop="description" content="I found most of this on a web page somewhere tha tI can&rsquo;t seem to find again. Below are some common useful junos tidbits regarding routing tables and interface types/names:
+JunOS CLI supports the basic grep command (like | include) so any show commands can be grepped. I believe the grep command implies the -i flag for case insensitivity.
+The routing table is presented in such a way to group types of routes.">
+
+
+<meta itemprop="datePublished" content="2011-04-13T01:04:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-04-13T01:04:00&#43;00:00" />
+<meta itemprop="wordCount" content="867">
+
+
+
+<meta itemprop="keywords" content="Routing," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Juniper interface type naming convention 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Juniper interface type naming convention </h1>
+    <div class="content"> <p>I found most of this on a web page somewhere tha tI can&rsquo;t seem to find again. Below are some common useful junos tidbits regarding routing tables and interface types/names:</p>
+
+<p>JunOS CLI supports the basic grep command (like | include) so any show commands can be grepped. I believe the grep command implies the -i flag for case insensitivity.</p>
+
+<p>The routing table is presented in such a way to group types of routes.</p>
+
+<p>**inet.0 is the ipv4 unicast routing table</p>
+
+<p>**</p>
+
+<p>**inet.1 is the ipv4 multicast routing table</p>
+
+<p>**</p>
+
+<p>**inet.3 is the MPLS routing table</p>
+
+<p>**</p>
+
+<p><strong>inet6.0 is the ipv6 routing table</strong></p>
+
+<p>Juniper interface types</p>
+
+<p>Most common ones you&rsquo;ll probably see:</p>
+
+<p>**fe: Fast Ethernet 100Base-TX (Fast Ethernet, 100 Mbps).</p>
+
+<p>fxp0: Management and internal Ethernet The management Ethernet interface is an out-of-band management interface within the routing platform.</p>
+
+<p>fxp1: Interface that connects the routing engine and packet forwarding engine.</p>
+
+<p>xe: 1GE optical interface on ex switches</p>
+
+<p>ge: Gigabit and 10gigabit Ethernet. Includes Gigabit Ethernet IQ interfaces.</p>
+
+<p>me0: - out of band management interface on ex switches</p>
+
+<p>lo: Loopback This interface is internally generated. The logical interface lo0.16383 is a non-configurable interface for routing platform control traffic.</p>
+
+<p>vcp: - virtual chassis interface (EX4200 only)</p>
+
+<p>Other ones you may run into:</p>
+
+<p>ae: Aggregated Ethernet A virtual aggregated link.</p>
+
+<p>**</p>
+
+<p>**as: Aggregated SONET/SDH A virtual aggregated link.</p>
+
+<p>**</p>
+
+<p>**at: ATM1 or ATM2 IQ Asynchronous Transfer Mode</p>
+
+<p>**</p>
+
+<p>**cau4: Channelized AU-4 IQ Configured on the Channelized STM-1 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**coc1: Channelized OC-1 IQ Configured on the Channelized OC-12 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**coc12: Channelized OC-12 IQ Configured on the Channelized OC-12 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**cstm1: Channelized STM-1 IQ Configured on the Channelized STM-1 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**ce1: Channelized E1 IQ Configured on the Channelized E1 IQ PIC or Channelized STM-1 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**ct1: Channelized T1 IQ Configured on the Channelized DS-3 IQ PIC or Channelized OC-12 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**ct3: Channelized T3 IQ Configured on the Channelized DS-3 IQ PIC or Channelized OC-12 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**cp: Collector Configured on the Monitoring Services II PIC.</p>
+
+<p>**</p>
+
+<p>**ds: DS-0 Configured on the Channelized DS-3 to DS-0 PIC, Channelized E1 PIC, Channelized OC-12 IQ PIC,</p>
+
+<p>**</p>
+
+<p>**dsc: Discard Allows you to identify the ingress point of a denial-of-service (DoS) attack.</p>
+
+<p>**</p>
+
+<p>**e1: E1 Includes the channelized STM-1 to E1 interfaces.</p>
+
+<p>**</p>
+
+<p>**e3: E3 Includes the E3 IQ interfaces.</p>
+
+<p>**</p>
+
+<p>**es: Encryption, Allows you to configure a security association (SA) name with a logical interface.</p>
+
+<p>**</p>
+
+<p>**gr: Generic Route Encapsulation tunnel Allows you to configure a unicast tunnel using GRE encapsulation.</p>
+
+<p>**</p>
+
+<p>**gre: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**ip: IP-over-IP encapsulation tunnel Allows you to configure a unicast tunnel using IP-IP encapsulation.</p>
+
+<p>**</p>
+
+<p>**ipip: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**ls: Link services Supports bundles that contain links.</p>
+
+<p>**</p>
+
+<p>**lsi: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**ml: Multilink Includes Multilink Frame Relay and Multilink PPP.</p>
+
+<p>**</p>
+
+<p>**mo: Monitoring services Includes the monitoring services and monitoring services<br />
+II interfaces: The logical interface mo-fpc/pic/port.16383 is an internally generated, non-configurable interface for routing platform control traffic.</p>
+
+<p>**</p>
+
+<p>**mt: Multicast tunnel Internal routing platform interface for VPNs.</p>
+
+<p>**</p>
+
+<p>**mtun: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**oc3: OC-3 IQ Configured on the Channelized OC-12 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**pe: This interface is present on the first-hop routing platform. Encapsulates packets destined for the rendezvous point (RP) routing platform.</p>
+
+<p>**</p>
+
+<p>**pd: This interface is present on the RP De-encapsulates packets at the RP.</p>
+
+<p>**</p>
+
+<p>**pimd: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**pime: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**rlsq: - a redundant bundle interface, made of two or more lsq interface. If you have redundant AS Pics.</p>
+
+<p>**</p>
+
+<p>**se: Serial Includes the EIA-530, V.35, and X.21 interfaces.</p>
+
+<p>**</p>
+
+<p>**so: SONET/SDH Both are widely used methods for very high speed transmission of voice and data signals across the numerous world-wide fiber-optic networks.</p>
+
+<p>**</p>
+
+<p>**sp: Adaptive services The logical interface sp-fpc/pic/port.16383 is an internally generated, non-configurable interface for routing platform control traffic.</p>
+
+<p>**</p>
+
+<p>**t1: T1 Includes the channelized DS-3 to DS-1 interfaces.</p>
+
+<p>**</p>
+
+<p>**t3: T3 Includes the channelized OC-12 to DS-3 interfaces.</p>
+
+<p>**</p>
+
+<p>**tap: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**vsp: Voice services, The Adaptive Services (AS) Physical Interface Card (PIC) supports the compressed real-time transport protocol (RTP) on this interface.</p>
+
+<p>**</p>
+
+<p>**vt: Virtual loopback tunnel On routing platforms equipped with a Tunnel PIC, enables egress filtering.<br />
+**<br />
+Other interesting terminology regarding the juniper architecture is the module layout:</p>
+
+<p>**RE: Routing Engine, Like a cisco supervisor module. Central brains of the system</p>
+
+<p>**</p>
+
+<p>**PFE: Packet forwarding Engine. Controls the data packet forwarding of the system.</p>
+
+<p>**</p>
+
+<p>**SCB: Switch control board. Contains ASICs that handle route lookups and memory management.</p>
+
+<p>**</p>
+
+<p>**PIC: Physical interface card. Sort of like a port, but can contain multiple interfaces.</p>
+
+<p>**</p>
+
+<p><strong>FPC: Flexible PIC concentrator. Like a linecard that has module slots. Can handle different types of PICs</strong></p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 13 Apr 2011 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

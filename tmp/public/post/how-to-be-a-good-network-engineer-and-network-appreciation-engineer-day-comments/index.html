@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/how-to-be-a-good-network-engineer-and-network-appreciation-engineer-day-comments/">
+<meta property="og:title" content="How to be a [good] Network Engineer (and network engineer appreciation day)" />
+<meta property="og:description" content="[Samuel Akoi]( &ldquo;Sakoivision@yahoo.com&rdquo;) - Dec 5, 2013
+I love Networking Lennie - Dec 0, 2013
+On broad interests, what has me really excited right now is: Linux containers like Docker and for some strange reason WebRTC (well, only slightly strange, because I&rsquo;m a webguy too). I&rsquo;m thinking, maybe, just maybe, I can use more Linux routing on our network: http://containerops.org/2013/11/19/lxc-networking/ Not Docker specifically, or even containers, but network namespaces. Network namespaces in Linux supports: forwarding, bridging, static routing and dynamic routing (for example Quagga), iptables, looks like it even supports iptables conntrackd and even IPSEC." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/how-to-be-a-good-network-engineer-and-network-appreciation-engineer-day-comments/" />
+<meta property="article:published_time" content="2013-11-10T04:02:52+00:00" />
+<meta property="article:modified_time" content="2013-11-10T04:02:52+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to be a [good] Network Engineer (and network engineer appreciation day)"/>
+<meta name="twitter:description" content="[Samuel Akoi]( &ldquo;Sakoivision@yahoo.com&rdquo;) - Dec 5, 2013
+I love Networking Lennie - Dec 0, 2013
+On broad interests, what has me really excited right now is: Linux containers like Docker and for some strange reason WebRTC (well, only slightly strange, because I&rsquo;m a webguy too). I&rsquo;m thinking, maybe, just maybe, I can use more Linux routing on our network: http://containerops.org/2013/11/19/lxc-networking/ Not Docker specifically, or even containers, but network namespaces. Network namespaces in Linux supports: forwarding, bridging, static routing and dynamic routing (for example Quagga), iptables, looks like it even supports iptables conntrackd and even IPSEC."/>
+
+
+<meta itemprop="name" content="How to be a [good] Network Engineer (and network engineer appreciation day)">
+<meta itemprop="description" content="[Samuel Akoi]( &ldquo;Sakoivision@yahoo.com&rdquo;) - Dec 5, 2013
+I love Networking Lennie - Dec 0, 2013
+On broad interests, what has me really excited right now is: Linux containers like Docker and for some strange reason WebRTC (well, only slightly strange, because I&rsquo;m a webguy too). I&rsquo;m thinking, maybe, just maybe, I can use more Linux routing on our network: http://containerops.org/2013/11/19/lxc-networking/ Not Docker specifically, or even containers, but network namespaces. Network namespaces in Linux supports: forwarding, bridging, static routing and dynamic routing (for example Quagga), iptables, looks like it even supports iptables conntrackd and even IPSEC.">
+
+
+<meta itemprop="datePublished" content="2013-11-10T04:02:52&#43;00:00" />
+<meta itemprop="dateModified" content="2013-11-10T04:02:52&#43;00:00" />
+<meta itemprop="wordCount" content="655">
+
+
+
+<meta itemprop="keywords" content="Musings,Soap Box," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     How to be a [good] Network Engineer (and network engineer appreciation day) 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> How to be a [good] Network Engineer (and network engineer appreciation day) </h1>
+    <div class="content"> <p>[Samuel Akoi]( &ldquo;Sakoivision@yahoo.com&rdquo;) - <time datetime="2013-12-13 09:43:42">Dec 5, 2013</time></p>
+
+<p>I love Networking
+<hr /></p>
+
+<p><a href="http://www.softwaredefinedeverything.com/" title="forwardingplaneblog@consolejunkie.net">Lennie</a> - <time datetime="2013-12-01 05:09:40">Dec 0, 2013</time></p>
+
+<p>On broad interests, what has me really excited right now is: Linux containers like Docker and for some strange reason WebRTC (well, only slightly strange, because I&rsquo;m a webguy too). I&rsquo;m thinking, maybe, just maybe, I can use more Linux routing on our network: <a href="http://containerops.org/2013/11/19/lxc-networking/">http://containerops.org/2013/11/19/lxc-networking/</a> Not Docker specifically, or even containers, but network namespaces. Network namespaces in Linux supports: forwarding, bridging, static routing and dynamic routing (for example Quagga), iptables, looks like it even supports iptables conntrackd and even IPSEC. Think about it, in the data center you should be deploying small, per application VMs and networks: <a href="http://blog.ipspace.net/2013/11/typical-enterprise-application.html">http://blog.ipspace.net/2013/11/typical-enterprise-application.html</a> <a href="http://blog.ipspace.net/2013/11/make-every-application-independent.html">http://blog.ipspace.net/2013/11/make-every-application-independent.html</a> What have we learned from the Internet and &lsquo;cloud&rsquo;: stateless scales. So I&rsquo;m thinking about playing with: deploying network namespaces.
+<hr /></p>
+
+<p><a href="http://www.softwaredefinedeverything.com/" title="forwardingplaneblog@consolejunkie.net">Lennie</a> - <time datetime="2013-12-01 04:38:39">Dec 0, 2013</time></p>
+
+<p>What I&rsquo;m always surprised about is that sometimes you talk to people who do only routing at large providers also only know routing. Like some Microsoft Exchange admin that only knows Microsoft Exchange and nothing about Windows. Most of the other networking people I have interacted with have a lot broader interests.
+<hr /></p>
+
+<p>[Lennie]( &ldquo;forwardingplaneblog@consolejunkie.net&rdquo;) - <time datetime="2013-11-10 02:15:18">Nov 0, 2013</time></p>
+
+<p>So what you might be saying is: many times network engineers are born out of necessity because nobody else wanted to do the job or enough of a generalist, curious and/or intrigued enough to take action or even understand the networking problems. I&rsquo;ve always called myself a problem solver or even a debugger first, network engineer is just part of my job. When people can&rsquo;t figure out for themselves what is going I get called in to solve the problem. So this makes a lot of sense to me. On the point of too much networking would never be enough. Well, I have a feeling there is going to be a lot more networking because the hosts at the edge are going to perform more and more networking tasks. It used to be pretty much the only distributed networking protocol that the edge participated in was TCP (the distributed algorithm and protocol to fairly share the available bandwidth). But now we are seeing: more sensors, more mobile, Multi Path-TCP and overlay networking, sometimes combined with switching, firewalling, loadbalancing and routing. And even WebRTC (a peer2peer protocol for browsers and other applications that want to exchange: audio, video and data). So there will be a lot more devices in the network practicing more networking tasks and it&rsquo;s all based on the IP protocols. The people at the FCC are saying PSTN is going the way of the dodo. It&rsquo;s all IP-based. That means everything will depend on IP. For example did you know LTE is IP-based, for everything, including voice ? And did you know the encryption protocol for the signaling and data protocol is IPSEC ? Even more interesting: did you know that IPSEC for LTE is optional ?
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-11-29 14:39:13">Nov 5, 2013</time></p>
+
+<p>&ldquo;Problem solver&rdquo; is a very apt description of a good network engineer. Those are the ones that you want to keep around. I actually had no idea that LTE was all IP. I think that&rsquo;s great. I also love that most of the LTE networks are now IPv6 dual stacked.
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-12-07 14:31:39">Dec 6, 2013</time></p>
+
+<p>I think this makes a lot of sense. Principals like KISS are as valid today as they were 15 years ago, see Ivan&rsquo;s <a href="http://blog.ipspace.net/2013/12/still-waiting-for-stupid-network.html">post</a>. Name spaces are a logical next step in simplifying things like simplification of service deployment. <a href="http://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">Scott Lowe has a great write up on it</a>, and it looks like we have both commented on it. It&rsquo;s a logical part of a larger migration of how networking as a whole is done in my humble opinion.
+<hr /></p>
+
+<p>[Lennie]( &ldquo;forwardingplaneblog@consolejunkie.net&rdquo;) - <time datetime="2013-12-07 14:55:21">Dec 6, 2013</time></p>
+
+<p>There is a reason that wasn&rsquo;t mentioned to keep it KISS is it makes it easier to automate, because KISS is more predicatable.
+<hr /></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/soap-box">#Soap Box</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 10 Nov 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

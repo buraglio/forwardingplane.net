@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/freertr-as-a-lab-environment/">
+<meta property="og:title" content="FreeRouter as a test environment" />
+<meta property="og:description" content="A few months ago Kevin Myers of IP Architechs introduced me to a really interesting project called FreeRouter. Being that I absolutely love alternative routing platforms and feature complete simulation environments, this really got me going. I tend to define &ldquo;feature complete&rdquo; in a routing platform as something that can do both IS-IS and MPLS. Given that there aren&rsquo;t many platforms that do both correctly or within a reasonable budget, and offer simulation options, I was pretty excited." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/freertr-as-a-lab-environment/" />
+<meta property="article:published_time" content="2019-03-02T17:03:18+00:00" />
+<meta property="article:modified_time" content="2019-03-02T17:03:18+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="FreeRouter as a test environment"/>
+<meta name="twitter:description" content="A few months ago Kevin Myers of IP Architechs introduced me to a really interesting project called FreeRouter. Being that I absolutely love alternative routing platforms and feature complete simulation environments, this really got me going. I tend to define &ldquo;feature complete&rdquo; in a routing platform as something that can do both IS-IS and MPLS. Given that there aren&rsquo;t many platforms that do both correctly or within a reasonable budget, and offer simulation options, I was pretty excited."/>
+
+
+<meta itemprop="name" content="FreeRouter as a test environment">
+<meta itemprop="description" content="A few months ago Kevin Myers of IP Architechs introduced me to a really interesting project called FreeRouter. Being that I absolutely love alternative routing platforms and feature complete simulation environments, this really got me going. I tend to define &ldquo;feature complete&rdquo; in a routing platform as something that can do both IS-IS and MPLS. Given that there aren&rsquo;t many platforms that do both correctly or within a reasonable budget, and offer simulation options, I was pretty excited.">
+
+
+<meta itemprop="datePublished" content="2019-03-02T17:03:18&#43;00:00" />
+<meta itemprop="dateModified" content="2019-03-02T17:03:18&#43;00:00" />
+<meta itemprop="wordCount" content="247">
+
+
+
+<meta itemprop="keywords" content="Lab Time,Routing,Virtualization," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     FreeRouter as a test environment 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> FreeRouter as a test environment </h1>
+    <div class="content"> <p>A few months ago <a href="https://www.stubarea51.net/about-me/">Kevin Myers</a> of <a href="https://www.iparchitechs.com/">IP Architechs</a> introduced me to a really interesting project called <a href="http://freerouter.nop.hu/">FreeRouter</a>. Being that I absolutely love alternative routing platforms and feature complete simulation environments, this really got me going. I tend to define &ldquo;feature complete&rdquo; in a routing platform as something that can do both IS-IS and MPLS. Given that there aren&rsquo;t many platforms that do both correctly or within a reasonable budget, and offer simulation options, I was pretty excited. I spent a fair amount of time pounding through it. I recommend spending some time with this if you have even remote interest in any of the above technologies. It costs nothing but your time. The project was written and is maintained by a Cisco CCIE and was built (according to his site) as a mechanism to learn. However, the feature list is incredibly complete, and extremely impressive, as seen below:</p>
+
+<pre><code>forwarding: ipv4, ipv6, ipx, mpls, nsh, layer2, irb, atom, eompls, vpls, evpn  
+routing protocols: ospf, isis, bgp, rip, eigrp, babel, olsr, pim, msdp  
+lsp support: p2p, p2mp, mp2mp built by ldp, rsvp-te, sr, sr-te, bier  
+crypto: macsec, ipsec, ikev1, ikev2, tls, dtls, ssh, openvpn  
+tunnel: gre, ipip, l2tp, pptp, lisp, geneve, nvgre, vxlan, etherip  
+encapsulation: ethernet, vlan, nsh, ppp, framerelay, pwether, virtppp, hairpin  
+misc: acl, hqos, nat, pbr, srv6, vrrp, hsrp, transproxy, 6to4, rpl, tunnel, vpdn 
+</code></pre>
+
+<p><a href="https://www.forwardingplane.net/configuration-archive/freertr-basic-configurations/">My configurations</a> can be found in the <a href="https://www.forwardingplane.net/configuration-archive/">Configuration Archive</a> section of this site. It is definitely worth your time to check out.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/virtualization">#Virtualization</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 2 Mar 2019 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

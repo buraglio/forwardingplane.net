@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/2011-06-20-better-support-for-linux-and-annoyed-about-it/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="I&#8217;ve been a *BSD user since around 1997, when I installed NetBSD on a Mac SE 30 that I got for free. I was always intrigued with alternative operating systems like BeOS, *BSD, Plan9 and Linux so it made sense that I&#8217;d poke around with different systems.
+ I&#8217;d gone back and forth from OpenBSD to FreeBSD but eventually settled on FreeBSD as my OS of choice. I ran it as a desktop before MacOS X came out and was generally happy with it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/2011-06-20-better-support-for-linux-and-annoyed-about-it/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="I&#8217;ve been a *BSD user since around 1997, when I installed NetBSD on a Mac SE 30 that I got for free. I was always intrigued with alternative operating systems like BeOS, *BSD, Plan9 and Linux so it made sense that I&#8217;d poke around with different systems.
+ I&#8217;d gone back and forth from OpenBSD to FreeBSD but eventually settled on FreeBSD as my OS of choice. I ran it as a desktop before MacOS X came out and was generally happy with it."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="I&#8217;ve been a *BSD user since around 1997, when I installed NetBSD on a Mac SE 30 that I got for free. I was always intrigued with alternative operating systems like BeOS, *BSD, Plan9 and Linux so it made sense that I&#8217;d poke around with different systems.
+ I&#8217;d gone back and forth from OpenBSD to FreeBSD but eventually settled on FreeBSD as my OS of choice. I ran it as a desktop before MacOS X came out and was generally happy with it.">
+
+
+
+<meta itemprop="wordCount" content="450">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> <p>I&#8217;ve been a *BSD user since around 1997, when I installed NetBSD on a Mac SE 30 that I got for free. I was always intrigued with alternative operating systems like BeOS, *BSD, Plan9 and Linux so it made sense that I&#8217;d poke around with different systems.</p>
+
+<div>
+  I&#8217;d gone back and forth from OpenBSD to FreeBSD but eventually settled on FreeBSD as my OS of choice. I ran it as a desktop before MacOS X came out and was generally happy with it. I learned most of the common flavors of Linux over the years out of curiosity and necessity but always went back to BSD for anything critical.
+</div>
+
+<div>
+</div>
+
+<div>
+  I&#8217;m sad to say that I think this is changing.
+</div>
+
+<div>
+</div>
+
+<div>
+  I feel like a bit of a sell out, it was always cool to say I ran FreeBSD and to silently look at Linux users as nerdy dorks that were afraid of girls that lived in their mothers basement and talked about <a href="http://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a> and <a href="http://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a> like they are demigods. </p> 
+  
+  <div>
+    As I get busier both personally and professionally, it&#8217;s becoming more of a chore to manage a BSD system or a set of BSD systems. The ports collection is clunky and annoying to use once I saw the elegance of something like apt. The software support for the stuff I do every day either available for linux first or only available under linux. Network tunables like web100 are linux specific. HPC clusters are almost exclusively Linux. The straw that has broken the camels back is <a href="http://www.thc.org/thc-ipv6/">THC-IPv6</a>. I had a need to do some IPv6 testing that required poking at equipment in a way that tests it&#8217;s metal. I needed tools to try to break the network and do other nefarious things. <a href="http://www.thc.org/thc-ipv6/">THC-IPv6</a> fits the bill. It works ONLY under Linux due to the use of /proc. Yes, you can make /proc work under FreeBSD, but it&#8217;s annoying and I&#8217;m fairly certain that the code still won&#8217;t build without hackery that I&#8217;m not willing to do.
+  </div>
+  
+
+<p><div>
+  </div></p>
+
+<p><div>
+    I&#8217;d been poking around with Debian for years as an alternative for those things that just don&#8217;t run under BSD. The tools I need have been building fine under Debian and Ubuntu. It&#8217;s just <em>easy</em>.
+  </div>
+</div></p>
+
+<div>
+  I&#8217;ll still hold a place in my heart for BSD, I think the license it FAR superior (GPL has a host of issues that I&#8217;m not comfortable with), but for now, Im going to have to &#8220;sell out&#8221; and use Linux. Mark the calendar, this is the day the music died.
+</div>
+
+<div>
+</div>
+
+<div>
+  [[ This is a content summary only. Visit my website for full links, other content, and more! ]]
+</div>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-36" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-36" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-36" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-36" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

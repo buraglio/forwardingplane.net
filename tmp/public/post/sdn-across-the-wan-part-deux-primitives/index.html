@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/sdn-across-the-wan-part-deux-primitives/">
+<meta property="og:title" content="SDN Across the WAN, part deux.  Primitives." />
+<meta property="og:description" content="I&rsquo;ve been lamenting about the SDN WAN options for a while now. Having SDN/OpenFlow in a data center or campus is relatively well documented and already widely deployed. Google has been doing SDN across their private WAN in production. These pieces are easy. What isn&rsquo;t easy is the ability to plumb SDN across many domains that are under disparate control. This part is hard. What is lacking is a fundamental framework, or set of primitives to build from." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/sdn-across-the-wan-part-deux-primitives/" />
+<meta property="article:published_time" content="2013-01-11T03:18:47+00:00" />
+<meta property="article:modified_time" content="2013-01-11T03:18:47+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SDN Across the WAN, part deux.  Primitives."/>
+<meta name="twitter:description" content="I&rsquo;ve been lamenting about the SDN WAN options for a while now. Having SDN/OpenFlow in a data center or campus is relatively well documented and already widely deployed. Google has been doing SDN across their private WAN in production. These pieces are easy. What isn&rsquo;t easy is the ability to plumb SDN across many domains that are under disparate control. This part is hard. What is lacking is a fundamental framework, or set of primitives to build from."/>
+
+
+<meta itemprop="name" content="SDN Across the WAN, part deux.  Primitives.">
+<meta itemprop="description" content="I&rsquo;ve been lamenting about the SDN WAN options for a while now. Having SDN/OpenFlow in a data center or campus is relatively well documented and already widely deployed. Google has been doing SDN across their private WAN in production. These pieces are easy. What isn&rsquo;t easy is the ability to plumb SDN across many domains that are under disparate control. This part is hard. What is lacking is a fundamental framework, or set of primitives to build from.">
+
+
+<meta itemprop="datePublished" content="2013-01-11T03:18:47&#43;00:00" />
+<meta itemprop="dateModified" content="2013-01-11T03:18:47&#43;00:00" />
+<meta itemprop="wordCount" content="802">
+
+
+
+<meta itemprop="keywords" content="Musings,SDN," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     SDN Across the WAN, part deux.  Primitives. 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> SDN Across the WAN, part deux.  Primitives. </h1>
+    <div class="content"> <p>I&rsquo;ve been <a href="http://www.forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/" title="SDN across domains in the WAN – a novice look">lamenting about the SDN WAN</a> options for a while now.  Having SDN/OpenFlow in a data center or campus is relatively well documented and already widely deployed.  Google has been doing SDN across their private WAN in production.  These pieces are easy.  What isn&rsquo;t easy is the ability to plumb SDN across many domains that are under disparate control.   This part is hard. What is lacking is a fundamental framework, or set of primitives to build from.  As an example, how does one build a SDN path across this:   <a href="http://www.forwardingplane.net/wp-content/uploads/2013/01/SDN-Reference-Architecture-Sanitized.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/01/SDN-Reference-Architecture-Sanitized.png" alt="" title="SDN Reference Architecture -Sanitized" /></a> First I think we need to define what we want out of the SDN path.  A reserved bandwidth allocation?  A Layer2 path?  Flow instantiation across the entire path?  The first two have a least common denominator.  The third is hard, especially if the path transits a segment with no SDN capability. This piece is making my brain hurt.  There seems to be a lot of early work on this, <a href="http://events.internet2.edu/speakers/speakers.php?go=people&amp;id=2865">Inder Monga</a> from <a href="http://www.es.net">ESnet</a> has been working at making this happen, and I think he&rsquo;s the closest from what I&rsquo;ve seen in my searching and researching.   I want to know how to do this across <strong>all</strong> networks.   I want to see the future of carrier WAN connectivity, to taste the unicorn milk. The methodology so far has been to break this down into small black boxes.  After doing that, I realized that there is going to have to be a common protocol.  The least common denominator to all of this is the SDN.  It doesn&rsquo;t much matter what that SDN is as long as there is a central controller.  It can be OpenFlow, <a href="http://www.es.net/services/virtual-circuits-oscars/">OSCARS</a>, <a href="http://en.wikipedia.org/wiki/Generalized_Multi-Protocol_Label_Switching">GMPLS</a>, <a href="http://ext.delaat.net/olex/index.html">Open LightPath Exchange</a>, whatever.  It doesn&rsquo;t matter.  They all need a controller.  Within those controllers there needs to be &ldquo;an energy field created by all SDN. It surrounds us and penetrates us; it binds the galaxy together&rdquo;.  Yes, I like Star Wars. So, how would one do this?  It would be ideal, to me at least, if there was a standard set of protocols that all of these controllers could speak.  This standard communication could be as simple as how a BGP peering functions.  Site A has a controller, it &ldquo;peers&rdquo; with it&rsquo;s upstream and announces its capabilities. For example, <a href="http://www.forwardingplane.net/wp-content/uploads/2013/01/SDN-peering.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/01/SDN-peering.png" alt="" title="SDN peering" /></a> All of these peers exchange capability information and pass it on with a standardized set of language and a location identifier (think ASN and route announcements).  To me this appears to be the lowest hanging fruit. I&rsquo;m not a developer but there doesn&rsquo;t seem to be to be any reason that this couldn&rsquo;t be built into any controller, commercial or opensource. That way, regardless of vendor, SDN implementation or capabilities everyone can create a SDN path based on the available implementations upstream. Of course, there would need to be a &ldquo;multihop&rdquo; option for those that have to upstream SDN paths. In this case something like a GRE tunnel could be the lowest common denominator. This would have to transcend OpenFlow and be a true &ldquo;SDN&rdquo; at the fundamental level to actually work, but it needs to take into account managing the flow table of networks outside of a given administrative domain. As a starting point, here is the framework I came up with:</p>
+
+<ul>
+<li>Reliable transport: TCP</li>
+<li>Authentication method: MD5 Capabilities exchanged:</li>
+<li>Number of circuits</li>
+<li>Types of SDN (MPLS, VLAN, DWDM Waves, OpenFlow Version, Flow manipulation)</li>
+<li>Bandwidth per circuit (if applicable)</li>
+<li>Duration of circuit or flow (path TTL, permanent?)</li>
+<li>Path validation (to ensure end to end connectivity over negotiated methodology)</li>
+</ul>
+
+<p>I&rsquo;ve been talking a lot with <a href="http://www.networkstatic.net/">Brent Salisbury</a> about this.  I know folks are thinking about it.  Bill Owens <a href="http://www.forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/#comment-47">had some great comments</a> to my last post regarding this and I think he&rsquo;s totally spot on.  However, I want to hit 88mph in my Delorean and see the future.  I think it&rsquo;s a ways way off but someone needs to come up with this framework.  SDN is so disjointed that it needs a one ring.  Controlling the forwarding plane of someone else network is scary and needs to have a leash on it.  Building this standard protocol could be it.  Unfortunately, I am no developer but I do know a little bit about running a decent sized network.  There will need to be safeguards, policy and knobs to tweak.  I keep coming back to BGP.  It&rsquo;s not as much of a routing protocol as it is a policy framework disguised as a routing protocol.  There needs to be something similar with SDN. I&rsquo;m going to continue to think through this publicly and I welcome constructive input.     <strong>EDIT</strong>:  <a href="https://datatracker.ietf.org/doc/draft-ietf-alto-protocol/">ALTO</a> is pretty close.  There has been a lot of work going on but I don&rsquo;t think it&rsquo;s all the way to where we need it to be.  Some interesting proof of concept and detail stuff can be read <a href="http://www.ewsdn.eu/presentations/ALTOwrtSDN.pdf">here</a> and <a href="http://opennetsummit.org/talks/ward-wed.pdf">here</a>.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/sdn">#SDN</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 11 Jan 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

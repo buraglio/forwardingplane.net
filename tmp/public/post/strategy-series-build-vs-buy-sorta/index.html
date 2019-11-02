@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/strategy-series-build-vs-buy-sorta/">
+<meta property="og:title" content="Strategy Series: Build vs. Buy (sorta)" />
+<meta property="og:description" content="Build vs. buy is an often lamented and always hotly debated question in all aspects of IT, however, if one is able to truly look at all angles the answer is typically straightforward and can be rooted in one simple strategy: don&rsquo;t reinvent the wheel.
+Don&rsquo;t reinvent the wheel Too many times we as an industry don&rsquo;t do our homework - we are all guilty of it - and we reinvent a wheel." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/strategy-series-build-vs-buy-sorta/" />
+<meta property="article:published_time" content="2018-02-19T22:53:03+00:00" />
+<meta property="article:modified_time" content="2018-02-19T22:53:03+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Strategy Series: Build vs. Buy (sorta)"/>
+<meta name="twitter:description" content="Build vs. buy is an often lamented and always hotly debated question in all aspects of IT, however, if one is able to truly look at all angles the answer is typically straightforward and can be rooted in one simple strategy: don&rsquo;t reinvent the wheel.
+Don&rsquo;t reinvent the wheel Too many times we as an industry don&rsquo;t do our homework - we are all guilty of it - and we reinvent a wheel."/>
+
+
+<meta itemprop="name" content="Strategy Series: Build vs. Buy (sorta)">
+<meta itemprop="description" content="Build vs. buy is an often lamented and always hotly debated question in all aspects of IT, however, if one is able to truly look at all angles the answer is typically straightforward and can be rooted in one simple strategy: don&rsquo;t reinvent the wheel.
+Don&rsquo;t reinvent the wheel Too many times we as an industry don&rsquo;t do our homework - we are all guilty of it - and we reinvent a wheel.">
+
+
+<meta itemprop="datePublished" content="2018-02-19T22:53:03&#43;00:00" />
+<meta itemprop="dateModified" content="2018-02-19T22:53:03&#43;00:00" />
+<meta itemprop="wordCount" content="1148">
+
+
+
+<meta itemprop="keywords" content="Crystal Ball,Musings,Strategy Series," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Strategy Series: Build vs. Buy (sorta) 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Strategy Series: Build vs. Buy (sorta) </h1>
+    <div class="content"> 
+
+<p>Build vs. buy is an often lamented and always hotly debated question in all aspects of IT, however, if one is able to truly look at all angles the answer is typically straightforward and can be rooted in one simple strategy: don&rsquo;t reinvent the wheel.</p>
+
+<h1 id="don-t-reinvent-the-wheel">Don&rsquo;t reinvent the wheel</h1>
+
+<p>Too many times we as an industry don&rsquo;t do our homework - we are all guilty of it - and we reinvent a wheel. Make no mistake, there are true reasons to revisit, revise and reinvent. Lets use an example that <a href="https://github.com/buraglio/pfrancid">I</a> <a href="https://github.com/buraglio/vdxrancid">am</a> <a href="https://github.com/buraglio/alurancid">fairly</a> <a href="https://github.com/buraglio/sonrancid">familiar</a> <a href="https://github.com/buraglio/cienarancid">with</a>: RANCID <a href="http://shrubbery.net/rancid/">RANCID</a> code is 20+ years old and pretty messy. RANCID3 is a rewrite that in my opinion makes the already confusing ball of Perl, Expect, and shell even more confusing. <a href="https://github.com/ytti/oxidized">Oxidized</a> made that process more elegant and arguably more flexible and extensible. That was a good call. Build vs buy is a tough question and as an industry we tend to think about resources in a lopsided way, which further increases that complexity. Resources have always been and will always be finite, and no matter if you build or buy, you are expending your resources. Lets break down the resources:</p>
+
+<ul>
+<li>Time</li>
+</ul>
+
+<p>That&rsquo;s pretty much the extent of it. Everything else is driven by this. Time coasts money. It costs money in the form of salaries, overtime, downtime, etc. In IT we describe things in terms of uptime. Five 9&rsquo;s is the uptime we strive for. When we have downtime, it costs money in the form of lost income or expense to repair and often both. Salaries are paid based on time, hourly, weekly, monthly, yearly. Employes trade their time for that salary regardless of how it is structured. You pay for resources that make more efficient use of time. Employers often fall into one of two buckets:</p>
+
+<ul>
+<li>Able to hire FTE (OPEX)</li>
+<li>Able to pay vendors (CAPEX)</li>
+</ul>
+
+<p>Obviously this isn&rsquo;t always the case, but it&rsquo;s very common - and if we conveniently overlook those environments that are jut to conservative to consider OPEX (i.e. they always choose buy and generally fall into the &ldquo;able to pay vendors&rdquo; category), it&rsquo;s fairly easy to map build vs buy into those models. Can you support running open source or white box solutions, operationally? Will the OPEX actually save you money when compared to the CAPEX changes they require to make happen? Should you pay for an off the shelf solution and hope that the support you buy can address the issues you&rsquo;ll have? [<em>My strong opinion is that they almost never can, but the comfort that they provide to legal departments and C level execs is what they actually purchase</em>] It is important to note that different environments introduce very different edge cases, and with many highly technical people, these edge cases have a tendency to creep in and drive a large part of our architectures, but it also gives us a veneer over our needs and requirements process that makes it easier to say &ldquo;we&rsquo;re special and we have hard requirements for not only A and B but also C, D, E and F&rdquo;. C, D, E, and F are likely so edge case that we really don&rsquo;t *need* them. This is where It gets messy and where the hyperscalers have done it right: Say no.</p>
+
+<p><a href="https://giphy.com/gifs/reactionseditor-3o7btT1T9qpQZWhNlK">via GIPHY</a> Interdomain multicast? Nope. Requirements for full global tables on every device? Nope. If we really ask ourselves if the requirements are actually requirements or if they are simply desirable because they may make things easier or may satisfy a 5-10% use use case, then maybe we should revisit how we&rsquo;re actually developing our needs and requirements. Mapping business (or other strategic) requirements into technology can be difficult, especially if there is no direct correlation to profit or loss. We are a culture of wheel inventors and we embrace it, but 80-85% of the time our wheels can be dead simple and still roll us where we need to go. <strong><em>What we get &ldquo;for free&rdquo; with that is standardization and ease of management</em></strong> (lower CAPEX). If we look back at history as an example, no sane person wants to run a network that routes AppleTalk, IPX, IPv4, IPv6 and transits DECNet. that sucked. It was too complicated. It was buggy. We simplified it down to IPv[<sup>4</sup>&frasl;<sub>6</sub>] and low and behold most of the gear got more stable, configurations got simpler, and networks got easier to run. We should learn from that. Make no mistake, I realize that reinventing wheels to make them roll faster, longer, etc. is called innovation. However, along with our needs and requirements we need to put serious consideration into our business strategy. Is our business to innovate? Are we going to see direct or indirect improvements to CAPEX or OPEX if we <em>do</em> innovate. Are we factoring in the <em>cost</em> of the innovation? Where this starts to get even more fuzzy is in the opensource world. In this space &ldquo;build&rdquo; can be defined as self supporting, meaning &ldquo;use of opensource products with no formal or contractual support structure&rdquo;, which a very large amount of organizations are very wary of (and many actively avoid). These are all important questions that must be addresses when deciding on the strategy of build vs buy - it&rsquo;s not as straight forward and simple of a question as &ldquo;build or buy&rdquo;, it seems. If you&rsquo;re looking for a different perspective on a very similar topic, check <a href="https://rule11.tech">Russ White</a>&rsquo;s (yes, <a href="https://www.linkedin.com/in/riw777/">THAT Russ White</a>) post on <a href="https://rule11.tech/enterprise-versus-provider/">Enterprise vs. Provider</a>. While not entirely similar, it points out that we have problems and solutions, and that knowing what both of those are is critical to success regardless of their ecosystem. This is key. We need to look at the whole picture. <em>My take: We need to look at the entire picture. It&rsquo;s not as simple as one question. Personally I tend to lean more toward build, but for the majority of my career I was in environments that had extremely clued engineers and support staff. Is this for everyone? Nope. Is it a viable option, absolutely. You invest in people or you invest in contracts. I&rsquo;d rather invest in really, really good people. </em> <em>When it comes down to innovation, it&rsquo;s a little more complicated:</em> <em>1. if wheel exists don&rsquo;t build wheel.</em> <em>2. If the wheels aren&rsquo;t exactly the shape or size you need, augment the wheels and contribute your augmentations back for review and inclusion in the wheel plans and inventory where possible and appropriate.</em> <em>3. If the wheels don&rsquo;t exist, build a wheel and share the plans for the wheel whenever you can.</em>```
+#!/usr/bin/python</p>
+
+<p>if wheel == &lsquo;yes&rsquo;:
+ print(&lsquo;use existing wheel&rsquo;)
+ elseif &lsquo;yes, but incomplete&rsquo;:
+ print(&ldquo;augment wheel, contribute wheel changes&rdquo;)
+ elseif no:
+ print(&ldquo;build wheel, share plans&rdquo;)
+ print &ldquo;Miller Time&rdquo;
+```* Code is provided as-is and is likely incorrect, we take no responsibility for poor code or fallout from running said code</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/crystal-ball">#Crystal Ball</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/strategy-series">#Strategy Series</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 19 Feb 2018 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

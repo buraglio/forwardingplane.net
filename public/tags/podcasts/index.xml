@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Podcasts on ForwardingPlane.net</title>
+    <link>https://forwardingplane.net/tags/podcasts/</link>
+    <description>Recent content in Podcasts on ForwardingPlane.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2019, all rights reserved.</copyright>
+    <lastBuildDate>Sat, 02 Nov 2019 18:11:58 +0000</lastBuildDate>
+    
+	<atom:link href="https://forwardingplane.net/tags/podcasts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Packet Pushers Weekend Edition Number 1</title>
+      <link>https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/</link>
+      <pubDate>Sat, 02 Nov 2019 18:11:58 +0000</pubDate>
+      
+      <guid>https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/</guid>
+      <description>We all know the Packet Pushers. Recently, I had the pleasure of sitting in on the inagural &amp;ldquo;[Packet Pushers Weekend Editioni]&amp;ldquo;(https://www.youtube.com/watch?v=goQ9ppGwrEo&amp;amp;t=1668s) - an informal, video round table where we discuss fun and relevant topics in the space of networking and other related IT topics. Much discussion was had on SR-MPLS, Service providers, SD-WAN, and Cloud. I hope to participate again, as I found the experience both entertaining and informative, I hope you will too.</description>
+    </item>
+    
+  </channel>
+</rss>

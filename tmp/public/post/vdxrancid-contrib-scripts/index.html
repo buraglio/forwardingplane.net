@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/vdxrancid-contrib-scripts/">
+<meta property="og:title" content="VDXrancid contrib scripts" />
+<meta property="og:description" content="For the Supercomputing 2012 show, as in years past, I was &ldquo;the guy who installed and maintained RANCID&rdquo; as part of my duties for the SCinet routing team. If you don&rsquo;t know about RANCID for change management and config back up, check the link. It&rsquo;s ree and works on a huge amount of gear. Every year there is a new and interesting platform, this year is was Juniper qfabric and Brocade VDX." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/vdxrancid-contrib-scripts/" />
+<meta property="article:published_time" content="2012-11-14T16:50:00+00:00" />
+<meta property="article:modified_time" content="2012-11-14T16:50:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VDXrancid contrib scripts"/>
+<meta name="twitter:description" content="For the Supercomputing 2012 show, as in years past, I was &ldquo;the guy who installed and maintained RANCID&rdquo; as part of my duties for the SCinet routing team. If you don&rsquo;t know about RANCID for change management and config back up, check the link. It&rsquo;s ree and works on a huge amount of gear. Every year there is a new and interesting platform, this year is was Juniper qfabric and Brocade VDX."/>
+
+
+<meta itemprop="name" content="VDXrancid contrib scripts">
+<meta itemprop="description" content="For the Supercomputing 2012 show, as in years past, I was &ldquo;the guy who installed and maintained RANCID&rdquo; as part of my duties for the SCinet routing team. If you don&rsquo;t know about RANCID for change management and config back up, check the link. It&rsquo;s ree and works on a huge amount of gear. Every year there is a new and interesting platform, this year is was Juniper qfabric and Brocade VDX.">
+
+
+<meta itemprop="datePublished" content="2012-11-14T16:50:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-11-14T16:50:00&#43;00:00" />
+<meta itemprop="wordCount" content="186">
+
+
+
+<meta itemprop="keywords" content="Routing," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     VDXrancid contrib scripts 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> VDXrancid contrib scripts </h1>
+    <div class="content"> <p>   For the <a href="http://www.supercomputing.org/">Supercomputing 2012</a> show, as in years past, I was &ldquo;the guy who installed and maintained <a href="http://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;ved=0CEsQFjAC&amp;url=http%3A%2F%2Fwww.shrubbery.net%2Francid%2F&amp;ei=tcWjUOG2AeLCigK4qIGwBw&amp;usg=AFQjCNGsMF1HpROC2BrtIXWL8thUtOKFLQ&amp;sig2=CYLx8RCrdMSiuRuBjPrnaQ">RANCID</a>&rdquo; as part of my duties for the <a href="http://scinet.supercomputing.org/">SCinet</a> routing team.   If you don&rsquo;t know about RANCID for change management and config back up, check the link.  It&rsquo;s ree and works on a huge amount of gear.  Every year there is a new and interesting platform, this year is was <a href="http://www.juniper.net/us/en/products-services/switching/qfx-series/">Juniper qfabric</a> and <a href="http://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=0CGIQFjAB&amp;url=http%3A%2F%2Fwww.brocade.com%2Flaunch%2Fcloud-clarity%2Fsolutions-technology-innovation.html&amp;ei=J8ajUOD3Ga3riQLpz4A4&amp;usg=AFQjCNFpE2c-kkCHlqabJFwWu7opXzFiSg&amp;sig2=fEcSzMl2PcCa4ajD-YnMvQ">Brocade VDX</a>.  The Juniper qFabric just worked with the existing jrancid pieces.</p>
+
+<p><a href="http://2.bp.blogspot.com/-BtfOWZ0KMHc/TyxvtyBEBYI/AAAAAAAAHc8/xue7_Nqj0DE/s400/Rancid+Urgg.jpg"><img src="http://2.bp.blogspot.com/-BtfOWZ0KMHc/TyxvtyBEBYI/AAAAAAAAHc8/xue7_Nqj0DE/s200/Rancid+Urgg.jpg" alt="" /></a><a href="http://webobjects2.cdw.com/is/image/CDW/2273816?$product_large$"><img src="http://webobjects2.cdw.com/is/image/CDW/2273816?$product_large$" alt="" /></a><a href="http://upload.wikimedia.org/wikipedia/commons/3/35/Plus_sign.jpg"><img src="http://upload.wikimedia.org/wikipedia/commons/3/35/Plus_sign.jpg" alt="" /></a></p>
+
+<p>    The brocade VDX is different enough that it doesn&rsquo;t work with francid, but was very similar to IOS.  I did some very minor modifications to the original rancid to make it work with the VDX.  The google code page is available <a href="http://bit.ly/vdxrancid">here</a> and the source code is available <a href="http://bit.ly/vdxrancid-source">here</a>.  </p>
+
+<p>  You&rsquo;ll have to modify the rancid-fe script to make it work, or use the included one with the source.  It&rsquo;s still very rudimentary, no VCS or platform information is being collected, just the config as of 11/14/2012.</p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 14 Nov 2012 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

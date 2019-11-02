@@ -1,0 +1,375 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "public",
+        "name" : "OSX (10.7; Lion) DHCPv6 client working with pfsense server.",
+        "headline" : "OSX (10.7; Lion) DHCPv6 client working with pfsense server.",
+        "description" : "It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It\x26rsquo;s about time.\nBefore:\n\nAfter:\n\npfSense setup:\n\nUsing Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.\nI didn\x26rsquo;t do anything except use the \x26ldquo;Automatic\x26rdquo; setting in the network control panel, so out of the box OSX 10.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2011",
+        "datePublished": "2011-07-26 18:20:00 \x2b0000 \x2b0000",
+        "dateModified" : "2011-07-26 18:20:00 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/public\/post\/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server\/",
+        "wordCount" : "112",
+        "keywords" : [ "IPv6","Musings","UNIX","Blog" ]
+    }
+    </script>
+        
+            <title>OSX (10.7; Lion) DHCPv6 client working with pfsense server. - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OSX (10.7; Lion) DHCPv6 client working with pfsense server."/>
+<meta name="twitter:description" content="It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&rsquo;s about time.
+Before:
+
+After:
+
+pfSense setup:
+
+Using Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.
+I didn&rsquo;t do anything except use the &ldquo;Automatic&rdquo; setting in the network control panel, so out of the box OSX 10."/>
+
+        <meta property="og:title" content="OSX (10.7; Lion) DHCPv6 client working with pfsense server." />
+<meta property="og:description" content="It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&rsquo;s about time.
+Before:
+
+After:
+
+pfSense setup:
+
+Using Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.
+I didn&rsquo;t do anything except use the &ldquo;Automatic&rdquo; setting in the network control panel, so out of the box OSX 10." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/public/post/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/" />
+<meta property="article:published_time" content="2011-07-26T18:20:00+00:00" />
+<meta property="article:modified_time" content="2011-07-26T18:20:00+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="OSX (10.7; Lion) DHCPv6 client working with pfsense server.">
+<meta itemprop="description" content="It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&rsquo;s about time.
+Before:
+
+After:
+
+pfSense setup:
+
+Using Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.
+I didn&rsquo;t do anything except use the &ldquo;Automatic&rdquo; setting in the network control panel, so out of the box OSX 10.">
+
+
+<meta itemprop="datePublished" content="2011-07-26T18:20:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-07-26T18:20:00&#43;00:00" />
+<meta itemprop="wordCount" content="112">
+
+
+
+<meta itemprop="keywords" content="IPv6,Musings,UNIX," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/public/post/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/">OSX (10.7; Lion) DHCPv6 client working with pfsense server.</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&rsquo;s about time.</p>
+
+<p>Before:</p>
+
+<p><a href="http://1.bp.blogspot.com/-6FQwzCiawpg/TjDWmwrbONI/AAAAAAAAAEI/9mOtP9fMbqE/s1600/Screen%2BShot%2B2011-07-25%2Bat%2B8.45.24%2BPM.png"><img src="http://1.bp.blogspot.com/-6FQwzCiawpg/TjDWmwrbONI/AAAAAAAAAEI/9mOtP9fMbqE/s400/Screen%2BShot%2B2011-07-25%2Bat%2B8.45.24%2BPM.png" alt="" /></a></p>
+
+<p>After:</p>
+
+<p><a href="http://4.bp.blogspot.com/-stFnUb3g1zI/TjDW1MDpOyI/AAAAAAAAAEY/YgG7fXCfujY/s1600/Screen%2BShot%2B2011-07-26%2Bat%2B7.18.45%2BAM.png"><img src="http://4.bp.blogspot.com/-stFnUb3g1zI/TjDW1MDpOyI/AAAAAAAAAEY/YgG7fXCfujY/s400/Screen%2BShot%2B2011-07-26%2Bat%2B7.18.45%2BAM.png" alt="" /></a></p>
+
+<p>pfSense setup:</p>
+
+<p><a href="http://2.bp.blogspot.com/-gSN5Rx7vIUU/TjDW0t1BcEI/AAAAAAAAAEQ/1hQNIlCJl30/s1600/Screen%2BShot%2B2011-07-26%2Bat%2B7.16.50%2BAM.png"><img src="http://2.bp.blogspot.com/-gSN5Rx7vIUU/TjDW0t1BcEI/AAAAAAAAAEQ/1hQNIlCJl30/s400/Screen%2BShot%2B2011-07-26%2Bat%2B7.16.50%2BAM.png" alt="" /></a></p>
+
+<p>Using Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.</p>
+
+<p>I didn&rsquo;t do anything except use the &ldquo;Automatic&rdquo; setting in the network control panel, so out of the box OSX 10.7 &ldquo;Lion&rdquo; looks like it does the right thing with DHCPv6, at least at face value.</p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/">
+<meta property="og:title" content="Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection" />
+<meta property="og:description" content="I am an absolutely huge fan of statistical and instrumentation data, especially when it comes to traffic analysis, visualization and baselining. I&rsquo;ve rambled on about the importance of it at every opportunity. As a result of that, I have been doing work with netflow and netflow-like data for a fairly long time. My first collector was the OSU Flow tools based stuff back around 13 years ago. From there I played with all kinds of netflow tools, both commercial and open source, finally settling most of my focus on nfdump and nfsen." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/" />
+<meta property="article:published_time" content="2014-01-11T21:55:24+00:00" />
+<meta property="article:modified_time" content="2014-01-11T21:55:24+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection"/>
+<meta name="twitter:description" content="I am an absolutely huge fan of statistical and instrumentation data, especially when it comes to traffic analysis, visualization and baselining. I&rsquo;ve rambled on about the importance of it at every opportunity. As a result of that, I have been doing work with netflow and netflow-like data for a fairly long time. My first collector was the OSU Flow tools based stuff back around 13 years ago. From there I played with all kinds of netflow tools, both commercial and open source, finally settling most of my focus on nfdump and nfsen."/>
+
+
+<meta itemprop="name" content="Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection">
+<meta itemprop="description" content="I am an absolutely huge fan of statistical and instrumentation data, especially when it comes to traffic analysis, visualization and baselining. I&rsquo;ve rambled on about the importance of it at every opportunity. As a result of that, I have been doing work with netflow and netflow-like data for a fairly long time. My first collector was the OSU Flow tools based stuff back around 13 years ago. From there I played with all kinds of netflow tools, both commercial and open source, finally settling most of my focus on nfdump and nfsen.">
+
+
+<meta itemprop="datePublished" content="2014-01-11T21:55:24&#43;00:00" />
+<meta itemprop="dateModified" content="2014-01-11T21:55:24&#43;00:00" />
+<meta itemprop="wordCount" content="901">
+
+
+
+<meta itemprop="keywords" content="How-To,IPv6,Lab Time,Security,UNIX," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection </h1>
+    <div class="content"> 
+
+<p>I am an absolutely <strong>huge</strong> fan of statistical and instrumentation data, especially when it comes to traffic analysis, visualization and baselining.  I&rsquo;ve rambled on about the importance of it at <a href="http://searchnetworking.techtarget.com/news/2240212051/The-Der-Spiegel-NSA-revelations-What-network-engineers-need-to-know">every opportunity</a>.  As a result of that, I have been doing work with netflow and netflow-like data for a fairly long time.  My first collector was the <a href="http://www.splintered.net/sw/flow-tools/">OSU Flow tools</a> based stuff  back around 13 years ago.  From there I played with all kinds of netflow tools, both <a href="http://www.arbornetworks.com/">commercial</a> and open source, finally settling most of my focus on <a href="http://nfdump.sourceforge.net/">nfdump</a> and <a href="http://nfsen.sourceforge.net/">nfsen</a>. A bit of history: nfdump was born out of a research network, requiring it to be able to consume huge amounts of flows efficiently.  This makes it very powerful and very useful for nearly anyone, from the small technology tinkerer to to the enterprise network engineer up through the service provider architect.  nfsen is really just a php wrapper for nfdump, however, the really nice thing about it (other then being free, opensource software) is that it is extendable via <a href="http://sourceforge.net/apps/trac/nfsen-plugins/">plugins</a>.  This is really what makes it a serious player from all angles.     From botnet detection to displaying IP geo-data on a map, there is likely a plugin for it.  Not finding what you are looking for?  Write it!  The architecture to use it is already there and documented. For ease of install, I chose CentOS 6.5.  Once you have a system up and running, to get nfsen/nfdump working, here is what you need to do:```
+yum install -y httpd php wget gcc make rrdtool-devel <br />
+rrdtool-perl perl-MailTools perl-Socket6 flex byacc</p>
+
+<p>vi /etc/selinux/config
+set SELINUX=disabled
+reboot</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-You'll need to make an iptables rule (I generally make one for ip6tables as well, in case I want to also enable ipv6 transport)```" data-lang="You'll need to make an iptables rule (I generally make one for ip6tables as well, in case I want to also enable ipv6 transport)```">sudo iptables -I INPUT -p udp -m state --state NEW -m udp --dport 9995 -j ACCEPT
+sudo ipt6ables -I INPUT -p udp -m state --state NEW -m udp --dport 9995 -j ACCEPT</code></pre></div>
+<p>Also allow for access to the web server you just installed.```
+sudo ip6tables -I INPUT -p tcp -m state &ndash;state NEW -m tcp &ndash;dport 443 -j ACCEPT
+sudo ip6tables -I INPUT -p tcp -m state &ndash;state NEW -m tcp &ndash;dport 80 -j ACCEPT<br />
+sudo iptables -I INPUT -p tcp -m state &ndash;state NEW -m tcp &ndash;dport 443 -j ACCEPT
+sudo iptables -I INPUT -p tcp -m state &ndash;state NEW -m tcp &ndash;dport 80 -j ACCEPT<br />
+service iptables save
+service ip6tables save</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Once you enable https you can safely remove the table rules for port 80. Start HTTPd```" data-lang="Once you enable https you can safely remove the table rules for port 80. Start HTTPd```">sudo service httpd start</code></pre></div>
+<p>Enable HTTPd at boot```
+chkconfig httpd on</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Now you need the actual code. I like to grab the latest from sourceforge. (nfdump-1.6.11 and nfsen-1.3.6p1 at the time of this writing)```" data-lang="Now you need the actual code. I like to grab the latest from sourceforge. (nfdump-1.6.11 and nfsen-1.3.6p1 at the time of this writing)```">wget http://downloads.sourceforge.net/project/nfdump/stable/nfdump-1.6.11/nfdump-1.6.11.tar.gz
+wget http://downloads.sourceforge.net/project/nfsen/stable/nfsen-1.3.6p1/nfsen-1.3.6p1.tar.gz
+``````
+tar -zxvf nfdump-1.6.11.tar.gz 
+./configure --enable-nfprofile --enable-nftrack --enable-sflow 
+make &amp;&amp; sudo make install</code></pre></div>
+<p>By default 1.6.11 enables v9 and ipfix =)```
+adduser netflow
+vi /etc/group</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Add user netflow to group apache```" data-lang="Add user netflow to group apache```">vi etc/nfsen.conf</code></pre></div>
+<p>change www user to apache Add your host to the file to allow for collection, my %sources looks like this:```
+%sources = (
+    &lsquo;home&rsquo;    =&gt; { &lsquo;port&rsquo; =&gt; &lsquo;9995&rsquo;, &lsquo;col&rsquo; =&gt; &lsquo;#0000ff&rsquo;, &lsquo;type&rsquo; =&gt; &lsquo;netflow&rsquo; },
+    &lsquo;internal&rsquo;    =&gt; { &lsquo;port&rsquo; =&gt; &lsquo;9996&rsquo;, &lsquo;col&rsquo; =&gt; &lsquo;#FF0000&rsquo;, &lsquo;type&rsquo; =&gt; &lsquo;netflow&rsquo; },</p>
+
+<h1 id="gw-port-9995-col-0000ff-type-netflow">&lsquo;gw&rsquo;    =&gt; { &lsquo;port&rsquo; =&gt; &lsquo;9995&rsquo;, &lsquo;col&rsquo; =&gt; &lsquo;#0000ff&rsquo;, &lsquo;type&rsquo; =&gt; &lsquo;netflow&rsquo; },</h1>
+
+<h1 id="peer1-port-9996-ip-172-16-17-18">&lsquo;peer1&rsquo;        =&gt; { &lsquo;port&rsquo; =&gt; &lsquo;9996&rsquo;, &lsquo;IP&rsquo; =&gt; &lsquo;172.16.17.18&rsquo; },</h1>
+
+<h1 id="peer2-port-9996-ip-172-16-17-19">&lsquo;peer2&rsquo;        =&gt; { &lsquo;port&rsquo; =&gt; &lsquo;9996&rsquo;, &lsquo;IP&rsquo; =&gt; &lsquo;172.16.17.19&rsquo; },</h1>
+
+<p>);</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-As you can see, I have two valid sources with different ports and different colors. You can make all netflow, all sflow, or any combination of protocol. change directory to /home/netflow```" data-lang="As you can see, I have two valid sources with different ports and different colors. You can make all netflow, all sflow, or any combination of protocol. change directory to /home/netflow```">./install.pl etc/nfsen.conf
+cd /home/netflow/bin/
+./nfsen start</code></pre></div>
+<p>Make it start at boot (referenced from <a href="http://sourceforge.net/mailarchive/message.php?msg_id=29434166">this post</a>).```
+vi /etc/init.d/nfsen</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Add this into the file:```" data-lang="Add this into the file:```"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>#
+<span style="color:#75715e"># chkconfig: - 50 50</span>
+<span style="color:#75715e"># description: nfsen</span>
+
+DAEMON<span style="color:#f92672">=</span>/home/netflow/bin/nfsen
+
+<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
+		start<span style="color:#f92672">)</span>
+		$DAEMON start
+		;;
+		stop<span style="color:#f92672">)</span>
+		$DAEMON stop
+		;;
+		status<span style="color:#f92672">)</span>
+		$DAEMON status
+		;;
+		restart<span style="color:#f92672">)</span>
+		$DAEMON stop
+		sleep <span style="color:#ae81ff">1</span>
+		$DAEMON start
+		;;
+		<span style="color:#ae81ff">\*</span><span style="color:#f92672">)</span>
+		echo <span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> {start|stop|status|restart}&#34;</span>
+		exit <span style="color:#ae81ff">1</span>
+		;;
+<span style="color:#66d9ef">esac</span>
+
+exit <span style="color:#ae81ff">0</span></code></pre></div>
+<p>Then chkconfig it on to start it at boot:```
+chmod 755 nfsen &amp;&amp; chkconfig &ndash;add nfsen &amp;&amp; chkconfig nfsen on</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-That's pretty much it. Once you configure your netflow or sflow source, you should start seeing data in ~5-10 minutes. Point your browser at your web server and see: Mine is set as https://netmon/nfsen/nfsen.php (you'll need to include the "nfsen.php" uness you edit your apache config to recognize "nfsen.php" as in index." data-lang="That's pretty much it. Once you configure your netflow or sflow source, you should start seeing data in ~5-10 minutes. Point your browser at your web server and see: Mine is set as https://netmon/nfsen/nfsen.php (you'll need to include the "nfsen.php" uness you edit your apache config to recognize "nfsen.php" as in index.">[![<span style="color:#a6e22e">Screen</span> <span style="color:#a6e22e">Shot</span> <span style="color:#ae81ff">2014</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">11</span> <span style="color:#a6e22e">at</span> <span style="color:#ae81ff">3.13.53</span> <span style="color:#a6e22e">PM</span>](<span style="color:#a6e22e">http</span>:<span style="color:#75715e">//www.forwardingplane.net/wp-content/uploads/2014/01/Screen-Shot-2014-01-11-at-3.13.53-PM-913x1024.png)](http://www.forwardingplane.net/wp-content/uploads/2014/01/Screen-Shot-2014-01-11-at-3.13.53-PM.png)
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">Common</span> <span style="color:#a6e22e">issues</span>: <span style="color:#a6e22e">I</span> <span style="color:#a6e22e">see</span> <span style="color:#a6e22e">this</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">every</span> <span style="color:#a6e22e">time</span>: <span style="color:#e6db74">&#34;ERROR: nfsend connect() error: Permission denied!&#34;</span> <span style="color:#a6e22e">It</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">always</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">permissions</span> <span style="color:#a6e22e">issue</span>, <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">documented</span> [<span style="color:#a6e22e">here</span>](<span style="color:#a6e22e">https</span>:<span style="color:#75715e">//code.google.com/p/nfsenplugins/wiki/NFSEN_Installation_Gotchas).  You need to make sure that the nfsen package can read the nfsen.comm socket file. I fixed mine by doing```
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">chmod</span> <span style="color:#a6e22e">g</span><span style="color:#f92672">+</span><span style="color:#a6e22e">rwx</span> <span style="color:#960050;background-color:#1e0010">~</span><span style="color:#a6e22e">netflow</span><span style="color:#f92672">/</span></code></pre></div>
+<p>My nfsen.conf file is using /home/netflow as the $BASEDIR.```
+ <a href="http://www.forwardingplane.net/wp-content/uploads/2014/01/Screenshot-2014-01-11-13.04.17.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2014/01/Screenshot-2014-01-11-13.04.17.png" alt="Screenshot 2014-01-11 13.04.17" /></a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-You'll likely see "Frontend - Backend version mismatch!", this is a known issue. There is a patch to fix it [here](http://sourceforge.net/p/nfsen/bugs/43/), I never bothered since it did not cause any issues for me. Disk full. Depending on your setup, you may generate a firehose worth of data. I have filled disks in less than a day in the past on a good sized regional WAN. I generally keep a month of data, but you can store as much data as disk you want to buy. I have a script run from cron to prune data, if you want to do the same:```" data-lang="You'll likely see "Frontend - Backend version mismatch!", this is a known issue. There is a patch to fix it [here](http://sourceforge.net/p/nfsen/bugs/43/), I never bothered since it did not cause any issues for me. Disk full. Depending on your setup, you may generate a firehose worth of data. I have filled disks in less than a day in the past on a good sized regional WAN. I generally keep a month of data, but you can store as much data as disk you want to buy. I have a script run from cron to prune data, if you want to do the same:```">vi /usr/local/etc/rmflowdata.sh</code></pre></div>
+<p>Paste this in:```
+#!/bin/bash</p>
+
+<h1 id="prune-flow-data">prune flow data</h1>
+
+<h1 id="usage">Usage:</h1>
+
+<h1 id="30-is-the-number-of-days-adjust-accordingly">+30 is the number of days, adjust accordingly.</h1>
+
+<p>/bin/find /home/netflow/profiles-data/live -name &ldquo;nfcapd.*&rdquo; -type f -mtime +30 -delete</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Add this to your crontab:```" data-lang="Add this to your crontab:```">@daily /usr/local/bin/rmflowdata.sh</code></pre></div>
+<p>Make it executable<code>
+chmod 755 /usr/local/bin/rmflowdata.sh
+</code>There are probably more elegant ways to do it but this works just fine, is lightweight and can be run manually if needed. There are a lot of great use cases for this.  If you&rsquo;re looking for an SDN tie-in, guess what, there is one.  <a href="http://blog.sflow.com/2010/05/configuring-open-vswitch.html">OpenVSwitch supports sflow export</a> and low-and-behold, nfsen and nfdump can easily consume and display sflow data. Want flow statistics on your all VM, OVS based SDN lab?  Guess what, you can! There are some other great things you can do with flow data, too, specifically sflow.  It&rsquo;s not just for network statistics, there is a host <a href="http://host-sflow.sourceforge.net/">based sflow implementation</a> that track any number of interesting metrics.  <a href="http://blog.sflow.com/">blog.sflow.com</a> is a great resource for all things sflow (also, it does IPv6 by default, as it should). Ok, now you have <strong>absolutely</strong> no good reason not to be collecting flow data.   It&rsquo;s easy, it&rsquo;s useful and almost everything (hosts, routers, virtual switches) supports exporting <strong><em>some</em></strong> kind of flow information.  You can even generate it from an inline linux box or a box off of an optical tap or a span port running <a href="https://code.google.com/p/softflowd/">softflowd</a> or <a href="http://www.ntop.org/products/nprobe/">nprobe</a>.   Both of which I can confirm work wonderfully (the above collector is gathering flows from softflowd running on my <a href="http://www.forwardingplane.net/2013/07/building-a-secured-network-in-a-box/" title="Building a secured network in a box">security onion box</a> as well as exported flows from pfflowd on a <a href="http://www.pfsense.org/">pfsense</a> router).</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/ipv6">#IPv6</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/security">#Security</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 11 Jan 2014 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

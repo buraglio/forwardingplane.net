@@ -1,0 +1,698 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "NIX4NetEng #1 Managing dotfiles; pwn the unspoken pain of UNIX administration",
+        "headline" : "NIX4NetEng #1 Managing dotfiles; pwn the unspoken pain of UNIX administration",
+        "description" : "Many network engineers are also tasked with maintaining systems that provide network services, those things that make the network easier to use such as DNS and DHCP or management systems that perform useful things like monitor the network, collect flow data or bestow access to the equipment by acting as bastion or jump hosts. In many instances, robust and high availability services run on UNIX, Linux or BSD systems for stability and reliability, so those that manage these systems need to be well versed system admins as well as whatever their other job functions are.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2014",
+        "datePublished": "2014-05-01 02:58:20 \x2b0000 \x2b0000",
+        "dateModified" : "2014-05-01 02:58:20 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration\/",
+        "wordCount" : "465",
+        "keywords" : [ "How-To","NIX4NetEng","UNIX","Blog" ]
+    }
+    </script>
+        
+            
+                <title>NIX4NetEng #1 Managing dotfiles; pwn the unspoken pain of UNIX administration</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NIX4NetEng #1 Managing dotfiles; pwn the unspoken pain of UNIX administration"/>
+<meta name="twitter:description" content="Many network engineers are also tasked with maintaining systems that provide network services, those things that make the network easier to use such as DNS and DHCP or management systems that perform useful things like monitor the network, collect flow data or bestow access to the equipment by acting as bastion or jump hosts. In many instances, robust and high availability services run on UNIX, Linux or BSD systems for stability and reliability, so those that manage these systems need to be well versed system admins as well as whatever their other job functions are."/>
+
+        <meta property="og:title" content="NIX4NetEng #1 Managing dotfiles; pwn the unspoken pain of UNIX administration" />
+<meta property="og:description" content="Many network engineers are also tasked with maintaining systems that provide network services, those things that make the network easier to use such as DNS and DHCP or management systems that perform useful things like monitor the network, collect flow data or bestow access to the equipment by acting as bastion or jump hosts. In many instances, robust and high availability services run on UNIX, Linux or BSD systems for stability and reliability, so those that manage these systems need to be well versed system admins as well as whatever their other job functions are." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration/" />
+<meta property="article:published_time" content="2014-05-01T02:58:20+00:00" />
+<meta property="article:modified_time" content="2014-05-01T02:58:20+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="NIX4NetEng #1 Managing dotfiles; pwn the unspoken pain of UNIX administration">
+<meta itemprop="description" content="Many network engineers are also tasked with maintaining systems that provide network services, those things that make the network easier to use such as DNS and DHCP or management systems that perform useful things like monitor the network, collect flow data or bestow access to the equipment by acting as bastion or jump hosts. In many instances, robust and high availability services run on UNIX, Linux or BSD systems for stability and reliability, so those that manage these systems need to be well versed system admins as well as whatever their other job functions are.">
+
+
+<meta itemprop="datePublished" content="2014-05-01T02:58:20&#43;00:00" />
+<meta itemprop="dateModified" content="2014-05-01T02:58:20&#43;00:00" />
+<meta itemprop="wordCount" content="465">
+
+
+
+<meta itemprop="keywords" content="How-To,NIX4NetEng,UNIX," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/resume">
+                            <i class="resume">&nbsp;</i>resume
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/resume">
+                            <h3>
+                                <i class="resume">&nbsp;</i>resume
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fnix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration%2f&amp;text=NIX4NetEng%20%231%20Managing%20dotfiles%3b%20pwn%20the%20unspoken%20pain%20of%20UNIX%20administration&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fnix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fnix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fnix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration%2f&amp;title=NIX4NetEng%20%231%20Managing%20dotfiles%3b%20pwn%20the%20unspoken%20pain%20of%20UNIX%20administration" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fnix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration%2f&amp;title=NIX4NetEng%20%231%20Managing%20dotfiles%3b%20pwn%20the%20unspoken%20pain%20of%20UNIX%20administration" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fnix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration%2f&amp;title=NIX4NetEng%20%231%20Managing%20dotfiles%3b%20pwn%20the%20unspoken%20pain%20of%20UNIX%20administration" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fnix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration%2f&amp;description=NIX4NetEng%20%231%20Managing%20dotfiles%3b%20pwn%20the%20unspoken%20pain%20of%20UNIX%20administration" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fnix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration/">NIX4NetEng #1 Managing dotfiles; pwn the unspoken pain of UNIX administration</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2014-05-01'>
+            May 1, 2014</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>Many network engineers are also tasked with maintaining systems that provide network services, those things that make the network easier to use such as DNS and DHCP or management systems that perform useful things like monitor the network, collect flow data or bestow access to the equipment by acting as <a href="http://en.wikipedia.org/wiki/Bastion_host">bastion</a> or jump hosts.  In many instances, robust and high availability services run on UNIX, Linux or BSD systems for stability and reliability, so those that manage these systems need to be well versed system admins as well as whatever their other job functions are.  <a href="http://packetpushers.net/are-certifications-tests-still-worth-your-resources-in-the-day-of-hybrid-it/">Hybridization</a>, if you will.  Nothing new, nothing unexpected.  However, one of the banes of these tasks is having a uniform shell environment across platforms and systems. Why create a customized environment with aliases, environmental variables and other personalized settings more than once? I have struggled with how to do this efficiently across desktop, server, jumphosts and other daily use systems for <strong>years</strong>. Most of the important variables are controlled by dotfiles.   In what I am hoping is the start of a short series of &ldquo;UNIX stuff for networking folks&rdquo;, I will explain how I did this for myself. UNIX and Linux admins have been dealing with dotfiles forever. GitHub even has a <a href="http://dotfiles.github.io/">repo dedicated to</a> it.  For my environment, I chose to go with <a href="http://jim.github.io/briefcase/">Briefcase</a> and <a href="http://www.bitbucket.com">BitBucket</a>.  Briefcase because it has mechanisms for stripping out sensitive information if needed and bitbucket because I can have private repos without paying money.  This can all certainly be done with local git repos or github and without briefcase. Briefcase is really straightforward to install, it&rsquo;s just a ruby gem, so <em>gem install briefcase</em> is all that is needed to get it on your machine<em>.</em>  OSX has it by default.  On my machine I needed to to<em>sudo gem update —system</em> before it would install.  Your mileage may vary<em>. </em> Once it&rsquo;s installed, just add your files.  I switched to bash, so I needed to import .bashrc and .bash_profile, but I wanted to make sure I had a backup just in case.```
+mkdir -p tmp/dotfiles
+mv .bashrc tmp/dotfiles/
+mv .bash_profile tmp/dotfiles/</p>
+
+<pre><code>briefcase import ~/.bashrc
+briefcase import ~/.bash\_profile
+</code></pre>
+
+<p>briefcase git remote add origin git@repo.forwardingplane.net:buraglio/briefcase-dotfiles.git</p>
+
+<pre><code>briefcase git commit -am &quot;Initial newhost commit&quot;
+</code></pre>
+
+<p>briefcase git checkout origin master</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Obviously replace the remote repo address with your own repo destination.   You can now check the status:```" data-lang="Obviously replace the remote repo address with your own repo destination.   You can now check the status:```">briefcase sync</code></pre></div>
+<p>This should output something like this:```
+Synchronizing dotfiles between /Users/buraglio/.dotfiles and /Users/buraglio
+Symlink verified: /Users/buraglio/.bash_profile -&gt; /Users/buraglio/.dotfiles/bash_profile
+Symlink verified: /Users/buraglio/.bashrc -&gt; /Users/buraglio/.dotfiles/bashrc
+Symlink verified: /Users/buraglio/.profile -&gt; /Users/buraglio/.dotfiles/profile
+Symlink verified: /Users/buraglio/.README.md -&gt; /Users/buraglio/.dotfiles/README.md</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Getting a new branch for an existing host was the biggest hurdle for me, I want a base .bashrc but may want different environment variables for mac and Linux.  I'm not a git expert by any means, so there may be a better way to do this, but it works well for me. To branch a new host, it's pretty straightforward.  Briefcase is really just a wrapper for git, so prepending "briefcase" before the git commands seems to "just work" (as I learned by trial and error or making this work). On an existing Host:```" data-lang="Getting a new branch for an existing host was the biggest hurdle for me, I want a base .bashrc but may want different environment variables for mac and Linux.  I'm not a git expert by any means, so there may be a better way to do this, but it works well for me. To branch a new host, it's pretty straightforward.  Briefcase is really just a wrapper for git, so prepending "briefcase" before the git commands seems to "just work" (as I learned by trial and error or making this work). On an existing Host:```">git clone git@your.repoaddress.net:username/reponame.git .dotfiles
+mkdir -p tmp/dotfiles
+mv .bashrc tmp/dotfiles/
+mv .bash\_profile tmp/dotfiles/
+briefcase sync
+briefcase git branch \[newhost\]
+briefcase git checkout \[newhost\]</code></pre></div>
+<p>&hellip;Make changes&hellip;<code>
+briefcase git commit -am &quot;Initial newhost commit&quot;
+</code>briefcase git push origin [newhost] There you have it, easily backed up and distributed environment control.  I&rsquo;m planning to add <a href="http://joeyh.name/code/etckeeper/">etckeeper</a> to this process next.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/how-to">How-To</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/nix4neteng">NIX4NetEng</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/unix">UNIX</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/blending-the-network-pluribus-serverswitch-comments/"
+                class="button big previous">Blending the Network; Pluribus ServerSwitch</a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration-comments/"
+                class="button big next">NIX4NetEng #1 Managing dotfiles; pwn the unspoken pain of UNIX administration</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

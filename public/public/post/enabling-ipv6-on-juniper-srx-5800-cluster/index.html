@@ -1,0 +1,350 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "public",
+        "name" : "Enabling IPv6 on Juniper SRX 5800 cluster",
+        "headline" : "Enabling IPv6 on Juniper SRX 5800 cluster",
+        "description" : "After enabling the IPv6 Flow based processing, we decided to get rolling with making our IPv6 path congruent with everything else (IPv4 unicast and multicast). With all of the other things we had going on, we thought this would be a low hanging fruit that would be easily plucked from the routing tree. Well, a minor oversight on our part caught us by surprise.\nAccording to this handy dandy matrix for JunOS 10.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2010",
+        "datePublished": "2010-10-20 21:59:00 \x2b0000 \x2b0000",
+        "dateModified" : "2010-10-20 21:59:00 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/public\/post\/enabling-ipv6-on-juniper-srx-5800-cluster\/",
+        "wordCount" : "234",
+        "keywords" : [ "IPv6","Security","Blog" ]
+    }
+    </script>
+        
+            <title>Enabling IPv6 on Juniper SRX 5800 cluster - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Enabling IPv6 on Juniper SRX 5800 cluster"/>
+<meta name="twitter:description" content="After enabling the IPv6 Flow based processing, we decided to get rolling with making our IPv6 path congruent with everything else (IPv4 unicast and multicast). With all of the other things we had going on, we thought this would be a low hanging fruit that would be easily plucked from the routing tree. Well, a minor oversight on our part caught us by surprise.
+According to this handy dandy matrix for JunOS 10."/>
+
+        <meta property="og:title" content="Enabling IPv6 on Juniper SRX 5800 cluster" />
+<meta property="og:description" content="After enabling the IPv6 Flow based processing, we decided to get rolling with making our IPv6 path congruent with everything else (IPv4 unicast and multicast). With all of the other things we had going on, we thought this would be a low hanging fruit that would be easily plucked from the routing tree. Well, a minor oversight on our part caught us by surprise.
+According to this handy dandy matrix for JunOS 10." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/public/post/enabling-ipv6-on-juniper-srx-5800-cluster/" />
+<meta property="article:published_time" content="2010-10-20T21:59:00+00:00" />
+<meta property="article:modified_time" content="2010-10-20T21:59:00+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Enabling IPv6 on Juniper SRX 5800 cluster">
+<meta itemprop="description" content="After enabling the IPv6 Flow based processing, we decided to get rolling with making our IPv6 path congruent with everything else (IPv4 unicast and multicast). With all of the other things we had going on, we thought this would be a low hanging fruit that would be easily plucked from the routing tree. Well, a minor oversight on our part caught us by surprise.
+According to this handy dandy matrix for JunOS 10.">
+
+
+<meta itemprop="datePublished" content="2010-10-20T21:59:00&#43;00:00" />
+<meta itemprop="dateModified" content="2010-10-20T21:59:00&#43;00:00" />
+<meta itemprop="wordCount" content="234">
+
+
+
+<meta itemprop="keywords" content="IPv6,Security," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/public/post/enabling-ipv6-on-juniper-srx-5800-cluster/">Enabling IPv6 on Juniper SRX 5800 cluster</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>After <a href="http://tech.buraglio.com/2010/09/srx-ipv6-flow-based-processing.html">enabling the IPv6 Flow based processing</a>, we decided to get rolling with making our IPv6 path congruent with everything else (IPv4 unicast and multicast). With all of the other things we had going on, we thought this would be a low hanging fruit that would be easily plucked from the routing tree. Well, a minor oversight on our part caught us by surprise.</p>
+
+<p>According to this <a href="http://www.juniper.net/techpubs/software/junos-security/junos-security10.2/junos-srx-jseries-support-reference/jd0e5522.html">handy dandy matrix for JunOS 10.2 on the SRX</a>, Active/Active is actually not supported for v6 processing. After configuring all of the rest of the path, BGP peerings, OSPFv3, an IPv6 firewall policy, we were a bit surprised to see OSPFv3 adjacencies andappropriate routes, but absolutely no state for v6 traffic that was not destined for the RE.</p>
+
+<p>About 30 seconds of google searching came up with the matrix, which we somehow missed, that showed exactly what we feared:</p>
+
+<p><img src="http://lh3.ggpht.com/_99YK8gwWGlQ/TL8UouI51lI/AAAAAAAAACM/7humintSX-I/s1152/Screen%20shot%202010-10-20%20at%2011.09.54%20AM.png" alt="" /></p>
+
+<p>My first reaction was</p>
+
+<p><img src="http://www.popartuk.com/g/l/lgmp0163+homer-simpson-doh-the-simpsons-mini-poster.jpg" alt="" /></p>
+
+<p>How could we have missed that? We knew that IDP wouldn&rsquo;t work on v6 until a future release (probably sometime of next year, we&rsquo;re hoping). Oh well, we missed something. It was bound to happen sooner or later with as many moving parts as we have. Doing some more digging it looks like we&rsquo;re not going to get Active/Active until around the same time as IDP</p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

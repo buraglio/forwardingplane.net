@@ -1,0 +1,350 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "public",
+        "name" : "A security oversight in Mail.app, or, a hidden bcc: field",
+        "headline" : "A security oversight in Mail.app, or, a hidden bcc: field",
+        "description" : "Recently I was poking around Mail.app, setting up my new machine. I like to keep redundant copies of everything, email being no exception. I have backups of all of my email dating back to 1998, for the most part. It has come in handy from time to time and I like it for reference reasons. It\x26rsquo;s a small amount of actual data as far as space goes, and it\x26rsquo;s easy to do.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2011",
+        "datePublished": "2011-10-22 08:40:00 \x2b0000 \x2b0000",
+        "dateModified" : "2011-10-22 08:40:00 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/public\/post\/a-security-oversight-in-mail-app-or-a-hidden-bcc-field\/",
+        "wordCount" : "376",
+        "keywords" : [ "How-To","Musings","Blog" ]
+    }
+    </script>
+        
+            <title>A security oversight in Mail.app, or, a hidden bcc: field - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A security oversight in Mail.app, or, a hidden bcc: field"/>
+<meta name="twitter:description" content="Recently I was poking around Mail.app, setting up my new machine. I like to keep redundant copies of everything, email being no exception. I have backups of all of my email dating back to 1998, for the most part. It has come in handy from time to time and I like it for reference reasons. It&rsquo;s a small amount of actual data as far as space goes, and it&rsquo;s easy to do."/>
+
+        <meta property="og:title" content="A security oversight in Mail.app, or, a hidden bcc: field" />
+<meta property="og:description" content="Recently I was poking around Mail.app, setting up my new machine. I like to keep redundant copies of everything, email being no exception. I have backups of all of my email dating back to 1998, for the most part. It has come in handy from time to time and I like it for reference reasons. It&rsquo;s a small amount of actual data as far as space goes, and it&rsquo;s easy to do." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/public/post/a-security-oversight-in-mail-app-or-a-hidden-bcc-field/" />
+<meta property="article:published_time" content="2011-10-22T08:40:00+00:00" />
+<meta property="article:modified_time" content="2011-10-22T08:40:00+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="A security oversight in Mail.app, or, a hidden bcc: field">
+<meta itemprop="description" content="Recently I was poking around Mail.app, setting up my new machine. I like to keep redundant copies of everything, email being no exception. I have backups of all of my email dating back to 1998, for the most part. It has come in handy from time to time and I like it for reference reasons. It&rsquo;s a small amount of actual data as far as space goes, and it&rsquo;s easy to do.">
+
+
+<meta itemprop="datePublished" content="2011-10-22T08:40:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-10-22T08:40:00&#43;00:00" />
+<meta itemprop="wordCount" content="376">
+
+
+
+<meta itemprop="keywords" content="How-To,Musings," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/public/post/a-security-oversight-in-mail-app-or-a-hidden-bcc-field/">A security oversight in Mail.app, or, a hidden bcc: field</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>Recently I was poking around Mail.app, setting up my new machine. I like to keep redundant copies of everything, email being no exception. I have backups of all of my email dating back to 1998, for the most part. It has come in handy from time to time and I like it for reference reasons. It&rsquo;s a small amount of actual data as far as space goes, and it&rsquo;s easy to do. I remembered the days of using mutt for email (which really weren&rsquo;t that long ago for me), and really liked the idea of setting a bcc of a separate address, not necessarily myself, but an email address inside of my administrative control, for CYA types of archiving. Upon looking, I saw no way to do this within the default apple Mail.app.</p>
+
+<p>Doing a bit of google searching, I found that this is pretty easily doable with a default write command. OK, awesome. This is good news. So I applied it:<br />
+(Open Terminal)<br />
+<em>defaults write com.apple.mail UserHeaders &lsquo;{&ldquo;Bcc&rdquo; = &ldquo;archive-address@domain.com&rdquo;; }&lsquo; </em></p>
+
+<p>Done. Great. So, lets test it. Send email and check bcc&rsquo;d address.  Email is there.  Strange, however, the bcc field doesn&rsquo;t show up, or show anything at all.  That&rsquo;s right, there is absolutely no indication that this email is being bcc&rsquo;d to another address.<br />
+This isn&rsquo;t really a problem for me, since I know that I set it up.  What it does mean, though, is that this could be applied to an unsuspecting user account, with absolutely <strong>no authentication necessary,</strong> and have every outgoing message silently sent to a harvesting account.  There is no easy way to check for this that I have found save for using terminal:</p>
+
+<p><em>[buraglio@dalek:~ ] defaults read com.apple.mail UserHeaders                                   </em><br />
+<em>{</em><br />
+<em>    Bcc = &ldquo;archive-address@domain.com&rdquo;;</em><br />
+<em>}</em></p>
+
+<p>OK, at least there is a way to tell.  Using the command <em>defaults read com.apple.mail UserHeaders</em> from terminal will show the info, but the fact that it&rsquo;s doable in such an obtuse way with no indication that mail is being bcc&rsquo;d is a bit scary.<br />
+There is a preference pane that allows for tweaking of some of these &ldquo;features&rdquo;, it&rsquo;s open source available <a href="http://secrets.blacktree.com/">here</a>, called BlackTree Secrets.</p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

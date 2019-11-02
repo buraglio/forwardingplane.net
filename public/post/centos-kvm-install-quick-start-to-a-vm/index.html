@@ -1,0 +1,740 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "CentOS KVM Install - Quick Start to a VM",
+        "headline" : "CentOS KVM Install - Quick Start to a VM",
+        "description" : "I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I\x26rsquo;d shelved years ago. Now, I\x26rsquo;ve been a virtualization user forever. From VMware (Fusion, ESX), VirtualBox, to Parallels, I\x26rsquo;ve used them at least in testing if not in production environments. I\x26rsquo;d not really spent any mentionable amount of time with XEN, qEMU or KVM, but some projects I was working on suggested it for the virtualization mechanism, so I figured I\x26rsquo;d try to pick it up.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-03-02 01:12:02 \x2b0000 \x2b0000",
+        "dateModified" : "2013-03-02 01:12:02 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/centos-kvm-install-quick-start-to-a-vm\/",
+        "wordCount" : "651",
+        "keywords" : [ "Data Center","How-To","Lab Time","UNIX","Virtualization","Blog" ]
+    }
+    </script>
+        
+            
+                <title>CentOS KVM Install - Quick Start to a VM</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS KVM Install - Quick Start to a VM"/>
+<meta name="twitter:description" content="I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I&rsquo;d shelved years ago. Now, I&rsquo;ve been a virtualization user forever. From VMware (Fusion, ESX), VirtualBox, to Parallels, I&rsquo;ve used them at least in testing if not in production environments. I&rsquo;d not really spent any mentionable amount of time with XEN, qEMU or KVM, but some projects I was working on suggested it for the virtualization mechanism, so I figured I&rsquo;d try to pick it up."/>
+
+        <meta property="og:title" content="CentOS KVM Install - Quick Start to a VM" />
+<meta property="og:description" content="I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I&rsquo;d shelved years ago. Now, I&rsquo;ve been a virtualization user forever. From VMware (Fusion, ESX), VirtualBox, to Parallels, I&rsquo;ve used them at least in testing if not in production environments. I&rsquo;d not really spent any mentionable amount of time with XEN, qEMU or KVM, but some projects I was working on suggested it for the virtualization mechanism, so I figured I&rsquo;d try to pick it up." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/centos-kvm-install-quick-start-to-a-vm/" />
+<meta property="article:published_time" content="2013-03-02T01:12:02+00:00" />
+<meta property="article:modified_time" content="2013-03-02T01:12:02+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="CentOS KVM Install - Quick Start to a VM">
+<meta itemprop="description" content="I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I&rsquo;d shelved years ago. Now, I&rsquo;ve been a virtualization user forever. From VMware (Fusion, ESX), VirtualBox, to Parallels, I&rsquo;ve used them at least in testing if not in production environments. I&rsquo;d not really spent any mentionable amount of time with XEN, qEMU or KVM, but some projects I was working on suggested it for the virtualization mechanism, so I figured I&rsquo;d try to pick it up.">
+
+
+<meta itemprop="datePublished" content="2013-03-02T01:12:02&#43;00:00" />
+<meta itemprop="dateModified" content="2013-03-02T01:12:02&#43;00:00" />
+<meta itemprop="wordCount" content="651">
+
+
+
+<meta itemprop="keywords" content="Data Center,How-To,Lab Time,UNIX,Virtualization," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/resume">
+                            <i class="resume">&nbsp;</i>resume
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/resume">
+                            <h3>
+                                <i class="resume">&nbsp;</i>resume
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-kvm-install-quick-start-to-a-vm%2f&amp;text=CentOS%20KVM%20Install%20-%20Quick%20Start%20to%20a%20VM&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-kvm-install-quick-start-to-a-vm%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-kvm-install-quick-start-to-a-vm%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-kvm-install-quick-start-to-a-vm%2f&amp;title=CentOS%20KVM%20Install%20-%20Quick%20Start%20to%20a%20VM" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-kvm-install-quick-start-to-a-vm%2f&amp;title=CentOS%20KVM%20Install%20-%20Quick%20Start%20to%20a%20VM" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-kvm-install-quick-start-to-a-vm%2f&amp;title=CentOS%20KVM%20Install%20-%20Quick%20Start%20to%20a%20VM" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-kvm-install-quick-start-to-a-vm%2f&amp;description=CentOS%20KVM%20Install%20-%20Quick%20Start%20to%20a%20VM" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-kvm-install-quick-start-to-a-vm%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/centos-kvm-install-quick-start-to-a-vm/">CentOS KVM Install - Quick Start to a VM</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2013-03-02'>
+            March 2, 2013</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I&rsquo;d shelved years ago.  Now, I&rsquo;ve been a virtualization user forever. From <a href="http://www.vmware.com">VMware</a> (Fusion, ESX), <a href="https://www.virtualbox.org">VirtualBox</a>, to <a href="www.parallels.com">Parallels</a>, I&rsquo;ve used them at least in testing if not in production environments.  I&rsquo;d not really spent any mentionable amount of time with <a href="http://www.xen.org">XEN</a>, <a href="http://www.qemu.org">qEMU</a> or <a href="www.linux-kvm.org">KVM</a>, but some projects I was working on suggested it for the virtualization mechanism, so I figured I&rsquo;d try to pick it up.  I think the hosting provider  of this blog is using it to provide the VPS that this site runs on, so it is clearly production quality.  In looking around for a straightforward how-to, a few things became obvious pretty quickly: KVM is very robust. KVM and qEMU have got a lot of documentation, but not all of it is straightforward. They have a lot of pieces needed to make it work efficiently. It wasn&rsquo;t a plug and run experience, by any means.  I wanted a headless, remotely manageable system that ran on a bare minimum install (i.e. no GUI).  After a late evening of hacking at it,  here is what I finally had to do to get it running and build a functional VM on a fresh install of CentOS 6.3. Install all the dependancies.  And there were many.  Coming from using the VirtualBox CLI, little things that I expected didn&rsquo;t work if I didn&rsquo;t have this or that installed.```
+yum install -y qemu-kvm.x86_64 qemu-kvm-tools.x86_64 <br />
+kvm libvirt bridge-utils tunctl python-virtinst.noarch avahi</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Restart the deamons```" data-lang="Restart the deamons```">/etc/init.d/messagebus restart
+/etc/init.d/avahi-daemon restart
+/etc/init.d/libvirtd restart</code></pre></div>
+<p>Make the new daemons start at boot:```
+/sbin/chkconfig messagebus on
+/sbin/chkconfig avahi-daemon on</p>
+
+<pre><code>
+I want to bridge rather than NAT.  My VMs need to have a public (or same LAN segment) address as the rest of the hosts for external management and availability of inbound services.  For this, we need to adjust the interfaces.  I want to run the bridge on a second interface and keep the host system management on a dedicated interface.
+
+</code></pre>
+
+<p>vi /etc/sysconfig/network-scripts/ifcfg-eth1</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Your file should look something like this when done:```" data-lang="Your file should look something like this when done:```">DEVICE=&#34;eth1&#34;
+HWADDR=&#34;c0:ff:ee:c0:ff:ee&#34; # (leave this as your MAC address)
+NM\_CONTROLLED=&#34;yes&#34;
+ BRIDGE=br0
+ ONBOOT=&#34;yes&#34;
+UUID=&#34;a9c26927-7650-42e9-a86a-1ae1227eac4b&#34; #leave this as your UUID)
+``````
+vi /etc/sysconfig/network-scripts/ifcfg-br0</code></pre></div>
+<p>Your file should look something like this when done:</p>
+
+<pre><code>DEVICE=&quot;br0&quot;
+TYPE=&quot;Bridge&quot;
+BOOTPROTO=&quot;static&quot;
+IPADDR=&quot;10.10.10.50&quot; # Use your own IP address
+NETMASK=&quot;255.255.255.128&quot;
+GATEWAY=&quot;10.10.10.1&quot;  # Provide your gateway
+IPV6INIT=&quot;yes&quot;
+IPV6\_AUTOCONF=&quot;yes&quot;
+NM\_CONTROLLED=&quot;yes&quot;
+ONBOOT=&quot;yes&quot;
+</code></pre>
+
+<p>Restart the network to make it active.</p>
+
+<pre><code>service network restart
+</code></pre>
+
+<p>You&rsquo;re going to use virt tools and virsh to manipulate the guests.  I tried it a few other ways and this seems far more supportable.  I wanted to install a CentOS 6.3 guest, I grabbed the install media from a <a href="http://cosmos.cites.illinois.edu/pub/centos/6.3/isos/x86_64/">local mirror</a>.  I have a volume mounted as /services that I keep stuff in.```
+mkdir /services/vm/template-host
+cd /services/vm/template-host
+wget <a href="http://cosmos.cites.illinois.edu/pub/centos/6.3/isos/x86_64/CentOS-6.3-x86_64-bin-DVD1.iso">http://cosmos.cites.illinois.edu/pub/centos/6.3/isos/x86_64/CentOS-6.3-x86_64-bin-DVD1.iso</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Now use the virt-install command to boot the system with the following parameters: 2G of RAM 50G disk named disk.img Console redirected to a VNC instance on port 5901 Network interface attached to br0 4 CPUs CDROM points to install image```" data-lang="Now use the virt-install command to boot the system with the following parameters: 2G of RAM 50G disk named disk.img Console redirected to a VNC instance on port 5901 Network interface attached to br0 4 CPUs CDROM points to install image```">virt-install --name template-host --ram 2048 --disk /home/vm/template-host/disk.img,size=50 \\
+--graphics vnc,port=5901 --network bridge=br0 --vcpus=4 --os-type=linux \\
+--cdrom=/home/vm/Install\_Media/CentOS-6.3-x86\_64-bin-DVD1.iso</code></pre></div>
+<p>Now, to connect to the console, you&rsquo;ll need to tunnel VNC over ssh.  This can be adjusted, but that&rsquo;s outside of the scope of this. I like to redirect real port numbers for my own sanity.```
+ssh -N -p 22 -c 3des buraglio@vmhost -L 5901/localhost/5901</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-The above command will redirect localhost port 5901 to port 5901 on the host vmhost Connect to the VNC server:" data-lang="The above command will redirect localhost port 5901 to port 5901 on the host vmhost Connect to the VNC server:">[![Screen Shot 2013-03-01 at 2.00.37 PM](http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.00.37-PM.png)](http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.00.37-PM.png)
+
+Once connected you should drop right into the console of the KVM instance. Install as a normal system at that point.
+
+Once installed It&#39;ll appear as a normal host console.
+
+[![Screen Shot 2013-03-01 at 2.01.21 PM](http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.01.21-PM.png)](http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.01.21-PM.png)
+
+I found virsh to be the most useful for manipulating the virtual machine.</code></pre></div>
+<p>[root@behemoth Install_Media]# virsh list
+Id            Name                                      State</p>
+
+<hr />
+
+<p>9              template-host                         running
+```Helpful commands I found after 30 minutes of poking around and playing with virsh: virsh list &ndash;show the list of virtual machines virsh destroy <vm name> &ndash;hard shut down a host (I believe) virsh undefine <vm name> &ndash;remove the VM from registration &ndash;this one was hard for me to find.   <a href="http://www.forwardingplane.net/unix/kvm-virsh-command-referenc/" title="KVM virsh command reference">Here</a> is a complete list of the commands.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/data-center">Data Center</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/how-to">How-To</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/lab-time">Lab Time</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/unix">UNIX</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/virtualization">Virtualization</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/kvm-virsh-command-referenc-comments/"
+                class="button big previous">KVM virsh command reference</a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/centos-kvm-install-quick-start-to-a-vm-comments/"
+                class="button big next">CentOS KVM Install - Quick Start to a VM</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

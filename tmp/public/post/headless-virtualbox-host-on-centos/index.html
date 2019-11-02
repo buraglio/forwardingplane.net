@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/headless-virtualbox-host-on-centos/">
+<meta property="og:title" content="Headless VirtualBox host on CentOS" />
+<meta property="og:description" content="Starting from a base CentOS system with nothing configured, and referencing the CentOS wiki, here is how I like to set up a headless virtualbox environment: Disable selinux. It&rsquo;s overly cumbersome and is enabled by default in CentOS. I like to permanently disable it even though the default is permissive. I ride the edge, I know.``` vi /etc/selinux/config
+ and change  SELINUX=enabled
+ to  SELINUX=disabled
+ Then reboot. Using the methodology I originally found found [here](http://stackoverflow." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/headless-virtualbox-host-on-centos/" />
+<meta property="article:published_time" content="2013-01-31T21:48:47+00:00" />
+<meta property="article:modified_time" content="2013-01-31T21:48:47+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Headless VirtualBox host on CentOS"/>
+<meta name="twitter:description" content="Starting from a base CentOS system with nothing configured, and referencing the CentOS wiki, here is how I like to set up a headless virtualbox environment: Disable selinux. It&rsquo;s overly cumbersome and is enabled by default in CentOS. I like to permanently disable it even though the default is permissive. I ride the edge, I know.``` vi /etc/selinux/config
+ and change  SELINUX=enabled
+ to  SELINUX=disabled
+ Then reboot. Using the methodology I originally found found [here](http://stackoverflow."/>
+
+
+<meta itemprop="name" content="Headless VirtualBox host on CentOS">
+<meta itemprop="description" content="Starting from a base CentOS system with nothing configured, and referencing the CentOS wiki, here is how I like to set up a headless virtualbox environment: Disable selinux. It&rsquo;s overly cumbersome and is enabled by default in CentOS. I like to permanently disable it even though the default is permissive. I ride the edge, I know.``` vi /etc/selinux/config
+ and change  SELINUX=enabled
+ to  SELINUX=disabled
+ Then reboot. Using the methodology I originally found found [here](http://stackoverflow.">
+
+
+<meta itemprop="datePublished" content="2013-01-31T21:48:47&#43;00:00" />
+<meta itemprop="dateModified" content="2013-01-31T21:48:47&#43;00:00" />
+<meta itemprop="wordCount" content="966">
+
+
+
+<meta itemprop="keywords" content="How-To,Lab Time,UNIX,Virtualization," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Headless VirtualBox host on CentOS 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Headless VirtualBox host on CentOS </h1>
+    <div class="content"> <p>Starting from a base CentOS system with nothing configured, and referencing the <a href="http://wiki.centos.org/HowTos/Virtualization/VirtualBox">CentOS wiki</a>, here is how I like to set up a headless virtualbox environment: Disable selinux. It&rsquo;s overly cumbersome and is enabled by default in CentOS.  I like to permanently disable it even though the default is permissive.  I ride the edge, I know.```
+vi /etc/selinux/config</p>
+
+<pre><code>
+ and change
+
+</code></pre>
+
+<p>SELINUX=enabled</p>
+
+<pre><code>
+to
+
+</code></pre>
+
+<p>SELINUX=disabled</p>
+
+<pre><code>
+Then reboot.
+
+Using the methodology I originally found found [here](http://stackoverflow.com/questions/14016286/how-to-programmatically-install-the-latest-epel-release-rpm-without-knowing-its), I like to install the epel repo using this method:```
+cat &lt;&lt;EOM &gt;/etc/yum.repos.d/epel-bootstrap.repo
+ \[epel\]
+ name=Bootstrap EPEL
+ mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=epel-\\$releasever&amp;arch=\\$basearch
+ failovermethod=priority
+ enabled=0
+ gpgcheck=0
+ EOM
+``````
+yum --enablerepo=epel -y install epel-release
+ rm -f /etc/yum.repos.d/epel-bootstrap.repo
+</code></pre>
+
+<p>Install rpmforge repo```
+rpm &ndash;import <a href="http://apt.sw.be/RPM-GPG-KEY.dag.txt">http://apt.sw.be/RPM-GPG-KEY.dag.txt</a>
+ rpm -Uvh <a href="http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm">http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm</a>
+ yum clean all</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Install the virtualbox repo```" data-lang="Install the virtualbox repo```">yum install -y wget
+cd /etc/yum.repos.d
+wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+yum update</code></pre></div>
+<p>Now the interesting bits, lets get to the vbox install.  Although we have enabled dkms, I like to also install as if we didn&rsquo;t.  It populates the system with the pieces we need in a way that I&rsquo;m used to.  I&rsquo;m not a sysadmin by day, so this may be redundant.  YMMV, etc.   First, install the Development Tools. There are a lot here, it may take a bit depending on machine specs and connectivity speed in relation to mirrors. ```
+yum groupinstall &ldquo;Development Tools&rdquo;
+yum install VirtualBox-4.2</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Then start up the service and you should see something like this:```" data-lang="Then start up the service and you should see something like this:```">service vboxdrv setup
+Stopping VirtualBox kernel modules \[ OK \]
+Uninstalling old VirtualBox DKMS kernel modulesError! There are no instances of module: vboxhost
+4.2.6 located in the DKMS tree.
+ \[ OK \]
+Trying to register the VirtualBox kernel modules using DKMS
+ \[ OK \]
+Starting VirtualBox kernel modules \[ OK \]</code></pre></div>
+<p>At this point you&rsquo;ve got virtualbox done and installed. Now, the <em>real</em> interesting part begins: VMs. I have a centos template that I built on my laptop.  It&rsquo;s got the settings I like and I can just import it.  You can also build a new one, but that&rsquo;s for a different post.  I moved the template via scp over to the newly anointed VM host. Now, I just need to import it and I can start cloning.  <a href="http://www.virtualbox.org/manual/ch08.html">vboxmanage</a> is the command we&rsquo;re going to be utilizing heavily and it&rsquo;s really powerful.  ```
+vboxmanage import /home/buraglio/centos-63-template.ova</p>
+
+<pre><code>0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Interpreting /home/buraglio/centos-63-template.ova...
+OK.
+Disks: vmdisk1 150 1359413248 http://www.vmware.com/interfaces/specifications/vmdk.html#streamOptimized centos-63-template-disk1.vmdk 512919552 -1 
+Virtual system 0:
+ 0: Suggested OS type: &quot;Linux26\_64&quot;
+ (change with &quot;--vsys 0 --ostype &lt;type&gt;&quot;; use &quot;list ostypes&quot; to list all possible values)
+ 1: Suggested VM name &quot;centos-63-template&quot;
+ (change with &quot;--vsys 0 --vmname &lt;name&gt;&quot;)
+ 2: Number of CPUs: 2
+ (change with &quot;--vsys 0 --cpus &lt;n&gt;&quot;)
+ 3: Guest memory: 4096 MB
+ (change with &quot;--vsys 0 --memory &lt;MB&gt;&quot;)
+ 4: Network adapter: orig ur1-vm1 72.36.126.200/29, config 5, extra type=Bridged
+ 5: CD-ROM
+ (disable with &quot;--vsys 0 --unit 5 --ignore&quot;)
+ 6: SCSI controller, type LsiLogic
+ (change with &quot;--vsys 0 --unit 6 --scsitype {BusLogic|LsiLogic}&quot;;
+ disable with &quot;--vsys 0 --unit 6 --ignore&quot;)
+ 7: IDE controller, type PIIX4
+ (disable with &quot;--vsys 0 --unit 7 --ignore&quot;)
+ 8: IDE controller, type PIIX4
+ (disable with &quot;--vsys 0 --unit 8 --ignore&quot;)
+ 9: Hard disk image: source image=centos-63-template-disk1.vmdk, target path=/home/buraglio/VirtualBox VMs/centos-63-template/centos-63-template-disk1.vmdk, controller=6;channel=0
+ (change target path with &quot;--vsys 0 --unit 9 --disk path&quot;;
+ disable with &quot;--vsys 0 --unit 9 --ignore&quot;)
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Successfully imported the appliance.
+```
+
+It's there. you should now have a folder in your home directory that has the VM in it. 
+
+```
+ls -la VirtualBox\\ VMs/
+</code></pre>
+
+<p>total 12
+drwx&mdash;&mdash; 3 buraglio buraglio 4096 Jan 29 20:23 .
+drwx&mdash;&mdash;. 4 buraglio buraglio 4096 Jan 29 20:23 ..
+drwx&mdash;&mdash; 2 buraglio buraglio 4096 Jan 29 20:23 centos-63-template</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-to really make this useful, I clone all the VMs to the names I want and don't use the template at all. Now list the vms to verify what you have:```" data-lang="to really make this useful, I clone all the VMs to the names I want and don't use the template at all. Now list the vms to verify what you have:```">vboxmanage list vms
+&#34;centos-63-template&#34; {4875b540-5514-4d0b-bba8-ce255b7f44a2}</code></pre></div>
+<p>We have one VM named &ldquo;centos-63-template&rdquo;, which is exactly what I wanted. Now clone this VM to the first usable VM, I&rsquo;m building a floodlight OpenFlow controller, so I&rsquo;ll name it accordingly.```
+vboxmanage clonevm centos-63-template &ndash;name floodlight1 &ndash;register
+0%&hellip;10%&hellip;20%&hellip;30%&hellip;40%&hellip;50%&hellip;60%&hellip;70%&hellip;80%&hellip;90%&hellip;100%
+Machine has been successfully cloned as &ldquo;floodlight1&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Now list the vms to make sure it is listed:```" data-lang="Now list the vms to make sure it is listed:```">vboxmanage list vms
+``````
+&#34;centos-63-template&#34; {4875b540-5514-4d0b-bba8-ce255b7f44a2}
+``````
+&#34;floodlight1&#34; {8fb4f03d-d117-43d5-b4bf-24cdcc481686}</code></pre></div>
+<p>Now here is the part I really like about virtualbox headless mode (and yes, I know others like qemu and xen can do this), when a virtual machine is started in headless mode, the console of that host can be redirected to an RDP instance. This makes it very convenient to manage systems on an out of band network like an isolated vlan or other non-routed or non-publically available network. It also makes it very convenient for spinning up a new VM that doesn&rsquo;t have an IP stack configured. Its also very handy if you have a bad day and typo a host firewall rule or network config file. This has saved me a trip more than one time. To do this, you&rsquo;ll need the vrdp extension pack.  To list the installed extension packs, once again, use the vboxmanage command  ```
+VBoxManage list extpacks
+Extension Packs: 0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-The extension pack for my version is available [here](http://download.virtualbox.org/virtualbox/4.2.6/Oracle_VM_VirtualBox_Extension_Pack-4.2.6-82870.vbox-extpack).```" data-lang="The extension pack for my version is available [here](http://download.virtualbox.org/virtualbox/4.2.6/Oracle_VM_VirtualBox_Extension_Pack-4.2.6-82870.vbox-extpack).```">sudo VBoxManage extpack install Oracle\_VM\_VirtualBox\_Extension\_Pack-4.2.6-82870.vbox-extpack 
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Successfully installed &#34;Oracle VM VirtualBox Extension Pack&#34;.</code></pre></div>
+<p>At this point we&rsquo;re ready to fire up the VM and connect to the console.```
+vboxheadless -startvm floodlight1 -vrde on -vrdeproperty &ldquo;TCP/Ports&rdquo;=3390&amp;
+Oracle VM VirtualBox Headless Interface 4.2.6
+&copy; 2008-2012 Oracle Corporation
+All rights reserved.</p>
+
+<p>VRDE server is listening on port 3390.
+```The above command will start the VM &ldquo;floodlight1&rdquo;, enable vrde and set the vrde port to 3390. You should now be able to connect to the console of the host using any free or included RDP compatible client. I use the microsoft office for mac provided rdp client. <img src="http://www.forwardingplane.net/wp-content/uploads/2013/01/RDC.png" alt="RDC" /> You&rsquo;ll see an error when connecting since the server can&rsquo;t be verified.  This is expected.     <a href="http://www.forwardingplane.net/wp-content/uploads/2013/01/RDC-Verify.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/01/RDC-Verify.png" alt="RDC Verify" /></a>   Hit connect and ta-da! Console on your VM.</p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2013/01/Console.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/01/Console-1024x658.png" alt="Console" /></a></p>
+
+<p>  The best part about this is that it allows for really flexible management of virtual machines from a geographically different location.  Other than the initial install of CentOS 6, this was done 100% remotely, without a windows host and without an expensive hypervisor license. This is perfect for labs and learning virtualization, I&rsquo;d even consider this totally fine for production.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/virtualization">#Virtualization</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 31 Jan 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

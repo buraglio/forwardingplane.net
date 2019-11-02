@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/seagate-freeagent-3t-drive-on-a-mac/">
+<meta property="og:title" content="Seagate FreeAgent 3T drive on a mac" />
+<meta property="og:description" content="I was recently helping my brother-in-law out with the new Seagate FreeAgent GoFlex Desk 3 TB USB 3.0 External Hard Drivehe had purchased to do time machine backups on his mac. I personally have the 2t version and have been pretty happy with it, save for one small incident that I think was my fault that required some basic data recovery.
+Since the drive comes in a file system that is not HFS&#43; Journaled, it needed to be reformatted to support time machine backups." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/seagate-freeagent-3t-drive-on-a-mac/" />
+<meta property="article:published_time" content="2011-02-04T20:00:00+00:00" />
+<meta property="article:modified_time" content="2011-02-04T20:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Seagate FreeAgent 3T drive on a mac"/>
+<meta name="twitter:description" content="I was recently helping my brother-in-law out with the new Seagate FreeAgent GoFlex Desk 3 TB USB 3.0 External Hard Drivehe had purchased to do time machine backups on his mac. I personally have the 2t version and have been pretty happy with it, save for one small incident that I think was my fault that required some basic data recovery.
+Since the drive comes in a file system that is not HFS&#43; Journaled, it needed to be reformatted to support time machine backups."/>
+
+
+<meta itemprop="name" content="Seagate FreeAgent 3T drive on a mac">
+<meta itemprop="description" content="I was recently helping my brother-in-law out with the new Seagate FreeAgent GoFlex Desk 3 TB USB 3.0 External Hard Drivehe had purchased to do time machine backups on his mac. I personally have the 2t version and have been pretty happy with it, save for one small incident that I think was my fault that required some basic data recovery.
+Since the drive comes in a file system that is not HFS&#43; Journaled, it needed to be reformatted to support time machine backups.">
+
+
+<meta itemprop="datePublished" content="2011-02-04T20:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-02-04T20:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="361">
+
+
+
+<meta itemprop="keywords" content="How-To," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Seagate FreeAgent 3T drive on a mac 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Seagate FreeAgent 3T drive on a mac </h1>
+    <div class="content"> <p>I was recently helping my brother-in-law out with the new <a href="http://www.amazon.com/gp/product/B0045JLPNI?ie=UTF8&amp;tag=nickburaglioc-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B0045JLPNI">Seagate FreeAgent GoFlex Desk 3 TB USB 3.0 External Hard Drive</a><img src="http://www.assoc-amazon.com/e/ir?t=nickburaglioc-20&amp;l=as2&amp;o=1&amp;a=B0045JLPNI" alt="" /> he had purchased to do time machine backups on his mac. I personally have the 2t version and have been pretty happy with it, save for one small incident that I think was my fault that required some basic data recovery.<br />
+Since the drive comes in a file system that is not HFS+ Journaled, it needed to be reformatted to support time machine backups.<br />
+Simple, right? &ldquo;A five minute process&rdquo; I told him.<br />
+Well, I was wrong. This drive just could not be formatted or re-partitioned using the standard OSX disk utility. I walked him through it on the phone. Partition failure. It threw some cryptic error that I had not seen before in 15 years of using a mac. I kinda figured it was something he was missing since I&rsquo;m pretty awful at phone support, and if it wasn&rsquo;t, I wanted to see the error, so I drive over there.<br />
+Upon arriving, low and behold, it was in fact an error I&rsquo;d never seen. I tried 3 more times to partition and format the drive and once just to format it. Same errors every time, it would start and then throw an error that it had failed or that it had lost communication with the drive.<br />
+So, to test, I dropped to the trusty cli to see if I could do it from there.</p>
+
+<p>From the Terminal app (/Applications/Utilities/Terminal) I issued the command</p>
+
+<p>diskutil eraseDisk HFS+ Backup disk1</p>
+
+<p>Which was able to quickly accomplish the task. From there, I was able to mount and manipulate it in the Disk Utility (/Applicaations/Utilities/Disk Utility). Since I had not enabled the journal from the original command I reformatted the drive with MacOS X Entended (Journaled) and then it was ready to be a Time machine disk.</p>
+
+<p>I believe I could have done this all in one step using the command</p>
+
+<p>diskutil eraseDisk &ldquo;Journaled HFS+&rdquo; Backup disk1.</p>
+
+<p>I&rsquo;m still unsure why Disk Utility would not work.</p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 4 Feb 2011 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

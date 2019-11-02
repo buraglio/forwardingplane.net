@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/orig/2015-03-28-brocade-does-a-double-down-on-sdn/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.
+This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/orig/2015-03-28-brocade-does-a-double-down-on-sdn/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.
+This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.
+This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is.">
+
+
+
+<meta itemprop="wordCount" content="702">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> <p>Since <a href="http://techfieldday.com/event/nfd9/">Network Field Day 9</a>, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.<br />
+This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is. I tend to be a pretty harsh critic and have (more than once) been labeled as irreverent when it comes to what is stated in the network and security industry, instead focusing on what is actually necessary in a production network. Brocade has added some good products and features, keeping their SDN features at the forefront, as expected. These are great, but while useful and innovataive, I am less interested in those technical abilities. Brocade has been a long standing icon in the SDN and specifically in the openflow and <a href="http://www.opendaylight.org">OpenDayLight</a> space since the very early days. In fact, from an outsiders perspective they&#8217;ve bet their networking arm on it. They were one of the first to market and are able to make software changes quickly and add significant features due to the fact that their larger boxes are FPGA based. This is where it gets interesting for me as someone that had to manage large Foundry/Brocade networks for a number of years and who sports the scars and experiences to prove it. Knowing that the majority of the issues with their platform were software related things like lack of full featured protocols, buggy Layer 3 features and their infamously poor multicast support, the fact that they are laser focused on software defined networking has my wheels turning, and let me tell you why:</p>
+
+<ul>
+<li><p><em>Brocade is slurping up pretty much all of the thought leaders, idea producers, and game changers in the SDN community. This isn&#8217;t exactly ground breaking news, but it is worth repeating because it is significant. It signals, in a very public way, that they are not messing around. They&#8217;re embracing SDN and they are ready to stop selling sugar water and change the [networking]world. There is a related branch to this, bear with me, I&#8217;ll come back to it.</em></p></li>
+
+<li><p><em>Brocade purchased <a href="http://www.brocade.com/launch/vyatta/">Vyatta</a>, a completely software based company and they did not just absorb the IP and rebadge it. They are actively integrating it, as a product, into their portfolio.</em></p></li>
+
+<li><p><em>Brocade is <strong>supporting</strong> an open sourced based commercialized SDN controller. This signals that they are ready for someone to buy it, deploy it and use it in production. And to answer support questions.</em></p></li>
+</ul>
+
+<p>Circling back to my first point:</p>
+
+<ul>
+<li><em>Brocade hired <a href="https://www.linkedin.com/in/michaelbushong">Michael Bushong</a>.</em></li>
+</ul>
+
+<p>You may ask, why does that really matter? I assert that this indicates a very key element inside of Brocade: they know that they need to adapt and that they need a visionary to help direct that change. Bushong has a long history of enacting significant change. He is also a smart guy (see degree from UC Berkeley in advanced heat transfer &amp; fluid dynamics). Bushong was responsible for the SDN group and the One Junos initiative at Juniper. He was also a key player at Plexxi, a very innovative networking company with a unique product. He knows how to motivate and promote change and has built a culture that is open to it. In fact, after the NFD9 presentation several of the team members approached a handful of us and asked us to elaborate on the things we were asking about and requesting. I have also received follow ups on those items. These things may seem insignificant, but give some serious thought to how often network vendors ask these questions, follow up and actually <em>listen</em> to needs and requirements that are non-standard.</p>
+
+<p>All of that opinion aside, Brocade is also bringing good featues and really thinking about how to change and more importantly, improve, a key element in a sucessful company (see H.G Wells: &#8220;Adapt or perish, now as ever, is nature&#8217;s inexorable imperative.&#8221;)</p>
+
+<p>I remain intrigued.</p>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-1268" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-1268" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-1268" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-1268" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

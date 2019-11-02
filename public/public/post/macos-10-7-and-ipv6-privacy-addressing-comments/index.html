@@ -1,0 +1,359 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "public",
+        "name" : "MacOS 10.7 and IPv6 privacy addressing",
+        "headline" : "MacOS 10.7 and IPv6 privacy addressing",
+        "description" : "Charley - Aug 2, 2011\nI think the real security issue with EUI-64 address assignment is that your IPv6 address contains your same MAC address, wherever you go. So your movements are trackable between home, work, and coffee shop networks. It has less to do with what the L2 address actually is. Charley - Aug 2, 2011\nAlso, you missed a part of the command to turn it off; it\x26rsquo;s:",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2011",
+        "datePublished": "2011-07-31 02:40:00 \x2b0000 \x2b0000",
+        "dateModified" : "2011-07-31 02:40:00 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/public\/post\/macos-10-7-and-ipv6-privacy-addressing-comments\/",
+        "wordCount" : "174",
+        "keywords" : [ "IPv6","UNIX","Blog" ]
+    }
+    </script>
+        
+            <title>MacOS 10.7 and IPv6 privacy addressing - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MacOS 10.7 and IPv6 privacy addressing"/>
+<meta name="twitter:description" content="Charley - Aug 2, 2011
+I think the real security issue with EUI-64 address assignment is that your IPv6 address contains your same MAC address, wherever you go. So your movements are trackable between home, work, and coffee shop networks. It has less to do with what the L2 address actually is. Charley - Aug 2, 2011
+Also, you missed a part of the command to turn it off; it&rsquo;s:"/>
+
+        <meta property="og:title" content="MacOS 10.7 and IPv6 privacy addressing" />
+<meta property="og:description" content="Charley - Aug 2, 2011
+I think the real security issue with EUI-64 address assignment is that your IPv6 address contains your same MAC address, wherever you go. So your movements are trackable between home, work, and coffee shop networks. It has less to do with what the L2 address actually is. Charley - Aug 2, 2011
+Also, you missed a part of the command to turn it off; it&rsquo;s:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/public/post/macos-10-7-and-ipv6-privacy-addressing-comments/" />
+<meta property="article:published_time" content="2011-07-31T02:40:00+00:00" />
+<meta property="article:modified_time" content="2011-07-31T02:40:00+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="MacOS 10.7 and IPv6 privacy addressing">
+<meta itemprop="description" content="Charley - Aug 2, 2011
+I think the real security issue with EUI-64 address assignment is that your IPv6 address contains your same MAC address, wherever you go. So your movements are trackable between home, work, and coffee shop networks. It has less to do with what the L2 address actually is. Charley - Aug 2, 2011
+Also, you missed a part of the command to turn it off; it&rsquo;s:">
+
+
+<meta itemprop="datePublished" content="2011-07-31T02:40:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-07-31T02:40:00&#43;00:00" />
+<meta itemprop="wordCount" content="174">
+
+
+
+<meta itemprop="keywords" content="IPv6,UNIX," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/public/post/macos-10-7-and-ipv6-privacy-addressing-comments/">MacOS 10.7 and IPv6 privacy addressing</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p><a href="https://openid.aol.com/opaque/31092bb2-bd25-11e0-8541-000bcdcb2996" title="noreply@blogger.com">Charley</a> - <time datetime="2011-08-02 16:34:03">Aug 2, 2011</time></p>
+
+<p>I think the real security issue with EUI-64 address assignment is that your IPv6 address contains your same MAC address, wherever you go. So your movements are trackable between home, work, and coffee shop networks. It has less to do with what the L2 address actually is.
+<hr /></p>
+
+<p><a href="http://openid.aol.com/cvk256" title="noreply@blogger.com">Charley</a> - <time datetime="2011-08-02 16:38:03">Aug 2, 2011</time></p>
+
+<p>Also, you missed a part of the command to turn it off; it&rsquo;s:</p>
+
+<p>sudo sysctl -w net.inet6.ip6.use_tempaddr=1</p>
+
+<p>To make it permanent across reboots requires editing /etc/sysctl.conf.
+<hr /></p>
+
+<p><a href="http://www.blogger.com/profile/02818854373192493920" title="noreply@blogger.com">Nick Buraglio</a> - <time datetime="2011-08-06 20:16:19">Aug 6, 2011</time></p>
+
+<p>I don&rsquo;t buy the tracking of the mac address. I guess it&rsquo;s feasible, but spoofing a mac is so easy nowadays, I just don&rsquo;t see the point. There are so many ways to track a user via http logs, logged access to shared resources, etc. that I just don&rsquo;t buy that it&rsquo;s any easier than any other mechanism.</p>
+
+<p>sudo sysctl -w net.inet6.ip6.use_tempaddr=1 wil enable the tempaddr,<br />
+sudo sysctl -w net.inet6.ip6.use_tempaddr=0 disables it, if I recall correctly. Good point about the /etc/sysctl.conf. I&rsquo;ll add that in.
+<hr /></p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

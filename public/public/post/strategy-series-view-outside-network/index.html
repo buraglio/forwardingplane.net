@@ -1,0 +1,364 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "public",
+        "name" : "Strategy Series: How do you view outside of your network?",
+        "headline" : "Strategy Series: How do you view outside of your network?",
+        "description" : "In the tradition of my NIX4NetEng series I\x26rsquo;m going to dive deep into the world of strategy, and specifically into the strategy of how we look at and operate our networks, the data they generate and the analytics that are available (and often overlooked) in how networks are managed both long term and day-to-day. So, in the spirit of visibility, lets think about how typical networks are monitored. My guess is that you either already know, or will soon realize that visibility and testing across disparate networks is hard.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-02-10 16:58:28 \x2b0000 \x2b0000",
+        "dateModified" : "2018-02-10 16:58:28 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/public\/post\/strategy-series-view-outside-network\/",
+        "wordCount" : "906",
+        "keywords" : [ "Musings","Strategy Series","Blog" ]
+    }
+    </script>
+        
+            <title>Strategy Series: How do you view outside of your network? - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Strategy Series: How do you view outside of your network?"/>
+<meta name="twitter:description" content="In the tradition of my NIX4NetEng series I&rsquo;m going to dive deep into the world of strategy, and specifically into the strategy of how we look at and operate our networks, the data they generate and the analytics that are available (and often overlooked) in how networks are managed both long term and day-to-day. So, in the spirit of visibility, lets think about how typical networks are monitored. My guess is that you either already know, or will soon realize that visibility and testing across disparate networks is hard."/>
+
+        <meta property="og:title" content="Strategy Series: How do you view outside of your network?" />
+<meta property="og:description" content="In the tradition of my NIX4NetEng series I&rsquo;m going to dive deep into the world of strategy, and specifically into the strategy of how we look at and operate our networks, the data they generate and the analytics that are available (and often overlooked) in how networks are managed both long term and day-to-day. So, in the spirit of visibility, lets think about how typical networks are monitored. My guess is that you either already know, or will soon realize that visibility and testing across disparate networks is hard." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/public/post/strategy-series-view-outside-network/" />
+<meta property="article:published_time" content="2018-02-10T16:58:28+00:00" />
+<meta property="article:modified_time" content="2018-02-10T16:58:28+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Strategy Series: How do you view outside of your network?">
+<meta itemprop="description" content="In the tradition of my NIX4NetEng series I&rsquo;m going to dive deep into the world of strategy, and specifically into the strategy of how we look at and operate our networks, the data they generate and the analytics that are available (and often overlooked) in how networks are managed both long term and day-to-day. So, in the spirit of visibility, lets think about how typical networks are monitored. My guess is that you either already know, or will soon realize that visibility and testing across disparate networks is hard.">
+
+
+<meta itemprop="datePublished" content="2018-02-10T16:58:28&#43;00:00" />
+<meta itemprop="dateModified" content="2018-02-10T16:58:28&#43;00:00" />
+<meta itemprop="wordCount" content="906">
+
+
+
+<meta itemprop="keywords" content="Musings,Strategy Series," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/public/post/strategy-series-view-outside-network/">Strategy Series: How do you view outside of your network?</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                
+
+<p>In the tradition of my <a href="https://www.forwardingplane.net/topics/nix4neteng/">NIX4NetEng</a> series I&rsquo;m going to dive deep into the world of strategy, and specifically into the strategy of how we look at and operate our networks, the data they generate and the analytics that are available (and often overlooked) in how networks are managed both long term and day-to-day. So, in the spirit of visibility, lets think about how typical networks are monitored. My guess is that you either already know, or will soon realize that v<em>isibility and testing across disparate networks is hard.</em> This is a <strong>big</strong> topic, so sit back, relax, get your feet up and prepare for a magical journey into the fun and fantastical world of network visibility!</p>
+
+<p><a href="https://giphy.com/gifs/magic-krhB8ydCQiYZq">via GIPHY</a> I&rsquo;m going to glaze over the low hanging fruit of SNMP monitoring - you have all of that right? Yes? Good. No?!?! Shame on you&hellip;I&rsquo;l do another post of some of my <a href="https://www.librenms.org/">favorite tools</a> soon and you can shamefully download them and set them up, head hung low (until they&rsquo;re up monitoring and alerting, at which point you can raise your head up high!). Lets make a very, very bold assumption that you totally understand how your internal network works, you have graphing, up/down statistics, traffic baselines and visibility into <a href="http://www.forwardingplane.net/2017/12/what-is-your-netflow-strategy/">traffic flow</a> and <a href="http://www.forwardingplane.net/2017/10/configuration-backups-opportunity-automation-management/">configurations</a>. Don&rsquo;t worry, if you don&rsquo;t have those things you can link to a few options here or wait and I&rsquo;ll circle back around to them in later topics.</p>
+
+<h1 id="visibility-and-testing-across-diverse-networks-is-hard"><em>&ldquo;Visibility and testing across diverse networks is hard.&rdquo;</em></h1>
+
+<p>OK, so visibility. <img src="http://www.nickburaglio.com/wp-content/uploads/2015/09/day7.jpg" alt="" /> Any network engineer with some experience under their belt has gotten the problem report of &ldquo;the internet is down&rdquo; or &ldquo;the internet is slow&rdquo;. Yup, we all know them, we all love them. We even had an internal joke at a previous employer of mine that we could &ldquo;ping the internet&rdquo;, in that we created a CNAME of &ldquo;theinternet&rdquo; for a host that had high uptime.<code>
+(~) heelflip $ ping theinternet
+PING theinternet (10.142.143.167): 56 data bytes
+64 bytes from 10.14.143.167: icmp\_seq=0 ttl=54 time=0.794 ms
+64 bytes from 10.14.143.167: icmp\_seq=1 ttl=54 time=0.768 ms
+64 bytes from 10.14.143.167: icmp\_seq=2 ttl=54 time=0.734 ms
+64 bytes from 10.14.143.167: icmp\_seq=3 ttl=54 time=0.732 ms
+64 bytes from 10.14.143.167: icmp\_seq=4 ttl=54 time=0.758 ms
+64 bytes from 10.14.143.167: icmp\_seq=5 ttl=54 time=0.761 ms
+</code>Right, so you get the internal network. What about when you get to the part that you don&rsquo;t control and can&rsquo;t see into? That&rsquo;s harder, but rest easy - there are a number of ways to go about gathering the necessary details. What should those data sources be? Let me throw down what I think are important to track to really understand what the heck is going on outside of your AS or sphere of influence.</p>
+
+<ol>
+<li>Paths to common destinations (<a href="https://google.com">google</a>, <a href="https://www.servicenow.com">servicenow</a>, <a href="https://www.salesforce.com">SalesForce)</a></li>
+<li>Route table for all peerings (if taking more than default and are using eBGP)</li>
+<li>Latency statistics from your site to common destinations (see 1.)</li>
+<li>Latency statistics from outside of your network to your site</li>
+<li>Latency (and possibly throughput) statistics to intermediary points across your typical paths</li>
+<li>External route table and path statistics</li>
+<li>Packet loss statistics</li>
+</ol>
+
+<p>That&rsquo;s a decent amount of data. How can this be done? Well, let me tell you, there are a few ways but drawing them all together can be a daunting task. This can be accomplished by looking at data produced by <a href="https://oss.oetiker.ch/smokeping/">smokeping</a> or <a href="https://github.com/perfsonar/owamp">owamp</a> with an SNMP graphing tool for interface stats and <a href="https://bgpmon.net/">BGPMon</a> and Peermon for BGP information. An opensource product called <a href="https://www.perfsonar.net/">perfSonar</a> rolls a lot of this together, but there are commercial packages such as <a href="https://www.thousandeyes.com/">ThousandEyes</a> that offer these types of statistics across a large swath of the internet as well. <a href="https://atlas.ripe.net/">RIPE ATLAS</a> has a great deal of statistics that can be easily queried  and has a large install base too. If you are a savvy coder you can grab some good information from the <a href="https://atlas.ripe.net/docs/api/v2/manual/">RIPE ATLAS API</a>. If you don&rsquo;t have the resources, capability, or time to do that then there is an option for a turnkey solution. <a href="https://www.thousandeyes.com">ThousandEyes</a> has a strong offering and there is a great deal of information that they gather. They also have very good presence and availability of information about their product, most recently presenting at <a href="http://techfieldday.com/appearance/thousandeyes-presents-at-networking-field-day-17/">Network Field Day 17</a> (and historically at <a href="http://techfieldday.com/appearance/thousandeyes-presents-at-networking-field-day-6/">NFD 6</a>, <a href="http://techfieldday.com/appearance/thousandeyes-presents-at-networking-field-day-8/">NFD 8</a>, and <a href="http://techfieldday.com/appearance/thousandeyes-presents-at-networking-field-day-12/">NFD 12).</a>I was a delegate at NFD 17 and was pleased to see another tool that provides visibility into BGP, a very often overlooked and yet unbelievablycritical and useful viewpoint which has historically been difficult to see outside of tools like <a href="http://www.forwardingplane.net/2015/03/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/">BGPMon</a>. (see my previous <a href="https://www.forwardingplane.net/topics/nix4neteng/">NIX4NetEng</a> <a href="http://www.forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/">post about BGP visibility</a>). <a href="http://techfieldday.com/appearance/netbeez-presents-at-networking-field-day-9/">NetBeez</a> also has a reasonable offering but last I have looked it doesn&rsquo;t really do much outside of a network (admittedly I may be behind the curve with their product). If you&rsquo;re interested in seeing or hearing some more about these products, I did a packet pushers podcast on perfSonar a few years ago which is dated as far as feeds and speeds, but still very relevant today, you can read the show notes and listen <a href="http://packetpushers.net/podcast/podcasts/show-163-open-source-perfsonar-finds-the-flaws-impacting-the-flows/">here.</a> For more info on ThousandEyes you can check out the latest <a href="http://techfieldday.com/event/nfd17/">NFD17</a> videos.   The real point is that to really see the performance of your network and to fully understand the true user experience you need to have total visibility into the entire ecosystem, not just the pieces that you can control.</p>
+
+<h6 id="for-anyone-wigged-out-about-the-eyeball-pic-those-are-my-eyes-7-days-after-lasik-http-www-nickburaglio-com-2015-09-02-eg-html">*For anyone wigged out about the eyeball pic, those are my eyes <a href="http://www.nickburaglio.com/2015/09/02/eg-html/">7 days after Lasik</a>.</h6>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

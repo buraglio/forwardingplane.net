@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/alternate-model-for-sp-networks/">
+<meta property="og:title" content="Alternate model for Service Provider networks; or how to keep net neutrality intact" />
+<meta property="og:description" content="There has been a lot of buzz about the service provider model, net neutrality and tiered access for consumers in the past few years. Just this week Google has been accused of paying Orange (more likely Orange is forcing google) for handling its traffic. This is a VERY slippery slope that teeters on the edge of what we all want to avoid as consumers or content creators. This recent story has sparked something I&rsquo;ve been thinking about for a very long time." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/alternate-model-for-sp-networks/" />
+<meta property="article:published_time" content="2013-01-23T05:34:38+00:00" />
+<meta property="article:modified_time" content="2013-01-23T05:34:38+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Alternate model for Service Provider networks; or how to keep net neutrality intact"/>
+<meta name="twitter:description" content="There has been a lot of buzz about the service provider model, net neutrality and tiered access for consumers in the past few years. Just this week Google has been accused of paying Orange (more likely Orange is forcing google) for handling its traffic. This is a VERY slippery slope that teeters on the edge of what we all want to avoid as consumers or content creators. This recent story has sparked something I&rsquo;ve been thinking about for a very long time."/>
+
+
+<meta itemprop="name" content="Alternate model for Service Provider networks; or how to keep net neutrality intact">
+<meta itemprop="description" content="There has been a lot of buzz about the service provider model, net neutrality and tiered access for consumers in the past few years. Just this week Google has been accused of paying Orange (more likely Orange is forcing google) for handling its traffic. This is a VERY slippery slope that teeters on the edge of what we all want to avoid as consumers or content creators. This recent story has sparked something I&rsquo;ve been thinking about for a very long time.">
+
+
+<meta itemprop="datePublished" content="2013-01-23T05:34:38&#43;00:00" />
+<meta itemprop="dateModified" content="2013-01-23T05:34:38&#43;00:00" />
+<meta itemprop="wordCount" content="685">
+
+
+
+<meta itemprop="keywords" content="Musings,NSP,NSP,Service Provider," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Alternate model for Service Provider networks; or how to keep net neutrality intact 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Alternate model for Service Provider networks; or how to keep net neutrality intact </h1>
+    <div class="content"> <p>There has been a lot of buzz about the service provider model, <a href="http://en.wikipedia.org/wiki/Net_neutrality">net neutrality</a> and tiered access for consumers in the past few years.  Just this week <a href="http://www.theverge.com/2013/1/19/3894182/french-isp-orange-says-google-pays-to-send-traffic">Google has been accused of paying Orange</a> (more likely Orange is forcing google) for handling its traffic.  This is a VERY slippery slope that teeters on the edge of what we all want to avoid as consumers or content creators. This recent story has sparked something I&rsquo;ve been thinking about for a very long time. Rewind to 1999. I worked for a small, regional broadband provider what seems like a lifetime ago, back when broadband was new and shiny and not terribly common.  We provided ATM based DSL, T1, ISDN and on some occasions dry copper gorilla net access to southern Chicago communities, Champaign-Urbana, IL, Danville, IL, Kankakee, IL,  a bit of west Indiana and a handful of small communities in between.  It was a proving ground for a young, motivated networking guy.  I was the senior network engineer, technical lead and for a while had a handful of direct report employees and students. This was where I really cut my teeth with routing, switching, content delivery and service levels. I ended up leaving there and moving on to work on a lot of HPC work and bleeding edge WAN stuff (think n x 10Gbps across the country in 2003).  However, one thing I took away from that ISP job was something that wasn&rsquo;t really a new idea as much as just a uniquely positioned service and a good idea.  There was this local POP connection run by the university that allowed for exchange of  routes between any network that could pay the local loop charge.  It was a way to get cheap, fast access to anything local.  Unmetered, unfiltered.  Exchange any routes you want (that you own), take whatever routes you need. This was a clever model because down where we are located, 2.5 hours south of Chicago, transit bandwidth wasn&rsquo;t (and isn&rsquo;t) cheap.  Every local provider connected as did the community hospital, the university and a handful of others.  We took FULL advantage of fast connectivity between each other and all saved on transit bandwidth.  <a href="http://en.wikipedia.org/wiki/National_research_and_education_network">This kind of thing has been in place in the R&amp;E</a> community for far longer than I&rsquo;ve been around. Fast forward 11 years. I&rsquo;m still a huge fan of bi-lateral BGP peerings.  I want as many as I can get.  As a service provider I want a default free network with a lot of peers in many geographically diverse locations. I propose a [not-so]new model for service providers.  Create peering points, meet me routers.  Allow any network to connect for a port fee and exchange local routes.  Make these local routes free, unlimited and unfiltered (do your proper capacity planning, of course).  Opening up exchanges promotes better, diverse paths to resources and allows for a better overall user experience. Data is where the telecom companies make their money nowadays.  Net Neutrality is constantly in the news and in danger of being compromised.  Tiered services are everywhere.  I understand the need to meter service.  I did the ISP thing, I know that 5% of the users use 80% of the bandwidth.  That&rsquo;s not new either.  I challenge larger service providers to think about it in a new way, though.  We&rsquo;re making it work.  It&rsquo;s a smaller scale, but it works.  I think it can scale if architected correctly.  It may have more operational overhead, but I suspect it can also command a bit more in price.  It could also allow for the non-asterisked use of the word &ldquo;unlimited&rdquo;, so marketing guys will love it.</p>
+
+<p>Is it more engineering? Sure.  Is it harder to manage? Maybe, but likely not harder than architecting around content providers that don&rsquo;t want to pay.  It is a better idea and promoting better service for both content providers and consumers of their service than making content providers pay for transit?  Absolutely.</p>
+
+<p>We&rsquo;re doing this on <a href="http://uc2b.net">UC2B</a>. It played a part in winning us the <a href="http://www.natoa.org/2012/09/natoa-announces-recipients-of-4.html">Community Broadband Project of the Year award from the NATOA</a>.  It&rsquo;s a good idea.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/nsp">#NSP</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/nsp">#NSP</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/service-provider">#Service Provider</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 23 Jan 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

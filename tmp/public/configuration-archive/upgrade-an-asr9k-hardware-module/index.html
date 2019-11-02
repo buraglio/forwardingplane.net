@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/">
+<meta property="og:title" content="Upgrade Single ASR9k hw-module" />
+<meta property="og:description" content="ASR9k is a powerful device but management may be daunting to anyone not familiar with IOS-XR. Inserting new line cards in may require a manual upgrade of the module to match the current running code on the chassis
+Show all slow and firmware details:
+show hw-module fpd location rack/slot/subslot In the admin prompt:
+upgrade hw-module fpd all location 0/RSP1/CPU0 During the upgrade, this is the output, it will take a bit of time to perform the update." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/" />
+<meta property="article:published_time" content="2019-02-20T13:58:08-06:00" />
+<meta property="article:modified_time" content="2019-02-20T13:58:08-06:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Upgrade Single ASR9k hw-module"/>
+<meta name="twitter:description" content="ASR9k is a powerful device but management may be daunting to anyone not familiar with IOS-XR. Inserting new line cards in may require a manual upgrade of the module to match the current running code on the chassis
+Show all slow and firmware details:
+show hw-module fpd location rack/slot/subslot In the admin prompt:
+upgrade hw-module fpd all location 0/RSP1/CPU0 During the upgrade, this is the output, it will take a bit of time to perform the update."/>
+
+
+<meta itemprop="name" content="Upgrade Single ASR9k hw-module">
+<meta itemprop="description" content="ASR9k is a powerful device but management may be daunting to anyone not familiar with IOS-XR. Inserting new line cards in may require a manual upgrade of the module to match the current running code on the chassis
+Show all slow and firmware details:
+show hw-module fpd location rack/slot/subslot In the admin prompt:
+upgrade hw-module fpd all location 0/RSP1/CPU0 During the upgrade, this is the output, it will take a bit of time to perform the update.">
+
+
+<meta itemprop="datePublished" content="2019-02-20T13:58:08-06:00" />
+<meta itemprop="dateModified" content="2019-02-20T13:58:08-06:00" />
+<meta itemprop="wordCount" content="306">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Upgrade Single ASR9k hw-module 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Upgrade Single ASR9k hw-module </h1>
+    <div class="content"> <p>ASR9k is a powerful device but management may be daunting to anyone not familiar with IOS-XR. Inserting new line cards in may require a manual upgrade of the module to match the current running code on the chassis</p>
+
+<p>Show all slow and firmware details:</p>
+
+<pre class="wp-block-preformatted">show hw-module fpd location <em>rack/slot/subslot</em></pre>
+
+<p>In the admin prompt:</p>
+
+<pre class="wp-block-preformatted">upgrade hw-module fpd all location 0/RSP1/CPU0</pre>
+
+<p>During the upgrade, this is the output, it will take a bit of time to perform the update. You may also need to upgrade things like fan trays, etc.</p>
+
+<pre class="wp-block-preformatted">RP/0/RSP0/CPU0:core-9k(admin)#upgrade hw-module fpd all location 0/RSP1/CPU0Mon Feb 18 09:56:49.201 CST<br />***** UPGRADE WARNING MESSAGE: *****  <br />*  This upgrade operation has a maximum timout of 90 minutes.  *  <br />*  If you are executing the cmd for one specific location and  *  <br />*  card in that location reloads or goes down for some reason  *  <br />*  you can press CTRL-C to get back the RP's prompt.           *  <br />*  If you are executing the cmd for _all_ locations and a node *  <br />*  reloads or is down please allow other nodes to finish the   *  <br />*  upgrade process before pressing CTRL-C.                     *<br />% RELOAD REMINDER: <br /> - The upgrade operation of the target module will not interrupt its normal    operation. However, for the changes to take effect, the target module    will need to be manually reloaded after the upgrade operation. This can    be accomplished with the use of "hw-module &lt;target> reload" command.  <br />- If automatic reload operation is desired after the upgrade, please use    the "reload" option at the end of the upgrade command.  <br />- The output of "show hw-module fpd location" command will not display    correct version information after the upgrade if the target module is    not reloaded.<br /><br />NOTE: Chassis CLI will not be accessible while upgrade is in progress.</pre>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-1616" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-1616" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-1616" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-1616" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 20 Feb 2019 </div>
+  </div>
+
+</footer>
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

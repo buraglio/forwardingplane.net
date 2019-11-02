@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/vmware-esxi-cli-reference/">
+<meta property="og:title" content="VMWare ESXi CLI reference" />
+<meta property="og:description" content="One of my biggest complaints about VMware is that it is an enterprise application. It has historically catered to the masses, which I completely understand, but those of us that aren&rsquo;t a fortune 500 company are figuratively and operationally shoved into a corner and forced to find hackish ways of doing things to work around the enterprise nature. One really, really good example of this is OS dependency. I hated architecture dependencies back in the old days (x86, SPARC, PPC) and I absolutely despise things that are OS platform dependent now." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/vmware-esxi-cli-reference/" />
+<meta property="article:published_time" content="2013-06-30T14:24:51+00:00" />
+<meta property="article:modified_time" content="2013-06-30T14:24:51+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VMWare ESXi CLI reference"/>
+<meta name="twitter:description" content="One of my biggest complaints about VMware is that it is an enterprise application. It has historically catered to the masses, which I completely understand, but those of us that aren&rsquo;t a fortune 500 company are figuratively and operationally shoved into a corner and forced to find hackish ways of doing things to work around the enterprise nature. One really, really good example of this is OS dependency. I hated architecture dependencies back in the old days (x86, SPARC, PPC) and I absolutely despise things that are OS platform dependent now."/>
+
+
+<meta itemprop="name" content="VMWare ESXi CLI reference">
+<meta itemprop="description" content="One of my biggest complaints about VMware is that it is an enterprise application. It has historically catered to the masses, which I completely understand, but those of us that aren&rsquo;t a fortune 500 company are figuratively and operationally shoved into a corner and forced to find hackish ways of doing things to work around the enterprise nature. One really, really good example of this is OS dependency. I hated architecture dependencies back in the old days (x86, SPARC, PPC) and I absolutely despise things that are OS platform dependent now.">
+
+
+<meta itemprop="datePublished" content="2013-06-30T14:24:51&#43;00:00" />
+<meta itemprop="dateModified" content="2013-06-30T14:24:51&#43;00:00" />
+<meta itemprop="wordCount" content="408">
+
+
+
+<meta itemprop="keywords" content="How-To,UNIX,Virtualization," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     VMWare ESXi CLI reference 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> VMWare ESXi CLI reference </h1>
+    <div class="content"> <p>One of my biggest complaints about VMware is that it is an enterprise application. It has historically catered to the masses, which I completely understand, but those of us that aren&rsquo;t a fortune 500 company are figuratively and operationally shoved into a corner and forced to find hackish ways of doing things to work around the enterprise nature. One really, really good example of this is OS dependency. I hated architecture dependencies back in the old days (x86, SPARC, PPC) and I absolutely despise things that are OS platform dependent now.  It&rsquo;s inconvenient and just plain sucks for anyone using anything but that required platform. This goes for anything, mac dependent, MS dependent, unix dependent, whatever. I don&rsquo;t discriminate in my idealism.  While I realize it is an impossible, idealistic expectation,  I back up my stance 100% regardless. That being said, one of the most irritating of those in recent memory has been VMware. Managing the VMWare ESXi instances that I run for both lab and production work is a pain. Since I&rsquo;m not really a sysadmin or a virtualization engineer my knowledge of this stuff is surely limited I may be going about this in a non-optimal way, but until recently it has required a one-off host or VM running windows with the client to do anything useful. Apparently this has changed with the pay version in 5.something adding a web interface.  Unfortunately this isn&rsquo;t an option at this time for me, it&rsquo;s cost prohibitive. So, when I found it necessary to do some management without a windows VM or host, I was pleasantly surprised to find that I can do simple tasks via the SSH CLI. was able to query power state, start, stop, etc. using simple CLI tools. Now, these are all documented at the VMware KB, but I wanted to throw together a quick reference sheet for all of them in one place so I started compiling it <a href="http://www.forwardingplane.net/unix/vmware-esxi-cli-reference/">here</a>.  Please feel free to shoot over any additions or quick tips that should be on there. This is just the tip of the iceberg, I suspect (or maybe I&rsquo;m just going about my VMware management all wrong; I&rsquo;m open to that as well and suggestions on how to remedy). The most useful for me so far have been inventory and power related.```
+List all VMs:
+vim-cmd vmsvc/getallvms</p>
+
+<p>List power state of VM:
+vim-cmd vmsvc/power.getstate <VM ID></p>
+
+<p>Power on VM
+vim-cmd vmsvc/power.on <VM ID></p>
+
+<p>Power off VM
+vim-cmd vmsvc/power.off <VM ID></p>
+
+<p>```</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/virtualization">#Virtualization</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 30 Jun 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

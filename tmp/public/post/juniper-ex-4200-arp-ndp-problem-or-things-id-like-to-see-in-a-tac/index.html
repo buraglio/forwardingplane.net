@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/juniper-ex-4200-arp-ndp-problem-or-things-id-like-to-see-in-a-tac/">
+<meta property="og:title" content="Juniper EX 4200 ARP / NDP problem; or things I&#39;d like to see in a TAC" />
+<meta property="og:description" content="Recently we&rsquo;ve run into an odd issue while routing on an EX4200 series. These little JunOS boxes are a nice alternative for an entry level building router, they support L2/L3 functionality, a PVST&#43;-ish protocol and, with advanced licensing, IPv6, ISIS and BGP. They have multi 10G interface options and come in a pluggable fiber option. We use them all over for light layer 3. They can also be stacked via stacking cables and fiber, which is very handy and makes them extremely versatile but not really applicable for the purpose of this entry." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/juniper-ex-4200-arp-ndp-problem-or-things-id-like-to-see-in-a-tac/" />
+<meta property="article:published_time" content="2012-11-06T03:58:00+00:00" />
+<meta property="article:modified_time" content="2012-11-06T03:58:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Juniper EX 4200 ARP / NDP problem; or things I&#39;d like to see in a TAC"/>
+<meta name="twitter:description" content="Recently we&rsquo;ve run into an odd issue while routing on an EX4200 series. These little JunOS boxes are a nice alternative for an entry level building router, they support L2/L3 functionality, a PVST&#43;-ish protocol and, with advanced licensing, IPv6, ISIS and BGP. They have multi 10G interface options and come in a pluggable fiber option. We use them all over for light layer 3. They can also be stacked via stacking cables and fiber, which is very handy and makes them extremely versatile but not really applicable for the purpose of this entry."/>
+
+
+<meta itemprop="name" content="Juniper EX 4200 ARP / NDP problem; or things I&#39;d like to see in a TAC">
+<meta itemprop="description" content="Recently we&rsquo;ve run into an odd issue while routing on an EX4200 series. These little JunOS boxes are a nice alternative for an entry level building router, they support L2/L3 functionality, a PVST&#43;-ish protocol and, with advanced licensing, IPv6, ISIS and BGP. They have multi 10G interface options and come in a pluggable fiber option. We use them all over for light layer 3. They can also be stacked via stacking cables and fiber, which is very handy and makes them extremely versatile but not really applicable for the purpose of this entry.">
+
+
+<meta itemprop="datePublished" content="2012-11-06T03:58:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-11-06T03:58:00&#43;00:00" />
+<meta itemprop="wordCount" content="584">
+
+
+
+<meta itemprop="keywords" content="Routing," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Juniper EX 4200 ARP / NDP problem; or things I&#39;d like to see in a TAC 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Juniper EX 4200 ARP / NDP problem; or things I&#39;d like to see in a TAC </h1>
+    <div class="content"> <p>    Recently we&rsquo;ve run into an odd issue while routing on an EX4200 series.  These little JunOS boxes are a nice alternative for an entry level building router, they support L2/L3 functionality, a PVST+-ish protocol and, with advanced licensing, IPv6, ISIS and BGP. They have multi 10G interface options and come in a pluggable fiber option.  We use them all over for light layer 3.  They can also be stacked via stacking cables and fiber, which is very handy and makes them extremely versatile but not really applicable for the purpose of this entry.  Anyway, one of our buildings had some odd issues that popped up from time to time, normally over the course of several months.  How is manifests itself is an apparent corrupted ARP / NDP table.  Clearing both fixed their respective traffic&hellip;.for a while.  While this problem in and of itself is moderately interesting, the real issue arose when, after an extensive JTAC experience, I couldn&rsquo;t find any reference to the PR that they said was causing this issue (slow memory leak). PR664807.  Even looking through the <a href="http://www.juniper.net/techpubs/en_US/junos10.4/information-products/topic-collections/release-notes/10.4/index.html?topic-51158.html">techpub notes for the JunOS version 10.4R3</a>, I can&rsquo;t find any reference to this PR.</p>
+
+<p>    What I did find was multi-facited.  Either the JTAC engineer was just incorrect and mistyped, or the site is not efficiently relaying information.</p>
+
+<p>    It&rsquo;s no secret that I&rsquo;m hyper-critical of support engineers.  I don&rsquo;t call any TAC very often, if anyone in my group calls a TAC, it&rsquo;s an &ldquo;oh sh!t&rdquo; moment or we&rsquo;ve exhausted all other resources.  We take a lot of pride, myself included, in being good at our jobs.  That being said, lets give the benefit of the doubt and make an assumption that the JTAC engineer gave us the correct PR.</p>
+
+<p>    The PR search that jtac offers is pretty awful.  It&rsquo;s hard to find, can&rsquo;t seem to find known PRs and is generally clunky and yuckie.  In their defense, most TAC KBs are not good.  However, and try doing a google search for this and you&rsquo;ll find links to <a href="https://www.juniper.net/prsearch/simplesearch.jsp">https://www.juniper.net/prsearch/simplesearch.jsp</a>, which doesn&rsquo;t work.  You&rsquo;ll also find a lot of reference to that URL when searching the JTAC KB, as noted <a href="http://kb.juniper.net/InfoCenter/index?page=content&amp;id=KB17924&amp;actp=search&amp;viewlocale=en_US&amp;searchid=1352170024537">here</a> under the heading &ldquo;Where can I search known Junos bugs?&rdquo;.</p>
+
+<p>    I&rsquo;m going to make a [giant] assumption that this is <strong>not</strong> user error on my part.  This is a problem that needs fixed.  I&rsquo;m into making lists lately, so here is another one:</p>
+
+<p>Things I would like to see in a TAC</p>
+
+<ul>
+<li><p>Competent first level engineers.  </p></li>
+
+<li><p>Know when to escalate, there is no shame in asking for help. </p></li>
+
+<li><p>Engineers that have at least some <strong>soft</strong> skills. </p></li>
+
+<li><p>People skills are nearly as important as tech chops, especially in a TAC</p></li>
+
+<li><p>Efficient troubleshooting process.</p></li>
+
+<li><p>This can be taught, come on guys, get to it.</p></li>
+
+<li><p>A decent knowledge base.</p></li>
+
+<li><p>Quit moving crap around or make the old links forward, this is web programming 101</p></li>
+
+<li><p>Make searches work easily</p></li>
+
+<li><p>Allow for multi-faceted searches</p></li>
+
+<li><p>STOP ASKING FOR INFORMATION YOU ALREADY HAVE</p></li>
+
+<li><p>We sent in the &ldquo;show tech&rdquo;, &ldquo;request support info&rdquo;, etc.  It&rsquo;s in the file.  If it&rsquo;s not a P1 case, read the freaking notes.  </p></li>
+
+<li><p>Make sure you follow up with the next engineer.</p></li>
+
+<li><p>We understand shifts change, please make sure hand off of cases is done correctly</p></li>
+</ul>
+
+<p>These would seem like easy things to accomplish, and I have seen them in the past, but they aren&rsquo;t the norm.  They should be. </p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 6 Nov 2012 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

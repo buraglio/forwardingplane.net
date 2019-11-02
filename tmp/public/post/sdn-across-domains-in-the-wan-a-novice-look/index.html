@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/sdn-across-domains-in-the-wan-a-novice-look/">
+<meta property="og:title" content="SDN across domains in the WAN - a novice look" />
+<meta property="og:description" content="There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how. Brent Salsbury laid out a few use cases here. The why seems pretty straightforward. I do believe it will happen, however, the how is the interesting part. Admittedly, I&rsquo;m a tad of a greenhorn in the SDN space, I&rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/sdn-across-domains-in-the-wan-a-novice-look/" />
+<meta property="article:published_time" content="2012-11-27T05:04:00+00:00" />
+<meta property="article:modified_time" content="2012-11-27T05:04:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SDN across domains in the WAN - a novice look"/>
+<meta name="twitter:description" content="There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how. Brent Salsbury laid out a few use cases here. The why seems pretty straightforward. I do believe it will happen, however, the how is the interesting part. Admittedly, I&rsquo;m a tad of a greenhorn in the SDN space, I&rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up."/>
+
+
+<meta itemprop="name" content="SDN across domains in the WAN - a novice look">
+<meta itemprop="description" content="There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how. Brent Salsbury laid out a few use cases here. The why seems pretty straightforward. I do believe it will happen, however, the how is the interesting part. Admittedly, I&rsquo;m a tad of a greenhorn in the SDN space, I&rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.">
+
+
+<meta itemprop="datePublished" content="2012-11-27T05:04:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-11-27T05:04:00&#43;00:00" />
+<meta itemprop="wordCount" content="590">
+
+
+
+<meta itemprop="keywords" content="Musings,OpenFlow,SDN,SDN,WAN," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     SDN across domains in the WAN - a novice look 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> SDN across domains in the WAN - a novice look </h1>
+    <div class="content"> <p>There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how.  Brent Salsbury laid out a few use cases <a href="http://networkstatic.net/sdn-use-cases-for-service-providers/">here</a>.  The why seems pretty straightforward.  I do believe it will happen, however, the <strong>how</strong> is the interesting part.  Admittedly, I&rsquo;m a tad of a greenhorn in the SDN space, I&rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.   SDN, and likely OpenFlow, is in our roadmap at work.  Doing SDN in the data center is well documented and fairly well tested. Stanford has it all over their campus LAN and Google is pushing it around their walled garden WAN on custom built hardware.  None of this is new.   The interesting bit is <strong>how do you do it across multiple administrative entities</strong>?  As I said before, I&rsquo;ll never claim to be an SDN expert, so I need to break this down into simple pieces for my limited mind to comprehend.   BGP solved this years and years ago, how is that accomplished?  Can any of these bits be re-used (why re-invent the wheel)? My caveman mind wants to break this down into requirements: This can likely be controlled by access between peers via an access control mechanism of some sort, i.e. place software limits on how much a given peer can provision in your network, which can be broken down into:</p>
+
+<ul>
+<li>Number of circuits</li>
+<li>Types of circuits (MPLS, VLAN, DWDM Waves, etc.)</li>
+<li>Bandwidth per circuit</li>
+<li>Duration of circuit (path TTL, permanent?)</li>
+<li>Number of devices involved per circuit</li>
+<li>Types of SDN (OpenFlow versions, OSCARS, etc)</li>
+<li>Probably more stuff</li>
+</ul>
+
+<p>How can this be done?  I don&rsquo;t currently know enough to answer that question, but I suspect it may require a little bit of work in adding a peering framework between control planes (SDN controllers) not unlike how BGP works.  To put this in familiar terminology, for example,</p>
+
+<ul>
+<li>Route maps could be replaced by permissions maps or even an ACL of some sort to establish the abilities of each peer.  </li>
+<li>Peers would need to agree (configuration-wise and politically) on what abilities can be exchanged before peers could operate, programmatically agree on parameters before any changes can be made.</li>
+<li>Security parameters would need to be met for the peers to establish to contain the control plane traffic in a safe way, much like an MD5 across a BGP peering.</li>
+</ul>
+
+<p>If this sounds like a tall order, I&rsquo;ll wager you&rsquo;re right and I&rsquo;ll also bet that before it happens we&rsquo;ll have a Blu Ray vs HD-DCD or VHS vs Beta throw down of SDN protocols.   Folks have been trying to do this for years, the <a href="http://dragon.maxgigapop.net/twiki/bin/view/DRAGON/WebHome">DRAGON project</a> tried this years ago and did a decent job.  Our Arlington, VA site was one of the original build outs of it. <a href="https://oscars.es.net/OSCARS/docs/">OSCARS</a> is doing similar stuff and is actively working across <a href="http://www.es.net/">ESnet</a>. <a href="http://www.internet2.edu/ion/">Internet2 ION</a> is another attempt. These have all had their effect on the Research and Education networks, but to be adopted acrossm and more importantly between, service provider networks, there needs to be ways to do them elegantly and securely.  There is nothing that a SP hates more than risk, and without these control mechanisms, there is a pretty large amount of risk.  It&rsquo;s reasonable to think that this may be there and I&rsquo;m just missing it, since I am admittedly a novice in the SDN world, but if by chance I have not missed it because it&rsquo;s not there, it needs to be addressed.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/openflow">#OpenFlow</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/sdn">#SDN</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/sdn">#SDN</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/wan">#WAN</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 27 Nov 2012 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

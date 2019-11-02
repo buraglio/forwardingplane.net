@@ -1,0 +1,604 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "configuration-archive",
+        "name" : "VMWare ESXi CLI reference",
+        "headline" : "VMWare ESXi CLI reference",
+        "description" : "All of these commands require ssh to be enabled on the VMware host and were tested on 5.1.\nPower off a VM\nvim-cmd vmsvc\/power.getstate List power state of VM:\nvim-cmd vmsvc\/power.of Power on VM\nvim-cmd vmsvc\/power.on List all VMs:\nvim-cmd vmsvc\/getallvms Other important commands under vmsvc:\nacquiremksticket get.snapshotinfo\nacquireticket get.spaceNeededForConsolidation\nconnect get.summary\nconvert.toTemplate get.tasklist\nconvert.toVm getallvms\ncreatedummyvm gethostconstraints\ndestroy login\ndevice.connection logout\ndevice.connusbdev message\ndevice.disconnusbdev power.getstate\ndevice.diskadd power.hibernate\ndevice.diskaddexisting power.off",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-06-30 08:08:11 -0600 -0600",
+        "dateModified" : "2013-06-30 08:08:11 -0600 -0600",
+        "url" : "https:\/\/forwardingplane.net\/configuration-archive\/vmware-esxi-cli-reference\/",
+        "wordCount" : "123",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            <title>VMWare ESXi CLI reference - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+            <meta name="author" content="Nick Buraglio">
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VMWare ESXi CLI reference"/>
+<meta name="twitter:description" content="All of these commands require ssh to be enabled on the VMware host and were tested on 5.1.
+Power off a VM
+vim-cmd vmsvc/power.getstate List power state of VM:
+vim-cmd vmsvc/power.of Power on VM
+vim-cmd vmsvc/power.on List all VMs:
+vim-cmd vmsvc/getallvms Other important commands under vmsvc:
+acquiremksticket get.snapshotinfo
+acquireticket get.spaceNeededForConsolidation
+connect get.summary
+convert.toTemplate get.tasklist
+convert.toVm getallvms
+createdummyvm gethostconstraints
+destroy login
+device.connection logout
+device.connusbdev message
+device.disconnusbdev power.getstate
+device.diskadd power.hibernate
+device.diskaddexisting power.off"/>
+
+        <meta property="og:title" content="VMWare ESXi CLI reference" />
+<meta property="og:description" content="All of these commands require ssh to be enabled on the VMware host and were tested on 5.1.
+Power off a VM
+vim-cmd vmsvc/power.getstate List power state of VM:
+vim-cmd vmsvc/power.of Power on VM
+vim-cmd vmsvc/power.on List all VMs:
+vim-cmd vmsvc/getallvms Other important commands under vmsvc:
+acquiremksticket get.snapshotinfo
+acquireticket get.spaceNeededForConsolidation
+connect get.summary
+convert.toTemplate get.tasklist
+convert.toVm getallvms
+createdummyvm gethostconstraints
+destroy login
+device.connection logout
+device.connusbdev message
+device.disconnusbdev power.getstate
+device.diskadd power.hibernate
+device.diskaddexisting power.off" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/" />
+<meta property="article:published_time" content="2013-06-30T08:08:11-06:00" />
+<meta property="article:modified_time" content="2013-06-30T08:08:11-06:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="VMWare ESXi CLI reference">
+<meta itemprop="description" content="All of these commands require ssh to be enabled on the VMware host and were tested on 5.1.
+Power off a VM
+vim-cmd vmsvc/power.getstate List power state of VM:
+vim-cmd vmsvc/power.of Power on VM
+vim-cmd vmsvc/power.on List all VMs:
+vim-cmd vmsvc/getallvms Other important commands under vmsvc:
+acquiremksticket get.snapshotinfo
+acquireticket get.spaceNeededForConsolidation
+connect get.summary
+convert.toTemplate get.tasklist
+convert.toVm getallvms
+createdummyvm gethostconstraints
+destroy login
+device.connection logout
+device.connusbdev message
+device.disconnusbdev power.getstate
+device.diskadd power.hibernate
+device.diskaddexisting power.off">
+
+
+<meta itemprop="datePublished" content="2013-06-30T08:08:11-06:00" />
+<meta itemprop="dateModified" content="2013-06-30T08:08:11-06:00" />
+<meta itemprop="wordCount" content="123">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/resume">
+                            <i class="resume">&nbsp;</i>resume
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/resume">
+                            <h3>
+                                <i class="resume">&nbsp;</i>resume
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/">VMWare ESXi CLI reference</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>All of these commands require ssh to be enabled on the VMware host and were tested on 5.1.</p>
+
+<p>Power off a VM</p>
+
+<pre class="wp-block-preformatted">vim-cmd vmsvc/power.getstate</pre>
+
+<p>List power state of VM:</p>
+
+<pre class="wp-block-preformatted">vim-cmd vmsvc/power.of</pre>
+
+<p>Power on VM</p>
+
+<pre class="wp-block-preformatted">vim-cmd vmsvc/power.on</pre>
+
+<p>List all VMs:</p>
+
+<pre class="wp-block-preformatted">vim-cmd vmsvc/getallvms</pre>
+
+<p>Other important commands under vmsvc:</p>
+
+<pre class="wp-block-preformatted">acquiremksticket get.snapshotinfo<br />acquireticket get.spaceNeededForConsolidation<br />connect get.summary<br />convert.toTemplate get.tasklist<br />convert.toVm getallvms<br />createdummyvm gethostconstraints<br />destroy login<br />device.connection logout<br />device.connusbdev message<br />device.disconnusbdev power.getstate<br />device.diskadd power.hibernate<br />device.diskaddexisting power.off<br />device.diskremove power.on<br />device.getdevices power.reboot<br />device.toolsSyncSet power.reset<br />device.vmiadd power.shutdown<br />device.vmiremove power.suspend<br />devices.createnic power.suspendResume<br />disconnect queryftcompat<br />get.capability reload<br />get.config setscreenres<br />get.config.cpuidmask snapshot.create<br />get.configoption snapshot.dumpoption<br />get.datastores snapshot.get<br />get.disabledmethods snapshot.remove<br />get.environment snapshot.removeall<br />get.filelayout snapshot.revert<br />get.filelayoutex snapshot.setoption<br />get.guest tools.cancelinstall<br />get.guestheartbeatStatus tools.install<br />get.managedentitystatus tools.upgrade<br />get.networks unregister<br />get.runtime upgrade</pre>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-688" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-688" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-688" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-688" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

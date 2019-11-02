@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/orig/2014-05-17-net-neutrality-changes-could-force-better-fiber-networks/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="Many regular internet users are extremely upset about the recent proposed changes the FCC has opened for comments about the delivery and provisioning of internet services. Watch this video if you&#8217;re unaware of the high emotions it has evoked:
+While these are proposed rules and are not in any way finalized, there is real concern that they may become law. Where this is problematic is that it opens up the possibility of some real misuse, abuse or simple misunderstanding of needs and services." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/orig/2014-05-17-net-neutrality-changes-could-force-better-fiber-networks/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Many regular internet users are extremely upset about the recent proposed changes the FCC has opened for comments about the delivery and provisioning of internet services. Watch this video if you&#8217;re unaware of the high emotions it has evoked:
+While these are proposed rules and are not in any way finalized, there is real concern that they may become law. Where this is problematic is that it opens up the possibility of some real misuse, abuse or simple misunderstanding of needs and services."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Many regular internet users are extremely upset about the recent proposed changes the FCC has opened for comments about the delivery and provisioning of internet services. Watch this video if you&#8217;re unaware of the high emotions it has evoked:
+While these are proposed rules and are not in any way finalized, there is real concern that they may become law. Where this is problematic is that it opens up the possibility of some real misuse, abuse or simple misunderstanding of needs and services.">
+
+
+
+<meta itemprop="wordCount" content="642">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> <p>Many regular internet users are extremely upset about the <a href="http://techcrunch.com/2014/05/15/fccs-proposed-net-neutrality-rules-pass-3-2-enter-4-month-comment-period/" target="_blank">recent proposed changes the FCC has opened for comments</a> about the delivery and provisioning of internet services.  Watch this video if you&#8217;re unaware of the high emotions it has evoked:</p>
+
+<p>While these are proposed rules and are not in any way finalized, there is real concern that they may become law.  Where this is problematic is that it opens up the possibility of some real misuse, abuse or simple misunderstanding of needs and services.</p>
+
+<p>Do you want your service to be so heavily monitored that your every source and destination is billed for?  Yeah, that&#8217;s bananas, not to mention confusing and wrought with the possibility of erroneous and/or over billing.  It also required the consumer to be more acutely aware of everything they do, which isn&#8217;t necessarily a bad thing, but most won&#8217;t or can&#8217;t bother to learn, so they become easy targets for predatory companies to charge for services that consumers may not realize they&#8217;re using.</p>
+
+<p>As someone who has run a production ISP on more than one occasion, I can see the huge draw of being able to bill for services.  From a technical perspective, it&#8217;d be a challenge to manage effectively and fairly and I hate to say it, but from a purely technical standpoint SDN actually makes this kind of granular billing, metering and shaping easier.  From a consumer perspective, it&#8217;s a nightmare.  Imagine ala cart &#8220;services&#8221; like channels on your cable TV.  Hulu? That&#8217;s $10 more a month.  NetFlix?  That&#8217;s $15, you get the point.  Fair and open access is the only way to do right be the consumer.  Being an ISP is hard, it&#8217;s a fine line between quality and profitability and wether folks like it or not, it is a fact that the money comes from oversubscription.</p>
+
+<p>What will this possible change in policy mean in the long and short term?  Let me tell you (in a bulleted list!)</p>
+
+<ul>
+<li>Cloud data storage services for small businesses become a liability because now they can be double billed for them by IP provider and cloud provider which could _<strong>significantly</strong> _change how cloud services work and force consumers and businesses to either build their own data centers back up, change their model for data services or forgo cloud services all together.</li>
+<li>Users and businesses may be forced into cloud service provided by their ISP to get around large transit fees and become locked into a proprietary service.</li>
+<li>The use of guerilla networks start to pop up again.</li>
+<li>Wide spread encrypted overlays and VPNs are used to get around  service fees.</li>
+<li>Data caps become normal for every large provider (already happening).</li>
+<li>Open access municipal and private fiber networks become far more common than they are now.  This is <a href="http://city-council.cityofdavis.org/Media/Default/Documents/PDF/CityCouncil/CouncilMeetings/Agendas/20140422/04G-RFEI-for-Davis-Broadband.pdf" target="_blank">already happening</a> on a smaller scale.  See <a href="http://www.uc2b.net" target="_blank">UC2B</a>, <a href="http://www.utopianet.org/" target="_blank">UtopiaNet</a>, <a href="http://www.cirbn.org/" target="_blank">CIRBN</a>, <a href="https://fiber.google.com/about/" target="_blank">Google fiber</a> and many others.</li>
+<li>Settlement free, unmetered peerings and local peering hubs  become far more common between municipal networks, large enterprises and other entities in a given locality and eventually between the peering hubs.</li>
+<li>Horse trading between fiber resources becomes commonplace to reach other resources.</li>
+<li>Purchasing managed transport services from CLECs to get to exchange points to purchase transit from real providers.</li>
+<li>Last mile consumer broadband providers start to feel the pinch and realize they missed the boat.  Remember when cell phone minutes were billed by the minute and everything was an add-on feature?  Me too.  Now it&#8217;s a capped data plan and everything else is just free. You get the point.</li>
+</ul>
+
+<p>In my opinion the internet providers need to be re-classified as common carriers, and frankly, and the only reason it has not been is that law makers don&#8217;t <em><strong>really</strong></em> understand it and they&#8217;re being preyed upon by the large telco and service provider lobbyists.</p>
+
+<p><span style="line-height: 1.5em;"> </span></p>
+
+<p>Ala Cart Image via<a href=" http://yates2.com/" target="_blank"> <a href="http://yates2.com/">http://yates2.com/</a></a></p>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-1005" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-1005" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-1005" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-1005" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/the-value-of-measurements-network-latency/">
+<meta property="og:title" content="The value of measurements: Network Latency" />
+<meta property="og:description" content="There is no shortage of network telemetry data that can be collected, recorded, graphed, and stored for cross reference and triage. Not one to be underestimated, latency at a can be incredibly powerful when leveraged for baseline and deviation notification. As I have eluded to in the past, there are many tools in this space. I have written about a few of them in detail and touched on others in passing." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/the-value-of-measurements-network-latency/" />
+<meta property="article:published_time" content="2019-04-29T10:23:32+00:00" />
+<meta property="article:modified_time" content="2019-04-29T10:23:32+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The value of measurements: Network Latency"/>
+<meta name="twitter:description" content="There is no shortage of network telemetry data that can be collected, recorded, graphed, and stored for cross reference and triage. Not one to be underestimated, latency at a can be incredibly powerful when leveraged for baseline and deviation notification. As I have eluded to in the past, there are many tools in this space. I have written about a few of them in detail and touched on others in passing."/>
+
+
+<meta itemprop="name" content="The value of measurements: Network Latency">
+<meta itemprop="description" content="There is no shortage of network telemetry data that can be collected, recorded, graphed, and stored for cross reference and triage. Not one to be underestimated, latency at a can be incredibly powerful when leveraged for baseline and deviation notification. As I have eluded to in the past, there are many tools in this space. I have written about a few of them in detail and touched on others in passing.">
+
+
+<meta itemprop="datePublished" content="2019-04-29T10:23:32&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-29T10:23:32&#43;00:00" />
+<meta itemprop="wordCount" content="556">
+
+
+
+<meta itemprop="keywords" content="How-To,NIX4NetEng,nix4neteng,UNIX," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     The value of measurements: Network Latency 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> The value of measurements: Network Latency </h1>
+    <div class="content"> <p>There is no shortage of network telemetry data that can be collected, recorded, graphed, and stored for cross reference and triage. Not one to be underestimated, latency at a can be incredibly powerful when leveraged for baseline and deviation notification. As I have <a href="https://www.forwardingplane.net/2018/02/strategy-series-view-outside-network/">eluded to in the past,</a> there are many tools in this space. <a href="https://netbeez.net/blog/how-to-leverage-latency-testing-and-long-term-trend-collection/">I have written about a few of them in detail</a> and touched on others in passing. Regardless of the tool, the data is powerful and the instrumentation they provide will only serve to make your network more robust and easier to work on. One tool that is particularly easy to set up and utilize is <a href="https://oss.oetiker.ch/smokeping/">smokeping</a>. From the authors site: <em>SmokePing keeps track of your network latency:</em></p>
+
+<ul>
+<li><em>Best of breed latency visualisation.</em></li>
+<li><em>Interactive graph explorer.</em></li>
+<li><em>Wide range of latency measurement plugins.</em></li>
+<li><em>Master/Slave System for distributed measurement.</em></li>
+<li><em>Highly configurable alerting system.</em></li>
+<li><em>Live Latency Charts with the most &lsquo;interesting&rsquo; graphs.</em></li>
+<li><em>Free and OpenSource Software written in Perl written by Tobi Oetiker, the creator of MRTG and RRDtool </em></li>
+</ul>
+
+<p><img src="https://www.forwardingplane.net/wp-content/uploads/2019/04/download_Comcast_Chicago_last_864000.png" alt="Download Comcast Chicago last 864000" title="download_Comcast_Chicago_last_864000.png" /> <em>Comcast SpeedTest.net graph for home network</em> Now, you may be asking _“why do I need to track latency?_”, well, the data is incredibly powerful and can be indicators of anything from a failing optic to a network compromise. This is especially useful in small to medium sized ISPs (and especially WISPs), where cost of software and operational overhead is at a premium, and customer satisfaction is the currency that is dealt. In fact, I was able to use smokeqping to help diagnose a functional denial of service of a commonly deployed cable CPE as detailed <a href="https://forums.businesshelp.comcast.com/t5/IPV6/Reproducible-denial-of-service-of-Netgear-CPE-running-native/m-p/31597#M787">here</a>. <strong>I can’t emphasize enough how useful long term trend data is.</strong> Smokeping can be used to monitor more than just ping RTT, it supports a myriad of plugins allowing for application latency of protocols such as DNS queries, http get, ssh daemon response, speed test results, the list of plugins - or as smokeping calls them, probes - goes on and can be found <a href="https://oss.oetiker.ch/smokeping/probe/index.en.html">here</a>. Where this is particularly useful is in simulating customer experience.  As with most things in life, perspective is paramount. To address this, smokeping can also be deployed as a distributed model. Deploying it with installations more local to a customer or in a far flung site, say on a raspberry pi, located in remote POP sides or pedestal locations will provide a closer perspective to what the customer actually sees. In the past I have deployed remote raspberry pi devices in an actual FTTH pedestal connected to an ONT to provide the exact customer point of view and it provided a wealth of information I would not otherwise be able to see. There are a myriad of different instal guides for Smokeping, my recommended starting point is by <a href="https://github.com/magicdude4eva">Gerd Naschenweng</a> and can be found <a href="https://github.com/magicdude4eva/docker-smokeping">here</a>. It provides a docker instance but also has a very good set of configuration files to build examples from. Don’t discount latency data - it’s a powerful set of information for any working network. For anyone interested in seeing a working smokeping installation, mine is public and available to view. It provides a few things such as DNS latency, RTT for v4 and v6, RTT for ZeroTier hosts and RIPE ATLAS probes, etc. It’s a powerful toolkit. My public cloud instance is hosted at <a href="http://www.prgmr.com">prgmr.com</a> and can be found <a href="https://watcher.forwardingplane.net/smokeping/smokeping.cgi">here</a>.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/nix4neteng">#NIX4NetEng</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/nix4neteng">#nix4neteng</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 29 Apr 2019 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

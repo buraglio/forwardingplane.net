@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead-comments/">
+<meta property="og:title" content="Why hardware firewalls are the walking dead" />
+<meta property="og:description" content="[cryptochrome (@cryptochrome)]( &ldquo;sascha@picchiantano.de&rdquo;) - Mar 4, 2013
+What everybody seems to forget is that actually simple stateful inspection firewalls are the walking dead. Modern firewalls do a lot of inspection at layer 7 (think Palo Alto Networks). I want to see one of those white box Intel boxes push 20 gigabit of application level firewalled traffic. I highly doubt it. And I am also curious how you want to put OpenFlow to use here, when basically every flow would need to be forwarded to the Controller and passed on to the &ldquo;OpenFlow Firewall&rdquo; for inspection." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead-comments/" />
+<meta property="article:published_time" content="2013-03-18T11:02:42+00:00" />
+<meta property="article:modified_time" content="2013-03-18T11:02:42+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why hardware firewalls are the walking dead"/>
+<meta name="twitter:description" content="[cryptochrome (@cryptochrome)]( &ldquo;sascha@picchiantano.de&rdquo;) - Mar 4, 2013
+What everybody seems to forget is that actually simple stateful inspection firewalls are the walking dead. Modern firewalls do a lot of inspection at layer 7 (think Palo Alto Networks). I want to see one of those white box Intel boxes push 20 gigabit of application level firewalled traffic. I highly doubt it. And I am also curious how you want to put OpenFlow to use here, when basically every flow would need to be forwarded to the Controller and passed on to the &ldquo;OpenFlow Firewall&rdquo; for inspection."/>
+
+
+<meta itemprop="name" content="Why hardware firewalls are the walking dead">
+<meta itemprop="description" content="[cryptochrome (@cryptochrome)]( &ldquo;sascha@picchiantano.de&rdquo;) - Mar 4, 2013
+What everybody seems to forget is that actually simple stateful inspection firewalls are the walking dead. Modern firewalls do a lot of inspection at layer 7 (think Palo Alto Networks). I want to see one of those white box Intel boxes push 20 gigabit of application level firewalled traffic. I highly doubt it. And I am also curious how you want to put OpenFlow to use here, when basically every flow would need to be forwarded to the Controller and passed on to the &ldquo;OpenFlow Firewall&rdquo; for inspection.">
+
+
+<meta itemprop="datePublished" content="2013-03-18T11:02:42&#43;00:00" />
+<meta itemprop="dateModified" content="2013-03-18T11:02:42&#43;00:00" />
+<meta itemprop="wordCount" content="570">
+
+
+
+<meta itemprop="keywords" content="Crystal Ball,OpenFlow,Security,Virtualization," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Why hardware firewalls are the walking dead 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Why hardware firewalls are the walking dead </h1>
+    <div class="content"> <p>[cryptochrome (@cryptochrome)]( &ldquo;sascha@picchiantano.de&rdquo;) - <time datetime="2013-03-21 16:06:30">Mar 4, 2013</time></p>
+
+<p>What everybody seems to forget is that actually simple stateful inspection firewalls are the walking dead. Modern firewalls do a lot of inspection at layer 7 (think Palo Alto Networks). I want to see one of those white box Intel boxes push 20 gigabit of application level firewalled traffic. I highly doubt it. And I am also curious how you want to put OpenFlow to use here, when basically every flow would need to be forwarded to the Controller and passed on to the &ldquo;OpenFlow Firewall&rdquo; for inspection. In other words: I don&rsquo;t believe you can get rid of ASICs just yet and you will need hardware firewalls for the forseeable future.
+<hr /></p>
+
+<p>[cryptochrome (@cryptochrome)]( &ldquo;sascha@picchiantano.de&rdquo;) - <time datetime="2013-03-22 01:37:18">Mar 5, 2013</time></p>
+
+<p>The controller in an OpenFlow architecture also makes decisions for unknown/undefined flows. Flows that a switch doesn have in it&rsquo;s forwarding table are being sent to the controller. Now if you think of a firewall, it will naturally have truck loads full of unknown flows, especially if the firewall is placed at the edge/perimeter of a network. Don&rsquo;t get me wrong, I would personally welcome our new OpenFlow Firewall overlords :) But I just don&rsquo;t think that OpenFlow firewall setups would scale and perform anywhere near as good as dedicated, ASIC-based firewalls for a long time to come. I am talking real firewalls here, not simple enhanced ACLs (read: stateful packet inspection). If you reduce the OpenFlow controller to simply being the management system (policy definition etc.), then why use OpenFlow in the first place? We already have firewalls with separate management software. Nothing new.
+<hr /></p>
+
+<p>[Nuno]( &ldquo;ndelgado29@gmail.com&rdquo;) - <time datetime="2013-03-21 19:44:00">Mar 4, 2013</time></p>
+
+<p>The controller in an OpenFlow architecture is only used for managing the firewalls, defining the policy, pushing the policy, and other overhead operations. The firewalls are left to do their core functions, so the traffic wouldn&rsquo;t need to be backhauled to the controller.
+<hr /></p>
+
+<p><a href="http://etherealmind.com" title="greg.ferro@packetpushers.net">EtherealMind</a> - <time datetime="2013-03-18 08:59:36">Mar 1, 2013</time></p>
+
+<p>I&rsquo;m now working on the theory that I can flow balance white box Intel servers with a hypervisor. The hypervisor would host a VM that runs a firewall. Current Intel servers can handle up 40 Gbps of raw throughput so I&rsquo;m expecting 50% in real use. Ten white box servers with rapid upgrades for both hardware and software sounds like a solution to me &hellip;..
+<hr /></p>
+
+<p><a href="http://etherealmind.com" title="greg.ferro@packetpushers.net">EtherealMind</a> - <time datetime="2013-03-22 01:48:54">Mar 5, 2013</time></p>
+
+<p>Not quite. There are controller architectures that put some controller functions, like packet inspection, into the device. Consider a master controller with the full database of thousands of rules could distribute OpenFlow entries that are relevant to exact device. Instead of one big firewall process running thousands of rules, I have hundreds of smaller devices running tens of rules. CPU is less important and security is improved since firewall are located where the data is.
+<hr /></p>
+
+<p>[cryptochrome (@cryptochrome)]( &ldquo;sascha@picchiantano.de&rdquo;) - <time datetime="2013-03-22 02:22:32">Mar 5, 2013</time></p>
+
+<p>Interesting concept, Greg. Although that&rsquo;s already reality today without OpenFlow. Check Point Provider-1 management platform does exactly that. Junos Space does exactly that. Of course the nodes are not tiny cheap white boxes but expensive firewall appliances. Still, to me the question remains whether plain x86 hardware is able to scale when we are talking complex layer7 inspection, IPS, DDoS prevention etc. We&rsquo;ve already seen Check Point fail miserably with their software-only firewalls when it comes to performance/throughput. There is a reason for Fortinet/Juniper(SRX) being selected over Check Point in large datacenter designs.
+<hr /></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/crystal-ball">#Crystal Ball</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/openflow">#OpenFlow</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/security">#Security</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/virtualization">#Virtualization</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 18 Mar 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

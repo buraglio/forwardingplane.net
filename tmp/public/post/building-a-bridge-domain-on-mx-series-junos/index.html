@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/building-a-bridge-domain-on-mx-series-junos/">
+<meta property="og:title" content="Building a Bridge Domain on MX series JunOS" />
+<meta property="og:description" content="I started working on Juniper equipment around 2002. At my employer, we had an M40 with the serial number 256. We did Layer3 only. I had no idea if the Juniper even did layer2. It certainly wasn&rsquo;t a layer3 switch like a 6500 like I was used to. It was like a deliciously robust version of any Layer 3 router I&rsquo;d worked on previously. Over the years Juniper has added a switching line utilizing their FreeBSD based OS, JunOS." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/building-a-bridge-domain-on-mx-series-junos/" />
+<meta property="article:published_time" content="2013-03-09T16:48:48+00:00" />
+<meta property="article:modified_time" content="2013-03-09T16:48:48+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Building a Bridge Domain on MX series JunOS"/>
+<meta name="twitter:description" content="I started working on Juniper equipment around 2002. At my employer, we had an M40 with the serial number 256. We did Layer3 only. I had no idea if the Juniper even did layer2. It certainly wasn&rsquo;t a layer3 switch like a 6500 like I was used to. It was like a deliciously robust version of any Layer 3 router I&rsquo;d worked on previously. Over the years Juniper has added a switching line utilizing their FreeBSD based OS, JunOS."/>
+
+
+<meta itemprop="name" content="Building a Bridge Domain on MX series JunOS">
+<meta itemprop="description" content="I started working on Juniper equipment around 2002. At my employer, we had an M40 with the serial number 256. We did Layer3 only. I had no idea if the Juniper even did layer2. It certainly wasn&rsquo;t a layer3 switch like a 6500 like I was used to. It was like a deliciously robust version of any Layer 3 router I&rsquo;d worked on previously. Over the years Juniper has added a switching line utilizing their FreeBSD based OS, JunOS.">
+
+
+<meta itemprop="datePublished" content="2013-03-09T16:48:48&#43;00:00" />
+<meta itemprop="dateModified" content="2013-03-09T16:48:48&#43;00:00" />
+<meta itemprop="wordCount" content="467">
+
+
+
+<meta itemprop="keywords" content="How-To,Lab Time,Routing," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Building a Bridge Domain on MX series JunOS 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Building a Bridge Domain on MX series JunOS </h1>
+    <div class="content"> <p>I started working on Juniper equipment around 2002. At my employer, we had an M40 with the serial number 256.  We did Layer3 only.  I had no idea if the Juniper even did layer2.  It certainly wasn&rsquo;t a layer3 switch like a 6500 like I was used to.  It was like a deliciously robust version of any Layer 3 router I&rsquo;d worked on previously.  Over the years <a href="http://www.juniper.net/us/en/">Juniper</a> has added a <a href="http://www.juniper.net/us/en/products-services/switching/ex-series/">switching line</a> utilizing their FreeBSD based OS, <a href="http://www.juniper.net/us/en/products-services/nos/junos/">JunOS</a>. All that being said, I&rsquo;d never really messed with doing a layer2 transit VLAN on a JunOS routing platform.  Lets say we want to make 2 VLANs and transit them up through the WAN.  Here is how to make it work on an MX: Create the bridge domains:```
+set bridge-domains vlan-123 domain-type bridge
+set bridge-domains vlan-123 vlan-id 123
+set bridge-domains vlan-124 domain-type bridge
+set bridge-domains vlan-123 vlan-id 124</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Configure the interfaces facing south (LAN) to nbe members of the VLAN:```" data-lang="Configure the interfaces facing south (LAN) to nbe members of the VLAN:```">set interfaces xe-1/0/0 description &#34;SW1 xe-1/1/0&#34;
+set interfaces xe-1/0/0 mtu 9192
+set interfaces xe-1/0/0 unit 0 description &#34;Untagged VLAN 123&#34;
+set interfaces xe-1/0/0 unit 0 family bridge interface-mode access
+set interfaces xe-1/0/0 unit 0 family bridge vlan-id 123
+
+set interfaces xe-1/0/1 description &#34;SW1 xe-1/1/1&#34;
+set interfaces xe-1/0/1 mtu 9192
+set interfaces xe-1/0/1 unit 0 description &#34;Untagged VLAN 123&#34;
+set interfaces xe-1/0/1 unit 0 family bridge interface-mode access
+set interfaces xe-1/0/1 unit 0 family bridge vlan-id 123
+
+set interfaces xe-1/0/2 description &#34;SW2 xe-1/1/2&#34;
+set interfaces xe-1/0/2 mtu 9192
+set interfaces xe-1/0/2 unit 0 description &#34;Untagged VLAN 124&#34;
+set interfaces xe-1/0/2 unit 0 family bridge interface-mode access
+set interfaces xe-1/0/2 unit 0 family bridge vlan-id 124
+
+set interfaces xe-1/0/3 description &#34;SW2 xe-1/1/3&#34;
+set interfaces xe-1/0/3 mtu 9192
+set interfaces xe-1/0/3 unit 0 description &#34;Untagged VLAN 124&#34;
+set interfaces xe-1/0/3 unit 0 family bridge interface-mode access
+set interfaces xe-1/0/3 unit 0 family bridge vlan-id 124</code></pre></div>
+<p>Now add it to the uplink (that in this case has a layer3 instance on it as well):```
+set interfaces et-5/0/0 description &ldquo;100G North&rdquo;
+set interfaces et-5/0/0 vlan-tagging
+set interfaces et-5/0/0 mtu 9192
+set interfaces et-5/0/0 unit 123 description &ldquo;L3 testing vlan 123&rdquo;
+set interfaces et-5/0/0 unit 123 family bridge interface-mode trunk
+set interfaces et-5/0/0 unit 123 family bridge vlan-id-list 123
+set interfaces et-5/0/0 unit 124 description &ldquo;L3 testing vlan 124&rdquo;
+set interfaces et-5/0/0 unit 124 family bridge interface-mode trunk
+set interfaces et-5/0/0 unit 124 family bridge vlan-id-list 124
+set interfaces et-5/0/0 unit 100 description &ldquo;VLAN100 Layer3 Peering&rdquo;
+set interfaces et-5/0/0 unit 100 vlan-id 100
+set interfaces et-5/0/0 unit 100 family inet mtu 9000
+set interfaces et-5/0/0 unit 100 family inet address 10.100.100.<sup>1</sup>&frasl;<sub>30</sub>
+set interfaces et-5/0/0 unit 100 family inet6 mtu 9000
+set interfaces et-5/0/0 unit 10 family inet6 address 2001:fd8:a100:100::<sup>1</sup>&frasl;<sub>64</sub></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Now check your bridge table:```" data-lang="Now check your bridge table:```">buraglio@mx480&gt; show bridge domain    
+
+Routing instance        Bridge domain            VLAN ID     Interfaces
+default-switch          vlan-123                 123      
+                                                             et-5/0/0.123
+                                                             xe-1/0/0.0
+                                                             xe-1/0/1.0
+                                                            
+default-switch          vlan-124                 124      
+                                                             et-5/0/0.124
+                                                             xe-1/0/2.0
+                                                             xe-1/0/3.0
+                                                        </code></pre></div>
+<p>That&rsquo;s it. Pretty straightforward.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 9 Mar 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

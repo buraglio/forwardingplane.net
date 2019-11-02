@@ -1,0 +1,411 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "public",
+        "name" : "SRX IPv6 flow based processing",
+        "headline" : "SRX IPv6 flow based processing",
+        "description" : "One of our plans is to consolidate as many of the egress trafic paths as possible. To facilitate this, we had to do some things like buy carrier grade equipment. Enter the SRX 5800. No one really does IPS\/IDP\x2bFirewall quite like the SRX. After extensive research and exhaustive hands on testing with quite a bit of equipment, that is what we settled on. Even the IBM \x26ldquo;technical evangelist\x26rdquo; guy that came to talk to us said \x26ldquo;No one really does it like they do\x26rdquo; when referring to Juniper and 10G firewall\/IPS.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2010",
+        "datePublished": "2010-09-16 17:18:00 \x2b0000 \x2b0000",
+        "dateModified" : "2010-09-16 17:18:00 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/public\/post\/srx-ipv6-flow-based-processing\/",
+        "wordCount" : "604",
+        "keywords" : [ "IPv6","Security","Blog" ]
+    }
+    </script>
+        
+            <title>SRX IPv6 flow based processing - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SRX IPv6 flow based processing"/>
+<meta name="twitter:description" content="One of our plans is to consolidate as many of the egress trafic paths as possible. To facilitate this, we had to do some things like buy carrier grade equipment. Enter the SRX 5800. No one really does IPS/IDP&#43;Firewall quite like the SRX. After extensive research and exhaustive hands on testing with quite a bit of equipment, that is what we settled on. Even the IBM &ldquo;technical evangelist&rdquo; guy that came to talk to us said &ldquo;No one really does it like they do&rdquo; when referring to Juniper and 10G firewall/IPS."/>
+
+        <meta property="og:title" content="SRX IPv6 flow based processing" />
+<meta property="og:description" content="One of our plans is to consolidate as many of the egress trafic paths as possible. To facilitate this, we had to do some things like buy carrier grade equipment. Enter the SRX 5800. No one really does IPS/IDP&#43;Firewall quite like the SRX. After extensive research and exhaustive hands on testing with quite a bit of equipment, that is what we settled on. Even the IBM &ldquo;technical evangelist&rdquo; guy that came to talk to us said &ldquo;No one really does it like they do&rdquo; when referring to Juniper and 10G firewall/IPS." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/public/post/srx-ipv6-flow-based-processing/" />
+<meta property="article:published_time" content="2010-09-16T17:18:00+00:00" />
+<meta property="article:modified_time" content="2010-09-16T17:18:00+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="SRX IPv6 flow based processing">
+<meta itemprop="description" content="One of our plans is to consolidate as many of the egress trafic paths as possible. To facilitate this, we had to do some things like buy carrier grade equipment. Enter the SRX 5800. No one really does IPS/IDP&#43;Firewall quite like the SRX. After extensive research and exhaustive hands on testing with quite a bit of equipment, that is what we settled on. Even the IBM &ldquo;technical evangelist&rdquo; guy that came to talk to us said &ldquo;No one really does it like they do&rdquo; when referring to Juniper and 10G firewall/IPS.">
+
+
+<meta itemprop="datePublished" content="2010-09-16T17:18:00&#43;00:00" />
+<meta itemprop="dateModified" content="2010-09-16T17:18:00&#43;00:00" />
+<meta itemprop="wordCount" content="604">
+
+
+
+<meta itemprop="keywords" content="IPv6,Security," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/public/post/srx-ipv6-flow-based-processing/">SRX IPv6 flow based processing</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>One of our plans is to consolidate as many of the egress trafic paths as possible.  To facilitate this, we had to do some things like buy carrier grade equipment.  Enter the <a href="http://bit.ly/9jrUiG">SRX 5800</a>.  No one really does IPS/IDP+Firewall quite like the SRX.  After extensive research and exhaustive hands on testing with quite a bit of equipment, that is what we settled on.  Even the IBM &ldquo;technical evangelist&rdquo; guy that came to talk to us said &ldquo;No one really does it like they do&rdquo; when referring to Juniper and 10G firewall/IPS.</p>
+
+<p><a href="http://www.juniper.net/shared/img/products/srx-series/srx5800/lbox-srx5800-left.jpg"><img src="http://www.juniper.net/shared/img/products/srx-series/srx5800/lbox-srx5800-left.jpg" alt="" /></a></p>
+
+<p>Lets make one thing clear, IPv6 isn&rsquo;t going away.  We&rsquo;ll all be using in in the next few years, and so, to that end, it needs to work through our network as closely to the way folks are using the current resources as we can make it&hellip;.within the confines of our resources and the limitations of IPv4 and IPv6 respectively.</p>
+
+<p>To make IPv6 process similarly to IPv4 on the SRX 5800 cluster, we have to enable flow based security processing for it.  To make that happen, you have to do the following things, as documented <a href="http://bit.ly/9jrUiG">here</a>:</p>
+
+<p>set security forwarding-options family inet6 mode flow-based</p>
+
+<p>Enabling this actually requires a reboot of the boxes, and on a chassis cluster, I&rsquo;ve been told by our Agility JTAC guy (and learned the herd way because I&rsquo;m stubborn like that) that you need to reboot both cluster nodes at the same time (which I find dumb since the purpose of a firewall cluster is almost always redundancy).</p>
+
+<p>Regardless, I used the recommended method and kicked the boxes after a commit check.</p>
+
+<p>commit check</p>
+
+<p>The router then spits out the following information after the commit check:</p>
+
+<p>node0:<br />
+warning: You have enabled/disabled inet6 flow.<br />
+You must reboot the system for your change to take effect.<br />
+If you have deployed a cluster, be sure to reboot all nodes.<br />
+configuration check succeeds</p>
+
+<p>node1:<br />
+warning: You have enabled/disabled inet6 flow.<br />
+You must reboot the system for your change to take effect.<br />
+If you have deployed a cluster, be sure to reboot all nodes.<br />
+configuration check succeeds</p>
+
+<p>From here I like to comment all of my commits, as it&rsquo;s just good practice and it will be logged on your handy <a href="http://campin.net/syslog-ng/faq.html">syslog server</a> for later use or reference.</p>
+
+<p>commit comment &ldquo;Enabling Flow-Based Processing for IPv6 Traffic&rdquo;</p>
+
+<p>And from there, a reboot of both nodes (at the same time) is necessary..</p>
+
+<p>request system reboot</p>
+
+<p>And then, we wait&hellip;&hellip;</p>
+
+<p>&hellip;..and wait some more&hellip;</p>
+
+<p>&hellip;.and then&hellip;..the prompt on the console is back.</p>
+
+<p>&hellip;&hellip;&hellip;..and after about 6-7 minutes, we have OSPF adjacencies and packets are flowing.  The SPCs take a bit to self test, fully boot and start processing traffic, as I would expect from something processing so many pieces of so much traffic.  </p>
+
+<p>Now we need to verify that what we did actually worked.  From the SRX, check the security flow status:</p>
+
+<p>show security flow status</p>
+
+<p>node0:<br />
+-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-<br />
+  Flow forwarding mode:<br />
+    Inet forwarding mode: flow based<br />
+    Inet6 forwarding mode: flow based<br />
+    MPLS forwarding mode: drop<br />
+    ISO forwarding mode: drop<br />
+    Flow trace status<br />
+    Flow tracing status: off</p>
+
+<p>node1:<br />
+-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-<br />
+  Flow forwarding mode:<br />
+    Inet forwarding mode: flow based<br />
+    Inet6 forwarding mode: flow based<br />
+    MPLS forwarding mode: drop<br />
+    ISO forwarding mode: drop<br />
+    Flow trace status<br />
+    Flow tracing status: off</p>
+
+<p>We&rsquo;re looking for:</p>
+
+<p>    Inet6 forwarding mode: flow based</p>
+
+<p>This would have said &ldquo;drop&rdquo; before the change. </p>
+
+<p>We hope to actually swing over our IPv6 traffic soon and start processing it on the SRXs.  I&rsquo;ll post notes as soon as we go forward with that.  </p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

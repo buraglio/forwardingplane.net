@@ -1,0 +1,391 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "public",
+        "name" : "BGP RPKI - why aren\x27t we using it more?",
+        "headline" : "BGP RPKI - why aren\x27t we using it more?",
+        "description" : "Image created from SURFNet RPKI page.         I was recently at a meeting where BGP RPKI was the topic de jour. While this has been a topic that I have visited on occasion of the last few years and something I wanted to spend significant time on, I have found that setting aside the time has been difficult and sparse, much like the deployment of BGP RPKI.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2016",
+        "datePublished": "2016-05-21 16:33:44 \x2b0000 \x2b0000",
+        "dateModified" : "2016-05-21 16:33:44 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/public\/post\/bgp-rpki-why-arent-we-using-it\/",
+        "wordCount" : "902",
+        "keywords" : [ "Musings","Routing","Security","Blog" ]
+    }
+    </script>
+        
+            <title>BGP RPKI - why aren&#39;t we using it more? - ForwardingPlane.net</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="BGP RPKI - why aren&#39;t we using it more?"/>
+<meta name="twitter:description" content="Image created from SURFNet RPKI page.         I was recently at a meeting where BGP RPKI was the topic de jour. While this has been a topic that I have visited on occasion of the last few years and something I wanted to spend significant time on, I have found that setting aside the time has been difficult and sparse, much like the deployment of BGP RPKI."/>
+
+        <meta property="og:title" content="BGP RPKI - why aren&#39;t we using it more?" />
+<meta property="og:description" content="Image created from SURFNet RPKI page.         I was recently at a meeting where BGP RPKI was the topic de jour. While this has been a topic that I have visited on occasion of the last few years and something I wanted to spend significant time on, I have found that setting aside the time has been difficult and sparse, much like the deployment of BGP RPKI." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/public/post/bgp-rpki-why-arent-we-using-it/" />
+<meta property="article:published_time" content="2016-05-21T16:33:44+00:00" />
+<meta property="article:modified_time" content="2016-05-21T16:33:44+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="BGP RPKI - why aren&#39;t we using it more?">
+<meta itemprop="description" content="Image created from SURFNet RPKI page.         I was recently at a meeting where BGP RPKI was the topic de jour. While this has been a topic that I have visited on occasion of the last few years and something I wanted to spend significant time on, I have found that setting aside the time has been difficult and sparse, much like the deployment of BGP RPKI.">
+
+
+<meta itemprop="datePublished" content="2016-05-21T16:33:44&#43;00:00" />
+<meta itemprop="dateModified" content="2016-05-21T16:33:44&#43;00:00" />
+<meta itemprop="wordCount" content="902">
+
+
+
+<meta itemprop="keywords" content="Musings,Routing,Security," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/public/post/bgp-rpki-why-arent-we-using-it/">BGP RPKI - why aren&#39;t we using it more?</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <nav>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#image-created-from-surfnet-rpki-page">Image created from SURFNet RPKI page.</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+<p>     I was recently at a meeting where BGP RPKI was the topic de jour. While this has been a topic that I have visited on occasion of the last few years and something I wanted to spend significant time on, I have found that setting aside the time has been difficult and sparse, much like the deployment of BGP RPKI. In order to better understand the options available, it&rsquo;s important to break down the pieces and terminology involved; BGP is daunting enough to those unfamiliar with it and adding PKI on top of that can be even more so. So, what are these bits and pieces and why have we not done more to adopt it?</p>
+
+<ul>
+<li><strong>BGP</strong> - the venerable and foundational protocol that quite literally runs the internet. BGP allows an organization to announce and exchange it’s IPv4 and IPv6 resources with other organizations.</li>
+<li><a href="https://www.arin.net/resources/rpki/"><strong>Resource Public Key Infrastructure</strong></a> - From <a href="https://www.arin.net/resources/rpki/">ARIN</a>: <em>Using cryptographically verifiable certificates, RPKI allows IP address holders to specify which Autonomous Systems (AS&rsquo;s) are authorized to originate their IP address prefixes. These statements, known as Route Origin Authorizations (ROAs), allow network operators to make informed routing decisions, and help secure Internet routing in general. </em></li>
+<li><strong>ROA</strong> - Route Origin Authorizations - Who is authorized to originate or source these prefixes?</li>
+<li><strong>ROV</strong> - Route Origin Validation - Can we validate, cryptographically, that the origin of this resource (for example, 8.8.8.8) is authorized to originate or source these prefixes?</li>
+</ul>
+
+<p>     Many of the details of RPKI are actually not even technical, both with ARIN and with vendors, there exists complications that make the technical pieces look like child’s play. Legality of the licensing and housing of authoritative certificates are complicated, shrouded in legalese due to the nature of what they represent. This proves to be a show stopper for a lot of older organizations that have grandfathered address space and may not have gone through the ARIN agreement process any time in the recent past [note: supposedly this process is required for ARIN IPv6 space, so most of that _should_ be covered. Other regions may have easier, lower hurdles - I’ve heard good things about RIPE’s process - but I have no experience with it. The legal issues with contracts and signing certificates may also prove to be troublesome to enterprises, most of which are very conservative and slow to adopt anything new ::cough:: IPv6 ::cough::.  Certificate generation and maintenance is also considered difficult in many cases, the details can be confusing and the documentation overwhelming or difficult to find.</p>
+
+<p>On top of those non-technical issues, platforms with large install bases are sparsely supported - although this is changing.</p>
+
+<p>     There have been a <a href="http://www.bgpmon.net/large-scale-bgp-hijack-out-of-india/">number</a> of <a href="http://www.bgpmon.net/large-hijack-affects-reachability-of-high-traffic-destinations/">recent</a>, high profile route hijacks. If you’re ever curious to see what they were, BGPMon typically has a post-mortem shortly after they occur. This is a big deal. There are a number of ways they could have been prevented, too one of which is BGP RPKI. Is that worth the overhead? I think anyone that has had to scramble to figure out what was going on during one of these events would argue yes. But even with that, we have minimal adoption. With the significant movement to cloud based work, enterprises, service providers, academic institutions and even savvy end users should ask themselves a few important questions before doing your risk analysis:</p>
+
+<ul>
+<li>Do your cloud providers do RPKI?</li>
+<li>Does your upstream service provider or peering partner honor invalid routes?</li>
+<li>Does your upstream service provider or peering partner even support prefix or AS-Path filtering?</li>
+<li>How does the effect BGP blackhole routing for security filtering?</li>
+<li>How do you deal with invalid routes? (alert, set preference, drop, etc.)</li>
+<li>How do you handle invalid routes that may be more specific?</li>
+<li>Why have I not deployed BGP RPKI yet?</li>
+</ul>
+
+<p><strong>My perspective:</strong></p>
+
+<p>    Unfortunately, the feeling I get is very similar to that of things [that we actually need] such as IPv6 and DNSSec. Tools that make our resources safer,  but are often overlooked due to increased operational complexity.</p>
+
+<p>It is really about risk analysis: Is the risk of not having this worth the effort of maintaining it?  Since we [as an internetworking ecosystem] been clear in our actions that necessary things as obvious and straightforward as appropriate prefix filtering and IPv6 deployment are in many cases above and beyond, it should come as no surprise that adding complexity on top of “stuff that just works” is’t happening on a large scale. Even with repeated proof that changes would alleviate risk, we don’t do it because what we have has been deemed “good enough”* and change is scary and hard.</p>
+
+<p>What do we need? We need tools. The <a href="http://rpki.surfnet.nl/">RPKI dashboard</a> that SURFnet has available is a fantastic example of an easy to use tool that makes a ton of information available. We need a <strong><em>very easy</em></strong> way to deploy this. BGP is actually a pretty simple protocol to make work, which is why is hasn’t changed much in the  extremely long tenure it has had as foundation of the internet. We need a very, very straightforward way to get the non-technical pieces done.</p>
+
+<p><strong>Disclaimer:</strong> This is just the tip of the iceberg and I am but a novice with this tech - but my gut feelings are typically right about this type of thing.</p>
+
+<p>* &ldquo;Good enough” is almost never good enough.</p>
+
+<h6 id="image-created-from-surfnet-rpki-page">Image created from SURFNet RPKI page.</h6>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

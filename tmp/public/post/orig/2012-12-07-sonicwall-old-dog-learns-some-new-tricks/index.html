@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/orig/2012-12-07-sonicwall-old-dog-learns-some-new-tricks/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="~12 years ago I had a drinking buddy that worked with me at the regional ISP. We had a lot in common, he had been an icon back in the didjits era of punk rock in Champaign Urbana and we had briefly been in a terrible band together. He introduced me to a dude that to this day I just knew as &#8220;Ravi Sonicwall&#8221;. He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying &#8220;when I&#8217;m in town, I buy the beers&#8221;)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/orig/2012-12-07-sonicwall-old-dog-learns-some-new-tricks/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="~12 years ago I had a drinking buddy that worked with me at the regional ISP. We had a lot in common, he had been an icon back in the didjits era of punk rock in Champaign Urbana and we had briefly been in a terrible band together. He introduced me to a dude that to this day I just knew as &#8220;Ravi Sonicwall&#8221;. He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying &#8220;when I&#8217;m in town, I buy the beers&#8221;)."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="~12 years ago I had a drinking buddy that worked with me at the regional ISP. We had a lot in common, he had been an icon back in the didjits era of punk rock in Champaign Urbana and we had briefly been in a terrible band together. He introduced me to a dude that to this day I just knew as &#8220;Ravi Sonicwall&#8221;. He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying &#8220;when I&#8217;m in town, I buy the beers&#8221;).">
+
+
+
+<meta itemprop="wordCount" content="872">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> <p>~12 years ago I had a drinking buddy that worked with me at the regional ISP.   We had a lot in common, he had been an icon back in the <a href="http://en.wikipedia.org/wiki/The_Didjits">didjits</a> era of punk rock in Champaign Urbana and we had briefly been in a terrible band together.  He introduced me to a dude that to this day I just knew as &#8220;Ravi Sonicwall&#8221;.  He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying &#8220;when I&#8217;m in town, I buy the beers&#8221;).</p>
+
+<p>I had purchased a few sonicwall boxes after that, having only really used linux, IOS, checkpoint on nokia boxes and <em><em>shudder</em></em> Novell Border manager.  I liked the boxes since they had a GUI and I could hand off day-to-day operations to someone that !=Me.  After a year or so in production, I started to become frustrated with them,  the ones I had lacked a CLI completely and had fallen behind on the things I needed to do with them.   Their cost to feature wasn&#8217;t there for what I needed and the ones I had purchased systematically had hardware failures all within 7 months.  I wrote off sonicwall completely at that point.</p>
+
+<p>Fast forward a decade.</p>
+
+<p>Sonicwall purchased by Dell.</p>
+
+<p>We&#8217;ve heavily invested in the <a href="http://www.juniper.net/us/en/products-services/security/srx-series/">Juniper SRX</a>.</p>
+
+<p>The SRX mostly does what we ask of it (talk to me about Oracle replication through one and their SQL ALG).</p>
+
+<p>The SRX has some limitation as far as management and display of eye candy.</p>
+
+<p>While I personally like a CLI to rummage around in, not everyone does.  <a href="http://www.paloaltonetworks.com">Palo Alto Networks</a> has an amazing GUI.  Like, the best I&#8217;ve ever seen.  Sonicwall&#8230;&#8230;well, theirs always left me wanting back in the day.  Now&#8230;..wow, a totally different ballgame.</p>
+
+<p>Don&#8217;t get me wrong, I&#8217;m not confident that the Sonicwall &#8220;Super Massive&#8221; won&#8217;t compete (in this guys opinion) with a Juniper 5800.  <strong>However, </strong>their transparent mode is a tad better and their web management is an order of magnitude better.  Performance?  I don&#8217;t think anything can touch an SRX loaded with SPCs, but the numbers are impressive.  I&#8217;d like to do a bake off once I get some time (and a super massive in my lab)</p>
+
+<p>That being said, I gave the Sonicwall we have as a demo a good go around.  I found it&#8217;s ease of setup pretty refreshing.  For those that have non-networking savvy security folks running these boxes, they&#8217;ll likely love the interface.  I like the AppFlow Monitor.  It&#8217;s a nice reprensentation of the transit data in an easy to understand format.  Here is an example of the box in my lab after running a few days.</p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM.png"><img class="alignnone  wp-image-116" title="SonicWall AppFlow Monitor " src="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM-1024x256.png" alt="" width="491" height="123" srcset="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM-1024x256.png 1024w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM-300x75.png 300w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM-550x137.png 550w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM.png 1176w" sizes="(max-width: 491px) 100vw, 491px" /></a> <a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM.png"><br />
+</a></p>
+
+<p>&nbsp;</p>
+
+<p>The threat reports are nice as well, very eye candy and they seem pretty accurate based on what we threw at it and what we generally see in the wild west.</p>
+
+<p>&nbsp;</p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.48-PM.png"><img class="wp-image-120 alignleft" title="Screen Shot 2012-12-07 at 4.09.48 PM" src="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.48-PM-1024x256.png" alt="" width="491" height="123" srcset="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.48-PM-1024x256.png 1024w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.48-PM-300x75.png 300w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.48-PM-550x137.png 550w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.48-PM.png 1178w" sizes="(max-width: 491px) 100vw, 491px" /></a></p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM1.png"><img class="wp-image-123 alignleft" title="Screen Shot 2012-12-07 at 4.09.41 PM" src="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM1-1024x256.png" alt="" width="491" height="123" srcset="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM1-1024x256.png 1024w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM1-300x75.png 300w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM1-550x137.png 550w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM1.png 1176w" sizes="(max-width: 491px) 100vw, 491px" /></a></p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.10.00-PM.png"><img class="wp-image-121 alignleft" title="Screen Shot 2012-12-07 at 4.10.00 PM" src="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.10.00-PM-1024x256.png" alt="" width="491" height="123" srcset="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.10.00-PM-1024x256.png 1024w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.10.00-PM-300x75.png 300w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.10.00-PM-550x137.png 550w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.10.00-PM.png 1173w" sizes="(max-width: 491px) 100vw, 491px" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>The real time monitor reminds me a lot of the Palo Alto.  It gives some serious eye candy, live, realtime graphs of any traffic transiting the box.  Very eye catching and I can see a use case for it.</p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.48.44-PM.png"><img class="alignnone  wp-image-130" title="Sonicwall Real Time Monitor" src="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.48.44-PM-1024x635.png" alt="" width="524" height="325" srcset="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.48.44-PM-1024x635.png 1024w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.48.44-PM-300x186.png 300w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.48.44-PM-550x341.png 550w, http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.48.44-PM.png 1215w" sizes="(max-width: 524px) 100vw, 524px" /></a></p>
+
+<p>However, I find the management of the interfaces a bit clunky and the lack of non-beta IPv6 support is a but disappointing.  I&#8217;ll be testing the IPv6 support soon, I&#8217;m just waiting on the activation of the box I have to support it.</p>
+
+<p>Firmware updates seem to require a registration of the machine in their system, something I understand but the old school networking guy in me really hates feature licensing and remote activation of network hardware.  A lot.  the fact that every vendor seems to be doing it just makes my skin crawl, but such is life.</p>
+
+<p>The box comes with an SSL VPN server as well, I&#8217;ve still been twiddling with getting mine working.  The smaller SOHO devices have wifi built in, but that&#8217;s way outside of my scope, so I&#8217;ll leave it at that.</p>
+
+<p>&nbsp;</p>
+
+<p>The CLI isn&#8217;t terrible, either.  It&#8217;s more IOS that I remember, but a far cry from JunOS.  Tab complete works and there are a decent amount of options.  I&#8217;ve not yet tried to configure much with it but have used the show commands some.  Here is an example from the small box we have:<br />
+<em>User:admin</em><br />
+<em>Password:</em></p>
+
+<p><em>labfw&gt; show interface sta</em><br />
+<em>labfw&gt; show interface statistics</em><br />
+<em>Interface statistics for X0</em><br />
+ <em>InDiscards : 0</em><br />
+ <em>InNUcast : 401464</em><br />
+ <em>InUcast : 4921467</em><br />
+ <em>InOctets : 2207976060</em><br />
+ <em>InErrs : 0</em><br />
+ <em>OutDiscards : 37</em><br />
+ <em>OutNUcast : 9733</em><br />
+ <em>OutUcast : 5407031</em><br />
+ <em>OutOctets : 3031626437</em><br />
+ <em>OutErrs : 0</em><br />
+ <em>InUnkProto : 0</em><br />
+ <em>InMcast : 291793</em><br />
+ <em>InBcast : 109671</em><br />
+ <em>OutMcast : 0</em><br />
+ <em>OutBcast : 9733</em></p>
+
+<p><em>Interface statistics for X1</em><br />
+ <em>InDiscards : 0</em><br />
+ <em>InNUcast : 5401982</em><br />
+ <em>InUcast : 4496250</em><br />
+ <em>InOctets : 3192806274</em><br />
+ <em>InErrs : 0</em><br />
+ <em>OutDiscards : 0</em><br />
+ <em>OutNUcast : 54</em><br />
+ <em>OutUcast : 4582195</em><br />
+ <em>OutOctets : 2114718776</em><br />
+ <em>OutErrs : 0</em><br />
+ <em>InUnkProto : 0</em><br />
+ <em>InMcast : 1500142</em><br />
+ <em>InBcast : 3901840</em><br />
+ <em>OutMcast : 0</em><br />
+ <em>OutBcast : 54</em></p>
+
+<p><em> </em></p>
+
+<p>Overall, not a bad platform.  They&#8217;ve certainly done their homework.</p>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-107" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/2012/12/sonicwall-old-dog-learns-some-new-tricks/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/2012/12/sonicwall-old-dog-learns-some-new-tricks/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/2012/12/sonicwall-old-dog-learns-some-new-tricks/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-107" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/2012/12/sonicwall-old-dog-learns-some-new-tricks/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-107" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/2012/12/sonicwall-old-dog-learns-some-new-tricks/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/2012/12/sonicwall-old-dog-learns-some-new-tricks/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/2012/12/sonicwall-old-dog-learns-some-new-tricks/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-107" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/2012/12/sonicwall-old-dog-learns-some-new-tricks/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/2012/12/sonicwall-old-dog-learns-some-new-tricks/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

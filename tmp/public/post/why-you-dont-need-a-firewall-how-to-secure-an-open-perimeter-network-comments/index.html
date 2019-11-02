@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network-comments/">
+<meta property="og:title" content="Why you don&#39;t need a firewall [how to secure an open perimeter network]" />
+<meta property="og:description" content="[cryptochrome]( &ldquo;sascha@picchiantano.de&rdquo;) - Sep 1, 2014
+Wow. I completely disagree. Just because a firewall can give you some headaches in your network environment it shouldn&rsquo;t be a reason to just dump it. A very dangerous proposition, and your &ldquo;alternatives&rdquo; will not be enough. Fix your firewall if it causes issues. Nick Buraglio - Sep 1, 2014
+Like I said, it&rsquo;s not for everyone, but there are very real use cases where there is no hardware firewall that does what is necessary." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network-comments/" />
+<meta property="article:published_time" content="2014-09-08T07:30:07+00:00" />
+<meta property="article:modified_time" content="2014-09-08T07:30:07+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why you don&#39;t need a firewall [how to secure an open perimeter network]"/>
+<meta name="twitter:description" content="[cryptochrome]( &ldquo;sascha@picchiantano.de&rdquo;) - Sep 1, 2014
+Wow. I completely disagree. Just because a firewall can give you some headaches in your network environment it shouldn&rsquo;t be a reason to just dump it. A very dangerous proposition, and your &ldquo;alternatives&rdquo; will not be enough. Fix your firewall if it causes issues. Nick Buraglio - Sep 1, 2014
+Like I said, it&rsquo;s not for everyone, but there are very real use cases where there is no hardware firewall that does what is necessary."/>
+
+
+<meta itemprop="name" content="Why you don&#39;t need a firewall [how to secure an open perimeter network]">
+<meta itemprop="description" content="[cryptochrome]( &ldquo;sascha@picchiantano.de&rdquo;) - Sep 1, 2014
+Wow. I completely disagree. Just because a firewall can give you some headaches in your network environment it shouldn&rsquo;t be a reason to just dump it. A very dangerous proposition, and your &ldquo;alternatives&rdquo; will not be enough. Fix your firewall if it causes issues. Nick Buraglio - Sep 1, 2014
+Like I said, it&rsquo;s not for everyone, but there are very real use cases where there is no hardware firewall that does what is necessary.">
+
+
+<meta itemprop="datePublished" content="2014-09-08T07:30:07&#43;00:00" />
+<meta itemprop="dateModified" content="2014-09-08T07:30:07&#43;00:00" />
+<meta itemprop="wordCount" content="242">
+
+
+
+<meta itemprop="keywords" content="IPv6,Routing,SDN,Security,Soap Box," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Why you don&#39;t need a firewall [how to secure an open perimeter network] 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Why you don&#39;t need a firewall [how to secure an open perimeter network] </h1>
+    <div class="content"> <p>[cryptochrome]( &ldquo;sascha@picchiantano.de&rdquo;) - <time datetime="2014-09-08 02:11:00">Sep 1, 2014</time></p>
+
+<p>Wow. I completely disagree. Just because a firewall can give you some headaches in your network environment it shouldn&rsquo;t be a reason to just dump it. A very dangerous proposition, and your &ldquo;alternatives&rdquo; will not be enough. Fix your firewall if it causes issues.
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net/" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2014-09-08 08:53:00">Sep 1, 2014</time></p>
+
+<p>Like I said, it&rsquo;s not for everyone, but there are very real use cases where there is no hardware firewall that does what is necessary. For example, how do you firewall 100G WAN connectivity and still retain the ability to do &gt;10Gbps flows? What firewall can handle 40Gbps flows end to end for things like gridftp? How would a typical firewall handle experimental protocols like named data networking? For 95% of the normal users, a generic security appliance is probably fine. There are, however, things that they just don&rsquo;t work for. I&rsquo;m in no way proposing that some random bank go and remove its border firewall, but running without a perimeter device can be done and it is useful to think about because it&rsquo;s really not that hard. I have done it in one way or another for more than a decade. That is not to say that there are not firewalls or appliances in the network somewhere, but they&rsquo;re not at the perimeter and they are provisioned for extremely specific purposes. I could probably successfully argue that they are more efficient because of that alone.
+<hr /></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/ipv6">#IPv6</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/sdn">#SDN</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/security">#Security</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/soap-box">#Soap Box</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 8 Sep 2014 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

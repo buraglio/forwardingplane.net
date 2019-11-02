@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/orig/2011-02-07-upgrading-a-new-srx-3600/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="We are putting a few new SRX 3600 clusters into production soon, and we&#8217;ve had them for about 6 months in boxes. This presented a fairly significant issue, one that I didn&#8217;t think about until it smacked me in the face.
+The code on these boxes was old. Very old. JunOS 9.2 old.
+No problem, lets just upgrade them to 10.4R something.
+ Wrong.     the code that shipped on these boxes was so old, and we waited so long to upgrade them that I was unable to upgrade them straight to anything modern." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/orig/2011-02-07-upgrading-a-new-srx-3600/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="We are putting a few new SRX 3600 clusters into production soon, and we&#8217;ve had them for about 6 months in boxes. This presented a fairly significant issue, one that I didn&#8217;t think about until it smacked me in the face.
+The code on these boxes was old. Very old. JunOS 9.2 old.
+No problem, lets just upgrade them to 10.4R something.
+ Wrong.     the code that shipped on these boxes was so old, and we waited so long to upgrade them that I was unable to upgrade them straight to anything modern."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="We are putting a few new SRX 3600 clusters into production soon, and we&#8217;ve had them for about 6 months in boxes. This presented a fairly significant issue, one that I didn&#8217;t think about until it smacked me in the face.
+The code on these boxes was old. Very old. JunOS 9.2 old.
+No problem, lets just upgrade them to 10.4R something.
+ Wrong.     the code that shipped on these boxes was so old, and we waited so long to upgrade them that I was unable to upgrade them straight to anything modern.">
+
+
+
+<meta itemprop="wordCount" content="261">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> <p>We are putting a few new SRX 3600 clusters into production soon, and we&#8217;ve had them for about 6 months in boxes. This presented a fairly significant issue, one that I didn&#8217;t think about until it smacked me in the face.<br />
+The code on these boxes was old. Very old. JunOS 9.2 old.<br />
+No problem, lets just upgrade them to 10.4R something.</p>
+
+<div>
+  <b>Wrong</b>.
+</div>
+
+<div>
+</div>
+
+<div>
+  the code that shipped on these boxes was so old, and we waited so long to upgrade them that I was unable to upgrade them straight to anything modern. To compound the issue, the upgrade was only able to be performed from certain code level releases as noted <a href="http://forums.juniper.net/t5/SRX-Services-Gateway/SRX-3400-upgrade-failure/m-p/55416">here</a>.
+</div>
+
+<div>
+</div>
+
+<div>
+  This is a problem. I logged into the Juniper site to get the appropriate code, low and behold, it&#8217;s not available. I had to contact jtac and convince them that the code wasn&#8217;t there (which was a bit frustrating). Once they understood the issue (which took a bit longer than I expected; I don&#8217;t have Agility services on these particular boxes or I would never have had the jtac &#8220;issue&#8221;), they provided me with a download link for junos-srx3000-9.6R4.4-domestic. Once I had that code I was able to upgrade to it and then to 10.4.
+</div>
+
+<div>
+</div>
+
+<div>
+  Not a huge issue, but something that was very annoying to have to jump through since I&#8217;ve never seen this issue upgrading a Juniper device.
+</div>
+
+<div>
+</div>
+
+<div>
+</div>
+
+<div>
+  [[ This is a content summary only. Visit my website for full links, other content, and more! ]]
+</div>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-40" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/2011/02/upgrading-a-new-srx-3600/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/2011/02/upgrading-a-new-srx-3600/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/2011/02/upgrading-a-new-srx-3600/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-40" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/2011/02/upgrading-a-new-srx-3600/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-40" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/2011/02/upgrading-a-new-srx-3600/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/2011/02/upgrading-a-new-srx-3600/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/2011/02/upgrading-a-new-srx-3600/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-40" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/2011/02/upgrading-a-new-srx-3600/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/2011/02/upgrading-a-new-srx-3600/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

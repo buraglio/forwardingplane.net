@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/the-sad-state-of-ipv6-and-why-you-need-to-learn-it-comments/">
+<meta property="og:title" content="The sad state of IPv6 and why you need to learn it." />
+<meta property="og:description" content="[Engineer Z]( &ldquo;zawada@ieee.org&rdquo;) - Aug 1, 2013
+I agree fully. As you may recall Nick, for a long time I&rsquo;ve said &ldquo;NAT is a turd&rdquo; and &ldquo;Carrier-grade NAT is a polished turd.&rdquo; At least at first glance &ldquo;Enhanced IP&rdquo; looks like more turd polishing to me. How do we break folks&rsquo; habit of working around the shortcomings of NAT and show the value of truly global address space? Why do folks keep hacking on the NAT kludge?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/the-sad-state-of-ipv6-and-why-you-need-to-learn-it-comments/" />
+<meta property="article:published_time" content="2013-08-05T11:18:03+00:00" />
+<meta property="article:modified_time" content="2013-08-05T11:18:03+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The sad state of IPv6 and why you need to learn it."/>
+<meta name="twitter:description" content="[Engineer Z]( &ldquo;zawada@ieee.org&rdquo;) - Aug 1, 2013
+I agree fully. As you may recall Nick, for a long time I&rsquo;ve said &ldquo;NAT is a turd&rdquo; and &ldquo;Carrier-grade NAT is a polished turd.&rdquo; At least at first glance &ldquo;Enhanced IP&rdquo; looks like more turd polishing to me. How do we break folks&rsquo; habit of working around the shortcomings of NAT and show the value of truly global address space? Why do folks keep hacking on the NAT kludge?"/>
+
+
+<meta itemprop="name" content="The sad state of IPv6 and why you need to learn it.">
+<meta itemprop="description" content="[Engineer Z]( &ldquo;zawada@ieee.org&rdquo;) - Aug 1, 2013
+I agree fully. As you may recall Nick, for a long time I&rsquo;ve said &ldquo;NAT is a turd&rdquo; and &ldquo;Carrier-grade NAT is a polished turd.&rdquo; At least at first glance &ldquo;Enhanced IP&rdquo; looks like more turd polishing to me. How do we break folks&rsquo; habit of working around the shortcomings of NAT and show the value of truly global address space? Why do folks keep hacking on the NAT kludge?">
+
+
+<meta itemprop="datePublished" content="2013-08-05T11:18:03&#43;00:00" />
+<meta itemprop="dateModified" content="2013-08-05T11:18:03&#43;00:00" />
+<meta itemprop="wordCount" content="606">
+
+
+
+<meta itemprop="keywords" content="IPv6,Musings,Soap Box," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     The sad state of IPv6 and why you need to learn it. 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> The sad state of IPv6 and why you need to learn it. </h1>
+    <div class="content"> <p>[Engineer Z]( &ldquo;zawada@ieee.org&rdquo;) - <time datetime="2013-08-12 08:13:35">Aug 1, 2013</time></p>
+
+<p>I agree fully. As you may recall Nick, for a long time I&rsquo;ve said &ldquo;NAT is a turd&rdquo; and &ldquo;Carrier-grade NAT is a polished turd.&rdquo; At least at first glance &ldquo;Enhanced IP&rdquo; looks like more turd polishing to me. How do we break folks&rsquo; habit of working around the shortcomings of NAT and show the value of truly global address space? Why do folks keep hacking on the NAT kludge? One big problem is that too many folks now believe NAT is one of the required steps to secure their devices from the &lsquo;net. It&rsquo;s just one of those things you&rsquo;re supposed to do. If I put everything in 10.0.0.0/8 and NAT to my public address space then the bad guys can&rsquo;t get to my computers, right? We know the reality is that there are much better ways of controlling access without breaking the network stack in the process. (And they do a better of job of providing true security.) The cynical engineer me is starting to believe the state of networking technology has surpassed the abilities of many of the so-called network administrators and engineers out there. You&rsquo;re going to replace IPv4 with IPv6? (LOL- I envision a Folgers-type switch. We&rsquo;ve secretly replaced the IPv4 protocol that John Smith&rsquo;s network usually serves with IPv6&hellip; Let&rsquo;s see if anyone can tell the difference&hellip;) You&rsquo;re going to freak out a lot of folks all the way up and down the IT management change because their brains can&rsquo;t possibly grok yet another technology to stuff into the network infrastructure. I hope I&rsquo;m wrong and that things aren&rsquo;t so bad in the IT community. Lastly, I think part of the problem is a chicken-egg situation. While some of the big boys support IPv6 (my PFSense box stats say IPv6 has reached some significant penetration) the vast majority of sites out there still don&rsquo;t support IPv6. Do a &ldquo;dig www.amazon.com AAAA&rdquo; (or, my favorite, &ldquo;dig www.slashdot.com AAAA&rdquo; :-) ) and tell me what you see. However there is hope when www.fark.com has an IPv6 address. I think we need to keep up the evangelizing because there are enough useful IPv6 destinations out there. Perhaps if we get deep enough penetration with IPv6 we&rsquo;ll start seeing some IPv6-only destinations which can start snowballing IPv6 deployment.
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-10-21 09:47:24">Oct 1, 2013</time></p>
+
+<p>Addressing in v6 is a bit different. Each interface can (and will) have many addresses, moving addressing is a bit more straightforward (yes, unless you get PI address space from ARIN you&rsquo;ll need to renumber if you change ISPs). I usually recommend using the M bit and DHCPv6. In my opinion static addressing for anything that isn&rsquo;t a server is a management challenge waiting to happen.
+<hr /></p>
+
+<p>[J Hull]( &ldquo;jch777@gmail.com&rdquo;) - <time datetime="2013-09-24 14:39:49">Sep 2, 2013</time></p>
+
+<p>First off, I have to admit I know very little about IPv6. But I have a senior network admin in my team that seems pretty well versed. While he was explaining some of the differences between IPv6 &amp; IPv4 the question came up: If we use IPv6 and all devices are addressed from a block that our ISP has assigned to us, what happens when we change ISP&rsquo;s? Can the address block follow the company instead of staying with the ISP? If not, then I think would make sense that when you use IPv6 it would be assumed that all systems will use DHCP? It would seem to me that static addressing may causes an incredible amount of work if you need to switch providers. Sorry if the above questions highlight my limited understanding. We&rsquo;re a fairly small company (<200 FTE) and our plate is always full of immediate "must have" projects for our business units. But I have told my IT team that upgrading our network to IPv6 is a priority in our 1-3yr planning process.
+<hr /></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/ipv6">#IPv6</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/soap-box">#Soap Box</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 5 Aug 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

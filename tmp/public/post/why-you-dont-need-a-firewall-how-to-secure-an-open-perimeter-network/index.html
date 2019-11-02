@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/">
+<meta property="og:title" content="Why you don&#39;t need a firewall [how to secure an open perimeter network]" />
+<meta property="og:description" content="I admit that the title was meant to be inflammatory. However, there are use cases that aren&rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &ldquo;a firewall protects a network like a fuse protects an electrical circuit&rdquo;, and it&rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/" />
+<meta property="article:published_time" content="2014-09-08T07:30:07+00:00" />
+<meta property="article:modified_time" content="2014-09-08T07:30:07+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why you don&#39;t need a firewall [how to secure an open perimeter network]"/>
+<meta name="twitter:description" content="I admit that the title was meant to be inflammatory. However, there are use cases that aren&rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &ldquo;a firewall protects a network like a fuse protects an electrical circuit&rdquo;, and it&rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake."/>
+
+
+<meta itemprop="name" content="Why you don&#39;t need a firewall [how to secure an open perimeter network]">
+<meta itemprop="description" content="I admit that the title was meant to be inflammatory. However, there are use cases that aren&rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &ldquo;a firewall protects a network like a fuse protects an electrical circuit&rdquo;, and it&rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.">
+
+
+<meta itemprop="datePublished" content="2014-09-08T07:30:07&#43;00:00" />
+<meta itemprop="dateModified" content="2014-09-08T07:30:07&#43;00:00" />
+<meta itemprop="wordCount" content="572">
+
+
+
+<meta itemprop="keywords" content="IPv6,Routing,SDN,Security,Soap Box," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Why you don&#39;t need a firewall [how to secure an open perimeter network] 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Why you don&#39;t need a firewall [how to secure an open perimeter network] </h1>
+    <div class="content"> <p>I admit that the title was meant to be inflammatory.  However, there are use cases that aren&rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job.  Someone once told me &ldquo;a firewall protects a network like a fuse protects an electrical circuit&rdquo;, and it&rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.  I can say, though, that the use of a firewall, IPS or other inline security appliance has presented many problems in many environments in my years as a network and security engineer and architect.    To that end, there are mechanisms for replacing the functions of a firewall and IPS with other options, which in many cases have a lower capital expense [although they may have a higher <em>initial</em> operational expense].  I&rsquo;ll outline them here, but before I do I want to re-iterate that NAT (PAT) is not a security tool, it&rsquo;s a translation tool.  Nothing more.  So, I will leave that out.  If you don&rsquo;t have appropriate IPv4 or IPv6 address space some of these things may need adjustments although they are still accomplishable by doing NAT on a border Layer 3 device.     Below is a talk that I gave at BroCon14 that is a rough outline of how to do this, if you don&rsquo;t want to spend 30 minutes listening to me talk about it, the clifs notes are bulleted below, but the context is all in the video so I encourage you to watch it before responding to my post. For those that want to take a look, here is the talk. Here are the bullets.</p>
+
+<ul>
+<li><strong>Announce only necessary resources </strong></li>
+</ul>
+
+<p>One can utilize routing to only expose the pieces of the network that need to be exposed.  If you have a /16 and on;y a /24 needs to be exposed, only announce that prefix.  This is not that different than a typical DMZ.</p>
+
+<ul>
+<li><strong>Filter access to network, storage and management hardware</strong></li>
+</ul>
+
+<p>Utilize best practice ingress filtering.  Follow <a href="http://tools.ietf.org/html/bcp38">BCP38</a>. You should be doing this anyway.</p>
+
+<ul>
+<li><strong>Utilize host based firewalls</strong></li>
+</ul>
+
+<p>This is a no-brainer.  Firewall as close to the resource as possible.</p>
+
+<ul>
+<li><strong>Employ central host management</strong></li>
+</ul>
+
+<p>Make your life easy.  Cloud providers do it and it&rsquo;s well documented nowadays.  There are <a href="http://cfengine.com/">many</a> <a href="http://puppetlabs.com/">options</a>.</p>
+
+<ul>
+<li><strong>Centralize logging and flow data collection</strong></li>
+</ul>
+
+<p>Another no brainer, you should be doing this anyway.</p>
+
+<ul>
+<li><strong>Create baselines for traffic and activity</strong></li>
+</ul>
+
+<p>Data is good.  Knowledge is power.  Baselines are useful for both anomaly detection and forecasting and it&rsquo;s not that hard to do it.</p>
+
+<ul>
+<li><strong>Deploy and tune IDS</strong></li>
+</ul>
+
+<p>Passive IDS system[s] off of a TAP or SPAN are key to this kind of architecture.  See video for more details but there are a bunch of good options. I prefer <a href="http://www.bro.org">Bro IDS</a> but there are many players both commercial and FOSS.</p>
+
+<ul>
+<li><strong>Filter with black hole routing</strong></li>
+</ul>
+
+<p>I&rsquo;ve <a href="http://www.forwardingplane.net/2011/10/black-hole-routing/" title="Black Hole routing">talked about this before</a>.  Automating this is key to making it function efficiently and it is a fantastic tool.  This can be done with BGP (traditionally) or with something innovative like OpenFlow.</p>
+
+<ul>
+<li><strong>Make use of regularly scheduled external vulnerability scanning</strong></li>
+</ul>
+
+<p>This is a great way to verify your exposure and works for any sized network.  Highly recommended.</p>
+
+<p>  Clearly this isn&rsquo;t for everyone, and that&rsquo;s ok.  For anyone that has struggled with issues involving security appliances either based on protocol, horsepower or interface speeds, there are options.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/ipv6">#IPv6</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/sdn">#SDN</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/security">#Security</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/soap-box">#Soap Box</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 8 Sep 2014 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/inline-jflow-on-mx-series-juniper/">
+<meta property="og:title" content="Inline-jflow on MX series Juniper" />
+<meta property="og:description" content="One of the things that I&rsquo;ve always lamented about using non-Cisco hardware is the lack of true 1:1 netflow support. Say what you will about jflow, cflow, sflow&hellip;.there is no substitute for netflow, with sflow being the exception to that since it is a protocol that inherently supports ipv6 and can transport far more than simple network information if configured in certain ways on certain devices. On newer MX series Juniper routers the game has changed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/inline-jflow-on-mx-series-juniper/" />
+<meta property="article:published_time" content="2013-09-01T15:40:29+00:00" />
+<meta property="article:modified_time" content="2013-09-01T15:40:29+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Inline-jflow on MX series Juniper"/>
+<meta name="twitter:description" content="One of the things that I&rsquo;ve always lamented about using non-Cisco hardware is the lack of true 1:1 netflow support. Say what you will about jflow, cflow, sflow&hellip;.there is no substitute for netflow, with sflow being the exception to that since it is a protocol that inherently supports ipv6 and can transport far more than simple network information if configured in certain ways on certain devices. On newer MX series Juniper routers the game has changed."/>
+
+
+<meta itemprop="name" content="Inline-jflow on MX series Juniper">
+<meta itemprop="description" content="One of the things that I&rsquo;ve always lamented about using non-Cisco hardware is the lack of true 1:1 netflow support. Say what you will about jflow, cflow, sflow&hellip;.there is no substitute for netflow, with sflow being the exception to that since it is a protocol that inherently supports ipv6 and can transport far more than simple network information if configured in certain ways on certain devices. On newer MX series Juniper routers the game has changed.">
+
+
+<meta itemprop="datePublished" content="2013-09-01T15:40:29&#43;00:00" />
+<meta itemprop="dateModified" content="2013-09-01T15:40:29&#43;00:00" />
+<meta itemprop="wordCount" content="737">
+
+
+
+<meta itemprop="keywords" content="How-To,Routing,Security," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Inline-jflow on MX series Juniper 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Inline-jflow on MX series Juniper </h1>
+    <div class="content"> <p>One of the things that I&rsquo;ve always lamented about using non-Cisco hardware is the lack of true 1:1 <a href="http://en.wikipedia.org/wiki/Netflow">netflow</a> support.  Say what you will about jflow, cflow, sflow&hellip;.there is no substitute for netflow, with sflow being the exception to that since it is a protocol that inherently supports ipv6 and <a href="http://www.forwardingplane.net/2012/10/host-based-sflow-or-sflow-for-more-than-just-network-traffic/" title="Host based sflow, or, sflow for more than just network traffic">can transport far more than simple network information</a> if configured in certain ways on certain devices. On newer MX series Juniper routers the game has changed.  One to one flow data export (in IPFIX format) is now available, in hardware, for IPv4 and IPv6.  Queue the service providers rejoice.  Configuring this on the MX is a tad more involved than a Cisco, but it&rsquo;s still pretty straightforward. In set commands:```
+ buraglio@mx480&gt; show configuration forwarding-options | display set
+ set forwarding-options sampling traceoptions file ipfix.log
+ set forwarding-options sampling traceoptions file size 10k
+ set forwarding-options sampling instance 1to1 input rate 1
+ set forwarding-options sampling instance 1to1 family inet output flow-server <br />
+ 10.16.120.204 port 9995
+ set forwarding-options sampling instance 1to1 family inet output flow-server <br />
+ 10.16.120.204 version-ipfix template ipv4
+ set forwarding-options sampling instance 1to1 family inet output \
+ inline-jflow source-address 10.16.120.1
+ set forwarding-options sampling instance 1to1 family inet6 output flow-server \
+ 10.16.120.204 port 9995
+ set forwarding-options sampling instance 1to1 family inet6 output flow-server \
+ 10.16.120.204 version-ipfix template ipv6
+ set forwarding-options sampling instance 1to1 family inet6 output inline-jflow \
+ source-address 10.16.120.1</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Once the forwarding-options are set the chassis hardware has to be told what it can do.  Lets say you want to configure the inline-jflow on interfaces that exist on fpc0 (MPC0):```" data-lang="Once the forwarding-options are set the chassis hardware has to be told what it can do.  Lets say you want to configure the inline-jflow on interfaces that exist on fpc0 (MPC0):```">buraglio@ur1rtr&gt; show configuration chassis fpc 0 | display set
+set chassis fpc 0 pic 0 tunnel-services bandwidth 1g
+set chassis fpc 0 pic 1 tunnel-services bandwidth 1g
+set chassis fpc 0 sampling-instance 1to1
+set chassis fpc 0 inline-services flow-table-size ipv4-flow-table-size 5
+set chassis fpc 0 inline-services flow-table-size ipv6-flow-table-size 5</code></pre></div>
+<p>Notice we&rsquo;re referencing the sampling instance we created in the forwarding-options.  This tells the MPC (FPC) and MIC (PIC) that you want a traceoptions file (deactivate this after the setup is all working; I generaly keep a traceoptions section configured but deactivated in nearly every protocol for quick debugging.)  Enables the sampling instance we jut added to the forwarding options and sets the flow collector address and port.  It also sets the protocol as <a href="http://en.wikipedia.org/wiki/IP_Flow_Information_Export">IPFIX</a> (Essentially netflow v9).  Now that we have the framework set up, we need to add the bits to the interface that tell it to sample the traffic```
+buraglio@ur1rtr&gt; show configuration interfaces xe-0/0/1 | display set
+set interfaces xe-0/0/1 description &ldquo;trib port 1&rdquo;
+set interfaces xe-0/0/1 flexible-vlan-tagging
+set interfaces xe-0/0/1 encapsulation flexible-ethernet-services
+set interfaces xe-0/0/1 unit 105 description &ldquo;Trib peering #1&rdquo;
+set interfaces xe-0/0/1 unit 105 vlan-id 1005
+set interfaces xe-0/0/1 unit 105 family inet mtu 9000
+set interfaces xe-0/0/1 unit 105 family inet sampling input
+set interfaces xe-0/0/1 unit 105 family inet address 10.17.120.<sup>1</sup>&frasl;<sub>30</sub>
+set interfaces xe-0/0/1 unit 105 family inet6 mtu 9000
+set interfaces xe-0/0/1 unit 105 family inet6 sampling input
+set interfaces xe-0/0/1 unit 105 family inet6 address 2001:DB8:1:dead:beef::<sup>1</sup>&frasl;<sub>64</sub></p>
+
+<pre><code>
+Point this at your favorite flow collector and reap the benefits of having flow data. As far as collectors there are a lot of options, I prefer [nfdump](http://nfdump.sourceforge.net/)/[nfsen](http://nfsen.sourceforge.net/) because it's FOSS, very flexible, has [plugins](http://sourceforge.net/apps/trac/nfsen-plugins/) and is well supported, but there are fantastic commercial options for every flavor.  I've used the Arbor Peakflow and like it but it has a very expensive licensing model so it is generally deployed in larger environments.   I've also heard good things about the [SolarWinds Netflow Analyzer](http://www.solarwinds.com/netflow-traffic-analyzer.aspx) but I've never used it. Caveats: On the older ichip platform with the MS-DPC you can view the actual flows on the box itself using the command &lt;command&gt;  much like show cef on a cisco.  I cannot find a way to do that on in the inline-jflow configuration on the trio hardware. This was configured on JunOS 12.3R3.4 on MX480 hardware with MPC3/Trio hardware. I can't seem to get the IPv6 flow data from the flow records.  I suspect it's either not in there yet or I've configured that part wrong. -----EDIT----- IPv6 flow data is working fine, flows are just being obfuscated by IPv4.  Using nfdump and singling out the IPv6 traffic shows what we expect:```
+nfdump -M /home/netflow/profiles-data/testlab/rtr1  -T  -r \\ 
+2013/09/03/nfcapd.201309030945 -n 20 -s ip/flows -6
+nfdump filter:
+inet6
+Top 20 IP Addr ordered by flows:
+
+---SNIP---
+
+Summary: total flows: 19222, total bytes: 28.7 M, total packets: \\ 
+45173, avg bps: 732, avg pps: 0, avg bpp: 636
+Time window: 2013-07-15 16:42:57 - 2013-09-03 09:50:20
+Total flows processed: 4134975, Blocks skipped: 0, Bytes read: 281643580
+Sys: 1.235s flows/second: 3345958.0  Wall: 1.770s flows/second: 2335921.0
+</code></pre>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/security">#Security</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 1 Sep 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

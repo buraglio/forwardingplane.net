@@ -1,0 +1,568 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/">
+<meta property="og:title" content="ForwardingPlane.net" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://forwardingplane.net/" />
+
+<meta property="og:updated_time" content="2019-09-08T18:11:58+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ForwardingPlane.net"/>
+<meta name="twitter:description" content=""/>
+
+
+<meta itemprop="name" content="ForwardingPlane.net">
+<meta itemprop="description" content="">
+
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     ForwardingPlane.net 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<main>
+
+
+  
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/post/building-flowvisor-on-centos-6-quick-and-dirty-comments/'> Building FlowVisor on Centos 6 - quick and dirty</a> </h2>
+    <div class="meta">
+      <div class="date">
+      5 Jul, 2013 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/openflow">#OpenFlow</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    Technology Short Take #34 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, storage, and servers - Jul 1, 2013
+[&hellip;] Nick Buraglio provides some quick-and-dirty instructions for building FlowVisor on CentOS 6. [&hellip;] Technology Short Take #34 | Strategic HR - Jul 6, 2013
+[&hellip;] Nick Buraglio provides some quick-and-dirty instructions for building FlowVisor on CentOS 6. [&hellip;] # - Aug 4, 2013
+At the end of the nail with your hammer to avoid splitting the wood when you drive the nail.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/post/building-flowvisor-on-centos-6-quick-and-dirty-comments/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/post/building-flowvisor-on-centos-6-quick-and-dirty/'> Building FlowVisor on Centos 6 - quick and dirty</a> </h2>
+    <div class="meta">
+      <div class="date">
+      5 Jul, 2013 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/openflow">#OpenFlow</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    I had the need to build a FlowVisor instance under CentOS. Since nearly all of the docs I could find were for debian, I threw this together. I utilized this GENI doc and the github docs as a simple reference. This is the quick and dirty method I used: Install the prerequisites:``` sudo yum -y install ant eclipse java-1.6.0-openjdk.x86_64 git sudo yum -y groupinstall &ldquo;Development Tools&rdquo;
+mkdir /services cd /services git clone git://github.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/post/building-flowvisor-on-centos-6-quick-and-dirty/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/post/i-want-to-love-cumulus-networks-comments/'> I want to love cumulus networks.....</a> </h2>
+    <div class="meta">
+      <div class="date">
+      3 Jul, 2013 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    [David Hocking]( &ldquo;davehockingprivate@gmail.com&rdquo;) - Jul 5, 2013
+When I was looking into a free router/fw appliance I could deploy as VMs, I looked at pfSense, but settled with Vyatta. It has the best of both worlds IMHO, you get a near-native linux experience, bash et al, but, with the benefit of a single hierarchical config file that can be diff&rsquo;d, scp&rsquo;d and copied between nodes. If you&rsquo;ve used JunOS, then you can use vyatta too, I just wish they&rsquo;d make the break into switching too!
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/post/i-want-to-love-cumulus-networks-comments/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/post/i-want-to-love-cumulus-networks/'> I want to love cumulus networks.....</a> </h2>
+    <div class="meta">
+      <div class="date">
+      3 Jul, 2013 - 5 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    I want to preface this by saying that I have not seen or worked on the cumulus networks system yet. This is a stream of consciousness post on my thoughts and opinions based on what I&rsquo;ve read publicly. Recently a new network player has emerged on the scene with a very simple, straightforward idea. Take linux and put it on a switch. While this isn&rsquo;t exactly new (see Juniper and FreeBSD, Arista with Linux, Force10 with NetBSD or the plethora of other vendors using an opensource OS as the underpinnings of their NOS), the angle that cumulus networks is taking is a bit more&hellip;.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/post/i-want-to-love-cumulus-networks/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/post/vmware-esxi-cli-reference-comments/'> VMWare ESXi CLI reference</a> </h2>
+    <div class="meta">
+      <div class="date">
+      30 Jun, 2013 - 1 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/virtualization">#Virtualization</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    [mike]( &ldquo;mike@marseglia.org&rdquo;) - Sep 4, 2013
+You would be happy to hear that William Lam, engineer at VMware, has an excellent blog at http://www.virtuallyghetto.com/ where he comes up with useful scripts/tools. Also, you should check out the vSphere Management Assistant (vMA) at http://www.vmware.com/support/developer/vima/ 
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/post/vmware-esxi-cli-reference-comments/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/post/vmware-esxi-cli-reference/'> VMWare ESXi CLI reference</a> </h2>
+    <div class="meta">
+      <div class="date">
+      30 Jun, 2013 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/virtualization">#Virtualization</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    One of my biggest complaints about VMware is that it is an enterprise application. It has historically catered to the masses, which I completely understand, but those of us that aren&rsquo;t a fortune 500 company are figuratively and operationally shoved into a corner and forced to find hackish ways of doing things to work around the enterprise nature. One really, really good example of this is OS dependency. I hated architecture dependencies back in the old days (x86, SPARC, PPC) and I absolutely despise things that are OS platform dependent now.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/post/vmware-esxi-cli-reference/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/post/broadcast-input-with-iterm-comments/'> Broadcast input with iTerm</a> </h2>
+    <div class="meta">
+      <div class="date">
+      22 Jun, 2013 - 1 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    psn code generator free download - Aug 5, 2013
+I leave a response when I like a article on a site or I have something to add to the discussion. It&rsquo;s caused by the fire displayed in the post I browsed. And on this article Broadcast input with iTerm2. I was actually excited enough to drop a commenta response :) I actually do have a couple of questions for you if you don&rsquo;t mind.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/post/broadcast-input-with-iterm-comments/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/post/broadcast-input-with-iterm/'> Broadcast input with iTerm</a> </h2>
+    <div class="meta">
+      <div class="date">
+      22 Jun, 2013 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    As much as I like to think I automate everything, I&rsquo;m pretty bad at writing code to make my life easier since it tends to take me longer to write the code and it tends to make be a bit grumpy (this is eomthing I&rsquo;m fixing by learning as much code dev as I can during my limited spare time). However, I like to think I can be fairly smart about working around my limited programming skills (think boba fett rather than jedi) by using the tools available to common folk.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/post/broadcast-input-with-iterm/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/post/677/'> Generating flow data without Cisco</a> </h2>
+    <div class="meta">
+      <div class="date">
+      17 Jun, 2013 - 0 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/post/677/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/post/debugging-brocade-mlxxmr-ip_rx-cpu-issues/'> Debugging Brocade MLX/XMR ip_rx CPU issues</a> </h2>
+    <div class="meta">
+      <div class="date">
+      17 Jun, 2013 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    I recently had the need to debug a run away ip_rx process on an older Brocade MLX. For anyone that has had to do any type of low level debugging on the Brocade (Foundry) platform, you know that there many somewhat deep level diagnostics that are possible. The debug (like cisco debug) is a bit lacking, but the dm, LP and MP commands are very useful (and a tad scary). Regardless, I&rsquo;ve had to utilize them a lot in the last few years so my aversion to using them has been pretty much completely callused over.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/post/debugging-brocade-mlxxmr-ip_rx-cpu-issues/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+
+
+<div class="page-nav">
+  <div class="page-prev">
+    
+        <a href="https://forwardingplane.net/page/14/" title="Previous page" > &lt;&lt; </a>
+    
+  </div> 
+
+  <div class="page-num">
+    15/50
+  </div> 
+
+  <div class="page-next">
+    
+    <a href="https://forwardingplane.net/page/16/" title="Next page"> >> </a>
+    
+  </div> 
+</div> 
+
+
+</main>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

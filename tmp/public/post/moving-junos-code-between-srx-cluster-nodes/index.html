@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/moving-junos-code-between-srx-cluster-nodes/">
+<meta property="og:title" content="Moving JunOS code between SRX cluster nodes" />
+<meta property="og:description" content="Regardless of the fact that there is now a good ISSU-like service for the SRX (named Low-Impact Cluster Upgrade; LICU for short), if you&rsquo;re upgrading your Active/Active cluster from something that isn&rsquo;t 10.4, or if you just aren&rsquo;t comfortable with how baked LICU actually is, you&rsquo;ll need to know how to move the junos code around. This is easy if you have physical access to both nodes, but for those that have." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/moving-junos-code-between-srx-cluster-nodes/" />
+<meta property="article:published_time" content="2011-01-08T02:11:00+00:00" />
+<meta property="article:modified_time" content="2011-01-08T02:11:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Moving JunOS code between SRX cluster nodes"/>
+<meta name="twitter:description" content="Regardless of the fact that there is now a good ISSU-like service for the SRX (named Low-Impact Cluster Upgrade; LICU for short), if you&rsquo;re upgrading your Active/Active cluster from something that isn&rsquo;t 10.4, or if you just aren&rsquo;t comfortable with how baked LICU actually is, you&rsquo;ll need to know how to move the junos code around. This is easy if you have physical access to both nodes, but for those that have."/>
+
+
+<meta itemprop="name" content="Moving JunOS code between SRX cluster nodes">
+<meta itemprop="description" content="Regardless of the fact that there is now a good ISSU-like service for the SRX (named Low-Impact Cluster Upgrade; LICU for short), if you&rsquo;re upgrading your Active/Active cluster from something that isn&rsquo;t 10.4, or if you just aren&rsquo;t comfortable with how baked LICU actually is, you&rsquo;ll need to know how to move the junos code around. This is easy if you have physical access to both nodes, but for those that have.">
+
+
+<meta itemprop="datePublished" content="2011-01-08T02:11:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-01-08T02:11:00&#43;00:00" />
+<meta itemprop="wordCount" content="251">
+
+
+
+<meta itemprop="keywords" content="How-To,Security," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Moving JunOS code between SRX cluster nodes 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Moving JunOS code between SRX cluster nodes </h1>
+    <div class="content"> <p>Regardless of the fact that there is now a good ISSU-like service for the SRX (named Low-Impact Cluster Upgrade; LICU for short), if you&rsquo;re upgrading your Active/Active cluster from something that isn&rsquo;t 10.4, or if you just aren&rsquo;t comfortable with how baked LICU actually is, you&rsquo;ll need to know how to move the junos code around. This is easy if you have physical access to both nodes, but for those that have.<br />
+This was a problem for me in that our cluster nodes have geographic diversity. In other words, they&rsquo;re far apart. Being how I am, I don&rsquo;t want to trek all around to hand load code from a USB key and being how the SRX cluster works, I can&rsquo;t easily get to node1 over the network since it&rsquo;s part of a cluster.</p>
+
+<p>Low and behold, there is a very simple way to move this code around over the control network. Enter our old friend <a href="http://www.mkssoftware.com/docs/man1/rcp.1.asp">rcp</a>.<br />
+Log into node0 and load the code as normal.</p>
+
+<p>node0&gt;file copy scp://buraglio@desktop.domain.edu/Users/buraglio/Downloads/junos-srx5000-10.4R1.9-domestic.tgz /var/tmp/junos-srx5000-10.4R1.9-domestic.tgz</p>
+
+<p>From here, it&rsquo;s really easy but will require dropping to the unix (FreeBSD, Yay!) shell so I&rsquo;m always careful of what I&rsquo;m typing and by all means be careful.</p>
+
+<p>{primary:node0}</p>
+
+<p>buraglio@node0&gt; start shell</p>
+
+<p>% su</p>
+
+<p>Password:</p>
+
+<p>root@node0% rcp -T /var/tmp/junos-srx5000-10.4R1.9-domestic.tgz node1:/var/tmp/</p>
+
+<p>Thats pretty much it. Upgrade per the normal active/active procedure.</p>
+
+<p><a href="http://kb.juniper.net/InfoCenter/index?page=content&amp;id=KB17410&amp;actp=RSS&amp;smlogin=true">Here</a> is a Juniper knowledge base article on this procedure for second reference.</p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/security">#Security</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 8 Jan 2011 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

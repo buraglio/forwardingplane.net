@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/the-bgp-conundrum/">
+<meta property="og:title" content="The BGP conundrum" />
+<meta property="og:description" content="BGP. It’s that magical protocol that runs the internet. For for as much as BGP is a fundamental, critical, irreplaceable part of the core functioning of the internet, it is a protocol that has not aged well as far as security is concerned. See, BGP was born when the internet was really still an academic experiment. Handshakes and loose agreements were totally fine for connecting a new site. Then came the awakening." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/the-bgp-conundrum/" />
+<meta property="article:published_time" content="2019-06-30T02:15:32+00:00" />
+<meta property="article:modified_time" content="2019-06-30T02:15:32+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The BGP conundrum"/>
+<meta name="twitter:description" content="BGP. It’s that magical protocol that runs the internet. For for as much as BGP is a fundamental, critical, irreplaceable part of the core functioning of the internet, it is a protocol that has not aged well as far as security is concerned. See, BGP was born when the internet was really still an academic experiment. Handshakes and loose agreements were totally fine for connecting a new site. Then came the awakening."/>
+
+
+<meta itemprop="name" content="The BGP conundrum">
+<meta itemprop="description" content="BGP. It’s that magical protocol that runs the internet. For for as much as BGP is a fundamental, critical, irreplaceable part of the core functioning of the internet, it is a protocol that has not aged well as far as security is concerned. See, BGP was born when the internet was really still an academic experiment. Handshakes and loose agreements were totally fine for connecting a new site. Then came the awakening.">
+
+
+<meta itemprop="datePublished" content="2019-06-30T02:15:32&#43;00:00" />
+<meta itemprop="dateModified" content="2019-06-30T02:15:32&#43;00:00" />
+<meta itemprop="wordCount" content="387">
+
+
+
+<meta itemprop="keywords" content="Musings,Routing,Soap Box," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     The BGP conundrum 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> The BGP conundrum </h1>
+    <div class="content"> <p>BGP. It’s that magical protocol that runs the internet. For for as much as BGP is a fundamental, critical, irreplaceable part of the core functioning of the internet, it is a protocol that has not aged well as far as security is concerned. See, BGP was born when the internet was really still an academic experiment. Handshakes and loose agreements were totally fine for connecting a new site. </p>
+
+<p>Then came the awakening. <img src="https://www.forwardingplane.net/wp-content/uploads/2019/06/Awakening.jpg" alt="Awakening" title="Awakening.jpg" /></p>
+
+<p>Once the internet was used for more critical things, security was obviously more important. But BGP did not really evolve at the same rate - and more importantly, the security model surrounding it was mostly left behind. The reasons aren&rsquo;t really important, but the fallout absolutely is. Retrofitting security into an externally exposed protocol is demonstrably difficult. It has been <a href="https://tools.ietf.org/html/rfc8205">tried</a> and <a href="https://tools.ietf.org/html/rfc6810">tried</a> and <a href="https://tools.ietf.org/id/draft-sa-grow-maxprefix-00.html">tried</a> and <a href="https://www.radb.net/">tried</a>. The real limit in this space exists because of the nature of the protocol itself - it is external in nature, thereby requiring coordination between multiple parties. The mechanics of this are two fold: personal interaction to agree on the peering, and technical compliance for the protocol to adhere to the agreed upon policy.</p>
+
+<p>Technical limitations imposed by vendors and hardware limits have plagued this space for decades. However, the real problem, as with most things technical, is actually the people. A reluctance to agree on methodology, a refusal to spend the time to work out the procedures, an inability or lack of resources for understanding the steps necessary, an unwillingness (intentional or unintentional) to help the community further the progress. None of this really matters other than knowing where we can improve. So, to that end, I humbly recommend that all BGP operators read and implement best practices. Much of this is spelled out clearly in the <a href="https://www.manrs.org/isps/">MANRS project</a>, and it should be used as a shining example of community based action that can produce actual demonstrable results. If you’re interested in tools for troubleshooting BGP or better understanding the scope and scale of the DFZ (Default Free Zone), check out a past post I did on <a href="https://www.forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/">BGP tools,</a> <a href="https://www.forwardingplane.net/2016/05/bgp-rpki-why-arent-we-using-it/">RPKI</a>, and <a href="https://www.forwardingplane.net/2018/02/strategy-series-view-outside-network/">visibility outside of your network.</a> </p>
+
+<p>As a follow on to the last global BGP blunder, <a href="https://twitter.com/bcjordo?lang=en">Jordan Martin</a> and I talk about the how and the what of the event in this quick <a href="https://thenetworkcollective.com/2019/06/bgp-blunder/">Network Collective short take</a>.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/soap-box">#Soap Box</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 30 Jun 2019 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

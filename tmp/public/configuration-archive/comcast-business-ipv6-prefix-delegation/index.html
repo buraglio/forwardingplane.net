@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/">
+<meta property="og:title" content="Comcast Business IPv6 Prefix Delegation" />
+<meta property="og:description" content="Comcast Business class service has some quirks when using the Cisco branded business gateway. Essentially, the prefix delegation will not work without very specific configuration options on the client. In order to run your own network border (i.e. not using their device as the first hop router for your LAN(s)), the following is required. In addition, with static IP addresses also comes with a static IPv6 prefix delegation.
+For Ubiquity EdgeOS (or a derivative like a Unifi USG) the following needs to be set (eth2 is the port facing the comcast router)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/" />
+<meta property="article:published_time" content="2019-02-18T12:58:29-06:00" />
+<meta property="article:modified_time" content="2019-02-18T12:58:29-06:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Comcast Business IPv6 Prefix Delegation"/>
+<meta name="twitter:description" content="Comcast Business class service has some quirks when using the Cisco branded business gateway. Essentially, the prefix delegation will not work without very specific configuration options on the client. In order to run your own network border (i.e. not using their device as the first hop router for your LAN(s)), the following is required. In addition, with static IP addresses also comes with a static IPv6 prefix delegation.
+For Ubiquity EdgeOS (or a derivative like a Unifi USG) the following needs to be set (eth2 is the port facing the comcast router)"/>
+
+
+<meta itemprop="name" content="Comcast Business IPv6 Prefix Delegation">
+<meta itemprop="description" content="Comcast Business class service has some quirks when using the Cisco branded business gateway. Essentially, the prefix delegation will not work without very specific configuration options on the client. In order to run your own network border (i.e. not using their device as the first hop router for your LAN(s)), the following is required. In addition, with static IP addresses also comes with a static IPv6 prefix delegation.
+For Ubiquity EdgeOS (or a derivative like a Unifi USG) the following needs to be set (eth2 is the port facing the comcast router)">
+
+
+<meta itemprop="datePublished" content="2019-02-18T12:58:29-06:00" />
+<meta itemprop="dateModified" content="2019-02-18T12:58:29-06:00" />
+<meta itemprop="wordCount" content="172">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Comcast Business IPv6 Prefix Delegation 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Comcast Business IPv6 Prefix Delegation </h1>
+    <div class="content"> <p>Comcast Business class service has some quirks when using the Cisco branded business gateway. Essentially, the prefix delegation will not work without very specific configuration options on the client. In order to run your own network border (i.e. not using their device as the first hop router for your LAN(s)), the following is required. In addition, with static IP addresses also comes with a static IPv6 prefix delegation.</p>
+
+<p>For Ubiquity EdgeOS (or a derivative like a Unifi USG) the following needs to be set (eth2 is the port facing the comcast router)</p>
+
+<pre class="wp-block-preformatted">set interfaces ethernet eth2 dhcpv6-pd prefix-only <br />set interfaces ethernet eth2 dhcpv6-pd rapid-commit disable </pre>
+
+<p>Mikrotik RouterOS</p>
+
+<pre class="wp-block-preformatted">/ipv6 dhcp-client<br />
+add add-default-route=yes comment="Native Comcast IPv6 External" interface=ether2 pool-name=comcast-ipv6 pool-prefix-length=59 request=prefix use-peer-dns=no</pre>
+
+<p>Essentially, the trick is make sure you do the following:</p>
+
+<p>disable rapid-commit</p>
+
+<p>request a prefix-length of exactly 59</p>
+
+<p>It won&#8217;t work any other way. Requesting an address (as opposed to an address+prefix or a different prefix hint essentially breaks the request.</p>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-1597" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-1597" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-1597" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-1597" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 18 Feb 2019 </div>
+  </div>
+
+</footer>
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/2014-08-12-aging-hardware-ipv6-and-the-growing-route-table/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="I&#8217;ve blathered on about BGP forever. Say what you will about the venerable protocol, it runs the interwebs, is reliable, extendable and well documented. I&#8217;ve also espoused ad nauseam about IPv6, so none of this [admitted] rant should really be a surprise coming from me.
+As of 8/12/2014, according to the CIRD report (and many mailing lists), the default free global ipv4 routing table has reached 512k routes. This is a milestone from many perspectives, but more importantly, it solidifies the fact that there is a great deal of equipment in critical points in the internet that is out of date and cannot perform as intended in its current configuration or function." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/2014-08-12-aging-hardware-ipv6-and-the-growing-route-table/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="I&#8217;ve blathered on about BGP forever. Say what you will about the venerable protocol, it runs the interwebs, is reliable, extendable and well documented. I&#8217;ve also espoused ad nauseam about IPv6, so none of this [admitted] rant should really be a surprise coming from me.
+As of 8/12/2014, according to the CIRD report (and many mailing lists), the default free global ipv4 routing table has reached 512k routes. This is a milestone from many perspectives, but more importantly, it solidifies the fact that there is a great deal of equipment in critical points in the internet that is out of date and cannot perform as intended in its current configuration or function."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="I&#8217;ve blathered on about BGP forever. Say what you will about the venerable protocol, it runs the interwebs, is reliable, extendable and well documented. I&#8217;ve also espoused ad nauseam about IPv6, so none of this [admitted] rant should really be a surprise coming from me.
+As of 8/12/2014, according to the CIRD report (and many mailing lists), the default free global ipv4 routing table has reached 512k routes. This is a milestone from many perspectives, but more importantly, it solidifies the fact that there is a great deal of equipment in critical points in the internet that is out of date and cannot perform as intended in its current configuration or function.">
+
+
+
+<meta itemprop="wordCount" content="585">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> <p>I&#8217;ve <a title="BGP tools; troubleshooting and monitoring external routing in a nutshell" href="http://www.forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/" target="_blank">blathered on about BGP</a> <a title="Tuning BGP installed IPv6 routes" href="http://www.forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/" target="_blank">forever</a>.  Say what you will about the venerable protocol, it runs the interwebs, is reliable, extendable and well documented.  I&#8217;ve also <a title="My SDN soapbox (now with IPv6!)" href="http://www.forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/" target="_blank">espoused</a> <a title="Joint Techs Summer 2011 IPv6 talks" href="http://www.forwardingplane.net/2011/07/joint-techs-summer-2011-ipv6-talks/" target="_blank">ad nauseam</a> <a title="IPv6 Features matrix for Network Hardware" href="http://www.forwardingplane.net/2011/03/ipv6-features-matrix-for-network-hardware/" target="_blank">about</a> <a title="And a purple pony." href="http://www.forwardingplane.net/2012/11/and-a-purple-pony/" target="_blank">IPv6</a>, so none of this [admitted] rant should really be a surprise coming from me.</p>
+
+<p>As of 8/12/2014, according to the <a href="http://www.cidr-report.org/as2.0/#General_Status" target="_blank">CIRD report</a> (and many mailing lists), the <a href="http://en.wikipedia.org/wiki/Default-free_zone" target="_blank">default free</a> global ipv4 routing table has reached 512k routes.  This is a milestone from many perspectives, but more importantly, it solidifies the fact that there is a great deal of equipment in critical points in the internet that is out of date and cannot perform as intended in its current configuration or function.</p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2014/08/8-12-2014-plot.png"><img class="aligncenter wp-image-1045" src="http://www.forwardingplane.net/wp-content/uploads/2014/08/8-12-2014-plot.png" alt="8-12-2014-plot" width="566" height="428" /></a></p>
+
+<p>This is a problem.  This is a problem for old hardware.  This is a problem for anyone that says their border router is &#8220;good enough&#8221;, and expects to take a default free table.  It&#8217;s a problem for anyone that wants to be multihomed on sub-par hardware.  I don&#8217;t think that many engineers would be surprised at how common this really is because network hardware is expensive, especially appropriate hardware that runs at site borders and in internet backbones, and by nature network engineer want to &#8220;make things work&#8221;.  I assert, however, that this may not be the best idea.</p>
+
+<p>The increased size of the default free zone has been forecasted for <strong><em>years,</em></strong>_ _and with the inclusion of the 16k of ipv6 prefixes (<a title="The sad state of IPv6 and why you need to learn it." href="http://www.forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it/" target="_blank">you are running IPv6</a>, <strong><em>right</em></strong>?), resources quickly become exhausted on aging hardware.  This causes a cascading problem.  Forget the odd issues seen by not having enough TCAM to house the entire default free ipv4 table.  That problem is a haymaker swing that was telegraphed <strong><em>long</em></strong> ago and should have been coming; that ship has sailed.</p>
+
+<p>The bigger problem is that in flurrying around to deal with smaller TCAM sizes on gear that should have been replaced years ago, one course of action is to  repartition the TCAM, stripping away space allocated for IPv6 and allocating it to IPv4 in order to remain &#8220;default free&#8221; v4 tables.  I know because I&#8217;ve had to do this.  And it sucked. Personally, I felt a little like a sell out since I was robbing Peter to pay Paul and keep our &#8220;beloved&#8221; IPv4 running at the expense of the protocol we should have been migrated to years before but could not due to fear, uncertainty, doubt and, frankly, sheer laziness on the part of executives, developers, vendors and engineers. Blech.  I don not even like typing that.  We, I promise you,  in come cases are prolonging the deployment of IPv6 in favor of keeping v4 working due to this limitation.  And it stinks.  Like a skunk. Dipped in sewage. Wrapped in garbage.  Blown through an onion.</p>
+
+<p>It&#8217;s a banner day, make no mistake.  512k ipv4 routes in the global default free ipv4 table is a milestone.  However, lets not forget that much of the pain involved in expanding the ability to use more v4 would probably have been better served in expanding ipv6 support.  Be a catalyst for change and start learning and evangelizing IPv6.</p>
+
+<p>I often have a thought when discussing the merits of ipv6 with anyone that is arguing as to why they don&#8217;t want or need to deploy it:</p>
+
+<p>Would the internet/their network be a better place if we spent as much time making ipv6 work instead of going well out of our way to work around it?</p>
+
+<p><end rant> =)</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-1043" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-1043" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-1043" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-1043" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

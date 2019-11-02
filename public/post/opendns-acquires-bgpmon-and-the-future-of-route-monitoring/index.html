@@ -1,0 +1,677 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "OpenDNS acquires BGPMon and the future of route monitoring",
+        "headline" : "OpenDNS acquires BGPMon and the future of route monitoring",
+        "description" : "For those that run BGP networks, BGPmon is often a tool they turn to for some really unique and hard to find information. Remember back in February 2008 when Pakistan Telecom \x26ldquo;blocked\x26rdquo; Youtube? That one was a really, really public example of something that BGPMon caught. BGPmon has been around for a long, long time. Quietly watching prefixes. Silently noting changes and reporting them to the ones lucky enough to know of its existence.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2015",
+        "datePublished": "2015-03-20 05:18:30 \x2b0000 \x2b0000",
+        "dateModified" : "2015-03-20 05:18:30 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/opendns-acquires-bgpmon-and-the-future-of-route-monitoring\/",
+        "wordCount" : "491",
+        "keywords" : [ "Routing","Security","Soap Box","Blog" ]
+    }
+    </script>
+        
+            
+                <title>OpenDNS acquires BGPMon and the future of route monitoring</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OpenDNS acquires BGPMon and the future of route monitoring"/>
+<meta name="twitter:description" content="For those that run BGP networks, BGPmon is often a tool they turn to for some really unique and hard to find information. Remember back in February 2008 when Pakistan Telecom &ldquo;blocked&rdquo; Youtube? That one was a really, really public example of something that BGPMon caught. BGPmon has been around for a long, long time. Quietly watching prefixes. Silently noting changes and reporting them to the ones lucky enough to know of its existence."/>
+
+        <meta property="og:title" content="OpenDNS acquires BGPMon and the future of route monitoring" />
+<meta property="og:description" content="For those that run BGP networks, BGPmon is often a tool they turn to for some really unique and hard to find information. Remember back in February 2008 when Pakistan Telecom &ldquo;blocked&rdquo; Youtube? That one was a really, really public example of something that BGPMon caught. BGPmon has been around for a long, long time. Quietly watching prefixes. Silently noting changes and reporting them to the ones lucky enough to know of its existence." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/" />
+<meta property="article:published_time" content="2015-03-20T05:18:30+00:00" />
+<meta property="article:modified_time" content="2015-03-20T05:18:30+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="OpenDNS acquires BGPMon and the future of route monitoring">
+<meta itemprop="description" content="For those that run BGP networks, BGPmon is often a tool they turn to for some really unique and hard to find information. Remember back in February 2008 when Pakistan Telecom &ldquo;blocked&rdquo; Youtube? That one was a really, really public example of something that BGPMon caught. BGPmon has been around for a long, long time. Quietly watching prefixes. Silently noting changes and reporting them to the ones lucky enough to know of its existence.">
+
+
+<meta itemprop="datePublished" content="2015-03-20T05:18:30&#43;00:00" />
+<meta itemprop="dateModified" content="2015-03-20T05:18:30&#43;00:00" />
+<meta itemprop="wordCount" content="491">
+
+
+
+<meta itemprop="keywords" content="Routing,Security,Soap Box," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/resume">
+                            <i class="resume">&nbsp;</i>resume
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/resume">
+                            <h3>
+                                <i class="resume">&nbsp;</i>resume
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fopendns-acquires-bgpmon-and-the-future-of-route-monitoring%2f&amp;text=OpenDNS%20acquires%20BGPMon%20and%20the%20future%20of%20route%20monitoring&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fopendns-acquires-bgpmon-and-the-future-of-route-monitoring%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fopendns-acquires-bgpmon-and-the-future-of-route-monitoring%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fopendns-acquires-bgpmon-and-the-future-of-route-monitoring%2f&amp;title=OpenDNS%20acquires%20BGPMon%20and%20the%20future%20of%20route%20monitoring" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fopendns-acquires-bgpmon-and-the-future-of-route-monitoring%2f&amp;title=OpenDNS%20acquires%20BGPMon%20and%20the%20future%20of%20route%20monitoring" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fopendns-acquires-bgpmon-and-the-future-of-route-monitoring%2f&amp;title=OpenDNS%20acquires%20BGPMon%20and%20the%20future%20of%20route%20monitoring" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fopendns-acquires-bgpmon-and-the-future-of-route-monitoring%2f&amp;description=OpenDNS%20acquires%20BGPMon%20and%20the%20future%20of%20route%20monitoring" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fopendns-acquires-bgpmon-and-the-future-of-route-monitoring%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/">OpenDNS acquires BGPMon and the future of route monitoring</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-03-20'>
+            March 20, 2015</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>For those that run BGP networks, <a href="http://www.bgpmon.net">BGPmon</a> is often a tool they turn to for some really unique and hard to find information. Remember back in February 2008 when Pakistan Telecom &ldquo;blocked&rdquo; <a href="http://www.youtube.com/buraglio">Youtube</a>? That one was a really, really public example of something that BGPMon caught. BGPmon has been around for a long, long time. Quietly watching prefixes. Silently noting changes and reporting them to the ones lucky enough to know of its existence. For those that don&rsquo;t <a href="http://searchtelecom.techtarget.com/feature/BGP-essentials-The-protocol-that-makes-the-Internet-work">know how BGP works</a>, I am not going to go into it too much other than to say that it is both the foundation that the internet is built upon, and one of the most antiquated trust models that exists in a world where most of the pundits are going on and on about SDN and network engineers being out of a job in 10 years. See, the problem with BGP is not that it is a terrible protocol. Quite the opposite, it is elegant in its simplicity and ability to be extended.It is lightweight and arguably the easiest of the routing protocols with the exception of RIPv2.</p>
+
+<p><em>Many have argued that it is not a routing protocol, per se, but a policy enforcement framework for paths, but that is a completely different discussion. I happen to agree</em></p>
+
+<p>The issue with BGP is that its install base is so vast that changing it is not unlike parting the red sea or holding the earth on ones shoulders, because that is what BGP does. It holds the internet on its shoulders every bit as much as things like fiber in the ground does. Lets get back to BGPmon. BGPmon does something that nothing else really does. It watches the global routing table from points all over the globe and keeps track of prefixes. For a network operation that provides transit, financial services or any sensitive data, notification of a ROA violation, prefix hijack or more specific route announcement is a critical service. BGPmon provides that among other equally distinct services. In fact, <a href="https://www.forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/">I have it listed as one of my critical tools for maintaining, monitoring and troubleshooting external routing</a>.</p>
+
+<p>What does the acquisition of BGPmon by OpenDNS mean? I honestly can not say, but I am fairly confident that it means good things and <a href="https://blog.opendns.com/2015/03/12/opendns-acquires-bgpmon/">OpenDNS has a very, very encouraging position</a>:</p>
+
+<p><em>Moving forward, our integration plan for BGPmon is straightforward. We’ll invest in building out the service and making it more complete—but we also are committed to keeping the free features free. We’ll continue to use BGPmon data and innovate to augment our predictive intelligence and provide better threat protection to OpenDNS customers. So basically status quo for current customers.</em></p>
+
+<p>Strong backing from a forward thinking company with a solid track record of good products likely means a bright future for an invaluable service. I am optimistic and encouraged, this was the next logical step and they have taken it with elegance and thought.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/routing">Routing</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/security">Security</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/soap-box">Soap Box</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/networking/"
+                class="button big previous">Networking</a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring-comments/"
+                class="button big next">OpenDNS acquires BGPMon and the future of route monitoring</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

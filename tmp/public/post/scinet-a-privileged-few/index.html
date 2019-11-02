@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/scinet-a-privileged-few/">
+<meta property="og:title" content="SCinet, a privileged few" />
+<meta property="og:description" content="Every year there is an international conference for High Performance Computing, or HPC as it is often called. This is a bit of a niche in that it&rsquo;s something that many enterprises and researchers need but don&rsquo;t do themselves and so many don&rsquo;t have a grasp as to what all is invoved. It&rsquo;s a specialized, potentially expensive and very different environment as well as mindset than the general sysadmin or network engineer will ever see." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/scinet-a-privileged-few/" />
+<meta property="article:published_time" content="2012-11-09T11:12:00+00:00" />
+<meta property="article:modified_time" content="2012-11-09T11:12:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SCinet, a privileged few"/>
+<meta name="twitter:description" content="Every year there is an international conference for High Performance Computing, or HPC as it is often called. This is a bit of a niche in that it&rsquo;s something that many enterprises and researchers need but don&rsquo;t do themselves and so many don&rsquo;t have a grasp as to what all is invoved. It&rsquo;s a specialized, potentially expensive and very different environment as well as mindset than the general sysadmin or network engineer will ever see."/>
+
+
+<meta itemprop="name" content="SCinet, a privileged few">
+<meta itemprop="description" content="Every year there is an international conference for High Performance Computing, or HPC as it is often called. This is a bit of a niche in that it&rsquo;s something that many enterprises and researchers need but don&rsquo;t do themselves and so many don&rsquo;t have a grasp as to what all is invoved. It&rsquo;s a specialized, potentially expensive and very different environment as well as mindset than the general sysadmin or network engineer will ever see.">
+
+
+<meta itemprop="datePublished" content="2012-11-09T11:12:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-11-09T11:12:00&#43;00:00" />
+<meta itemprop="wordCount" content="581">
+
+
+
+<meta itemprop="keywords" content="Musings," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     SCinet, a privileged few 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> SCinet, a privileged few </h1>
+    <div class="content"> <p>     Every year there is an international conference for High Performance Computing, or HPC as it is often called.  This is a bit of a niche in that it&rsquo;s something that many enterprises and researchers need but don&rsquo;t do themselves and so many don&rsquo;t have a grasp as to what all is invoved.  It&rsquo;s a specialized,  potentially expensive and very different environment as well as mindset than the general sysadmin or network engineer will ever see.  The compute power is rated on it&rsquo;s <a href="http://www.top500.org/">own scale</a> and it is very competitive.<br />
+    While this is a very interesting subject in and of itself, it&rsquo;s not really the most compelling part of this corner of the technology world.  What <strong>is</strong> the interesting piece is the foundation needed to make all of this work.  Compute power is obviously integral and I&rsquo;ll never try to minimize its importance, but what happens when the huge data sets can&rsquo;t get to the compute resources?  How do the big iron machines communicate?</p>
+
+<p>You guessed it, it&rsquo;s the network.</p>
+
+<p>Over the course of my career I&rsquo;ve done a lot of cool networking projects.  One of them, however, stands out far and away more than the others.</p>
+
+<p><a href="http://1.bp.blogspot.com/-bgjgEnK0U6s/UJyKPx1HLrI/AAAAAAABbBY/5ytF3GHKlX4/s1600/IMG_2417.JPG"><img src="http://1.bp.blogspot.com/-bgjgEnK0U6s/UJyKPx1HLrI/AAAAAAABbBY/5ytF3GHKlX4/s400/IMG_2417.JPG" alt="" /></a></p>
+
+<p>    Building the network to support this conference is the real gem and real challenge.  A bit of history on this network called <a href="http://en.wikipedia.org/wiki/SCinet">SCinet, can be found on WikiPedia</a>.</p>
+
+<p><strong>&ldquo;SCinet</strong> is a high-performance <a href="http://en.wikipedia.org/wiki/Computer_networking">network</a> that is built, once a year, in support of the annual <em>International Conference for High Performance Computing and Communications</em> also known as the <a href="http://en.wikipedia.org/wiki/Supercomputing_Conference">Supercomputing Conference</a>. It is the primary network for the conference and is used by attendees to demonstrate and test high-performance distributed applications.</p>
+
+<p>Originated in 1991 as an initiative within the SC conference to provide networking to attendees, SCinet has grown to become the &ldquo;World&rsquo;s Fastest Network&rdquo; during the duration of the conference. Over the years, SCinet has been used as a platform to test networking technology and applications which have found their way into common use.</p>
+
+<p>At SC|05 <a href="http://www.sc05.org/">[1]</a>, SCinet initiated a conference wide <a href="http://en.wikipedia.org/wiki/InfiniBand">InfiniBand</a> infrastructure, combining various IB hardware vendors utilizing <a href="http://en.wikipedia.org/w/index.php?title=OpenIB&amp;action=edit&amp;redlink=1">OpenIB</a> software.</p>
+
+<p>In previous years, SCinet deployed conference wide networking technologies such as <a href="http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode">ATM</a>, <a href="http://en.wikipedia.org/wiki/Fiber_distributed_data_interface">FDDI</a>, <a href="http://en.wikipedia.org/w/index.php?title=HiPPi&amp;action=edit&amp;redlink=1">HiPPi</a> before they were deployed commercially.&rdquo;</p>
+
+<p>    I&rsquo;ve been involved since 2003, it made sense since my employer was a major supercomputing center, after all.  </p>
+
+<p>Over the years I&rsquo;ve participated in different capacities and different roles, Security, Wireless, UNIX services and routing.  The team that builds this amazing network do it because they want to.  It&rsquo;s a labor of love.  It&rsquo;s also an amazing experience.  This network, called &ldquo;The worlds fastest network&rdquo; on more than one occasion is built and torn down in less than a month.  The network has more bandwidth than some small countries, and it&rsquo;s built specifically to support <a href="http://supercomputing.org/">this conference</a> and the big science that gets demonstrated.  It&rsquo;s always built with differentheterogeneous equipment.  It&rsquo;s an amazing interoperability experiment that has a <a href="http://sc12.supercomputing.org/content/scinet-contributors">who&rsquo;s who of big names</a>.  </p>
+
+<p>    This is interesting and worth mentioning because it is an amazing feat that many never even know happens.  It is happening now.  It will happen again next year.  And it will be in a different location, with different gear and a different architecture.  If that&rsquo;s not enough, it&rsquo;s also got a <a href="http://sc12.supercomputing.org/content/scinet-research-sandbox">research sandbox</a> for all of your SDN needs.  </p>
+
+<p><a href="http://gan.doubleclick.net/gan_click?lid=41000613802463762&amp;pid=UBM9780596100148&amp;adurl=http%3A%2F%2Fwww.cdsbooksdvds.com%2Fproduct.jhtm%3Fsku%3DUBM9780596100148&amp;usg=AFHzDLuaU0JGfNPJeXjijzZ9FD_gtq3QuQ&amp;pubid=590157">Junos Cookbook: by Garrett, Aviva [Paperback]</a></p>
+
+<p><a href="http://gan.doubleclick.net/gan_click?lid=41000613802463762&amp;pid=UBM9780792380979&amp;adurl=http%3A%2F%2Fwww.cdsbooksdvds.com%2Fproduct.jhtm%3Fsku%3DUBM9780792380979&amp;usg=AFHzDLv9M31JF4OoLZwreG26xo5qDVnDJg&amp;pubid=590157">Scalable High Performance Computing for Knowledge Discovery and Data Mining</a></p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 9 Nov 2012 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

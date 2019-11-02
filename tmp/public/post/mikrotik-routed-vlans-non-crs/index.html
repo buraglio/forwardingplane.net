@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/mikrotik-routed-vlans-non-crs/">
+<meta property="og:title" content="Mikrotik Routed VLANs (non-CRS)" />
+<meta property="og:description" content="Add a simple set of VLANs to a CCR or other non-CRS RouterBoard.
+/interface vlan add interface=sfpplus1 name=sfpplus1.4 vlan-id=4 comment=&quot;VLAN ID 4&quot; add interface=sfpplus1 name=sfpplus1.5 vlan-id=5 comment=&quot;VLAN ID 5&quot; add interface=sfpplus1 name=sfpplus1.6 vlan-id=6 comment=&quot;VLAN ID 6&quot; add interface=sfpplus1 name=sfpplus1.7 vlan-id=7 comment=&quot;VLAN ID 7&quot; add interface=sfpplus1 name=sfpplus1.8 vlan-id=8 comment=&quot;VLAN ID 8&quot; add interface=sfpplus1 name=sfpplus1.9 vlan-id=9 comment=&quot;VLAN ID 9&quot;  Add IP addressing to each VLAN
+/ipv6 address add address=2001:db8:c33e:f0::1/64 advertise=no add address=2001:db8:c:f4::1/64 advertise=yes interface=sfpplus1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/mikrotik-routed-vlans-non-crs/" />
+<meta property="article:published_time" content="2019-02-18T17:57:21+00:00" />
+<meta property="article:modified_time" content="2019-02-18T17:57:21+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mikrotik Routed VLANs (non-CRS)"/>
+<meta name="twitter:description" content="Add a simple set of VLANs to a CCR or other non-CRS RouterBoard.
+/interface vlan add interface=sfpplus1 name=sfpplus1.4 vlan-id=4 comment=&quot;VLAN ID 4&quot; add interface=sfpplus1 name=sfpplus1.5 vlan-id=5 comment=&quot;VLAN ID 5&quot; add interface=sfpplus1 name=sfpplus1.6 vlan-id=6 comment=&quot;VLAN ID 6&quot; add interface=sfpplus1 name=sfpplus1.7 vlan-id=7 comment=&quot;VLAN ID 7&quot; add interface=sfpplus1 name=sfpplus1.8 vlan-id=8 comment=&quot;VLAN ID 8&quot; add interface=sfpplus1 name=sfpplus1.9 vlan-id=9 comment=&quot;VLAN ID 9&quot;  Add IP addressing to each VLAN
+/ipv6 address add address=2001:db8:c33e:f0::1/64 advertise=no add address=2001:db8:c:f4::1/64 advertise=yes interface=sfpplus1."/>
+
+
+<meta itemprop="name" content="Mikrotik Routed VLANs (non-CRS)">
+<meta itemprop="description" content="Add a simple set of VLANs to a CCR or other non-CRS RouterBoard.
+/interface vlan add interface=sfpplus1 name=sfpplus1.4 vlan-id=4 comment=&quot;VLAN ID 4&quot; add interface=sfpplus1 name=sfpplus1.5 vlan-id=5 comment=&quot;VLAN ID 5&quot; add interface=sfpplus1 name=sfpplus1.6 vlan-id=6 comment=&quot;VLAN ID 6&quot; add interface=sfpplus1 name=sfpplus1.7 vlan-id=7 comment=&quot;VLAN ID 7&quot; add interface=sfpplus1 name=sfpplus1.8 vlan-id=8 comment=&quot;VLAN ID 8&quot; add interface=sfpplus1 name=sfpplus1.9 vlan-id=9 comment=&quot;VLAN ID 9&quot;  Add IP addressing to each VLAN
+/ipv6 address add address=2001:db8:c33e:f0::1/64 advertise=no add address=2001:db8:c:f4::1/64 advertise=yes interface=sfpplus1.">
+
+
+<meta itemprop="datePublished" content="2019-02-18T17:57:21&#43;00:00" />
+<meta itemprop="dateModified" content="2019-02-18T17:57:21&#43;00:00" />
+<meta itemprop="wordCount" content="124">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Mikrotik Routed VLANs (non-CRS) 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Mikrotik Routed VLANs (non-CRS) </h1>
+    <div class="content"> <p>Add a simple set of VLANs to a CCR or other non-CRS RouterBoard.</p>
+
+<pre><code>/interface vlan   
+add interface=sfpplus1 name=sfpplus1.4 vlan-id=4 comment=&quot;VLAN ID 4&quot;  
+add interface=sfpplus1 name=sfpplus1.5 vlan-id=5 comment=&quot;VLAN ID 5&quot;  
+add interface=sfpplus1 name=sfpplus1.6 vlan-id=6 comment=&quot;VLAN ID 6&quot;  
+add interface=sfpplus1 name=sfpplus1.7 vlan-id=7 comment=&quot;VLAN ID 7&quot;  
+add interface=sfpplus1 name=sfpplus1.8 vlan-id=8 comment=&quot;VLAN ID 8&quot;  
+add interface=sfpplus1 name=sfpplus1.9 vlan-id=9 comment=&quot;VLAN ID 9&quot;
+</code></pre>
+
+<p>Add IP addressing to each VLAN</p>
+
+<pre><code>/ipv6 address   
+add address=2001:db8:c33e:f0::1/64 advertise=no  
+add address=2001:db8:c:f4::1/64 advertise=yes interface=sfpplus1.4   
+add address=2001:db8:c:f5::1/64 advertise=yes interface=sfpplus1.5 add address=2001:db8:c:f6::1/64 advertise=yes interface=sfpplus1.6   
+add address=2001:db8:c:f7::1/64 advertise=yes interface=sfpplus1.7   
+add address=2001:db8:c:f8::1/64 advertise=yes interface=sfpplus1.8   
+add address=2001:db8:c:f9::1/64 advertise=yes interface=sfpplus1.9 
+</code></pre>
+
+<p>Add legacy IPv4 addressing for each VLAN</p>
+
+<pre><code>/ip address  
+add address=10.2.200.1/26 interface=sfpplus1 comment=&quot;Native VLAN&quot;  
+add address=10.2.4.1/25 interface=sfpplus1.4   
+add address=10.2.5.1/25 interface=sfpplus1.5    
+add address=10.2.6.1/25 interface=sfpplus1.6    
+add address=10.2.7.1/25 interface=sfpplus1.7   
+add address=10.2.8.1/25 interface=sfpplus1.8   
+add address=10.2.9.1/25 interface=sfpplus1.9 
+</code></pre>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 18 Feb 2019 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

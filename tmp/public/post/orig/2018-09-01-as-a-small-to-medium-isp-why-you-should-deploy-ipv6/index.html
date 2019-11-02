@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/orig/2018-09-01-as-a-small-to-medium-isp-why-you-should-deploy-ipv6/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="IPv6 has been a crusade of mine for well over a decade. Wether it is teaching IPv6 workshops, offering advice to new users, answering questions, or evangelizing it ad nauseam, it is an important topic to me. The ISP world holds a special place in my heart since a good deal of my early experience came from building or assisting regional ISPs. Recently I had a fun opportunity to talk about deploying IPv6 on The Brothers WISP podcast." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/orig/2018-09-01-as-a-small-to-medium-isp-why-you-should-deploy-ipv6/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="IPv6 has been a crusade of mine for well over a decade. Wether it is teaching IPv6 workshops, offering advice to new users, answering questions, or evangelizing it ad nauseam, it is an important topic to me. The ISP world holds a special place in my heart since a good deal of my early experience came from building or assisting regional ISPs. Recently I had a fun opportunity to talk about deploying IPv6 on The Brothers WISP podcast."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="IPv6 has been a crusade of mine for well over a decade. Wether it is teaching IPv6 workshops, offering advice to new users, answering questions, or evangelizing it ad nauseam, it is an important topic to me. The ISP world holds a special place in my heart since a good deal of my early experience came from building or assisting regional ISPs. Recently I had a fun opportunity to talk about deploying IPv6 on The Brothers WISP podcast.">
+
+
+
+<meta itemprop="wordCount" content="203">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> 
+
+<p>IPv6 has been a crusade of mine for well over a decade. Wether it is teaching IPv6 workshops, offering advice to new users, answering questions, or evangelizing it ad nauseam, it is an important topic to me. The ISP world holds a special place in my heart since a good deal of my early experience came from building or assisting regional ISPs. Recently I had a fun opportunity to talk about deploying IPv6 on <a href="http://thebrotherswisp.com/">The Brothers WISP podcast</a>.</p>
+
+<p>This was a really fun experience, and if you&#8217;re looking at deploying v6, take a listen (or watch) to this &#8211; it should give you the basics or at the very least a place to start.</p>
+
+<p>&nbsp;</p>
+
+<h3 id="links-to-discussed-topics">Links to discussed topics</h3>
+
+<p>IPv4/IPv6 subnetting tool: <a href="https://github.com/sii/sipcalc">sipcalc</a></p>
+
+<p><a href="http://sipcalc.tools.uebi.net/">Online version</a></p>
+
+<p>Great, Free training for IPv6, plus a free T-Shirt if you complete it. <a href="https://ipv6.he.net/certification/">HE IPv6 certification</a></p>
+
+<p><a href="https://en.wikipedia.org/wiki/Comparison_of_DHCP_server_software">DHCPv6 alternatives</a> (YES, it exists)</p>
+
+<p>Looking to see if folks are tunneling using <a href="https://tools.ietf.org/html/rfc3068">6to4</a> or <a href="https://en.wikipedia.org/wiki/Teredo_tunneling">Teredo</a> in your network? Do netflow searches for these anycast addresses:</p>
+
+<p>192.88.99.0/24 (6to4)<br />
+65.54.227.120 (Teredo)</p>
+
+<p><a href="https://howdoesinternetwork.com/2013/slaac">Information on SLAAC</a> (Auto-configuration)</p>
+
+<p>You might also be interested in a <a href="https://www.youtube.com/watch?v=c8m2Sjre6t4&amp;feature=youtu.be">DNS podcast</a> I did with Brothers WISP a while ago.</p>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-1480" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-1480" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-1480" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-1480" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

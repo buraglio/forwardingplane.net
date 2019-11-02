@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/1409/">
+<meta property="og:title" content="Networks are insecure. Here&#39;s why." />
+<meta property="og:description" content="Networks are insecure, they just are. I once worked with an FBI agent who said that if you wanted a secure network you should turn everything off, smash it, then set it on fire - and I don&rsquo;t disagree. However, there are things we can do to understand our networks that will aid immeasurably in how they are secured and initially and how they remain secured over time. At their very core networks are not secure based simply on the fact that humans are involved in their construction, operation, and use." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/1409/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Networks are insecure. Here&#39;s why."/>
+<meta name="twitter:description" content="Networks are insecure, they just are. I once worked with an FBI agent who said that if you wanted a secure network you should turn everything off, smash it, then set it on fire - and I don&rsquo;t disagree. However, there are things we can do to understand our networks that will aid immeasurably in how they are secured and initially and how they remain secured over time. At their very core networks are not secure based simply on the fact that humans are involved in their construction, operation, and use."/>
+
+
+<meta itemprop="name" content="Networks are insecure. Here&#39;s why.">
+<meta itemprop="description" content="Networks are insecure, they just are. I once worked with an FBI agent who said that if you wanted a secure network you should turn everything off, smash it, then set it on fire - and I don&rsquo;t disagree. However, there are things we can do to understand our networks that will aid immeasurably in how they are secured and initially and how they remain secured over time. At their very core networks are not secure based simply on the fact that humans are involved in their construction, operation, and use.">
+
+
+
+<meta itemprop="wordCount" content="654">
+
+
+
+<meta itemprop="keywords" content="Musings," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Networks are insecure. Here&#39;s why. 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Networks are insecure. Here&#39;s why. </h1>
+    <div class="content"> <p>Networks are insecure, they just are. I once worked with an FBI agent who said that if you wanted a secure network you should turn everything off, smash it, then set it on fire - and I don&rsquo;t disagree. However, there are things we can do to understand our networks that will aid immeasurably in how they are secured and initially and how they remain secured over time. At their very core networks are not secure based simply on the fact that humans are involved in their construction, operation, and use.  Recently, ICS-CERT released their annual report detailing the state of critical infrastructure and their report details exactly what anyone in the trenches should already know: <strong>we don&rsquo;t pay enough attention to this stuff</strong>.  Their assessment pointed out some pretty glaring holes, most of which we probably already knew (or should have) and some of which we may need to spend time learning about. In our never-ending quest for convenient, ubiquitous access to all things, we often forget to think about the little things, the &ldquo;dirty jobs&rdquo; of IT. Ive said it so many times I&rsquo;m almost sick of hearing it myself: <strong>building a network is easy, running a network is hard.</strong> Strip away all of the shiny, hype machine, marketing generated razzmatazz surrounding all things &ldquo;cloud&rdquo; and &ldquo;SDN&rdquo; and &ldquo;intent-driven&rdquo;. Those things are great and I&rsquo;m neck deep in a lot of them, but building fancy things on broken foundations is clearly a bad idea, and a lot of what I see in the trenches is just that: broken, neglected, outdated, or just plain done poorly or done well and never maintained. When most people think about maintaining a network ecosystem they probably imagine plumbing vlans, changing peerings, creating LSPs or adjusting switchports. Realistically, that&rsquo;s a tiny part of operations. In reality, most network issues could either be more easily solved by better understanding of a complex system or, in many cases, avoided completely by <strong>knowing your network</strong>. When I say &ldquo;avoided completely&rdquo;, what I mean is that be knowing the baseline of something you can identify deviations from that baseline which can indicate an issue that needs to be addresses. It&rsquo;s no secret that I fiormly believe that the key to operating anything in IT is complete visibility and baselining of every facet that can be recorded, and I also assert that you cannot secure something until you truly understand not only how it works but how it fails. Anything less is an exercise in risk management. So, to that end, I will give a brief outline of what I believe is a foundation that we should all start from when building network analytics and monitoring.   A gigantic swath of this issue can be alleviated be three things: Knowing your network, Access control of your network, and attention to your network</p>
+
+<ul>
+<li>Network flow data (netflow, jflow, sflow, ipfix)</li>
+<li>Centralized logging of *all* devices on the network</li>
+<li>Traffic statistics (interface counters, error counters, etc.)</li>
+<li>Configuration management of all network devices</li>
+<li>Template configurations for all commonly configured items (common firewall filters, RE filtering, apply groups, ZTP, VM templates, etc.)</li>
+<li>DNS query data</li>
+<li>Latency and jitter information to/from all key locations in the network, including ingress/egress of the network</li>
+<li>Routing table information (IGP and EGP)</li>
+<li>optical power readings</li>
+<li>hardware inventory (linecards, serial numbers, chassis models)</li>
+<li>Environmental data (heat, power, cooling)</li>
+<li>Full packet capture at network egress (if possible - ISPs obviously cannot realistically do this)</li>
+<li>Anomalous policy / signature detection at all strategic locations</li>
+</ul>
+
+<p>OK, now you have the firehose. That&rsquo;s actually the easy part. Now, once you have this data you have to keep it up to date and keep watching it. Given the nature of what it is, you&rsquo;re likely going to have to visit several systems to monitor it. There are some &ldquo;meta&rdquo; packages that can do a lot of it, librenms can tie together a bunch of these elements, as cam</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

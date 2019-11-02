@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/building-a-secured-network-in-a-box-comments/">
+<meta property="og:title" content="Building a secured network in a box" />
+<meta property="og:description" content="Depenetration, whuaat? | JRLZN - Sep 4, 2013
+[…] Photo Credit: http://www.forwardingplane.net/2013/07/building-a-secured-network-in-a-box/ […] [Aaron]( &ldquo;Iamenabled@hotmail.com&rdquo;) - Jul 5, 2013
+Nick, can you share the server hardware you are using for your VMware host? Nick Buraglio - Jul 5, 2013
+For this case it&rsquo;s an older Dell PowerEdge 2900 with 16G RAM, 4 x 1G NIC and 8x2.3Ghz cores Nick Buraglio - Jul 0, 2013
+On a reliability note, uptime has been fantastic Nick Buraglio - Jul 0, 2013" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/building-a-secured-network-in-a-box-comments/" />
+<meta property="article:published_time" content="2013-07-26T05:28:15+00:00" />
+<meta property="article:modified_time" content="2013-07-26T05:28:15+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Building a secured network in a box"/>
+<meta name="twitter:description" content="Depenetration, whuaat? | JRLZN - Sep 4, 2013
+[…] Photo Credit: http://www.forwardingplane.net/2013/07/building-a-secured-network-in-a-box/ […] [Aaron]( &ldquo;Iamenabled@hotmail.com&rdquo;) - Jul 5, 2013
+Nick, can you share the server hardware you are using for your VMware host? Nick Buraglio - Jul 5, 2013
+For this case it&rsquo;s an older Dell PowerEdge 2900 with 16G RAM, 4 x 1G NIC and 8x2.3Ghz cores Nick Buraglio - Jul 0, 2013
+On a reliability note, uptime has been fantastic Nick Buraglio - Jul 0, 2013"/>
+
+
+<meta itemprop="name" content="Building a secured network in a box">
+<meta itemprop="description" content="Depenetration, whuaat? | JRLZN - Sep 4, 2013
+[…] Photo Credit: http://www.forwardingplane.net/2013/07/building-a-secured-network-in-a-box/ […] [Aaron]( &ldquo;Iamenabled@hotmail.com&rdquo;) - Jul 5, 2013
+Nick, can you share the server hardware you are using for your VMware host? Nick Buraglio - Jul 5, 2013
+For this case it&rsquo;s an older Dell PowerEdge 2900 with 16G RAM, 4 x 1G NIC and 8x2.3Ghz cores Nick Buraglio - Jul 0, 2013
+On a reliability note, uptime has been fantastic Nick Buraglio - Jul 0, 2013">
+
+
+<meta itemprop="datePublished" content="2013-07-26T05:28:15&#43;00:00" />
+<meta itemprop="dateModified" content="2013-07-26T05:28:15&#43;00:00" />
+<meta itemprop="wordCount" content="392">
+
+
+
+<meta itemprop="keywords" content="Lab Time,Security,Virtualization," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Building a secured network in a box 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Building a secured network in a box </h1>
+    <div class="content"> <p><a href="http://jirahlization.wordpress.com/2013/09/27/depenetration-whuaat/">Depenetration, whuaat? | JRLZN</a> - <time datetime="2013-09-26 19:54:31">Sep 4, 2013</time></p>
+
+<p>[…] Photo Credit: <a href="http://www.forwardingplane.net/2013/07/building-a-secured-network-in-a-box/">http://www.forwardingplane.net/2013/07/building-a-secured-network-in-a-box/</a> […]
+<hr /></p>
+
+<p>[Aaron]( &ldquo;Iamenabled@hotmail.com&rdquo;) - <time datetime="2013-07-26 06:19:41">Jul 5, 2013</time></p>
+
+<p>Nick, can you share the server hardware you are using for your VMware host?
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-07-26 09:19:45">Jul 5, 2013</time></p>
+
+<p>For this case it&rsquo;s an older Dell PowerEdge 2900 with 16G RAM, 4 x 1G NIC and 8x2.3Ghz cores
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-07-28 17:03:39">Jul 0, 2013</time></p>
+
+<p>On a reliability note, uptime has been fantastic
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-07-28 17:03:04">Jul 0, 2013</time></p>
+
+<p>This is my fun time until my kids are old enough for me to get back on the mat or on the bike regularly. It&rsquo;s fun but it does take a lot of time, but I really do enjoy it. This is what got me into networking 15+ years ago so it&rsquo;s very nostalgic for sure and I enjoy writing about it. Very interested in 10.8.4 under esxi, though, for sure.
+<hr /></p>
+
+<p>[Ryan Harden]( &ldquo;ancker@ancker.net&rdquo;) - <time datetime="2013-07-31 08:43:08">Jul 3, 2013</time></p>
+
+<p>Getting OSX running under ESXi on a non-Apple box is actually SUPER easy. Shoot me an email and I&rsquo;ll give you the instructions.
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-07-31 08:44:45">Jul 3, 2013</time></p>
+
+<p>Yes, yes it is.
+<hr /></p>
+
+<p>[Ryan Harden]( &ldquo;ancker@ancker.net&rdquo;) - <time datetime="2013-07-26 17:05:38">Jul 5, 2013</time></p>
+
+<p>I just got my ESXi box (Via Jim) up. Waiting on some bits and pieces for the final config, but it&rsquo;s mostly there. I&rsquo;m not sure I want as complicated of config as you. I like my ALIX board running pfSense and don&rsquo;t really want to put all of my eggs in one basket. Working from home requires 100% uptime. :) I also have a slight advantage/benefit of having a Cisco 3650G-PS as my home switch. So I can SPAN right from there. It&rsquo;ll only see traffic behind the pfSense box, but that&rsquo;s good enough for me. I&rsquo;m planning on putting that directly into Security Onion as well. As a side note: I have 10.8.4 running in ESXi as my new Plex server. Holy Crap it&rsquo;s awesome. I haven&rsquo;t decided whether I&rsquo;m just retiring the old Mac Mini or going to turn it into a Plex Client. I&rsquo;m envious that you&rsquo;re doing stuff like this but I&rsquo;ve got enough going on in my work life that I&rsquo;m very happy to forget about networking when I&rsquo;m done for the day. If things ever settle down I might reopen the &lsquo;networking as a hobby&rsquo; can of worms again.
+<hr /></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/security">#Security</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/virtualization">#Virtualization</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 26 Jul 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

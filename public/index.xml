@@ -3379,24 +3379,6 @@ curl -X POST -d &#39;{&amp;quot;[00:00:00:12:f2:91:58:00](http://128.174.43.242:
     </item>
     
     <item>
-      <title>NIX4NetEng #3 - Tracing paths</title>
-      <link>https://forwardingplane.net/1/01/nix4neteng-#3-tracing-paths/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/1/01/nix4neteng-#3-tracing-paths/</guid>
-      <description>Another useful bit of information is the path. Traceroute is fine, but it&amp;rsquo;s a bit of a &amp;ldquo;one and done&amp;rdquo; kind of tool. I prefer to use mtr because it can run for any amount of time I need it to and keep the statistics for the entire time viewable. It does require socket access, so you&amp;rsquo;ll either need root or sudo in most cases. (~) jumphost $ sudo mtr 192.</description>
-    </item>
-    
-    <item>
-      <title>NIX4NetEng #6 SALT</title>
-      <link>https://forwardingplane.net/1/01/nix4neteng-#6-salt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/1/01/nix4neteng-#6-salt/</guid>
-      <description>Like most network engineers that have been around long enough, I manage a handful of unix-like systems. As I have done work for service providers all over the place for the last 15 years, I have accumulated enough systems out there that need patched and maintained. I like to to send out a raspberry pi to as many ASNs as I can, enabling the poor-mans NLNOG Ring that only I manage.</description>
-    </item>
-    
-    <item>
       <title>OpenFlow migration paths</title>
       <link>https://forwardingplane.net/1/01/openflow-migration-paths/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

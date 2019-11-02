@@ -120,14 +120,5 @@
       <description>Many network engineers are also tasked with maintaining systems that provide network services, those things that make the network easier to use such as DNS and DHCP or management systems that perform useful things like monitor the network, collect flow data or bestow access to the equipment by acting as bastion or jump hosts. In many instances, robust and high availability services run on UNIX, Linux or BSD systems for stability and reliability, so those that manage these systems need to be well versed system admins as well as whatever their other job functions are.</description>
     </item>
     
-    <item>
-      <title>NIX4NetEng #3 - Tracing paths</title>
-      <link>https://forwardingplane.net/1/01/nix4neteng-#3-tracing-paths/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/1/01/nix4neteng-#3-tracing-paths/</guid>
-      <description>Another useful bit of information is the path. Traceroute is fine, but it&amp;rsquo;s a bit of a &amp;ldquo;one and done&amp;rdquo; kind of tool. I prefer to use mtr because it can run for any amount of time I need it to and keep the statistics for the entire time viewable. It does require socket access, so you&amp;rsquo;ll either need root or sudo in most cases. (~) jumphost $ sudo mtr 192.</description>
-    </item>
-    
   </channel>
 </rss>

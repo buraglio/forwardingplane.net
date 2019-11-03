@@ -49,6 +49,7 @@
 <meta name="twitter:title" content="Mikrotik IPv6 DHCPv6-PD configuration"/>
 <meta name="twitter:description" content="For a small to medium ISPs (especially WISPs) looking to move to IPv6 dual-stack, the right way to deploy is to use DHCPv6 prefix delegation. Here is an example of how to do this in-skin (i.e. on the mikrotik itself rather than a relay).
 /ipv6 dhcp-server add address-pool=vl100-v6-pd-pool interface=ether5.100 name=vl100-v6-pd add address-pool=vl101-v6-pd-pool interface=ether3.101 name=vl101-v6-pd add address-pool=vl102-v6-pd-pool interface=ether2.102 name=vl102-v6-pd add address-pool=vl106-v6-pd-pool interface=ether1.106 name=vl106-v6-pd add address-pool=vl108-v6-pd-pool interface=ether4.108 name=vl108-v6-pd `````` /ipv6 pool add comment=&quot;VLAN103 IPv6 prefix delegation pool&quot; name=vl103-v6-pd-pool prefix=2001:db8:1a:b000::/48 prefix-length=59 add comment=&quot;VLAN100 IPv6 prefix delegation pool&quot; name=vl100-v6-pd-pool prefix=2001:db8:1a:8800::/48 prefix-length=59 add comment=&quot;VLAN101 IPv6 prefix delegation pool&quot; name=vl101-v6-pd-pool prefix=2001:db8:1a:9000::/48 prefix-length=59 add comment=&quot;VLAN106 IPv6 prefix delegation pool&quot; name=vl106-v6-pd-pool prefix=2001:db8:1a:9800::/48 prefix-length=59 add comment=&quot;VLAN108 IPv6 prefix delegation pool&quot; name=vl108-v6-pd-pool prefix=2001:db8:1a:a000::/48 prefix-length=59 add comment=&quot;VLAN102 IPv6 prefix delegation pool&quot; name=vl102-v6-pd-pool prefix=2001:db8:1a:a800::/48 prefix-length=59 `````` /ipv6 address add address=2001:db8:1a:103::1 disabled=yes interface=bridge."/>
+<meta name="twitter:site" content="@forwardingplane"/>
 
         <meta property="og:title" content="Mikrotik IPv6 DHCPv6-PD configuration" />
 <meta property="og:description" content="For a small to medium ISPs (especially WISPs) looking to move to IPv6 dual-stack, the right way to deploy is to use DHCPv6 prefix delegation. Here is an example of how to do this in-skin (i.e. on the mikrotik itself rather than a relay).
@@ -298,7 +299,7 @@
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-ipv6-dhcpv6-pd-configuration%2f&amp;text=Mikrotik%20IPv6%20DHCPv6-PD%20configuration&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-ipv6-dhcpv6-pd-configuration%2f&amp;text=Mikrotik%20IPv6%20DHCPv6-PD%20configuration&amp;via=forwardingplane" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>

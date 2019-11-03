@@ -1,12 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Crystal Ball on ForwardingPlane.net</title>
+    <title>
+    Crystal Ball on ForwardingPlane.net
+    
+    </title>
     <link>https://forwardingplane.net/tags/crystal-ball/</link>
-    <description>Recent content in Crystal Ball on ForwardingPlane.net</description>
+    <description>Recent content 
+    
+    in Crystal Ball on ForwardingPlane.net
+    </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    
+    
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Mon, 19 Feb 2018 22:53:03 +0000</lastBuildDate>
+    
     
         <atom:link href="https://forwardingplane.net/tags/crystal-ball/index.xml" rel="self" type="application/rss+xml" />
     

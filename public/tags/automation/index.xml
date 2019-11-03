@@ -1,12 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Automation on ForwardingPlane.net</title>
+    <title>
+    Automation on ForwardingPlane.net
+    
+    </title>
     <link>https://forwardingplane.net/tags/automation/</link>
-    <description>Recent content in Automation on ForwardingPlane.net</description>
+    <description>Recent content 
+    
+    in Automation on ForwardingPlane.net
+    </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    
+    
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Mon, 29 Jul 2019 09:39:35 +0000</lastBuildDate>
+    
     
         <atom:link href="https://forwardingplane.net/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     

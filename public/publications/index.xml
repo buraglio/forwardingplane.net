@@ -1,57 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on ForwardingPlane.net</title>
+    <title>
+    Publications on ForwardingPlane.net
+    
+    </title>
     <link>https://forwardingplane.net/publications/</link>
-    <description>Recent content in Publications on ForwardingPlane.net</description>
+    <description>Recent content 
+    
+    in Publications on ForwardingPlane.net
+    </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    
+    
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Mon, 19 Jan 2015 17:13:14 +0000</lastBuildDate>
     
+    
         <atom:link href="https://forwardingplane.net/publications/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Publications</title>
-      <link>https://forwardingplane.net/publications/publications/</link>
-      <pubDate>Mon, 19 Jan 2015 17:13:14 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/publications/publications/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://es.net/about/esnet-staff/network-engineering/nick-buraglio/&#34;&gt;Work Profile&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, Anita Nikolich, Dale Carder, &lt;a href=&#34;http://meetings.internet2.edu/2014-technology-exchange/detail/10003432/&#34;&gt;Securing the SDN WAN,&lt;/a&gt; October 30, 2014&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio,Vincent Stoffer, Adam Slagell, Jim Eyrich, Scott Campbell, Von Welch, &lt;a href=&#34;http://meetings.internet2.edu/2014-technology-exchange/detail/10003410/&#34;&gt;Securing the Science DMZ: a discussion,&lt;/a&gt;October 28, 2014&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, &lt;a href=&#34;https://www.bro.org/brocon2014/brocon2014_buraglio_science_dmz.pdf&#34;&gt;Best practices for securing an open perimeter network,&lt;/a&gt; August 18, 2014 &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=IPh3aZ18IuY&#34;&gt;Video&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, &lt;a href=&#34;http://meetings.internet2.edu/2014-cc-climate/detail/10003326/&#34;&gt;Securing the Science DMZ,&lt;/a&gt; June 14, 2014&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, &lt;a href=&#34;https://docs.google.com/a/es.net/presentation/d/1L0g_XGoywEYUDkqOnGWXs-IrUz_GhIy_lIZ7V_4F_1o/edit#slide=id.g33fdf81aa_00&#34;&gt;Real world IPv6 deployments,&lt;/a&gt; Westnet, June 9, 2014&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, Tracy Smith, Mary Stevens, Paul Hixon: &lt;a href=&#34;http://nsf.gov/awardsearch/showAward?AWD_ID=1341025&#34;&gt;National Science Foundation CC-NIE award 1341025&lt;/a&gt;, 2013&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, &lt;a href=&#34;http://searchsdn.techtarget.com/opinion/OpenFlow-as-a-network-control-protocol-goes-deeper-than-data-center&#34;&gt;OpenFlow as a network control protocol&lt;/a&gt;, TechTarget, March 2014&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, &lt;a href=&#34;http://searchnetworking.techtarget.com/opinion/After-20-years-BGP-still-lacks-security-foundation&#34;&gt;BGP still lacks security foundation&lt;/a&gt;, TechTarget, May, 2014&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, &lt;a href=&#34;http://searchnetworking.techtarget.com/opinion/Why-monitoring-will-require-a-networking-engineer&#34;&gt;Why monitoring will require a networking engineer&lt;/a&gt;, TechTarget, March, 2015&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, &lt;a href=&#34;https://docs.google.com/presentation/d/1anAaqWR8wmzKO5fqidDy9QJXW4RiVshX9Miq3PoDv9E&#34;&gt;Secure Layer 3 SDX (Interdomain SDN): A Concept&lt;/a&gt;, ChiNOG 05, May, 2015&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, &lt;a href=&#34;http://searchnetworking.techtarget.com/opinion/Network-engineer-qualifications-trump-coding-hype&#34;&gt;Network engineer qualifications trump coding hype&lt;/a&gt;, TechTarget, November, 2015&lt;/p&gt;
-
-&lt;p&gt;Nick Buraglio, &lt;a href=&#34;http://searchsdn.techtarget.com/tip/SDN-and-OpenFlow-improve-broadband-deployment&#34;&gt;SDN and OpenFlow improve broadband deployment&lt;/a&gt;, TechTarget, October, 2015&lt;/p&gt;
-</description>
-    </item>
     
   </channel>
 </rss>

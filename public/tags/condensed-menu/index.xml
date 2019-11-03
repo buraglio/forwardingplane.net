@@ -1,12 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Condensed Menu on ForwardingPlane.net</title>
+    <title>
+    Condensed Menu on ForwardingPlane.net
+    
+    </title>
     <link>https://forwardingplane.net/tags/condensed-menu/</link>
-    <description>Recent content in Condensed Menu on ForwardingPlane.net</description>
+    <description>Recent content 
+    
+    in Condensed Menu on ForwardingPlane.net
+    </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    
+    
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Mon, 18 Jan 2016 22:08:05 +0000</lastBuildDate>
+    
     
         <atom:link href="https://forwardingplane.net/tags/condensed-menu/index.xml" rel="self" type="application/rss+xml" />
     

@@ -1,12 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ForwardingPlane.net</title>
+    <title>
+    
+    ForwardingPlane.net
+    </title>
     <link>https://forwardingplane.net/</link>
-    <description>Recent content on ForwardingPlane.net</description>
+    <description>Recent content 
+    on ForwardingPlane.net
+    </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    
+    
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Sat, 02 Nov 2019 18:11:58 +0000</lastBuildDate>
+    
     
         <atom:link href="https://forwardingplane.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,93 +25,6 @@
       <pubDate>Sat, 02 Nov 2019 18:11:58 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>About Nick Buraglio</title>
-      <link>https://forwardingplane.net/about/</link>
-      <pubDate>Sat, 02 Nov 2019 03:27:54 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/about/</guid>
-      <description>&lt;p&gt;This site is maintained by &lt;a href=&#34;http://linkedin.com/in/buraglio/&#34;&gt;Nick Buraglio&lt;/a&gt;.  It is intended to be a journal and notebook for things I find useful, problems I&amp;rsquo;m working on or general technology rambling. &lt;a href=&#34;https://www.forwardingplane.net/wp-content/uploads/2012/11/Nick_Buraglio.jpg&#34;&gt;&lt;img src=&#34;https://www.forwardingplane.net/wp-content/uploads/2012/11/Nick_Buraglio.jpg&#34; alt=&#34;Nick_Buraglio&#34; /&gt;&lt;/a&gt; &lt;strong&gt;It should be noted, however, that these pages are really just a personal notebook to me, stuff I find useful and things I may want to remember.  Please don&amp;rsquo;t expect them to always be correct or complete .  I&amp;rsquo;m only human and I make mistakes just like anyone else.  This site may also contain my personal opinions  and do not, in any way, reflect my employer or anyone that may be paying me for consultation.  Or anyone but me.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;My resume / C.V. can be found &lt;a href=&#34;https://drive.google.com/open?id=1bpYbEtUHWGbmEvGK6IicNjJ1E5DUgrLA&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I have a lot of interests. I hold a bachelors degree in arts and technology (sequence in photography) with a minor in film studies and some of a minor in applied computer science from &lt;a href=&#34;https://ilstu.edu/&#34;&gt;Illinois State University&lt;/a&gt; and am currently a member of the Planning and Architecture team for the &lt;a href=&#34;https://www.es.net&#34;&gt;Energy Sciences Network&lt;/a&gt; (ESnet).  In previous professional lives, I have been employed by the &lt;a href=&#34;https://www.illinois.edu/&#34;&gt;University of Illinois&lt;/a&gt; as a Lead Network Engineer, functioned as the Lead Network Engineer for the &lt;a href=&#34;http://uc2b.net/2012/09/13/uc2b-awarded-national-association-of-telecommunications-officers-and-advisors-natoa-2012-community-broadband-project-of-the-year/&#34;&gt;National Association of Telecommunications Officers and Advisors (NATOA) broadband project of the year&lt;/a&gt;, &lt;a href=&#34;http://uc2b.net/&#34;&gt;UC2B&lt;/a&gt;.  I have worked in the network provider industry in one way or another since the mid-1990s, holding Network Engineering positions at Regional Internet Providers as well as at the &lt;a href=&#34;https://www.ncsa.uiuc.edu/&#34;&gt;National Center for Supercomputing Applications&lt;/a&gt;. I&amp;rsquo;ve participated in &lt;a href=&#34;https://scinet.supercomp.org/&#34;&gt;SCinet&lt;/a&gt; on several occasions and was part of the Network Engineering working group that built and maintained the &lt;a href=&#34;https://www.teragrid.org/&#34;&gt;TeraGrid&lt;/a&gt;. My professional resume can be found &lt;a href=&#34;http://buraglio.com/nick/resume&#34;&gt;here&lt;/a&gt;. Along with many interests comes many hobbies. I have been known to dabble in &lt;a href=&#34;http://en.wikipedia.org/wiki/Zymurgist&#34;&gt;zymology&lt;/a&gt; (&lt;a href=&#34;http://buraglio.com/nick/category/beer/recipe&#34;&gt;making beer and mead&lt;/a&gt;), &lt;a href=&#34;http://en.wikipedia.org/wiki/Grappling&#34;&gt;grappling&lt;/a&gt; (&lt;a href=&#34;http://en.wikipedia.org/wiki/Brazilian_Jiu_Jitsu&#34;&gt;Brazilian Jiu Jitsu&lt;/a&gt;, &lt;a href=&#34;http://en.wikipedia.org/wiki/Submission_wrestling&#34;&gt;submission wrestling&lt;/a&gt;) and as of &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2009&lt;/sub&gt; hold a purple belt in Brazilian Jiu Jitsu under &lt;a href=&#34;http://en.wikipedia.org/wiki/Submission_wrestling&#34;&gt;Jack McVicker&lt;/a&gt;. I am also interested in &lt;a href=&#34;http://en.wikipedia.org/wiki/Circuit_training&#34;&gt;circuit training&lt;/a&gt;,
-&lt;a href=&#34;http://en.wikipedia.org/wiki/Cycling&#34;&gt;Cycling&lt;/a&gt; and &lt;a href=&#34;http://en.wikipedia.org/wiki/Skateboarding&#34;&gt;Skateboarding&lt;/a&gt;. I also have interests &lt;a href=&#34;http://en.wikipedia.org/wiki/Camping&#34;&gt;camping&lt;/a&gt; and &lt;a href=&#34;http://en.wikipedia.org/wiki/Backpacking_(wilderness)&#34;&gt;backpacking&lt;/a&gt;.
-I generally enjoy being creative and like to draw, do photography, and make jewelry as time permits.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://farm5.static.flickr.com/4101/4905501229_694a8701b7.jpg&#34;&gt;&lt;img src=&#34;httpis://farm5.static.flickr.com/4101/4905501229_694a8701b7.jpg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I have acquired a few industry certifications over the years, most of them are from back in the 1990s when I could leverage them for something.  My jobs over the last 18 years have really not seen much value in them, so many are expired and the ones that aren&amp;rsquo;t were taken cold (as in, &amp;ldquo;here is a free exam if you take it now&amp;rdquo;).&lt;/p&gt;
-
-&lt;p&gt;To date, the ones I remember are:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;LPI (Linux, Beta exam taken free at Comdex, 1998ish?)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;MCSE (NT4) (Microsoft 1999)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Inet+ (ComTIA, 1999?)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ASE (apple something or other, 1998?)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CCNA (Cisco, 1999-2000?)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CCDA (Cisco, 2000)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CCNP minus BCRAN (Cisco, 2000)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;JNCIA JunOS (Juniper, 2011)&lt;/strong&gt; &lt;strong&gt;BCNE (Brocade, 2010)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I occasionally hang out on several public and private Slack channels - I am not terribly hard to find.  
-Thanks to &lt;a href=&#34;http://www.networkstatic.net&#34;&gt;Brent Salisbury&lt;/a&gt; for talking me into blogging again and for not only helping provide inspiration, ideas and content but also for promoting my stuff.  He also provided the nice paragraph above and is a cool dude. I like to participate in community projects, for fun and profit, and have been loosely involved in such projects as pfSense and RANCID (mostly to add or change things I need at the time) but I try to maintain good relationships and help further the projects and the community as a whole. I&amp;rsquo;ve been known to do consulting from time to time as my work and home life permits, it&amp;rsquo;s generally focused on the service provider side but I&amp;rsquo;m usually open to any interesting projects.  Feel free to contact me if I can be of help. I can be best contacted via email, but will usually answer DMs on Twitter and comments on here.  My twitter handle is &lt;a href=&#34;http://www.twitter.com/forwardingplane&#34;&gt;@forwardingplane&lt;/a&gt;.  Please excuse my sometimes delayed responses, a family and a usually-more-than-full-time gig makes for a busy life.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Configuration-archives</title>
-      <link>https://forwardingplane.net/configuration-archive/</link>
-      <pubDate>Tue, 28 May 2019 07:23:50 -0600</pubDate>
-      
-      <guid>https://forwardingplane.net/configuration-archive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Publications</title>
-      <link>https://forwardingplane.net/publications/</link>
-      <pubDate>Mon, 19 Jan 2015 17:13:14 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/publications/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Disclaimers</title>
-      <link>https://forwardingplane.net/disclaimer/</link>
-      <pubDate>Fri, 21 Mar 2014 00:00:44 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/disclaimer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Resume</title>
-      <link>https://forwardingplane.net/resume/</link>
-      <pubDate>Tue, 11 Mar 2014 14:37:02 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/resume/</guid>
-      <description>&lt;p&gt;My current resume / C.V. can be found &lt;a href=&#34;https://drive.google.com/open?id=1bpYbEtUHWGbmEvGK6IicNjJ1E5DUgrLA&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Calendars</title>
-      <link>https://forwardingplane.net/calendar/</link>
-      <pubDate>Thu, 05 Dec 2013 16:16:36 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/calendar/</guid>
       <description></description>
     </item>
     

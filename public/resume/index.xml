@@ -1,12 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Resume on ForwardingPlane.net</title>
+    <title>
+    Resume on ForwardingPlane.net
+    
+    </title>
     <link>https://forwardingplane.net/resume/</link>
-    <description>Recent content in Resume on ForwardingPlane.net</description>
+    <description>Recent content 
+    
+    in Resume on ForwardingPlane.net
+    </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    
+    
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Tue, 11 Mar 2014 14:37:02 +0000</lastBuildDate>
+    
     
         <atom:link href="https://forwardingplane.net/resume/index.xml" rel="self" type="application/rss+xml" />
     

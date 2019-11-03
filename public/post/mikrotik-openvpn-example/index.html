@@ -49,6 +49,7 @@
 <meta name="twitter:title" content="Mikrotik OpenVPN server"/>
 <meta name="twitter:description" content="Mikrotik is one of my favorite routing and MPLS platforms for doing lab and small ISP work. This one is pretty darned easy if you&rsquo;re willing to use self-signed certificates, and pretty trivial to add legitimate certificates if you are so inclined.
 /certificate add name=ca common-name=ca key-usage=key-cert-sign,crl-sign /certificate sign ca ca-crl-host=10.255.255.4 name=ca /certificate export-certificate ca /certificate add name=gw-dsl common-name=gw.yourcompany.com /certificate add name=vpnclient1 common-name=client1 /certificate sign gw-dsl ca=ca name=gw.yourcompany.com /certificate sign vpnclient1 ca=ca name=client1 /ip pool add name=ovpn-pool range=10."/>
+<meta name="twitter:site" content="@forwardingplane"/>
 
         <meta property="og:title" content="Mikrotik OpenVPN server" />
 <meta property="og:description" content="Mikrotik is one of my favorite routing and MPLS platforms for doing lab and small ISP work. This one is pretty darned easy if you&rsquo;re willing to use self-signed certificates, and pretty trivial to add legitimate certificates if you are so inclined.
@@ -298,7 +299,7 @@
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-openvpn-example%2f&amp;text=Mikrotik%20OpenVPN%20server&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-openvpn-example%2f&amp;text=Mikrotik%20OpenVPN%20server&amp;via=forwardingplane" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>

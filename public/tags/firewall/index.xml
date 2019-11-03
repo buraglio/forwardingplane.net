@@ -1,12 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Firewall on ForwardingPlane.net</title>
+    <title>
+    Firewall on ForwardingPlane.net
+    
+    </title>
     <link>https://forwardingplane.net/tags/firewall/</link>
-    <description>Recent content in Firewall on ForwardingPlane.net</description>
+    <description>Recent content 
+    
+    in Firewall on ForwardingPlane.net
+    </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    
+    
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Sat, 08 Dec 2012 00:00:26 +0000</lastBuildDate>
+    
     
         <atom:link href="https://forwardingplane.net/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
     

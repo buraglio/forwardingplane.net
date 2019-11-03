@@ -7,6 +7,7 @@ enableRobotsTXT = true
 theme = "hugo-future-imperfect"
 #disqusShortname = "forwwardingplane"
 pygmentsCodeFences = "true"
+#theme_colors = "default-dark" # uses color css file under static/css/default-dark.css
 
 [author]
   name = "Nick Buraglio"
@@ -34,13 +35,13 @@ pygmentsStyle = "native" # other dark style options: vim, fruity, monokai
   keywords = "blog, tech, Nick Buraglio, SDN, Security, OpenFlow, Service Provider"
   description = "A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy….The Lunatic fringe."
 
-[params.postAmount]
+#[params.postAmount]
 #[params]
+[social]
   github = "buraglio"
   twitter = "forwardingplane"
   linkedin = "buraglio"
   email = "my lastname at forwardingplane dot net"
-  theme_colors = "default-dark" # uses color css file under static/css/default-dark.css
 
 [menu]
 

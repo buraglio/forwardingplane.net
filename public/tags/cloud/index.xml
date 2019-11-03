@@ -1,12 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cloud on ForwardingPlane.net</title>
+    <title>
+    Cloud on ForwardingPlane.net
+    
+    </title>
     <link>https://forwardingplane.net/tags/cloud/</link>
-    <description>Recent content in Cloud on ForwardingPlane.net</description>
+    <description>Recent content 
+    
+    in Cloud on ForwardingPlane.net
+    </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    
+    
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Fri, 20 Feb 2015 06:52:33 +0000</lastBuildDate>
+    
     
         <atom:link href="https://forwardingplane.net/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     

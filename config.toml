@@ -47,10 +47,10 @@ pygmentsCodeFences = true
     name = "about"
     url = "/about"
   
-#  [[menu.main]]
-#    identifier = "resume"
-#    name = "resume"
-#    url = "/resume"
+  [[menu.main]]
+    identifier = "resume"
+    name = "resume"
+    url = "/resume"
   
 #  [[menu.main]]
 #    identifier = "configuration-archive"

@@ -318,11 +318,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</loc>
-    <lastmod>2018-12-10T10:23:42+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/tags/privacy/</loc>
     <lastmod>2018-12-10T10:23:42+00:00</lastmod>
   </url>
@@ -330,11 +325,6 @@
   <url>
     <loc>https://forwardingplane.net/tags/zerotier/</loc>
     <lastmod>2018-12-10T10:23:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</loc>
-    <lastmod>2018-11-05T10:56:21+00:00</lastmod>
   </url>
   
   <url>
@@ -358,11 +348,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/</loc>
-    <lastmod>2018-09-01T16:47:23+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/tags/podcast/</loc>
     <lastmod>2018-09-01T16:47:23+00:00</lastmod>
   </url>
@@ -373,23 +358,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2018/07/trouble-with-tribbles-.....errr-nat/</loc>
-    <lastmod>2018-07-16T10:24:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2018/06/nat-discussions-fact-checking-and-debate/</loc>
     <lastmod>2018-06-11T09:41:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2018/06/nat-discussions-fact-checking-and-debate/</loc>
-    <lastmod>2018-06-11T09:41:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2018/05/field-area-networking/</loc>
-    <lastmod>2018-05-04T13:38:15+00:00</lastmod>
   </url>
   
   <url>
@@ -413,23 +383,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2018/02/strategy-series-how-do-you-view-outside-of-your-network/</loc>
-    <lastmod>2018-02-10T16:58:28+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/</loc>
     <lastmod>2017-12-18T11:15:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/</loc>
-    <lastmod>2017-12-18T11:15:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2017/12/speculation-on-the-obvious-stuff-changes-why-freak-out/</loc>
-    <lastmod>2017-12-08T00:30:15+00:00</lastmod>
   </url>
   
   <url>
@@ -468,16 +423,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2016/10/why-i-care-about-segment-routing/</loc>
-    <lastmod>2016-10-04T00:54:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2016/05/bgp-rpki-why-arent-we-using-it-more/</loc>
-    <lastmod>2016-05-21T16:33:44+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2016/05/bgp-rpki-why-arent-we-using-it-more/</loc>
     <lastmod>2016-05-21T16:33:44+00:00</lastmod>
   </url>
@@ -508,18 +453,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</loc>
-    <lastmod>2016-01-18T16:33:09+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2015/11/building-interdomain-sdn-part-3/</loc>
     <lastmod>2015-11-06T04:37:23+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2015/07/solarwinds-orion-from-a-unix-user-perspective/</loc>
-    <lastmod>2015-07-07T04:08:30+00:00</lastmod>
   </url>
   
   <url>
@@ -540,11 +475,6 @@
   <url>
     <loc>https://forwardingplane.net/2015/05/ravello-systems-review-and-use-case-study/</loc>
     <lastmod>2015-05-16T16:42:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</loc>
-    <lastmod>2015-03-28T16:09:11+00:00</lastmod>
   </url>
   
   <url>
@@ -588,11 +518,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2015/03/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</loc>
-    <lastmod>2015-03-20T05:18:30+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2015/03/networking/</loc>
     <lastmod>2015-03-20T03:44:38+00:00</lastmod>
   </url>
@@ -613,23 +538,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2015/02/the-nec-surprise/</loc>
-    <lastmod>2015-02-20T06:52:33+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2015/01/bigswitch-networks-bigcloud-fabric-2.5/</loc>
     <lastmod>2015-01-29T01:04:46+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2015/01/bigswitch-networks-bigcloud-fabric-2.5/</loc>
-    <lastmod>2015-01-29T01:04:46+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2015/01/network-field-day-#9/</loc>
-    <lastmod>2015-01-24T15:55:48+00:00</lastmod>
   </url>
   
   <url>
@@ -678,16 +588,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2014/09/bigswitch-labs-for-sdn-learning-a-sneak-peek/</loc>
-    <lastmod>2014-09-22T10:24:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</loc>
-    <lastmod>2014-09-15T09:05:13+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</loc>
     <lastmod>2014-09-15T09:05:13+00:00</lastmod>
   </url>
@@ -695,16 +595,6 @@
   <url>
     <loc>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</loc>
     <lastmod>2014-09-08T07:30:07+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</loc>
-    <lastmod>2014-09-08T07:30:07+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</loc>
-    <lastmod>2014-08-13T05:00:56+00:00</lastmod>
   </url>
   
   <url>
@@ -743,27 +633,12 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</loc>
-    <lastmod>2014-04-21T04:44:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/</loc>
-    <lastmod>2014-03-21T04:51:06+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/</loc>
     <lastmod>2014-03-21T04:51:06+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://forwardingplane.net/disclaimer/disclaimer/</loc>
-    <lastmod>2014-03-21T00:00:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2014/03/disclaimer/</loc>
     <lastmod>2014-03-21T00:00:44+00:00</lastmod>
   </url>
   
@@ -803,11 +678,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2014/02/tail-f-ncs-upsetting-network-management...in-a-good-way./</loc>
-    <lastmod>2014-02-27T04:36:26+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2014/02/cold-locals/</loc>
     <lastmod>2014-02-26T02:26:52+00:00</lastmod>
   </url>
@@ -828,23 +698,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2014/02/network-field-day-7/</loc>
-    <lastmod>2014-02-11T02:50:24+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</loc>
     <lastmod>2014-01-11T21:55:24+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</loc>
-    <lastmod>2014-01-11T21:55:24+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2014/01/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog./</loc>
-    <lastmod>2014-01-04T17:15:40+00:00</lastmod>
   </url>
   
   <url>
@@ -878,23 +733,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</loc>
-    <lastmod>2013-11-29T20:15:17+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2013/11/how-to-be-a-good-network-engineer-and-network-engineer-appreciation-day/</loc>
     <lastmod>2013-11-10T04:02:52+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/11/how-to-be-a-good-network-engineer-and-network-engineer-appreciation-day/</loc>
-    <lastmod>2013-11-10T04:02:52+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/09/being-single-vendor-does-your-brain-a-disservice./</loc>
-    <lastmod>2013-09-21T15:30:33+00:00</lastmod>
   </url>
   
   <url>
@@ -908,23 +748,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2013/09/inline-jflow-on-mx-series-juniper/</loc>
-    <lastmod>2013-09-01T15:40:29+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2013/08/fixing-the-dreaded-error-could-not-open-configuration-database-juniper.data-problem./</loc>
     <lastmod>2013-08-07T16:52:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/08/fixing-the-dreaded-error-could-not-open-configuration-database-juniper.data-problem./</loc>
-    <lastmod>2013-08-07T16:52:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</loc>
-    <lastmod>2013-08-05T11:18:03+00:00</lastmod>
   </url>
   
   <url>
@@ -938,16 +763,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2013/07/building-a-secured-network-in-a-box/</loc>
-    <lastmod>2013-07-26T05:28:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</loc>
-    <lastmod>2013-07-05T10:22:23+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</loc>
     <lastmod>2013-07-05T10:22:23+00:00</lastmod>
   </url>
@@ -955,16 +770,6 @@
   <url>
     <loc>https://forwardingplane.net/2013/07/i-want-to-love-cumulus-networks...../</loc>
     <lastmod>2013-07-03T22:08:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/07/i-want-to-love-cumulus-networks...../</loc>
-    <lastmod>2013-07-03T22:08:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</loc>
-    <lastmod>2013-06-30T14:24:51+00:00</lastmod>
   </url>
   
   <url>
@@ -975,11 +780,6 @@
   <url>
     <loc>https://forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/</loc>
     <lastmod>2013-06-30T08:08:11-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/06/broadcast-input-with-iterm/</loc>
-    <lastmod>2013-06-22T15:56:12+00:00</lastmod>
   </url>
   
   <url>
@@ -1008,11 +808,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2013/05/mpls-pseudowire-vll-between-junos-and-brocade-mlx/xmr/</loc>
-    <lastmod>2013-05-19T16:24:03+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2013/05/ipv6-feature-matrix-again/</loc>
     <lastmod>2013-05-17T22:01:27+00:00</lastmod>
   </url>
@@ -1023,23 +818,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2013/05/scripting-the-build-of-opendayight-controller-under-centos/</loc>
-    <lastmod>2013-05-03T21:45:41+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2013/04/vnc-console-on-vmware-esxi/</loc>
     <lastmod>2013-04-28T03:39:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/04/vnc-console-on-vmware-esxi/</loc>
-    <lastmod>2013-04-28T03:39:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</loc>
-    <lastmod>2013-04-26T04:56:07+00:00</lastmod>
   </url>
   
   <url>
@@ -1053,23 +833,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2013/04/openflow-hybrid.-its-a-must-not-an-option./</loc>
-    <lastmod>2013-04-18T16:17:37+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</loc>
     <lastmod>2013-04-09T04:25:59+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</loc>
-    <lastmod>2013-04-09T04:25:59+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./</loc>
-    <lastmod>2013-03-29T04:43:17+00:00</lastmod>
   </url>
   
   <url>
@@ -1083,23 +848,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</loc>
-    <lastmod>2013-03-23T21:45:17+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2013/03/why-hardware-firewalls-are-the-walking-dead/</loc>
     <lastmod>2013-03-18T11:02:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/03/why-hardware-firewalls-are-the-walking-dead/</loc>
-    <lastmod>2013-03-18T11:02:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/03/building-a-bridge-domain-on-mx-series-junos/</loc>
-    <lastmod>2013-03-09T16:48:48+00:00</lastmod>
   </url>
   
   <url>
@@ -1118,16 +868,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</loc>
-    <lastmod>2013-03-02T13:15:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</loc>
-    <lastmod>2013-03-02T01:12:02+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</loc>
     <lastmod>2013-03-02T01:12:02+00:00</lastmod>
   </url>
@@ -1135,11 +875,6 @@
   <url>
     <loc>https://forwardingplane.net/configuration-archive/kvm-virsh-command-referenc/</loc>
     <lastmod>2013-03-01T14:28:32-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/03/kvm-virsh-command-reference/</loc>
-    <lastmod>2013-03-01T20:28:32+00:00</lastmod>
   </url>
   
   <url>
@@ -1158,11 +893,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2013/02/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</loc>
-    <lastmod>2013-02-16T03:11:20+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2013/02/optical-sdn-and-the-future-of-dwdm/</loc>
     <lastmod>2013-02-12T16:41:49+00:00</lastmod>
   </url>
@@ -1170,16 +900,6 @@
   <url>
     <loc>https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/</loc>
     <lastmod>2013-02-04T13:10:24+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/</loc>
-    <lastmod>2013-02-04T13:10:24+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/02/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/</loc>
-    <lastmod>2013-02-04T12:45:18+00:00</lastmod>
   </url>
   
   <url>
@@ -1200,16 +920,6 @@
   <url>
     <loc>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</loc>
     <lastmod>2013-01-31T21:48:47+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</loc>
-    <lastmod>2013-01-31T21:48:47+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/01/diff-rancid-router-configs-with-svn/</loc>
-    <lastmod>2013-01-25T00:27:09+00:00</lastmod>
   </url>
   
   <url>
@@ -1238,11 +948,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2013/01/how-to-install-and-use-the-airport-utility-under-mountain-lion/</loc>
-    <lastmod>2013-01-09T09:58:47+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2013/01/dns-utilities-on-centos/</loc>
     <lastmod>2013-01-04T10:13:28+00:00</lastmod>
   </url>
@@ -1250,16 +955,6 @@
   <url>
     <loc>https://forwardingplane.net/2013/01/homenet/</loc>
     <lastmod>2013-01-03T18:43:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/01/homenet/</loc>
-    <lastmod>2013-01-03T18:43:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2013/01/where-will-cisco-go-from-here/</loc>
-    <lastmod>2013-01-03T00:46:09+00:00</lastmod>
   </url>
   
   <url>
@@ -1328,17 +1023,7 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2012/12/plexxi-could-be-wdm-for-the-rest-of-us./</loc>
-    <lastmod>2012-12-11T05:15:42+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/tags/brocade/</loc>
-    <lastmod>2012-12-08T17:53:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2012/12/brocade-vdx-first-impressions..../</loc>
     <lastmod>2012-12-08T17:53:00+00:00</lastmod>
   </url>
   
@@ -1363,11 +1048,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2012/12/sonicwall-old-dog-learns-some-new-tricks/</loc>
-    <lastmod>2012-12-08T00:00:26+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2012/12/workflow-and-my-mobile-device-setups./</loc>
     <lastmod>2012-12-04T21:28:53+00:00</lastmod>
   </url>
@@ -1375,16 +1055,6 @@
   <url>
     <loc>https://forwardingplane.net/2012/12/converting-back-to-wordpress-from-blogger/</loc>
     <lastmod>2012-12-02T19:41:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2012/12/converting-back-to-wordpress-from-blogger/</loc>
-    <lastmod>2012-12-02T19:41:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</loc>
-    <lastmod>2012-11-27T05:04:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1410,16 +1080,6 @@
   <url>
     <loc>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</loc>
     <lastmod>2012-11-25T00:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</loc>
-    <lastmod>2012-11-25T00:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2012/11/vdxrancid-contrib-scripts/</loc>
-    <lastmod>2012-11-14T16:50:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1513,23 +1173,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2011/11/a-quick-post-about-arp-networks-hosting./</loc>
-    <lastmod>2011-11-02T00:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2011/10/a-security-oversight-in-mail.app-or-a-hidden-bcc-field/</loc>
     <lastmod>2011-10-22T08:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2011/10/a-security-oversight-in-mail.app-or-a-hidden-bcc-field/</loc>
-    <lastmod>2011-10-22T08:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2011/10/imessage-ive-been-left-wanting/</loc>
-    <lastmod>2011-10-15T20:37:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1543,23 +1188,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2011/10/ftps-secure-ftp-from-the-command-line/</loc>
-    <lastmod>2011-10-04T04:31:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2011/10/black-hole-routing/</loc>
     <lastmod>2011-10-04T01:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2011/10/black-hole-routing/</loc>
-    <lastmod>2011-10-04T01:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2011/09/googlecl-command-line-based-google-blogger-picasa-calendar-and-much-much-more./</loc>
-    <lastmod>2011-09-07T03:42:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1575,16 +1205,6 @@
   <url>
     <loc>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</loc>
     <lastmod>2011-07-31T02:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</loc>
-    <lastmod>2011-07-31T02:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</loc>
-    <lastmod>2011-07-26T18:20:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1608,18 +1228,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/</loc>
-    <lastmod>2011-06-20T08:43:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2011/04/juniper-interface-type-naming-convention/</loc>
     <lastmod>2011-04-13T01:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2011/03/ipv6-features-matrix-for-network-hardware/</loc>
-    <lastmod>2011-03-16T21:55:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1673,11 +1283,6 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2010/10/multicast-through-juniper-srx-5800/</loc>
-    <lastmod>2010-10-17T23:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2010/10/android-nexus-one-or-iphone/</loc>
     <lastmod>2010-10-13T09:56:00+00:00</lastmod>
   </url>
@@ -1690,11 +1295,6 @@
   <url>
     <loc>https://forwardingplane.net/tags/uncategorized/</loc>
     <lastmod>2010-10-02T17:36:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2010/09/srx-ipv6-flow-based-processing/</loc>
-    <lastmod>2010-09-16T17:18:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1718,18 +1318,8 @@
   </url>
   
   <url>
-    <loc>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</loc>
-    <lastmod>2010-09-03T19:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://forwardingplane.net/2010/09/setting-ipv6-precedence-under-freebsd/</loc>
     <lastmod>2010-09-02T18:44:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/2010/09/updating-srx-idp-signatures/</loc>
-    <lastmod>2010-09-02T18:16:00+00:00</lastmod>
   </url>
   
   <url>

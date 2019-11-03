@@ -27,16 +27,6 @@
       <pubDate>Mon, 10 Dec 2018 10:23:42 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
-      <description>Link Propagation 147: We Don&amp;#8217;t Need No Stinking Badges! - Dec 5, 2018
-[…] Read more here […] </description>
-    </item>
-    
-    <item>
-      <title>DNS - the treasure trove of information your ISP can see</title>
-      <link>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</link>
-      <pubDate>Mon, 10 Dec 2018 10:23:42 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
       <description>In recent years, the nature of privacy on the internet has become a very important topic amongst those concerned with the now lack of net neutrality. The de-facto mechanism for dealing with privacy has been to &amp;ldquo;SSL all the things&amp;rdquo;, which I am very much in favor of. What many do not realize, though, is that simply using SSL for the traffic that transits a given ISP still leaves a wealth of thick, rich, delicious personal data still easily available to your ISP to harvest, sell, and do with as they please.</description>
     </item>
     
@@ -91,16 +81,6 @@
       <pubDate>Mon, 15 Sep 2014 09:05:13 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</guid>
-      <description>[Les Begnaud]( &amp;ldquo;lesbegnaud@gmail.com&amp;rdquo;) - Dec 4, 2014
-Hi there, I just implemented your set of scripts and had a couple comments: 1) seems to work just fine on an NSA 3600 2) have you attempted to rebuild a sonicwall based on the output of &amp;lsquo;show current-config&amp;rsquo;? 3) any luck with getting the ever-changing passwords to behave themselves? I am not a fan of constant diffs&amp;hellip; defeats the purpose of diffs 4) your github sonrancid script references clogin, and not sonlogin 5) Thanks so much for doing this!</description>
-    </item>
-    
-    <item>
-      <title>sonrancid: A [very] basic RANCID module for sonicwall</title>
-      <link>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</link>
-      <pubDate>Mon, 15 Sep 2014 09:05:13 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</guid>
       <description>I know, I know, I&amp;rsquo;m always saying that you don&amp;rsquo;t need a firewall. That&amp;rsquo;s mostly to get your attention to push my agenda of sane security architecture, I do actually believe that firewalls are appropriate in a great many use cases and I&amp;rsquo;ve managed them big and small ranging from Juniper SRX 5800 clusters to tiny purpose built BSD distros on custom hardware. I even managed Checkpoint and gauntlet firewall back in the 1990s.</description>
     </item>
     
@@ -137,16 +117,6 @@ Hi there, I just implemented your set of scripts and had a couple comments: 1) s
       <pubDate>Mon, 21 Apr 2014 04:44:30 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</guid>
-      <description>Blending the Network; Pluribus ServerSwitch - Apr 1, 2014
-[…] Blending the Network; Pluribus ServerSwitch […] </description>
-    </item>
-    
-    <item>
-      <title>Blending the Network; Pluribus ServerSwitch</title>
-      <link>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</link>
-      <pubDate>Mon, 21 Apr 2014 04:44:30 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</guid>
       <description>I firmly believe that blending disciplines is the way of the future in IT. I&amp;rsquo;ve rambled about it here at other venues and I&amp;rsquo;m vocal (some would probably say brash) about it on the twitters. Be it Networking and System, Systems and Security, Programming and Networking, most of us that have been around any length of time already do it but now it&amp;rsquo;s happening out in the open and &amp;ldquo;DevOps&amp;rdquo;, a form of the hybrid IT worker, has seemingly become the BOTD (Buzzword of the day).</description>
     </item>
     
@@ -165,29 +135,7 @@ Hi there, I just implemented your set of scripts and had a couple comments: 1) s
       <pubDate>Sat, 11 Jan 2014 21:55:24 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</guid>
-      <description>Internets of Interest for 20th January 2014 — EtherealMind - Jan 1, 2014
-[…] Drink from the firehose! Implement NetFlow data on your network with nfdump and nfsen – Nick Buraglio on open source sFlow/NetFlow tool nfsen : […] Technology Short Take #38 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, networking, storage, and servers - Feb 4, 2014
-[…] Nick Buraglio takes away all your reasons for not collecting flow-based data from your environment with his write-up on installing nfsen and nfdump for NetFlow and/or sFlow collection.</description>
-    </item>
-    
-    <item>
-      <title>Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection</title>
-      <link>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</link>
-      <pubDate>Sat, 11 Jan 2014 21:55:24 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</guid>
       <description>I am an absolutely huge fan of statistical and instrumentation data, especially when it comes to traffic analysis, visualization and baselining. I&amp;rsquo;ve rambled on about the importance of it at every opportunity. As a result of that, I have been doing work with netflow and netflow-like data for a fairly long time. My first collector was the OSU Flow tools based stuff back around 13 years ago. From there I played with all kinds of netflow tools, both commercial and open source, finally settling most of my focus on nfdump and nfsen.</description>
-    </item>
-    
-    <item>
-      <title>Fixing the dreaded &#34;error: could not open configuration database (juniper.data&#43;)&#34; problem.</title>
-      <link>https://forwardingplane.net/2013/08/fixing-the-dreaded-error-could-not-open-configuration-database-juniper.data-problem./</link>
-      <pubDate>Wed, 07 Aug 2013 16:52:04 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/08/fixing-the-dreaded-error-could-not-open-configuration-database-juniper.data-problem./</guid>
-      <description>[waqar]( &amp;ldquo;warint06@gmail.com&amp;rdquo;) - Oct 6, 2013
-did unmounting and mounting /var partition gives any outages ? Nick Buraglio - Oct 6, 2013
-No, we saw no interruption. </description>
     </item>
     
     <item>
@@ -206,30 +154,8 @@ buraglio@rtr&amp;gt;start shell From there I wanted to see the file system and c
       <pubDate>Fri, 05 Jul 2013 10:22:23 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</guid>
-      <description>Technology Short Take #34 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, storage, and servers - Jul 1, 2013
-[&amp;hellip;] Nick Buraglio provides some quick-and-dirty instructions for building FlowVisor on CentOS 6. [&amp;hellip;] Technology Short Take #34 | Strategic HR - Jul 6, 2013
-[&amp;hellip;] Nick Buraglio provides some quick-and-dirty instructions for building FlowVisor on CentOS 6. [&amp;hellip;] # - Aug 4, 2013
-At the end of the nail with your hammer to avoid splitting the wood when you drive the nail.</description>
-    </item>
-    
-    <item>
-      <title>Building FlowVisor on Centos 6 - quick and dirty</title>
-      <link>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</link>
-      <pubDate>Fri, 05 Jul 2013 10:22:23 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</guid>
       <description>I had the need to build a FlowVisor instance under CentOS. Since nearly all of the docs I could find were for debian, I threw this together. I utilized this GENI doc and the github docs as a simple reference. This is the quick and dirty method I used: Install the prerequisites:``` sudo yum -y install ant eclipse java-1.6.0-openjdk.x86_64 git sudo yum -y groupinstall &amp;ldquo;Development Tools&amp;rdquo;
 mkdir /services cd /services git clone git://github.</description>
-    </item>
-    
-    <item>
-      <title>VMWare ESXi CLI reference</title>
-      <link>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</link>
-      <pubDate>Sun, 30 Jun 2013 14:24:51 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</guid>
-      <description>[mike]( &amp;ldquo;mike@marseglia.org&amp;rdquo;) - Sep 4, 2013
-You would be happy to hear that William Lam, engineer at VMware, has an excellent blog at http://www.virtuallyghetto.com/ where he comes up with useful scripts/tools. Also, you should check out the vSphere Management Assistant (vMA) at http://www.vmware.com/support/developer/vima/ </description>
     </item>
     
     <item>
@@ -247,27 +173,7 @@ You would be happy to hear that William Lam, engineer at VMware, has an excellen
       <pubDate>Sat, 22 Jun 2013 15:56:12 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/06/broadcast-input-with-iterm/</guid>
-      <description>psn code generator free download - Aug 5, 2013
-I leave a response when I like a article on a site or I have something to add to the discussion. It&amp;rsquo;s caused by the fire displayed in the post I browsed. And on this article Broadcast input with iTerm2. I was actually excited enough to drop a commenta response :) I actually do have a couple of questions for you if you don&amp;rsquo;t mind.</description>
-    </item>
-    
-    <item>
-      <title>Broadcast input with iTerm</title>
-      <link>https://forwardingplane.net/2013/06/broadcast-input-with-iterm/</link>
-      <pubDate>Sat, 22 Jun 2013 15:56:12 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/06/broadcast-input-with-iterm/</guid>
       <description>As much as I like to think I automate everything, I&amp;rsquo;m pretty bad at writing code to make my life easier since it tends to take me longer to write the code and it tends to make be a bit grumpy (this is eomthing I&amp;rsquo;m fixing by learning as much code dev as I can during my limited spare time). However, I like to think I can be fairly smart about working around my limited programming skills (think boba fett rather than jedi) by using the tools available to common folk.</description>
-    </item>
-    
-    <item>
-      <title>Scripting the build of OpenDayight Controller under CentOS</title>
-      <link>https://forwardingplane.net/2013/05/scripting-the-build-of-opendayight-controller-under-centos/</link>
-      <pubDate>Fri, 03 May 2013 21:45:41 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/05/scripting-the-build-of-opendayight-controller-under-centos/</guid>
-      <description>www.shatours.com - May 2, 2013
-Once you disregard this need, the quality of your life will skyrocket and you will become a much happier, more centred person. If she cannot get captivated by you, she will think nothing of you in the end. Since these are not the types of impressions that you want project, it is vitally important that you have good eye contact with her throughout your interaction. cambodia tour packages - May 2, 2013</description>
     </item>
     
     <item>
@@ -285,30 +191,7 @@ Once you disregard this need, the quality of your life will skyrocket and you wi
       <pubDate>Fri, 26 Apr 2013 04:56:07 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</guid>
-      <description>johnathanczxm.gather.com - Jun 1, 2013
-I&amp;rsquo;m truly enjoying the design and layout of your blog. It&amp;rsquo;s a very easy on the eyes which makes it much more enjoyable for me to come here and visit more often. Did you hire out a designer to create your theme? Great work! Resorts at travelsupermarket | assess and e book low cost Hotels online - travelsupermarket.com - Jun 5, 2013
-Hello! I&amp;rsquo;m at work surfing around your blog from my new iphone!</description>
-    </item>
-    
-    <item>
-      <title>Basic reference openflow controller VMs running in CentOS 6 for KVM.</title>
-      <link>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</link>
-      <pubDate>Fri, 26 Apr 2013 04:56:07 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</guid>
       <description>I had been working, off and on, on a how-to for building the daylight openflow controller under CentOS. Most openflow docs and dev are done under ubuntu or debian, and while those are both fantastic alternatives, there are a huge number of folks that will want or need to use RHEL or CentOS. So, seeing as that is the case, having someone be mindful of that is important. When I saw the write up by Jon Langemak, I scrapped my attempt at a how-to since his was so much better.</description>
-    </item>
-    
-    <item>
-      <title>CentOS KVM Install - Quick Start to a VM</title>
-      <link>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</link>
-      <pubDate>Sat, 02 Mar 2013 01:12:02 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</guid>
-      <description>Nick Buraglio - Mar 4, 2013
-Fixed a typo in the ifcfg-br0 section. Networking Field Day 5, participation. - Mar 3, 2013
-[&amp;hellip;] old blog (which became this site). I’m working more on OpenFlow, virtualization stuff like KVM, VirtualBox and VMware and bringing up 100G WAN links. I even had the extremely cool opportunity [&amp;hellip;] vps - Mar 4, 2013
-I really like your blog. You write about very interesting things.</description>
     </item>
     
     <item>
@@ -326,28 +209,7 @@ I really like your blog. You write about very interesting things.</description>
       <pubDate>Sat, 16 Feb 2013 03:11:20 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/02/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</guid>
-      <description>Technology Short Take #30 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, storage, and servers - Mar 2, 2013
-[&amp;hellip;] Buraglio has a good post on the potential impact of Arista’s new DANZ functionality on tap aggregation solutions in the security market. It will be interesting to see how this shapes [&amp;hellip;] [Darrin Thomason]( &amp;ldquo;Darrin@thethomasons.org&amp;rdquo;) - Feb 6, 2013
-Great post&amp;hellip;this is just the beginning of what can be done with a highly extensible platform&amp;hellip;I am looking forward to other creative deployments that people come up with!</description>
-    </item>
-    
-    <item>
-      <title>Watch out, Gigamon (and others), Arista is bringing their A game</title>
-      <link>https://forwardingplane.net/2013/02/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</link>
-      <pubDate>Sat, 16 Feb 2013 03:11:20 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/02/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</guid>
       <description>It&amp;rsquo;s no secret that I&amp;rsquo;m a fan of the model Arista Networks is using to make gear and provide innovative services and products. In my opinion, they&amp;rsquo;re changing the landscape of campus and data center networking gear. I&amp;rsquo;m always a fan of the little guy trying to change the world and this falls under that category. For those that don&amp;rsquo;t know, Arista Networks is a &amp;ldquo;hardware&amp;rdquo; networking company that is using merchant silicon wrapped in their custom linux based operating system (which is very much like IOS).</description>
-    </item>
-    
-    <item>
-      <title>Building a Floodlight OpenFlow controller on CentOS 6</title>
-      <link>https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/</link>
-      <pubDate>Mon, 04 Feb 2013 13:10:24 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/</guid>
-      <description>[Ian]( &amp;ldquo;ian.collett@tekelec.com&amp;rdquo;) - Feb 4, 2013
-Tks - nice short article that just got me going. Two thinks I found; 1) When you &amp;ldquo;git&amp;rdquo; floodlight is now builds a directory called floodlight that you have to drop down into to run ant. 2) The current version of floodlight needs 64 bit Java to run. Not sure if you can hack it to run with 32 bit, I just reloaded a 64 bit version.</description>
     </item>
     
     <item>
@@ -365,32 +227,10 @@ Tks - nice short article that just got me going. Two thinks I found; 1) When you
       <pubDate>Thu, 31 Jan 2013 21:48:47 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</guid>
-      <description>[Matt Kazmar]( &amp;ldquo;mkazmar@uic.edu&amp;rdquo;) - Feb 3, 2013
-Why use VirtualBox as opposed to KVM? KVM is included with CentOS and fits your quite well into your Windows-less world&amp;hellip; Nick Buraglio - Feb 3, 2013
-Just simple experience. I know the vbox CLI pretty well already. Additionally, if I build a VM in VirtualBox on another platform I can easily import and export it. KVM is on my [very] short list to learn, I think it is actually better based on some talkes I&amp;rsquo;ve had, I just don&amp;rsquo;t know it yet.</description>
-    </item>
-    
-    <item>
-      <title>Headless VirtualBox host on CentOS</title>
-      <link>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</link>
-      <pubDate>Thu, 31 Jan 2013 21:48:47 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</guid>
       <description>Starting from a base CentOS system with nothing configured, and referencing the CentOS wiki, here is how I like to set up a headless virtualbox environment: Disable selinux. It&amp;rsquo;s overly cumbersome and is enabled by default in CentOS. I like to permanently disable it even though the default is permissive. I ride the edge, I know.``` vi /etc/selinux/config
  and change  SELINUX=enabled
  to  SELINUX=disabled
  Then reboot. Using the methodology I originally found found [here](http://stackoverflow.</description>
-    </item>
-    
-    <item>
-      <title>Diff RANCID router configs with SVN</title>
-      <link>https://forwardingplane.net/2013/01/diff-rancid-router-configs-with-svn/</link>
-      <pubDate>Fri, 25 Jan 2013 00:27:09 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/01/diff-rancid-router-configs-with-svn/</guid>
-      <description>[Oliver Gorwits]( &amp;ldquo;oliver@cpan.org&amp;rdquo;) - Jan 4, 2013
-I wrote a utility to intelligently diff IOS style config which might be interesting: https://metacpan.org/module/iosdiff Jones sabo regular those tend to consider the necklaces it d - Apr 1, 2013
-I was looking through some of your content on this site and I believe this website is really informative! Keep posting. </description>
     </item>
     
     <item>
@@ -435,27 +275,7 @@ I was looking through some of your content on this site and I believe this websi
       <pubDate>Sun, 02 Dec 2012 19:41:08 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2012/12/converting-back-to-wordpress-from-blogger/</guid>
-      <description>http://yahoo.com - Feb 1, 2013
-I personally believe this amazing article , “Converting (back) to wordpress from Blogger | The Forwarding Plane”, really interesting not to mention it ended up being a very good read. Thanks for the post,Philomena </description>
-    </item>
-    
-    <item>
-      <title>Converting (back) to wordpress from Blogger</title>
-      <link>https://forwardingplane.net/2012/12/converting-back-to-wordpress-from-blogger/</link>
-      <pubDate>Sun, 02 Dec 2012 19:41:08 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2012/12/converting-back-to-wordpress-from-blogger/</guid>
       <description>For a long time I ran a blog called tech.buraglio.com that was a self hosted wordpress site. After having kids and getting a bit busier at work, I decided to move everything that I had been hosting (images, scripts, hacks, blogs and DNS) to &amp;ldquo;the cloud&amp;rdquo;. I managed to do this for everything but my primary DNS resolver, which I had always intended to keep, and one wordpress blog that I hosted for someone else.</description>
-    </item>
-    
-    <item>
-      <title>Workflow and my every day workstation setup.</title>
-      <link>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</link>
-      <pubDate>Sun, 25 Nov 2012 00:03:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</guid>
-      <description>How I Work | Notebook Heavy - Jan 3, 2013
-[&amp;hellip;] by others who’ve written something similar, I thought I’d have some fun and write down the tools and setups that I’m use at the [&amp;hellip;] </description>
     </item>
     
     <item>
@@ -492,31 +312,8 @@ I personally believe this amazing article , “Converting (back) to wordpress fr
       <pubDate>Tue, 04 Oct 2011 04:31:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2011/10/ftps-secure-ftp-from-the-command-line/</guid>
-      <description>Nick Buraglio - Oct 2, 2011
-Blogger auto formatting is killing the &amp;lt; </description>
-    </item>
-    
-    <item>
-      <title>ftps (secure ftp) from the command line</title>
-      <link>https://forwardingplane.net/2011/10/ftps-secure-ftp-from-the-command-line/</link>
-      <pubDate>Tue, 04 Oct 2011 04:31:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/10/ftps-secure-ftp-from-the-command-line/</guid>
       <description>I have recently enabled Duo Security for many of my personal services, and I can&amp;rsquo;t recommend them enough. Personal two factor authentication is very useful and really powerful. It works on my iPhone and I have yet to run into any real issues&amp;hellip;.except for one. I can&amp;rsquo;t use automation to scp or sftp anything anymore and keep my two factor auth working in a way I&amp;rsquo;m comfortable with.
 Enter ftps. FTP is a terrible, yet immensely useful protocol.</description>
-    </item>
-    
-    <item>
-      <title>Black Hole routing</title>
-      <link>https://forwardingplane.net/2011/10/black-hole-routing/</link>
-      <pubDate>Tue, 04 Oct 2011 01:00:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/10/black-hole-routing/</guid>
-      <description>Timmy.Norris - Nov 4, 2011
-Great tutorial on black hole routing, I learned a lot from it. Thanks.
-us vpn erwicker - Feb 5, 2012
-Brilliant! Thanks so much.
-portable wireless router </description>
     </item>
     
     <item>
@@ -528,18 +325,6 @@ portable wireless router </description>
       <description>It&amp;rsquo;s no secret or ground breaking area to do black hole routing.
 ISPs and NSPs have been doing it forever to allow for a very low cost, very scriptable and very effective way to wholesale block a layer3 address. However, it can seem like a bit of a black box to anyone who has never done it.
 I recently did some work spinning this up in a good sized network that it didn&amp;rsquo;t currently exist, and remembered how monumentally useful (and simple) it actually is.</description>
-    </item>
-    
-    <item>
-      <title>GoogleCL, command line based google blogger, picasa, calendar and much, much more.</title>
-      <link>https://forwardingplane.net/2011/09/googlecl-command-line-based-google-blogger-picasa-calendar-and-much-much-more./</link>
-      <pubDate>Wed, 07 Sep 2011 03:42:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/09/googlecl-command-line-based-google-blogger-picasa-calendar-and-much-much-more./</guid>
-      <description>Joseph - Dec 3, 2011
-This comment has been removed by the author. Joseph - Dec 3, 2011
-Google has a lot of tools that you can use to store your documents. I always consider them because they&amp;rsquo;re very convenient.
-document scanning services </description>
     </item>
     
     <item>
@@ -568,28 +353,7 @@ Since homebrew doesn&amp;rsquo;t wrk well with other packge systems installed, a
       <pubDate>Sun, 31 Jul 2011 02:40:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</guid>
-      <description>Charley - Aug 2, 2011
-I think the real security issue with EUI-64 address assignment is that your IPv6 address contains your same MAC address, wherever you go. So your movements are trackable between home, work, and coffee shop networks. It has less to do with what the L2 address actually is. Charley - Aug 2, 2011
-Also, you missed a part of the command to turn it off; it&amp;rsquo;s:</description>
-    </item>
-    
-    <item>
-      <title>MacOS 10.7 and IPv6 privacy addressing</title>
-      <link>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</link>
-      <pubDate>Sun, 31 Jul 2011 02:40:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</guid>
       <description>I&amp;rsquo;m not a fan of IPv6 privacy addressing. I understand the logic behind it, I really doo, obfuscate the LLADDR (MAC address) of the host in question, but I really dont&amp;rsquo;t see the realistic purpose. If someone wanted to use my mac address, what good would that really get them, unless they&amp;rsquo;re on the same layer 2 segment? More importantly, if they;re on the same layer 2 segment, they have my MAC address anyway.</description>
-    </item>
-    
-    <item>
-      <title>OSX (10.7; Lion) DHCPv6 client working with pfsense server.</title>
-      <link>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</link>
-      <pubDate>Tue, 26 Jul 2011 18:20:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</guid>
-      <description>Nick Buraglio - Jul 4, 2011
-Sorry, I thought it best to sanitize my ipv6 space even though it&amp;rsquo;s not too hard to enumerate it. </description>
     </item>
     
     <item>
@@ -617,18 +381,6 @@ I didn&amp;rsquo;t do anything except use the &amp;ldquo;Automatic&amp;rdquo; se
       <guid>https://forwardingplane.net/2011/06/alurancid-and-pfrancid/</guid>
       <description>I did some minor tweaking to the Alcatel Lucent RANCID scripts and some modifications to make RANCID work under my pfsense environment (originally m0n0rancid code from John Skopis). Since I don&amp;rsquo;t really do much dev work and am not interested in maintaing a box do be an SVN server for the public, I threw it up onto google code.
 I&amp;rsquo;ll be adding a brief how-to on making RANCID work with pfSense as soon as I get some time.</description>
-    </item>
-    
-    <item>
-      <title>Better support for Linux (and annoyed about it)</title>
-      <link>https://forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/</link>
-      <pubDate>Mon, 20 Jun 2011 08:43:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/</guid>
-      <description>TJ - Jul 6, 2011
-THC-IPv6 is great, but IMHO Scapy is even better - ultimate flexibility once you take 15minutes to get comfortable with it :)
-/TJ Nick Buraglio - Jul 4, 2011
-It&amp;rsquo;s on my list of things to mess around with. I&amp;rsquo;ve heard nothing but good things. </description>
     </item>
     
     <item>
@@ -681,17 +433,6 @@ The iPhone is really a love it or hate it kind of device, much like Apple stuff 
       <guid>https://forwardingplane.net/2010/09/nfs-mounting-a-nas-with-macos-10.6-snow-leopard/</guid>
       <description>I know this is documented elsewhere, but this was a pain for me, so I wanted to take some notes. I have several Snow Leopard (MAcOS 10.6) Macs and a Netgear DNS-323. I want to mount the drive using NFS and any good UNIX admin would.
 Unlike older versions of the Mac OS, NFS mounts are now handled under the Disk Utility application (which seems odd to me, but whatever).</description>
-    </item>
-    
-    <item>
-      <title>Viewing ipv6 router advertisements</title>
-      <link>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</link>
-      <pubDate>Fri, 03 Sep 2010 19:00:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</guid>
-      <description>Peter - Feb 3, 2012
-Really helpful. I am not a very computer literate person and you always make things easy to understand. Thanks so much
-portable wireless router </description>
     </item>
     
     <item>

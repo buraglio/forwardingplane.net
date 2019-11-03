@@ -45,30 +45,7 @@
       <pubDate>Fri, 26 Jul 2013 05:28:15 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/07/building-a-secured-network-in-a-box/</guid>
-      <description>Depenetration, whuaat? | JRLZN - Sep 4, 2013
-[…] Photo Credit: http://www.forwardingplane.net/2013/07/building-a-secured-network-in-a-box/ […] [Aaron]( &amp;ldquo;Iamenabled@hotmail.com&amp;rdquo;) - Jul 5, 2013
-Nick, can you share the server hardware you are using for your VMware host? Nick Buraglio - Jul 5, 2013
-For this case it&amp;rsquo;s an older Dell PowerEdge 2900 with 16G RAM, 4 x 1G NIC and 8x2.3Ghz cores Nick Buraglio - Jul 0, 2013
-On a reliability note, uptime has been fantastic Nick Buraglio - Jul 0, 2013</description>
-    </item>
-    
-    <item>
-      <title>Building a secured network in a box</title>
-      <link>https://forwardingplane.net/2013/07/building-a-secured-network-in-a-box/</link>
-      <pubDate>Fri, 26 Jul 2013 05:28:15 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/07/building-a-secured-network-in-a-box/</guid>
       <description>In many environments, the move to virtualization is a path well traveled. My home and lab networks are no exception to this and I&amp;rsquo;m sure nearly everyone who reads these pages has at least been exposed to it in one way or another. I have played with nearly all of the virtualization platforms and am firmly in the camp that there will be a large segment of networking that will move to a virtualized platform especially in the data center and campus segments.</description>
-    </item>
-    
-    <item>
-      <title>VMWare ESXi CLI reference</title>
-      <link>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</link>
-      <pubDate>Sun, 30 Jun 2013 14:24:51 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</guid>
-      <description>[mike]( &amp;ldquo;mike@marseglia.org&amp;rdquo;) - Sep 4, 2013
-You would be happy to hear that William Lam, engineer at VMware, has an excellent blog at http://www.virtuallyghetto.com/ where he comes up with useful scripts/tools. Also, you should check out the vSphere Management Assistant (vMA) at http://www.vmware.com/support/developer/vima/ </description>
     </item>
     
     <item>
@@ -86,28 +63,7 @@ You would be happy to hear that William Lam, engineer at VMware, has an excellen
       <pubDate>Sun, 28 Apr 2013 03:39:54 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/04/vnc-console-on-vmware-esxi/</guid>
-      <description>tom - Jun 6, 2013
-Hi Is the port same for all? RemoteDisplay.vnc.enabled = &amp;ldquo;TRUE&amp;rdquo; RemoteDisplay.vnc.port = 5910 RemoteDisplay.vnc.password = &amp;ldquo;VNCPassword&amp;rdquo; You say port 5910 but is it same port for everyone? Nick Buraglio - Jun 0, 2013
-Port should be different for each VM. </description>
-    </item>
-    
-    <item>
-      <title>VNC Console on VMware ESXi</title>
-      <link>https://forwardingplane.net/2013/04/vnc-console-on-vmware-esxi/</link>
-      <pubDate>Sun, 28 Apr 2013 03:39:54 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/04/vnc-console-on-vmware-esxi/</guid>
       <description>Let me preface this post by saying that I am absolutely not an enterprise IT or systems guy, take everything that I write here on out with that as a side dish. I&amp;rsquo;m also very, very cheap. That said, one of the things I really like about KVM is the ability to easily view the console of a guest system using free, non-windows software like VNC. However, much like everything in life, there are reasons to do one thing or another.</description>
-    </item>
-    
-    <item>
-      <title>Why hardware firewalls are the walking dead</title>
-      <link>https://forwardingplane.net/2013/03/why-hardware-firewalls-are-the-walking-dead/</link>
-      <pubDate>Mon, 18 Mar 2013 11:02:42 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/03/why-hardware-firewalls-are-the-walking-dead/</guid>
-      <description>[cryptochrome (@cryptochrome)]( &amp;ldquo;sascha@picchiantano.de&amp;rdquo;) - Mar 4, 2013
-What everybody seems to forget is that actually simple stateful inspection firewalls are the walking dead. Modern firewalls do a lot of inspection at layer 7 (think Palo Alto Networks). I want to see one of those white box Intel boxes push 20 gigabit of application level firewalled traffic. I highly doubt it. And I am also curious how you want to put OpenFlow to use here, when basically every flow would need to be forwarded to the Controller and passed on to the &amp;ldquo;OpenFlow Firewall&amp;rdquo; for inspection.</description>
     </item>
     
     <item>
@@ -125,30 +81,7 @@ What everybody seems to forget is that actually simple stateful inspection firew
       <pubDate>Sat, 02 Mar 2013 01:12:02 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</guid>
-      <description>Nick Buraglio - Mar 4, 2013
-Fixed a typo in the ifcfg-br0 section. Networking Field Day 5, participation. - Mar 3, 2013
-[&amp;hellip;] old blog (which became this site). I’m working more on OpenFlow, virtualization stuff like KVM, VirtualBox and VMware and bringing up 100G WAN links. I even had the extremely cool opportunity [&amp;hellip;] vps - Mar 4, 2013
-I really like your blog. You write about very interesting things.</description>
-    </item>
-    
-    <item>
-      <title>CentOS KVM Install - Quick Start to a VM</title>
-      <link>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</link>
-      <pubDate>Sat, 02 Mar 2013 01:12:02 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</guid>
       <description>I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I&amp;rsquo;d shelved years ago. Now, I&amp;rsquo;ve been a virtualization user forever. From VMware (Fusion, ESX), VirtualBox, to Parallels, I&amp;rsquo;ve used them at least in testing if not in production environments. I&amp;rsquo;d not really spent any mentionable amount of time with XEN, qEMU or KVM, but some projects I was working on suggested it for the virtualization mechanism, so I figured I&amp;rsquo;d try to pick it up.</description>
-    </item>
-    
-    <item>
-      <title>Headless VirtualBox host on CentOS</title>
-      <link>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</link>
-      <pubDate>Thu, 31 Jan 2013 21:48:47 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</guid>
-      <description>[Matt Kazmar]( &amp;ldquo;mkazmar@uic.edu&amp;rdquo;) - Feb 3, 2013
-Why use VirtualBox as opposed to KVM? KVM is included with CentOS and fits your quite well into your Windows-less world&amp;hellip; Nick Buraglio - Feb 3, 2013
-Just simple experience. I know the vbox CLI pretty well already. Additionally, if I build a VM in VirtualBox on another platform I can easily import and export it. KVM is on my [very] short list to learn, I think it is actually better based on some talkes I&amp;rsquo;ve had, I just don&amp;rsquo;t know it yet.</description>
     </item>
     
     <item>

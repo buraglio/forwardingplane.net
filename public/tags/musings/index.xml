@@ -54,16 +54,6 @@
       <pubDate>Mon, 10 Dec 2018 10:23:42 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
-      <description>Link Propagation 147: We Don&amp;#8217;t Need No Stinking Badges! - Dec 5, 2018
-[…] Read more here […] </description>
-    </item>
-    
-    <item>
-      <title>DNS - the treasure trove of information your ISP can see</title>
-      <link>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</link>
-      <pubDate>Mon, 10 Dec 2018 10:23:42 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
       <description>In recent years, the nature of privacy on the internet has become a very important topic amongst those concerned with the now lack of net neutrality. The de-facto mechanism for dealing with privacy has been to &amp;ldquo;SSL all the things&amp;rdquo;, which I am very much in favor of. What many do not realize, though, is that simply using SSL for the traffic that transits a given ISP still leaves a wealth of thick, rich, delicious personal data still easily available to your ISP to harvest, sell, and do with as they please.</description>
     </item>
     
@@ -82,28 +72,8 @@
       <pubDate>Mon, 16 Jul 2018 10:24:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2018/07/trouble-with-tribbles-.....errr-nat/</guid>
-      <description>Link Propagation 130: Two-Factor Authentication Pays Off - Aug 6, 2018
-[…] Read more here […] </description>
-    </item>
-    
-    <item>
-      <title>Trouble with Tribbles .....errr NAT</title>
-      <link>https://forwardingplane.net/2018/07/trouble-with-tribbles-.....errr-nat/</link>
-      <pubDate>Mon, 16 Jul 2018 10:24:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2018/07/trouble-with-tribbles-.....errr-nat/</guid>
       <description>As a follow up to my last post, I wanted to dive a little deeper into the world of address translation and to suss out some of the more compelling details.
 As I&amp;rsquo;ve said on many occasions, it pains me to see NAT referenced as a security mechanism. That said, where PNAT can be beneficial is in an overall privacy strategy, however, even that is comparatively low value and given the current state of global IPv4 allocations, arguably a detriment to usability - we’ll get to that - before we do, it is important to understand what ’NAT” as we call it today actually is, and to do that we need to explain all of the types of address translation (yes, there are several).</description>
-    </item>
-    
-    <item>
-      <title>Field Area Networking</title>
-      <link>https://forwardingplane.net/2018/05/field-area-networking/</link>
-      <pubDate>Fri, 04 May 2018 13:38:15 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2018/05/field-area-networking/</guid>
-      <description>Field Area Networking - Tech Field Day - May 0, 2018
-[…] Field Area Networking […] </description>
     </item>
     
     <item>
@@ -131,28 +101,7 @@ Don&amp;rsquo;t reinvent the wheel Too many times we as an industry don&amp;rsqu
       <pubDate>Sat, 10 Feb 2018 16:58:28 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2018/02/strategy-series-how-do-you-view-outside-of-your-network/</guid>
-      <description>Strategy Series: How do you view outside of your network? - Tech Field Day - Feb 1, 2018
-[…] Strategy Series: How do you view outside of your network? […] </description>
-    </item>
-    
-    <item>
-      <title>Strategy Series: How do you view outside of your network?</title>
-      <link>https://forwardingplane.net/2018/02/strategy-series-how-do-you-view-outside-of-your-network/</link>
-      <pubDate>Sat, 10 Feb 2018 16:58:28 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2018/02/strategy-series-how-do-you-view-outside-of-your-network/</guid>
       <description>In the tradition of my NIX4NetEng series I&amp;rsquo;m going to dive deep into the world of strategy, and specifically into the strategy of how we look at and operate our networks, the data they generate and the analytics that are available (and often overlooked) in how networks are managed both long term and day-to-day. So, in the spirit of visibility, lets think about how typical networks are monitored. My guess is that you either already know, or will soon realize that visibility and testing across disparate networks is hard.</description>
-    </item>
-    
-    <item>
-      <title>Strategy Series: What is your netflow strategy?</title>
-      <link>https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/</link>
-      <pubDate>Mon, 18 Dec 2017 11:15:30 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/</guid>
-      <description>What is your netflow strategy? - Tech Field Day - Dec 2, 2017
-[…] What is your netflow strategy? […] [Robert Cowart]( &amp;ldquo;robacj@gmail.com&amp;rdquo;) - Dec 4, 2017
-Nick, thanks for the mention of ElastiFlow. Back when I created it I knew from my past experience that there was a lot of value in flow data. However, I must admit to being surprised with how popular the solution has become. Your criticism of the lacking documentation is fair, and will be addressed in the near future.</description>
     </item>
     
     <item>
@@ -179,28 +128,7 @@ Nick, thanks for the mention of ElastiFlow. Back when I created it I knew from m
       <pubDate>Sat, 21 May 2016 16:33:44 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2016/05/bgp-rpki-why-arent-we-using-it-more/</guid>
-      <description>[SilentLennie]( &amp;ldquo;disqus@consolejunkie.net&amp;rdquo;) - May 6, 2016
-It&amp;rsquo;s almost always the organisational part that is the hard part. Look at DNSSEC, the technical part is easy to deploy these days: see PowerDNS for example. Now getting someone in your organisation to deal with DS-record and know what to do when migrating a domain&amp;hellip; well, that&amp;rsquo;s a whole process, that&amp;rsquo;s the difficult part of the story. I do however believe it could be simpler though.</description>
-    </item>
-    
-    <item>
-      <title>BGP RPKI - why aren&#39;t we using it more?</title>
-      <link>https://forwardingplane.net/2016/05/bgp-rpki-why-arent-we-using-it-more/</link>
-      <pubDate>Sat, 21 May 2016 16:33:44 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2016/05/bgp-rpki-why-arent-we-using-it-more/</guid>
       <description>Image created from SURFNet RPKI page.         I was recently at a meeting where BGP RPKI was the topic de jour. While this has been a topic that I have visited on occasion of the last few years and something I wanted to spend significant time on, I have found that setting aside the time has been difficult and sparse, much like the deployment of BGP RPKI.</description>
-    </item>
-    
-    <item>
-      <title>Buzzwords, technology, terminology, and the interconnection of modern networking</title>
-      <link>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</link>
-      <pubDate>Mon, 18 Jan 2016 16:33:09 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</guid>
-      <description>[Jshaffer]( &amp;ldquo;jshaffer@hummingbirdnetworks.com&amp;rdquo;) - Jan 4, 2016
-Great post! I definitely feel overwhelmed and thanks for the mindnote recommend definitely going to check that out! Nick Buraglio - Feb 6, 2016
-Hey, thanks for reading! There is so much stuff out there no one can keep up. Know a lot about a little and a little about a lot, but most importantly, enjoy what you do. A person that enjoys their job will never work a day in their lives.</description>
     </item>
     
     <item>
@@ -220,16 +148,6 @@ Lets throw this out there: social media can be exhausting. Do not misunderstand 
       
       <guid>https://forwardingplane.net/2015/11/building-interdomain-sdn-part-3/</guid>
       <description>A few years ago I wrote some text on interdomain SDN. Years later, work is being done, smart people are thinking about it and building ways to make it a reality. Not being one to give up on an idea, I gave this presentation in may at ChiNOG on what my take on what that architecture should be. I (we) propose that the use of existing protocols such as BGP FlowSpec will make this realistically deployable and maintainable given some simple, pluggable middleware.</description>
-    </item>
-    
-    <item>
-      <title>Solarwinds Orion from a UNIX user perspective</title>
-      <link>https://forwardingplane.net/2015/07/solarwinds-orion-from-a-unix-user-perspective/</link>
-      <pubDate>Tue, 07 Jul 2015 04:08:30 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2015/07/solarwinds-orion-from-a-unix-user-perspective/</guid>
-      <description>Solarwinds Orion from a UNIX user perspective - Tech Field Day - Jul 2, 2015
-[…] Solarwinds Orion from a UNIX user perspective […] </description>
     </item>
     
     <item>
@@ -265,28 +183,7 @@ Lets throw this out there: social media can be exhausting. Do not misunderstand 
       <pubDate>Sat, 24 Jan 2015 15:55:48 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2015/01/network-field-day-#9/</guid>
-      <description>What&amp;#039;s Network Field Day 9 (NFD9) About? - Feb 1, 2015
-[…] Nick Buraglio: Networking Field Day 9 […] </description>
-    </item>
-    
-    <item>
-      <title>Network Field Day #9</title>
-      <link>https://forwardingplane.net/2015/01/network-field-day-#9/</link>
-      <pubDate>Sat, 24 Jan 2015 15:55:48 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2015/01/network-field-day-#9/</guid>
       <description>In a few weeks I&amp;rsquo;ll have the opportunity to participate in another Network Field Day. I&amp;rsquo;ve been lucky enough to have the opportunity to attendin the past and have done some remote participation when possible, but like some of the other rare opportunities I have had in my career, NFD is fairly unique in that it is constantly evolving in both the information provided and the individuals involved. As the saying goes, variety is the spice of life.</description>
-    </item>
-    
-    <item>
-      <title>Aging hardware, IPv6 and the growing route table</title>
-      <link>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</link>
-      <pubDate>Wed, 13 Aug 2014 05:00:56 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</guid>
-      <description>[Prince Bjork Zappa]( &amp;ldquo;bozhidar@gmail.com&amp;rdquo;) - Aug 3, 2014
-http://arstechnica.com/security/2014/08/internet-routers-hitting-512k-limit-some-become-unreliable/ Nick Buraglio - Aug 3, 2014
-&amp;ldquo;I would like to say that it will help the adoption of IPv6, because it may bring some attention to the fact that IPv4 addresses are being exhausted, but IPv6 has completely failed to take off,&amp;rdquo; Cowie said. &amp;ldquo;If anything, it really shows you that IPv4 has really never been healthier.&amp;rdquo; I&amp;rsquo;d like to think that this is a true statement, but history has shown that people only try to prolong the inevitable IPv6 deployment.</description>
     </item>
     
     <item>
@@ -331,28 +228,7 @@ http://arstechnica.com/security/2014/08/internet-routers-hitting-512k-limit-some
       <pubDate>Tue, 11 Feb 2014 02:50:24 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2014/02/network-field-day-7/</guid>
-      <description>Network Field Day 7 - Feb 2, 2014
-[…] Network Field Day 7 […] </description>
-    </item>
-    
-    <item>
-      <title>Network Field Day 7</title>
-      <link>https://forwardingplane.net/2014/02/network-field-day-7/</link>
-      <pubDate>Tue, 11 Feb 2014 02:50:24 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/02/network-field-day-7/</guid>
       <description>A while ago I got an email asking me to participate in Network Field Day 7. I was very happy and humbled to get asked again since I wasn&amp;rsquo;t able to attend NFD5 or NFD6 for various reasons outside of my control (although I did try to participate with NFD5 remotely). If you&amp;rsquo;re unfamiliar with the tech field day series, you should spend a little time and learn about the value it brings.</description>
-    </item>
-    
-    <item>
-      <title>How to be a [good] Network Engineer (and network engineer appreciation day)</title>
-      <link>https://forwardingplane.net/2013/11/how-to-be-a-good-network-engineer-and-network-engineer-appreciation-day/</link>
-      <pubDate>Sun, 10 Nov 2013 04:02:52 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/11/how-to-be-a-good-network-engineer-and-network-engineer-appreciation-day/</guid>
-      <description>[Samuel Akoi]( &amp;ldquo;Sakoivision@yahoo.com&amp;rdquo;) - Dec 5, 2013
-I love Networking Lennie - Dec 0, 2013
-On broad interests, what has me really excited right now is: Linux containers like Docker and for some strange reason WebRTC (well, only slightly strange, because I&amp;rsquo;m a webguy too). I&amp;rsquo;m thinking, maybe, just maybe, I can use more Linux routing on our network: http://containerops.org/2013/11/19/lxc-networking/ Not Docker specifically, or even containers, but network namespaces. Network namespaces in Linux supports: forwarding, bridging, static routing and dynamic routing (for example Quagga), iptables, looks like it even supports iptables conntrackd and even IPSEC.</description>
     </item>
     
     <item>
@@ -370,17 +246,6 @@ On broad interests, what has me really excited right now is: Linux containers li
       <pubDate>Sat, 21 Sep 2013 15:30:33 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/09/being-single-vendor-does-your-brain-a-disservice./</guid>
-      <description>[Ken]( &amp;ldquo;ken.mercus.lai@gmail.com&amp;rdquo;) - Dec 0, 2013
-Great post! [Chris Donnelly]( &amp;ldquo;Thejourneytv@gmail.com&amp;rdquo;) - Oct 4, 2013
-Great Read!, Well Said Nick! </description>
-    </item>
-    
-    <item>
-      <title>Being single vendor does your brain a disservice.</title>
-      <link>https://forwardingplane.net/2013/09/being-single-vendor-does-your-brain-a-disservice./</link>
-      <pubDate>Sat, 21 Sep 2013 15:30:33 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/09/being-single-vendor-does-your-brain-a-disservice./</guid>
       <description>Let me be clear, when I say &amp;ldquo;single vendor&amp;rdquo; I&amp;rsquo;m talking about being &amp;ldquo;single vendor&amp;rdquo; in what you work on, not necessarily what you install (although one basically forces the other) and what I really mean is multilingual. I&amp;rsquo;ll explain after a brief history of why I am the way I am. I&amp;rsquo;m idealistic but I&amp;rsquo;m also realistic. I generally propose solutions that I think are best even if it is non-standard or out of current comfort level along with an alternative or two.</description>
     </item>
     
@@ -390,27 +255,7 @@ Great Read!, Well Said Nick! </description>
       <pubDate>Mon, 05 Aug 2013 11:18:03 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</guid>
-      <description>[Engineer Z]( &amp;ldquo;zawada@ieee.org&amp;rdquo;) - Aug 1, 2013
-I agree fully. As you may recall Nick, for a long time I&amp;rsquo;ve said &amp;ldquo;NAT is a turd&amp;rdquo; and &amp;ldquo;Carrier-grade NAT is a polished turd.&amp;rdquo; At least at first glance &amp;ldquo;Enhanced IP&amp;rdquo; looks like more turd polishing to me. How do we break folks&amp;rsquo; habit of working around the shortcomings of NAT and show the value of truly global address space? Why do folks keep hacking on the NAT kludge?</description>
-    </item>
-    
-    <item>
-      <title>The sad state of IPv6 and why you need to learn it.</title>
-      <link>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</link>
-      <pubDate>Mon, 05 Aug 2013 11:18:03 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</guid>
       <description>I have been learning and using IPv6 for a quite a while, even before I worked in research and education, back in the ISP days. I thought I should learn it because, frankly, I figured we&amp;rsquo;d all be converted to it by now, already whole hog using it like it was the layer 3 addressing mechanism that it is. Flashback: My first IPv6 access was via a tunnel to HE a long, long time ago and before that I was reading what I could about it.</description>
-    </item>
-    
-    <item>
-      <title>I want to love cumulus networks.....</title>
-      <link>https://forwardingplane.net/2013/07/i-want-to-love-cumulus-networks...../</link>
-      <pubDate>Wed, 03 Jul 2013 22:08:48 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/07/i-want-to-love-cumulus-networks...../</guid>
-      <description>[David Hocking]( &amp;ldquo;davehockingprivate@gmail.com&amp;rdquo;) - Jul 5, 2013
-When I was looking into a free router/fw appliance I could deploy as VMs, I looked at pfSense, but settled with Vyatta. It has the best of both worlds IMHO, you get a near-native linux experience, bash et al, but, with the benefit of a single hierarchical config file that can be diff&amp;rsquo;d, scp&amp;rsquo;d and copied between nodes. If you&amp;rsquo;ve used JunOS, then you can use vyatta too, I just wish they&amp;rsquo;d make the break into switching too!</description>
     </item>
     
     <item>
@@ -437,27 +282,7 @@ When I was looking into a free router/fw appliance I could deploy as VMs, I look
       <pubDate>Fri, 29 Mar 2013 04:43:17 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./</guid>
-      <description>Nick Buraglio - Mar 6, 2013
-The qfabric stuff seems even more green than the EX series. Perhaps i should give it another look, but I didn&amp;rsquo;t have the best experience with it in testing. My guess is the mpls support will be about the same as the EX series, but it&amp;rsquo;s certainly one I did not consider. Thanks, I will give it another once over. EtherealMind - Apr 1, 2013</description>
-    </item>
-    
-    <item>
-      <title>A missing link in small MPLS, 10G devices.</title>
-      <link>https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./</link>
-      <pubDate>Fri, 29 Mar 2013 04:43:17 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./</guid>
       <description>Lately I&amp;rsquo;ve been lamenting the fact that there seems to be a lack of options in a very specific product level. Lets say you have a network that looks like this: Right Away you&amp;rsquo;re limited since you need MPLS and more than 2 10G interfaces. Even more so if you require full support for IPv6 and ISIS. If budget is of any concern, you&amp;rsquo;re in real trouble. For many, Cisco pricing and smartnet is potentially going to exclude anything reasonable from them.</description>
-    </item>
-    
-    <item>
-      <title>My SDN soapbox (now with IPv6!)</title>
-      <link>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</link>
-      <pubDate>Sat, 23 Mar 2013 21:45:17 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</guid>
-      <description>Nick Buraglio - Mar 6, 2013
-Totally agree. Work smarter not harder, it&amp;rsquo;s a good idea and it makes sense. Is it different? Yup. Is it better? Maybe not now, but eventually it will be. Look at the state of routing hardware in 1995. Now look at it. It was a totally different experience and it was not even a real shift in thinking. 10 years from now we will be saying &amp;ldquo;remember when we had to touch every device&amp;rdquo; just like we did with wireless APs not 7-8 years ago.</description>
     </item>
     
     <item>
@@ -529,27 +354,7 @@ Totally agree. Work smarter not harder, it&amp;rsquo;s a good idea and it makes 
       <pubDate>Wed, 09 Jan 2013 09:58:47 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/01/how-to-install-and-use-the-airport-utility-under-mountain-lion/</guid>
-      <description>Ben - Jan 2, 2013
-//One of your args slipped down a line. pkgutil &amp;ndash;expand /Volumes/AirPortUtility/AirPortUtility56.pkg ~/Desktop/AirPortTemp cd ~/Desktop/AirPortTemp~/Desktop/AirPortTemp/AirPortUtility56Lion.pkg/ open Payload cd &amp;ldquo;Payload 2 2/Applications/Utilities/&amp;rdquo; open . </description>
-    </item>
-    
-    <item>
-      <title>How to install and use the Airport utility under Mountain Lion</title>
-      <link>https://forwardingplane.net/2013/01/how-to-install-and-use-the-airport-utility-under-mountain-lion/</link>
-      <pubDate>Wed, 09 Jan 2013 09:58:47 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/01/how-to-install-and-use-the-airport-utility-under-mountain-lion/</guid>
       <description>I have a bunch of Apple wireless gear at my house. It&amp;rsquo;s inexpensive, feature rich and easy to maintain. However, with the update to mountain lion a while ago, the ability to install the older Airport Utility stopped. This is annoying since I have what apple now considers &amp;ldquo;advanced&amp;rdquo; features like IPv6 at my home and essentially all my gear here is a lab (except for the plex server =) I&amp;rsquo;ve been spending a lot of time on cacti lately, and I wanted to test out the syslog plugin&amp;hellip;.</description>
-    </item>
-    
-    <item>
-      <title>Where will Cisco go from here?</title>
-      <link>https://forwardingplane.net/2013/01/where-will-cisco-go-from-here/</link>
-      <pubDate>Thu, 03 Jan 2013 00:46:09 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/01/where-will-cisco-go-from-here/</guid>
-      <description>Nick Buraglio - Jan 3, 2013
-I have only a bit of experience with their server stuff. Overall I was left wanting, but you&amp;rsquo;re right, it was back when they were rebranding. I do really think that it&amp;rsquo;s a different world now and they&amp;rsquo;re going to have to adapt or fade to a shell of what they once were. From a networking perspective, they gear is good&amp;hellip;.but it&amp;rsquo;s operationally and fiscally expensive to run.</description>
     </item>
     
     <item>
@@ -612,16 +417,6 @@ I have only a bit of experience with their server stuff. Overall I was left want
       <pubDate>Sun, 02 Dec 2012 19:41:08 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2012/12/converting-back-to-wordpress-from-blogger/</guid>
-      <description>http://yahoo.com - Feb 1, 2013
-I personally believe this amazing article , “Converting (back) to wordpress from Blogger | The Forwarding Plane”, really interesting not to mention it ended up being a very good read. Thanks for the post,Philomena </description>
-    </item>
-    
-    <item>
-      <title>Converting (back) to wordpress from Blogger</title>
-      <link>https://forwardingplane.net/2012/12/converting-back-to-wordpress-from-blogger/</link>
-      <pubDate>Sun, 02 Dec 2012 19:41:08 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2012/12/converting-back-to-wordpress-from-blogger/</guid>
       <description>For a long time I ran a blog called tech.buraglio.com that was a self hosted wordpress site. After having kids and getting a bit busier at work, I decided to move everything that I had been hosting (images, scripts, hacks, blogs and DNS) to &amp;ldquo;the cloud&amp;rdquo;. I managed to do this for everything but my primary DNS resolver, which I had always intended to keep, and one wordpress blog that I hosted for someone else.</description>
     </item>
     
@@ -631,27 +426,7 @@ I personally believe this amazing article , “Converting (back) to wordpress fr
       <pubDate>Tue, 27 Nov 2012 05:04:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</guid>
-      <description>Brent Salisbury - Nov 3, 2012
-Nice thoughts Nick. The SP is moving quickly on this. You keyed in on the part that is such a question mark. How do inter-domain exchange information safely and usefully. Good thing is the content providers have been doing similar things for a long time. When I click post your site will do an OAUTH to Google. APIs and open source might be the ticket.</description>
-    </item>
-    
-    <item>
-      <title>SDN across domains in the WAN - a novice look</title>
-      <link>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</link>
-      <pubDate>Tue, 27 Nov 2012 05:04:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</guid>
       <description>There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how. Brent Salsbury laid out a few use cases here. The why seems pretty straightforward. I do believe it will happen, however, the how is the interesting part. Admittedly, I&amp;rsquo;m a tad of a greenhorn in the SDN space, I&amp;rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.</description>
-    </item>
-    
-    <item>
-      <title>Workflow and my every day workstation setup.</title>
-      <link>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</link>
-      <pubDate>Sun, 25 Nov 2012 00:03:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</guid>
-      <description>How I Work | Notebook Heavy - Jan 3, 2013
-[&amp;hellip;] by others who’ve written something similar, I thought I’d have some fun and write down the tools and setups that I’m use at the [&amp;hellip;] </description>
     </item>
     
     <item>
@@ -727,16 +502,6 @@ Everything seems to come full circle, though, given enough time.</description>
       <pubDate>Wed, 02 Nov 2011 00:25:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2011/11/a-quick-post-about-arp-networks-hosting./</guid>
-      <description>Chekkera Gowtham - Feb 2, 2012
-This is good stuff. Is it ok if I pick some content up from here for my blog which in on Wan Optimization? Do you have any reservations? Or terms? </description>
-    </item>
-    
-    <item>
-      <title>A quick post about ARP Networks hosting.</title>
-      <link>https://forwardingplane.net/2011/11/a-quick-post-about-arp-networks-hosting./</link>
-      <pubDate>Wed, 02 Nov 2011 00:25:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/11/a-quick-post-about-arp-networks-hosting./</guid>
       <description>I&amp;rsquo;ve had a co-located server in one way or another for the last 11 years. From hosting a bare metal box at the ISP I worked for for a while, to sharing a bare metal box at a colo provider to switching to a VPS service, I&amp;rsquo;ve always had an &amp;ldquo;offsite box&amp;rdquo;.
 I just wanted to post a quick &amp;ldquo;these guys are great&amp;rdquo; comment to my current VPS provider, ARP Networks.</description>
     </item>
@@ -747,29 +512,7 @@ I just wanted to post a quick &amp;ldquo;these guys are great&amp;rdquo; comment
       <pubDate>Sat, 22 Oct 2011 08:40:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2011/10/a-security-oversight-in-mail.app-or-a-hidden-bcc-field/</guid>
-      <description>Janice Clements - Dec 4, 2011
-Well there might be something you can do besides the default apple Mail.app. You might want to consider other alternatives.
-PC Fix Anita - May 4, 2012
-It&amp;rsquo;s good to know that you are always backing up your emails and other data. That&amp;rsquo;s a good practice which I also always do. I don&amp;rsquo;t use Mac, but I&amp;rsquo;ve heard the same problems from some users. Anyway, it&amp;rsquo;s good that you were able to figure it out.</description>
-    </item>
-    
-    <item>
-      <title>A security oversight in Mail.app, or, a hidden bcc: field</title>
-      <link>https://forwardingplane.net/2011/10/a-security-oversight-in-mail.app-or-a-hidden-bcc-field/</link>
-      <pubDate>Sat, 22 Oct 2011 08:40:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/10/a-security-oversight-in-mail.app-or-a-hidden-bcc-field/</guid>
       <description>Recently I was poking around Mail.app, setting up my new machine. I like to keep redundant copies of everything, email being no exception. I have backups of all of my email dating back to 1998, for the most part. It has come in handy from time to time and I like it for reference reasons. It&amp;rsquo;s a small amount of actual data as far as space goes, and it&amp;rsquo;s easy to do.</description>
-    </item>
-    
-    <item>
-      <title>iMessage: I&#39;ve been left wanting</title>
-      <link>https://forwardingplane.net/2011/10/imessage-ive-been-left-wanting/</link>
-      <pubDate>Sat, 15 Oct 2011 20:37:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/10/imessage-ive-been-left-wanting/</guid>
-      <description>Nick Buraglio - Nov 2, 2011
-So, much of this has started to work better now that the service has been available for a while. I can now message a phone number via my ipad, and it pops up on my phone and ipad, however, when someone sends me and iMessage, I only see it on my iPhone for sure. I have yet to be able to ascertain what the criteria is for popping up on both my iPad and iPhone.</description>
     </item>
     
     <item>
@@ -789,16 +532,6 @@ Don&amp;rsquo;t get me wrong, iMessage is still really cool.</description>
       <pubDate>Tue, 26 Jul 2011 18:20:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</guid>
-      <description>Nick Buraglio - Jul 4, 2011
-Sorry, I thought it best to sanitize my ipv6 space even though it&amp;rsquo;s not too hard to enumerate it. </description>
-    </item>
-    
-    <item>
-      <title>OSX (10.7; Lion) DHCPv6 client working with pfsense server.</title>
-      <link>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</link>
-      <pubDate>Tue, 26 Jul 2011 18:20:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</guid>
       <description>It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&amp;rsquo;s about time.
 Before:
 
@@ -808,18 +541,6 @@ pfSense setup:
 
 Using Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.
 I didn&amp;rsquo;t do anything except use the &amp;ldquo;Automatic&amp;rdquo; setting in the network control panel, so out of the box OSX 10.</description>
-    </item>
-    
-    <item>
-      <title>Better support for Linux (and annoyed about it)</title>
-      <link>https://forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/</link>
-      <pubDate>Mon, 20 Jun 2011 08:43:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/</guid>
-      <description>TJ - Jul 6, 2011
-THC-IPv6 is great, but IMHO Scapy is even better - ultimate flexibility once you take 15minutes to get comfortable with it :)
-/TJ Nick Buraglio - Jul 4, 2011
-It&amp;rsquo;s on my list of things to mess around with. I&amp;rsquo;ve heard nothing but good things. </description>
     </item>
     
     <item>

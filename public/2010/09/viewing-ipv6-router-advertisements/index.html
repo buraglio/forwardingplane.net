@@ -21,7 +21,7 @@
         "articleSection" : "posts",
         "name" : "Viewing ipv6 router advertisements",
         "headline" : "Viewing ipv6 router advertisements",
-        "description" : "Peter - Feb 3, 2012\nReally helpful. I am not a very computer literate person and you always make things easy to understand. Thanks so much\nportable wireless router ",
+        "description" : "I knew a tool like this had to exist, but I had never needed to look in the past. While debugging a RA problem, I come upon the need to view IPv6 router advertisements. How can one do this? tcpdump? Yeah, I guess that could work. It\x26rsquo;s almost like using a bulldozer when a wheelbarrow is all you need, though. I could use ndpmon, I suppose, but that, too seems like overkill.",
         "inLanguage" : "en",
         "author" : "Nick Buragliotruenativemain",
         "creator" : "Nick Buragliotruenativemain",
@@ -32,7 +32,7 @@
         "datePublished": "2010-09-03 19:00:00 \x2b0000 \x2b0000",
         "dateModified" : "2010-09-03 19:00:00 \x2b0000 \x2b0000",
         "url" : "https:\/\/forwardingplane.net\/2010\/09\/viewing-ipv6-router-advertisements\/",
-        "wordCount" : "29",
+        "wordCount" : "313",
         "keywords" : [ "How-To","IPv6","UNIX","Blog" ]
     }
     </script>
@@ -53,14 +53,10 @@
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Viewing ipv6 router advertisements"/>
-<meta name="twitter:description" content="Peter - Feb 3, 2012
-Really helpful. I am not a very computer literate person and you always make things easy to understand. Thanks so much
-portable wireless router "/>
+<meta name="twitter:description" content="I knew a tool like this had to exist, but I had never needed to look in the past. While debugging a RA problem, I come upon the need to view IPv6 router advertisements. How can one do this? tcpdump? Yeah, I guess that could work. It&rsquo;s almost like using a bulldozer when a wheelbarrow is all you need, though. I could use ndpmon, I suppose, but that, too seems like overkill."/>
 
         <meta property="og:title" content="Viewing ipv6 router advertisements" />
-<meta property="og:description" content="Peter - Feb 3, 2012
-Really helpful. I am not a very computer literate person and you always make things easy to understand. Thanks so much
-portable wireless router " />
+<meta property="og:description" content="I knew a tool like this had to exist, but I had never needed to look in the past. While debugging a RA problem, I come upon the need to view IPv6 router advertisements. How can one do this? tcpdump? Yeah, I guess that could work. It&rsquo;s almost like using a bulldozer when a wheelbarrow is all you need, though. I could use ndpmon, I suppose, but that, too seems like overkill." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/" />
 <meta property="article:published_time" content="2010-09-03T19:00:00+00:00" />
@@ -71,14 +67,12 @@ portable wireless router " />
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         <meta itemprop="name" content="Viewing ipv6 router advertisements">
-<meta itemprop="description" content="Peter - Feb 3, 2012
-Really helpful. I am not a very computer literate person and you always make things easy to understand. Thanks so much
-portable wireless router ">
+<meta itemprop="description" content="I knew a tool like this had to exist, but I had never needed to look in the past. While debugging a RA problem, I come upon the need to view IPv6 router advertisements. How can one do this? tcpdump? Yeah, I guess that could work. It&rsquo;s almost like using a bulldozer when a wheelbarrow is all you need, though. I could use ndpmon, I suppose, but that, too seems like overkill.">
 
 
 <meta itemprop="datePublished" content="2010-09-03T19:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2010-09-03T19:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="29">
+<meta itemprop="wordCount" content="313">
 
 
 
@@ -226,12 +220,53 @@ portable wireless router ">
 </header>
 
             <div id="content">
-                <p><a href="http://www.blogger.com/profile/16596587760158614608" title="noreply@blogger.com">Peter</a> - <time datetime="2012-02-15 07:33:01">Feb 3, 2012</time></p>
+                <p>I knew a tool like this had to exist, but I had never needed to look in the past.  While debugging a RA problem, I come upon the need to view IPv6 router advertisements.  How can one do this?  tcpdump?  Yeah, I guess that could work.  It&rsquo;s almost like using a bulldozer when a wheelbarrow is all you need, though.  I could use <a href="http://ndpmon.sourceforge.net/">ndpmon</a>, I suppose, but that, too seems like overkill.<br />
+So, the search began. After about 10 seconds of google searching&hellip;.. Success!  A tool, does in fact exist for viewing exactly that type of packet.<br />
+Enter <a href="http://gd.tuwien.ac.at/linuxcommand.org/man_pages/radvdump8.html">radvdump</a>.  It is part of the marvelous <a href="http://www.freebsd.org/cgi/man.cgi?query=rtadvd&amp;sektion=8">rtadvd</a> project.  It also exists in <a href="http://www.macports.org/">MacPorts</a>.</p>
 
-<p>Really helpful. I am not a very computer literate person and you always make things easy to understand. Thanks so much</p>
+<p>Sweet, now I can see my IPv6 router advertisements in a very simple manner.  The syntax is very straightforward, the command sudo /opt/local/sbin/radvdump will yield you pretty much everything you need to know about what is in your router advertisement:</p>
 
-<p><a href="http://portablewirelessrouters.org">portable wireless router</a>
-<hr /></p>
+<p># radvd configuration generated by radvdump 1.6<br />
+# based on Router Advertisement from fe80::20d:b9ff:fe18:8ca1<br />
+# received by interface en0</p>
+
+<p>interface en0<br />
+{<br />
+AdvSendAdvert on;<br />
+# Note: {Min,Max}RtrAdvInterval cannot be obtained with radvdump<br />
+AdvManagedFlag off;<br />
+AdvOtherConfigFlag off;<br />
+AdvReachableTime 0;<br />
+AdvRetransTimer 0;<br />
+AdvCurHopLimit 64;<br />
+AdvDefaultLifetime 1800;<br />
+AdvHomeAgentFlag off;<br />
+AdvDefaultPreference medium;<br />
+AdvSourceLLAddress on;</p>
+
+<p>prefix 2001:470:xxxx:xxx::/64<br />
+{<br />
+AdvValidLifetime 2592000;<br />
+AdvPreferredLifetime 604800;<br />
+AdvOnLink on;<br />
+AdvAutonomous on;<br />
+AdvRouterAddr off;<br />
+}; # End of prefix definition</p>
+
+<p>prefix 2001:470:xxxx:xxx::/64<br />
+{<br />
+AdvValidLifetime 2592000;<br />
+AdvPreferredLifetime 604800;<br />
+AdvOnLink on;<br />
+AdvAutonomous on;<br />
+AdvRouterAddr off;<br />
+}; # End of prefix definition</p>
+
+<p>}; # End of interface definition</p>
+
+<p>Once you have all of that working, head over to see the <a href="http://www.kame.net/">dancing kame</a> (if you&rsquo;re old school) of just head to <a href="http://www.buraglio.com/">my main domain</a> and it&rsquo;ll show you your ipv4 or ipv6 address at the top. Alternatively, you can use <a href="http://www.google.com/intl/en/ipv6/">google over ipv6</a> in a number of <a href="http://ipv6.google.com/">ways</a>.</p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
 
             </div>
         </article>

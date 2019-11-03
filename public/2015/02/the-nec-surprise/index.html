@@ -21,7 +21,7 @@
         "articleSection" : "posts",
         "name" : "The NEC surprise",
         "headline" : "The NEC surprise",
-        "description" : "NEC brings a strong offering to the SDN table - Tech Field Day - Feb 5, 2015\n[…] NEC brings a strong offering to the SDN table […] ",
+        "description" : "When NEC began talking about SDN at Network Field Day 9, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments.",
         "inLanguage" : "en",
         "author" : "Nick Buragliotruenativemain",
         "creator" : "Nick Buragliotruenativemain",
@@ -32,7 +32,7 @@
         "datePublished": "2015-02-20 06:52:33 \x2b0000 \x2b0000",
         "dateModified" : "2015-02-20 06:52:33 \x2b0000 \x2b0000",
         "url" : "https:\/\/forwardingplane.net\/2015\/02\/the-nec-surprise\/",
-        "wordCount" : "28",
+        "wordCount" : "671",
         "keywords" : [ "Cloud","Data Center","OpenFlow","SDN","Blog" ]
     }
     </script>
@@ -53,12 +53,10 @@
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The NEC surprise"/>
-<meta name="twitter:description" content="NEC brings a strong offering to the SDN table - Tech Field Day - Feb 5, 2015
-[…] NEC brings a strong offering to the SDN table […] "/>
+<meta name="twitter:description" content="When NEC began talking about SDN at Network Field Day 9, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments."/>
 
         <meta property="og:title" content="The NEC surprise" />
-<meta property="og:description" content="NEC brings a strong offering to the SDN table - Tech Field Day - Feb 5, 2015
-[…] NEC brings a strong offering to the SDN table […] " />
+<meta property="og:description" content="When NEC began talking about SDN at Network Field Day 9, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://forwardingplane.net/2015/02/the-nec-surprise/" />
 <meta property="article:published_time" content="2015-02-20T06:52:33+00:00" />
@@ -69,13 +67,12 @@
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         <meta itemprop="name" content="The NEC surprise">
-<meta itemprop="description" content="NEC brings a strong offering to the SDN table - Tech Field Day - Feb 5, 2015
-[…] NEC brings a strong offering to the SDN table […] ">
+<meta itemprop="description" content="When NEC began talking about SDN at Network Field Day 9, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments.">
 
 
 <meta itemprop="datePublished" content="2015-02-20T06:52:33&#43;00:00" />
 <meta itemprop="dateModified" content="2015-02-20T06:52:33&#43;00:00" />
-<meta itemprop="wordCount" content="28">
+<meta itemprop="wordCount" content="671">
 
 
 
@@ -223,10 +220,16 @@
 </header>
 
             <div id="content">
-                <p><a href="http://techfieldday.com/2015/nec-brings-a-strong-offering-to-the-sdn-table/">NEC brings a strong offering to the SDN table - Tech Field Day</a> - <time datetime="2015-02-20 07:04:18">Feb 5, 2015</time></p>
+                <p>When <a href="http://necam.com/">NEC</a> began talking about SDN at <a href="http://techfieldday.com/event/nfd9/">Network Field Day 9</a>, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments. I knew they had decent support and were squarely on board the SDN train. Their controller, in 2010, was not terribly fun to work with. It was (if memory serves) prohibitively expensive and the support manual was nearly as cryptic as the controller. Because it&rsquo;s my personality type, I went in with a very open mind, hoping to be surprised. After all, it&rsquo;d been 4+ years since I&rsquo;d seen that controller. Well, I am here to report that I will happily eat some crow. <a href="http://www.forwardingplane.net/wp-content/uploads/2015/02/Eat-Crow.jpg"><img src="http://www.forwardingplane.net/wp-content/uploads/2015/02/Eat-Crow.jpg" alt="Eat Crow" /></a>   A few things became very apparent to me as I sat and watched the presentation from NEC, which you can view in its entirety below:</p>
 
-<p>[…] NEC brings a strong offering to the SDN table […]
-<hr /></p>
+<ul>
+<li>NEC is not messing around with their SDN offering. They&rsquo;ve been in the openflow game since the beginning and the polish on their controller shows it. The topology is quite nice and they&rsquo;ve got a finished looking product that would find itself at home in a decent sized NOC.</li>
+<li>NEC is playing well with others. Their demo consisted of both NEC and DELL whitebox switches. To me this is an indication of both great forward thinking and a clear message that the controller is a product that can stand on its own.</li>
+<li>NEC is setting the barrier of entry low. Very low. They&rsquo;ve got an entry level &ldquo;SDN in a box&rdquo; that consists of their controller and a few switches for like 3k. They&rsquo;re also offering a 90 day free trial on their controller that is bundled with <a href="http://mininet.org/">mininet</a>.</li>
+<li>Like most other controllers, the NEC controller is topology aware and using openflow 1.3 for it&rsquo;s communication. Unlike any other demo I&rsquo;ve seen, NEC used CLI to make changes and displayed the updates in near realtime on the controller.</li>
+</ul>
+
+<p>They&rsquo;ve got a tap product aimed at security tap aggregators a la <a href="http://www.gigamon.com/">gigamon</a>, so they&rsquo;re seeing the value of SDN and openflow from a security lens as well as a network operations perspective, a good play in my opinion. SDN and openflow in particular have a great deal to offer the security community (think of all of the wacky stuff your security team has asked for and then map that into an openflow network. You&rsquo;ll probably hit 80% match). NEC has done some tight integration with <a href="https://technet.microsoft.com/en-us/windowsserver/dd448604.aspx">microsoft hyper-v</a> too, so environments leveraging hyper-v as a virtualization technology can drop this in to take advantage of the network programmability on top of their virtualization environment. This is something that I&rsquo;d not seen before [although it may exist and I just don&rsquo;t know it]. In addition, NEC has spun up an &ldquo;app store&rdquo; for SDN apps and allowed for some cross pollination, with a handful of caveats, with <a href="http://www.opendaylight.org/">opendaylight</a> for testing. <speculation> There are a few things I find interesting about the NEC offering and about NEC in general. Being in a service provider environment off and on for most of my career, the fact that NEC is getting involved so heavily is intriguing. Unlike most of the other DC focused companies, NEC plays in the carrier market. While this particular briefing did not include any carrier updates, it would surprise me if this wasn&rsquo;t being investigated behind some big doors. It makes sense to me and it would be a surprise if it did not occur to someone else. The SP market is fickle and slow to change, but ripe for fresh ideas. I see a lot of potential both there and in the DC / campus / enterprise. </speculation>   <a href="https://vimeo.com/119508255">Introduction to NEC Networking</a> from <a href="https://vimeo.com/sfoskett">Stephen Foskett</a> on <a href="https://vimeo.com">Vimeo</a>. <a href="https://vimeo.com/119508725">NEC ProgrammableFlow vCOps Solution</a> from <a href="https://vimeo.com/sfoskett">Stephen Foskett</a> on <a href="https://vimeo.com">Vimeo</a>. <a href="https://vimeo.com/119510207">ProgrammableFlow SCVMM Demo</a> from <a href="https://vimeo.com/sfoskett">Stephen Foskett</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
             </div>
         </article>

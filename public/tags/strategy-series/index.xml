@@ -39,28 +39,7 @@ Don&amp;rsquo;t reinvent the wheel Too many times we as an industry don&amp;rsqu
       <pubDate>Sat, 10 Feb 2018 16:58:28 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2018/02/strategy-series-how-do-you-view-outside-of-your-network/</guid>
-      <description>Strategy Series: How do you view outside of your network? - Tech Field Day - Feb 1, 2018
-[…] Strategy Series: How do you view outside of your network? […] </description>
-    </item>
-    
-    <item>
-      <title>Strategy Series: How do you view outside of your network?</title>
-      <link>https://forwardingplane.net/2018/02/strategy-series-how-do-you-view-outside-of-your-network/</link>
-      <pubDate>Sat, 10 Feb 2018 16:58:28 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2018/02/strategy-series-how-do-you-view-outside-of-your-network/</guid>
       <description>In the tradition of my NIX4NetEng series I&amp;rsquo;m going to dive deep into the world of strategy, and specifically into the strategy of how we look at and operate our networks, the data they generate and the analytics that are available (and often overlooked) in how networks are managed both long term and day-to-day. So, in the spirit of visibility, lets think about how typical networks are monitored. My guess is that you either already know, or will soon realize that visibility and testing across disparate networks is hard.</description>
-    </item>
-    
-    <item>
-      <title>Strategy Series: What is your netflow strategy?</title>
-      <link>https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/</link>
-      <pubDate>Mon, 18 Dec 2017 11:15:30 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2017/12/strategy-series-what-is-your-netflow-strategy/</guid>
-      <description>What is your netflow strategy? - Tech Field Day - Dec 2, 2017
-[…] What is your netflow strategy? […] [Robert Cowart]( &amp;ldquo;robacj@gmail.com&amp;rdquo;) - Dec 4, 2017
-Nick, thanks for the mention of ElastiFlow. Back when I created it I knew from my past experience that there was a lot of value in flow data. However, I must admit to being surprised with how popular the solution has become. Your criticism of the lacking documentation is fair, and will be addressed in the near future.</description>
     </item>
     
     <item>

@@ -27,27 +27,7 @@
       <pubDate>Fri, 20 Feb 2015 06:52:33 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2015/02/the-nec-surprise/</guid>
-      <description>NEC brings a strong offering to the SDN table - Tech Field Day - Feb 5, 2015
-[…] NEC brings a strong offering to the SDN table […] </description>
-    </item>
-    
-    <item>
-      <title>The NEC surprise</title>
-      <link>https://forwardingplane.net/2015/02/the-nec-surprise/</link>
-      <pubDate>Fri, 20 Feb 2015 06:52:33 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2015/02/the-nec-surprise/</guid>
       <description>When NEC began talking about SDN at Network Field Day 9, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments.</description>
-    </item>
-    
-    <item>
-      <title>Network Field Day #9</title>
-      <link>https://forwardingplane.net/2015/01/network-field-day-#9/</link>
-      <pubDate>Sat, 24 Jan 2015 15:55:48 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2015/01/network-field-day-#9/</guid>
-      <description>What&amp;#039;s Network Field Day 9 (NFD9) About? - Feb 1, 2015
-[…] Nick Buraglio: Networking Field Day 9 […] </description>
     </item>
     
     <item>
@@ -65,28 +45,7 @@
       <pubDate>Mon, 22 Sep 2014 10:24:34 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2014/09/bigswitch-labs-for-sdn-learning-a-sneak-peek/</guid>
-      <description>Big Switch Labs for SDN Learning: A Sneak Peek! - Sep 1, 2014
-[…] Big Switch Labs for SDN Learning: A Sneak Peek! […] </description>
-    </item>
-    
-    <item>
-      <title>BigSwitch Labs for SDN learning: a sneak peek!</title>
-      <link>https://forwardingplane.net/2014/09/bigswitch-labs-for-sdn-learning-a-sneak-peek/</link>
-      <pubDate>Mon, 22 Sep 2014 10:24:34 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/09/bigswitch-labs-for-sdn-learning-a-sneak-peek/</guid>
       <description>I was recently granted access to the beta BigSwitch Networks lab site, a purpose built classroom in the cloud focused on teaching the BigSwitch SDN environment. I had seen some of the BSN offerings in the past and always held them in high regard, but I was thoroughly impressed with both the completeness of the lab and how polished the controller environment was.At the time of this writing, the lab consists of 3 modules: Building cloud fabric, monitoring fabric and dynamic provisioning of monitoring fabric.</description>
-    </item>
-    
-    <item>
-      <title>Tail-F NCS: upsetting network management...in a good way.</title>
-      <link>https://forwardingplane.net/2014/02/tail-f-ncs-upsetting-network-management...in-a-good-way./</link>
-      <pubDate>Thu, 27 Feb 2014 04:36:26 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/02/tail-f-ncs-upsetting-network-management...in-a-good-way./</guid>
-      <description>Tail-F NCS can change the way existing and future networks are managed - Feb 4, 2014
-[…] Tail-F NCS can change the way existing and future networks are managed […] One CLI to rule them all? It&amp;#8217;s more than that. | NetworkN3rd | Ed Henry&amp;#039;s Blog - Mar 1, 2014
-[…] seem they’ve developed an appliance that can effectively, as Nick Buraglio wrote in his post here, the Rosetta Stone for all of the vendor NOSes that exist […] </description>
     </item>
     
     <item>
@@ -104,18 +63,6 @@
       <pubDate>Sat, 02 Mar 2013 01:12:02 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</guid>
-      <description>Nick Buraglio - Mar 4, 2013
-Fixed a typo in the ifcfg-br0 section. Networking Field Day 5, participation. - Mar 3, 2013
-[&amp;hellip;] old blog (which became this site). I’m working more on OpenFlow, virtualization stuff like KVM, VirtualBox and VMware and bringing up 100G WAN links. I even had the extremely cool opportunity [&amp;hellip;] vps - Mar 4, 2013
-I really like your blog. You write about very interesting things.</description>
-    </item>
-    
-    <item>
-      <title>CentOS KVM Install - Quick Start to a VM</title>
-      <link>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</link>
-      <pubDate>Sat, 02 Mar 2013 01:12:02 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</guid>
       <description>I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I&amp;rsquo;d shelved years ago. Now, I&amp;rsquo;ve been a virtualization user forever. From VMware (Fusion, ESX), VirtualBox, to Parallels, I&amp;rsquo;ve used them at least in testing if not in production environments. I&amp;rsquo;d not really spent any mentionable amount of time with XEN, qEMU or KVM, but some projects I was working on suggested it for the virtualization mechanism, so I figured I&amp;rsquo;d try to pick it up.</description>
     </item>
     
@@ -125,28 +72,7 @@ I really like your blog. You write about very interesting things.</description>
       <pubDate>Sat, 16 Feb 2013 03:11:20 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/02/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</guid>
-      <description>Technology Short Take #30 - blog.scottlowe.org - The weblog of an IT pro specializing in virtualization, storage, and servers - Mar 2, 2013
-[&amp;hellip;] Buraglio has a good post on the potential impact of Arista’s new DANZ functionality on tap aggregation solutions in the security market. It will be interesting to see how this shapes [&amp;hellip;] [Darrin Thomason]( &amp;ldquo;Darrin@thethomasons.org&amp;rdquo;) - Feb 6, 2013
-Great post&amp;hellip;this is just the beginning of what can be done with a highly extensible platform&amp;hellip;I am looking forward to other creative deployments that people come up with!</description>
-    </item>
-    
-    <item>
-      <title>Watch out, Gigamon (and others), Arista is bringing their A game</title>
-      <link>https://forwardingplane.net/2013/02/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</link>
-      <pubDate>Sat, 16 Feb 2013 03:11:20 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/02/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</guid>
       <description>It&amp;rsquo;s no secret that I&amp;rsquo;m a fan of the model Arista Networks is using to make gear and provide innovative services and products. In my opinion, they&amp;rsquo;re changing the landscape of campus and data center networking gear. I&amp;rsquo;m always a fan of the little guy trying to change the world and this falls under that category. For those that don&amp;rsquo;t know, Arista Networks is a &amp;ldquo;hardware&amp;rdquo; networking company that is using merchant silicon wrapped in their custom linux based operating system (which is very much like IOS).</description>
-    </item>
-    
-    <item>
-      <title>Where will Cisco go from here?</title>
-      <link>https://forwardingplane.net/2013/01/where-will-cisco-go-from-here/</link>
-      <pubDate>Thu, 03 Jan 2013 00:46:09 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/01/where-will-cisco-go-from-here/</guid>
-      <description>Nick Buraglio - Jan 3, 2013
-I have only a bit of experience with their server stuff. Overall I was left wanting, but you&amp;rsquo;re right, it was back when they were rebranding. I do really think that it&amp;rsquo;s a different world now and they&amp;rsquo;re going to have to adapt or fade to a shell of what they once were. From a networking perspective, they gear is good&amp;hellip;.but it&amp;rsquo;s operationally and fiscally expensive to run.</description>
     </item>
     
     <item>
@@ -191,39 +117,7 @@ I have only a bit of experience with their server stuff. Overall I was left want
       <pubDate>Tue, 11 Dec 2012 05:15:42 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2012/12/plexxi-could-be-wdm-for-the-rest-of-us./</guid>
-      <description>| The Forwarding Plane - Jan 3, 2013
-[&amp;hellip;] post on Plexxi and the post on SDN across the WAN are also pretty popular and both are subjects I will likely [&amp;hellip;] </description>
-    </item>
-    
-    <item>
-      <title>Plexxi could be WDM for the rest of us.</title>
-      <link>https://forwardingplane.net/2012/12/plexxi-could-be-wdm-for-the-rest-of-us./</link>
-      <pubDate>Tue, 11 Dec 2012 05:15:42 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2012/12/plexxi-could-be-wdm-for-the-rest-of-us./</guid>
       <description>Plexxi is an interesting product that has recently emerged in the data center space. While data center, fabric and cloud are all the rage in the buzzword world of data networking, this one caught my attention because it was something unique that I&amp;rsquo;d not seen before. Their TOR boxes have a few interesting additions to them, the first of which is a WDM port on the back. Now, I&amp;rsquo;m not really a stranger to the WDM world.</description>
-    </item>
-    
-    <item>
-      <title>Brocade VDX First Impressions....</title>
-      <link>https://forwardingplane.net/2012/12/brocade-vdx-first-impressions..../</link>
-      <pubDate>Sat, 08 Dec 2012 17:53:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2012/12/brocade-vdx-first-impressions..../</guid>
-      <description>[Jon]( &amp;ldquo;Jon.Hudson@gmail.com&amp;rdquo;) - Dec 6, 2012
-Thank you for a very good and honest review. We all need more feedback like this. REALLY Not happy about your sshd results. Will look into asap. Thanks for taking the time to do all the work that went into this!!!! Jon Nick Buraglio - Dec 0, 2012
-Thanks, Jon. I do have high hopes for this product. It is innovative and yet accessible. Plexxi could be WDM for the rest of us.</description>
-    </item>
-    
-    <item>
-      <title>Brocade VDX First Impressions....</title>
-      <link>https://forwardingplane.net/2012/12/brocade-vdx-first-impressions..../</link>
-      <pubDate>Sat, 08 Dec 2012 17:53:00 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2012/12/brocade-vdx-first-impressions..../</guid>
-      <description>[Jon]( &amp;ldquo;Jon.Hudson@gmail.com&amp;rdquo;) - Dec 6, 2012
-Thank you for a very good and honest review. We all need more feedback like this. REALLY Not happy about your sshd results. Will look into asap. Thanks for taking the time to do all the work that went into this!!!! Jon Nick Buraglio - Dec 0, 2012
-Thanks, Jon. I do have high hopes for this product. It is innovative and yet accessible. Plexxi could be WDM for the rest of us.</description>
     </item>
     
     <item>

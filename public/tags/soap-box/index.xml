@@ -45,16 +45,6 @@
       <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</guid>
-      <description>Faucet &amp;#8211; Enterprise SDN from an office to multi-terabit SCinet at SC18 | - Nov 1, 2018
-[…] Then my colleague, Nick Buraglio, and I decided, why not wire our satellite branch office with faucet based networking than buy traditional switches? With Josh (Bailey)’s help, Nick has now wired the lives of eight of ESnet’s key employees to be dependent on faucet and he has been having a blast (no downtime there either)!</description>
-    </item>
-    
-    <item>
-      <title>Faucet: Enterprise OpenFlow in production</title>
-      <link>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</link>
-      <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</guid>
       <description>Remember OpenFlow? It was the media and marketing darling for the better part of 5 years as “the machine” conflated OpenFlow with SDN and SDN with - almost literally - everything. &amp;ldquo;Still Does Nothing&amp;rdquo; was a common phrase uttered around those of us that had run large scale, complex networks for a long time. Quietly, and mostly, out of the fickle media and blogosphere eye, a scrappy little SDN project called faucet has been diligently plugging away &amp;ndash; making easy to use, production quality, well documented, and very stable code that runs OpenFlow networks quite happily in production and at scale.</description>
     </item>
     
@@ -74,18 +64,6 @@
       
       <guid>https://forwardingplane.net/2018/10/the-rush-to-automation-and-the-it-pendulum/</guid>
       <description>Recently, the venerable Ivan Pepelnjak published a very insightful article about automation becoming such a popular topic that was spawned by an email from one of his readers. I found this article to be spot on, and wanted to add a bit of my own opinion into the automation pie, as I have been spending a lot of time on automation as it related to existing networks as well as into SDN based environments.</description>
-    </item>
-    
-    <item>
-      <title>Speculation on the obvious: stuff changes, why freak out?</title>
-      <link>https://forwardingplane.net/2017/12/speculation-on-the-obvious-stuff-changes-why-freak-out/</link>
-      <pubDate>Fri, 08 Dec 2017 00:30:15 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2017/12/speculation-on-the-obvious-stuff-changes-why-freak-out/</guid>
-      <description>Nick Buraglio - Dec 1, 2017
-Matt is a sharp guy who has been ahead of the game for a while. Glad I&amp;rsquo;m on the same page as him =) Link Propagation 101 - Packet Pushers - - Dec 5, 2017
-[…] Speculation on the obvious: stuff changes, why freak out? – The Forwarding Plane […] [Ethan Banks]( &amp;ldquo;ethan.banks@packetpushers.net&amp;rdquo;) - Dec 1, 2017
-So much this. For an exclamation point on it, throw in Matt Oswalt&amp;rsquo;s, &amp;ldquo;Your Cheese Moved A Long Time Ago.</description>
     </item>
     
     <item>
@@ -122,17 +100,6 @@ via GIPHY The scorched earth, &amp;ldquo;there&amp;rsquo;s a hole in the boat, w
       <pubDate>Mon, 18 Jan 2016 16:33:09 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</guid>
-      <description>[Jshaffer]( &amp;ldquo;jshaffer@hummingbirdnetworks.com&amp;rdquo;) - Jan 4, 2016
-Great post! I definitely feel overwhelmed and thanks for the mindnote recommend definitely going to check that out! Nick Buraglio - Feb 6, 2016
-Hey, thanks for reading! There is so much stuff out there no one can keep up. Know a lot about a little and a little about a lot, but most importantly, enjoy what you do. A person that enjoys their job will never work a day in their lives.</description>
-    </item>
-    
-    <item>
-      <title>Buzzwords, technology, terminology, and the interconnection of modern networking</title>
-      <link>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</link>
-      <pubDate>Mon, 18 Jan 2016 16:33:09 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</guid>
       <description>I&amp;rsquo;m way overdue for a soapbox session &amp;ndash; I found this one in my drafts and thought it was something I needed to put out there. It&amp;rsquo;s already dated in terminology but that actually helps make the point - it&amp;rsquo;s hard to keep up. 
 Lets throw this out there: social media can be exhausting. Do not misunderstand me, it’s a great tool for communication, obtaining and disseminating information as well as standard goofing around.</description>
     </item>
@@ -152,28 +119,8 @@ Lets throw this out there: social media can be exhausting. Do not misunderstand 
       <pubDate>Sat, 28 Mar 2015 16:09:11 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</guid>
-      <description>Brocade does a double down on SDN - Tech Field Day - Mar 6, 2015
-[…] Brocade does a double down on SDN […] </description>
-    </item>
-    
-    <item>
-      <title>Brocade does a double down on SDN</title>
-      <link>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</link>
-      <pubDate>Sat, 28 Mar 2015 16:09:11 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</guid>
       <description>Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.
 This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is.</description>
-    </item>
-    
-    <item>
-      <title>OpenDNS acquires BGPMon and the future of route monitoring</title>
-      <link>https://forwardingplane.net/2015/03/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</link>
-      <pubDate>Fri, 20 Mar 2015 05:18:30 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2015/03/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</guid>
-      <description>[David Ulevitch]( &amp;ldquo;david@opendns.com&amp;rdquo;) - Mar 5, 2015
-Hi Nick &amp;ndash; Thanks for the compliments on our track record in your post and appreciate the thoughtful commentary on the acquisition. Looking forward to delivering more good stuff in the future. </description>
     </item>
     
     <item>
@@ -191,29 +138,7 @@ Hi Nick &amp;ndash; Thanks for the compliments on our track record in your post 
       <pubDate>Mon, 08 Sep 2014 07:30:07 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
-      <description>[cryptochrome]( &amp;ldquo;sascha@picchiantano.de&amp;rdquo;) - Sep 1, 2014
-Wow. I completely disagree. Just because a firewall can give you some headaches in your network environment it shouldn&amp;rsquo;t be a reason to just dump it. A very dangerous proposition, and your &amp;ldquo;alternatives&amp;rdquo; will not be enough. Fix your firewall if it causes issues. Nick Buraglio - Sep 1, 2014
-Like I said, it&amp;rsquo;s not for everyone, but there are very real use cases where there is no hardware firewall that does what is necessary.</description>
-    </item>
-    
-    <item>
-      <title>Why you don&#39;t need a firewall [how to secure an open perimeter network]</title>
-      <link>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
-      <pubDate>Mon, 08 Sep 2014 07:30:07 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
       <description>I admit that the title was meant to be inflammatory. However, there are use cases that aren&amp;rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &amp;ldquo;a firewall protects a network like a fuse protects an electrical circuit&amp;rdquo;, and it&amp;rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.</description>
-    </item>
-    
-    <item>
-      <title>Aging hardware, IPv6 and the growing route table</title>
-      <link>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</link>
-      <pubDate>Wed, 13 Aug 2014 05:00:56 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</guid>
-      <description>[Prince Bjork Zappa]( &amp;ldquo;bozhidar@gmail.com&amp;rdquo;) - Aug 3, 2014
-http://arstechnica.com/security/2014/08/internet-routers-hitting-512k-limit-some-become-unreliable/ Nick Buraglio - Aug 3, 2014
-&amp;ldquo;I would like to say that it will help the adoption of IPv6, because it may bring some attention to the fact that IPv4 addresses are being exhausted, but IPv6 has completely failed to take off,&amp;rdquo; Cowie said. &amp;ldquo;If anything, it really shows you that IPv4 has really never been healthier.&amp;rdquo; I&amp;rsquo;d like to think that this is a true statement, but history has shown that people only try to prolong the inevitable IPv6 deployment.</description>
     </item>
     
     <item>
@@ -249,16 +174,6 @@ http://arstechnica.com/security/2014/08/internet-routers-hitting-512k-limit-some
       <pubDate>Sat, 04 Jan 2014 17:15:40 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2014/01/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog./</guid>
-      <description>[Ryan Harden]( &amp;ldquo;ancker@ancker.net&amp;rdquo;) - Jan 1, 2014
-Not trying to brush this off as not-scary or not-happening, but I&amp;rsquo;m skeptical of the reality of some of this. Not only would you have to alter the code on a JNPR/CSCO/etc router or switch, but you&amp;rsquo;d also have to alter the code of any inline firewalls to pass the secret traffic without filtering and/or logging, and alter the code of any flow generation/aggregation/analyzation software to not report on the secret traffic that it might have observed via tap/SPAN/etc.</description>
-    </item>
-    
-    <item>
-      <title>Speculation and soapboxing about the leaked NSA spy catalog.</title>
-      <link>https://forwardingplane.net/2014/01/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog./</link>
-      <pubDate>Sat, 04 Jan 2014 17:15:40 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/01/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog./</guid>
       <description>The buzz as of late around the security and networking communities has been about the NSA and their catalog or spy toolkit. I&amp;rsquo;ve spent time in my career thinking about and doing infosec and I did a brief stint working for the FBI in a project called NCDIR. I like to think that I can provide at least a peripherally competent commentary about it [take it with a grain of salt].</description>
     </item>
     
@@ -277,17 +192,6 @@ Not trying to brush this off as not-scary or not-happening, but I&amp;rsquo;m sk
       <pubDate>Sun, 10 Nov 2013 04:02:52 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/11/how-to-be-a-good-network-engineer-and-network-engineer-appreciation-day/</guid>
-      <description>[Samuel Akoi]( &amp;ldquo;Sakoivision@yahoo.com&amp;rdquo;) - Dec 5, 2013
-I love Networking Lennie - Dec 0, 2013
-On broad interests, what has me really excited right now is: Linux containers like Docker and for some strange reason WebRTC (well, only slightly strange, because I&amp;rsquo;m a webguy too). I&amp;rsquo;m thinking, maybe, just maybe, I can use more Linux routing on our network: http://containerops.org/2013/11/19/lxc-networking/ Not Docker specifically, or even containers, but network namespaces. Network namespaces in Linux supports: forwarding, bridging, static routing and dynamic routing (for example Quagga), iptables, looks like it even supports iptables conntrackd and even IPSEC.</description>
-    </item>
-    
-    <item>
-      <title>How to be a [good] Network Engineer (and network engineer appreciation day)</title>
-      <link>https://forwardingplane.net/2013/11/how-to-be-a-good-network-engineer-and-network-engineer-appreciation-day/</link>
-      <pubDate>Sun, 10 Nov 2013 04:02:52 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/11/how-to-be-a-good-network-engineer-and-network-engineer-appreciation-day/</guid>
       <description>My personal background in computing (specifically networking) is atypical. I have a bachelors in visual arts and only took a handful of computing classes in my relatively long tenure in college. However, I did learn one valuable lesson that has served me pretty well over the 15 or so years I have been doing networking and I&amp;rsquo;d bet money any good network engineer that has more than 10 years of experience will nod their head at this and agree.</description>
     </item>
     
@@ -297,28 +201,7 @@ On broad interests, what has me really excited right now is: Linux containers li
       <pubDate>Sat, 21 Sep 2013 15:30:33 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/09/being-single-vendor-does-your-brain-a-disservice./</guid>
-      <description>[Ken]( &amp;ldquo;ken.mercus.lai@gmail.com&amp;rdquo;) - Dec 0, 2013
-Great post! [Chris Donnelly]( &amp;ldquo;Thejourneytv@gmail.com&amp;rdquo;) - Oct 4, 2013
-Great Read!, Well Said Nick! </description>
-    </item>
-    
-    <item>
-      <title>Being single vendor does your brain a disservice.</title>
-      <link>https://forwardingplane.net/2013/09/being-single-vendor-does-your-brain-a-disservice./</link>
-      <pubDate>Sat, 21 Sep 2013 15:30:33 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/09/being-single-vendor-does-your-brain-a-disservice./</guid>
       <description>Let me be clear, when I say &amp;ldquo;single vendor&amp;rdquo; I&amp;rsquo;m talking about being &amp;ldquo;single vendor&amp;rdquo; in what you work on, not necessarily what you install (although one basically forces the other) and what I really mean is multilingual. I&amp;rsquo;ll explain after a brief history of why I am the way I am. I&amp;rsquo;m idealistic but I&amp;rsquo;m also realistic. I generally propose solutions that I think are best even if it is non-standard or out of current comfort level along with an alternative or two.</description>
-    </item>
-    
-    <item>
-      <title>The sad state of IPv6 and why you need to learn it.</title>
-      <link>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</link>
-      <pubDate>Mon, 05 Aug 2013 11:18:03 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</guid>
-      <description>[Engineer Z]( &amp;ldquo;zawada@ieee.org&amp;rdquo;) - Aug 1, 2013
-I agree fully. As you may recall Nick, for a long time I&amp;rsquo;ve said &amp;ldquo;NAT is a turd&amp;rdquo; and &amp;ldquo;Carrier-grade NAT is a polished turd.&amp;rdquo; At least at first glance &amp;ldquo;Enhanced IP&amp;rdquo; looks like more turd polishing to me. How do we break folks&amp;rsquo; habit of working around the shortcomings of NAT and show the value of truly global address space? Why do folks keep hacking on the NAT kludge?</description>
     </item>
     
     <item>

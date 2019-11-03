@@ -37,16 +37,6 @@ Don&amp;rsquo;t reinvent the wheel Too many times we as an industry don&amp;rsqu
       <pubDate>Sat, 28 Mar 2015 16:09:11 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</guid>
-      <description>Brocade does a double down on SDN - Tech Field Day - Mar 6, 2015
-[…] Brocade does a double down on SDN […] </description>
-    </item>
-    
-    <item>
-      <title>Brocade does a double down on SDN</title>
-      <link>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</link>
-      <pubDate>Sat, 28 Mar 2015 16:09:11 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</guid>
       <description>Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.
 This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is.</description>
     </item>
@@ -75,28 +65,7 @@ This is one reason that anyone reading this should take pause and think about th
       <pubDate>Mon, 21 Apr 2014 04:44:30 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</guid>
-      <description>Blending the Network; Pluribus ServerSwitch - Apr 1, 2014
-[…] Blending the Network; Pluribus ServerSwitch […] </description>
-    </item>
-    
-    <item>
-      <title>Blending the Network; Pluribus ServerSwitch</title>
-      <link>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</link>
-      <pubDate>Mon, 21 Apr 2014 04:44:30 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</guid>
       <description>I firmly believe that blending disciplines is the way of the future in IT. I&amp;rsquo;ve rambled about it here at other venues and I&amp;rsquo;m vocal (some would probably say brash) about it on the twitters. Be it Networking and System, Systems and Security, Programming and Networking, most of us that have been around any length of time already do it but now it&amp;rsquo;s happening out in the open and &amp;ldquo;DevOps&amp;rdquo;, a form of the hybrid IT worker, has seemingly become the BOTD (Buzzword of the day).</description>
-    </item>
-    
-    <item>
-      <title>OpenFlow Hybrid.  It&#39;s a must, not an option.</title>
-      <link>https://forwardingplane.net/2013/04/openflow-hybrid.-its-a-must-not-an-option./</link>
-      <pubDate>Thu, 18 Apr 2013 16:17:37 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/04/openflow-hybrid.-its-a-must-not-an-option./</guid>
-      <description>[Brent Salisbury]( &amp;ldquo;brent.salisbury@gmail.com&amp;rdquo;) - Apr 4, 2013
-Great post Nick. You are spot on. Without an incremental integration path it stays unicorns. Vendors are reluctant to own reference architectures so we will. Hey, its more fun that way anyways. The axis of state is being opened up which will need creative designs to leverage OF/SDN [Lennie]( &amp;ldquo;forwardingplaneblog@consolejunkie.net&amp;rdquo;) - Apr 1, 2013
-I don&amp;rsquo;t believe the hardware vendors ever had our interrests in mind.</description>
     </item>
     
     <item>
@@ -114,27 +83,7 @@ I don&amp;rsquo;t believe the hardware vendors ever had our interrests in mind.<
       <pubDate>Tue, 09 Apr 2013 04:25:59 +0000</pubDate>
       
       <guid>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</guid>
-      <description>Nancee Waddick - May 5, 2013
-One frequent perceived technical problem with FeedBurner is the reduced number of subscribers being reported for the blogs using the service. This is not actually a technical problem with FeedBurner, but by the feed readers and aggregators that report to FeedBurner, as FeedBurner collects and tallies from those partners. Usually this problem is connected with one specific RSS reader or client. -^ Make sure you visit our own website as well Nick Buraglio - Apr 1, 2013</description>
-    </item>
-    
-    <item>
-      <title>Daylight, a new dawn is approaching.</title>
-      <link>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</link>
-      <pubDate>Tue, 09 Apr 2013 04:25:59 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</guid>
       <description>The SDN world is abuzz with the announcement that the OpenDaylight controller came from stealth mode today. Why is this important? Well, SDN and OpenFlow are fractured. It is Mac vs. PC, Beta vs VHS, Coke vs. Pepsi all over again&amp;hellip;&amp;hellip;multiplied by 100x and with a handful of players.  Vendor zealots and brand loyalists will nearly always side with their camp. Heck, even I have some biases of personal preference.</description>
-    </item>
-    
-    <item>
-      <title>Why hardware firewalls are the walking dead</title>
-      <link>https://forwardingplane.net/2013/03/why-hardware-firewalls-are-the-walking-dead/</link>
-      <pubDate>Mon, 18 Mar 2013 11:02:42 +0000</pubDate>
-      
-      <guid>https://forwardingplane.net/2013/03/why-hardware-firewalls-are-the-walking-dead/</guid>
-      <description>[cryptochrome (@cryptochrome)]( &amp;ldquo;sascha@picchiantano.de&amp;rdquo;) - Mar 4, 2013
-What everybody seems to forget is that actually simple stateful inspection firewalls are the walking dead. Modern firewalls do a lot of inspection at layer 7 (think Palo Alto Networks). I want to see one of those white box Intel boxes push 20 gigabit of application level firewalled traffic. I highly doubt it. And I am also curious how you want to put OpenFlow to use here, when basically every flow would need to be forwarded to the Controller and passed on to the &amp;ldquo;OpenFlow Firewall&amp;rdquo; for inspection.</description>
     </item>
     
     <item>

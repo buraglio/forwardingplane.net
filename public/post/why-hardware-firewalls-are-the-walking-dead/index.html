@@ -1,0 +1,650 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "Why hardware firewalls are the walking dead",
+        "headline" : "Why hardware firewalls are the walking dead",
+        "description" : "OK, maybe they\x26rsquo;re not totally dead, but they\x26rsquo;re being demoted. To the mail room. During the course of my career I\x26rsquo;ve always had at least some responsibility for firewall and security devices. In those ~15 years, how these boxes are built and function has shifted. From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-03-18 11:02:42 \x2b0000 \x2b0000",
+        "dateModified" : "2013-03-18 11:02:42 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/why-hardware-firewalls-are-the-walking-dead\/",
+        "wordCount" : "896",
+        "keywords" : [ "Crystal Ball","OpenFlow","Security","Virtualization","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Why hardware firewalls are the walking dead</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why hardware firewalls are the walking dead"/>
+<meta name="twitter:description" content="OK, maybe they&rsquo;re not totally dead, but they&rsquo;re being demoted. To the mail room. During the course of my career I&rsquo;ve always had at least some responsibility for firewall and security devices. In those ~15 years, how these boxes are built and function has shifted. From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint."/>
+
+        <meta property="og:title" content="Why hardware firewalls are the walking dead" />
+<meta property="og:description" content="OK, maybe they&rsquo;re not totally dead, but they&rsquo;re being demoted. To the mail room. During the course of my career I&rsquo;ve always had at least some responsibility for firewall and security devices. In those ~15 years, how these boxes are built and function has shifted. From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead/" />
+<meta property="article:published_time" content="2013-03-18T11:02:42+00:00" />
+<meta property="article:modified_time" content="2013-03-18T11:02:42+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Why hardware firewalls are the walking dead">
+<meta itemprop="description" content="OK, maybe they&rsquo;re not totally dead, but they&rsquo;re being demoted. To the mail room. During the course of my career I&rsquo;ve always had at least some responsibility for firewall and security devices. In those ~15 years, how these boxes are built and function has shifted. From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint.">
+
+
+<meta itemprop="datePublished" content="2013-03-18T11:02:42&#43;00:00" />
+<meta itemprop="dateModified" content="2013-03-18T11:02:42&#43;00:00" />
+<meta itemprop="wordCount" content="896">
+
+
+
+<meta itemprop="keywords" content="Crystal Ball,OpenFlow,Security,Virtualization," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fwhy-hardware-firewalls-are-the-walking-dead%2f&amp;text=Why%20hardware%20firewalls%20are%20the%20walking%20dead&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fwhy-hardware-firewalls-are-the-walking-dead%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fwhy-hardware-firewalls-are-the-walking-dead%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fwhy-hardware-firewalls-are-the-walking-dead%2f&amp;title=Why%20hardware%20firewalls%20are%20the%20walking%20dead" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fwhy-hardware-firewalls-are-the-walking-dead%2f&amp;title=Why%20hardware%20firewalls%20are%20the%20walking%20dead" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fwhy-hardware-firewalls-are-the-walking-dead%2f&amp;title=Why%20hardware%20firewalls%20are%20the%20walking%20dead" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fwhy-hardware-firewalls-are-the-walking-dead%2f&amp;description=Why%20hardware%20firewalls%20are%20the%20walking%20dead" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fwhy-hardware-firewalls-are-the-walking-dead%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead/">Why hardware firewalls are the walking dead</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2013-03-18'>
+            March 18, 2013</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>OK, maybe they&rsquo;re not totally dead, but they&rsquo;re being demoted. To the mail room. During the course of my career I&rsquo;ve always had at least some responsibility for firewall and security devices.  In those ~15 years, how these boxes are built and function has shifted.  From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint.  There was the Cisco PIX. One installation I worked on in a past life even chose to use IPFW on BSD boxes.   Then came was the Sonicwall, a newer take on how to manage a security appliance via a web interface. There was the FWSM.  A few things stayed the same. Dedicated hardware. <img src="http://www.forwardingplane.net/wp-content/uploads/2013/03/Firewall-1024x670.jpg" alt="Free Firewall Clipart Illustrations at http://free.ClipartOf.com/" /> Being a networking guy by nature, it always irritated me that the inline security devices were 3 years behind networking&hellip;.at best. Working in a service provider and in research and education has given me a bit of a different take on firewalls and IPS devices as well and has only solidified this belief.   There are a few things that make firewalls and IPS devices an unholy thing in the world that I live in. Since I <strong>love</strong> bulleted lists, this is an opportunity to use one:</p>
+
+<ul>
+<li><strong>They get in the way.</strong>  Of course they to, that is their job.  Big data flows, Multicast, jumbo frames, IPv6.  There are boxes that can <strong>finally</strong> do these things, but they are 5-7 years behind and even now are often lacking in support and features.</li>
+<li><strong>They&rsquo;re expensive.</strong>  When considering CAPEX, they are often prohibitively expensive compared to something like a passive IDS.  Not many budget for a firewall / IPS that can do multi 10G at line rate, IPv6, Multicast and can handle things like GridFTP flows, because until recently they didn&rsquo;t exist.</li>
+<li><strong>Speeds and Feeds are always first.</strong>  I worked on 10G and OC192 on the WAN around 2002 with 10G on the LAN around the same time.  The first real firewall I saw that could even fall into consideration for that was the <a href="http://webcache.googleusercontent.com/search?q=cache:pLu75PgugigJ:www.force10networks.com/news/pressreleases/2006/pr-2006-08-28_2.asp+&amp;cd=1&amp;hl=en&amp;ct=clnk&amp;gl=us&amp;client=safari">FPGA based P10</a> from Force10 in 2005 (we had an early demo).  It was a really innovative device but even it was very clunky since it was an FPGA and caused service interruptions every time you needed to push rules to the FPGAs.  The Juniper SRX came much later at 2009, and even <a href="http://www.forwardingplane.net/2010/09/updating-srx-idp-signatures/" title="Updating SRX IDP signatures">it</a> <a href="http://www.forwardingplane.net/2011/01/moving-junos-code-between-srx-cluster-nodes/" title="Moving JunOS code between SRX cluster nodes">had</a> <a href="http://www.forwardingplane.net/2010/10/enabling-ipv6-on-juniper-srx-5800-cluster/" title="Enabling IPv6 on Juniper SRX 5800 cluster">some</a> <a href="http://www.forwardingplane.net/2010/09/srx-ipv6-flow-based-processing/" title="SRX IPv6 flow based processing">issues</a> back then.  There exists a handful of options now, the Sonicwall SuperMassive, the Juniper SRX  and the Palo Alto come to mind but they&rsquo;re late.  10G is old hat to some of us.  We&rsquo;re on to 40G and 100G.  What now?</li>
+</ul>
+
+<p>So, lets get down to the buzzwords.  Cloud.  Data Center.  Virtualization.  SDN.  OpenFlow.  Ironically enough, being &ldquo;buzzword compliant&rdquo; is actually relevant to this commentary. With the advent of virtualization of nearly everything, including the network, vendors are adding things like virtualized firewalls.  Juniper has added the <a href="http://www.juniper.net/us/en/dm/edge/products/">JunosV Firefly</a>, Cisco has added the <a href="http://www.cisco.com/en/US/products/ps12233/index.html">VSG</a>.  There are surely others.  This movement is just in it&rsquo;s infancy, but it&rsquo;s big and I would venture to say that it is game changing.  With the huge amounts of cores and memory in virtual machine hosts, it makes sense that the network become part of that for management, total cost of ownership and usability. The really interesting part of all of this comes not with the virtualization of firewalls, but with the commoditization of network silicon.  Chip makers that are spinning ASICS need to make sure their ducks are in a row since, in my personal opinion, there are a lot of options for LAN and data center equipment.  <a href="http://www.aristanetworks.com">Arista</a> is already on top of this.  Others vendors will adopt this methodology as merchant silicon adds more abilities.  Firewalls will are on their way now.  Eventually WAN gear will come around. What I&rsquo;m really excited about is the prospect of a merchant silicon based, 40 or 100G OpenFlow based &ldquo;Firewall&rdquo;.  The foundation is already laid for this.  <a href="http://www.openflowhub.org/display/floodlightcontroller/Firewall+(Dev)">Floodlight already has a dev module for building a firewall with OpenFlow</a>.  I&rsquo;ve not tested this extensively yet.  It&rsquo;s on my short list but wether it works or not isn&rsquo;t really even relevant.  The fact of the matter is that this is the way to a comfortable security perimeter at a reasonable speed for a far more reasonable price tag. <a href="http://www.forwardingplane.net/wp-content/uploads/2013/03/OF-Firewall.jpg"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/03/OF-Firewall.jpg" alt="OF-Firewall" /></a>Think of buying an OpenFlow capable device with 40 and 100G interfaces in it as your firewall and IPS device.  Port cost is very low.  CAPEX is low.  OPEX is also fairly low since it is just a normal piece of network hardware.  Management is accomplished via an OpenFlow controller. Rules are pushed manually or programmatically based entirely on site policy.  IPS functions can be performed via a passive system like BroIDS or Snort triggering rules in OpenFlow much like is being commonly done with <a href="http://www.forwardingplane.net/2011/10/black-hole-routing/" title="Black Hole routing">black hole routers</a> now. This will happen.  It&rsquo;s already happening. Firewall vendors take notice.  Have a strategy for Virtualization.  Have a strategy for dealing with OpenFlow and SDN. It is my belief that once the reporting and management is even half as good as a <a href="http://www.paloaltonetworks.com">Palo Alto</a> or <a href="http://www.sonicwall.com">Sonicwall</a>, the market will start to change based solely on cost.  <a href="http://openflow.marist.edu/avior.html">There is already work being done on this as well</a>. Am I right?  Time will be the judge, but I suspect I am.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/crystal-ball">Crystal Ball</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/openflow">OpenFlow</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/security">Security</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/virtualization">Virtualization</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/building-a-bridge-domain-on-mx-series-junos/"
+                class="button big previous">Building a Bridge Domain on MX series JunOS</a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/my-sdn-soapbox-now-with-ipv6/"
+                class="button big next">My SDN soapbox (now with IPv6!)</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

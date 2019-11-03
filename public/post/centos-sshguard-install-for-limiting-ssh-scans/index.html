@@ -1,0 +1,765 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "CentOS sshguard install for limiting ssh scans",
+        "headline" : "CentOS sshguard install for limiting ssh scans",
+        "description" : "Securing SSH is a form or art. It\x26rsquo;s often debated, much like blocking all ICMP packets (which I normally disagree with). If you need good proof, read these posts by Bob Plankers. There is a camp that likes to promote moving to a non-standard port. There is a faction that likes to block it completely except from a handful of hosts. Then there are those that like to leave it open all together.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2012",
+        "datePublished": "2012-12-16 03:18:27 \x2b0000 \x2b0000",
+        "dateModified" : "2012-12-16 03:18:27 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/centos-sshguard-install-for-limiting-ssh-scans\/",
+        "wordCount" : "1046",
+        "keywords" : [ "Lab Time","Musings","UNIX","Blog" ]
+    }
+    </script>
+        
+            
+                <title>CentOS sshguard install for limiting ssh scans</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS sshguard install for limiting ssh scans"/>
+<meta name="twitter:description" content="Securing SSH is a form or art. It&rsquo;s often debated, much like blocking all ICMP packets (which I normally disagree with). If you need good proof, read these posts by Bob Plankers. There is a camp that likes to promote moving to a non-standard port. There is a faction that likes to block it completely except from a handful of hosts. Then there are those that like to leave it open all together."/>
+
+        <meta property="og:title" content="CentOS sshguard install for limiting ssh scans" />
+<meta property="og:description" content="Securing SSH is a form or art. It&rsquo;s often debated, much like blocking all ICMP packets (which I normally disagree with). If you need good proof, read these posts by Bob Plankers. There is a camp that likes to promote moving to a non-standard port. There is a faction that likes to block it completely except from a handful of hosts. Then there are those that like to leave it open all together." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/centos-sshguard-install-for-limiting-ssh-scans/" />
+<meta property="article:published_time" content="2012-12-16T03:18:27+00:00" />
+<meta property="article:modified_time" content="2012-12-16T03:18:27+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="CentOS sshguard install for limiting ssh scans">
+<meta itemprop="description" content="Securing SSH is a form or art. It&rsquo;s often debated, much like blocking all ICMP packets (which I normally disagree with). If you need good proof, read these posts by Bob Plankers. There is a camp that likes to promote moving to a non-standard port. There is a faction that likes to block it completely except from a handful of hosts. Then there are those that like to leave it open all together.">
+
+
+<meta itemprop="datePublished" content="2012-12-16T03:18:27&#43;00:00" />
+<meta itemprop="dateModified" content="2012-12-16T03:18:27&#43;00:00" />
+<meta itemprop="wordCount" content="1046">
+
+
+
+<meta itemprop="keywords" content="Lab Time,Musings,UNIX," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-sshguard-install-for-limiting-ssh-scans%2f&amp;text=CentOS%20sshguard%20install%20for%20limiting%20ssh%20scans&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-sshguard-install-for-limiting-ssh-scans%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-sshguard-install-for-limiting-ssh-scans%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-sshguard-install-for-limiting-ssh-scans%2f&amp;title=CentOS%20sshguard%20install%20for%20limiting%20ssh%20scans" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-sshguard-install-for-limiting-ssh-scans%2f&amp;title=CentOS%20sshguard%20install%20for%20limiting%20ssh%20scans" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-sshguard-install-for-limiting-ssh-scans%2f&amp;title=CentOS%20sshguard%20install%20for%20limiting%20ssh%20scans" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-sshguard-install-for-limiting-ssh-scans%2f&amp;description=CentOS%20sshguard%20install%20for%20limiting%20ssh%20scans" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fcentos-sshguard-install-for-limiting-ssh-scans%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/centos-sshguard-install-for-limiting-ssh-scans/">CentOS sshguard install for limiting ssh scans</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2012-12-16'>
+            December 16, 2012</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    
+
+<p>Securing SSH is a form or art.  It&rsquo;s often debated, much like blocking all ICMP packets (which I normally disagree with).  If you need good proof, read <a href="http://lonesysadmin.net/2012/11/20/changing-sshd-port-numbers-continues-to-be-a-bad-idea/">these</a> <a href="http://lonesysadmin.net/2012/10/19/on-using-alternate-ports-for-ssh/">posts</a> by <a href="https://twitter.com/plankers">Bob Plankers</a>.  There is a camp that likes to promote moving to a non-standard port.  There is a faction that likes to block it completely except from a handful of hosts.  Then there are those that like to leave it open all together.  Running naked in the digital jungle. I tend to err on the side of blocking except for jump hosts.  This is a pretty time proven methodology.  However, what about the hosts that <strong>need</strong> to be open? A hardened jump host or public shell box comes to mind. Enter <a href="http://www.sshguard.net">sshguard</a>. SSH Guard is an amazing little piece of software that takes the heavy lifting out of blocking all of those scans and automates removal of blocks.  It works across a myriad of popular unix platforms. From <a href="http://www.sshguard.net">http://www.sshguard.net</a>: <em>Sshguard monitors servers from their logging activity. When logs convey that someone is doing a Bad Thing, sshguard reacts by blocking he/she/it for a bit. Sshguard has a touchy personality: when a naughty tyke insists disturbing your host, it reacts firmer and firmer.</em> <em>Sshguard supports many services out of the box, recognizes severallog formats, and can operate many firewall systems. Many users appreciate its ease of use, compatibility and feature richness.</em> I like it because they have not left out some of the less common distros, but sinceI&rsquo;ve mostly converted over to CentOS, this focus is how to set it up on Centos 6.3.   We&rsquo;ll assume you have epel repo and rpmforge repo installed. I prefer <a href="http://www.balabit.com/network-security/syslog-ng">syslog-ng</a> so lets install that.```
+sudo yum -y install syslog-ng</p>
+
+<pre><code>chkconfig syslog-ng on
+</code></pre>
+
+<p>chkconfig rsyslog off</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-This isn't necessary, but I'd recommend it. Next, I lke to disable selinux.  It's on be default in CentOS and I really don't need what it offers.  I find it annoying and far too restrictive and this won't build correctly without it disabled in my experience.```" data-lang="This isn't necessary, but I'd recommend it. Next, I lke to disable selinux.  It's on be default in CentOS and I really don't need what it offers.  I find it annoying and far too restrictive and this won't build correctly without it disabled in my experience.```">sudo vi /etc/selinux/config</code></pre></div>
+<p>Change the line that reads```
+SELINUX=enabled</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-to```" data-lang="to```">SELINUX=disabled</code></pre></div>
+<p>You&rsquo;ll need to reboot to make this take effect. Note that this will disable selinux completely and permanently.  <a href="http://www.revsys.com/writings/quicktips/turn-off-selinux.html">There are ways to temporarily disable it</a> if you would prefer.```
+sudo reboot</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Download sshguard.  I didn't find it in any repos for Centos 6.x.  I may be mistaken, but I went this route.```" data-lang="Download sshguard.  I didn't find it in any repos for Centos 6.x.  I may be mistaken, but I went this route.```">wget http://sourceforge.net/projects/sshguard/files/sshguard/sshguard-1.5/sshguard-1.5.tar.bz2/download</code></pre></div>
+<p>Unpack it.```
+bunzip2 sshguard-1.5.tar.bz2</p>
+
+<pre><code>tar -xvf sshguard-1.5.tar
+</code></pre>
+
+<p>cd sshguard-1.5</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-I like to do minimal installs of Linux, so I need to add gcc before I can compile.  This will likely install some dependancies if it's a new minimal install.  Same goes for make```" data-lang="I like to do minimal installs of Linux, so I need to add gcc before I can compile.  This will likely install some dependancies if it's a new minimal install.  Same goes for make```">sudo yum install gcc make
+``````
+sudo ./configure --with-firewall=iptables
+``````
+sudo make &amp;&amp; sudo make install</code></pre></div>
+<p>OK, you should have it installed at this point.  You can verify by doing:```
+ls -la /usr/local/sbin/sshguard</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-which should yield something like this:```" data-lang="which should yield something like this:```">\-rwxr-xr-x 1 root root 399995 Dec 16 02:28 /usr/local/sbin/sshguard</code></pre></div>
+<p>Great, now we need to create firewall tables for sshguard for IPv4, and if you&rsquo;re keeping up to date, IPv6.```
+sudo iptables -N sshguard</p>
+
+<pre><code>sudo ip6tables -N sshguard
+```Now tell iptables to drop that traffic. Make sure you don't have a permit ssh rule above this line or it won't work.```
+sudo iptables -A INPUT -j sshguard
+</code></pre>
+
+<p>sudo ip6tables -A INPUT -j sshguard</p>
+
+<pre><code>
+Save your config.  ```
+sudo iptables-save &lt; /etc/sysconfig/iptables
+``````
+sudo ip6tables-save &lt; /etc/sysconfig/ip6tables
+</code></pre>
+
+<p>For the examples below, we&rsquo;ll just look at IPv4 to keep the post a bit shorter, but the v6 pieces are all identical save for the file names.  If you&rsquo;re running v6 you should remember to secure it just as you would v4. Mine ruleset is pretty vanilla, mostly stock with the exception of ssl and dns.```
+# Completed on Sat Dec 15 21:02:09 2012</p>
+
+<h1 id="generated-by-iptables-save-v1-4-7-on-sat-dec-15-21-02-09-2012">Generated by iptables-save v1.4.7 on Sat Dec 15 21:02:09 2012</h1>
+
+<p>*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [6585:1425605]
+:sshguard - [0:0]
+-A INPUT -m state &ndash;state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -j sshguard
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p tcp -m state &ndash;state NEW -m tcp &ndash;dport 22 -j ACCEPT
+-A INPUT -p tcp -m state &ndash;state NEW -m tcp &ndash;dport 443 -j ACCEPT
+-A INPUT -p udp -m state &ndash;state NEW -m udp &ndash;dport 53 -j ACCEPT
+-A INPUT -p tcp -m state &ndash;state NEW -m tcp &ndash;dport 53 -j ACCEPT
+-A INPUT -j REJECT &ndash;reject-with icmp-host-prohibited
+-A FORWARD -j REJECT &ndash;reject-with icmp-host-prohibited
+COMMIT</p>
+
+<h1 id="completed-on-sat-dec-15-21-02-09-2012">Completed on Sat Dec 15 21:02:09 2012</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Note: I did have to relocate the sshguard rule to right below the first INPUT rule to make it actually effective." data-lang="Note: I did have to relocate the sshguard rule to right below the first INPUT rule to make it actually effective.">Now we need to activate it.  This is pretty straightforward.  We essentially need to tell syslog to call sshguard based on activity and it&#39;s why I prefer syslog-ng.  It&#39;s very flexible and easy to add this stuff right in.  I&#39;ve been using it for over a decade and it the most flexible syslog server I&#39;ve found.  ```
+vi /etc/syslog-ng/syslog-ng.conf</code></pre></div>
+<p>Based on the <a href="http://www.sshguard.net/docs/setup/getlogs/syslog-ng/">instructions at the sshguard site</a> (which also have details for extending this to more than just ssh; I&rsquo;ll do a post on that for CentOS at some point too), just add the following to the bottom of your syslog-ng.conf file:```
+# pass only entries with auth+authpriv facilities from programs other than sshguard
+filter f_sshguard { facility(auth, authpriv) and not program(&ldquo;sshguard&rdquo;); };</p>
+
+<h1 id="pass-entries-built-with-this-format">pass entries built with this format</h1>
+
+<p>destination sshguard {
+ program(&ldquo;/usr/local/sbin/sshguard&rdquo;
+ template(&ldquo;$DATE $FULLHOST $MSGHDR$MESSAGE\n&rdquo;)
+ );
+};
+log { source(s_sys); filter(f_sshguard); destination(sshguard); };</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Then restart syslog-ng```" data-lang="Then restart syslog-ng```">sudo service syslog-ng stop
+``````
+sudo service syslog-ng start</code></pre></div>
+<p>You&rsquo;ll probably see these errors, they can be ignored if you&rsquo;re not using the afsql module.</p>
+
+<pre><code>Plugin module not found in 'module-path'; module-path='/lib64/syslog-ng', module='afsql'
+``````
+Starting syslog-ng: Plugin module not found in 'module-path'; module-path='/lib64/syslog-ng', module='afsql'
+</code></pre>
+
+<p>ssh into localhost or in from an outside host. This will create a log and cause syslog-ng to call sshguard. At that point you should see this when looking for sshguard:```
+ps auxww | grep sshguard</p>
+
+<pre><code>root 14010 0.0 0.0 16924 1260 ? Sl 20:49 0:00 /usr/local/sbin/sshguard
+```You should see it in your iptables rules:```
+\[buraglio@centos63 sysconfig\]# sudo iptables -L
+Chain INPUT (policy ACCEPT)
+target prot opt source destination 
+ACCEPT all -- anywhere anywhere state RELATED,ESTABLISHED 
+sshguard all -- anywhere anywhere 
+ACCEPT icmp -- anywhere anywhere 
+ACCEPT all -- anywhere anywhere 
+ACCEPT tcp -- anywhere anywhere state NEW tcp dpt:ssh 
+ACCEPT tcp -- anywhere anywhere state NEW tcp dpt:https 
+ACCEPT udp -- anywhere anywhere state NEW udp dpt:domain 
+ACCEPT tcp -- anywhere anywhere state NEW tcp dpt:domain 
+ACCEPT tcp -- anywhere anywhere state NEW tcp dpt:ndmp 
+ACCEPT tcp -- anywhere anywhere state NEW tcp dpt:dnp 
+REJECT all -- anywhere anywhere reject-with icmp-host-prohibited
+</code></pre>
+
+<p>Chain FORWARD (policy ACCEPT)
+target prot opt source destination
+REJECT all &ndash; anywhere anywhere reject-with icmp-host-prohibited</p>
+
+<pre><code>Chain OUTPUT (policy ACCEPT)
+target prot opt source destination
+</code></pre>
+
+<p>Chain sshguard (1 references)
+target prot opt source destination
+```That&rsquo;s pretty much it. Let it sit and wait. It will block scanners automagically and then unblock them after a period of time.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/lab-time">Lab Time</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/musings">Musings</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/unix">UNIX</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/sdn/"
+                class="button big previous">SDN</a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/random-tech-predictions-for-2013/"
+                class="button big next">Random Tech Predictions for 2013</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

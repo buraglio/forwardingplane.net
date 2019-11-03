@@ -1,0 +1,650 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "Debugging Brocade MLX\/XMR ip_rx CPU issues",
+        "headline" : "Debugging Brocade MLX\/XMR ip_rx CPU issues",
+        "description" : "I recently had the need to debug a run away ip_rx process on an older Brocade MLX. For anyone that has had to do any type of low level debugging on the Brocade (Foundry) platform, you know that there many somewhat deep level diagnostics that are possible. The debug (like cisco debug) is a bit lacking, but the dm, LP and MP commands are very useful (and a tad scary). Regardless, I\x26rsquo;ve had to utilize them a lot in the last few years so my aversion to using them has been pretty much completely callused over.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-06-17 00:35:42 \x2b0000 \x2b0000",
+        "dateModified" : "2013-06-17 00:35:42 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/debugging-brocade-mlxxmr-ip_rx-cpu-issues\/",
+        "wordCount" : "317",
+        "keywords" : [ "How-To","Routing","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Debugging Brocade MLX/XMR ip_rx CPU issues</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Debugging Brocade MLX/XMR ip_rx CPU issues"/>
+<meta name="twitter:description" content="I recently had the need to debug a run away ip_rx process on an older Brocade MLX. For anyone that has had to do any type of low level debugging on the Brocade (Foundry) platform, you know that there many somewhat deep level diagnostics that are possible. The debug (like cisco debug) is a bit lacking, but the dm, LP and MP commands are very useful (and a tad scary). Regardless, I&rsquo;ve had to utilize them a lot in the last few years so my aversion to using them has been pretty much completely callused over."/>
+
+        <meta property="og:title" content="Debugging Brocade MLX/XMR ip_rx CPU issues" />
+<meta property="og:description" content="I recently had the need to debug a run away ip_rx process on an older Brocade MLX. For anyone that has had to do any type of low level debugging on the Brocade (Foundry) platform, you know that there many somewhat deep level diagnostics that are possible. The debug (like cisco debug) is a bit lacking, but the dm, LP and MP commands are very useful (and a tad scary). Regardless, I&rsquo;ve had to utilize them a lot in the last few years so my aversion to using them has been pretty much completely callused over." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/debugging-brocade-mlxxmr-ip_rx-cpu-issues/" />
+<meta property="article:published_time" content="2013-06-17T00:35:42+00:00" />
+<meta property="article:modified_time" content="2013-06-17T00:35:42+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Debugging Brocade MLX/XMR ip_rx CPU issues">
+<meta itemprop="description" content="I recently had the need to debug a run away ip_rx process on an older Brocade MLX. For anyone that has had to do any type of low level debugging on the Brocade (Foundry) platform, you know that there many somewhat deep level diagnostics that are possible. The debug (like cisco debug) is a bit lacking, but the dm, LP and MP commands are very useful (and a tad scary). Regardless, I&rsquo;ve had to utilize them a lot in the last few years so my aversion to using them has been pretty much completely callused over.">
+
+
+<meta itemprop="datePublished" content="2013-06-17T00:35:42&#43;00:00" />
+<meta itemprop="dateModified" content="2013-06-17T00:35:42&#43;00:00" />
+<meta itemprop="wordCount" content="317">
+
+
+
+<meta itemprop="keywords" content="How-To,Routing," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fdebugging-brocade-mlxxmr-ip_rx-cpu-issues%2f&amp;text=Debugging%20Brocade%20MLX%2fXMR%20ip_rx%20CPU%20issues&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fdebugging-brocade-mlxxmr-ip_rx-cpu-issues%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fdebugging-brocade-mlxxmr-ip_rx-cpu-issues%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fdebugging-brocade-mlxxmr-ip_rx-cpu-issues%2f&amp;title=Debugging%20Brocade%20MLX%2fXMR%20ip_rx%20CPU%20issues" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fdebugging-brocade-mlxxmr-ip_rx-cpu-issues%2f&amp;title=Debugging%20Brocade%20MLX%2fXMR%20ip_rx%20CPU%20issues" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fdebugging-brocade-mlxxmr-ip_rx-cpu-issues%2f&amp;title=Debugging%20Brocade%20MLX%2fXMR%20ip_rx%20CPU%20issues" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fdebugging-brocade-mlxxmr-ip_rx-cpu-issues%2f&amp;description=Debugging%20Brocade%20MLX%2fXMR%20ip_rx%20CPU%20issues" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fdebugging-brocade-mlxxmr-ip_rx-cpu-issues%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/debugging-brocade-mlxxmr-ip_rx-cpu-issues/">Debugging Brocade MLX/XMR ip_rx CPU issues</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2013-06-17'>
+            June 17, 2013</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>I recently had the need to debug a run away ip_rx process on an older Brocade MLX.  For anyone that has had to do any type of low level debugging on the Brocade (Foundry) platform, you know that there many somewhat deep level diagnostics that are possible.  The debug (like cisco debug) is a bit lacking, but the dm, LP and MP commands are very useful (and a tad scary). Regardless, I&rsquo;ve had to utilize them a lot in the last few years so my aversion to using them has been pretty much completely callused over. So, when there was notification of CPU issues (common on the platform in environments I&rsquo;m familiar with), I started poking around.  First off, the  <a href="http://www.brocade.com/downloads/documents/product_manuals/B_NetIron/Brocade_XMRMLX_05200_DiagnosticGuide.pdf">diagnostic documents</a> are your friend.  They&rsquo;re fairly deep and wide in scope.  After looking at the cpu, it was pretty clear what the culprit was. rtr4-2#sh cpu-utilization | e 0 &hellip; Usage average for all tasks in the last 1 seconds  &hellip; ========================================================== Name            us/sec        % idle                    68435           11 ip_rx                   724619          72 ospf                    36942           3 snmp                    82753           8 I needed to get info on that ip_rx process.  Google actually wasn&rsquo;t terribly helpful, so I dig out what I wanted, except for the process for breaking into the management module monitor mode.  The golden ticket ended up being &ldquo;ctrl+y m enter&rdquo; from the console.  That drops you into the OS mode or management module monitor mode that looks like this.<a href="http://www.forwardingplane.net/wp-content/uploads/2013/06/Screen-Shot-2013-06-16-at-7.04.20-PM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/06/Screen-Shot-2013-06-16-at-7.04.20-PM.png" alt="Screen Shot 2013-06-16 at 7.04.20 PM" /></a>               Basically this is what I gathered for the Brocade TAC.```
+MP-1 OS&gt;set sample-task ip_rx
+MP-1 OS&gt;set sample-rate 5
+MP-1 OS&gt;show sample
+CPU Sample: Trace&hellip; (Repeat)
+202e4eb8<2021ec08<202e5c18<202e6238<2030c2c4<202ec2d8<202eac00<202eac74
+ .....
+MP-1 OS>set sample-rate 0
+MP-1 OS&gt;exit
+Back to Application console&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Setting the task to sample is pretty simple:set sample-task <task>```" data-lang="Setting the task to sample is pretty simple:set sample-task <task>```">set sample-rate</code></pre></div>
+<p>to show the sample, simply```
+show sample</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-and then to disable the sampling```" data-lang="and then to disable the sampling```">set sample-rate 0</code></pre></div>
+<p>This can be used to gather all kinds of disgnostic data for seemingly any running process for the brocade TAC to decipher.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/how-to">How-To</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/routing">Routing</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/mpls-bootstrap/"
+                class="button big previous">MPLS Bootstrap</a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/677/"
+                class="button big next">Generating flow data without Cisco</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

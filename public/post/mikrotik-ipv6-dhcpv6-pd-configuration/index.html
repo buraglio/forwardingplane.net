@@ -1,0 +1,682 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "Mikrotik IPv6 DHCPv6-PD configuration",
+        "headline" : "Mikrotik IPv6 DHCPv6-PD configuration",
+        "description" : "For a small to medium ISPs (especially WISPs) looking to move to IPv6 dual-stack, the right way to deploy is to use DHCPv6 prefix delegation. Here is an example of how to do this in-skin (i.e. on the mikrotik itself rather than a relay).\n\/ipv6 dhcp-server add address-pool=vl100-v6-pd-pool interface=ether5.100 name=vl100-v6-pd add address-pool=vl101-v6-pd-pool interface=ether3.101 name=vl101-v6-pd add address-pool=vl102-v6-pd-pool interface=ether2.102 name=vl102-v6-pd add address-pool=vl106-v6-pd-pool interface=ether1.106 name=vl106-v6-pd add address-pool=vl108-v6-pd-pool interface=ether4.108 name=vl108-v6-pd `````` \/ipv6 pool add comment=\x26quot;VLAN103 IPv6 prefix delegation pool\x26quot; name=vl103-v6-pd-pool prefix=2001:db8:1a:b000::\/48 prefix-length=59 add comment=\x26quot;VLAN100 IPv6 prefix delegation pool\x26quot; name=vl100-v6-pd-pool prefix=2001:db8:1a:8800::\/48 prefix-length=59 add comment=\x26quot;VLAN101 IPv6 prefix delegation pool\x26quot; name=vl101-v6-pd-pool prefix=2001:db8:1a:9000::\/48 prefix-length=59 add comment=\x26quot;VLAN106 IPv6 prefix delegation pool\x26quot; name=vl106-v6-pd-pool prefix=2001:db8:1a:9800::\/48 prefix-length=59 add comment=\x26quot;VLAN108 IPv6 prefix delegation pool\x26quot; name=vl108-v6-pd-pool prefix=2001:db8:1a:a000::\/48 prefix-length=59 add comment=\x26quot;VLAN102 IPv6 prefix delegation pool\x26quot; name=vl102-v6-pd-pool prefix=2001:db8:1a:a800::\/48 prefix-length=59 `````` \/ipv6 address add address=2001:db8:1a:103::1 disabled=yes interface=bridge.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-02-18 19:26:52 \x2b0000 \x2b0000",
+        "dateModified" : "2019-02-18 19:26:52 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/mikrotik-ipv6-dhcpv6-pd-configuration\/",
+        "wordCount" : "248",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            
+                <title>Mikrotik IPv6 DHCPv6-PD configuration</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mikrotik IPv6 DHCPv6-PD configuration"/>
+<meta name="twitter:description" content="For a small to medium ISPs (especially WISPs) looking to move to IPv6 dual-stack, the right way to deploy is to use DHCPv6 prefix delegation. Here is an example of how to do this in-skin (i.e. on the mikrotik itself rather than a relay).
+/ipv6 dhcp-server add address-pool=vl100-v6-pd-pool interface=ether5.100 name=vl100-v6-pd add address-pool=vl101-v6-pd-pool interface=ether3.101 name=vl101-v6-pd add address-pool=vl102-v6-pd-pool interface=ether2.102 name=vl102-v6-pd add address-pool=vl106-v6-pd-pool interface=ether1.106 name=vl106-v6-pd add address-pool=vl108-v6-pd-pool interface=ether4.108 name=vl108-v6-pd `````` /ipv6 pool add comment=&quot;VLAN103 IPv6 prefix delegation pool&quot; name=vl103-v6-pd-pool prefix=2001:db8:1a:b000::/48 prefix-length=59 add comment=&quot;VLAN100 IPv6 prefix delegation pool&quot; name=vl100-v6-pd-pool prefix=2001:db8:1a:8800::/48 prefix-length=59 add comment=&quot;VLAN101 IPv6 prefix delegation pool&quot; name=vl101-v6-pd-pool prefix=2001:db8:1a:9000::/48 prefix-length=59 add comment=&quot;VLAN106 IPv6 prefix delegation pool&quot; name=vl106-v6-pd-pool prefix=2001:db8:1a:9800::/48 prefix-length=59 add comment=&quot;VLAN108 IPv6 prefix delegation pool&quot; name=vl108-v6-pd-pool prefix=2001:db8:1a:a000::/48 prefix-length=59 add comment=&quot;VLAN102 IPv6 prefix delegation pool&quot; name=vl102-v6-pd-pool prefix=2001:db8:1a:a800::/48 prefix-length=59 `````` /ipv6 address add address=2001:db8:1a:103::1 disabled=yes interface=bridge."/>
+
+        <meta property="og:title" content="Mikrotik IPv6 DHCPv6-PD configuration" />
+<meta property="og:description" content="For a small to medium ISPs (especially WISPs) looking to move to IPv6 dual-stack, the right way to deploy is to use DHCPv6 prefix delegation. Here is an example of how to do this in-skin (i.e. on the mikrotik itself rather than a relay).
+/ipv6 dhcp-server add address-pool=vl100-v6-pd-pool interface=ether5.100 name=vl100-v6-pd add address-pool=vl101-v6-pd-pool interface=ether3.101 name=vl101-v6-pd add address-pool=vl102-v6-pd-pool interface=ether2.102 name=vl102-v6-pd add address-pool=vl106-v6-pd-pool interface=ether1.106 name=vl106-v6-pd add address-pool=vl108-v6-pd-pool interface=ether4.108 name=vl108-v6-pd `````` /ipv6 pool add comment=&quot;VLAN103 IPv6 prefix delegation pool&quot; name=vl103-v6-pd-pool prefix=2001:db8:1a:b000::/48 prefix-length=59 add comment=&quot;VLAN100 IPv6 prefix delegation pool&quot; name=vl100-v6-pd-pool prefix=2001:db8:1a:8800::/48 prefix-length=59 add comment=&quot;VLAN101 IPv6 prefix delegation pool&quot; name=vl101-v6-pd-pool prefix=2001:db8:1a:9000::/48 prefix-length=59 add comment=&quot;VLAN106 IPv6 prefix delegation pool&quot; name=vl106-v6-pd-pool prefix=2001:db8:1a:9800::/48 prefix-length=59 add comment=&quot;VLAN108 IPv6 prefix delegation pool&quot; name=vl108-v6-pd-pool prefix=2001:db8:1a:a000::/48 prefix-length=59 add comment=&quot;VLAN102 IPv6 prefix delegation pool&quot; name=vl102-v6-pd-pool prefix=2001:db8:1a:a800::/48 prefix-length=59 `````` /ipv6 address add address=2001:db8:1a:103::1 disabled=yes interface=bridge." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/mikrotik-ipv6-dhcpv6-pd-configuration/" />
+<meta property="article:published_time" content="2019-02-18T19:26:52+00:00" />
+<meta property="article:modified_time" content="2019-02-18T19:26:52+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Mikrotik IPv6 DHCPv6-PD configuration">
+<meta itemprop="description" content="For a small to medium ISPs (especially WISPs) looking to move to IPv6 dual-stack, the right way to deploy is to use DHCPv6 prefix delegation. Here is an example of how to do this in-skin (i.e. on the mikrotik itself rather than a relay).
+/ipv6 dhcp-server add address-pool=vl100-v6-pd-pool interface=ether5.100 name=vl100-v6-pd add address-pool=vl101-v6-pd-pool interface=ether3.101 name=vl101-v6-pd add address-pool=vl102-v6-pd-pool interface=ether2.102 name=vl102-v6-pd add address-pool=vl106-v6-pd-pool interface=ether1.106 name=vl106-v6-pd add address-pool=vl108-v6-pd-pool interface=ether4.108 name=vl108-v6-pd `````` /ipv6 pool add comment=&quot;VLAN103 IPv6 prefix delegation pool&quot; name=vl103-v6-pd-pool prefix=2001:db8:1a:b000::/48 prefix-length=59 add comment=&quot;VLAN100 IPv6 prefix delegation pool&quot; name=vl100-v6-pd-pool prefix=2001:db8:1a:8800::/48 prefix-length=59 add comment=&quot;VLAN101 IPv6 prefix delegation pool&quot; name=vl101-v6-pd-pool prefix=2001:db8:1a:9000::/48 prefix-length=59 add comment=&quot;VLAN106 IPv6 prefix delegation pool&quot; name=vl106-v6-pd-pool prefix=2001:db8:1a:9800::/48 prefix-length=59 add comment=&quot;VLAN108 IPv6 prefix delegation pool&quot; name=vl108-v6-pd-pool prefix=2001:db8:1a:a000::/48 prefix-length=59 add comment=&quot;VLAN102 IPv6 prefix delegation pool&quot; name=vl102-v6-pd-pool prefix=2001:db8:1a:a800::/48 prefix-length=59 `````` /ipv6 address add address=2001:db8:1a:103::1 disabled=yes interface=bridge.">
+
+
+<meta itemprop="datePublished" content="2019-02-18T19:26:52&#43;00:00" />
+<meta itemprop="dateModified" content="2019-02-18T19:26:52&#43;00:00" />
+<meta itemprop="wordCount" content="248">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-02'>
+                                    November 2, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-ipv6-dhcpv6-pd-configuration%2f&amp;text=Mikrotik%20IPv6%20DHCPv6-PD%20configuration&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-ipv6-dhcpv6-pd-configuration%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-ipv6-dhcpv6-pd-configuration%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-ipv6-dhcpv6-pd-configuration%2f&amp;title=Mikrotik%20IPv6%20DHCPv6-PD%20configuration" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-ipv6-dhcpv6-pd-configuration%2f&amp;title=Mikrotik%20IPv6%20DHCPv6-PD%20configuration" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-ipv6-dhcpv6-pd-configuration%2f&amp;title=Mikrotik%20IPv6%20DHCPv6-PD%20configuration" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-ipv6-dhcpv6-pd-configuration%2f&amp;description=Mikrotik%20IPv6%20DHCPv6-PD%20configuration" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fmikrotik-ipv6-dhcpv6-pd-configuration%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/mikrotik-ipv6-dhcpv6-pd-configuration/">Mikrotik IPv6 DHCPv6-PD configuration</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-02-18'>
+            February 18, 2019</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>For a small to medium ISPs (especially WISPs) looking to move to IPv6 dual-stack, the right way to deploy is to use DHCPv6 prefix delegation. Here is an example of how to do this in-skin (i.e. on the mikrotik itself rather than a relay).</p>
+
+<pre><code>/ipv6 dhcp-server  
+ add address-pool=vl100-v6-pd-pool interface=ether5.100 name=vl100-v6-pd  
+ add address-pool=vl101-v6-pd-pool interface=ether3.101 name=vl101-v6-pd  
+ add address-pool=vl102-v6-pd-pool interface=ether2.102 name=vl102-v6-pd  
+ add address-pool=vl106-v6-pd-pool interface=ether1.106 name=vl106-v6-pd  
+ add address-pool=vl108-v6-pd-pool interface=ether4.108 name=vl108-v6-pd
+``````
+/ipv6 pool  
+add comment=&quot;VLAN103 IPv6 prefix delegation pool&quot; name=vl103-v6-pd-pool prefix=2001:db8:1a:b000::/48 prefix-length=59  
+add comment=&quot;VLAN100 IPv6 prefix delegation pool&quot; name=vl100-v6-pd-pool prefix=2001:db8:1a:8800::/48 prefix-length=59  
+add comment=&quot;VLAN101 IPv6 prefix delegation pool&quot; name=vl101-v6-pd-pool prefix=2001:db8:1a:9000::/48 prefix-length=59  
+add comment=&quot;VLAN106 IPv6 prefix delegation pool&quot; name=vl106-v6-pd-pool prefix=2001:db8:1a:9800::/48 prefix-length=59  
+add comment=&quot;VLAN108 IPv6 prefix delegation pool&quot; name=vl108-v6-pd-pool prefix=2001:db8:1a:a000::/48 prefix-length=59  
+add comment=&quot;VLAN102 IPv6 prefix delegation pool&quot; name=vl102-v6-pd-pool prefix=2001:db8:1a:a800::/48 prefix-length=59
+``````
+/ipv6 address  
+add address=2001:db8:1a:103::1 disabled=yes interface=bridge.103  
+add address=2001:db8:1a:106::1 interface=ether1.106  
+add address=2001:db8:1a:102::1 interface=ether2.102  
+add address=2001:db8:1a:101::1 interface=ether3.101  
+add address=2001:db8:1a:108::1 interface=ether4.108  
+add address=2001:db8:1a:100::1 interface=ether5.100  
+add address=2001:db8:1a:ffff::1/128 advertise=no comment=loopback0 interface=loopback.0  
+add address=2001:db8:1a:fffe::2/127 advertise=no comment=&quot;point to point to tower1-gw&quot; interface=ether7
+</code></pre>
+
+<p>Adjust firewall filters for IPv6 as policy dictates. Do not filter ICMP</p>
+
+<pre><code> /ipv6 firewall filter  
+ add action=accept chain=forward comment=&quot;Allow all IPv6&quot;
+``````
+/ipv6 nd  
+add interface=ether5.100 managed-address-configuration=yes other-configuration=yes  
+add interface=ether3.101 managed-address-configuration=yes other-configuration=yes  
+add interface=ether2.102 managed-address-configuration=yes other-configuration=yes  
+add interface=ether1.106 managed-address-configuration=yes other-configuration=yes  
+add interface=ether4.108 managed-address-configuration=yes other-configuration=yes
+``````
+/ipv6 nd prefix  
+add autonomous=no disabled=yes interface=ether5.100  
+add autonomous=no disabled=yes interface=ether3.101  
+add autonomous=no disabled=yes interface=ether2.102  
+add autonomous=no disabled=yes interface=ether1.106  
+add autonomous=no disabled=yes interface=ether4.108
+``````
+/ipv6 route  
+add comment=&quot;IPv6 Default Route for static deployments&quot; distance=1 gateway=fe80::2a7:42ff:fe2d:3574%bridge.10
+</code></pre>
+
+<p>Tunable based on deployment model</p>
+
+<pre><code> /ipv6 settings  
+ set max-neighbor-entries=1024
+</code></pre>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/comcast-business-ipv6-prefix-delegation/"
+                class="button big previous">Comcast Business IPv6 Prefix Delegation</a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/edgeos-openvpn/"
+                class="button big next">EdgeOS OpenVPN</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/packet-pushers-weekend-edition-no1/">Packet Pushers Weekend Edition Number 1</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-02'>
+                November 2, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

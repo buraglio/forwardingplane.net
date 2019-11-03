@@ -33,6 +33,11 @@
   </url>
   
   <url>
+    <loc>https://forwardingplane.net/about/</loc>
+    <lastmod>2019-11-02T03:27:54+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://forwardingplane.net/post/elastiflow-template-vm/</loc>
     <lastmod>2019-09-08T18:11:58+00:00</lastmod>
   </url>
@@ -1060,11 +1065,6 @@
   <url>
     <loc>https://forwardingplane.net/tags/wan/</loc>
     <lastmod>2012-11-27T05:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://forwardingplane.net/about/</loc>
-    <lastmod>2012-11-26T03:27:54+00:00</lastmod>
   </url>
   
   <url>

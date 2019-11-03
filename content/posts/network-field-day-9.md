@@ -1,5 +1,5 @@
 ---
-title: 'Network Field Day #9'
+title: 'Network Field Day 9'
 date: Sat, 24 Jan 2015 15:55:48 +0000
 draft: false
 tags: [Cloud, Data Center, Musings, Routing, SDN]

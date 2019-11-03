@@ -14,146 +14,146 @@
     
     <item>
       <title>Building a dynamic security infrastructure [in a box - with SDN]</title>
-      <link>https://forwardingplane.net/2019/05/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</link>
+      <link>https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</link>
       <pubDate>Wed, 29 May 2019 18:17:13 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2019/05/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</guid>
+      <guid>https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</guid>
       <description>Years ago I wrote about building a secure network in a box. Over a weekend I decided to revisit this concept thanks to a colleague at work wanting to do something similar. It got me thinking “a lot has changed since I last did this” and it felt like time to revisit it. Well, disappointment wasn’t in the cards because it’s easier, smarter, and more flexible now that it was back then.</description>
     </item>
     
     <item>
       <title>Faucet: Enterprise OpenFlow in production</title>
-      <link>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</link>
+      <link>https://forwardingplane.net/post/faucet-enterprise-openflow-in-production/</link>
       <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</guid>
+      <guid>https://forwardingplane.net/post/faucet-enterprise-openflow-in-production/</guid>
       <description>Remember OpenFlow? It was the media and marketing darling for the better part of 5 years as “the machine” conflated OpenFlow with SDN and SDN with - almost literally - everything. &amp;ldquo;Still Does Nothing&amp;rdquo; was a common phrase uttered around those of us that had run large scale, complex networks for a long time. Quietly, and mostly, out of the fickle media and blogosphere eye, a scrappy little SDN project called faucet has been diligently plugging away &amp;ndash; making easy to use, production quality, well documented, and very stable code that runs OpenFlow networks quite happily in production and at scale.</description>
     </item>
     
     <item>
       <title>The NEC surprise</title>
-      <link>https://forwardingplane.net/2015/02/the-nec-surprise/</link>
+      <link>https://forwardingplane.net/post/the-nec-surprise/</link>
       <pubDate>Fri, 20 Feb 2015 06:52:33 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2015/02/the-nec-surprise/</guid>
+      <guid>https://forwardingplane.net/post/the-nec-surprise/</guid>
       <description>When NEC began talking about SDN at Network Field Day 9, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments.</description>
     </item>
     
     <item>
       <title>BigSwitch Labs for SDN learning: a sneak peek!</title>
-      <link>https://forwardingplane.net/2014/09/bigswitch-labs-for-sdn-learning-a-sneak-peek/</link>
+      <link>https://forwardingplane.net/post/bigswitch-labs-for-sdn-learning-a-sneak-peek/</link>
       <pubDate>Mon, 22 Sep 2014 10:24:34 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/09/bigswitch-labs-for-sdn-learning-a-sneak-peek/</guid>
+      <guid>https://forwardingplane.net/post/bigswitch-labs-for-sdn-learning-a-sneak-peek/</guid>
       <description>I was recently granted access to the beta BigSwitch Networks lab site, a purpose built classroom in the cloud focused on teaching the BigSwitch SDN environment. I had seen some of the BSN offerings in the past and always held them in high regard, but I was thoroughly impressed with both the completeness of the lab and how polished the controller environment was.At the time of this writing, the lab consists of 3 modules: Building cloud fabric, monitoring fabric and dynamic provisioning of monitoring fabric.</description>
     </item>
     
     <item>
       <title>OpenvSwitch 2.0 Debian packages</title>
-      <link>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</link>
+      <link>https://forwardingplane.net/post/openvswitch-2-0-debian-packages/</link>
       <pubDate>Fri, 29 Nov 2013 20:15:17 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/11/openvswitch-2.0-debian-packages/</guid>
+      <guid>https://forwardingplane.net/post/openvswitch-2-0-debian-packages/</guid>
       <description>As part of a larger fun project I&amp;rsquo;m working on (OVS for the ALIX platform; more to come on that once I have it 100% working), I have been playing a lot with OVS. It&amp;rsquo;s a great platform, and as others have mentioned, it&amp;rsquo;s as close to an SDN reference data plane implementation as we have. I&amp;rsquo;d be surprised if many if not all commercial implementations of OpenFlow aren&amp;rsquo;t based on OVS.</description>
     </item>
     
     <item>
       <title>Building FlowVisor on Centos 6 - quick and dirty</title>
-      <link>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</link>
+      <link>https://forwardingplane.net/post/building-flowvisor-on-centos-6-quick-and-dirty/</link>
       <pubDate>Fri, 05 Jul 2013 10:22:23 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</guid>
+      <guid>https://forwardingplane.net/post/building-flowvisor-on-centos-6-quick-and-dirty/</guid>
       <description>I had the need to build a FlowVisor instance under CentOS. Since nearly all of the docs I could find were for debian, I threw this together. I utilized this GENI doc and the github docs as a simple reference. This is the quick and dirty method I used: Install the prerequisites:``` sudo yum -y install ant eclipse java-1.6.0-openjdk.x86_64 git sudo yum -y groupinstall &amp;ldquo;Development Tools&amp;rdquo;
 mkdir /services cd /services git clone git://github.</description>
     </item>
     
     <item>
       <title>Scripting the build of OpenDayight Controller under CentOS</title>
-      <link>https://forwardingplane.net/2013/05/scripting-the-build-of-opendayight-controller-under-centos/</link>
+      <link>https://forwardingplane.net/post/scripting-the-build-of-opendayight-controller-under-centos/</link>
       <pubDate>Fri, 03 May 2013 21:45:41 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/05/scripting-the-build-of-opendayight-controller-under-centos/</guid>
+      <guid>https://forwardingplane.net/post/scripting-the-build-of-opendayight-controller-under-centos/</guid>
       <description>Jon Langemak has a great write up on building the OpenDaylight controller under CentOS. Since I&amp;rsquo;ll have to do this a bunch of times, I though tI&amp;rsquo;d take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the OpenDaylight GIT repo and that you disable SELinux. Here is the script:``` #!</description>
     </item>
     
     <item>
       <title>Basic reference openflow controller VMs running in CentOS 6 for KVM.</title>
-      <link>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</link>
+      <link>https://forwardingplane.net/post/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm/</link>
       <pubDate>Fri, 26 Apr 2013 04:56:07 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</guid>
+      <guid>https://forwardingplane.net/post/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm/</guid>
       <description>I had been working, off and on, on a how-to for building the daylight openflow controller under CentOS. Most openflow docs and dev are done under ubuntu or debian, and while those are both fantastic alternatives, there are a huge number of folks that will want or need to use RHEL or CentOS. So, seeing as that is the case, having someone be mindful of that is important. When I saw the write up by Jon Langemak, I scrapped my attempt at a how-to since his was so much better.</description>
     </item>
     
     <item>
       <title>OpenFlow Hybrid.  It&#39;s a must, not an option.</title>
-      <link>https://forwardingplane.net/2013/04/openflow-hybrid.-its-a-must-not-an-option./</link>
+      <link>https://forwardingplane.net/post/openflow-hybrid-its-a-must-not-an-option/</link>
       <pubDate>Thu, 18 Apr 2013 16:17:37 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/04/openflow-hybrid.-its-a-must-not-an-option./</guid>
+      <guid>https://forwardingplane.net/post/openflow-hybrid-its-a-must-not-an-option/</guid>
       <description>OpenFlow is, of course, a hot buzzword. It&amp;rsquo;s the newest, and in my opinion, the most innovative thing to hit data networking since dynamic routing. The ability to programmatically, systematically and potentially dynamically control traffic at the flow level through a network is innovative, exciting and terrifying [to many network engineers and architects] at the same time. Allowing applications to touch the network change behavior is something that many engineers are not terribly comfortable with.</description>
     </item>
     
     <item>
       <title>Daylight, a new dawn is approaching.</title>
-      <link>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</link>
+      <link>https://forwardingplane.net/post/daylight-a-new-dawn-is-approaching/</link>
       <pubDate>Tue, 09 Apr 2013 04:25:59 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/04/daylight-a-new-dawn-is-approaching./</guid>
+      <guid>https://forwardingplane.net/post/daylight-a-new-dawn-is-approaching/</guid>
       <description>The SDN world is abuzz with the announcement that the OpenDaylight controller came from stealth mode today. Why is this important? Well, SDN and OpenFlow are fractured. It is Mac vs. PC, Beta vs VHS, Coke vs. Pepsi all over again&amp;hellip;&amp;hellip;multiplied by 100x and with a handful of players.  Vendor zealots and brand loyalists will nearly always side with their camp. Heck, even I have some biases of personal preference.</description>
     </item>
     
     <item>
       <title>My SDN soapbox (now with IPv6!)</title>
-      <link>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</link>
+      <link>https://forwardingplane.net/post/my-sdn-soapbox-now-with-ipv6/</link>
       <pubDate>Sat, 23 Mar 2013 21:45:17 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/03/my-sdn-soapbox-now-with-ipv6/</guid>
+      <guid>https://forwardingplane.net/post/my-sdn-soapbox-now-with-ipv6/</guid>
       <description>This week there was a lot of buzz about SDN (as usual). There was alightreading thread that I commented on and a fantastic read by Brent Salisbury about being the steamroller and not the road that got me thinking about OpenFlow and SDN in a way I had not before.   All that is old is new again. I remember when internal networks were small and routing protocols were taboo in many internal environments.</description>
     </item>
     
     <item>
       <title>Why hardware firewalls are the walking dead</title>
-      <link>https://forwardingplane.net/2013/03/why-hardware-firewalls-are-the-walking-dead/</link>
+      <link>https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead/</link>
       <pubDate>Mon, 18 Mar 2013 11:02:42 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/03/why-hardware-firewalls-are-the-walking-dead/</guid>
+      <guid>https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead/</guid>
       <description>OK, maybe they&amp;rsquo;re not totally dead, but they&amp;rsquo;re being demoted. To the mail room. During the course of my career I&amp;rsquo;ve always had at least some responsibility for firewall and security devices. In those ~15 years, how these boxes are built and function has shifted. From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint.</description>
     </item>
     
     <item>
       <title>Network Field Day 5 - Participate Remotely</title>
-      <link>https://forwardingplane.net/2013/03/network-field-day-5-participate-remotely/</link>
+      <link>https://forwardingplane.net/post/network-field-day-5/</link>
       <pubDate>Wed, 06 Mar 2013 14:59:05 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/03/network-field-day-5-participate-remotely/</guid>
+      <guid>https://forwardingplane.net/post/network-field-day-5/</guid>
       <description>Last year, Networking Field Day was something that I&amp;rsquo;d heard of but wasn&amp;rsquo;t really aware of what is really was. I occasionally looked at Twitter and saw the hash tags but did not know much about how it was set up or what it was about. In fact, I actually thought it was supposed to be like the HAM radio field day stuff where you go out and build out an emergency network on the fly.</description>
     </item>
     
     <item>
       <title>SDN across domains in the WAN - a novice look</title>
-      <link>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</link>
+      <link>https://forwardingplane.net/post/sdn-across-domains-in-the-wan-a-novice-look/</link>
       <pubDate>Tue, 27 Nov 2012 05:04:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/</guid>
+      <guid>https://forwardingplane.net/post/sdn-across-domains-in-the-wan-a-novice-look/</guid>
       <description>There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how. Brent Salsbury laid out a few use cases here. The why seems pretty straightforward. I do believe it will happen, however, the how is the interesting part. Admittedly, I&amp;rsquo;m a tad of a greenhorn in the SDN space, I&amp;rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.</description>
     </item>
     
     <item>
       <title>Don&#39;t fear the reaper</title>
-      <link>https://forwardingplane.net/1/01/dont-fear-the-reaper/</link>
+      <link>https://forwardingplane.net/post/664/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/1/01/dont-fear-the-reaper/</guid>
+      <guid>https://forwardingplane.net/post/664/</guid>
       <description>I have been buried in stuff to work on lately. The amazing part of this is that it is all very interesting and things I want to do and learn. The exhausting part is that there is an overwhelming amount of it. It is a good problem to have. The list of things goes on and on (and obviously I don&amp;rsquo;t do all of this stuff by myself, we have an amazing team) but the short list is a pretty tall order.</description>
     </item>
     
     <item>
       <title>RYU OpenFlow controller</title>
-      <link>https://forwardingplane.net/1/01/ryu-openflow-controller/</link>
+      <link>https://forwardingplane.net/post/435/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/1/01/ryu-openflow-controller/</guid>
+      <guid>https://forwardingplane.net/post/435/</guid>
       <description>Ryu, an openflow controller, was new to me. After doing 5 minutes of reading I knew I needed to get it up in the lab. The thing that caught my eye was that the project page was boasting support for OpenStack. Now, I don;t really have much experience with openstack, but it has a cult like following and it&amp;rsquo;s on my short list of stuff to get involved with. This seemed like a great excuse.</description>
     </item>
     

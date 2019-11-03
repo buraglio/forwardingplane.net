@@ -14,219 +14,219 @@
     
     <item>
       <title>The value of measurements: Network Latency</title>
-      <link>https://forwardingplane.net/2019/04/the-value-of-measurements-network-latency/</link>
+      <link>https://forwardingplane.net/post/the-value-of-measurements-network-latency/</link>
       <pubDate>Mon, 29 Apr 2019 10:23:32 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2019/04/the-value-of-measurements-network-latency/</guid>
+      <guid>https://forwardingplane.net/post/the-value-of-measurements-network-latency/</guid>
       <description>There is no shortage of network telemetry data that can be collected, recorded, graphed, and stored for cross reference and triage. Not one to be underestimated, latency at a can be incredibly powerful when leveraged for baseline and deviation notification. As I have eluded to in the past, there are many tools in this space. I have written about a few of them in detail and touched on others in passing.</description>
     </item>
     
     <item>
       <title>DNS - the treasure trove of information your ISP can see</title>
-      <link>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</link>
+      <link>https://forwardingplane.net/post/dns-the-treasure-trove-of-information-your-isp-can-see/</link>
       <pubDate>Mon, 10 Dec 2018 10:23:42 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2018/12/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
+      <guid>https://forwardingplane.net/post/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
       <description>In recent years, the nature of privacy on the internet has become a very important topic amongst those concerned with the now lack of net neutrality. The de-facto mechanism for dealing with privacy has been to &amp;ldquo;SSL all the things&amp;rdquo;, which I am very much in favor of. What many do not realize, though, is that simply using SSL for the traffic that transits a given ISP still leaves a wealth of thick, rich, delicious personal data still easily available to your ISP to harvest, sell, and do with as they please.</description>
     </item>
     
     <item>
       <title>Creating an internal span port inside proxmox OVS</title>
-      <link>https://forwardingplane.net/2017/03/creating-an-internal-span-port-inside-proxmox-ovs/</link>
+      <link>https://forwardingplane.net/post/creating-internal-span-port-inside-proxmox-ovs/</link>
       <pubDate>Tue, 21 Mar 2017 03:49:58 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2017/03/creating-an-internal-span-port-inside-proxmox-ovs/</guid>
+      <guid>https://forwardingplane.net/post/creating-internal-span-port-inside-proxmox-ovs/</guid>
       <description>In the last few years I have moved all of my virtualization to proxmox and docker. Seeing as I like to look at packets because I am a closet security guy, and being as I have been working off-and-on on a security project in recent times, I wanted to be able to span a port not only from a hardware switch, but also within my software switches. I had been using linux bridge, which I am not a fan of, so when I started down this path I did not look hard to find a way to do so under that platform.</description>
     </item>
     
     <item>
       <title>NIX4NetEng 6 DNS, ad-blocking, and quality of experience</title>
-      <link>https://forwardingplane.net/2016/02/nix4neteng-6-dns-ad-blocking-and-quality-of-experience/</link>
+      <link>https://forwardingplane.net/post/nix4neteng-6-dns-ad-blocking-and-quality-of-experience/</link>
       <pubDate>Sat, 27 Feb 2016 16:40:04 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2016/02/nix4neteng-6-dns-ad-blocking-and-quality-of-experience/</guid>
+      <guid>https://forwardingplane.net/post/nix4neteng-6-dns-ad-blocking-and-quality-of-experience/</guid>
       <description>The sixth [and arguably very overdue] installment of my NIX4NetEng series, this began as an overly complex diatribe about DNS. As it evolved, I realized that DNS is so complex and far reaching that it could never be contained in one meager post. DNS is a powerful tool. It has existed for so long that many that have never had the responsibility of running an authoritative or recursive resolver may take for granted the extensive reach of a tool so engrained in the fabric of the internet that it is frequently overlooked, much like a utility such as electricity or running water.</description>
     </item>
     
     <item>
       <title>Monitoring VMware ESXi with SNMP and Cacti</title>
-      <link>https://forwardingplane.net/2015/01/monitoring-vmware-esxi-with-snmp-and-cacti/</link>
+      <link>https://forwardingplane.net/post/monitoring-vmware-esxi-with-snmp-and-cacti/</link>
       <pubDate>Mon, 19 Jan 2015 10:02:10 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2015/01/monitoring-vmware-esxi-with-snmp-and-cacti/</guid>
+      <guid>https://forwardingplane.net/post/monitoring-vmware-esxi-with-snmp-and-cacti/</guid>
       <description>VMWare is a powerful tool, and monitoring is a critical service. How does one monitor such an integral piece of infrastructure, and what do they monitor it with? There are powerful commercial ways of monitoring VMware, however, for those with existing SNMP based systems in place, specifically cacti, there are options. To that end, I&amp;rsquo;ll set aside my strong distaste for SNMP [yet again], because those are for a larger, less useful series of posts.</description>
     </item>
     
     <item>
       <title>NIX4NetEng 5 - GeoIP tools</title>
-      <link>https://forwardingplane.net/2014/12/nix4neteng-5-geoip-tools/</link>
+      <link>https://forwardingplane.net/post/nix4neteng-5-geoip-tools/</link>
       <pubDate>Sun, 21 Dec 2014 18:22:15 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/12/nix4neteng-5-geoip-tools/</guid>
+      <guid>https://forwardingplane.net/post/nix4neteng-5-geoip-tools/</guid>
       <description>Sometimes in networking and security it becomes necessary to do lookups of location data on IP addresses and prefixes. On my Mac I use homebrew to manage packages, but most of these tools are available with thetypocal apt, yum and port package management systems. For this post, I&amp;rsquo;m going to shift gears and show the install on my mac:``` sliver:~ buraglio$ brew install geoip ==&amp;gt; Downloading https://downloads.sf.net/project/machomebrew/Bottles/geoip-1.6.3.mavericks.bottle.tar.gz ######################################################################## 100.0% ==&amp;gt; Pouring geoip-1.</description>
     </item>
     
     <item>
       <title>NIX4Neteng 4: POODLE and SSLv3, scanning and updating</title>
-      <link>https://forwardingplane.net/2014/10/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</link>
+      <link>https://forwardingplane.net/post/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</link>
       <pubDate>Wed, 15 Oct 2014 17:36:54 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/10/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</guid>
+      <guid>https://forwardingplane.net/post/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</guid>
       <description>With the recent release of the POODLE SSLv3 vulnerability, folks are scrambling around trying to figure out what runs what and where. Running a handful of things that do SSL, I was obligated, both personally and professionally, to figure out an easy way to drill down and figure out what does what and then fix the vulnerable services. When there are a lot of devices, this can seem like a daunting task, and it is if you&amp;rsquo;re trying to do it manually.</description>
     </item>
     
     <item>
       <title>sonrancid: A [very] basic RANCID module for sonicwall</title>
-      <link>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</link>
+      <link>https://forwardingplane.net/post/sonrancid-a-very-basic-rancid-module-for-sonicwall/</link>
       <pubDate>Mon, 15 Sep 2014 09:05:13 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/09/sonrancid-a-very-basic-rancid-module-for-sonicwall/</guid>
+      <guid>https://forwardingplane.net/post/sonrancid-a-very-basic-rancid-module-for-sonicwall/</guid>
       <description>I know, I know, I&amp;rsquo;m always saying that you don&amp;rsquo;t need a firewall. That&amp;rsquo;s mostly to get your attention to push my agenda of sane security architecture, I do actually believe that firewalls are appropriate in a great many use cases and I&amp;rsquo;ve managed them big and small ranging from Juniper SRX 5800 clusters to tiny purpose built BSD distros on custom hardware. I even managed Checkpoint and gauntlet firewall back in the 1990s.</description>
     </item>
     
     <item>
       <title>NIX4NetEng 3: IP Addressing and Subnet Tools</title>
-      <link>https://forwardingplane.net/2014/07/nix4neteng-3-ip-addressing-and-subnet-tools/</link>
+      <link>https://forwardingplane.net/post/nix4neteng-3-ip-addressing-and-subnet-tools/</link>
       <pubDate>Sat, 26 Jul 2014 16:46:07 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/07/nix4neteng-3-ip-addressing-and-subnet-tools/</guid>
+      <guid>https://forwardingplane.net/post/nix4neteng-3-ip-addressing-and-subnet-tools/</guid>
       <description>IP addressing and subnetting is a common interview subject. I assert that memorizing these things is useful for learning the concepts but ultimately futile in that it is time consuming and inefficient use of engineering time when tools can be utilized to accomplish the same goals in less time with fewer errors. Honestly, I gave up doing this kind of work manually around 10 years ago and have never regretted it, and in actuality, I&amp;rsquo;d probably struggle to do it at this point because it&amp;rsquo;s a repetitive process better suited by code.</description>
     </item>
     
     <item>
       <title>NIX4NetEng 2 IPv4/6 address investigation tools - whois &#43; dig</title>
-      <link>https://forwardingplane.net/2014/06/nix4neteng-2-ipv4/6-address-investigation-tools-whois-dig/</link>
+      <link>https://forwardingplane.net/post/nix4neteng-2-ipv46-address-investigation-tools-whois-dig/</link>
       <pubDate>Sat, 07 Jun 2014 19:54:41 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/06/nix4neteng-2-ipv4/6-address-investigation-tools-whois-dig/</guid>
+      <guid>https://forwardingplane.net/post/nix4neteng-2-ipv46-address-investigation-tools-whois-dig/</guid>
       <description>I don&amp;rsquo;t care what your vendor alignment of choice is, Cisco, Juniper, Brocade, Alcatel&amp;hellip;.it doesn&amp;rsquo;t matter. At one point or another you&amp;rsquo;re going to need to bird dog an address to see where it&amp;rsquo;s coming from, who owns it, what it&amp;rsquo;s DNS name is or what path you&amp;rsquo;re taking to get to it. We&amp;rsquo;ve already talked about BGP tools, they&amp;rsquo;re a great choice for checking routes across the internet. Hunting down addresses is an interesting one, though, as address management and lookups can bleed into other aspects of networking like path selection, latency, jitter and many other things.</description>
     </item>
     
     <item>
       <title>NIX4NetEng 1 Managing dotfiles; pwn the unspoken pain of UNIX administration</title>
-      <link>https://forwardingplane.net/2014/05/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration/</link>
+      <link>https://forwardingplane.net/post/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration/</link>
       <pubDate>Thu, 01 May 2014 02:58:20 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/05/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration/</guid>
+      <guid>https://forwardingplane.net/post/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration/</guid>
       <description>Many network engineers are also tasked with maintaining systems that provide network services, those things that make the network easier to use such as DNS and DHCP or management systems that perform useful things like monitor the network, collect flow data or bestow access to the equipment by acting as bastion or jump hosts. In many instances, robust and high availability services run on UNIX, Linux or BSD systems for stability and reliability, so those that manage these systems need to be well versed system admins as well as whatever their other job functions are.</description>
     </item>
     
     <item>
       <title>Blending the Network; Pluribus ServerSwitch</title>
-      <link>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</link>
+      <link>https://forwardingplane.net/post/blending-the-network-pluribus-serverswitch/</link>
       <pubDate>Mon, 21 Apr 2014 04:44:30 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</guid>
+      <guid>https://forwardingplane.net/post/blending-the-network-pluribus-serverswitch/</guid>
       <description>I firmly believe that blending disciplines is the way of the future in IT. I&amp;rsquo;ve rambled about it here at other venues and I&amp;rsquo;m vocal (some would probably say brash) about it on the twitters. Be it Networking and System, Systems and Security, Programming and Networking, most of us that have been around any length of time already do it but now it&amp;rsquo;s happening out in the open and &amp;ldquo;DevOps&amp;rdquo;, a form of the hybrid IT worker, has seemingly become the BOTD (Buzzword of the day).</description>
     </item>
     
     <item>
       <title>Replace ZFS RAIDZ1 disk</title>
-      <link>https://forwardingplane.net/2014/03/replace-zfs-raidz1-disk/</link>
+      <link>https://forwardingplane.net/post/replace-zfs-raidz1-disk/</link>
       <pubDate>Tue, 11 Mar 2014 01:01:58 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/03/replace-zfs-raidz1-disk/</guid>
+      <guid>https://forwardingplane.net/post/replace-zfs-raidz1-disk/</guid>
       <description>I recently had the displeasure of dealing with a series of failed disks in my newly created ZFS based NAS. I had cobbled together roughly 12TB of disk space and jammed them into an old PC, stretching the limits of the platform when I decided to go with ZFS. I broke all of the rules, underpowered, single core PC, only a handful of GIG of non-ECC RAM, etc. I&amp;rsquo;m sure storage guys are having a coronary after reading that, but it works for me and has minimal issues since I just relatively redundant need bulk storage and it doesn&amp;rsquo;t need to be fast (the ethernet connection is only 100M).</description>
     </item>
     
     <item>
       <title>Install nfsen and nfdump on CentOS 6.5 for netflow and or sflow collection</title>
-      <link>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</link>
+      <link>https://forwardingplane.net/post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/</link>
       <pubDate>Sat, 11 Jan 2014 21:55:24 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6.5-for-netflow-and-or-sflow-collection/</guid>
+      <guid>https://forwardingplane.net/post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/</guid>
       <description>I am an absolutely huge fan of statistical and instrumentation data, especially when it comes to traffic analysis, visualization and baselining. I&amp;rsquo;ve rambled on about the importance of it at every opportunity. As a result of that, I have been doing work with netflow and netflow-like data for a fairly long time. My first collector was the OSU Flow tools based stuff back around 13 years ago. From there I played with all kinds of netflow tools, both commercial and open source, finally settling most of my focus on nfdump and nfsen.</description>
     </item>
     
     <item>
       <title>Fixing the dreaded &#34;error: could not open configuration database (juniper.data&#43;)&#34; problem.</title>
-      <link>https://forwardingplane.net/2013/08/fixing-the-dreaded-error-could-not-open-configuration-database-juniper.data-problem./</link>
+      <link>https://forwardingplane.net/post/fixing-the-dreaded-error-could-not-open-configuration-database-juniper-data-problem/</link>
       <pubDate>Wed, 07 Aug 2013 16:52:04 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/08/fixing-the-dreaded-error-could-not-open-configuration-database-juniper.data-problem./</guid>
+      <guid>https://forwardingplane.net/post/fixing-the-dreaded-error-could-not-open-configuration-database-juniper-data-problem/</guid>
       <description>Working on some MX series routers recently I encountered a problem I&amp;rsquo;d never seen before, essentially preventing the configuration from being committed:``` buraglio@rtr# commit check re0: error: could not open configuration database (juniper.data+)
 buraglio@rtr&amp;gt;start shell From there I wanted to see the file system and check out the stats of what it thinks we have.``` buraglio@rtr% df -h Filesystem Size Used Avail Capacity Mounted on /dev/ad0s1a 3.5G 313M 2.9G 10% / devfs 1.</description>
     </item>
     
     <item>
       <title>Building FlowVisor on Centos 6 - quick and dirty</title>
-      <link>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</link>
+      <link>https://forwardingplane.net/post/building-flowvisor-on-centos-6-quick-and-dirty/</link>
       <pubDate>Fri, 05 Jul 2013 10:22:23 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/07/building-flowvisor-on-centos-6-quick-and-dirty/</guid>
+      <guid>https://forwardingplane.net/post/building-flowvisor-on-centos-6-quick-and-dirty/</guid>
       <description>I had the need to build a FlowVisor instance under CentOS. Since nearly all of the docs I could find were for debian, I threw this together. I utilized this GENI doc and the github docs as a simple reference. This is the quick and dirty method I used: Install the prerequisites:``` sudo yum -y install ant eclipse java-1.6.0-openjdk.x86_64 git sudo yum -y groupinstall &amp;ldquo;Development Tools&amp;rdquo;
 mkdir /services cd /services git clone git://github.</description>
     </item>
     
     <item>
       <title>VMWare ESXi CLI reference</title>
-      <link>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</link>
+      <link>https://forwardingplane.net/post/vmware-esxi-cli-reference/</link>
       <pubDate>Sun, 30 Jun 2013 14:24:51 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/06/vmware-esxi-cli-reference/</guid>
+      <guid>https://forwardingplane.net/post/vmware-esxi-cli-reference/</guid>
       <description>One of my biggest complaints about VMware is that it is an enterprise application. It has historically catered to the masses, which I completely understand, but those of us that aren&amp;rsquo;t a fortune 500 company are figuratively and operationally shoved into a corner and forced to find hackish ways of doing things to work around the enterprise nature. One really, really good example of this is OS dependency. I hated architecture dependencies back in the old days (x86, SPARC, PPC) and I absolutely despise things that are OS platform dependent now.</description>
     </item>
     
     <item>
       <title>Broadcast input with iTerm</title>
-      <link>https://forwardingplane.net/2013/06/broadcast-input-with-iterm/</link>
+      <link>https://forwardingplane.net/post/broadcast-input-with-iterm/</link>
       <pubDate>Sat, 22 Jun 2013 15:56:12 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/06/broadcast-input-with-iterm/</guid>
+      <guid>https://forwardingplane.net/post/broadcast-input-with-iterm/</guid>
       <description>As much as I like to think I automate everything, I&amp;rsquo;m pretty bad at writing code to make my life easier since it tends to take me longer to write the code and it tends to make be a bit grumpy (this is eomthing I&amp;rsquo;m fixing by learning as much code dev as I can during my limited spare time). However, I like to think I can be fairly smart about working around my limited programming skills (think boba fett rather than jedi) by using the tools available to common folk.</description>
     </item>
     
     <item>
       <title>Scripting the build of OpenDayight Controller under CentOS</title>
-      <link>https://forwardingplane.net/2013/05/scripting-the-build-of-opendayight-controller-under-centos/</link>
+      <link>https://forwardingplane.net/post/scripting-the-build-of-opendayight-controller-under-centos/</link>
       <pubDate>Fri, 03 May 2013 21:45:41 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/05/scripting-the-build-of-opendayight-controller-under-centos/</guid>
+      <guid>https://forwardingplane.net/post/scripting-the-build-of-opendayight-controller-under-centos/</guid>
       <description>Jon Langemak has a great write up on building the OpenDaylight controller under CentOS. Since I&amp;rsquo;ll have to do this a bunch of times, I though tI&amp;rsquo;d take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the OpenDaylight GIT repo and that you disable SELinux. Here is the script:``` #!</description>
     </item>
     
     <item>
       <title>Basic reference openflow controller VMs running in CentOS 6 for KVM.</title>
-      <link>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</link>
+      <link>https://forwardingplane.net/post/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm/</link>
       <pubDate>Fri, 26 Apr 2013 04:56:07 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/04/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm./</guid>
+      <guid>https://forwardingplane.net/post/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm/</guid>
       <description>I had been working, off and on, on a how-to for building the daylight openflow controller under CentOS. Most openflow docs and dev are done under ubuntu or debian, and while those are both fantastic alternatives, there are a huge number of folks that will want or need to use RHEL or CentOS. So, seeing as that is the case, having someone be mindful of that is important. When I saw the write up by Jon Langemak, I scrapped my attempt at a how-to since his was so much better.</description>
     </item>
     
     <item>
       <title>CentOS KVM Install - Quick Start to a VM</title>
-      <link>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</link>
+      <link>https://forwardingplane.net/post/centos-kvm-install-quick-start-to-a-vm/</link>
       <pubDate>Sat, 02 Mar 2013 01:12:02 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/</guid>
+      <guid>https://forwardingplane.net/post/centos-kvm-install-quick-start-to-a-vm/</guid>
       <description>I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I&amp;rsquo;d shelved years ago. Now, I&amp;rsquo;ve been a virtualization user forever. From VMware (Fusion, ESX), VirtualBox, to Parallels, I&amp;rsquo;ve used them at least in testing if not in production environments. I&amp;rsquo;d not really spent any mentionable amount of time with XEN, qEMU or KVM, but some projects I was working on suggested it for the virtualization mechanism, so I figured I&amp;rsquo;d try to pick it up.</description>
     </item>
     
     <item>
       <title>Watch out, Gigamon (and others), Arista is bringing their A game</title>
-      <link>https://forwardingplane.net/2013/02/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</link>
+      <link>https://forwardingplane.net/post/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</link>
       <pubDate>Sat, 16 Feb 2013 03:11:20 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/02/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</guid>
+      <guid>https://forwardingplane.net/post/watch-out-gigamon-and-others-arista-is-bringing-their-a-game/</guid>
       <description>It&amp;rsquo;s no secret that I&amp;rsquo;m a fan of the model Arista Networks is using to make gear and provide innovative services and products. In my opinion, they&amp;rsquo;re changing the landscape of campus and data center networking gear. I&amp;rsquo;m always a fan of the little guy trying to change the world and this falls under that category. For those that don&amp;rsquo;t know, Arista Networks is a &amp;ldquo;hardware&amp;rdquo; networking company that is using merchant silicon wrapped in their custom linux based operating system (which is very much like IOS).</description>
     </item>
     
     <item>
       <title>Building a Floodlight OpenFlow controller on CentOS 6</title>
-      <link>https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/</link>
+      <link>https://forwardingplane.net/post/building-a-floodlight-openflow-controller-on-centos-6/</link>
       <pubDate>Mon, 04 Feb 2013 13:10:24 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/</guid>
+      <guid>https://forwardingplane.net/post/building-a-floodlight-openflow-controller-on-centos-6/</guid>
       <description>A bit of back history: I came from BSD land. I was a FreeBSD user from way back in the 1990s. BSD land is a land of secure boxes and very high uptimes. It&amp;rsquo;s also a land of arguably clunky package support, a lot of compiling by hand and these days, not nearly as encompassing package and network tuning support. I decided to move to Linux&amp;rdquo;) a while ago, reluctantly, and chose Debian as my flavor of choice.</description>
     </item>
     
     <item>
       <title>Headless VirtualBox host on CentOS</title>
-      <link>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</link>
+      <link>https://forwardingplane.net/post/headless-virtualbox-host-on-centos/</link>
       <pubDate>Thu, 31 Jan 2013 21:48:47 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/</guid>
+      <guid>https://forwardingplane.net/post/headless-virtualbox-host-on-centos/</guid>
       <description>Starting from a base CentOS system with nothing configured, and referencing the CentOS wiki, here is how I like to set up a headless virtualbox environment: Disable selinux. It&amp;rsquo;s overly cumbersome and is enabled by default in CentOS. I like to permanently disable it even though the default is permissive. I ride the edge, I know.``` vi /etc/selinux/config
  and change  SELINUX=enabled
  to  SELINUX=disabled
@@ -235,93 +235,93 @@ mkdir /services cd /services git clone git://github.</description>
     
     <item>
       <title>Diff RANCID router configs with SVN</title>
-      <link>https://forwardingplane.net/2013/01/diff-rancid-router-configs-with-svn/</link>
+      <link>https://forwardingplane.net/post/diff-rancid-router-configs-with-svn/</link>
       <pubDate>Fri, 25 Jan 2013 00:27:09 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/01/diff-rancid-router-configs-with-svn/</guid>
+      <guid>https://forwardingplane.net/post/diff-rancid-router-configs-with-svn/</guid>
       <description>If you are running a network and aren&amp;rsquo;t using RANCID, you should give it a serious look. RANCID is a cross platform configuration management toolkit for backing up router configurations and certain environmental and hardware information into version control. It&amp;rsquo;s been around for as long as I can remember and supports nearly every platform I can think of, including a few modules that I cobbled together myself. There is are a few nice web based front ends for CVS and SVN, I prefer to use ViewVC because I have a lot of experience with it, however, there may be cases where a web server isn&amp;rsquo;t a good option, unavailable or just too much work.</description>
     </item>
     
     <item>
       <title>DNS utilities on CentOS</title>
-      <link>https://forwardingplane.net/2013/01/dns-utilities-on-centos/</link>
+      <link>https://forwardingplane.net/post/dns-utilities-on-centos/</link>
       <pubDate>Fri, 04 Jan 2013 10:13:28 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/01/dns-utilities-on-centos/</guid>
+      <guid>https://forwardingplane.net/post/dns-utilities-on-centos/</guid>
       <description>It&amp;rsquo;s always annoying to me, being a convert from *BSD to Linux, that tools lke dig and host aren&amp;rsquo;t in the minimal base install. I realise that this makes me somewhat of a hypocrite, as I prefer an additive system rather than a subtractive base OS. Nevertheless, I&amp;rsquo;m continually surprised that &amp;ldquo;host&amp;rdquo; isn&amp;rsquo;t available after installing a minimal CentOS system without adding an additional package. So, since I always forget, here is a quick blog post to remind me and any other converts how to install those tools:``` yum -y install bind-utils</description>
     </item>
     
     <item>
       <title>Installing OwnCloud on CentOS</title>
-      <link>https://forwardingplane.net/2012/12/installing-owncloud-on-centos/</link>
+      <link>https://forwardingplane.net/post/291/</link>
       <pubDate>Sun, 30 Dec 2012 13:32:17 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/12/installing-owncloud-on-centos/</guid>
+      <guid>https://forwardingplane.net/post/291/</guid>
       <description>wget http://dl.fedoraproject.org/pub/epel/6/x86\_64/epel-release-6-8.noarch.rpm wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm yum -y install apache2 php5 php5-json php-xml php-mbstring php5-zip php5-gd yum -y install php5-sqlite curl libcurl3 libcurl3-dev php5-curl php-pd  php5-sqlite isn&amp;rsquo;t available in the repos I use. I wasn&amp;rsquo;t able to find it elsewhere either. Per this page, I have to install it by source. cd /etc/yum.repos.d/ wget http://download.opensuse.org/repositories/isv:ownCloud:community/CentOS\_CentOS-6/isv:ownCloud:community.repo yum install owncloud</description>
     </item>
     
     <item>
       <title>CentOS sshguard install for limiting ssh scans</title>
-      <link>https://forwardingplane.net/2012/12/centos-sshguard-install-for-limiting-ssh-scans/</link>
+      <link>https://forwardingplane.net/post/centos-sshguard-install-for-limiting-ssh-scans/</link>
       <pubDate>Sun, 16 Dec 2012 03:18:27 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/12/centos-sshguard-install-for-limiting-ssh-scans/</guid>
+      <guid>https://forwardingplane.net/post/centos-sshguard-install-for-limiting-ssh-scans/</guid>
       <description>Securing SSH is a form or art. It&amp;rsquo;s often debated, much like blocking all ICMP packets (which I normally disagree with). If you need good proof, read these posts by Bob Plankers. There is a camp that likes to promote moving to a non-standard port. There is a faction that likes to block it completely except from a handful of hosts. Then there are those that like to leave it open all together.</description>
     </item>
     
     <item>
       <title>Converting (back) to wordpress from Blogger</title>
-      <link>https://forwardingplane.net/2012/12/converting-back-to-wordpress-from-blogger/</link>
+      <link>https://forwardingplane.net/post/converting-back-to-wordpress-from-blogger/</link>
       <pubDate>Sun, 02 Dec 2012 19:41:08 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/12/converting-back-to-wordpress-from-blogger/</guid>
+      <guid>https://forwardingplane.net/post/converting-back-to-wordpress-from-blogger/</guid>
       <description>For a long time I ran a blog called tech.buraglio.com that was a self hosted wordpress site. After having kids and getting a bit busier at work, I decided to move everything that I had been hosting (images, scripts, hacks, blogs and DNS) to &amp;ldquo;the cloud&amp;rdquo;. I managed to do this for everything but my primary DNS resolver, which I had always intended to keep, and one wordpress blog that I hosted for someone else.</description>
     </item>
     
     <item>
       <title>Workflow and my every day workstation setup.</title>
-      <link>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</link>
+      <link>https://forwardingplane.net/post/workflow-and-my-every-day-workstation-setup/</link>
       <pubDate>Sun, 25 Nov 2012 00:03:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup./</guid>
+      <guid>https://forwardingplane.net/post/workflow-and-my-every-day-workstation-setup/</guid>
       <description>Recently, there was a thread over at Packet Pushers about what folks use for their daily workflow. I quickly realized that my setup is pretty simple (as I like it) and relied on a large amount of terminal based tools, which makes sense since I have been a UNIX (or UNIX based) OS user since my migration from the original MacOS back in the 1990s. Anyway, Since I wrote most of this up already, I thought I&amp;rsquo;d post it here:</description>
     </item>
     
     <item>
       <title>Host based sflow, or, sflow for more than just network traffic</title>
-      <link>https://forwardingplane.net/2012/10/host-based-sflow-or-sflow-for-more-than-just-network-traffic/</link>
+      <link>https://forwardingplane.net/post/host-based-sflow-or-sflow-for-more-than-just-network-traffic/</link>
       <pubDate>Sat, 27 Oct 2012 02:33:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/10/host-based-sflow-or-sflow-for-more-than-just-network-traffic/</guid>
+      <guid>https://forwardingplane.net/post/host-based-sflow-or-sflow-for-more-than-just-network-traffic/</guid>
       <description>I&amp;rsquo;m an awful sysadmin. Running services permanently isn&amp;rsquo;t really my forte, I tend to lean more on the &amp;ldquo;I&amp;rsquo;ll get this proof of concept all working, prove that it works or doesn&amp;rsquo;t, then roll it on for polishing by someone else&amp;rdquo; kinda guy. That final 15% is something I&amp;rsquo;m constantly working to refine and better myself at accomplishing. I&amp;rsquo;m decent at debugging network services, and can be handy in a &amp;ldquo;oh crap, it&amp;rsquo;s down!</description>
     </item>
     
     <item>
       <title>Looking more deeply into iMessage</title>
-      <link>https://forwardingplane.net/2011/11/looking-more-deeply-into-imessage/</link>
+      <link>https://forwardingplane.net/post/looking-more-deeply-into-imessage/</link>
       <pubDate>Sun, 06 Nov 2011 23:28:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/11/looking-more-deeply-into-imessage/</guid>
+      <guid>https://forwardingplane.net/post/looking-more-deeply-into-imessage/</guid>
       <description>I&amp;rsquo;ve been looking at iMessage from time to time as my schedule permits, for some reason that I can&amp;rsquo;t really explain I&amp;rsquo;m fixated on it. So, just like I did with FaceTime, I started doing network sniffing to see just what it&amp;rsquo;s doing. The results were not terribly unexpected.  iPhone.buraglio.com.53140 &amp;gt; st11p01st-courier143-bz.push.apple.com.5223: Flags [R], cksum 0x5ec8 (correct), seq 4109691913, win 0, length 0
 14:07:51.665485 IP (tos 0x20, ttl 49, id 11699, offset 0, flags [DF], proto TCP (6), length 64, bad cksum 0 (-&amp;gt;8fc7)!</description>
     </item>
     
     <item>
       <title>ftps (secure ftp) from the command line</title>
-      <link>https://forwardingplane.net/2011/10/ftps-secure-ftp-from-the-command-line/</link>
+      <link>https://forwardingplane.net/post/ftps-secure-ftp-from-the-command-line/</link>
       <pubDate>Tue, 04 Oct 2011 04:31:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/10/ftps-secure-ftp-from-the-command-line/</guid>
+      <guid>https://forwardingplane.net/post/ftps-secure-ftp-from-the-command-line/</guid>
       <description>I have recently enabled Duo Security for many of my personal services, and I can&amp;rsquo;t recommend them enough. Personal two factor authentication is very useful and really powerful. It works on my iPhone and I have yet to run into any real issues&amp;hellip;.except for one. I can&amp;rsquo;t use automation to scp or sftp anything anymore and keep my two factor auth working in a way I&amp;rsquo;m comfortable with.
 Enter ftps. FTP is a terrible, yet immensely useful protocol.</description>
     </item>
     
     <item>
       <title>Black Hole routing</title>
-      <link>https://forwardingplane.net/2011/10/black-hole-routing/</link>
+      <link>https://forwardingplane.net/post/black-hole-routing/</link>
       <pubDate>Tue, 04 Oct 2011 01:00:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/10/black-hole-routing/</guid>
+      <guid>https://forwardingplane.net/post/black-hole-routing/</guid>
       <description>It&amp;rsquo;s no secret or ground breaking area to do black hole routing.
 ISPs and NSPs have been doing it forever to allow for a very low cost, very scriptable and very effective way to wholesale block a layer3 address. However, it can seem like a bit of a black box to anyone who has never done it.
 I recently did some work spinning this up in a good sized network that it didn&amp;rsquo;t currently exist, and remembered how monumentally useful (and simple) it actually is.</description>
@@ -329,39 +329,39 @@ I recently did some work spinning this up in a good sized network that it didn&a
     
     <item>
       <title>GoogleCL, command line based google blogger, picasa, calendar and much, much more.</title>
-      <link>https://forwardingplane.net/2011/09/googlecl-command-line-based-google-blogger-picasa-calendar-and-much-much-more./</link>
+      <link>https://forwardingplane.net/post/googlecl-command-line-based-google-blogger-picasa-calendar-and-much-much-more/</link>
       <pubDate>Wed, 07 Sep 2011 03:42:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/09/googlecl-command-line-based-google-blogger-picasa-calendar-and-much-much-more./</guid>
+      <guid>https://forwardingplane.net/post/googlecl-command-line-based-google-blogger-picasa-calendar-and-much-much-more/</guid>
       <description>Google has introduced a very powerful set of python based command line (CLI) tools called GoogleCL. This post was made using GoogleCL from my Mac. I highly recommend checking it out if you like to automate or script stuff.
 [[ This is a content summary only. Visit my website for full links, other content, and more! ]]</description>
     </item>
     
     <item>
       <title>Switching from MacPorts to Homebrew</title>
-      <link>https://forwardingplane.net/2011/08/switching-from-macports-to-homebrew/</link>
+      <link>https://forwardingplane.net/post/switching-from-macports-to-homebrew/</link>
       <pubDate>Sat, 06 Aug 2011 17:22:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/08/switching-from-macports-to-homebrew/</guid>
+      <guid>https://forwardingplane.net/post/switching-from-macports-to-homebrew/</guid>
       <description>I&amp;rsquo;ve recently decided that even though I love the BSD style MacPorts system, it can be too clunky to maintain and doesn&amp;rsquo;t handle dependancies as well as I&amp;rsquo;d like (much like the actual BSD ports collection). So, in doing a little looking I found that Fink is still out of date, but Homebrew is very simple and also really elegant comparatively speaking.
 Since homebrew doesn&amp;rsquo;t wrk well with other packge systems installed, and I already</description>
     </item>
     
     <item>
       <title>MacOS 10.7 and IPv6 privacy addressing</title>
-      <link>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</link>
+      <link>https://forwardingplane.net/post/macos-10-7-and-ipv6-privacy-addressing/</link>
       <pubDate>Sun, 31 Jul 2011 02:40:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/07/macos-10.7-and-ipv6-privacy-addressing/</guid>
+      <guid>https://forwardingplane.net/post/macos-10-7-and-ipv6-privacy-addressing/</guid>
       <description>I&amp;rsquo;m not a fan of IPv6 privacy addressing. I understand the logic behind it, I really doo, obfuscate the LLADDR (MAC address) of the host in question, but I really dont&amp;rsquo;t see the realistic purpose. If someone wanted to use my mac address, what good would that really get them, unless they&amp;rsquo;re on the same layer 2 segment? More importantly, if they;re on the same layer 2 segment, they have my MAC address anyway.</description>
     </item>
     
     <item>
       <title>OSX (10.7; Lion) DHCPv6 client working with pfsense server.</title>
-      <link>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</link>
+      <link>https://forwardingplane.net/post/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/</link>
       <pubDate>Tue, 26 Jul 2011 18:20:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/07/osx-10.7-lion-dhcpv6-client-working-with-pfsense-server./</guid>
+      <guid>https://forwardingplane.net/post/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/</guid>
       <description>It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&amp;rsquo;s about time.
 Before:
 
@@ -375,50 +375,50 @@ I didn&amp;rsquo;t do anything except use the &amp;ldquo;Automatic&amp;rdquo; se
     
     <item>
       <title>alurancid and pfrancid</title>
-      <link>https://forwardingplane.net/2011/06/alurancid-and-pfrancid/</link>
+      <link>https://forwardingplane.net/post/alurancid-and-pfrancid/</link>
       <pubDate>Thu, 30 Jun 2011 20:12:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/06/alurancid-and-pfrancid/</guid>
+      <guid>https://forwardingplane.net/post/alurancid-and-pfrancid/</guid>
       <description>I did some minor tweaking to the Alcatel Lucent RANCID scripts and some modifications to make RANCID work under my pfsense environment (originally m0n0rancid code from John Skopis). Since I don&amp;rsquo;t really do much dev work and am not interested in maintaing a box do be an SVN server for the public, I threw it up onto google code.
 I&amp;rsquo;ll be adding a brief how-to on making RANCID work with pfSense as soon as I get some time.</description>
     </item>
     
     <item>
       <title>Better support for Linux (and annoyed about it)</title>
-      <link>https://forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/</link>
+      <link>https://forwardingplane.net/post/better-support-for-linux-and-annoyed-about-it/</link>
       <pubDate>Mon, 20 Jun 2011 08:43:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/06/better-support-for-linux-and-annoyed-about-it/</guid>
+      <guid>https://forwardingplane.net/post/better-support-for-linux-and-annoyed-about-it/</guid>
       <description>I&amp;rsquo;ve been a *BSD user since around 1997, when I installed NetBSD on a Mac SE 30 that I got for free. I was always intrigued with alternative operating systems like BeOS, *BSD, Plan9 and Linux so it made sense that I&amp;rsquo;d poke around with different systems.
 I&amp;rsquo;d gone back and forth from OpenBSD to FreeBSD but eventually settled on FreeBSD as my OS of choice. I ran it as a desktop before MacOS X came out and was generally happy with it.</description>
     </item>
     
     <item>
       <title>Sync catalogs (iPhoto, iTunes) on a mac</title>
-      <link>https://forwardingplane.net/2011/02/sync-catalogs-iphoto-itunes-on-a-mac/</link>
+      <link>https://forwardingplane.net/post/sync-catalogs-iphoto-itunes-on-a-mac/</link>
       <pubDate>Fri, 18 Feb 2011 12:46:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/02/sync-catalogs-iphoto-itunes-on-a-mac/</guid>
+      <guid>https://forwardingplane.net/post/sync-catalogs-iphoto-itunes-on-a-mac/</guid>
       <description>I have huge iPhoto and iTunes catalogs. This can present a problem for both loading the applications and for backup. I have learned to deal with the Application load times, but backups are very important to me.
 I&amp;rsquo;d gone through the iPhoto backup process and restore more than once, and I didn&amp;rsquo;t like the fact that I didn&amp;rsquo;t have an offsite backup, so I paid for a flickr pro account ($24/yr, supports iPhoto export and RAW format).</description>
     </item>
     
     <item>
       <title>Alcatel Lucent RANCID scripts</title>
-      <link>https://forwardingplane.net/2010/12/alcatel-lucent-rancid-scripts/</link>
+      <link>https://forwardingplane.net/post/alcatel-lucent-rancid-scripts/</link>
       <pubDate>Mon, 06 Dec 2010 07:06:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2010/12/alcatel-lucent-rancid-scripts/</guid>
+      <guid>https://forwardingplane.net/post/alcatel-lucent-rancid-scripts/</guid>
       <description>At the 2010 Supercomputing conference this year, one of my tasks was to get RANCID working on the Alcatel Lucent 77xx series. for some this may have been a simple task, but for me, a self taught and inefficient programmer, it was something that took some time.
 The Alcatel Lucent boxes were good performers, but their CLI is pretty awful. The prompt changes based on having unsaved configuration items, and can contain things liks an asterisk.</description>
     </item>
     
     <item>
       <title>Android (Nexus One) or iPhone?</title>
-      <link>https://forwardingplane.net/2010/10/android-nexus-one-or-iphone/</link>
+      <link>https://forwardingplane.net/post/android-nexus-one-or-iphone/</link>
       <pubDate>Wed, 13 Oct 2010 09:56:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2010/10/android-nexus-one-or-iphone/</guid>
+      <guid>https://forwardingplane.net/post/android-nexus-one-or-iphone/</guid>
       <description>*Cross posted from my personal blog since it&amp;rsquo;s a technical subject*
 
 That is the million dollar question on many phone geeks minds.
@@ -427,20 +427,20 @@ The iPhone is really a love it or hate it kind of device, much like Apple stuff 
     
     <item>
       <title>NFS mounting a NAS with MacOS 10.6 (Snow Leopard)</title>
-      <link>https://forwardingplane.net/2010/09/nfs-mounting-a-nas-with-macos-10.6-snow-leopard/</link>
+      <link>https://forwardingplane.net/post/nfs-mounting-a-nas-with-macos-10-6-snow-leopard/</link>
       <pubDate>Mon, 06 Sep 2010 11:00:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2010/09/nfs-mounting-a-nas-with-macos-10.6-snow-leopard/</guid>
+      <guid>https://forwardingplane.net/post/nfs-mounting-a-nas-with-macos-10-6-snow-leopard/</guid>
       <description>I know this is documented elsewhere, but this was a pain for me, so I wanted to take some notes. I have several Snow Leopard (MAcOS 10.6) Macs and a Netgear DNS-323. I want to mount the drive using NFS and any good UNIX admin would.
 Unlike older versions of the Mac OS, NFS mounts are now handled under the Disk Utility application (which seems odd to me, but whatever).</description>
     </item>
     
     <item>
       <title>Viewing ipv6 router advertisements</title>
-      <link>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</link>
+      <link>https://forwardingplane.net/post/viewing-ipv6-router-advertisements/</link>
       <pubDate>Fri, 03 Sep 2010 19:00:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2010/09/viewing-ipv6-router-advertisements/</guid>
+      <guid>https://forwardingplane.net/post/viewing-ipv6-router-advertisements/</guid>
       <description>I knew a tool like this had to exist, but I had never needed to look in the past. While debugging a RA problem, I come upon the need to view IPv6 router advertisements. How can one do this? tcpdump? Yeah, I guess that could work. It&amp;rsquo;s almost like using a bulldozer when a wheelbarrow is all you need, though. I could use ndpmon, I suppose, but that, too seems like overkill.</description>
     </item>
     

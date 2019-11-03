@@ -14,329 +14,329 @@
     
     <item>
       <title>The BGP conundrum</title>
-      <link>https://forwardingplane.net/2019/06/the-bgp-conundrum/</link>
+      <link>https://forwardingplane.net/post/the-bgp-conundrum/</link>
       <pubDate>Sun, 30 Jun 2019 02:15:32 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2019/06/the-bgp-conundrum/</guid>
+      <guid>https://forwardingplane.net/post/the-bgp-conundrum/</guid>
       <description>BGP. It’s that magical protocol that runs the internet. For for as much as BGP is a fundamental, critical, irreplaceable part of the core functioning of the internet, it is a protocol that has not aged well as far as security is concerned. See, BGP was born when the internet was really still an academic experiment. Handshakes and loose agreements were totally fine for connecting a new site. Then came the awakening.</description>
     </item>
     
     <item>
       <title>FreeRouter as a test environment</title>
-      <link>https://forwardingplane.net/2019/03/freerouter-as-a-test-environment/</link>
+      <link>https://forwardingplane.net/post/freertr-as-a-lab-environment/</link>
       <pubDate>Sat, 02 Mar 2019 17:03:18 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2019/03/freerouter-as-a-test-environment/</guid>
+      <guid>https://forwardingplane.net/post/freertr-as-a-lab-environment/</guid>
       <description>A few months ago Kevin Myers of IP Architechs introduced me to a really interesting project called FreeRouter. Being that I absolutely love alternative routing platforms and feature complete simulation environments, this really got me going. I tend to define &amp;ldquo;feature complete&amp;rdquo; in a routing platform as something that can do both IS-IS and MPLS. Given that there aren&amp;rsquo;t many platforms that do both correctly or within a reasonable budget, and offer simulation options, I was pretty excited.</description>
     </item>
     
     <item>
       <title>Updates, podcasts, and videos</title>
-      <link>https://forwardingplane.net/2017/06/updates-podcasts-and-videos/</link>
+      <link>https://forwardingplane.net/post/updates-podcasts-videos/</link>
       <pubDate>Thu, 15 Jun 2017 01:29:59 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2017/06/updates-podcasts-and-videos/</guid>
+      <guid>https://forwardingplane.net/post/updates-podcasts-videos/</guid>
       <description>Anyone that looks at this site with any regularity may have noticed that I have been pretty remiss in adding posts - for that I apologize, things have been busy. However, I have not been absent in the tech world&amp;hellip;quite the opposite, in fact. I&amp;rsquo;ve been spending more and more time on podcasts and other forms of tech media which I have not provided links for here. So, to help expose that, here are a few of the other media resources I&amp;rsquo;ve been popping up in.</description>
     </item>
     
     <item>
       <title>Why I care about Segment Routing</title>
-      <link>https://forwardingplane.net/2016/10/why-i-care-about-segment-routing/</link>
+      <link>https://forwardingplane.net/post/care-segment-routing/</link>
       <pubDate>Tue, 04 Oct 2016 00:54:27 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2016/10/why-i-care-about-segment-routing/</guid>
+      <guid>https://forwardingplane.net/post/care-segment-routing/</guid>
       <description>Edit: Going against my normal “just get the content out there” methodology, I’ve been mulling over this blog post since July of 2016. Segment routing is such a beautifully elegant solution I have had trouble articulating that fact. WAN technologies are squarely within my wheelhouse, and this one fits in so well I was going over and over the post never really satisfied with it, continuing to find mistakes and decided to just get it out there.</description>
     </item>
     
     <item>
       <title>BGP RPKI - why aren&#39;t we using it more?</title>
-      <link>https://forwardingplane.net/2016/05/bgp-rpki-why-arent-we-using-it-more/</link>
+      <link>https://forwardingplane.net/post/bgp-rpki-why-arent-we-using-it/</link>
       <pubDate>Sat, 21 May 2016 16:33:44 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2016/05/bgp-rpki-why-arent-we-using-it-more/</guid>
+      <guid>https://forwardingplane.net/post/bgp-rpki-why-arent-we-using-it/</guid>
       <description>Image created from SURFNet RPKI page.         I was recently at a meeting where BGP RPKI was the topic de jour. While this has been a topic that I have visited on occasion of the last few years and something I wanted to spend significant time on, I have found that setting aside the time has been difficult and sparse, much like the deployment of BGP RPKI.</description>
     </item>
     
     <item>
       <title>Building Interdomain SDN part 3</title>
-      <link>https://forwardingplane.net/2015/11/building-interdomain-sdn-part-3/</link>
+      <link>https://forwardingplane.net/post/building-interdomain-sdn-part-3/</link>
       <pubDate>Fri, 06 Nov 2015 04:37:23 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2015/11/building-interdomain-sdn-part-3/</guid>
+      <guid>https://forwardingplane.net/post/building-interdomain-sdn-part-3/</guid>
       <description>A few years ago I wrote some text on interdomain SDN. Years later, work is being done, smart people are thinking about it and building ways to make it a reality. Not being one to give up on an idea, I gave this presentation in may at ChiNOG on what my take on what that architecture should be. I (we) propose that the use of existing protocols such as BGP FlowSpec will make this realistically deployable and maintainable given some simple, pluggable middleware.</description>
     </item>
     
     <item>
       <title>OpenDNS acquires BGPMon and the future of route monitoring</title>
-      <link>https://forwardingplane.net/2015/03/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</link>
+      <link>https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</link>
       <pubDate>Fri, 20 Mar 2015 05:18:30 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2015/03/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</guid>
+      <guid>https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</guid>
       <description>For those that run BGP networks, BGPmon is often a tool they turn to for some really unique and hard to find information. Remember back in February 2008 when Pakistan Telecom &amp;ldquo;blocked&amp;rdquo; Youtube? That one was a really, really public example of something that BGPMon caught. BGPmon has been around for a long, long time. Quietly watching prefixes. Silently noting changes and reporting them to the ones lucky enough to know of its existence.</description>
     </item>
     
     <item>
       <title>Network Field Day 9</title>
-      <link>https://forwardingplane.net/2015/01/network-field-day-9/</link>
+      <link>https://forwardingplane.net/post/network-field-day-9/</link>
       <pubDate>Sat, 24 Jan 2015 15:55:48 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2015/01/network-field-day-9/</guid>
+      <guid>https://forwardingplane.net/post/network-field-day-9/</guid>
       <description>In a few weeks I&amp;rsquo;ll have the opportunity to participate in another Network Field Day. I&amp;rsquo;ve been lucky enough to have the opportunity to attendin the past and have done some remote participation when possible, but like some of the other rare opportunities I have had in my career, NFD is fairly unique in that it is constantly evolving in both the information provided and the individuals involved. As the saying goes, variety is the spice of life.</description>
     </item>
     
     <item>
       <title>Why you don&#39;t need a firewall [how to secure an open perimeter network]</title>
-      <link>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
+      <link>https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
       <pubDate>Mon, 08 Sep 2014 07:30:07 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
+      <guid>https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
       <description>I admit that the title was meant to be inflammatory. However, there are use cases that aren&amp;rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &amp;ldquo;a firewall protects a network like a fuse protects an electrical circuit&amp;rdquo;, and it&amp;rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.</description>
     </item>
     
     <item>
       <title>Aging hardware, IPv6 and the growing route table</title>
-      <link>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</link>
+      <link>https://forwardingplane.net/post/aging-hardware-ipv6-and-the-growing-route-table/</link>
       <pubDate>Wed, 13 Aug 2014 05:00:56 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</guid>
+      <guid>https://forwardingplane.net/post/aging-hardware-ipv6-and-the-growing-route-table/</guid>
       <description>I&amp;rsquo;ve blathered on about BGP forever. Say what you will about the venerable protocol, it runs the interwebs, is reliable, extendable and well documented. I&amp;rsquo;ve also espoused&amp;rdquo;) ad nauseam about IPv6, so none of this [admitted] rant should really be a surprise coming from me. As of 8/12/2014, according to the CIRD report (and many mailing lists), the default free global ipv4 routing table has reached 512k routes. This is a milestone from many perspectives, but more importantly, it solidifies the fact that there is a great deal of equipment in critical points in the internet that is out of date and cannot perform as intended in its current configuration or function.</description>
     </item>
     
     <item>
       <title>NIX4NetEng 2 IPv4/6 address investigation tools - whois &#43; dig</title>
-      <link>https://forwardingplane.net/2014/06/nix4neteng-2-ipv4/6-address-investigation-tools-whois-dig/</link>
+      <link>https://forwardingplane.net/post/nix4neteng-2-ipv46-address-investigation-tools-whois-dig/</link>
       <pubDate>Sat, 07 Jun 2014 19:54:41 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/06/nix4neteng-2-ipv4/6-address-investigation-tools-whois-dig/</guid>
+      <guid>https://forwardingplane.net/post/nix4neteng-2-ipv46-address-investigation-tools-whois-dig/</guid>
       <description>I don&amp;rsquo;t care what your vendor alignment of choice is, Cisco, Juniper, Brocade, Alcatel&amp;hellip;.it doesn&amp;rsquo;t matter. At one point or another you&amp;rsquo;re going to need to bird dog an address to see where it&amp;rsquo;s coming from, who owns it, what it&amp;rsquo;s DNS name is or what path you&amp;rsquo;re taking to get to it. We&amp;rsquo;ve already talked about BGP tools, they&amp;rsquo;re a great choice for checking routes across the internet. Hunting down addresses is an interesting one, though, as address management and lookups can bleed into other aspects of networking like path selection, latency, jitter and many other things.</description>
     </item>
     
     <item>
       <title>Blending the Network; Pluribus ServerSwitch</title>
-      <link>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</link>
+      <link>https://forwardingplane.net/post/blending-the-network-pluribus-serverswitch/</link>
       <pubDate>Mon, 21 Apr 2014 04:44:30 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/04/blending-the-network-pluribus-serverswitch/</guid>
+      <guid>https://forwardingplane.net/post/blending-the-network-pluribus-serverswitch/</guid>
       <description>I firmly believe that blending disciplines is the way of the future in IT. I&amp;rsquo;ve rambled about it here at other venues and I&amp;rsquo;m vocal (some would probably say brash) about it on the twitters. Be it Networking and System, Systems and Security, Programming and Networking, most of us that have been around any length of time already do it but now it&amp;rsquo;s happening out in the open and &amp;ldquo;DevOps&amp;rdquo;, a form of the hybrid IT worker, has seemingly become the BOTD (Buzzword of the day).</description>
     </item>
     
     <item>
       <title>BGP tools; troubleshooting and monitoring external routing in a nutshell</title>
-      <link>https://forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/</link>
+      <link>https://forwardingplane.net/post/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/</link>
       <pubDate>Fri, 21 Mar 2014 04:51:06 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/</guid>
+      <guid>https://forwardingplane.net/post/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/</guid>
       <description>Time to rewind from the new and shiny and get back to roots of networking. BGP is one of those odd protocols that is foundational to the functioning of the internet but yet somewhat hard to get experience with. Say what you will about this venerable protocol, it&amp;rsquo;s been here a while and it is not going anywhere any time soon. I&amp;rsquo;ve been doing BGP since around late 1999, and I completely fell into it by accident, having only the Cisco Internet Routing Architectures book (which I literally read cover to cover) and the Ulysses Black Routing Protocols Book and whatever I could find on a random search engine to guide me, and that was only after having to learn on the CLI for the first 6-7 months.</description>
     </item>
     
     <item>
       <title>Tail-F NCS: upsetting network management...in a good way.</title>
-      <link>https://forwardingplane.net/2014/02/tail-f-ncs-upsetting-network-management...in-a-good-way./</link>
+      <link>https://forwardingplane.net/post/tail-f-ncs-upsetting-network-management-in-a-good-way/</link>
       <pubDate>Thu, 27 Feb 2014 04:36:26 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/02/tail-f-ncs-upsetting-network-management...in-a-good-way./</guid>
+      <guid>https://forwardingplane.net/post/tail-f-ncs-upsetting-network-management-in-a-good-way/</guid>
       <description>“Hopefully there are some things here that will make you really upset in a very good way” is how Carl Moberg of Swedish based company tail-f opened up to the crowd at Networking Field Day 7 on Feb 19, 2014. Tail-f is a sleeper, I had actually never heard of them before NFD7, but they&amp;rsquo;ve got a very unique product in NCS and in my opinion it can change the way existing and future networks are managed.</description>
     </item>
     
     <item>
       <title>Inline-jflow on MX series Juniper</title>
-      <link>https://forwardingplane.net/2013/09/inline-jflow-on-mx-series-juniper/</link>
+      <link>https://forwardingplane.net/post/inline-jflow-on-mx-series-juniper/</link>
       <pubDate>Sun, 01 Sep 2013 15:40:29 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/09/inline-jflow-on-mx-series-juniper/</guid>
+      <guid>https://forwardingplane.net/post/inline-jflow-on-mx-series-juniper/</guid>
       <description>One of the things that I&amp;rsquo;ve always lamented about using non-Cisco hardware is the lack of true 1:1 netflow support. Say what you will about jflow, cflow, sflow&amp;hellip;.there is no substitute for netflow, with sflow being the exception to that since it is a protocol that inherently supports ipv6 and can transport far more than simple network information if configured in certain ways on certain devices. On newer MX series Juniper routers the game has changed.</description>
     </item>
     
     <item>
       <title>Fixing the dreaded &#34;error: could not open configuration database (juniper.data&#43;)&#34; problem.</title>
-      <link>https://forwardingplane.net/2013/08/fixing-the-dreaded-error-could-not-open-configuration-database-juniper.data-problem./</link>
+      <link>https://forwardingplane.net/post/fixing-the-dreaded-error-could-not-open-configuration-database-juniper-data-problem/</link>
       <pubDate>Wed, 07 Aug 2013 16:52:04 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/08/fixing-the-dreaded-error-could-not-open-configuration-database-juniper.data-problem./</guid>
+      <guid>https://forwardingplane.net/post/fixing-the-dreaded-error-could-not-open-configuration-database-juniper-data-problem/</guid>
       <description>Working on some MX series routers recently I encountered a problem I&amp;rsquo;d never seen before, essentially preventing the configuration from being committed:``` buraglio@rtr# commit check re0: error: could not open configuration database (juniper.data+)
 buraglio@rtr&amp;gt;start shell From there I wanted to see the file system and check out the stats of what it thinks we have.``` buraglio@rtr% df -h Filesystem Size Used Avail Capacity Mounted on /dev/ad0s1a 3.5G 313M 2.9G 10% / devfs 1.</description>
     </item>
     
     <item>
       <title>Debugging Brocade MLX/XMR ip_rx CPU issues</title>
-      <link>https://forwardingplane.net/2013/06/debugging-brocade-mlx/xmr-ip_rx-cpu-issues/</link>
+      <link>https://forwardingplane.net/post/debugging-brocade-mlxxmr-ip_rx-cpu-issues/</link>
       <pubDate>Mon, 17 Jun 2013 00:35:42 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/06/debugging-brocade-mlx/xmr-ip_rx-cpu-issues/</guid>
+      <guid>https://forwardingplane.net/post/debugging-brocade-mlxxmr-ip_rx-cpu-issues/</guid>
       <description>I recently had the need to debug a run away ip_rx process on an older Brocade MLX. For anyone that has had to do any type of low level debugging on the Brocade (Foundry) platform, you know that there many somewhat deep level diagnostics that are possible. The debug (like cisco debug) is a bit lacking, but the dm, LP and MP commands are very useful (and a tad scary). Regardless, I&amp;rsquo;ve had to utilize them a lot in the last few years so my aversion to using them has been pretty much completely callused over.</description>
     </item>
     
     <item>
       <title>MPLS Bootstrap</title>
-      <link>https://forwardingplane.net/2013/06/mpls-bootstrap/</link>
+      <link>https://forwardingplane.net/post/mpls-bootstrap/</link>
       <pubDate>Fri, 07 Jun 2013 13:04:02 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/06/mpls-bootstrap/</guid>
+      <guid>https://forwardingplane.net/post/mpls-bootstrap/</guid>
       <description>I&amp;rsquo;ve been doing a lot of MPLS in the last 45 or so days (which is one of the reasons I have been absentee in the OpenFlow world lately). Having had almost no real world MPLS experience aside from a handful of pseudo-wires and a very small LDP signaled network, I had to spend some time reading, hacking at routers and essentially learning. In doing so, I found a few things.</description>
     </item>
     
     <item>
       <title>MPLS PseudoWire (VLL) between JunOS and Brocade MLX/XMR</title>
-      <link>https://forwardingplane.net/2013/05/mpls-pseudowire-vll-between-junos-and-brocade-mlx/xmr/</link>
+      <link>https://forwardingplane.net/post/mpls-pseudowire-vll-between-junos-and-brocade-mlxxmr/</link>
       <pubDate>Sun, 19 May 2013 16:24:03 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/05/mpls-pseudowire-vll-between-junos-and-brocade-mlx/xmr/</guid>
+      <guid>https://forwardingplane.net/post/mpls-pseudowire-vll-between-junos-and-brocade-mlxxmr/</guid>
       <description>I love to be the &amp;ldquo;uncola&amp;rdquo; of networking sites. I like interop and I don&amp;rsquo;t do a lot with Cisco because I don&amp;rsquo;t have access to much of their gear anymore. So, that being the case, I had a need to bring up a l2circuit (in JunOS speak), or VLL (in Brocade speak) between an MX480 and an MLX. Since they are very different platforms, I had to do some digging and playing around to get it to work.</description>
     </item>
     
     <item>
       <title>A missing link in small MPLS, 10G devices.</title>
-      <link>https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./</link>
+      <link>https://forwardingplane.net/post/a-missing-link/</link>
       <pubDate>Fri, 29 Mar 2013 04:43:17 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/03/a-missing-link-in-small-mpls-10g-devices./</guid>
+      <guid>https://forwardingplane.net/post/a-missing-link/</guid>
       <description>Lately I&amp;rsquo;ve been lamenting the fact that there seems to be a lack of options in a very specific product level. Lets say you have a network that looks like this: Right Away you&amp;rsquo;re limited since you need MPLS and more than 2 10G interfaces. Even more so if you require full support for IPv6 and ISIS. If budget is of any concern, you&amp;rsquo;re in real trouble. For many, Cisco pricing and smartnet is potentially going to exclude anything reasonable from them.</description>
     </item>
     
     <item>
       <title>Building a Bridge Domain on MX series JunOS</title>
-      <link>https://forwardingplane.net/2013/03/building-a-bridge-domain-on-mx-series-junos/</link>
+      <link>https://forwardingplane.net/post/building-a-bridge-domain-on-mx-series-junos/</link>
       <pubDate>Sat, 09 Mar 2013 16:48:48 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/03/building-a-bridge-domain-on-mx-series-junos/</guid>
+      <guid>https://forwardingplane.net/post/building-a-bridge-domain-on-mx-series-junos/</guid>
       <description>I started working on Juniper equipment around 2002. At my employer, we had an M40 with the serial number 256. We did Layer3 only. I had no idea if the Juniper even did layer2. It certainly wasn&amp;rsquo;t a layer3 switch like a 6500 like I was used to. It was like a deliciously robust version of any Layer 3 router I&amp;rsquo;d worked on previously. Over the years Juniper has added a switching line utilizing their FreeBSD based OS, JunOS.</description>
     </item>
     
     <item>
       <title>Network Field Day 5 - Participate Remotely</title>
-      <link>https://forwardingplane.net/2013/03/network-field-day-5-participate-remotely/</link>
+      <link>https://forwardingplane.net/post/network-field-day-5/</link>
       <pubDate>Wed, 06 Mar 2013 14:59:05 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/03/network-field-day-5-participate-remotely/</guid>
+      <guid>https://forwardingplane.net/post/network-field-day-5/</guid>
       <description>Last year, Networking Field Day was something that I&amp;rsquo;d heard of but wasn&amp;rsquo;t really aware of what is really was. I occasionally looked at Twitter and saw the hash tags but did not know much about how it was set up or what it was about. In fact, I actually thought it was supposed to be like the HAM radio field day stuff where you go out and build out an emergency network on the fly.</description>
     </item>
     
     <item>
       <title>Tuning BGP installed IPv6 routes</title>
-      <link>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</link>
+      <link>https://forwardingplane.net/post/tuning-bgp-installed-ipv6-routes/</link>
       <pubDate>Sat, 02 Mar 2013 13:15:37 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/03/tuning-bgp-installed-ipv6-routes/</guid>
+      <guid>https://forwardingplane.net/post/tuning-bgp-installed-ipv6-routes/</guid>
       <description>I&amp;rsquo;ve recently run into a situation where there was no longer enough space in the FIB to handle both the full IPv4 global table and the full IPv6 global table. We prefer to run a default-free network within this particular SP network, but in this case, until a hardware refresh can happen, we&amp;rsquo;ll need to adjust that. Given what we knew about the size of both tables, it made more sense to take a default IPv6 route from one transit provider and filter the rest.</description>
     </item>
     
     <item>
       <title>Identify and remedy problem IKE and eventd processes on Juniper SRX</title>
-      <link>https://forwardingplane.net/2013/02/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/</link>
+      <link>https://forwardingplane.net/post/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/</link>
       <pubDate>Mon, 04 Feb 2013 12:45:18 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/02/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/</guid>
+      <guid>https://forwardingplane.net/post/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/</guid>
       <description>Recently we encountered a very strange behavior on an SRX 5800 cluster. The cluster, which is in active/active mode, started dropping OSPF adjacencies to it&amp;rsquo;s neighboring routing equipment, in this case, Juniper MX480 and Brocade/Foundry MLX8. Strange behavior indeed, since for us, these had been rock solid for around 2 years and we&amp;rsquo;d never seen this odd behavior before. Honestly, we started looking at the routers first since this was something the SRX has never done before.</description>
     </item>
     
     <item>
       <title>Using a Brocade MLXe as a replicator to an IDS</title>
-      <link>https://forwardingplane.net/2012/11/using-a-brocade-mlxe-as-a-replicator-to-an-ids/</link>
+      <link>https://forwardingplane.net/post/using-a-brocade-mlxe-as-a-replicator-to-an-ids/</link>
       <pubDate>Sun, 25 Nov 2012 17:26:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/11/using-a-brocade-mlxe-as-a-replicator-to-an-ids/</guid>
+      <guid>https://forwardingplane.net/post/using-a-brocade-mlxe-as-a-replicator-to-an-ids/</guid>
       <description>Have you ever needed to replicate a lot of data transparently to an IDS without the use of a rack of optical taps? Not enough budget for a Gigamon or cPacket? Have a spare MLXe laying around? you&amp;rsquo;re in luck, we were in that boat too. Let me first preface this by saying that this would be fairly trivial using OpenFlow / SDN. That being said, we didn&amp;rsquo;t have the time to set that up, so this is what we came with.</description>
     </item>
     
     <item>
       <title>VDXrancid contrib scripts</title>
-      <link>https://forwardingplane.net/2012/11/vdxrancid-contrib-scripts/</link>
+      <link>https://forwardingplane.net/post/vdxrancid-contrib-scripts/</link>
       <pubDate>Wed, 14 Nov 2012 16:50:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/11/vdxrancid-contrib-scripts/</guid>
+      <guid>https://forwardingplane.net/post/vdxrancid-contrib-scripts/</guid>
       <description>For the Supercomputing 2012 show, as in years past, I was &amp;ldquo;the guy who installed and maintained RANCID&amp;rdquo; as part of my duties for the SCinet routing team. If you don&amp;rsquo;t know about RANCID for change management and config back up, check the link. It&amp;rsquo;s ree and works on a huge amount of gear. Every year there is a new and interesting platform, this year is was Juniper qfabric and Brocade VDX.</description>
     </item>
     
     <item>
       <title>Juniper EX 4200 ARP / NDP problem; or things I&#39;d like to see in a TAC</title>
-      <link>https://forwardingplane.net/2012/11/juniper-ex-4200-arp-/-ndp-problem-or-things-id-like-to-see-in-a-tac/</link>
+      <link>https://forwardingplane.net/post/juniper-ex-4200-arp-ndp-problem-or-things-id-like-to-see-in-a-tac/</link>
       <pubDate>Tue, 06 Nov 2012 03:58:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/11/juniper-ex-4200-arp-/-ndp-problem-or-things-id-like-to-see-in-a-tac/</guid>
+      <guid>https://forwardingplane.net/post/juniper-ex-4200-arp-ndp-problem-or-things-id-like-to-see-in-a-tac/</guid>
       <description>Recently we&amp;rsquo;ve run into an odd issue while routing on an EX4200 series. These little JunOS boxes are a nice alternative for an entry level building router, they support L2/L3 functionality, a PVST+-ish protocol and, with advanced licensing, IPv6, ISIS and BGP. They have multi 10G interface options and come in a pluggable fiber option. We use them all over for light layer 3. They can also be stacked via stacking cables and fiber, which is very handy and makes them extremely versatile but not really applicable for the purpose of this entry.</description>
     </item>
     
     <item>
       <title>ISIS or OSPFv2/3; a caveman case study</title>
-      <link>https://forwardingplane.net/2012/11/isis-or-ospfv2/3-a-caveman-case-study/</link>
+      <link>https://forwardingplane.net/post/isis-or-ospfv23-a-caveman-case-study/</link>
       <pubDate>Thu, 01 Nov 2012 00:18:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/11/isis-or-ospfv2/3-a-caveman-case-study/</guid>
+      <guid>https://forwardingplane.net/post/isis-or-ospfv23-a-caveman-case-study/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Juniper to IOS conversion chart</title>
-      <link>https://forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/</link>
+      <link>https://forwardingplane.net/post/juniper-to-ios-conversion-chart/</link>
       <pubDate>Sat, 27 Oct 2012 20:17:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/</guid>
+      <guid>https://forwardingplane.net/post/juniper-to-ios-conversion-chart/</guid>
       <description>Moving to JunOS from IOS can be a daunting task. It&amp;rsquo;s a completely different command structure and the config, by default, looks like a programming language. I was fortunate enough to have gotten in on using JunOS very early in my career, 1&amp;frasl;3 in to be exact (as of this writing). Not to mention that wen I got started, IOS wasn&amp;rsquo;t the only game in town. Remember Xylan? Gandalf? OpenRoute?</description>
     </item>
     
     <item>
       <title>SDN, the disjointed project we all need to know about</title>
-      <link>https://forwardingplane.net/2012/10/sdn-the-disjointed-project-we-all-need-to-know-about/</link>
+      <link>https://forwardingplane.net/post/sdn-the-disjointed-project-we-all-need-to-know-about/</link>
       <pubDate>Sat, 27 Oct 2012 08:48:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/10/sdn-the-disjointed-project-we-all-need-to-know-about/</guid>
+      <guid>https://forwardingplane.net/post/sdn-the-disjointed-project-we-all-need-to-know-about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Host based sflow, or, sflow for more than just network traffic</title>
-      <link>https://forwardingplane.net/2012/10/host-based-sflow-or-sflow-for-more-than-just-network-traffic/</link>
+      <link>https://forwardingplane.net/post/host-based-sflow-or-sflow-for-more-than-just-network-traffic/</link>
       <pubDate>Sat, 27 Oct 2012 02:33:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/10/host-based-sflow-or-sflow-for-more-than-just-network-traffic/</guid>
+      <guid>https://forwardingplane.net/post/host-based-sflow-or-sflow-for-more-than-just-network-traffic/</guid>
       <description>I&amp;rsquo;m an awful sysadmin. Running services permanently isn&amp;rsquo;t really my forte, I tend to lean more on the &amp;ldquo;I&amp;rsquo;ll get this proof of concept all working, prove that it works or doesn&amp;rsquo;t, then roll it on for polishing by someone else&amp;rdquo; kinda guy. That final 15% is something I&amp;rsquo;m constantly working to refine and better myself at accomplishing. I&amp;rsquo;m decent at debugging network services, and can be handy in a &amp;ldquo;oh crap, it&amp;rsquo;s down!</description>
     </item>
     
     <item>
       <title>MicroFlow policing on Cisco Sup2T</title>
-      <link>https://forwardingplane.net/2012/10/microflow-policing-on-cisco-sup2t/</link>
+      <link>https://forwardingplane.net/post/microflow-policing-on-cisco-sup2t/</link>
       <pubDate>Fri, 19 Oct 2012 07:21:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/10/microflow-policing-on-cisco-sup2t/</guid>
+      <guid>https://forwardingplane.net/post/microflow-policing-on-cisco-sup2t/</guid>
       <description>Let me save you some time&amp;hellip;.Microflow Policing on the Catalyst 6500 / Sup2TXL doesn&amp;rsquo;t yet work. Inbound it &amp;ldquo;kinda works&amp;rdquo;. You can configure it and it applies as a service policy, but even though outbound is &amp;ldquo;supported in hardware on the Supervisor2TXL&amp;rdquo;, there is no software support for it in either the 15.0SY or 12.2(50)SY. It took me a month to suss this out&amp;hellip;..
 Yes, I should have suspected. I dont work on Cisco every day, I have Juniper MX, Brocade MLX and a multitude of other platforms to work on daily, so it took a bit.</description>
     </item>
     
     <item>
       <title>A tale of two ISPs...</title>
-      <link>https://forwardingplane.net/2012/10/a-tale-of-two-isps.../</link>
+      <link>https://forwardingplane.net/post/a-tale-of-two-isps/</link>
       <pubDate>Thu, 18 Oct 2012 11:24:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/10/a-tale-of-two-isps.../</guid>
+      <guid>https://forwardingplane.net/post/a-tale-of-two-isps/</guid>
       <description>I&amp;rsquo;ve been doing research, carrier and service provider networking for a long time. I my first real service provider experience was beta testing DSL for GTE back in the 1990s, I prototyped and proposed a CLEC for an employer in 1998 and went to work for the only ISP in the area rolling it&amp;rsquo;s own DSL over ATM in early 2000.
 Everything seems to come full circle, though, given enough time.</description>
     </item>
     
     <item>
       <title>conditional route advertisement</title>
-      <link>https://forwardingplane.net/2012/05/conditional-route-advertisement/</link>
+      <link>https://forwardingplane.net/post/conditional-route-advertisement/</link>
       <pubDate>Sun, 06 May 2012 02:42:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/05/conditional-route-advertisement/</guid>
+      <guid>https://forwardingplane.net/post/conditional-route-advertisement/</guid>
       <description>I&amp;rsquo;ve recently been tasked with bringing up a tertiary path into a multi-building research facility.</description>
     </item>
     
     <item>
       <title>NSR and ISSU on Juniper MX series with logical routers.</title>
-      <link>https://forwardingplane.net/2012/04/nsr-and-issu-on-juniper-mx-series-with-logical-routers./</link>
+      <link>https://forwardingplane.net/post/nsr-and-issu-on-juniper-mx-series-with-logical-routers/</link>
       <pubDate>Fri, 27 Apr 2012 22:15:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2012/04/nsr-and-issu-on-juniper-mx-series-with-logical-routers./</guid>
+      <guid>https://forwardingplane.net/post/nsr-and-issu-on-juniper-mx-series-with-logical-routers/</guid>
       <description>Lets just say, for instance, that you have an MX series router at somewhere on your network. Lets also say that said router is carved into more than just the main logical system. For the sake of this writing, lets say that your eBGP sessions are in the default logical system and your IGP is in the logical system, lets call it &amp;ldquo;internal&amp;rdquo;.
 JunOS has some wonderful mechanisms for keeping things running, one is called NSR (Non Stop Routing), the other is called ISSU (In Service Software Upgrade).</description>
     </item>
     
     <item>
       <title>Black Hole routing</title>
-      <link>https://forwardingplane.net/2011/10/black-hole-routing/</link>
+      <link>https://forwardingplane.net/post/black-hole-routing/</link>
       <pubDate>Tue, 04 Oct 2011 01:00:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/10/black-hole-routing/</guid>
+      <guid>https://forwardingplane.net/post/black-hole-routing/</guid>
       <description>It&amp;rsquo;s no secret or ground breaking area to do black hole routing.
 ISPs and NSPs have been doing it forever to allow for a very low cost, very scriptable and very effective way to wholesale block a layer3 address. However, it can seem like a bit of a black box to anyone who has never done it.
 I recently did some work spinning this up in a good sized network that it didn&amp;rsquo;t currently exist, and remembered how monumentally useful (and simple) it actually is.</description>
@@ -344,20 +344,20 @@ I recently did some work spinning this up in a good sized network that it didn&a
     
     <item>
       <title>alurancid and pfrancid</title>
-      <link>https://forwardingplane.net/2011/06/alurancid-and-pfrancid/</link>
+      <link>https://forwardingplane.net/post/alurancid-and-pfrancid/</link>
       <pubDate>Thu, 30 Jun 2011 20:12:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/06/alurancid-and-pfrancid/</guid>
+      <guid>https://forwardingplane.net/post/alurancid-and-pfrancid/</guid>
       <description>I did some minor tweaking to the Alcatel Lucent RANCID scripts and some modifications to make RANCID work under my pfsense environment (originally m0n0rancid code from John Skopis). Since I don&amp;rsquo;t really do much dev work and am not interested in maintaing a box do be an SVN server for the public, I threw it up onto google code.
 I&amp;rsquo;ll be adding a brief how-to on making RANCID work with pfSense as soon as I get some time.</description>
     </item>
     
     <item>
       <title>Juniper interface type naming convention</title>
-      <link>https://forwardingplane.net/2011/04/juniper-interface-type-naming-convention/</link>
+      <link>https://forwardingplane.net/post/juniper-interface-type-naming-convention/</link>
       <pubDate>Wed, 13 Apr 2011 01:04:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2011/04/juniper-interface-type-naming-convention/</guid>
+      <guid>https://forwardingplane.net/post/juniper-interface-type-naming-convention/</guid>
       <description>I found most of this on a web page somewhere tha tI can&amp;rsquo;t seem to find again. Below are some common useful junos tidbits regarding routing tables and interface types/names:
 JunOS CLI supports the basic grep command (like | include) so any show commands can be grepped. I believe the grep command implies the -i flag for case insensitivity.
 The routing table is presented in such a way to group types of routes.</description>
@@ -365,10 +365,10 @@ The routing table is presented in such a way to group types of routes.</descript
     
     <item>
       <title>JunOS ISSU</title>
-      <link>https://forwardingplane.net/2010/12/junos-issu/</link>
+      <link>https://forwardingplane.net/post/junos-issu/</link>
       <pubDate>Thu, 30 Dec 2010 00:26:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2010/12/junos-issu/</guid>
+      <guid>https://forwardingplane.net/post/junos-issu/</guid>
       <description>I recently needed to upgrade a few MX480 routers and decided that it would be a good opportunity to get some experience with Juniper&amp;rsquo;s in service software upgrade.
 I&amp;rsquo;d read a bit about it but I&amp;rsquo;d not had the chance to really use it. It&amp;rsquo;s pretty straightforward and it does what it claims. The following are my notes from rolling through this on my test lab MX480.
 A few things are necessary to get going with ISSU, first and foremost, you need to have a box with two routing engines.</description>
@@ -376,20 +376,20 @@ A few things are necessary to get going with ISSU, first and foremost, you need 
     
     <item>
       <title>Alcatel Lucent RANCID scripts</title>
-      <link>https://forwardingplane.net/2010/12/alcatel-lucent-rancid-scripts/</link>
+      <link>https://forwardingplane.net/post/alcatel-lucent-rancid-scripts/</link>
       <pubDate>Mon, 06 Dec 2010 07:06:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2010/12/alcatel-lucent-rancid-scripts/</guid>
+      <guid>https://forwardingplane.net/post/alcatel-lucent-rancid-scripts/</guid>
       <description>At the 2010 Supercomputing conference this year, one of my tasks was to get RANCID working on the Alcatel Lucent 77xx series. for some this may have been a simple task, but for me, a self taught and inefficient programmer, it was something that took some time.
 The Alcatel Lucent boxes were good performers, but their CLI is pretty awful. The prompt changes based on having unsaved configuration items, and can contain things liks an asterisk.</description>
     </item>
     
     <item>
       <title>Multicast through Juniper SRX 5800</title>
-      <link>https://forwardingplane.net/2010/10/multicast-through-juniper-srx-5800/</link>
+      <link>https://forwardingplane.net/post/multicast-through-juniper-srx-5800/</link>
       <pubDate>Sun, 17 Oct 2010 23:56:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2010/10/multicast-through-juniper-srx-5800/</guid>
+      <guid>https://forwardingplane.net/post/multicast-through-juniper-srx-5800/</guid>
       <description>We&amp;rsquo;ve been working toward a more simplified model for our network path, and in doing so, we desired a congruent path for IPv6, IPv4 Multicast and IPv4 Unicast.
 However, this is actually pretty hard when dealing with the link speeds, amounts of traffic and flows that we do, in conjunction with Firewall&amp;hellip;..and IDP/IPS&amp;hellip;
 Lots of research, reading and testing was done.
@@ -398,10 +398,10 @@ Juniper SRX series has full support for 90% of this, with IPv6 IDP coming in Q2 
     
     <item>
       <title>RADIUS and AAA on IOS</title>
-      <link>https://forwardingplane.net/2010/09/radius-and-aaa-on-ios/</link>
+      <link>https://forwardingplane.net/post/radius-and-aaa-on-ios/</link>
       <pubDate>Thu, 02 Sep 2010 00:44:00 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2010/09/radius-and-aaa-on-ios/</guid>
+      <guid>https://forwardingplane.net/post/radius-and-aaa-on-ios/</guid>
       <description>I&amp;rsquo;m not the greatest at AAA on Cisco&amp;rsquo;s IOS. I always have to think about how to order things, and to test fallback (which you should do anyway). One of the caveats that I always overlook, no matter how many times I set this up, is that Cisco IOS software attempts authentication with the next listed authentication method only when there is no response from the previous method. If authentication fails at any point in this cycle—meaning that the security server or local username database responds by denying the user access—the authentication process stops and no other authentication methods are attempted*.</description>
     </item>
     

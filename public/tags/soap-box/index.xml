@@ -14,202 +14,202 @@
     
     <item>
       <title>The BGP conundrum</title>
-      <link>https://forwardingplane.net/2019/06/the-bgp-conundrum/</link>
+      <link>https://forwardingplane.net/post/the-bgp-conundrum/</link>
       <pubDate>Sun, 30 Jun 2019 02:15:32 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2019/06/the-bgp-conundrum/</guid>
+      <guid>https://forwardingplane.net/post/the-bgp-conundrum/</guid>
       <description>BGP. It’s that magical protocol that runs the internet. For for as much as BGP is a fundamental, critical, irreplaceable part of the core functioning of the internet, it is a protocol that has not aged well as far as security is concerned. See, BGP was born when the internet was really still an academic experiment. Handshakes and loose agreements were totally fine for connecting a new site. Then came the awakening.</description>
     </item>
     
     <item>
       <title>Rant: toolexplodeaphobia</title>
-      <link>https://forwardingplane.net/2019/05/rant-toolexplodeaphobia/</link>
+      <link>https://forwardingplane.net/post/1672/</link>
       <pubDate>Fri, 03 May 2019 13:58:55 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2019/05/rant-toolexplodeaphobia/</guid>
+      <guid>https://forwardingplane.net/post/1672/</guid>
       <description>It’s kinda like having RouteExplorer and Arbor Peakflow. They have a decent overlap but *just* enough difference to want both</description>
     </item>
     
     <item>
       <title>Soap Box: Mikrotik &#34;IPv6 Apocalypse&#34;, or maybe not.</title>
-      <link>https://forwardingplane.net/2019/03/soap-box-mikrotik-ipv6-apocalypse-or-maybe-not./</link>
+      <link>https://forwardingplane.net/post/soap-box-mikrotik-ipv6-apocalypse-or-maybe-not/</link>
       <pubDate>Sun, 31 Mar 2019 17:35:10 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2019/03/soap-box-mikrotik-ipv6-apocalypse-or-maybe-not./</guid>
+      <guid>https://forwardingplane.net/post/soap-box-mikrotik-ipv6-apocalypse-or-maybe-not/</guid>
       <description>Over the last few days there has been a huge amount of FUD and panic surrounding two as-yet-to-be-published CVEs (found here and here) related to Mikrotik&amp;rsquo;s IPv6 implementation.It is my opinion that this entire process has been poorly handled, and that the community involved tends to be fairly sensitive to issues such as, and the cloak and dagger nature of the two issues has only exacerbated it. Mikrotik, as a company, is well known for being terse in their responses and tight lipped with their internal workings and dealings with these kinds of issues.</description>
     </item>
     
     <item>
       <title>Faucet: Enterprise OpenFlow in production</title>
-      <link>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</link>
+      <link>https://forwardingplane.net/post/faucet-enterprise-openflow-in-production/</link>
       <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2018/11/faucet-enterprise-openflow-in-production/</guid>
+      <guid>https://forwardingplane.net/post/faucet-enterprise-openflow-in-production/</guid>
       <description>Remember OpenFlow? It was the media and marketing darling for the better part of 5 years as “the machine” conflated OpenFlow with SDN and SDN with - almost literally - everything. &amp;ldquo;Still Does Nothing&amp;rdquo; was a common phrase uttered around those of us that had run large scale, complex networks for a long time. Quietly, and mostly, out of the fickle media and blogosphere eye, a scrappy little SDN project called faucet has been diligently plugging away &amp;ndash; making easy to use, production quality, well documented, and very stable code that runs OpenFlow networks quite happily in production and at scale.</description>
     </item>
     
     <item>
       <title>DDoS mitigation podcast, black hole routing</title>
-      <link>https://forwardingplane.net/2018/11/ddos-mitigation-podcast-black-hole-routing/</link>
+      <link>https://forwardingplane.net/post/ddos-mitigation-podcast-black-hole-routing/</link>
       <pubDate>Thu, 01 Nov 2018 10:53:08 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2018/11/ddos-mitigation-podcast-black-hole-routing/</guid>
+      <guid>https://forwardingplane.net/post/ddos-mitigation-podcast-black-hole-routing/</guid>
       <description>As an often-security-engineer and an individual that has been working on large networks for quite a while, dealing with DDoS, or the threat of DDoS is a well traveled path. Recently I was invited to discuss some of the basics of DDoS mitigation on the Network Collective Podcast. This was a really fun and insightful chat with a wealth of great information for engineers and operators of any skill level. Ep38 - DDoS Mitigation from Network Collective on Vimeo.</description>
     </item>
     
     <item>
       <title>The rush to automation and the IT pendulum</title>
-      <link>https://forwardingplane.net/2018/10/the-rush-to-automation-and-the-it-pendulum/</link>
+      <link>https://forwardingplane.net/post/the-rush-to-automation-and-the-it-pendulum/</link>
       <pubDate>Thu, 18 Oct 2018 14:20:52 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2018/10/the-rush-to-automation-and-the-it-pendulum/</guid>
+      <guid>https://forwardingplane.net/post/the-rush-to-automation-and-the-it-pendulum/</guid>
       <description>Recently, the venerable Ivan Pepelnjak published a very insightful article about automation becoming such a popular topic that was spawned by an email from one of his readers. I found this article to be spot on, and wanted to add a bit of my own opinion into the automation pie, as I have been spending a lot of time on automation as it related to existing networks as well as into SDN based environments.</description>
     </item>
     
     <item>
       <title>Speculation on the obvious: stuff changes, why freak out?</title>
-      <link>https://forwardingplane.net/2017/12/speculation-on-the-obvious-stuff-changes-why-freak-out/</link>
+      <link>https://forwardingplane.net/post/speculation-obvious-stuff-changes-freak/</link>
       <pubDate>Fri, 08 Dec 2017 00:30:15 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2017/12/speculation-on-the-obvious-stuff-changes-why-freak-out/</guid>
+      <guid>https://forwardingplane.net/post/speculation-obvious-stuff-changes-freak/</guid>
       <description>I have my +100 hat of irreverence on today so it&amp;rsquo;s time for a soapbox post. Having recently read a several posts and articles on what seems to be the never-ending cavalcade of assertions that &amp;ldquo;networking people will be out of jobs and you&amp;rsquo;d better learn to be a programmer&amp;rdquo; - or more succinctly put: the &amp;ldquo;dramatic changes in IT networking&amp;rdquo;. To this I respond simply:
 via GIPHY The scorched earth, &amp;ldquo;there&amp;rsquo;s a hole in the boat, we&amp;rsquo;re all going to die!</description>
     </item>
     
     <item>
       <title>Configuration backups and an opportunity for automation and management</title>
-      <link>https://forwardingplane.net/2017/10/configuration-backups-and-an-opportunity-for-automation-and-management/</link>
+      <link>https://forwardingplane.net/post/configuration-backups-opportunity-automation-management/</link>
       <pubDate>Tue, 03 Oct 2017 17:19:54 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2017/10/configuration-backups-and-an-opportunity-for-automation-and-management/</guid>
+      <guid>https://forwardingplane.net/post/configuration-backups-opportunity-automation-management/</guid>
       <description>Configuration management is a critical part of successfully and efficiently run any network. From the early days of networking there have been options for doing configuration backup. Several projects have been around for literally decades, enabling the backup of a myriad of critical network devices and providing historical archives. Many of these projects and platforms require a reasonable amount of unix experience and perhaps some development skills. I’m going to give a quick synopsis of my three favorites, these a all very different in execution but provide the same types of services - configuration backup, diff, and archive (and not much else).</description>
     </item>
     
     <item>
       <title>No privacy may be the new privacy.</title>
-      <link>https://forwardingplane.net/2017/03/no-privacy-may-be-the-new-privacy./</link>
+      <link>https://forwardingplane.net/post/no-privacy-may-new-privacy/</link>
       <pubDate>Sat, 25 Mar 2017 18:06:01 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2017/03/no-privacy-may-be-the-new-privacy./</guid>
+      <guid>https://forwardingplane.net/post/no-privacy-may-new-privacy/</guid>
       <description>Taking politics and putting them aside, what the new administration has been attempting to change with regard to internet privacy is something we should all be informed about. Wether you have a tin foil hat or don&amp;rsquo;t care, &amp;ldquo;knowing is half the battle&amp;rdquo;. The other half is doing - which I will also lend some brief insight to (sorta). What&amp;rsquo;s changing? Nothing yet (as of the time of this writing). What will likely change?</description>
     </item>
     
     <item>
       <title>Buzzwords, technology, terminology, and the interconnection of modern networking</title>
-      <link>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</link>
+      <link>https://forwardingplane.net/post/buzzwords-technology-terminology-interconnection-modern-networking/</link>
       <pubDate>Mon, 18 Jan 2016 16:33:09 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2016/01/buzzwords-technology-terminology-and-the-interconnection-of-modern-networking/</guid>
+      <guid>https://forwardingplane.net/post/buzzwords-technology-terminology-interconnection-modern-networking/</guid>
       <description>I&amp;rsquo;m way overdue for a soapbox session &amp;ndash; I found this one in my drafts and thought it was something I needed to put out there. It&amp;rsquo;s already dated in terminology but that actually helps make the point - it&amp;rsquo;s hard to keep up. 
 Lets throw this out there: social media can be exhausting. Do not misunderstand me, it’s a great tool for communication, obtaining and disseminating information as well as standard goofing around.</description>
     </item>
     
     <item>
       <title>Building Interdomain SDN part 3</title>
-      <link>https://forwardingplane.net/2015/11/building-interdomain-sdn-part-3/</link>
+      <link>https://forwardingplane.net/post/building-interdomain-sdn-part-3/</link>
       <pubDate>Fri, 06 Nov 2015 04:37:23 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2015/11/building-interdomain-sdn-part-3/</guid>
+      <guid>https://forwardingplane.net/post/building-interdomain-sdn-part-3/</guid>
       <description>A few years ago I wrote some text on interdomain SDN. Years later, work is being done, smart people are thinking about it and building ways to make it a reality. Not being one to give up on an idea, I gave this presentation in may at ChiNOG on what my take on what that architecture should be. I (we) propose that the use of existing protocols such as BGP FlowSpec will make this realistically deployable and maintainable given some simple, pluggable middleware.</description>
     </item>
     
     <item>
       <title>Brocade does a double down on SDN</title>
-      <link>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</link>
+      <link>https://forwardingplane.net/post/brocade-does-a-double-down-on-sdn/</link>
       <pubDate>Sat, 28 Mar 2015 16:09:11 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2015/03/brocade-does-a-double-down-on-sdn/</guid>
+      <guid>https://forwardingplane.net/post/brocade-does-a-double-down-on-sdn/</guid>
       <description>Since Network Field Day 9, I have spent more and more time mentally grinding on what Brocade is doing. I have been a pretty vocal critic of the foundry hardware and software platform since my first experience with it years and years ago. I found it to be lacking in completed features, Layer 3 functionality and general stability.
 This is one reason that anyone reading this should take pause and think about the background this post is sourcing from and how much of a shift it is.</description>
     </item>
     
     <item>
       <title>OpenDNS acquires BGPMon and the future of route monitoring</title>
-      <link>https://forwardingplane.net/2015/03/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</link>
+      <link>https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</link>
       <pubDate>Fri, 20 Mar 2015 05:18:30 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2015/03/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</guid>
+      <guid>https://forwardingplane.net/post/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/</guid>
       <description>For those that run BGP networks, BGPmon is often a tool they turn to for some really unique and hard to find information. Remember back in February 2008 when Pakistan Telecom &amp;ldquo;blocked&amp;rdquo; Youtube? That one was a really, really public example of something that BGPMon caught. BGPmon has been around for a long, long time. Quietly watching prefixes. Silently noting changes and reporting them to the ones lucky enough to know of its existence.</description>
     </item>
     
     <item>
       <title>Why you don&#39;t need a firewall [how to secure an open perimeter network]</title>
-      <link>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
+      <link>https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</link>
       <pubDate>Mon, 08 Sep 2014 07:30:07 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/09/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
+      <guid>https://forwardingplane.net/post/why-you-dont-need-a-firewall-how-to-secure-an-open-perimeter-network/</guid>
       <description>I admit that the title was meant to be inflammatory. However, there are use cases that aren&amp;rsquo;t terribly uncommon where an in-line security appliance is just not the correct tool for the job. Someone once told me &amp;ldquo;a firewall protects a network like a fuse protects an electrical circuit&amp;rdquo;, and it&amp;rsquo;s mostly a correct statement. Firewall vendors will probably argue this and enterprise folks may discount this as heresy and call for burning me at the stake.</description>
     </item>
     
     <item>
       <title>Aging hardware, IPv6 and the growing route table</title>
-      <link>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</link>
+      <link>https://forwardingplane.net/post/aging-hardware-ipv6-and-the-growing-route-table/</link>
       <pubDate>Wed, 13 Aug 2014 05:00:56 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/08/aging-hardware-ipv6-and-the-growing-route-table/</guid>
+      <guid>https://forwardingplane.net/post/aging-hardware-ipv6-and-the-growing-route-table/</guid>
       <description>I&amp;rsquo;ve blathered on about BGP forever. Say what you will about the venerable protocol, it runs the interwebs, is reliable, extendable and well documented. I&amp;rsquo;ve also espoused&amp;rdquo;) ad nauseam about IPv6, so none of this [admitted] rant should really be a surprise coming from me. As of 8/12/2014, according to the CIRD report (and many mailing lists), the default free global ipv4 routing table has reached 512k routes. This is a milestone from many perspectives, but more importantly, it solidifies the fact that there is a great deal of equipment in critical points in the internet that is out of date and cannot perform as intended in its current configuration or function.</description>
     </item>
     
     <item>
       <title>Crystal Ball: Cisco buying tail-f.  What does it mean?</title>
-      <link>https://forwardingplane.net/2014/06/crystal-ball-cisco-buying-tail-f.-what-does-it-mean/</link>
+      <link>https://forwardingplane.net/post/crystal-ball-cisco-buying-tail-f-what-does-it-mean/</link>
       <pubDate>Mon, 23 Jun 2014 16:24:44 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/06/crystal-ball-cisco-buying-tail-f.-what-does-it-mean/</guid>
+      <guid>https://forwardingplane.net/post/crystal-ball-cisco-buying-tail-f-what-does-it-mean/</guid>
       <description>With the recent announcement of Cisco Systems intent to purchase tail-f, proponents of a multi-vendor environment are waiting with baited breath to see how the networking giant will deal with support of competitor hardware and CLIs. Yang is here to stay, there is no doubt about that. As is netconf. Both of these are good things for the industry as a whole, having a standard way to communicate with network hardware [that isn&amp;rsquo;t openflow] is necessary and immeasurably useful.</description>
     </item>
     
     <item>
       <title>Net Neutrality changes could force better fiber networks</title>
-      <link>https://forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/</link>
+      <link>https://forwardingplane.net/post/net-neutrality-changes-could-force-better-fiber-networks/</link>
       <pubDate>Sat, 17 May 2014 18:40:25 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/05/net-neutrality-changes-could-force-better-fiber-networks/</guid>
+      <guid>https://forwardingplane.net/post/net-neutrality-changes-could-force-better-fiber-networks/</guid>
       <description>Many regular internet users are extremely upset about the recent proposed changes the FCC has opened for comments about the delivery and provisioning of internet services. Watch this video if you&amp;rsquo;re unaware of the high emotions it has evoked: While these are proposed rules and are not in any way finalized, there is real concern that they may become law. Where this is problematic is that it opens up the possibility of some real misuse, abuse or simple misunderstanding of needs and services.</description>
     </item>
     
     <item>
       <title>Speculation and soapboxing about the leaked NSA spy catalog.</title>
-      <link>https://forwardingplane.net/2014/01/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog./</link>
+      <link>https://forwardingplane.net/post/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog/</link>
       <pubDate>Sat, 04 Jan 2014 17:15:40 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2014/01/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog./</guid>
+      <guid>https://forwardingplane.net/post/speculation-and-soapboxing-about-the-leaked-nsa-spy-catalog/</guid>
       <description>The buzz as of late around the security and networking communities has been about the NSA and their catalog or spy toolkit. I&amp;rsquo;ve spent time in my career thinking about and doing infosec and I did a brief stint working for the FBI in a project called NCDIR. I like to think that I can provide at least a peripherally competent commentary about it [take it with a grain of salt].</description>
     </item>
     
     <item>
       <title>Sonicwall revisited - Now with IPv6 - and way too much licensing cruft.</title>
-      <link>https://forwardingplane.net/2013/12/sonicwall-revisited-now-with-ipv6-and-way-too-much-licensing-cruft./</link>
+      <link>https://forwardingplane.net/post/sonicwall-revisited-now-with-ipv6-and-way-too-much-licensing-cruft/</link>
       <pubDate>Sat, 07 Dec 2013 15:45:06 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/12/sonicwall-revisited-now-with-ipv6-and-way-too-much-licensing-cruft./</guid>
+      <guid>https://forwardingplane.net/post/sonicwall-revisited-now-with-ipv6-and-way-too-much-licensing-cruft/</guid>
       <description>About a year ago I did a brief review of the &amp;ldquo;new Sonicwall&amp;rdquo;, specifically a smaller branch office device that was said should have had all of the features of the larger devices. I proposed that it had some significant limitations (much to the disagreement of a great deal of folks). However, I stand by my statements. If you ignore the fact that firewalls often cause more problems than they solve, that NAT is a nightmarish kludge (and not a security mechanism), and will likely be phased out for better options eventually, the SonicOS I tested was pretty limited as far as what I believe should be features.</description>
     </item>
     
     <item>
       <title>How to be a [good] Network Engineer (and network engineer appreciation day)</title>
-      <link>https://forwardingplane.net/2013/11/how-to-be-a-good-network-engineer-and-network-engineer-appreciation-day/</link>
+      <link>https://forwardingplane.net/post/how-to-be-a-good-network-engineer-and-network-appreciation-engineer-day/</link>
       <pubDate>Sun, 10 Nov 2013 04:02:52 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/11/how-to-be-a-good-network-engineer-and-network-engineer-appreciation-day/</guid>
+      <guid>https://forwardingplane.net/post/how-to-be-a-good-network-engineer-and-network-appreciation-engineer-day/</guid>
       <description>My personal background in computing (specifically networking) is atypical. I have a bachelors in visual arts and only took a handful of computing classes in my relatively long tenure in college. However, I did learn one valuable lesson that has served me pretty well over the 15 or so years I have been doing networking and I&amp;rsquo;d bet money any good network engineer that has more than 10 years of experience will nod their head at this and agree.</description>
     </item>
     
     <item>
       <title>Being single vendor does your brain a disservice.</title>
-      <link>https://forwardingplane.net/2013/09/being-single-vendor-does-your-brain-a-disservice./</link>
+      <link>https://forwardingplane.net/post/being-single-vendor-does-your-brain-a-disservice/</link>
       <pubDate>Sat, 21 Sep 2013 15:30:33 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/09/being-single-vendor-does-your-brain-a-disservice./</guid>
+      <guid>https://forwardingplane.net/post/being-single-vendor-does-your-brain-a-disservice/</guid>
       <description>Let me be clear, when I say &amp;ldquo;single vendor&amp;rdquo; I&amp;rsquo;m talking about being &amp;ldquo;single vendor&amp;rdquo; in what you work on, not necessarily what you install (although one basically forces the other) and what I really mean is multilingual. I&amp;rsquo;ll explain after a brief history of why I am the way I am. I&amp;rsquo;m idealistic but I&amp;rsquo;m also realistic. I generally propose solutions that I think are best even if it is non-standard or out of current comfort level along with an alternative or two.</description>
     </item>
     
     <item>
       <title>The sad state of IPv6 and why you need to learn it.</title>
-      <link>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</link>
+      <link>https://forwardingplane.net/post/the-sad-state-of-ipv6-and-why-you-need-to-learn-it/</link>
       <pubDate>Mon, 05 Aug 2013 11:18:03 +0000</pubDate>
       
-      <guid>https://forwardingplane.net/2013/08/the-sad-state-of-ipv6-and-why-you-need-to-learn-it./</guid>
+      <guid>https://forwardingplane.net/post/the-sad-state-of-ipv6-and-why-you-need-to-learn-it/</guid>
       <description>I have been learning and using IPv6 for a quite a while, even before I worked in research and education, back in the ISP days. I thought I should learn it because, frankly, I figured we&amp;rsquo;d all be converted to it by now, already whole hog using it like it was the layer 3 addressing mechanism that it is. Flashback: My first IPv6 access was via a tunnel to HE a long, long time ago and before that I was reading what I could about it.</description>
     </item>
     

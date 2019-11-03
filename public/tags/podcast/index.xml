@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Podcast on ForwardingPlane.net</title>
@@ -9,7 +8,7 @@
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Sat, 01 Sep 2018 16:47:23 +0000</lastBuildDate>
     
-	<atom:link href="https://forwardingplane.net/tags/podcast/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://forwardingplane.net/tags/podcast/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +17,14 @@
       <pubDate>Sat, 01 Sep 2018 16:47:23 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/</guid>
-      <description>IPv6 has been a crusade of mine for well over a decade. Wether it is teaching IPv6 workshops, offering advice to new users, answering questions, or evangelizing it ad nauseam, it is an important topic to me. The ISP world holds a special place in my heart since a good deal of my early experience came from building or assisting regional ISPs. Recently I had a fun opportunity to talk about deploying IPv6 on The Brothers WISP podcast.</description>
+      <description>
+
+&lt;p&gt;IPv6 has been a crusade of mine for well over a decade. Wether it is teaching IPv6 workshops, offering advice to new users, answering questions, or evangelizing it ad nauseam, it is an important topic to me. The ISP world holds a special place in my heart since a good deal of my early experience came from building or assisting regional ISPs. Recently I had a fun opportunity to talk about deploying IPv6 on &lt;a href=&#34;http://thebrotherswisp.com/&#34;&gt;The Brothers WISP podcast&lt;/a&gt;. This was a really fun experience, and if you&amp;rsquo;re looking at deploying v6, take a listen (or watch) to this - it should give you the basics or at the very least a place to start.  &lt;/p&gt;
+
+&lt;h3 id=&#34;links-to-discussed-topics&#34;&gt;Links to discussed topics&lt;/h3&gt;
+
+&lt;p&gt;IPv4/IPv6 subnetting tool: &lt;a href=&#34;https://github.com/sii/sipcalc&#34;&gt;sipcalc&lt;/a&gt; &lt;a href=&#34;http://sipcalc.tools.uebi.net/&#34;&gt;Online version&lt;/a&gt; Great, Free training for IPv6, plus a free T-Shirt if you complete it. &lt;a href=&#34;https://ipv6.he.net/certification/&#34;&gt;HE IPv6 certification&lt;/a&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Comparison_of_DHCP_server_software&#34;&gt;DHCPv6 alternatives&lt;/a&gt; (YES, it exists) Looking to see if folks are tunneling using &lt;a href=&#34;https://tools.ietf.org/html/rfc3068&#34;&gt;6to4&lt;/a&gt; or &lt;a href=&#34;https://en.wikipedia.org/wiki/Teredo_tunneling&#34;&gt;Teredo&lt;/a&gt; in your network? Do netflow searches for these anycast addresses: 192.88.99.0/24 (6to4) 65.54.227.120 (Teredo) &lt;a href=&#34;https://howdoesinternetwork.com/2013/slaac&#34;&gt;Information on SLAAC&lt;/a&gt; (Auto-configuration) You might also be interested in a &lt;a href=&#34;https://www.youtube.com/watch?v=c8m2Sjre6t4&amp;amp;feature=youtu.be&#34;&gt;DNS podcast&lt;/a&gt; I did with Brothers WISP a while ago.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

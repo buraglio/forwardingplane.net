@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenFlow on ForwardingPlane.net</title>
@@ -9,7 +8,7 @@
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Wed, 29 May 2019 18:17:13 +0000</lastBuildDate>
     
-	<atom:link href="https://forwardingplane.net/tags/openflow/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://forwardingplane.net/tags/openflow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +17,61 @@
       <pubDate>Wed, 29 May 2019 18:17:13 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/</guid>
-      <description>Years ago I wrote about building a secure network in a box. Over a weekend I decided to revisit this concept thanks to a colleague at work wanting to do something similar. It got me thinking “a lot has changed since I last did this” and it felt like time to revisit it. Well, disappointment wasn’t in the cards because it’s easier, smarter, and more flexible now that it was back then.</description>
+      <description>&lt;p&gt;Years ago I wrote about building a &lt;a href=&#34;https://www.forwardingplane.net/2013/07/building-a-secured-network-in-a-box/&#34;&gt;secure network in a box&lt;/a&gt;. Over a weekend I decided to revisit this concept thanks to a colleague at work wanting to do something similar. It got me thinking “a lot has changed since I last did this” and it felt like time to revisit it. Well, disappointment wasn’t in the cards because it’s easier, smarter, and more flexible now that it was back then. As I noted back in 2013 when I wrote that last post, OVS was a lot less well traveled and, frankly, there was not a reasonable controller that I could use in production for OpenFlow integration. I’ve since standardized on &lt;a href=&#34;https://www.proxmox.com/en/&#34;&gt;ProxMox&lt;/a&gt; for my lab and production virtualization and have espoused on every available occasion the usefulness of the &lt;a href=&#34;https://www.faucet.nz&#34;&gt;Faucet SDN controller&lt;/a&gt;. Both play fundamental roles in this project. This is significantly easier than I expected - primarily due to the use of faucet for controlling the OVS switch. It’s fairly straightforward, so I won’t go into the step by step details here since the projects have good install and support docs. Proxmox has support for OVS, so just install it using apt and create an OVS switch in the GUI interface. Faucet has &lt;a href=&#34;https://docs.faucet.nz/en/latest/&#34;&gt;amazingly complete documentation&lt;/a&gt; and even a &lt;a href=&#34;https://docs.faucet.nz/en/latest/installation.html#installing-on-raspberry-pi&#34;&gt;raspberry pi image&lt;/a&gt; (if you’re still thinking “OpenFlow is dead, isn’t it?”, have a listen to &lt;a href=&#34;https://blog.ipspace.net/2019/04/using-faucet-to-build-sc18-network-with.html&#34;&gt;this podcast&lt;/a&gt; I did with Ivan Pepelnjak). From there, install a &lt;a href=&#34;https://securityonion.net/&#34;&gt;security option VM&lt;/a&gt; (or any other tool you want to capture data with). Once you have the OVS switch, the controller, and the VM up and running getting data to it is as simple as issuing the comments to configure a controller. I my case the command was:```
+sudo ovs-vsctl set-controller vmbr4 tcp:10.16.9.12:6653 tcp:10.16.9.12:6654&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-In my lab design the architecture was as such ![Faucet OVS Proxmox Security](https://www.forwardingplane.net/wp-content/uploads/2019/05/Faucet-OVS-Proxmox-Security.jpg &#34;Faucet OVS Proxmox Security.jpg&#34;) The two switches on the right are physical and span all uplink data via two physical ports into my proxmox host. Everything else is done virtually in OVS. Once you have the controller setup, the data coming in, and the host listening, you can validate you have the correct controller, interfaces and ports in ovs.```&#34; data-lang=&#34;In my lab design the architecture was as such ![Faucet OVS Proxmox Security](https://www.forwardingplane.net/wp-content/uploads/2019/05/Faucet-OVS-Proxmox-Security.jpg &#34;Faucet OVS Proxmox Security.jpg&#34;) The two switches on the right are physical and span all uplink data via two physical ports into my proxmox host. Everything else is done virtually in OVS. Once you have the controller setup, the data coming in, and the host listening, you can validate you have the correct controller, interfaces and ports in ovs.```&#34;&gt;root@pve1:~# ovs-vsctl show
+75b4bc7f-4e00-45c2-8919-b043cbaf509d
+Bridge &amp;#34;vmbr4&amp;#34;
+Controller &amp;#34;tcp:10.16.9.12:6654&amp;#34;
+Controller &amp;#34;tcp:10.16.9.12:6653&amp;#34;
+is\_connected: true
+Port &amp;#34;enx00051ba65ece&amp;#34;
+Interface &amp;#34;enx00051ba65ece&amp;#34;
+Port &amp;#34;tap115i1&amp;#34;
+Interface &amp;#34;tap115i1&amp;#34;
+Port &amp;#34;vmbr4&amp;#34;
+Interface &amp;#34;vmbr4&amp;#34;
+type: internal
+Port &amp;#34;eno2&amp;#34;
+Interface &amp;#34;eno2&amp;#34;
+ovs\_version: “2.7.0&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Listing interfaces in OVS can be a helpful way to aid in building the faucet configuration```
+root@pve1:~# ovs-vsctl &amp;ndash;columns=ofport,name list interface
+ofport : 65534
+name : &amp;ldquo;vmbr4&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;ofport              : 1
+name : &amp;ldquo;eno2&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;ofport              : 4
+name : &amp;ldquo;tap115i1&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;ofport              : 2
+name : &amp;ldquo;enx00051ba65ece&amp;rdquo;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-For spanning the data into the VM, the basic configuration within faucet looks like this and should reside in /etc/faucet/faucet.yaml. The real meat here is the mirror statement on port 4.```&#34; data-lang=&#34;For spanning the data into the VM, the basic configuration within faucet looks like this and should reside in /etc/faucet/faucet.yaml. The real meat here is the mirror statement on port 4.```&#34;&gt;dps:
+    proxovs1:
+        dp\_id: 0x51ba65ece
+        hardware: &amp;#34;Open vSwitch&amp;#34;
+        interfaces:
+            65534:
+                name: &amp;#34;vmbr4&amp;#34;
+                description: &amp;#34;ProxMox OVS vmbr4&amp;#34;
+                native\_vlan: servernet
+            1:
+                name: &amp;#34;eno2&amp;#34;
+                description: &amp;#34;Span from sw1&amp;#34;
+                native\_vlan: servernet
+            2:
+                name: &amp;#34;enx00051ba65ece&amp;#34;
+                description: &amp;#34;Span from sw2&amp;#34;
+                native\_vlan: servernet
+            4:
+                name: &amp;#34;tap115i1&amp;#34;
+                description: &amp;#34;ProxMox OVS vmbr4&amp;#34;
+                output\_only: True
+                mirror: \[1,2\]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This can be fairly easily adjusted to mirror all internal, east-west traffic in a virtualization farm.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +80,69 @@
       <pubDate>Mon, 05 Nov 2018 10:56:21 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/faucet-enterprise-openflow-in-production/</guid>
-      <description>Remember OpenFlow? It was the media and marketing darling for the better part of 5 years as “the machine” conflated OpenFlow with SDN and SDN with - almost literally - everything. &amp;ldquo;Still Does Nothing&amp;rdquo; was a common phrase uttered around those of us that had run large scale, complex networks for a long time. Quietly, and mostly, out of the fickle media and blogosphere eye, a scrappy little SDN project called faucet has been diligently plugging away &amp;ndash; making easy to use, production quality, well documented, and very stable code that runs OpenFlow networks quite happily in production and at scale.</description>
+      <description>
+
+&lt;p&gt;Remember OpenFlow? It was the media and marketing darling for the better part of 5 years as “the machine” conflated OpenFlow with SDN and SDN with - almost literally - everything. &amp;ldquo;Still Does Nothing&amp;rdquo; was a common phrase uttered around those of us that had run large scale, complex networks for a long time. Quietly, &lt;a href=&#34;https://faucet-sdn.blogspot.com/&#34;&gt;and mostly&lt;/a&gt;, out of the fickle media and blogosphere eye, a scrappy little SDN project called &lt;a href=&#34;https://github.com/faucetsdn/faucet&#34;&gt;faucet&lt;/a&gt; has been &lt;a href=&#34;https://github.com/faucetsdn/faucet&#34;&gt;diligently plugging away&lt;/a&gt; &amp;ndash; making easy to use, production quality, well documented, and very stable code that runs OpenFlow networks quite happily in production and at scale. Oh, did I mention that it&amp;rsquo;s also got a very small footprint? Did I also mention that we&amp;rsquo;ve built a multi-terabit network that scales, transiting IPv4, IPv6, L2/L3 switching as well as routing? Or that faucet can control switches from multiple vendors, including P4 vendors who provide a P4-to-OF bridge, and interoperates with non-SDN networks? Or (and possibly most importantly) that faucet provides automated integration tests, allowing many bugs to be caught early (sometimes even by the switch vendor) before shipping new releases? Well, I should probably mention those things. I&amp;rsquo;ve been lucky enough to have been involved in SDN off and on since around 2009, and I can emphatically say that of the production SDN and OpenFlow networks that I have been intimately involved in, this combination of hardware, software and people has been, hands down, the most rewarding and most supportable. In fact, this has been so supportable and great to work with, we migrated our production branch office over to a set of faucet controlled SDN switches, and will soon migrate first hop routing over to our robust faucet system. &amp;ldquo;However did you do this?!?!&amp;rdquo; you might be inclined to say. Well, I&amp;rsquo;m glad you asked, because I am going to tell you.    First, though, there should be some design goals. As many of the naysayers of SDN will happy point out, &amp;ldquo;what problem are you trying to solve?&amp;rdquo; to that end, here is what our design goals were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Run all layer 2 in via faucet&lt;/li&gt;
+&lt;li&gt;Remove need to log into any network elements after deployment (other than firmware updates)&lt;/li&gt;
+&lt;li&gt;Centralize management&lt;/li&gt;
+&lt;li&gt;Stretch goal to NFV BGP, do first hop L3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Easy enough, right? It really is. For our deployment we leveraged Aruba 2930F switches giving us a wealth of 1G copper ports and a handful of 10G SFP+ ports. Luckily, we already had this gear because as so many that have tried to deploy openflow in the past have seen, all hardware is not created equally. Luckily, the &lt;a href=&#34;https://www.faucet.org.nz/&#34;&gt;faucet foundation&lt;/a&gt; has published a list of requirements for support, and there are a reasonable number of vendors that actually conform. The real key that I learned in this process is that without proper vendor support (which had been several lacking in the past), and without multi-table, OpenFlow is not positioned for success. It comes down to using the right tools for the job, and OpenFlow (as well as SDN) is no different. Originally this post was to detail the process of building this network, much like posts in the past where there has been a “do this, then do that” how-to, it’s more or less unnecessary here. Why? The faucet project is serious, well documented and generally here to work. The expectation is that this is not an enclave, or a science experiment, or a lab. It’s a production network with real people and real traffic. Read that again. The expectation is that this is stable, supportable, and can do in ready to use day-to-day. And it doesn’t disappoint. Installing is a snap, the &lt;a href=&#34;https://docs.faucet.nz/en/latest/tutorials/first_time.html&#34;&gt;documentation&lt;/a&gt; for faucet is fantastic and complete. If there is something missing or a question, the developers are incredibly responsive and very quick to answer and address any issues that may arise. It’s extremely low footprint - it runs very well on a raspberry pi and does not tax a raspberry pi series 2, even with the gauge telemetry interface (there is a &lt;a href=&#34;https://docs.faucet.nz/en/latest/installation.html#installing-on-raspberry-pi&#34;&gt;pre-built pi OS&lt;/a&gt; for anyone that would prefer a more turnkey option). You may be thinking “_But Nick, I need my CLI!!!_” You’re covered - and here is why: the developers use this system. They run real networks with it. Every day. They know what is necessary to manage and maintain a real production network and sometimes that means troubleshooting. Like many engineers that learned on traditional network equipment, most of us prefer a CLI to troubleshoot, so the inclusion of this feature from the controller is not really a surprise. The fctl command provides a reasonable visibility into the operations of the controller and can be augmented and scripted.```
+buraglio@faucet:~ $ /usr/bin/fctl &amp;ndash;help&lt;/p&gt;
+
+&lt;p&gt;usage:&lt;/p&gt;
+
+&lt;p&gt;MACs learned on a DP.&lt;/p&gt;
+
+&lt;p&gt;/usr/bin/fctl -n &amp;ndash;endpoints=&lt;a href=&#34;http://172.17.0.1:9302&#34;&gt;http://172.17.0.1:9302&lt;/a&gt; &amp;ndash;metrics=learned_macs &amp;ndash;labels=dp_id:0xb827eb608918&lt;/p&gt;
+
+&lt;p&gt;Status of all DPs&lt;/p&gt;
+
+&lt;p&gt;/usr/bin/fctl -n &amp;ndash;endpoints=&lt;a href=&#34;http://172.17.0.1:9302&#34;&gt;http://172.17.0.1:9302&lt;/a&gt; &amp;ndash;metrics=dp_status&lt;/p&gt;
+
+&lt;p&gt;Retrieve FAUCET/Gauge state using Prometheus variables.&lt;/p&gt;
+
+&lt;p&gt;optional arguments:&lt;/p&gt;
+
+&lt;p&gt;-h, &amp;ndash;help            show this help message and exit&lt;/p&gt;
+
+&lt;p&gt;-n, &amp;ndash;nonzero         nonzero results only&lt;/p&gt;
+
+&lt;p&gt;-e ENDPOINTS, &amp;ndash;endpoints ENDPOINTS&lt;/p&gt;
+
+&lt;p&gt;list of endpoint URLs to query&lt;/p&gt;
+
+&lt;p&gt;-m METRICS, &amp;ndash;metrics METRICS&lt;/p&gt;
+
+&lt;p&gt;list of metrics to query&lt;/p&gt;
+
+&lt;p&gt;-l LABELS, &amp;ndash;labels LABELS&lt;/p&gt;
+
+&lt;p&gt;list of labels that must be present&lt;/p&gt;
+
+&lt;p&gt;&amp;ndash;display-labels DISPLAY_LABELS&lt;/p&gt;
+
+&lt;p&gt;list of labels to filter display by (default all)
+```Monitoring is also taken into account in the form of the gauge interface, which provides a nearly-real-time telemetry stream of important and useful information. Leveraging both the wealth of topological information that the controller has at its disposal and a familiar &lt;a href=&#34;https://github.com/prometheus&#34;&gt;prometheus&lt;/a&gt; / &lt;a href=&#34;https://grafana.com/&#34;&gt;grafana&lt;/a&gt; back / front end interface, the oft-touted notion of streaming telemetry is fully - and quite capably - realized. From the perspective of a networking monitoring and statistics geek, this is the cat’s meow. Very, very data rich. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2018/11/grafana-screencap.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2018/11/grafana-screencap-1024x275.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt; A simple diagram of our office network pretty well explains the decoupled control plane architecture. Keep it simple, architect for success. Fundamentally SDN networks should be designed like other networks, redundant systems, good monitoring, out of band access. A good design principle is that if you wouldn’t do it on a traditional network, you probably shouldn’t do it for an SDN based network.   &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2018/11/faunet-office.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2018/11/faunet-office.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;   Don’t trust me? Fair enough, check out the &lt;a href=&#34;https://www.waikato.ac.nz/research/units/wand.shtml&#34;&gt;University of Waikato&lt;/a&gt; interface &lt;a href=&#34;https://grafana.redcables.wand.nz/d/000000003/redcables-bgp?orgId=1&#34;&gt;here&lt;/a&gt;. For more interface on the deployment at &lt;a href=&#34;https://wand.net.nz/&#34;&gt;WAND&lt;/a&gt;, check &lt;a href=&#34;https://redcables.wand.nz/&#34;&gt;this link&lt;/a&gt;. You won’t be disappointed.    &lt;/p&gt;
+
+&lt;h2 id=&#34;my-take&#34;&gt;My take&lt;/h2&gt;
+
+&lt;h3 id=&#34;building-and-running-it&#34;&gt;Building and running it&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://docs.faucet.nz/en/latest/&#34;&gt;documentation for faucet&lt;/a&gt; is indescribably better than any other SDN project I have worked with over the span of nearly 10 years. &lt;strong&gt;It’s also supportable.&lt;/strong&gt; My office has been running the enterprise network off of faucet for a while now, without issue, and it meets our design goals [stretch goal of BGP NFV is still in process - testing is successful]). It is easy to manage and very information rich. I can see security minded folks being very interested in the ACLs and other such options available.&lt;/p&gt;
+
+&lt;h3 id=&#34;telemetry-and-analytics&#34;&gt;Telemetry and analytics    &lt;/h3&gt;
+
+&lt;p&gt;   Where so many others in this space are talking about their Telemetry solution, this one is already here, complete, and usable. Frankly, I am fully comfortable running a production network on this technology, operationally it is truly easier. From a security perspective, the options added scale well and deliver on their promise. Where OpenFlow was once touted as the networking silver bullet (without a lot of real stick time to prove or disprove it), it has now fallen comfortable into a nice, supportable model.&lt;/p&gt;
+
+&lt;h3 id=&#34;up-next&#34;&gt;Up next….    &lt;/h3&gt;
+
+&lt;p&gt;If you think this is cool, wait until &lt;a href=&#34;https://sc18.supercomputing.org/&#34;&gt;SuperComputing 18&lt;/a&gt;, where we’re deploying a &lt;a href=&#34;https://www.linkedin.com/feed/update/urn:li:activity:6461072411969363968/&#34;&gt;first-of-it’s kind network&lt;/a&gt;, all controlled by FAUCET.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -36,7 +151,17 @@
       <pubDate>Fri, 20 Feb 2015 06:52:33 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/the-nec-surprise/</guid>
-      <description>When NEC began talking about SDN at Network Field Day 9, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments.</description>
+      <description>&lt;p&gt;When &lt;a href=&#34;http://necam.com/&#34;&gt;NEC&lt;/a&gt; began talking about SDN at &lt;a href=&#34;http://techfieldday.com/event/nfd9/&#34;&gt;Network Field Day 9&lt;/a&gt;, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments. I knew they had decent support and were squarely on board the SDN train. Their controller, in 2010, was not terribly fun to work with. It was (if memory serves) prohibitively expensive and the support manual was nearly as cryptic as the controller. Because it&amp;rsquo;s my personality type, I went in with a very open mind, hoping to be surprised. After all, it&amp;rsquo;d been 4+ years since I&amp;rsquo;d seen that controller. Well, I am here to report that I will happily eat some crow. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2015/02/Eat-Crow.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2015/02/Eat-Crow.jpg&#34; alt=&#34;Eat Crow&#34; /&gt;&lt;/a&gt;   A few things became very apparent to me as I sat and watched the presentation from NEC, which you can view in its entirety below:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;NEC is not messing around with their SDN offering. They&amp;rsquo;ve been in the openflow game since the beginning and the polish on their controller shows it. The topology is quite nice and they&amp;rsquo;ve got a finished looking product that would find itself at home in a decent sized NOC.&lt;/li&gt;
+&lt;li&gt;NEC is playing well with others. Their demo consisted of both NEC and DELL whitebox switches. To me this is an indication of both great forward thinking and a clear message that the controller is a product that can stand on its own.&lt;/li&gt;
+&lt;li&gt;NEC is setting the barrier of entry low. Very low. They&amp;rsquo;ve got an entry level &amp;ldquo;SDN in a box&amp;rdquo; that consists of their controller and a few switches for like 3k. They&amp;rsquo;re also offering a 90 day free trial on their controller that is bundled with &lt;a href=&#34;http://mininet.org/&#34;&gt;mininet&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Like most other controllers, the NEC controller is topology aware and using openflow 1.3 for it&amp;rsquo;s communication. Unlike any other demo I&amp;rsquo;ve seen, NEC used CLI to make changes and displayed the updates in near realtime on the controller.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;They&amp;rsquo;ve got a tap product aimed at security tap aggregators a la &lt;a href=&#34;http://www.gigamon.com/&#34;&gt;gigamon&lt;/a&gt;, so they&amp;rsquo;re seeing the value of SDN and openflow from a security lens as well as a network operations perspective, a good play in my opinion. SDN and openflow in particular have a great deal to offer the security community (think of all of the wacky stuff your security team has asked for and then map that into an openflow network. You&amp;rsquo;ll probably hit 80% match). NEC has done some tight integration with &lt;a href=&#34;https://technet.microsoft.com/en-us/windowsserver/dd448604.aspx&#34;&gt;microsoft hyper-v&lt;/a&gt; too, so environments leveraging hyper-v as a virtualization technology can drop this in to take advantage of the network programmability on top of their virtualization environment. This is something that I&amp;rsquo;d not seen before [although it may exist and I just don&amp;rsquo;t know it]. In addition, NEC has spun up an &amp;ldquo;app store&amp;rdquo; for SDN apps and allowed for some cross pollination, with a handful of caveats, with &lt;a href=&#34;http://www.opendaylight.org/&#34;&gt;opendaylight&lt;/a&gt; for testing. &lt;speculation&gt; There are a few things I find interesting about the NEC offering and about NEC in general. Being in a service provider environment off and on for most of my career, the fact that NEC is getting involved so heavily is intriguing. Unlike most of the other DC focused companies, NEC plays in the carrier market. While this particular briefing did not include any carrier updates, it would surprise me if this wasn&amp;rsquo;t being investigated behind some big doors. It makes sense to me and it would be a surprise if it did not occur to someone else. The SP market is fickle and slow to change, but ripe for fresh ideas. I see a lot of potential both there and in the DC / campus / enterprise. &lt;/speculation&gt;   &lt;a href=&#34;https://vimeo.com/119508255&#34;&gt;Introduction to NEC Networking&lt;/a&gt; from &lt;a href=&#34;https://vimeo.com/sfoskett&#34;&gt;Stephen Foskett&lt;/a&gt; on &lt;a href=&#34;https://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;. &lt;a href=&#34;https://vimeo.com/119508725&#34;&gt;NEC ProgrammableFlow vCOps Solution&lt;/a&gt; from &lt;a href=&#34;https://vimeo.com/sfoskett&#34;&gt;Stephen Foskett&lt;/a&gt; on &lt;a href=&#34;https://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;. &lt;a href=&#34;https://vimeo.com/119510207&#34;&gt;ProgrammableFlow SCVMM Demo&lt;/a&gt; from &lt;a href=&#34;https://vimeo.com/sfoskett&#34;&gt;Stephen Foskett&lt;/a&gt; on &lt;a href=&#34;https://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -45,7 +170,8 @@
       <pubDate>Mon, 22 Sep 2014 10:24:34 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/bigswitch-labs-for-sdn-learning-a-sneak-peek/</guid>
-      <description>I was recently granted access to the beta BigSwitch Networks lab site, a purpose built classroom in the cloud focused on teaching the BigSwitch SDN environment. I had seen some of the BSN offerings in the past and always held them in high regard, but I was thoroughly impressed with both the completeness of the lab and how polished the controller environment was.At the time of this writing, the lab consists of 3 modules: Building cloud fabric, monitoring fabric and dynamic provisioning of monitoring fabric.</description>
+      <description>&lt;p&gt;I was recently granted access to the beta &lt;a href=&#34;http://www.bigswitch.com/&#34;&gt;BigSwitch Networks&lt;/a&gt; lab site, a purpose built classroom in the cloud focused on teaching the BigSwitch SDN environment.  I had seen some of the BSN offerings in the past and always held them in high regard, but I was thoroughly impressed with both the completeness of the lab and how polished the controller environment was.&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2014/09/Screenshot-2014-09-12-10.28.50.png&#34; alt=&#34;Screenshot 2014-09-12 10.28.50&#34; /&gt; At the time of this writing, the lab consists of 3 modules: Building cloud fabric, monitoring fabric and dynamic provisioning of monitoring fabric.  Since there is quite a lot going on with this cloud based SDN classroom, for the scope of this post I&amp;rsquo;ll concentrate on the first, building cloud fabric.  I&amp;rsquo;m a big fan of the CLI*, and one thing that jumped right out to me was that they provide the GUI and the CLI, and that the CLI is familiar to anyone that has worked on an IOS device.  The lab is useful, even for someone that has done some SDN, both on production or in a lab, in that it presents the fundamentals in a way that both demonstrates the purpose and function and lays out the technology and product. From the technology presentation standpoint, the BigSwitch offering is quite impressive. The reality of it is that, in my experience, GUIs don&amp;rsquo;t always have the most intuitive or complete implementations and they&amp;rsquo;re hard to automate.  Now, from what I&amp;rsquo;ve seen to far the bigswitch offing is the exception to that rule.  The setup is very functional and goes through a range of great material. for comparison, below is the tenants display from the web interface: &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2014/09/Screenshot-2014-09-12-10.47.37.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2014/09/Screenshot-2014-09-12-10.47.37.png&#34; alt=&#34;Screenshot 2014-09-12 10.47.37&#34; /&gt;&lt;/a&gt;   and the corresponding show command: &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2014/09/Screenshot-2014-09-12-10.33.49.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2014/09/Screenshot-2014-09-12-10.33.49.png&#34; alt=&#34;show tenant&#34; /&gt;&lt;/a&gt; Nevertheless, part of my usual workflow is to use one to define the other when I can.  What I mean by that is that if I don&amp;rsquo;t know exactly how to accomplish my goal in the GUI, I switch to the CLI and see what I can do from there, returning to the GUI to see what has changed and then reverse engineer it from that perspective.  The opposite is also true, I have used the CLI to define the GUI &lt;em&gt;:cough:&lt;/em&gt; &lt;a href=&#34;http://www.juniper.net/us/en/products-services/security/netscreen/&#34;&gt;netscreen&lt;/a&gt; &lt;em&gt;:cough:&lt;/em&gt;. The important thing to note here, though, is that the tools all work as if it is a real environment, because it &lt;em&gt;is&lt;/em&gt; a real environment. The god among men here, really, is the &lt;em&gt;debug rest&lt;/em&gt; command.  This command, when issued in the CLI (displayed below) allows the commands sent to the terminal to automatically pop up with the rest interface commands necessary to utilize them.  Wrap your head around that one for a minute.  Are you thinking automation?  Me too; seeing that made me want to go write code, and I am a horrible developer. &lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2014/09/Screenshot-2014-09-12-10.50.19.png&#34; alt=&#34;Screenshot 2014-09-12 10.50.19&#34; /&gt; In the time I&amp;rsquo;ve spent within this system I have been thoroughly impressed with how well it functioned.  I had no issues whatsoever with how the training presented the material, executed the commands or displayed the responses.  My only suggestion would be to add a configuration guide for the CLI =) Below is a quick youtube video of some of the functions.    * Yes, I know SDN is supposed to &amp;ldquo;kill the CLI&amp;rdquo;.  I don&amp;rsquo;t by the sensationalism for the short to medium term.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -54,7 +180,34 @@
       <pubDate>Fri, 29 Nov 2013 20:15:17 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/openvswitch-2-0-debian-packages/</guid>
-      <description>As part of a larger fun project I&amp;rsquo;m working on (OVS for the ALIX platform; more to come on that once I have it 100% working), I have been playing a lot with OVS. It&amp;rsquo;s a great platform, and as others have mentioned, it&amp;rsquo;s as close to an SDN reference data plane implementation as we have. I&amp;rsquo;d be surprised if many if not all commercial implementations of OpenFlow aren&amp;rsquo;t based on OVS.</description>
+      <description>&lt;p&gt;As part of a larger fun project I&amp;rsquo;m working on (OVS for the ALIX platform; more to come on that once I have it 100% working), I have been playing a lot with &lt;a href=&#34;http://openvswitch.org/&#34;&gt;OVS&lt;/a&gt;.  It&amp;rsquo;s a great platform, and &lt;a href=&#34;http://networkstatic.net/install-open-vswitch-v2-redhat-fedora-19/&#34;&gt;as others have mentioned&lt;/a&gt;, it&amp;rsquo;s as close to an SDN reference data plane implementation as we have.  I&amp;rsquo;d be surprised if many if not all commercial implementations of OpenFlow aren&amp;rsquo;t based on OVS.  Anyway, I wanted to build debian packages since I&amp;rsquo;d never done it before and thought it&amp;rsquo;d be fun.  I wanted to use OVS2 so that I can play with some of the newer features and specifically to see how well the IPv6 support is in 2.0 when paired with &lt;a href=&#34;http://www.opendaylight.org/&#34;&gt;OpenDaylight&lt;/a&gt;(more to come on this, too. I promise =). This proved to be more simple than I anticipated mostly due to lots of good documentation.  To accomplish it, I decided to start with a VM since I lie to work in virtualized environments for experimentation and lambing. I spun up a Debian 7 VM from scratch and began configuring it as I usually do with the inclusion of the tools necessary to build packages. _** I originally tried this from the git repo via _git clone git://openvswitch.org/openvswitch&lt;em&gt; but kept seeing weird errors so I moved to the 2.0.0 tarball.  &lt;/em&gt;```
+apt-get -y install screen sudo vim etckeeper mlocate autoconf2.13 &lt;br /&gt;
+libssl-dev graphviz python-all python-qt4 python-zopeinterface &lt;br /&gt;
+python-twisted-conch tcpdump build-essential fakeroot debhelper &lt;br /&gt;
+gdebi-core pkg-config&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Grab the OVS tarball```&#34; data-lang=&#34;Grab the OVS tarball```&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;wget&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;:&lt;span style=&#34;color:#75715e&#34;&gt;//openvswitch.org/releases/openvswitch-2.0.0.tar.gz](http://openvswitch.org/releases/openvswitch-2.0.0.tar.gz)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;``````&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;mv&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;openvswitch&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2.0.0&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;tar&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;gz&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;openvswitch&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2.0.0&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;orig&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;tar&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;gz&lt;/span&gt;
+&lt;span style=&#34;color:#e6db74&#34;&gt;``````&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;openvswitch&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2.0.0&lt;/span&gt;
+&lt;span style=&#34;color:#e6db74&#34;&gt;``````&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;dpkg&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;buildpackage&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;
+&lt;span style=&#34;color:#e6db74&#34;&gt;``````&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;cd&lt;/span&gt; ..&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Install all of the packages ( # Answer Y to all prompts )```
+gdebi openvswitch-datapath-source_2.0.0-1_all.deb&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-module-assistant auto-install openvswitch-datapath gdebi openvswitch-common\_2.0.0-1\_amd64.deb gdebi openvswitch-switch\_2.0.0-1\_amd64.deb&#34; data-lang=&#34;module-assistant auto-install openvswitch-datapath gdebi openvswitch-common\_2.0.0-1\_amd64.deb gdebi openvswitch-switch\_2.0.0-1\_amd64.deb&#34;&gt;You should now be able to check the version:  ```
+buraglio@deb7ovs-vm:/home/buraglio# ovs-vsctl -V
+ovs-vsctl (Open vSwitch) 2.0.0
+Compiled Nov 29 2013 13:18:32&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Check the OpenFlow versions supported:```
+buraglio@deb7ovs-vm:/home/buraglio# ovs-ofctl -V
+ovs-ofctl (Open vSwitch) 2.0.0
+Compiled Nov 29 2013 13:18:32
+OpenFlow versions 0x1:0x4&lt;/p&gt;
+
+&lt;p&gt;```More to come on this.  For anyone that doesn&amp;rsquo;t want to build the .debs themselves, they&amp;rsquo;re available to download from &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/OVS2.0/&#34;&gt;here&lt;/a&gt;, no warranty implied or expressed =)&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -63,8 +216,93 @@
       <pubDate>Fri, 05 Jul 2013 10:22:23 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/building-flowvisor-on-centos-6-quick-and-dirty/</guid>
-      <description>I had the need to build a FlowVisor instance under CentOS. Since nearly all of the docs I could find were for debian, I threw this together. I utilized this GENI doc and the github docs as a simple reference. This is the quick and dirty method I used: Install the prerequisites:``` sudo yum -y install ant eclipse java-1.6.0-openjdk.x86_64 git sudo yum -y groupinstall &amp;ldquo;Development Tools&amp;rdquo;
-mkdir /services cd /services git clone git://github.</description>
+      <description>&lt;p&gt;I had the need to build a FlowVisor instance under CentOS.  Since nearly all of the docs I could find were for debian, I threw this together.  I utilized this &lt;a href=&#34;http://groups.geni.net/geni/wiki/FlowVisor&#34;&gt;GENI doc&lt;/a&gt; and the &lt;a href=&#34;https://github.com/OPENNETWORKINGLAB/flowvisor/wiki/Installation-from-Source&#34;&gt;github docs&lt;/a&gt; as a simple reference.  This is the quick and dirty method I used: Install the prerequisites:```
+sudo yum -y install ant eclipse java-1.6.0-openjdk.x86_64 git
+sudo yum -y groupinstall &amp;ldquo;Development Tools&amp;rdquo;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Create my standard directories:```&#34; data-lang=&#34;Create my standard directories:```&#34;&gt;mkdir /services
+cd /services
+git clone git://github.com/OPENNETWORKINGLAB/flowvisor.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Navigate, add user and install```
+cd flowvisor
+adduser flowvisor
+sudo make fvuser=flowvisor fvgroup=flowvisor install&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Here is the relativde output I saw:```&#34; data-lang=&#34;Here is the relativde output I saw:```&#34;&gt;\[root@collector flowvisor\]# sudo make fvuser=flowvisor fvgroup=flowvisor install
+ant
+Buildfile: build.xml
+
+init:
+\[mkdir\] Created dir: /services/flowvisor/build
+\[mkdir\] Created dir: /services/flowvisor/build.tests
+
+compile:
+\[javac\] Compiling 239 source files to /services/flowvisor/build
+\[javac\] Note: /services/flowvisor/src/org/flowvisor/config/LoadConfig.java uses or overrides a deprecated API.
+\[javac\] Note: Recompile with -Xlint:deprecation for details.
+
+dist:
+\[mkdir\] Created dir: /services/flowvisor/dist
+\[jar\] Building jar: /services/flowvisor/dist/flowvisor.jar
+\[jar\] Building jar: /services/flowvisor/dist/flowvisor.jar
+
+BUILD SUCCESSFUL
+Total time: 3 seconds
+./scripts/install-script.sh
+Using source dir: ./scripts/..
+Installation prefix (/usr/local):
+Install to different root directory ()
+Installing FlowVisor into /usr/local with prefix=/usr/local as user/group flowvisor:flowvisor
+Updating fvctl-xml.sh to fvctl-xml
+Updating fvconfig.sh to fvconfig
+Updating flowvisor.sh to flowvisor
+Updating envs.sh to envs
+Creating directories
+Creating /usr/local/bin
+Creating /usr/local/sbin
+Creating /usr/local/libexec/flowvisor
+Creating /usr/local/share/man/man1
+Creating /usr/local/share/man/man8
+Creating /usr/local/share/doc/flowvisor
+Creating /usr/local/share/db/flowvisor
+Creating /etc/flowvisor (owned by user=flowvisor  group=flowvisor)
+Installing scripts
+Installing SYSV startup script (not enabled by default)
+Installing jars
+Installing flowvisor.jar
+Installing manpages
+Installing FlowVisorDB
+Installing configs
+Installing Logrotate config
+Installing documentation
+Linking fvctl to fvctl-json
+ln: creating symbolic link \`fvctl&amp;#39;: File exists
+Generating a default config FlowVisor config
+Trying to generate SSL Server Key with passwd from scripts/envs.sh
+Generating cert with common name == flowvisor
+keytool error: java.lang.Exception: Key pair not generated, alias &amp;lt;mykey&amp;gt; already exists
+Enter password for account &amp;#39;fvadmin&amp;#39; on the flowvisor:
+Generating default config in db
+Outputing config file /etc/flowvisor/config.json&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Start the controller:```
+sudo /etc/init.d/flowvisor start&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Output from controller starting:```&#34; data-lang=&#34;Output from controller starting:```&#34;&gt;Starting flowvisor with the configuration stored in DB
+If DB unpopulated, load config using &amp;#39;fvconfig load config.json&amp;#39;
+\[root@collector flowvisor\]#
+Message from syslogd@collector at Jul  3 08:49:51 ...
+1&amp;gt;Jul  3 08:49:51 flowvisor: ERROR none : log level enabled: CRIT
+
+Message from syslogd@collector at Jul  3 08:49:51 ...
+1&amp;gt;Jul  3 08:49:51 flowvisor: ERROR none : log level enabled: ALERT
+
+Message from syslogd@collector at Jul  3 08:49:51 ...
+1&amp;gt;Jul  3 08:49:51 flowvisor: WARN none : log level enabled: WARN
+``````
+This yields a &amp;#34;working&amp;#34; flow visor.
+
+Lock it down with a password:
+``````
+yum -y install pwgen
+test -f /etc/flowvisor.passwd || sudo sh -c &amp;#39;pwgen -sB 24 &amp;gt; /etc/flowvisor.passwd&amp;#39;
+service flowvisor restart&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -73,7 +311,115 @@ mkdir /services cd /services git clone git://github.</description>
       <pubDate>Fri, 03 May 2013 21:45:41 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/scripting-the-build-of-opendayight-controller-under-centos/</guid>
-      <description>Jon Langemak has a great write up on building the OpenDaylight controller under CentOS. Since I&amp;rsquo;ll have to do this a bunch of times, I though tI&amp;rsquo;d take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the OpenDaylight GIT repo and that you disable SELinux. Here is the script:``` #!</description>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/blinken_lichten&#34;&gt;Jon Langemak&lt;/a&gt; has a great write up on &lt;a href=&#34;http://www.dasblinkenlichten.com/installing-opendaylight-on-centos/&#34;&gt;building the OpenDaylight controller under CentOS&lt;/a&gt;. Since I&amp;rsquo;ll have to do this a bunch of times, I though tI&amp;rsquo;d take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the &lt;a href=&#34;https://git.opendaylight.org/&#34;&gt;OpenDaylight GIT repo&lt;/a&gt; and that you &lt;a href=&#34;http://www.revsys.com/writings/quicktips/turn-off-selinux.html&#34;&gt;disable SELinux&lt;/a&gt;. Here is the script:```
+#!/bin/bash&lt;/p&gt;
+
+&lt;h1 id=&#34;install-opendaylight-controller-under-centos&#34;&gt;Install Opendaylight controller under CentOS&lt;/h1&gt;
+
+&lt;h1 id=&#34;by-nick-at-buraglio-com-http-www-twitter-com-buraglio&#34;&gt;by nick [at] buraglio.com &lt;a href=&#34;http://www.twitter.com/buraglio&#34;&gt;http://www.twitter.com/buraglio&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&#34;http-www-forwardingplane-net&#34;&gt;&lt;a href=&#34;http://www.forwardingplane.net&#34;&gt;http://www.forwardingplane.net&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&#34;based-on-post-by-jon-langemak-http-www-twitter-com-blinken-lichten&#34;&gt;Based on post by Jon Langemak (&lt;a href=&#34;http://www.twitter.com/blinken_lichten&#34;&gt;http://www.twitter.com/blinken_lichten&lt;/a&gt;)&lt;/h1&gt;
+
+&lt;h1 id=&#34;http-www-dasblinkenlichten-com-installing-opendaylight-on-centos&#34;&gt;&lt;a href=&#34;http://www.dasblinkenlichten.com/installing-opendaylight-on-centos/&#34;&gt;http://www.dasblinkenlichten.com/installing-opendaylight-on-centos/&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;yum=&amp;ldquo;/usr/bin/yum&amp;rdquo;
+servivce=&amp;ldquo;/sbin/service&amp;rdquo;
+chkconfig=&amp;ldquo;/sbin/chkconfig&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;Disable SELINUX before starting this process&amp;rdquo;
+echo &amp;ldquo;Edit the /etc/selinux/config file and restart the server&amp;rdquo;
+echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;Change the username in the GIT section to your own&amp;rdquo;
+echo &amp;ldquo;you&amp;rsquo;ll need to create it and upload&amp;rdquo;
+echo &amp;ldquo;your ssh key at git.opendaylight.org&amp;rdquo;
+echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;************************&amp;ldquo;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;Installing Development tools and other deps&amp;rdquo;
+echo &amp;ldquo;************************&amp;ldquo;
+yum install -y wget vim java ant python eclipse-platform git
+yum groupinstall -y “Development tools”A&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;Downloading and installing maven&amp;rdquo;
+echo &amp;ldquo;************************&amp;ldquo;
+wget &lt;a href=&#34;http://www.poolsaboveground.com/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.zip&#34;&gt;http://www.poolsaboveground.com/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.zip&lt;/a&gt;
+unzip apache-maven-3.0.5-bin.zip -d /usr/share/
+ln -s /usr/share/apache-maven-3.0.5/bin/mvn /usr/bin/mvn&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;Downloading GIT code&amp;rdquo;
+echo &amp;ldquo;************************&amp;ldquo;&lt;/p&gt;
+
+&lt;h1 id=&#34;change-the-username-here-to-your-own-you-ll-need-to-create-it-and-upload&#34;&gt;Change the username here to your own, you&amp;rsquo;ll need to create it and upload&lt;/h1&gt;
+
+&lt;h1 id=&#34;your-ssh-key-at-git-opendaylight-org&#34;&gt;your ssh key at git.opendaylight.org&lt;/h1&gt;
+
+&lt;p&gt;mkdir -p /services/opendaylight/
+cd /services/opendaylight/
+git clone &lt;a href=&#34;https://buraglio@git.opendaylight.org/gerrit/p/controller.git&#34;&gt;https://buraglio@git.opendaylight.org/gerrit/p/controller.git&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;Building OpenDaylight Controller with Maven&amp;rdquo;
+echo &amp;ldquo;************************&amp;ldquo;
+cd controller/opendaylight/distribution/opendaylight/
+mvn clean install&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;Configure Java Env variables&amp;rdquo;
+echo &amp;ldquo;************************&amp;ldquo;
+export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk.x86_64
+echo &amp;ldquo;JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk.x86_64&amp;rdquo; &amp;gt;&amp;gt; /etc/environment&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;Load the controller&amp;rdquo;
+echo &amp;ldquo;************************&amp;ldquo;
+cd /services/opendaylight/controller/opendaylight/distribution/opendaylight/target/distribution.opendaylight-0.1.0-SNAPSHOT-osgipackage/opendaylight&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;************************&amp;ldquo;
+echo &amp;ldquo;Start OpenDaylight OF controller&amp;rdquo;
+echo &amp;ldquo;************************&amp;ldquo;
+./run.sh&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Once up and running, it&#39;s pretty trivial to point something like an HP switch at the controller. For an HP5400, just decide what VLAN(s) you want to use OpenFlow on. I chose 999 as my test VLAN.```&#34; data-lang=&#34;Once up and running, it&#39;s pretty trivial to point something like an HP switch at the controller. For an HP5400, just decide what VLAN(s) you want to use OpenFlow on. I chose 999 as my test VLAN.```&#34;&gt;sw-5400-of# conf t
+sw-5400-of(config)# vlan 999 name test-openflow999
+sw-5400-of(vlan-999)# untagged A3-A4 
+sw-5400-of(vlan-999)# exit
+sw-5400-of(config)# openflow vlan 999
+sw-5400-of(openFlow vlan-999)# enable
+sw-5400-of(openFlow vlan-999)# controller &amp;#34;tcp:10.17.4.22:6633&amp;#34;
+sw-5400-of(openFlow vlan-999)# exit       
+sw-5400-of(openFlow)# exit
+sw-5400-of(config)# 
+w-5400-of(config)# exit
+sw-5400-of# show openflow 
+
+sw-5400-of# show openflow 
+
+ Openflow Configuration
+
+  Openflow aggregate VLANs \[Disabled\] :           
+  Openflow aggregate management VlanId \[0\] : 0     
+  Openflow second aggregate management VlanId \[0\] : 0     
+  Openflow aggregate configuration VlanId \[0\] : 0     
+
+  VID  State HW  Active controller Pseudo-URL                       Conn
+  ---- ----- --- -------------------------------------------------- ----
+  666  Off   On                                                     No  
+  999  On    On  tcp:10.17.4.22:6633                                Yes&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From here we can see the box in the openflow controller.    &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/05/Screen-Shot-2013-05-03-at-4.20.03-PM.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/05/Screen-Shot-2013-05-03-at-4.20.03-PM.png&#34; alt=&#34;Screen Shot 2013-05-03 at 4.20.03 PM&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;  I&amp;rsquo;m still having some issues pushing flows, I&amp;rsquo;m sure I can work it out but here is a quick screencast of me trying to push a flow.  More posts will be added as soon as I can get the flows to push correctly. I suspect it is user error and I just need to read the docs.  More to come for sure.  This controller is very, very slick.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -82,7 +428,8 @@ mkdir /services cd /services git clone git://github.</description>
       <pubDate>Fri, 26 Apr 2013 04:56:07 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/basic-reference-openflow-controller-vms-running-in-centos-6-for-kvm/</guid>
-      <description>I had been working, off and on, on a how-to for building the daylight openflow controller under CentOS. Most openflow docs and dev are done under ubuntu or debian, and while those are both fantastic alternatives, there are a huge number of folks that will want or need to use RHEL or CentOS. So, seeing as that is the case, having someone be mindful of that is important. When I saw the write up by Jon Langemak, I scrapped my attempt at a how-to since his was so much better.</description>
+      <description>&lt;p&gt;I had been working, off and on, on a how-to for building the &lt;a href=&#34;http://www.opendaylight.org/&#34;&gt;daylight openflow controller&lt;/a&gt; under CentOS.  Most openflow docs and dev are done under ubuntu or debian, and while those are both fantastic alternatives, there are a huge number of folks that will want or need to use RHEL or CentOS. So, seeing as that is the case, having someone be mindful of that is important.  When I saw the &lt;a href=&#34;http://www.dasblinkenlichten.com/installing-opendaylight-on-centos/&#34;&gt;write up&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/blinken_lichten&#34;&gt;Jon Langemak&lt;/a&gt;, I scrapped my attempt at a how-to since his was so much better. If you&amp;rsquo;re not following Jon and reading his blog, you should be.  He&amp;rsquo;s a sharp guy with interesting things to say. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/04/projectfloodlight-logo-header.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/04/projectfloodlight-logo-header.png&#34; alt=&#34;projectfloodlight-logo-header&#34; /&gt;&lt;/a&gt; That got me thinking about references and resources, and I decided that I would take a few of the things I had been working on on my home lab and make them available to the masses.  I&amp;rsquo;m a fan of importable base VMs.  So, seeing that I am working on testing openflow controllers, it made sense in my [constantly racing] mind to make the reference, base level VMs available.  If anyone is interested in the &lt;a href=&#34;http://www.projectfloodlight.org/floodlight/&#34;&gt;floodlight controller&lt;/a&gt; running under CentOS 6.3 built using the method documented &lt;a href=&#34;http://www.forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/&#34; title=&#34;Building a Floodlight OpenFlow controller on CentOS 6&#34;&gt;here&lt;/a&gt;, a KVM image is now available to download from &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/vm-images/centos-floodlight-template.tbz&#34;&gt;here&lt;/a&gt;.  It is, as stated, a KVM image, created by using the method I documented in &lt;a href=&#34;http://www.forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/&#34; title=&#34;CentOS KVM Install – Quick Start to a VM&#34;&gt;this post&lt;/a&gt; a few months ago.    There is a readme file in the archive wth basic instructions.  You&amp;rsquo;ll need a basic understanding of &lt;a href=&#34;http://www.linux-kvm.org/page/Main_Page&#34;&gt;KVM&lt;/a&gt; to make it work, or you can try to convert it to something else like vmware, XEN or virtualbox. I&amp;rsquo;ll be adding one of these soon for &lt;a href=&#34;http://www.opendaylight.org/&#34;&gt;daylight&lt;/a&gt; as well.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -91,7 +438,8 @@ mkdir /services cd /services git clone git://github.</description>
       <pubDate>Thu, 18 Apr 2013 16:17:37 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/openflow-hybrid-its-a-must-not-an-option/</guid>
-      <description>OpenFlow is, of course, a hot buzzword. It&amp;rsquo;s the newest, and in my opinion, the most innovative thing to hit data networking since dynamic routing. The ability to programmatically, systematically and potentially dynamically control traffic at the flow level through a network is innovative, exciting and terrifying [to many network engineers and architects] at the same time. Allowing applications to touch the network change behavior is something that many engineers are not terribly comfortable with.</description>
+      <description>&lt;p&gt;OpenFlow is, of course, a hot buzzword.  It&amp;rsquo;s the newest, and in my opinion, the most innovative thing to hit data networking since dynamic routing.  The ability to programmatically, systematically and potentially dynamically control traffic at the flow level through a network is innovative, exciting and terrifying [to many network engineers and architects] at the same time.  Allowing applications to touch the network change behavior is something that many engineers are not terribly comfortable with.  I will even admit that a few years ago I was pretty tentative about software changing network hardware.  &lt;a href=&#34;http://www.forwardingplane.net/2011/10/black-hole-routing/&#34; title=&#34;Black Hole routing&#34;&gt;Building a Blackhole router&lt;/a&gt; was an easy way for me to acquaint myself with this and get comfortable with software changing things without human interaction.   Most of my discomfort with this process was the fact that I&amp;rsquo;m not a good developer.  I can hack scripts and read most basic code in Shell, C, Perl, Python and Ruby but I don&amp;rsquo;t actively do anything but an occasional script or &lt;a href=&#34;http://www.forwardingplane.net/2012/11/vdxrancid-contrib-scripts/&#34; title=&#34;VDXrancid contrib scripts&#34;&gt;hack&lt;/a&gt; &lt;a href=&#34;http://www.forwardingplane.net/2011/06/alurancid-and-pfrancid/&#34; title=&#34;alurancid and pfrancid&#34;&gt;to&lt;/a&gt; &lt;a href=&#34;http://www.forwardingplane.net/2010/12/alcatel-lucent-rancid-scripts/&#34; title=&#34;Alcatel Lucent RANCID scripts&#34;&gt;existing projects&lt;/a&gt;. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/04/Enterprise-Network.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/04/Enterprise-Network-265x300.jpg&#34; alt=&#34;Enterprise Network&#34; /&gt;&lt;/a&gt;Conversely, we&amp;rsquo;re all pretty comfortable with networks as they exist today.  The typical &amp;ldquo;enterprise pyramid&amp;rdquo; is best practice and works very well.  Good physical design is good physical design.  However, where this, and any other network gets hairy is when it scales to hyper scale or the operations team is thin. Here is where things get interesting.  Call it what you want, SDN is changing the way we as networking professionals think about this support model.  Remember managing fat wireless access points?  It became unruly and impossible at scale and once wireless ceased to be a convenience network it was nearly impossible.  Enter wireless controllers and thin access points.  5-7 years later this is now the standard.  The differences, though, is that wireless was still a relatively small footprint comparatively speaking and it wasn&amp;rsquo;t a critical infrastructure before those changes had to happen. The problem that we face now is that we have critical infrastructure and legacy support mechanisms.  It is unreasonable to think that we&amp;rsquo;ll be ripping out a traditional, functional network and replacing it with a greenfield OpenFlow network, regardless of what the researchers and heavy proponents think.  Just like with the transitional mechanisms used in IPv6 deployments, there needs to be a transitional period where both traditional and OpenFlow networks can coexist.  There are a few options for this, but this is a problem that the &lt;a href=&#34;http://networkstatic.net/hybrid-openflow-using-the-normal-action/&#34;&gt;OFPP Normal action&lt;/a&gt; can potentially solve.     &lt;a href=&#34;https://openflow.stanford.edu/static/openflowj/releases/1.0.1/apidocs/org/openflow/protocol/OFPort.html#OFPP_NORMAL&#34;&gt;OFPP Normal&lt;/a&gt; will send a packet in the openflow pipeline to the native switching mechanisms for traditional forwarding, much like having a default route in an IGP handles anything without a more specific route. Based on the &lt;a href=&#34;http://www.openflow.org/documents/openflow-spec-v1.0.0.pdf&#34;&gt;OpenFlow 1.0 spec&lt;/a&gt;, an OpenFlow enabled switch is not required to support all actions, &lt;strong&gt;may&lt;/strong&gt; support the NORMAL action.  I am here to say that my opinion is that this is something that has to happen.  It&amp;rsquo;s is reasonable to say that my understanding of OpenFlow is still evolving, but building networks is something I&amp;rsquo;ve been doing for 15 years.  Green fielding a totally OpenFlow network is almost certainly not going to happen in 95% of cases.  Backwards compatibility with existing networking is going to have to happen. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/04/tantrum.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/04/tantrum.jpg&#34; alt=&#34;tantrum&#34; /&gt;&lt;/a&gt;As a case study, lets look at the adoption of IPv6.  We actually *need* IPv6.  Has adoption been smooth?  No.  Entities have been dragged into it kicking and screaming and tightly holding on to mechanisms like NAT as a way to delay the inevitable.  I could go on forever about how enterprises, service providers and any other network has caused more harm, pain and unnecessary expense than good by delaying IPv6 over and over&amp;hellip;.but I digress. We [mostly] don&amp;rsquo;t &lt;strong&gt;need&lt;/strong&gt; OpenFlow yet.  Yes, it&amp;rsquo;s useful.  Yes, it has use cases that make a lot of sense.  Making it easy (read: painless) is the key to deployment.   My first reaction is that hybrid mode is the way to do this.  If your vendor doesn&amp;rsquo;t have a hybrid strategy, make them aware that they need one.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -100,7 +448,31 @@ mkdir /services cd /services git clone git://github.</description>
       <pubDate>Tue, 09 Apr 2013 04:25:59 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/daylight-a-new-dawn-is-approaching/</guid>
-      <description>The SDN world is abuzz with the announcement that the OpenDaylight controller came from stealth mode today. Why is this important? Well, SDN and OpenFlow are fractured. It is Mac vs. PC, Beta vs VHS, Coke vs. Pepsi all over again&amp;hellip;&amp;hellip;multiplied by 100x and with a handful of players.  Vendor zealots and brand loyalists will nearly always side with their camp. Heck, even I have some biases of personal preference.</description>
+      <description>&lt;p&gt;The SDN world is abuzz with the announcement that the &lt;a href=&#34;http://www.opendaylight.org&#34;&gt;OpenDaylight controller&lt;/a&gt; came from stealth mode today.  Why is this important?  Well, SDN and OpenFlow are fractured.  It is Mac vs. PC, Beta vs VHS, Coke vs. Pepsi all over again&amp;hellip;&amp;hellip;multiplied by 100x and with a handful of players. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/04/logo_opendaylight.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/04/logo_opendaylight.png&#34; alt=&#34;logo_opendaylight&#34; /&gt;&lt;/a&gt; Vendor zealots and brand loyalists will nearly always side with their camp.  Heck, even I have some biases of personal preference.  But at the end of the day, the greater good is always most important.  This is why I&amp;rsquo;m cautiously optimistic about the daylight project.  From their about page: &lt;em&gt;&amp;ldquo;At this early stage of SDN adoption, the industry acknowledges the benefits of establishing an open, reference framework for programmability and control through an open source SDN solution. Such a framework maintains the flexibility and choice to allow organizations to deploy SDN as they please, yet still mitigates many of the risks of adopting early stage technologies and integrating with existing infrastructure investments.&amp;rdquo;&lt;/em&gt; I find this refreshing.  I understand that there will be a bit of the &amp;ldquo;NDA this&amp;rdquo; and &amp;ldquo;closed that&amp;rdquo;.  These are new grounds being forged.  Vendors and humans in general don&amp;rsquo;t like to feel like they are giving away the farm and leaping into the fire. I tend to, personally, have a bit of the &amp;ldquo;jump and hope I have a parachute on&amp;rdquo; attitude.  I&amp;rsquo;m not risk averse and the thrill of the possibility of failure invigorates me.  That, obviously, is not how billion dollar companies think.  This is why the who&amp;rsquo;s who of &lt;a href=&#34;http://www.opendaylight.org/project/members&#34;&gt;Daylight members&lt;/a&gt; is so encouraging.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bigswitch&lt;img src=&#34;http://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Collaboration_logo_V2.svg/607px-Collaboration_logo_V2.svg.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;Brocade&lt;/li&gt;
+&lt;li&gt;Juniper&lt;/li&gt;
+&lt;li&gt;Dell&lt;/li&gt;
+&lt;li&gt;Cisco&lt;/li&gt;
+&lt;li&gt;Citrix&lt;/li&gt;
+&lt;li&gt;Ericsson&lt;/li&gt;
+&lt;li&gt;IBM&lt;/li&gt;
+&lt;li&gt;Microsoft&lt;/li&gt;
+&lt;li&gt;Redhat&lt;/li&gt;
+&lt;li&gt;NEC&lt;/li&gt;
+&lt;li&gt;VMWare&lt;/li&gt;
+&lt;li&gt;Arista&lt;/li&gt;
+&lt;li&gt;Fujutsu&lt;/li&gt;
+&lt;li&gt;HP&lt;/li&gt;
+&lt;li&gt;Intel&lt;/li&gt;
+&lt;li&gt;Nuage&lt;/li&gt;
+&lt;li&gt;Plumgrid&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Look at that list.  Now look again.  There are names on there that I never would have expected. This project is associated with &lt;a href=&#34;http://www.linuxfoundation.org&#34;&gt;the linux foundation&lt;/a&gt;, an organization that has a core value of &amp;ldquo;Providing Neutral Collaboration and Education&amp;rdquo;&amp;hellip;  several names on this list are almost never associated with &amp;ldquo;Open&amp;rdquo;, Neutral&amp;rdquo; or &amp;ldquo;Transparent&amp;rdquo;. This list and the implications of it by themselves are enough to raise heads, eyebrows and to potentially levitate &lt;a href=&#34;http://ghostbusters.wikia.com/wiki/Dana_Barrett&#34;&gt;Dana Barrett&lt;/a&gt; four feet above her covers. &lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/04/levitate-dana.jpg&#34; alt=&#34;levitate-dana&#34; /&gt; Another double take piece of informationis that the project core components are based on the &lt;a href=&#34;http://www.opendaylight.org/announcements/2013/04/industry-leaders-collaborate-opendaylight-project-donate-key-technologies&#34;&gt;Cisco OnePK&lt;/a&gt;.  The fact that the core is the &lt;a href=&#34;http://www.cisco.com/en/US/prod/iosswrel/onepk.html&#34;&gt;Cisco OnePK&lt;/a&gt; is certainly interesting, but the real gem of this is that there is potential collaboration and, more importantly, competition [and innovation] for an SDN controller and networking industry recognition that this &amp;ldquo;software defined networking revolution&amp;rdquo; is happening. Just like any complicated relationship there will be problems, posturing, compromise and impasses.  My thoughts are that the outcome of whatever daylight becomes or doesn&amp;rsquo;t is actually irrelevant.  There is now a far more powerful and encompassing movement happening.  ASIC companies are on board. The Linux foundation is involved.  Flexibility is implied.  Community involvement is encouraged.  Mountains are moving.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -109,7 +481,8 @@ mkdir /services cd /services git clone git://github.</description>
       <pubDate>Sat, 23 Mar 2013 21:45:17 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/my-sdn-soapbox-now-with-ipv6/</guid>
-      <description>This week there was a lot of buzz about SDN (as usual). There was alightreading thread that I commented on and a fantastic read by Brent Salisbury about being the steamroller and not the road that got me thinking about OpenFlow and SDN in a way I had not before.   All that is old is new again. I remember when internal networks were small and routing protocols were taboo in many internal environments.</description>
+      <description>&lt;p&gt;This week there was a lot of buzz about SDN (as usual). There was a&lt;a href=&#34;http://www.lightreading.com/blog/software-defined-networking/sdns-killer-app-more-network-control/240151376&#34;&gt; lightreading thread that I commented on&lt;/a&gt; and a fantastic read by &lt;a href=&#34;http://www.twitter.com/networkstatic&#34;&gt;Brent Salisbury&lt;/a&gt; about &lt;a href=&#34;http://networkstatic.net/be-the-steamroller-not-the-road/&#34;&gt;being the steamroller and not the road&lt;/a&gt; that got me thinking about OpenFlow and SDN in a way I had not before. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/03/fearofchange.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/03/fearofchange.jpg&#34; alt=&#34;fearofchange&#34; /&gt;&lt;/a&gt; &lt;soapbox&gt; All that is old is new again. I remember when internal networks were small and routing protocols were taboo in many internal environments. RIP (AKA routing by rumor) was about as innovative as we got, OSPF was &amp;ldquo;too complex&amp;rdquo; and was &amp;ldquo;software changing the network topology&amp;rdquo;, according to some folks I worked with in what seems like a lifetime ago. Clearly they didn&amp;rsquo;t have the entire picture and were clouded by FUD. Now using a link state protocol is a standard and one would probably not consider building a complex, production layer 3 network without an IGP like ISIS or OSPFv[&lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt;] (or even EIGRP&amp;hellip;I guess). This is simple evolution and progression. The more folks try to resist, the further behind they&amp;rsquo;ll be left. SDN and OpenFlow are not unlike IPv6 in many ways when viewed from a technology implementation perspective, and in fact, we can probably learn from the resistance to IPv6 to help us with the acceptance of SDN and OpenFlow. V6 has been coming for years. It&amp;rsquo;s &lt;em&gt;mostly&lt;/em&gt; here. Backbones have been running it for a very long time and we actually &lt;strong&gt;need&lt;/strong&gt; it on the client side to account for the huge number of hosts now connecting to the public Internet. Many entities, especially very risk averse enterprises, are struggling to resist it (IPv6) and hold onto NAT and IPv4 as long as possible.  While this will almost certainly buy them a handful of years, it&amp;rsquo;s futile.  Translation and transition tech geared toward the folks that refuse to adapt will allow them to grasp onto legacy methodologies for a bit longer, but as the Borg say, &amp;ldquo;resistance is futile&amp;rdquo;. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/03/Borg.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/03/Borg-300x274.jpg&#34; alt=&#34;Borg&#34; /&gt;&lt;/a&gt; These same things are all going to happen with SDN. What we say is &amp;ldquo;OpenFlow is simply an open protocol for creating flow based forwarding.  It allows for the inclusion of other factors such as Layer4 to make those decisions more tunable and granular.&amp;rdquo; What skeptics hear is &amp;ldquo;There is a hole in the boat, we&amp;rsquo;re all going to die&amp;rdquo; or &amp;ldquo;Network Engineers are all going to be out of a job!&amp;rdquo; or &amp;ldquo;your job is going to be replaced by software&amp;rdquo; or even &amp;ldquo;software and applications will make the way we think about and do everything obsolete&amp;rdquo;, all of which translate to &amp;ldquo;dramatic and drastic change&amp;rdquo;. Most of this is just sensationalism and FUD. In my opinion, though, it is all based in truth .  It may be &amp;ldquo;drastic&amp;rdquo; but it&amp;rsquo;s not dramatic.  It&amp;rsquo;s natural evolution.  It will happen slowly.  We will have to change they way we do things. The proven fact we as networking and security professionals need to remember is that change going to happen with or without SDN, it&amp;rsquo;s the nature of an innovative field like technology to change.  None of us would be doing what we do without being inquisitive enough to figure out problems, challenge norms and shift thinking. SDN, just like IPv6, is happening.  Personally I&amp;rsquo;d rather be knowledgeable about as opposed to in the dark and scrambling to learn about them at the 11th hour. &lt;/soapbox&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -118,7 +491,16 @@ mkdir /services cd /services git clone git://github.</description>
       <pubDate>Mon, 18 Mar 2013 11:02:42 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead/</guid>
-      <description>OK, maybe they&amp;rsquo;re not totally dead, but they&amp;rsquo;re being demoted. To the mail room. During the course of my career I&amp;rsquo;ve always had at least some responsibility for firewall and security devices. In those ~15 years, how these boxes are built and function has shifted. From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint.</description>
+      <description>&lt;p&gt;OK, maybe they&amp;rsquo;re not totally dead, but they&amp;rsquo;re being demoted. To the mail room. During the course of my career I&amp;rsquo;ve always had at least some responsibility for firewall and security devices.  In those ~15 years, how these boxes are built and function has shifted.  From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint.  There was the Cisco PIX. One installation I worked on in a past life even chose to use IPFW on BSD boxes.   Then came was the Sonicwall, a newer take on how to manage a security appliance via a web interface. There was the FWSM.  A few things stayed the same. Dedicated hardware. &lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/03/Firewall-1024x670.jpg&#34; alt=&#34;Free Firewall Clipart Illustrations at http://free.ClipartOf.com/&#34; /&gt; Being a networking guy by nature, it always irritated me that the inline security devices were 3 years behind networking&amp;hellip;.at best. Working in a service provider and in research and education has given me a bit of a different take on firewalls and IPS devices as well and has only solidified this belief.   There are a few things that make firewalls and IPS devices an unholy thing in the world that I live in. Since I &lt;strong&gt;love&lt;/strong&gt; bulleted lists, this is an opportunity to use one:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;They get in the way.&lt;/strong&gt;  Of course they to, that is their job.  Big data flows, Multicast, jumbo frames, IPv6.  There are boxes that can &lt;strong&gt;finally&lt;/strong&gt; do these things, but they are 5-7 years behind and even now are often lacking in support and features.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;They&amp;rsquo;re expensive.&lt;/strong&gt;  When considering CAPEX, they are often prohibitively expensive compared to something like a passive IDS.  Not many budget for a firewall / IPS that can do multi 10G at line rate, IPv6, Multicast and can handle things like GridFTP flows, because until recently they didn&amp;rsquo;t exist.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Speeds and Feeds are always first.&lt;/strong&gt;  I worked on 10G and OC192 on the WAN around 2002 with 10G on the LAN around the same time.  The first real firewall I saw that could even fall into consideration for that was the &lt;a href=&#34;http://webcache.googleusercontent.com/search?q=cache:pLu75PgugigJ:www.force10networks.com/news/pressreleases/2006/pr-2006-08-28_2.asp+&amp;amp;cd=1&amp;amp;hl=en&amp;amp;ct=clnk&amp;amp;gl=us&amp;amp;client=safari&#34;&gt;FPGA based P10&lt;/a&gt; from Force10 in 2005 (we had an early demo).  It was a really innovative device but even it was very clunky since it was an FPGA and caused service interruptions every time you needed to push rules to the FPGAs.  The Juniper SRX came much later at 2009, and even &lt;a href=&#34;http://www.forwardingplane.net/2010/09/updating-srx-idp-signatures/&#34; title=&#34;Updating SRX IDP signatures&#34;&gt;it&lt;/a&gt; &lt;a href=&#34;http://www.forwardingplane.net/2011/01/moving-junos-code-between-srx-cluster-nodes/&#34; title=&#34;Moving JunOS code between SRX cluster nodes&#34;&gt;had&lt;/a&gt; &lt;a href=&#34;http://www.forwardingplane.net/2010/10/enabling-ipv6-on-juniper-srx-5800-cluster/&#34; title=&#34;Enabling IPv6 on Juniper SRX 5800 cluster&#34;&gt;some&lt;/a&gt; &lt;a href=&#34;http://www.forwardingplane.net/2010/09/srx-ipv6-flow-based-processing/&#34; title=&#34;SRX IPv6 flow based processing&#34;&gt;issues&lt;/a&gt; back then.  There exists a handful of options now, the Sonicwall SuperMassive, the Juniper SRX  and the Palo Alto come to mind but they&amp;rsquo;re late.  10G is old hat to some of us.  We&amp;rsquo;re on to 40G and 100G.  What now?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, lets get down to the buzzwords.  Cloud.  Data Center.  Virtualization.  SDN.  OpenFlow.  Ironically enough, being &amp;ldquo;buzzword compliant&amp;rdquo; is actually relevant to this commentary. With the advent of virtualization of nearly everything, including the network, vendors are adding things like virtualized firewalls.  Juniper has added the &lt;a href=&#34;http://www.juniper.net/us/en/dm/edge/products/&#34;&gt;JunosV Firefly&lt;/a&gt;, Cisco has added the &lt;a href=&#34;http://www.cisco.com/en/US/products/ps12233/index.html&#34;&gt;VSG&lt;/a&gt;.  There are surely others.  This movement is just in it&amp;rsquo;s infancy, but it&amp;rsquo;s big and I would venture to say that it is game changing.  With the huge amounts of cores and memory in virtual machine hosts, it makes sense that the network become part of that for management, total cost of ownership and usability. The really interesting part of all of this comes not with the virtualization of firewalls, but with the commoditization of network silicon.  Chip makers that are spinning ASICS need to make sure their ducks are in a row since, in my personal opinion, there are a lot of options for LAN and data center equipment.  &lt;a href=&#34;http://www.aristanetworks.com&#34;&gt;Arista&lt;/a&gt; is already on top of this.  Others vendors will adopt this methodology as merchant silicon adds more abilities.  Firewalls will are on their way now.  Eventually WAN gear will come around. What I&amp;rsquo;m really excited about is the prospect of a merchant silicon based, 40 or 100G OpenFlow based &amp;ldquo;Firewall&amp;rdquo;.  The foundation is already laid for this.  &lt;a href=&#34;http://www.openflowhub.org/display/floodlightcontroller/Firewall+(Dev)&#34;&gt;Floodlight already has a dev module for building a firewall with OpenFlow&lt;/a&gt;.  I&amp;rsquo;ve not tested this extensively yet.  It&amp;rsquo;s on my short list but wether it works or not isn&amp;rsquo;t really even relevant.  The fact of the matter is that this is the way to a comfortable security perimeter at a reasonable speed for a far more reasonable price tag. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/03/OF-Firewall.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/03/OF-Firewall.jpg&#34; alt=&#34;OF-Firewall&#34; /&gt;&lt;/a&gt;Think of buying an OpenFlow capable device with 40 and 100G interfaces in it as your firewall and IPS device.  Port cost is very low.  CAPEX is low.  OPEX is also fairly low since it is just a normal piece of network hardware.  Management is accomplished via an OpenFlow controller. Rules are pushed manually or programmatically based entirely on site policy.  IPS functions can be performed via a passive system like BroIDS or Snort triggering rules in OpenFlow much like is being commonly done with &lt;a href=&#34;http://www.forwardingplane.net/2011/10/black-hole-routing/&#34; title=&#34;Black Hole routing&#34;&gt;black hole routers&lt;/a&gt; now. This will happen.  It&amp;rsquo;s already happening. Firewall vendors take notice.  Have a strategy for Virtualization.  Have a strategy for dealing with OpenFlow and SDN. It is my belief that once the reporting and management is even half as good as a &lt;a href=&#34;http://www.paloaltonetworks.com&#34;&gt;Palo Alto&lt;/a&gt; or &lt;a href=&#34;http://www.sonicwall.com&#34;&gt;Sonicwall&lt;/a&gt;, the market will start to change based solely on cost.  &lt;a href=&#34;http://openflow.marist.edu/avior.html&#34;&gt;There is already work being done on this as well&lt;/a&gt;. Am I right?  Time will be the judge, but I suspect I am.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -127,7 +509,104 @@ mkdir /services cd /services git clone git://github.</description>
       <pubDate>Wed, 06 Mar 2013 14:59:05 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/network-field-day-5/</guid>
-      <description>Last year, Networking Field Day was something that I&amp;rsquo;d heard of but wasn&amp;rsquo;t really aware of what is really was. I occasionally looked at Twitter and saw the hash tags but did not know much about how it was set up or what it was about. In fact, I actually thought it was supposed to be like the HAM radio field day stuff where you go out and build out an emergency network on the fly.</description>
+      <description>&lt;p&gt;Last year, &lt;a href=&#34;http://techfieldday.com/event/nfd5/&#34;&gt;Networking Field Day&lt;/a&gt; was something that I&amp;rsquo;d heard of but wasn&amp;rsquo;t really aware of what is really was.  I occasionally looked at Twitter and saw the hash tags but did not know much about how it was set up or what it was about.  In fact, I actually thought it was supposed to be like the HAM radio field day stuff where you go out and build out an emergency network on the fly.  OK, I should have done more homework, admittedly. Fast forward 6 months. I&amp;rsquo;m working more and more with &lt;a href=&#34;http://www.networkstatic.com&#34;&gt;Brent Salisbury&lt;/a&gt; on day job stuff and he&amp;rsquo;s encouraging me to brush the dust off of my &lt;a href=&#34;http://www.forwardingplane.net&#34;&gt;old blog&lt;/a&gt; (which became this site). I&amp;rsquo;m working more on &lt;a href=&#34;http://www.forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/&#34; title=&#34;Building a Floodlight OpenFlow controller on CentOS 6&#34;&gt;OpenFlow&lt;/a&gt;,  virtualization stuff like &lt;a href=&#34;http://www.forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/&#34; title=&#34;CentOS KVM Install – Quick Start to a VM&#34;&gt;KVM&lt;/a&gt;, &lt;a href=&#34;http://www.forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/&#34; title=&#34;Headless VirtualBox host on CentOS&#34;&gt;VirtualBox&lt;/a&gt; and &lt;a href=&#34;http://www.vmware.com&#34;&gt;VMware&lt;/a&gt; and bringing up 100G WAN links.  I even had the extremely cool opportunity to do a &lt;a href=&#34;http://packetpushers.net/show-131-golf-cart-in-my-fibre-tunnel/&#34;&gt;Packet Pushers Podcast&lt;/a&gt;. Many of these things are a direct result of becoming more engaged in the larger community, a networking community I had pretty much carved myself out of back in 2002 when I left the service provider world for R&amp;amp;E.  This self isolation was a bit of an oversight on my part. What I did not realize was that, as someone in R&amp;amp;E, I had a unique perspective on some of the industry products and direction and was often seeing things a lot sooner than the general enterprise world. As I got more and more engaged I realized that there were a &lt;strong&gt;lot&lt;/strong&gt; of great folks out there that like to collaborate, share and write about their professional experiences in our field of choice.  These same people were doing innovative and interesting things that I didn&amp;rsquo;t know about.  &lt;a href=&#34;http://techfieldday.com/event/nfd5/&#34;&gt;NFD&lt;/a&gt; was one of those things.  So, I started to write down more of the things I was thinking and doing.  I figured that at least someone would find them useful or interesting or at least fodder for solving insomnia.  When I was asked to participate and come out to NFD5, I was both ecstatic and humbled at the same time.  This was the place where the networking industry thought leaders go to convene and discuss directionality as well as current networking technologies. Just to relay the scale and scope of the folks involved, here is the list of delegates for NFD5:  &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/brandon-carroll/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2012/08/Carroll-wpcf_60x60.jpeg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2012/08/Carroll-wpcf_60x60.jpeg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2012/08/Carroll-wpcf_60x60.jpeg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/brandon-carroll/&#34;&gt;Brandon Carroll&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/BrandonCarroll&#34;&gt;@BrandonCarroll&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;CCIE Instructor, Blogger, and Technology Enthusiast&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/brent-salisbury/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2012/08/brent-salisbury1-wpcf_60x60.jpeg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2012/08/brent-salisbury1-wpcf_60x60.jpeg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2012/08/brent-salisbury1-wpcf_60x60.jpeg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/brent-salisbury/&#34;&gt;Brent Salisbury&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/NetworkStatic&#34;&gt;@NetworkStatic&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Brent Salisbury works as a Network Architect, CCIE #11972.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/colin-mcnamara/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2012/08/cmcnamara-headshot-2011-color-scaled-wpcf_42x60.jpg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2012/08/cmcnamara-headshot-2011-color-scaled-wpcf_42x60.jpg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2012/08/cmcnamara-headshot-2011-color-scaled-wpcf_42x60.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/colin-mcnamara/&#34;&gt;Colin McNamara&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/ColinMcNamara&#34;&gt;@ColinMcNamara&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Colin McNamara is a seasoned professional with over 15 years experience with network and systems technologies.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/ethan-banks/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2012/08/ethan-banks-headshot-500x667-wpcf_44x60.jpg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2012/08/ethan-banks-headshot-500x667-wpcf_44x60.jpg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2012/08/ethan-banks-headshot-500x667-wpcf_44x60.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/ethan-banks/&#34;&gt;Ethan Banks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/ECBanks&#34;&gt;@ECBanks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ethan Banks, CCIE #20655, is a hands-on networking practitioner who has designed, built and maintained networks for higher education, state government, financial institutions, and technology corporations.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/greg-ferro/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2012/08/Ferro-wpcf_60x39.jpg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2012/08/Ferro-wpcf_60x39.jpg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2012/08/Ferro-wpcf_60x39.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/greg-ferro/&#34;&gt;Greg Ferro&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/EtherealMind&#34;&gt;@EtherealMind&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Over the last twenty odd years, Greg has worked Sales, Technical and IT Management but mostly he delivers Network Architecture and Design. Today he works as a Freelance Consultant for F100 companies in the UK &amp;amp; Europe focussing on Data Centres, Security and Operational Automation.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/john-herbert/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2012/09/johnherbert-wpcf_60x60.jpeg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2012/09/johnherbert-wpcf_60x60.jpeg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2012/09/johnherbert-wpcf_60x60.jpeg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/john-herbert/&#34;&gt;John Herbert&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/MrTugs&#34;&gt;@MrTugs&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;John has worked in the networking industry for 14 years, and obtained his CCIE Routing &amp;amp; Switching in early 2001.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/jon-langemak/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2013/02/profile_picture-wpcf_52x60.jpg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2013/02/profile_picture-wpcf_52x60.jpg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2013/02/profile_picture-wpcf_52x60.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/jon-langemak/&#34;&gt;Jon Langemak&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/blinken_lichten&#34;&gt;@blinken_lichten&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jon Langemak is a Network Engineer, tech blogger, and dedicated tech enthusiast.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/josh-obrien/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2012/08/OBrien-wpcf_60x60.jpeg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2012/08/OBrien-wpcf_60x60.jpeg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2012/08/OBrien-wpcf_60x60.jpeg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/josh-obrien/&#34;&gt;Josh O’Brien&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/JoshOBrien77&#34;&gt;@JoshOBrien77&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Josh has worked in the industry for 14 years and is now serving as CTO in the Telemedicine sector.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/paul-stewart/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2012/08/IMG_0264-002-wpcf_60x60.jpg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2012/08/IMG_0264-002-wpcf_60x60.jpg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2012/08/IMG_0264-002-wpcf_60x60.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/paul-stewart/&#34;&gt;Paul Stewart&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/PacketU&#34;&gt;@PacketU&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Paul Stewart is a Network and Security Engineer, Trainer and Blogger who enjoys understanding how things really work.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/pete-welcher/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2013/02/DSC6539smaller2-wpcf_60x47.jpg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2013/02/DSC6539smaller2-wpcf_60x47.jpg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2013/02/DSC6539smaller2-wpcf_60x47.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/pete-welcher/&#34;&gt;Pete Welcher&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/pjwelcher&#34;&gt;@pjwelcher&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pete is a 15+ year CCIE who loves network design, and is currently avidly learning various datacenter technologies.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/terry-slattery/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2012/08/Slattery-wpcf_60x50.jpg&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2012/08/Slattery-wpcf_60x50.jpg&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2012/08/Slattery-wpcf_60x50.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/terry-slattery/&#34;&gt;Terry Slattery&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Terry Slattery, CCIE #1026, is a senior network engineer with decades of experience in the internetworking industry.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/tom-hollingsworth/&#34;&gt;&lt;img src=&#34;http://techfieldday.com/wp-content/uploads/2012/08/bwry5mviq6ss0pe6m517-wpcf_46x60.png&#34; alt=&#34;http://techfieldday.com/wp-content/uploads/2012/08/bwry5mviq6ss0pe6m517-wpcf_46x60.png&#34; title=&#34;http://techfieldday.com/wp-content/uploads/2012/08/bwry5mviq6ss0pe6m517-wpcf_46x60.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techfieldday.com/delegate/tom-hollingsworth/&#34;&gt;Tom Hollingsworth&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/NetworkingNerd&#34;&gt;@NetworkingNerd&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Tom Hollingsworth, CCIE #29213, is a Senior Solutions Architect for a small VAR focusing primarily on K-12 education.&lt;/p&gt;
+
+&lt;p&gt;In addition to the above folks, &lt;a href=&#34;http://blog.fosketts.net&#34;&gt;Steven Foskett&lt;/a&gt;, who is as prolific of a tech writer as he is experienced in the industry holds it all together and brings it to the public. The list of vendor participants is also deep.  &lt;a href=&#34;http://www.cisco.com&#34;&gt;Cisco&lt;/a&gt;, &lt;a href=&#34;http://www.juniper.net&#34;&gt;Juniper&lt;/a&gt;, &lt;a href=&#34;http://www.ruckuswireless.com&#34;&gt;Ruckus Wireless&lt;/a&gt;, &lt;a href=&#34;www.plexxi.com/&#34;&gt;Plexxi&lt;/a&gt;, &lt;a href=&#34;www.brocade.com/&#34;&gt;Brocade&lt;/a&gt; and &lt;a href=&#34;http://www.solarwinds.com&#34;&gt;SolarWinds&lt;/a&gt; are all on the docket. Unfortunately for me, I was not able to attend due to work scheduling and coordination of family stuff, something I truly lament.  To think that I was even considered to be on that list is truly humbling and something I&amp;rsquo;m very proud of. Not being able to attend, I wanted to participate as much as I could, so I started looking around and talking to folks and found the link to the live feed as well as the Twitter hashtag. It seems like a good idea to put this out there to as many folks as possible to not only bring attention to the fact that this is happening, but that you can participate from wherever you are.  I would encourage anyone who reads this and is interested in Networking as a profession, or is already in our industry, to pay attention to the Tech Field Day events.  Watch the live stream.  Ask questions and make comments on Twitter via the hashtag &lt;a href=&#34;https://twitter.com/search?q=%23NFD5&#34;&gt;#NFD5&lt;/a&gt;.  Get involved. During the event you should be able to do a live stream from right inside this post or from the &lt;a href=&#34;http://techfieldday.com/event/nfd5/&#34;&gt;NFD5 page&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -136,7 +615,28 @@ mkdir /services cd /services git clone git://github.</description>
       <pubDate>Tue, 27 Nov 2012 05:04:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/sdn-across-domains-in-the-wan-a-novice-look/</guid>
-      <description>There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how. Brent Salsbury laid out a few use cases here. The why seems pretty straightforward. I do believe it will happen, however, the how is the interesting part. Admittedly, I&amp;rsquo;m a tad of a greenhorn in the SDN space, I&amp;rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.</description>
+      <description>&lt;p&gt;There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how.  Brent Salsbury laid out a few use cases &lt;a href=&#34;http://networkstatic.net/sdn-use-cases-for-service-providers/&#34;&gt;here&lt;/a&gt;.  The why seems pretty straightforward.  I do believe it will happen, however, the &lt;strong&gt;how&lt;/strong&gt; is the interesting part.  Admittedly, I&amp;rsquo;m a tad of a greenhorn in the SDN space, I&amp;rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.   SDN, and likely OpenFlow, is in our roadmap at work.  Doing SDN in the data center is well documented and fairly well tested. Stanford has it all over their campus LAN and Google is pushing it around their walled garden WAN on custom built hardware.  None of this is new.   The interesting bit is &lt;strong&gt;how do you do it across multiple administrative entities&lt;/strong&gt;?  As I said before, I&amp;rsquo;ll never claim to be an SDN expert, so I need to break this down into simple pieces for my limited mind to comprehend.   BGP solved this years and years ago, how is that accomplished?  Can any of these bits be re-used (why re-invent the wheel)? My caveman mind wants to break this down into requirements: This can likely be controlled by access between peers via an access control mechanism of some sort, i.e. place software limits on how much a given peer can provision in your network, which can be broken down into:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Number of circuits&lt;/li&gt;
+&lt;li&gt;Types of circuits (MPLS, VLAN, DWDM Waves, etc.)&lt;/li&gt;
+&lt;li&gt;Bandwidth per circuit&lt;/li&gt;
+&lt;li&gt;Duration of circuit (path TTL, permanent?)&lt;/li&gt;
+&lt;li&gt;Number of devices involved per circuit&lt;/li&gt;
+&lt;li&gt;Types of SDN (OpenFlow versions, OSCARS, etc)&lt;/li&gt;
+&lt;li&gt;Probably more stuff&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How can this be done?  I don&amp;rsquo;t currently know enough to answer that question, but I suspect it may require a little bit of work in adding a peering framework between control planes (SDN controllers) not unlike how BGP works.  To put this in familiar terminology, for example,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Route maps could be replaced by permissions maps or even an ACL of some sort to establish the abilities of each peer.  &lt;/li&gt;
+&lt;li&gt;Peers would need to agree (configuration-wise and politically) on what abilities can be exchanged before peers could operate, programmatically agree on parameters before any changes can be made.&lt;/li&gt;
+&lt;li&gt;Security parameters would need to be met for the peers to establish to contain the control plane traffic in a safe way, much like an MD5 across a BGP peering.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If this sounds like a tall order, I&amp;rsquo;ll wager you&amp;rsquo;re right and I&amp;rsquo;ll also bet that before it happens we&amp;rsquo;ll have a Blu Ray vs HD-DCD or VHS vs Beta throw down of SDN protocols.   Folks have been trying to do this for years, the &lt;a href=&#34;http://dragon.maxgigapop.net/twiki/bin/view/DRAGON/WebHome&#34;&gt;DRAGON project&lt;/a&gt; tried this years ago and did a decent job.  Our Arlington, VA site was one of the original build outs of it. &lt;a href=&#34;https://oscars.es.net/OSCARS/docs/&#34;&gt;OSCARS&lt;/a&gt; is doing similar stuff and is actively working across &lt;a href=&#34;http://www.es.net/&#34;&gt;ESnet&lt;/a&gt;. &lt;a href=&#34;http://www.internet2.edu/ion/&#34;&gt;Internet2 ION&lt;/a&gt; is another attempt. These have all had their effect on the Research and Education networks, but to be adopted acrossm and more importantly between, service provider networks, there needs to be ways to do them elegantly and securely.  There is nothing that a SP hates more than risk, and without these control mechanisms, there is a pretty large amount of risk.  It&amp;rsquo;s reasonable to think that this may be there and I&amp;rsquo;m just missing it, since I am admittedly a novice in the SDN world, but if by chance I have not missed it because it&amp;rsquo;s not there, it needs to be addressed.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -145,7 +645,8 @@ mkdir /services cd /services git clone git://github.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/664/</guid>
-      <description>I have been buried in stuff to work on lately. The amazing part of this is that it is all very interesting and things I want to do and learn. The exhausting part is that there is an overwhelming amount of it. It is a good problem to have. The list of things goes on and on (and obviously I don&amp;rsquo;t do all of this stuff by myself, we have an amazing team) but the short list is a pretty tall order.</description>
+      <description>&lt;p&gt;I have been buried in stuff to work on lately.  The amazing part of this is that it is all very interesting and things I want to do and learn.  The exhausting part is that there is an overwhelming amount of it.  It is a good problem to have. The list of things goes on and on (and obviously I don&amp;rsquo;t do all of this stuff by myself, we have an amazing team) but the short list is a pretty tall order.  I need to really learn MPLS and deploy a decent sized MPLS network over the span of a state. There is an immeasurable amount of amazing research going on that needs unmolested network access (translated: no security appliances in line), so securing that in a supportable and efficient way is on the table. There is the normal day-to day. There is capacity planning and base lining. Then there are the interesting pieces of OpenFlow, SDN and disruptive technologies.  Try to keep up with that and do a day job.  Now try to do that with a family too.  Wait?  Where did my time for sleep and the gym go? You get the point. My caveman mind needs to optimize these things to be able to even function, so, I make patterns.  I have to create ways to relate one thing to the next so I can keep track of them.  It&amp;rsquo;s not always efficient but it works fairly well.  In doing so I had made this relation that OpenFlow was not really that different.  I&amp;rsquo;ve been around long enough that I remember doing frame relay and ATM on the wide area (and ATM even within data centers to servers).  I have been learning MPLS pretty intensely since my exposure to it was limited and ave spent significant time [when I should have been sleeping] to that technology.  Doing what I&amp;rsquo;ve done and learning what I&amp;rsquo;ve learned has revealed to me that none of this stuff is new. Everything that is old is new again. &amp;hellip;mostly. Reading &lt;a href=&#34;http://etherealmind.com/overlay-networking-is-more-and-better-while-ditching-the-toxic-sludge/&#34;&gt;this article&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/etherealmind&#34;&gt;Greg Ferro&lt;/a&gt; about overlay networks solidified this for me. ATM and Frame Relay are not dissimilar to MPLS in many regards.  MPLS took something that worked ok and made it better.  OpenFlow is taking something that works and making it better. Mark Twain said it best, I think (paraphrased): &lt;em&gt;[&amp;hellip;For substantially all ideas are second-hand, consciously and unconsciously drawn from a million outside sources, and daily used by the garnerer with a pride and satisfaction born of the superstition that he originated them; whereas there is not a rag of originality about them anywhere except the little discoloration they get from his mental and moral calibre and his temperament, and which is revealed in characteristics of phrasing. When a great orator makes a great speech you are listening to ten centuries and ten thousand men — but we call it his speech, and really some exceedingly smail portion of it is his. But not enough to signify&amp;hellip;.]&lt;/em&gt; An original idea is very, very  rare. So why, then, are so many people afraid of change?  The only constant &lt;em&gt;&lt;strong&gt;is&lt;/strong&gt;&lt;/em&gt; change.  Case in point: IPv6.  Yes, I&amp;rsquo;m going to harp about IPv6.  We actually &lt;em&gt;need&lt;/em&gt; it and yet, even today, there is still significant resistance.  Why is SDN and OpenFlow creating such a buzz?  Why is there such vehement resistance? I&amp;rsquo;ll wager that MPLS was met with similar regard when it was being proposed and developed.  I&amp;rsquo;ve even seen significant resistance to it on mailing lists within the last 6 months.  While agree that there is a place and time for everything, being open is key to success.  Just because something works doesn&amp;rsquo;t mean that there aren&amp;rsquo;t better, stronger, faster, more efficient ways to accomplish it. Give those things a try and see, don&amp;rsquo;t write them off.  Don&amp;rsquo;t wait for someone else to test the water.  Jump in and test it yourself.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -154,7 +655,8 @@ mkdir /services cd /services git clone git://github.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/435/</guid>
-      <description>Ryu, an openflow controller, was new to me. After doing 5 minutes of reading I knew I needed to get it up in the lab. The thing that caught my eye was that the project page was boasting support for OpenStack. Now, I don;t really have much experience with openstack, but it has a cult like following and it&amp;rsquo;s on my short list of stuff to get involved with. This seemed like a great excuse.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://osrg.github.com/ryu/index.html&#34;&gt;Ryu&lt;/a&gt;, an openflow controller, was new to me. After doing 5 minutes of reading I knew I needed to get it up in the lab. The thing that caught my eye was that the project page was boasting support for OpenStack. Now, I don;t really have much experience with openstack, but it has a cult like following and it&amp;rsquo;s on my short list of stuff to get involved with. This seemed like a great excuse.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

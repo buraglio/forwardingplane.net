@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Calendars on ForwardingPlane.net</title>
@@ -9,7 +8,7 @@
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Thu, 05 Dec 2013 16:16:36 +0000</lastBuildDate>
     
-	<atom:link href="https://forwardingplane.net/calendar/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://forwardingplane.net/calendar/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +17,8 @@
       <pubDate>Thu, 05 Dec 2013 16:16:36 +0000</pubDate>
       
       <guid>https://forwardingplane.net/calendar/calendar/</guid>
-      <description>Free/Busy Calendar: The best way to schedule time with me is via my Doodle MeetMe Page.</description>
+      <description>&lt;p&gt;Free/Busy Calendar: The best way to schedule time with me is via my &lt;a href=&#34;https://doodle.com/buraglio&#34;&gt;Doodle MeetMe Page&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

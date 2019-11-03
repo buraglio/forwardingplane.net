@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Strategy Series on ForwardingPlane.net</title>
@@ -9,7 +8,7 @@
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Sat, 15 Dec 2018 01:21:09 +0000</lastBuildDate>
     
-	<atom:link href="https://forwardingplane.net/tags/strategy-series/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://forwardingplane.net/tags/strategy-series/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,9 +17,62 @@
       <pubDate>Sat, 15 Dec 2018 01:21:09 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/ipv6-qa-for-isps/</guid>
-      <description>As a follow on to my post on why small to medium ISPs should deploy IPv6 and the associated APNIC blog post, I have begun to compile a list of commonly asked questions IPv6 and their answers in relation to how a small to medium sized ISP can (and should) deploy IPv6. Expect this list to change and grow over time. -&amp;mdash;&amp;ndash;
-Q: Is there DHCP in IPv6? 
--&amp;mdash;&amp;ndash;</description>
+      <description>&lt;p&gt;As a follow on to my post on &lt;a href=&#34;https://www.forwardingplane.net/2018/09/as-a-small-to-medium-isp-why-you-should-deploy-ipv6/&#34;&gt;why small to medium ISPs should deploy IPv6&lt;/a&gt; and the associated &lt;a href=&#34;https://blog.apnic.net/2018/12/13/three-reasons-why-ipv6-is-worth-the-effort/&#34;&gt;APNIC blog post,&lt;/a&gt; I have begun to compile a list of commonly asked questions IPv6 and their answers in relation to how a small to medium sized ISP can (and should) deploy IPv6. Expect this list to change and grow over time. &lt;/p&gt;
+
+&lt;p&gt;-&amp;mdash;&amp;ndash;&lt;br /&gt;
+&lt;strong&gt;Q: Is there DHCP in IPv6? &lt;/strong&gt;&lt;br /&gt;
+-&amp;mdash;&amp;ndash;&lt;/p&gt;
+
+&lt;p&gt;A:  There are &lt;a href=&#34;https://en.wikipedia.org/wiki/DHCPv6&#34;&gt;multiple DHCPv6 implementations&lt;/a&gt;, the one I like to use is isc-dhcpd as it tends to have the best standard support, is incredibly feature rich and well documented and is very scalable, but there are multiple options. &lt;br /&gt;
+-&amp;mdash;&amp;mdash;&lt;br /&gt;
+&lt;strong&gt;Q: How does one know what IP address the CPE has?&lt;/strong&gt;&lt;br /&gt;
+-&amp;mdash;&amp;ndash;&lt;br /&gt;
+A: DUID (DHCP Unique Identifier), PPPoE, etc. There are several ways. &lt;br /&gt;
+-&amp;mdash;&amp;mdash;&lt;br /&gt;
+&lt;strong&gt;Q: How does one perform traffic shaping for the entire /64 (or /48, or other nibble boundary block) assigned to the customer?&lt;/strong&gt;&lt;br /&gt;
+-&amp;mdash;&amp;ndash;&lt;br /&gt;
+A: Don’t shape on L3, it doesn’t scale. Shape on L2 at the CPE or use PPPoE. &lt;br /&gt;
+-&amp;mdash;&amp;ndash;&lt;br /&gt;
+&lt;strong&gt;Q) Can a dynamic CPE environment where devices can pull addresses with minimal input and work from the provider still work?&lt;/strong&gt;&lt;br /&gt;
+-&amp;mdash;&amp;ndash;&lt;br /&gt;
+A: Yes, DHCPv6 and &lt;a href=&#34;https://en.wikipedia.org/wiki/Prefix_delegation&#34;&gt;DHCPv6-PD&lt;/a&gt; handle these functions. There are well traveled and well vetted how-to’s for this. It is how the large incumbent providers work, regardless of delivery last mile (DSL, DOCSIS, Fixed wireless, etc.) &lt;/p&gt;
+
+&lt;p&gt;-&amp;mdash;&amp;mdash;&lt;br /&gt;
+&lt;strong&gt;Q: How does the host configure a host address? &lt;/strong&gt;&lt;br /&gt;
+-&amp;mdash;&amp;mdash;&lt;/p&gt;
+
+&lt;p&gt;A: Most devices will use what is called SLAAC. Addresses are auto-generated based on a MAC. A given host will have multiple IPv6 addresses and this is normal. There will also be the following on a HOST:&lt;br /&gt;
+A link local address on every interface (starts with fe80: and is used for any communication on the same L2 segment)&lt;br /&gt;
+A privacy address that rotates which much of the traffic will be worked from&lt;br /&gt;
+An EUI-64 address (the auto configured address)&lt;br /&gt;
+Potentially, but only when configured:&lt;br /&gt;
+A DHCPv6 assigned address. &lt;br /&gt;
+A Static Address&lt;/p&gt;
+
+&lt;p&gt;On the ISP side, you’ll see any or all of the following:&lt;br /&gt;
+A link local address (starts with fe80:)&lt;br /&gt;
+An EUI-64 address&lt;br /&gt;
+A static address&lt;br /&gt;
+A prefix delegated prefix&lt;/p&gt;
+
+&lt;p&gt;———&lt;br /&gt;
+Other commonly questions and advice&lt;/p&gt;
+
+&lt;p&gt;Come up with a reasonable IPv6 address plan before you start - work through it as you can. Start with your backbone&lt;br /&gt;
+You will no longer memorize addresses (which you should not do anyway), instead, do two things:&lt;/p&gt;
+
+&lt;p&gt;Think of all prefixes like you would consider a unique IPv4 address 4.2.2.&lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;32&lt;/sub&gt; ==2001:db8:44:22::/64&lt;br /&gt;
+IPv6 addresses are written with the CIDR prefix (see above)&lt;/p&gt;
+
+&lt;p&gt;Use DNS for everything you can - an IPAM like NetBox is your friend&lt;br /&gt;
+It’s ok if your customers prefix delegation does not have reverse DNS&lt;br /&gt;
+It’s ok to publicly address your infrastructure with IPv6. Use a single /48 dedicated for all infrastructure and then create an ACL at the network border to limit access&lt;br /&gt;
+Public addresses for your customers are ok. &lt;br /&gt;
+There is no NAT as in the IPv4 world, and there should not be NAT for IPv6. Period. &lt;br /&gt;
+Yes, you want to dual-stack. It’s ok to have RFC1918 space plus public IPv6. In fact, that’s the most prevalent model (look at your cell phone)&lt;br /&gt;
+You will have devices that won’t do IPv6. That’s expected. &lt;br /&gt;
+Yes, you can do IPv6 only, but it’s significantly harder to manage than a standard dual stack network.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -29,8 +81,39 @@ Q: Is there DHCP in IPv6? 
       <pubDate>Mon, 19 Feb 2018 22:53:03 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/strategy-series-build-vs-buy-sorta/</guid>
-      <description>Build vs. buy is an often lamented and always hotly debated question in all aspects of IT, however, if one is able to truly look at all angles the answer is typically straightforward and can be rooted in one simple strategy: don&amp;rsquo;t reinvent the wheel.
-Don&amp;rsquo;t reinvent the wheel Too many times we as an industry don&amp;rsquo;t do our homework - we are all guilty of it - and we reinvent a wheel.</description>
+      <description>
+
+&lt;p&gt;Build vs. buy is an often lamented and always hotly debated question in all aspects of IT, however, if one is able to truly look at all angles the answer is typically straightforward and can be rooted in one simple strategy: don&amp;rsquo;t reinvent the wheel.&lt;/p&gt;
+
+&lt;h1 id=&#34;don-t-reinvent-the-wheel&#34;&gt;Don&amp;rsquo;t reinvent the wheel&lt;/h1&gt;
+
+&lt;p&gt;Too many times we as an industry don&amp;rsquo;t do our homework - we are all guilty of it - and we reinvent a wheel. Make no mistake, there are true reasons to revisit, revise and reinvent. Lets use an example that &lt;a href=&#34;https://github.com/buraglio/pfrancid&#34;&gt;I&lt;/a&gt; &lt;a href=&#34;https://github.com/buraglio/vdxrancid&#34;&gt;am&lt;/a&gt; &lt;a href=&#34;https://github.com/buraglio/alurancid&#34;&gt;fairly&lt;/a&gt; &lt;a href=&#34;https://github.com/buraglio/sonrancid&#34;&gt;familiar&lt;/a&gt; &lt;a href=&#34;https://github.com/buraglio/cienarancid&#34;&gt;with&lt;/a&gt;: RANCID &lt;a href=&#34;http://shrubbery.net/rancid/&#34;&gt;RANCID&lt;/a&gt; code is 20+ years old and pretty messy. RANCID3 is a rewrite that in my opinion makes the already confusing ball of Perl, Expect, and shell even more confusing. &lt;a href=&#34;https://github.com/ytti/oxidized&#34;&gt;Oxidized&lt;/a&gt; made that process more elegant and arguably more flexible and extensible. That was a good call. Build vs buy is a tough question and as an industry we tend to think about resources in a lopsided way, which further increases that complexity. Resources have always been and will always be finite, and no matter if you build or buy, you are expending your resources. Lets break down the resources:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Time&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;rsquo;s pretty much the extent of it. Everything else is driven by this. Time coasts money. It costs money in the form of salaries, overtime, downtime, etc. In IT we describe things in terms of uptime. Five 9&amp;rsquo;s is the uptime we strive for. When we have downtime, it costs money in the form of lost income or expense to repair and often both. Salaries are paid based on time, hourly, weekly, monthly, yearly. Employes trade their time for that salary regardless of how it is structured. You pay for resources that make more efficient use of time. Employers often fall into one of two buckets:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Able to hire FTE (OPEX)&lt;/li&gt;
+&lt;li&gt;Able to pay vendors (CAPEX)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Obviously this isn&amp;rsquo;t always the case, but it&amp;rsquo;s very common - and if we conveniently overlook those environments that are jut to conservative to consider OPEX (i.e. they always choose buy and generally fall into the &amp;ldquo;able to pay vendors&amp;rdquo; category), it&amp;rsquo;s fairly easy to map build vs buy into those models. Can you support running open source or white box solutions, operationally? Will the OPEX actually save you money when compared to the CAPEX changes they require to make happen? Should you pay for an off the shelf solution and hope that the support you buy can address the issues you&amp;rsquo;ll have? [&lt;em&gt;My strong opinion is that they almost never can, but the comfort that they provide to legal departments and C level execs is what they actually purchase&lt;/em&gt;] It is important to note that different environments introduce very different edge cases, and with many highly technical people, these edge cases have a tendency to creep in and drive a large part of our architectures, but it also gives us a veneer over our needs and requirements process that makes it easier to say &amp;ldquo;we&amp;rsquo;re special and we have hard requirements for not only A and B but also C, D, E and F&amp;rdquo;. C, D, E, and F are likely so edge case that we really don&amp;rsquo;t *need* them. This is where It gets messy and where the hyperscalers have done it right: Say no.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://giphy.com/gifs/reactionseditor-3o7btT1T9qpQZWhNlK&#34;&gt;via GIPHY&lt;/a&gt; Interdomain multicast? Nope. Requirements for full global tables on every device? Nope. If we really ask ourselves if the requirements are actually requirements or if they are simply desirable because they may make things easier or may satisfy a 5-10% use use case, then maybe we should revisit how we&amp;rsquo;re actually developing our needs and requirements. Mapping business (or other strategic) requirements into technology can be difficult, especially if there is no direct correlation to profit or loss. We are a culture of wheel inventors and we embrace it, but 80-85% of the time our wheels can be dead simple and still roll us where we need to go. &lt;strong&gt;&lt;em&gt;What we get &amp;ldquo;for free&amp;rdquo; with that is standardization and ease of management&lt;/em&gt;&lt;/strong&gt; (lower CAPEX). If we look back at history as an example, no sane person wants to run a network that routes AppleTalk, IPX, IPv4, IPv6 and transits DECNet. that sucked. It was too complicated. It was buggy. We simplified it down to IPv[&lt;sup&gt;4&lt;/sup&gt;&amp;frasl;&lt;sub&gt;6&lt;/sub&gt;] and low and behold most of the gear got more stable, configurations got simpler, and networks got easier to run. We should learn from that. Make no mistake, I realize that reinventing wheels to make them roll faster, longer, etc. is called innovation. However, along with our needs and requirements we need to put serious consideration into our business strategy. Is our business to innovate? Are we going to see direct or indirect improvements to CAPEX or OPEX if we &lt;em&gt;do&lt;/em&gt; innovate. Are we factoring in the &lt;em&gt;cost&lt;/em&gt; of the innovation? Where this starts to get even more fuzzy is in the opensource world. In this space &amp;ldquo;build&amp;rdquo; can be defined as self supporting, meaning &amp;ldquo;use of opensource products with no formal or contractual support structure&amp;rdquo;, which a very large amount of organizations are very wary of (and many actively avoid). These are all important questions that must be addresses when deciding on the strategy of build vs buy - it&amp;rsquo;s not as straight forward and simple of a question as &amp;ldquo;build or buy&amp;rdquo;, it seems. If you&amp;rsquo;re looking for a different perspective on a very similar topic, check &lt;a href=&#34;https://rule11.tech&#34;&gt;Russ White&lt;/a&gt;&amp;rsquo;s (yes, &lt;a href=&#34;https://www.linkedin.com/in/riw777/&#34;&gt;THAT Russ White&lt;/a&gt;) post on &lt;a href=&#34;https://rule11.tech/enterprise-versus-provider/&#34;&gt;Enterprise vs. Provider&lt;/a&gt;. While not entirely similar, it points out that we have problems and solutions, and that knowing what both of those are is critical to success regardless of their ecosystem. This is key. We need to look at the whole picture. &lt;em&gt;My take: We need to look at the entire picture. It&amp;rsquo;s not as simple as one question. Personally I tend to lean more toward build, but for the majority of my career I was in environments that had extremely clued engineers and support staff. Is this for everyone? Nope. Is it a viable option, absolutely. You invest in people or you invest in contracts. I&amp;rsquo;d rather invest in really, really good people. &lt;/em&gt; &lt;em&gt;When it comes down to innovation, it&amp;rsquo;s a little more complicated:&lt;/em&gt; &lt;em&gt;1. if wheel exists don&amp;rsquo;t build wheel.&lt;/em&gt; &lt;em&gt;2. If the wheels aren&amp;rsquo;t exactly the shape or size you need, augment the wheels and contribute your augmentations back for review and inclusion in the wheel plans and inventory where possible and appropriate.&lt;/em&gt; &lt;em&gt;3. If the wheels don&amp;rsquo;t exist, build a wheel and share the plans for the wheel whenever you can.&lt;/em&gt;```
+#!/usr/bin/python&lt;/p&gt;
+
+&lt;p&gt;if wheel == &amp;lsquo;yes&amp;rsquo;:
+ print(&amp;lsquo;use existing wheel&amp;rsquo;)
+ elseif &amp;lsquo;yes, but incomplete&amp;rsquo;:
+ print(&amp;ldquo;augment wheel, contribute wheel changes&amp;rdquo;)
+ elseif no:
+ print(&amp;ldquo;build wheel, share plans&amp;rdquo;)
+ print &amp;ldquo;Miller Time&amp;rdquo;
+```* Code is provided as-is and is likely incorrect, we take no responsibility for poor code or fallout from running said code&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -39,7 +122,39 @@ Don&amp;rsquo;t reinvent the wheel Too many times we as an industry don&amp;rsqu
       <pubDate>Sat, 10 Feb 2018 16:58:28 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/strategy-series-view-outside-network/</guid>
-      <description>In the tradition of my NIX4NetEng series I&amp;rsquo;m going to dive deep into the world of strategy, and specifically into the strategy of how we look at and operate our networks, the data they generate and the analytics that are available (and often overlooked) in how networks are managed both long term and day-to-day. So, in the spirit of visibility, lets think about how typical networks are monitored. My guess is that you either already know, or will soon realize that visibility and testing across disparate networks is hard.</description>
+      <description>
+
+&lt;p&gt;In the tradition of my &lt;a href=&#34;https://www.forwardingplane.net/topics/nix4neteng/&#34;&gt;NIX4NetEng&lt;/a&gt; series I&amp;rsquo;m going to dive deep into the world of strategy, and specifically into the strategy of how we look at and operate our networks, the data they generate and the analytics that are available (and often overlooked) in how networks are managed both long term and day-to-day. So, in the spirit of visibility, lets think about how typical networks are monitored. My guess is that you either already know, or will soon realize that v&lt;em&gt;isibility and testing across disparate networks is hard.&lt;/em&gt; This is a &lt;strong&gt;big&lt;/strong&gt; topic, so sit back, relax, get your feet up and prepare for a magical journey into the fun and fantastical world of network visibility!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://giphy.com/gifs/magic-krhB8ydCQiYZq&#34;&gt;via GIPHY&lt;/a&gt; I&amp;rsquo;m going to glaze over the low hanging fruit of SNMP monitoring - you have all of that right? Yes? Good. No?!?! Shame on you&amp;hellip;I&amp;rsquo;l do another post of some of my &lt;a href=&#34;https://www.librenms.org/&#34;&gt;favorite tools&lt;/a&gt; soon and you can shamefully download them and set them up, head hung low (until they&amp;rsquo;re up monitoring and alerting, at which point you can raise your head up high!). Lets make a very, very bold assumption that you totally understand how your internal network works, you have graphing, up/down statistics, traffic baselines and visibility into &lt;a href=&#34;http://www.forwardingplane.net/2017/12/what-is-your-netflow-strategy/&#34;&gt;traffic flow&lt;/a&gt; and &lt;a href=&#34;http://www.forwardingplane.net/2017/10/configuration-backups-opportunity-automation-management/&#34;&gt;configurations&lt;/a&gt;. Don&amp;rsquo;t worry, if you don&amp;rsquo;t have those things you can link to a few options here or wait and I&amp;rsquo;ll circle back around to them in later topics.&lt;/p&gt;
+
+&lt;h1 id=&#34;visibility-and-testing-across-diverse-networks-is-hard&#34;&gt;&lt;em&gt;&amp;ldquo;Visibility and testing across diverse networks is hard.&amp;rdquo;&lt;/em&gt;&lt;/h1&gt;
+
+&lt;p&gt;OK, so visibility. &lt;img src=&#34;http://www.nickburaglio.com/wp-content/uploads/2015/09/day7.jpg&#34; alt=&#34;&#34; /&gt; Any network engineer with some experience under their belt has gotten the problem report of &amp;ldquo;the internet is down&amp;rdquo; or &amp;ldquo;the internet is slow&amp;rdquo;. Yup, we all know them, we all love them. We even had an internal joke at a previous employer of mine that we could &amp;ldquo;ping the internet&amp;rdquo;, in that we created a CNAME of &amp;ldquo;theinternet&amp;rdquo; for a host that had high uptime.&lt;code&gt;
+(~) heelflip $ ping theinternet
+PING theinternet (10.142.143.167): 56 data bytes
+64 bytes from 10.14.143.167: icmp\_seq=0 ttl=54 time=0.794 ms
+64 bytes from 10.14.143.167: icmp\_seq=1 ttl=54 time=0.768 ms
+64 bytes from 10.14.143.167: icmp\_seq=2 ttl=54 time=0.734 ms
+64 bytes from 10.14.143.167: icmp\_seq=3 ttl=54 time=0.732 ms
+64 bytes from 10.14.143.167: icmp\_seq=4 ttl=54 time=0.758 ms
+64 bytes from 10.14.143.167: icmp\_seq=5 ttl=54 time=0.761 ms
+&lt;/code&gt;Right, so you get the internal network. What about when you get to the part that you don&amp;rsquo;t control and can&amp;rsquo;t see into? That&amp;rsquo;s harder, but rest easy - there are a number of ways to go about gathering the necessary details. What should those data sources be? Let me throw down what I think are important to track to really understand what the heck is going on outside of your AS or sphere of influence.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Paths to common destinations (&lt;a href=&#34;https://google.com&#34;&gt;google&lt;/a&gt;, &lt;a href=&#34;https://www.servicenow.com&#34;&gt;servicenow&lt;/a&gt;, &lt;a href=&#34;https://www.salesforce.com&#34;&gt;SalesForce)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Route table for all peerings (if taking more than default and are using eBGP)&lt;/li&gt;
+&lt;li&gt;Latency statistics from your site to common destinations (see 1.)&lt;/li&gt;
+&lt;li&gt;Latency statistics from outside of your network to your site&lt;/li&gt;
+&lt;li&gt;Latency (and possibly throughput) statistics to intermediary points across your typical paths&lt;/li&gt;
+&lt;li&gt;External route table and path statistics&lt;/li&gt;
+&lt;li&gt;Packet loss statistics&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That&amp;rsquo;s a decent amount of data. How can this be done? Well, let me tell you, there are a few ways but drawing them all together can be a daunting task. This can be accomplished by looking at data produced by &lt;a href=&#34;https://oss.oetiker.ch/smokeping/&#34;&gt;smokeping&lt;/a&gt; or &lt;a href=&#34;https://github.com/perfsonar/owamp&#34;&gt;owamp&lt;/a&gt; with an SNMP graphing tool for interface stats and &lt;a href=&#34;https://bgpmon.net/&#34;&gt;BGPMon&lt;/a&gt; and Peermon for BGP information. An opensource product called &lt;a href=&#34;https://www.perfsonar.net/&#34;&gt;perfSonar&lt;/a&gt; rolls a lot of this together, but there are commercial packages such as &lt;a href=&#34;https://www.thousandeyes.com/&#34;&gt;ThousandEyes&lt;/a&gt; that offer these types of statistics across a large swath of the internet as well. &lt;a href=&#34;https://atlas.ripe.net/&#34;&gt;RIPE ATLAS&lt;/a&gt; has a great deal of statistics that can be easily queried  and has a large install base too. If you are a savvy coder you can grab some good information from the &lt;a href=&#34;https://atlas.ripe.net/docs/api/v2/manual/&#34;&gt;RIPE ATLAS API&lt;/a&gt;. If you don&amp;rsquo;t have the resources, capability, or time to do that then there is an option for a turnkey solution. &lt;a href=&#34;https://www.thousandeyes.com&#34;&gt;ThousandEyes&lt;/a&gt; has a strong offering and there is a great deal of information that they gather. They also have very good presence and availability of information about their product, most recently presenting at &lt;a href=&#34;http://techfieldday.com/appearance/thousandeyes-presents-at-networking-field-day-17/&#34;&gt;Network Field Day 17&lt;/a&gt; (and historically at &lt;a href=&#34;http://techfieldday.com/appearance/thousandeyes-presents-at-networking-field-day-6/&#34;&gt;NFD 6&lt;/a&gt;, &lt;a href=&#34;http://techfieldday.com/appearance/thousandeyes-presents-at-networking-field-day-8/&#34;&gt;NFD 8&lt;/a&gt;, and &lt;a href=&#34;http://techfieldday.com/appearance/thousandeyes-presents-at-networking-field-day-12/&#34;&gt;NFD 12).&lt;/a&gt;I was a delegate at NFD 17 and was pleased to see another tool that provides visibility into BGP, a very often overlooked and yet unbelievablycritical and useful viewpoint which has historically been difficult to see outside of tools like &lt;a href=&#34;http://www.forwardingplane.net/2015/03/opendns-acquires-bgpmon-and-the-future-of-route-monitoring/&#34;&gt;BGPMon&lt;/a&gt;. (see my previous &lt;a href=&#34;https://www.forwardingplane.net/topics/nix4neteng/&#34;&gt;NIX4NetEng&lt;/a&gt; &lt;a href=&#34;http://www.forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/&#34;&gt;post about BGP visibility&lt;/a&gt;). &lt;a href=&#34;http://techfieldday.com/appearance/netbeez-presents-at-networking-field-day-9/&#34;&gt;NetBeez&lt;/a&gt; also has a reasonable offering but last I have looked it doesn&amp;rsquo;t really do much outside of a network (admittedly I may be behind the curve with their product). If you&amp;rsquo;re interested in seeing or hearing some more about these products, I did a packet pushers podcast on perfSonar a few years ago which is dated as far as feeds and speeds, but still very relevant today, you can read the show notes and listen &lt;a href=&#34;http://packetpushers.net/podcast/podcasts/show-163-open-source-perfsonar-finds-the-flaws-impacting-the-flows/&#34;&gt;here.&lt;/a&gt; For more info on ThousandEyes you can check out the latest &lt;a href=&#34;http://techfieldday.com/event/nfd17/&#34;&gt;NFD17&lt;/a&gt; videos.   The real point is that to really see the performance of your network and to fully understand the true user experience you need to have total visibility into the entire ecosystem, not just the pieces that you can control.&lt;/p&gt;
+
+&lt;h6 id=&#34;for-anyone-wigged-out-about-the-eyeball-pic-those-are-my-eyes-7-days-after-lasik-http-www-nickburaglio-com-2015-09-02-eg-html&#34;&gt;*For anyone wigged out about the eyeball pic, those are my eyes &lt;a href=&#34;http://www.nickburaglio.com/2015/09/02/eg-html/&#34;&gt;7 days after Lasik&lt;/a&gt;.&lt;/h6&gt;
+</description>
     </item>
     
     <item>
@@ -48,7 +163,46 @@ Don&amp;rsquo;t reinvent the wheel Too many times we as an industry don&amp;rsqu
       <pubDate>Mon, 18 Dec 2017 11:15:30 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/what-is-your-netflow-strategy/</guid>
-      <description>You have one, right? Even if your entire strategy is “collect some flow data”, there is absolutely NO reason not to have a netflow implementation, and frankly, it will save you time and money over time if you make the effort to do it. I love network data and analytics and I have waxed poetic about how important they are at every opportunity. There are a myriad of options for analytics and flow data.</description>
+      <description>
+
+&lt;p&gt;You have one, right? Even if your entire strategy is “collect some flow data”, there is absolutely NO reason not to have a netflow implementation, and frankly, it will save you time and money over time if you make the effort to do it. I love network data and analytics and I have waxed poetic about how important they are at every opportunity. There are a myriad of options for analytics and flow data. If you’re not doing something, you’re doing it wrong. I can go on and on about the importance of network data for budgeting, security, capacity planing, and general knowledge of what your network is actually doing, but that’s for another day (contact me directly if you really want to chat details on that subject). Today is about network flow data - the foundational bits and pieces of what the heck your network, big or small, is actually doing. I’ve been having a breakdance fight with flow data packages for almost two decades, and I’ve jotted down a few of my more notable experiences. Regardless of your needs, budget, abilities, or time, there is a solution for you.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://giphy.com/gifs/breakin-boogaloo-shrimp-11FirB7GcukiwU&#34;&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;arbor-https-www-arbornetworks-com&#34;&gt;&lt;strong&gt;&lt;a href=&#34;https://www.arbornetworks.com/&#34;&gt;Arbor&lt;/a&gt;&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Arbor is the Rolls Royce of flow analytics (and DDoS mitigation) solutions. It does almost everything, has options for managed objects, DDoS scrubbing and alerting capabilities, a magnificent interface, role based access, rainbows and gumdrop houses with lollipop trees. This system is pretty darned amazing - it truly is, and that likely comes from the fact that they were one of the first, and had/have one of the largest install bases for this kind of system. They have turnkey solutions and have the unique position of being in roughly 90% of the worlds legacy tier 1 ISPs, so their DDoS and other security options are strong, fast to update, and &lt;strong&gt;&lt;em&gt;very&lt;/em&gt;&lt;/strong&gt; good. I’ve had great experience with this platform and its API. I like to think of arbor as the commercial ISP brass ring for flow data analytics. They have other solutions for enterprise and campus, but their roots are in strong ISP solutions. They’re pricey, but very, very good. Expect to need at least an FTE to really take full advantage of their very capable ecosystem, but if you dedicated the money and manpower to it, you won’t be sad.&lt;/p&gt;
+
+&lt;h2 id=&#34;splunk-https-www-splunk-com&#34;&gt;&lt;a href=&#34;https://www.splunk.com/&#34;&gt;Splunk&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;We all know spunk as a really nice log and analytic system but what many may not realize is that Splunk is really, really good at network data and analytics as well. It’s pricey, but it’s as close as you’ll get to a turkey solution for a SIEM that can actually scale. It has the notion of customizable dashboards and visualization, as a huge amount of plugins and add on’s, but they come with a legendarily steep price tag. The saying I have always heard is “if you can afford spunk, buy spunk. If you can’t use an ELK stack (noe elastic stack)”. My experience backs this up.&lt;/p&gt;
+
+&lt;h2 id=&#34;elk-elastic-stack-https-www-elastic-co&#34;&gt;&lt;a href=&#34;https://www.elastic.co/&#34;&gt;ELK /Elastic Stack&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;I’m a big fan of this not only because it’s essentially free, but because it’s so extremely flexible and has so many existing projects built around it. I’ve moved my go-to for net flow collection from nfdump to Elastic Stack built around the &lt;a href=&#34;https://www.manitonetworks.com/about-flow-analyzer/&#34;&gt;Manito Networks flowanalyzer&lt;/a&gt; install.   This platform takes a bit more command line jockeying and isn’t entirely turnkey, but it’s crazy flexible, had great eye candy and building the visualizations and dashboards is easy. Notable mention is &lt;a href=&#34;https://github.com/robcowart/elastiflow&#34;&gt;Elastiflow&lt;/a&gt;, which is similar but has a bit more eye candy and leverages log stash. Elastiflow doesn’t have nearly as turnkey of an install (and really has almost no “newbie” install instructions at all - but it’s a strong offering if you already know how to spin up an ELK stack and tune it.&lt;/p&gt;
+
+&lt;h2 id=&#34;nfdump-http-nfdump-sourceforge-net&#34;&gt;&lt;a href=&#34;http://nfdump.sourceforge.net/&#34;&gt;Nfdump&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;The venerable nfdump. This is what so many large networks were using (and probably still are) for their raw flow collections. This package scales exceptionally well to huge networks and has so many tools available for the CLI that it’s the de facto standard for raw flow analytics and forensics. I love this system and ran it for many, many, MANY years. It takes a but of time to learn, and may not be the right tool for you if you want a modern GUI, lots of eye candy, or are inexperienced with the UNIX/LINIX command line, but it’s got it where it counts, supports IPFix, Netflow v5, v9 and IPFIX and you can’t dog wrong with it. I have a handy how-to getting it up and running Under CentOS &lt;a href=&#34;https://www.forwardingplane.net/2014/01/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/&#34;&gt;here&lt;/a&gt;. When you couple this with something like &lt;a href=&#34;https://github.com/JustinAzoff/flow-indexer&#34;&gt;Justin Azoff’s flow indexer&lt;/a&gt; and &lt;a href=&#34;https://sourceforge.net/projects/nfsen/&#34;&gt;nfsen&lt;/a&gt; on the front end, you’ve got an enviable power user setup ripe for both forensics, tactical work as well as baseline generation.&lt;/p&gt;
+
+&lt;h2 id=&#34;solarwinds-https-www-solarwinds-com&#34;&gt;&lt;a href=&#34;https://www.solarwinds.com/&#34;&gt;SolarWinds&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Solarwinds Orion is the go-to for windows based monitoring. It’s not cheap, but if you’re running a windows based monitoring system, you’re likely an enterprise and have budget for it. I have been impressed with the visualizations of this system and like that it does all of the monitoring in one package - once installed I never have to see windows (and since I can’t efficiently support windows, that’s probably a good thing - someone else will handle the OS work). The price tag can be a bit steep depending on number of nodes monitored, but it does what it claims and commercial support is decent. My one complaint is that I can’t seem to find a way to do raw data queries in a straightforward way. This may be possible and I have just not had the time or mental power to workout out. Overall it’s a worthy monitoring platform if you need your system to run on windows and can afford it. There are some older but still good videos from several Network Field Day events &lt;a href=&#34;http://techfieldday.com/companies/solarwinds/&#34;&gt;here&lt;/a&gt; and I wrote about it from a UNIX users perspective &lt;a href=&#34;https://www.forwardingplane.net/2015/07/solarwinds-orion-from-a-unix-user-point-of-view/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;live-action-networks-live-ux-https-www-liveaction-com-products-live-ux&#34;&gt;&lt;a href=&#34;https://www.liveaction.com/products/live-ux/&#34;&gt;Live Action Networks Live UX&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Another commercial option that has good support and a lot of eye candy. This was born out of work with the US Government and is a really interesting system. I’ve met with these guys several times and their team is super open to taking and feature requests and they have a good product. I first heard about them at &lt;a href=&#34;http://techfieldday.com/appearance/liveaction-presents-at-networking-field-day-7/&#34;&gt;Network Field day 7&lt;/a&gt;, their product was intriguing there and they’ve come a long way since then. Worth looking at for a turnkey solution for things like network analytics, IP-SLA,&lt;/p&gt;
+
+&lt;h2 id=&#34;my-take&#34;&gt;My take&lt;/h2&gt;
+
+&lt;p&gt;I like the power that an indexed set of data provides and I am willing and capable of plowing through the install of a linux based system. I’m also frugal, and for a product to really warrant my money it needs to do something that nothing else does [translated: I am willing and able to support open source solutions].&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2017/12/Screenshot-2017-12-15-20.32.57.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That said, the Manito Networks install of Elk + Kibana (no logstash in this default install) is where I typically land due to the fact that I can get indexed flow data, nice, configurable graphs and trending statistics, and can integrate things like syslog into another index on the same system giving me the tools to do forensics on a number of topics on that system. &lt;a href=&#34;https://gitlab.com/thart/flowanalyzer/blob/master/Install/README.md&#34;&gt;The setup is crazy easy&lt;/a&gt; and really well documented, too. Someone linux-inclined can have it up and collecting flow data (sflow, netflow v5/9 or IPFIX) in an order of about 30 minutes - probably less. The take aways really, though, is that there are options available no matter your skill level or budget, so there is really no reason not to have something.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

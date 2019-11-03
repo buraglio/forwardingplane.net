@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Brocade on ForwardingPlane.net</title>
@@ -9,7 +8,7 @@
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Sat, 08 Dec 2012 17:53:00 +0000</lastBuildDate>
     
-	<atom:link href="https://forwardingplane.net/tags/brocade/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://forwardingplane.net/tags/brocade/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +17,31 @@
       <pubDate>Sat, 08 Dec 2012 17:53:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/brocade-vdx-first-impressions/</guid>
-      <description>I recently had the opportinity to work with the much-anticipated Brocade VDX &amp;ldquo;Ethernet Fabric&amp;rdquo; platform. I do admit tha tI&amp;rsquo;m intrigued by this product. I&amp;rsquo;d seen it work multiple times in demos and it worked so well and looked to easy that we actively tried to throw curve balls at the demo organizer to prove it wasn&amp;rsquo;t canned. It succeeded. The hardware hashing across the VLAGs is very slick. The VMware VSwitch integration worked well and was handy.</description>
+      <description>&lt;p&gt;I recently had the opportinity to work with the much-anticipated &lt;a href=&#34;http://www.brocade.com/launch/cloud-clarity/solutions-technology-innovation.html&#34;&gt;Brocade VDX &amp;ldquo;Ethernet Fabric&amp;rdquo;&lt;/a&gt; platform.  I do admit tha tI&amp;rsquo;m intrigued by this product.  I&amp;rsquo;d seen it work multiple times in demos and it worked so well and looked to easy that we actively tried to throw curve balls at the demo organizer to prove it wasn&amp;rsquo;t canned. &lt;img src=&#34;http://www.brocade.com/images/products/vdx-6720-dc-switches/VDX6720-24_front_large.jpg&#34; alt=&#34;&#34; /&gt; It succeeded. The hardware hashing across the VLAGs is very slick.  The VMware VSwitch integration worked well and was handy.  With the movement to virtualization, this is an important piece for most data center folks. That being said, some people have very specific data center requirements that aren&amp;rsquo;t really the same as an enterprise.  For example:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t firewall everything at the DC. That&amp;rsquo;s right. I said it.  Firewalls don&amp;rsquo;t solve all security problems.  Take that &amp;ldquo;defense in depth&amp;rdquo;!&lt;/li&gt;
+&lt;li&gt;A potential need to do non-standard or experimental protocols.&lt;/li&gt;
+&lt;li&gt;A lot of line rate 10G internally and to the rest of network.&lt;/li&gt;
+&lt;li&gt;Integration with legacy, existing and or in-house written tools&lt;/li&gt;
+&lt;li&gt;Need for GSLB/SLB&lt;/li&gt;
+&lt;li&gt;Self Healing&lt;/li&gt;
+&lt;li&gt;Ease of fabric upgrade (software upgrade doesn&amp;rsquo;t cause fabric isolation)&lt;/li&gt;
+&lt;li&gt;Ease of fabric upgrade (increase LAG numbers and capacity easily)&lt;/li&gt;
+&lt;li&gt;Multi-Homed hosts&lt;/li&gt;
+&lt;li&gt;IPv4&lt;/li&gt;
+&lt;li&gt;IPv6&lt;/li&gt;
+&lt;li&gt;IPv4 Multicast&lt;/li&gt;
+&lt;li&gt;Future SDN support&lt;/li&gt;
+&lt;li&gt;NAT&lt;/li&gt;
+&lt;li&gt;Public Address space&lt;/li&gt;
+&lt;li&gt;All at the same time&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But I digress.  We can get into the Data Center design details later.  Below would be a theoretical data center reference design for a fabric deployment.  Please bear in mind that I mostly like to focus on the WAN and SP bits, so take my data center speculations and musings with a grain of salt.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2012/11/Flexible-DC.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2012/11/Flexible-DC.jpg&#34; alt=&#34;&#34; title=&#34;Flexible DC&#34; /&gt;&lt;/a&gt;   The Brocade VDX does most of what can be expected of a layer 2 fabric.  It really is the &amp;ldquo;easy&amp;rdquo; part of a DC design.  If you can avoid STP, I would heavily recommend it.  I have an unnatural dislike for spanning tree. The unexpected things I ran into with my very brief hands-on with the VDX were just that, unexpected.  I could reliably crash ssh on the boxes by sending a public key at login, which is default behavior for a normal ssh client.  This was very annoying and implied that they don&amp;rsquo;t yet support ssh keys for authentication.  One can work around it by doing &lt;em&gt;ssh -o PubkeyAuthentication=no -l &lt;name&gt;&lt;/em&gt; and worked with the newest version of putty, which I don&amp;rsquo;t use.  The version of OpenSSH on my Mac running 10.8.2 had an issue with it, as did the linux jumphost I used. There is no way, in current software to manage this centrally like you can with qfabric.  Each device is an individual switch.  I suspect this will change since it&amp;rsquo;s pretty inconvenient and I know many folks have asked for it.  This was my biggest issue with it. It doesn&amp;rsquo;t run spanning tree.  It has a loop detection mechanism, but it isn&amp;rsquo;t spanning tree.  It&amp;rsquo;s not meant to have anything but end hosts or other VDX plugged into it from what I gather, other than uplinks. Unknown SDN roadmap.  Currently it&amp;rsquo;s unsupported but with the level of commitment that Brocade has given to SDN so far, I&amp;rsquo;m cautiously optimistic. Untested Layer 3 capabilities.  It&amp;rsquo;s a new platform and they&amp;rsquo;ve just added layer3 into it.  I have no intention of testing the layer3 capabilities since I doubt that I&amp;rsquo;d want to route on them. Unknown IPv6 RA guard status.  Tis is important and I&amp;rsquo;m fairly certain they&amp;rsquo;ll add it, but it wasn&amp;rsquo;t in the code load that we had at SC12, at least that I could find. It is easily integrated into RANCID. &lt;a href=&#34;http://www.forwardingplane.net/2012/11/vdxrancid-contrib-scripts/&#34;&gt;I hacked together a script to do this&lt;/a&gt; in about 10 minutes and I&amp;rsquo;m an awful programmer. It looks EXACTLY like IOS so folks familiar with Ciscos venerable IOS command line will have absolutely no issue picking this right up. Some of the things I didn&amp;rsquo;t get to do during this first run were to put a packet cannon like an IXIA on it and jam traffic up to, and ideally beyond the limits and see how it reacts and to point existing SNMP based tools at it (other than basic up/down status).  I&amp;rsquo;d also like to push the limits of the interconnect between geographic locations and see the latency and efficiency of the VLAG ports when moving traffic and virtual machines.  With luck these will happen at some point soon. Bear in mind that this is a relatively new product.  I would probably place the best competitor for this as the Juniper Qfabric or Microfabric, bith of which are a larger scale product and suffer from some of the same issues.  I&amp;rsquo;m excited to see more about it, it did its job pretty well.  Juniper and cisco take notice, these bits are important and &lt;a href=&#34;http://www.plexxi.com&#34;&gt;more than just brocade are working on it&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

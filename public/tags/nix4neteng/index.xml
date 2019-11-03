@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NIX4NetEng on ForwardingPlane.net</title>
@@ -9,7 +8,7 @@
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Mon, 29 Jul 2019 09:39:35 +0000</lastBuildDate>
     
-	<atom:link href="https://forwardingplane.net/tags/nix4neteng/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://forwardingplane.net/tags/nix4neteng/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +17,8 @@
       <pubDate>Mon, 29 Jul 2019 09:39:35 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/</guid>
-      <description>Small to medium ISPs are an interesting phenomenon. Early in my career I was pretty heavily involved in that space, so much of my current thought processes and methodologies are heavily informed by that experience. Something that never ceases to amaze me today is that the practice of scripting and “automating” things seems to have become somewhat of a lost art, or at the very least it is not part of an initial deployment plan.</description>
+      <description>&lt;p&gt;Small to medium ISPs are an interesting phenomenon. Early in my career I was pretty heavily involved in that space, so much of my current thought processes and methodologies are heavily informed by that experience. Something that never ceases to amaze me today is that the practice of scripting and “automating” things seems to have become somewhat of a lost art, or at the very least it is not part of an initial deployment plan. As I learned to operate a network at scale and with efficiency, we used a significant amount of perl to automate repetitive tasks such as user creation for ppp profiles, provisioning DSL CPE, checking status of PRI and ATM VPCs, etc. In the many years that have passed since my introduction to ISP architecture and operation, the internet has gone from a luxury item to a required utility. In this lapsed time, specialization in networking has become far more prevalent and the generalist role has been significantly diminished. With that specialization and commoditization of IT, the prevalence of the network engineer that could write code became more and more uncommon. Then came “automation”. As we realized that the ubiquitous nature of IT systems and services was only going to increase, automation platforms and companies operating those platforms started to spring up. No longer was there a need to learn hardcore perl, python, shell programming. There were frameworks such as &lt;a href=&#34;https://cfengine.com/&#34;&gt;cfengine&lt;/a&gt;, &lt;a href=&#34;https://puppet.com/&#34;&gt;puppet&lt;/a&gt;, &lt;a href=&#34;https://www.saltstack.com/&#34;&gt;salt&lt;/a&gt;, and &lt;a href=&#34;https://www.ansible.com/&#34;&gt;ansible&lt;/a&gt; that could abstract some of that away and provide significant functionality in addition. I did extensive work with cfengine and did production deployments of salt. In addition, I was around for production deployments of puppet, but it wasn’t until I played with Ansible a few years ago that I got really interested in the automation space - but not really automation, per se. It was far more interesting to me to work on orchestrating workflows. Ansible was perfect for this due to its extreme flexibility and its ability to natively talk to network hardware. So I wrote some Ansible. Then I was informed that my ansible was poor form (which it definitely was). At that point I spent some time learning and playing. Then other things came along and I set it aside for a few years. Well, this past month my interest has ben re-ignited (mainly due to the inclusion of a &lt;a href=&#34;https://docs.ansible.com/ansible/latest/network/user_guide/platform_routeros.html&#34;&gt;mikrotik routeos ansible module&lt;/a&gt;). I spent some time with my &lt;a href=&#34;https://twitter.com/samoehlert&#34;&gt;local ansible guru&lt;/a&gt; and he taught me the best practices and from there I was off to the races. After a bit of re-education, I have compiled a few very simple ansible roles and playbooks focused mostly on the WISP world (because I have a lot of this type of gear in my lab), but I fully expect to expand on them greatly as they are all part of a larger bunch of orchestration parts that I have been writing at night and in my free time. Until then, please feel free to use, modify, or provide patches / input for what I have published thus far. &lt;img src=&#34;https://www.forwardingplane.net/wp-content/uploads/2019/07/transparent-ansible-logo.png&#34; alt=&#34;Transparent ansible logo&#34; title=&#34;transparent-ansible-logo.png&#34; /&gt; &lt;a href=&#34;https://github.com/buraglio/mikrotik-armor&#34;&gt;mikrotik-armor&lt;/a&gt; Simple Ansible role and playbook to harden a Mikrotik RouterOS device &lt;a href=&#34;https://github.com/buraglio/upgrade-mikrotik-routeros&#34;&gt;upgrade-mikrotik-routeros&lt;/a&gt; Simple Ansible playbook and role for setting a software channel and upgrading RouterOS on mikrotik devices &lt;a href=&#34;https://github.com/buraglio/ubnt-airos-tshaper&#34;&gt;ubnt-airos-tshaper&lt;/a&gt; Ansible playbooks to enable and configure the traffic shaper on Ubiquity AirOS CPE&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +27,20 @@
       <pubDate>Mon, 29 Apr 2019 10:23:32 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/the-value-of-measurements-network-latency/</guid>
-      <description>There is no shortage of network telemetry data that can be collected, recorded, graphed, and stored for cross reference and triage. Not one to be underestimated, latency at a can be incredibly powerful when leveraged for baseline and deviation notification. As I have eluded to in the past, there are many tools in this space. I have written about a few of them in detail and touched on others in passing.</description>
+      <description>&lt;p&gt;There is no shortage of network telemetry data that can be collected, recorded, graphed, and stored for cross reference and triage. Not one to be underestimated, latency at a can be incredibly powerful when leveraged for baseline and deviation notification. As I have &lt;a href=&#34;https://www.forwardingplane.net/2018/02/strategy-series-view-outside-network/&#34;&gt;eluded to in the past,&lt;/a&gt; there are many tools in this space. &lt;a href=&#34;https://netbeez.net/blog/how-to-leverage-latency-testing-and-long-term-trend-collection/&#34;&gt;I have written about a few of them in detail&lt;/a&gt; and touched on others in passing. Regardless of the tool, the data is powerful and the instrumentation they provide will only serve to make your network more robust and easier to work on. One tool that is particularly easy to set up and utilize is &lt;a href=&#34;https://oss.oetiker.ch/smokeping/&#34;&gt;smokeping&lt;/a&gt;. From the authors site: &lt;em&gt;SmokePing keeps track of your network latency:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Best of breed latency visualisation.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Interactive graph explorer.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Wide range of latency measurement plugins.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Master/Slave System for distributed measurement.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Highly configurable alerting system.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Live Latency Charts with the most &amp;lsquo;interesting&amp;rsquo; graphs.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Free and OpenSource Software written in Perl written by Tobi Oetiker, the creator of MRTG and RRDtool &lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.forwardingplane.net/wp-content/uploads/2019/04/download_Comcast_Chicago_last_864000.png&#34; alt=&#34;Download Comcast Chicago last 864000&#34; title=&#34;download_Comcast_Chicago_last_864000.png&#34; /&gt; &lt;em&gt;Comcast SpeedTest.net graph for home network&lt;/em&gt; Now, you may be asking _“why do I need to track latency?_”, well, the data is incredibly powerful and can be indicators of anything from a failing optic to a network compromise. This is especially useful in small to medium sized ISPs (and especially WISPs), where cost of software and operational overhead is at a premium, and customer satisfaction is the currency that is dealt. In fact, I was able to use smokeqping to help diagnose a functional denial of service of a commonly deployed cable CPE as detailed &lt;a href=&#34;https://forums.businesshelp.comcast.com/t5/IPV6/Reproducible-denial-of-service-of-Netgear-CPE-running-native/m-p/31597#M787&#34;&gt;here&lt;/a&gt;. &lt;strong&gt;I can’t emphasize enough how useful long term trend data is.&lt;/strong&gt; Smokeping can be used to monitor more than just ping RTT, it supports a myriad of plugins allowing for application latency of protocols such as DNS queries, http get, ssh daemon response, speed test results, the list of plugins - or as smokeping calls them, probes - goes on and can be found &lt;a href=&#34;https://oss.oetiker.ch/smokeping/probe/index.en.html&#34;&gt;here&lt;/a&gt;. Where this is particularly useful is in simulating customer experience.  As with most things in life, perspective is paramount. To address this, smokeping can also be deployed as a distributed model. Deploying it with installations more local to a customer or in a far flung site, say on a raspberry pi, located in remote POP sides or pedestal locations will provide a closer perspective to what the customer actually sees. In the past I have deployed remote raspberry pi devices in an actual FTTH pedestal connected to an ONT to provide the exact customer point of view and it provided a wealth of information I would not otherwise be able to see. There are a myriad of different instal guides for Smokeping, my recommended starting point is by &lt;a href=&#34;https://github.com/magicdude4eva&#34;&gt;Gerd Naschenweng&lt;/a&gt; and can be found &lt;a href=&#34;https://github.com/magicdude4eva/docker-smokeping&#34;&gt;here&lt;/a&gt;. It provides a docker instance but also has a very good set of configuration files to build examples from. Don’t discount latency data - it’s a powerful set of information for any working network. For anyone interested in seeing a working smokeping installation, mine is public and available to view. It provides a few things such as DNS latency, RTT for v4 and v6, RTT for ZeroTier hosts and RIPE ATLAS probes, etc. It’s a powerful toolkit. My public cloud instance is hosted at &lt;a href=&#34;http://www.prgmr.com&#34;&gt;prgmr.com&lt;/a&gt; and can be found &lt;a href=&#34;https://watcher.forwardingplane.net/smokeping/smokeping.cgi&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -36,7 +49,20 @@
       <pubDate>Mon, 29 Apr 2019 10:23:32 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/the-value-of-measurements-network-latency/</guid>
-      <description>There is no shortage of network telemetry data that can be collected, recorded, graphed, and stored for cross reference and triage. Not one to be underestimated, latency at a can be incredibly powerful when leveraged for baseline and deviation notification. As I have eluded to in the past, there are many tools in this space. I have written about a few of them in detail and touched on others in passing.</description>
+      <description>&lt;p&gt;There is no shortage of network telemetry data that can be collected, recorded, graphed, and stored for cross reference and triage. Not one to be underestimated, latency at a can be incredibly powerful when leveraged for baseline and deviation notification. As I have &lt;a href=&#34;https://www.forwardingplane.net/2018/02/strategy-series-view-outside-network/&#34;&gt;eluded to in the past,&lt;/a&gt; there are many tools in this space. &lt;a href=&#34;https://netbeez.net/blog/how-to-leverage-latency-testing-and-long-term-trend-collection/&#34;&gt;I have written about a few of them in detail&lt;/a&gt; and touched on others in passing. Regardless of the tool, the data is powerful and the instrumentation they provide will only serve to make your network more robust and easier to work on. One tool that is particularly easy to set up and utilize is &lt;a href=&#34;https://oss.oetiker.ch/smokeping/&#34;&gt;smokeping&lt;/a&gt;. From the authors site: &lt;em&gt;SmokePing keeps track of your network latency:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Best of breed latency visualisation.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Interactive graph explorer.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Wide range of latency measurement plugins.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Master/Slave System for distributed measurement.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Highly configurable alerting system.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Live Latency Charts with the most &amp;lsquo;interesting&amp;rsquo; graphs.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Free and OpenSource Software written in Perl written by Tobi Oetiker, the creator of MRTG and RRDtool &lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.forwardingplane.net/wp-content/uploads/2019/04/download_Comcast_Chicago_last_864000.png&#34; alt=&#34;Download Comcast Chicago last 864000&#34; title=&#34;download_Comcast_Chicago_last_864000.png&#34; /&gt; &lt;em&gt;Comcast SpeedTest.net graph for home network&lt;/em&gt; Now, you may be asking _“why do I need to track latency?_”, well, the data is incredibly powerful and can be indicators of anything from a failing optic to a network compromise. This is especially useful in small to medium sized ISPs (and especially WISPs), where cost of software and operational overhead is at a premium, and customer satisfaction is the currency that is dealt. In fact, I was able to use smokeqping to help diagnose a functional denial of service of a commonly deployed cable CPE as detailed &lt;a href=&#34;https://forums.businesshelp.comcast.com/t5/IPV6/Reproducible-denial-of-service-of-Netgear-CPE-running-native/m-p/31597#M787&#34;&gt;here&lt;/a&gt;. &lt;strong&gt;I can’t emphasize enough how useful long term trend data is.&lt;/strong&gt; Smokeping can be used to monitor more than just ping RTT, it supports a myriad of plugins allowing for application latency of protocols such as DNS queries, http get, ssh daemon response, speed test results, the list of plugins - or as smokeping calls them, probes - goes on and can be found &lt;a href=&#34;https://oss.oetiker.ch/smokeping/probe/index.en.html&#34;&gt;here&lt;/a&gt;. Where this is particularly useful is in simulating customer experience.  As with most things in life, perspective is paramount. To address this, smokeping can also be deployed as a distributed model. Deploying it with installations more local to a customer or in a far flung site, say on a raspberry pi, located in remote POP sides or pedestal locations will provide a closer perspective to what the customer actually sees. In the past I have deployed remote raspberry pi devices in an actual FTTH pedestal connected to an ONT to provide the exact customer point of view and it provided a wealth of information I would not otherwise be able to see. There are a myriad of different instal guides for Smokeping, my recommended starting point is by &lt;a href=&#34;https://github.com/magicdude4eva&#34;&gt;Gerd Naschenweng&lt;/a&gt; and can be found &lt;a href=&#34;https://github.com/magicdude4eva/docker-smokeping&#34;&gt;here&lt;/a&gt;. It provides a docker instance but also has a very good set of configuration files to build examples from. Don’t discount latency data - it’s a powerful set of information for any working network. For anyone interested in seeing a working smokeping installation, mine is public and available to view. It provides a few things such as DNS latency, RTT for v4 and v6, RTT for ZeroTier hosts and RIPE ATLAS probes, etc. It’s a powerful toolkit. My public cloud instance is hosted at &lt;a href=&#34;http://www.prgmr.com&#34;&gt;prgmr.com&lt;/a&gt; and can be found &lt;a href=&#34;https://watcher.forwardingplane.net/smokeping/smokeping.cgi&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -45,7 +71,85 @@
       <pubDate>Tue, 03 Oct 2017 17:19:54 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/configuration-backups-opportunity-automation-management/</guid>
-      <description>Configuration management is a critical part of successfully and efficiently run any network. From the early days of networking there have been options for doing configuration backup. Several projects have been around for literally decades, enabling the backup of a myriad of critical network devices and providing historical archives. Many of these projects and platforms require a reasonable amount of unix experience and perhaps some development skills. I’m going to give a quick synopsis of my three favorites, these a all very different in execution but provide the same types of services - configuration backup, diff, and archive (and not much else).</description>
+      <description>
+
+&lt;p&gt;Configuration management is a critical part of successfully and efficiently run any network. From the early days of networking there have been options for doing configuration backup. Several projects have been around for literally decades, enabling the backup of a myriad of critical network devices and providing historical archives. Many of these projects and platforms require a reasonable amount of unix experience and perhaps some development skills. I’m going to give a quick synopsis of my three favorites, these a all very different in execution but provide the same types of services - configuration backup, diff, and archive (and not much else). While this is important (you’re doing this stuff, right!?!?!)&lt;/p&gt;
+
+&lt;h3 id=&#34;unimus-https-www-unimus-net&#34;&gt;&lt;a href=&#34;https://www.unimus.net&#34;&gt;Unimus&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Unimius is a commercial platform (free for up to 5 devices) that runs on-premesis. It provides a very easy to use configuration and management web interface and has wonderfully - and uncommonly - responsive help and support. This platform has support for winning on windows, linux, Mac, whatever runs Java. It’s reasonably priced and has a large amount of what I call “hooks” into other things. Unimus also has some an option that is uncommon - it can back up web based equipment. Unimus has a huge amount of device support as well. I did find a few caveats which I suspect are java limitations. For example, It cannot take an IPv6 address as as a “device” and seems to fall back on v4 if the hosts are dual stacked. I also have yet to find a way to define a specific user for discovery which has resulted in some false positives as far as ssh brute force rules. I like this project quite a bit and think it has a lot of potential to do a lot more from the management perspective should they choose to do so.&lt;/p&gt;
+
+&lt;h4 id=&#34;unimus-high-level&#34;&gt; Unimus High level&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java based&lt;/li&gt;
+&lt;li&gt;Commercial (license based on number of devices)&lt;/li&gt;
+&lt;li&gt;Good web interface for view and configuration&lt;/li&gt;
+&lt;li&gt;Cannot take a v6 address as an input device - works resolving v6 addresses&lt;/li&gt;
+&lt;li&gt;Multi device config diff&lt;/li&gt;
+&lt;li&gt;Extremely useful configuration search option&lt;/li&gt;
+&lt;li&gt;Multiple notification options (slack, email, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;rancid-http-www-shrubbery-net-rancid&#34;&gt;&lt;a href=&#34;http://www.shrubbery.net/rancid/&#34;&gt;RANCID&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;RANCID is the first config backup system I ever used and has been actively developed for decades. It’s written in perl, expect, and shell. I’ve written several modules for RANCID over the years and has an large install base due to it’s longevity. It has has a recent-ish re-write which has made it more scalable but has made it much harder to extend comparatively speaking. It’s also been forked several times adding things like git repo support.&lt;/p&gt;
+
+&lt;p&gt;Of the network management options I’ve seen (more on that below), most of the ones not using something like NetConf are leveraging the login scripts from RANCID to do the heavy lifting.&lt;/p&gt;
+
+&lt;h4 id=&#34;rancid-high-level&#34;&gt;RANCID High Level&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Decent device support&lt;/li&gt;
+&lt;li&gt;Multiple repositories (RCS, SVN, CVS, GIT)&lt;/li&gt;
+&lt;li&gt;Several forks - can be confusing&lt;/li&gt;
+&lt;li&gt;RANCID 3 changes the architecture and syntax dramatically&lt;/li&gt;
+&lt;li&gt;Has a series of login scripts that are commonly leveraged for performing other actions like pushing configuration&lt;/li&gt;
+&lt;li&gt;Code is crufty - decades of history rolled into the text&lt;/li&gt;
+&lt;li&gt;Perl, Expect, and shell based&lt;/li&gt;
+&lt;li&gt;Web front end is an add on for viewing the chosen repository&lt;/li&gt;
+&lt;li&gt;Notification typically consists of email diffs&lt;/li&gt;
+&lt;li&gt;Code has a reasonable amount of age on it and can be a bit of a challenge to decipher&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;oxidized-https-github-com-ytti-oxidized&#34;&gt;&lt;a href=&#34;https://github.com/ytti/oxidized&#34;&gt;Oxidized&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Oxidized is an interesting project. It’s written by a very, very clued network engineer / toolsmith and has a huge amount of device support. Oxidized seems to have flexibility as one of its main driving goals - it’s crazy flexible and works extremely well. It’s written in ruby and simple setup isn’t hard at all (and is well documented). It integrates in a lot of tools such as &lt;a href=&#34;https://www.librenms.org/&#34;&gt;librenms&lt;/a&gt; and &lt;a href=&#34;https://slack.com/&#34;&gt;slack&lt;/a&gt;. Oxidized required a little bit of knowledge of setting up simple linux services but it feels a &lt;em&gt;lot&lt;/em&gt; more modern than some of the legacy tools like RANCID. This has been my go-to for a while now.&lt;/p&gt;
+
+&lt;h4 id=&#34;oxidized-high-level&#34;&gt;Oxidized High Level&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ruby based&lt;/li&gt;
+&lt;li&gt;Extremely flexible&lt;/li&gt;
+&lt;li&gt;Actively developed&lt;/li&gt;
+&lt;li&gt;Good support&lt;/li&gt;
+&lt;li&gt;Great device support&lt;/li&gt;
+&lt;li&gt;Very modular&lt;/li&gt;
+&lt;li&gt;Code base is clean and streamlined&lt;/li&gt;
+&lt;li&gt;Notifications can be somewhat convoluted to set up&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Network Management as defined by me: Having knowledge of the network ecosystem from the packet flow to the active configuration. Leveraging this knowledge in order to push change to production network equipment either programmatically or on-demand.&lt;/p&gt;
+
+&lt;p&gt;These items should all be thought of as configuration archiving tools, not as configuration management - the reason being is that by default none of them push changes. They all grab the configurations, diff against an existing stored configuration and calculate a diff, likely storing it for historical research / baseline research and triage. The lack of what I am describing as “management” is a real opportunity as there is very little available that is available out of the box that is:&lt;/p&gt;
+
+&lt;p&gt;A. Multiplatform and&lt;/p&gt;
+
+&lt;p&gt;B. Actually usable&lt;/p&gt;
+
+&lt;p&gt;What we have here is an opportunity. An opportunity to add some level of automation or “management” into the existing configuration archiving tools. Look at the attributes of all of these tools:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;They’re cross platform, non-vendor specific. I do not know how most people work, but in 20 years I have never worked on a single vendor network. Ever.&lt;/li&gt;
+&lt;li&gt;They have knowledge of some commands in each platform,&lt;/li&gt;
+&lt;li&gt;They’re already trusted to log in and at least read configurations meaning they’re trusted to have access and they’re trusted to know and save the configuration.&lt;/li&gt;
+&lt;li&gt;At least one of them has been historically used to prop up home grown management tools&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This seems self evident. Adding some rudimentary ability to make simple changes to network equipment is a good start.&lt;/p&gt;
+
+&lt;p&gt;This could be something as simple as  setting an NTP server or creating a VLAN, but if any of them were to start wrapping these into supported code, make it easy to set up, and easy to use, we’d be well on our way to having “automation for the rest of us”. Once things are trusted enough to make the change the next logical step is allowing those changes to happen autonomously. NTP server deviate from the norm? Change it automatically. This can also be leveraged as a baseline deviation outdoing tool with the integration of a simple “source of truth” for common attributes. The opportunities are ripe and ready to be picked.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -54,7 +158,8 @@
       <pubDate>Thu, 15 Jun 2017 01:29:59 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/updates-podcasts-videos/</guid>
-      <description>Anyone that looks at this site with any regularity may have noticed that I have been pretty remiss in adding posts - for that I apologize, things have been busy. However, I have not been absent in the tech world&amp;hellip;quite the opposite, in fact. I&amp;rsquo;ve been spending more and more time on podcasts and other forms of tech media which I have not provided links for here. So, to help expose that, here are a few of the other media resources I&amp;rsquo;ve been popping up in.</description>
+      <description>&lt;p&gt;Anyone that looks at this site with any regularity may have noticed that I have been pretty remiss in adding posts - for that I apologize, things have been busy. However, I have not been absent in the tech world&amp;hellip;quite the opposite, in fact. I&amp;rsquo;ve been spending more and more time on podcasts and other forms of tech media which I have not provided links for here. So, to help expose that, here are a few of the other media resources I&amp;rsquo;ve been popping up in. Professionally I&amp;rsquo;ve been spending a lot of my time testing things like &lt;a href=&#34;http://techfieldday.com/event/srr1/&#34;&gt;segment routing&lt;/a&gt;, software routing stacks for &lt;a href=&#34;https://www.nanog.org/sites/default/files/2_White_The_State_Of_Open_Source_Routers.pdf&#34;&gt;disaggregated routing&lt;/a&gt;, DDoS detection and DDoS mitigation. In the free time I would typically spend in my home lab, I&amp;rsquo;ve become enamored with Wireless ISPs and how they work. I&amp;rsquo;d done some WISP work off and on over the years but it was primarily focused on L3 - I&amp;rsquo;ve gone deeper and started learning about more RF strategy and detail as well as delved pretty deeply into a fair amount of the gear details. There is some &lt;em&gt;crazy&lt;/em&gt; good, innovative stuff going on in this space and it happily hums along well outside of the hype engines that are the juggernauts of hyperscale data center and enterprise networking. I find it a refreshing change from the marketing machine of the mainstream networking industry, representing more of what the real world of being a smaller service provider is like (which is where I got started, so there is an amount of nostalgic comfort there), and there are folks out there are serious use cases for things like SR and &lt;a href=&#34;https://rule11.tech/?s=disaggregated&#34;&gt;disaggregated routing&lt;/a&gt; just waiting to be tested. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2017/06/IMG_3777.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2017/06/IMG_3777.jpg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt; In addition, I&amp;rsquo;ve been involved in a few projects regarding security and DDoS detection and mitigation (CoreFlow) that have been pretty interesting, one of which which &lt;a href=&#34;https://tnc17.geant.org/core/presentation/30&#34;&gt;I recently presented on at TNC 17 in Linz, Austria&lt;/a&gt;. Slides can be found &lt;a href=&#34;https://tnc17.geant.org/getfile/3728&#34;&gt;here&lt;/a&gt;. More information can be found on the project CoreFlow in the published paper &lt;a href=&#34;https://scholar.google.com.au/citations?view_op=view_citation&amp;amp;hl=fr&amp;amp;user=alONArcAAAAJ&amp;amp;citation_for_view=alONArcAAAAJ:_Ybze24A_UAC&#34;&gt;here&lt;/a&gt;. I&amp;rsquo;ll probably talk more about this project focused on ISP DDoS detection and mitigation as the code matures, but feel free to contact me with questions/comments. &lt;a href=&#34;http://blog.ipspace.net/2017/06/packet-fabric-on-software-gone-wild.html&#34;&gt;Packet Fabric Podcast on IPSpace.net&lt;/a&gt; Also see Ivan&amp;rsquo;s page for &lt;a href=&#34;http://www.ipspace.net/Podcast/Software_Gone_Wild&#34;&gt;Software Gone wild&lt;/a&gt; for more podcasts (both that I have been involved in and other good content) Brothers WISP Video on the basics of DNS (see also &lt;a href=&#34;http://www.forwardingplane.net/2016/02/nix4neteng-6-dns-ad-blocking-and-quality-of-experience/&#34;&gt;NIX for NetEng DNS&lt;/a&gt;, or &lt;a href=&#34;http://www.forwardingplane.net/2014/06/nix4neteng-2-ipv46-address-investigation-tools-whois-dig/&#34;&gt;NIX for NetEng address tools&lt;/a&gt;)&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -63,7 +168,20 @@
       <pubDate>Tue, 21 Mar 2017 03:49:58 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/creating-internal-span-port-inside-proxmox-ovs/</guid>
-      <description>In the last few years I have moved all of my virtualization to proxmox and docker. Seeing as I like to look at packets because I am a closet security guy, and being as I have been working off-and-on on a security project in recent times, I wanted to be able to span a port not only from a hardware switch, but also within my software switches. I had been using linux bridge, which I am not a fan of, so when I started down this path I did not look hard to find a way to do so under that platform.</description>
+      <description>&lt;p&gt;In the last few years I have moved all of my virtualization to &lt;a href=&#34;https://www.proxmox.com/en/&#34;&gt;proxmox&lt;/a&gt; and docker. Seeing as I like to look at packets because I am a closet security guy, and being as I have been working off-and-on on a security project in recent times, I wanted to be able to span a port not only from a hardware switch, but also within my software switches. I had been using linux bridge, which I am not a fan of, so when I started down this path I did not look hard to find a way to do so under that platform. Instead I used it as an opportunity to move some of the internal bridges to &lt;a href=&#34;http://openvswitch.org/&#34;&gt;OpenVSwitch&lt;/a&gt;. I wanted to create an OVS span port internally. I had experience with OVS in the past for SDN work that I was doing, but I had never created a mirror port. I briefly thought about using OpenFlow to do it, but the unnecessary complexity was off putting. Instead I chose to create a simple mirror of a span port from my switch. So, traffic flow goes as such: &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2017/03/OVS-SPAN-1.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2017/03/OVS-SPAN-1.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;     This was fairly trivial, and I was seeing packets in no time. I&amp;rsquo;m not going to go through creating an OVS bridge in proxmox, there are lots of &lt;a href=&#34;https://pve.proxmox.com/wiki/Open_vSwitch&#34;&gt;documents&lt;/a&gt; on how to do that. Once you have your switch port SPAN up and running, and the physical interface in the OVS bridge, you essentially just need to add the following: Create the mirror```
+ovs-vsctl &amp;ndash; &amp;ndash;id=@m create mirror name=span &amp;ndash; add bridge vmbr1 mirrors @m&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Find your ports that you want to mirror - you&#39;ll need the physical port if consuming from a real switch like I am, and the software port of the virtualized analyzer.  Remember, in OVS anything you want to mess with is going to have a UUID. You need to match the interfaces with the UUID to verify. ovs-vsctl list port \_uuid : 42dbd5a9-27c6-4f1b-958b-943f67b6801b bond\_downdelay : 0 bond\_fake\_iface : false bond\_mode : \[\] bond\_updelay : 0 external\_ids : {} fake\_bridge : false interfaces : \[b155454d-db6e-4bb8-af88-7cd6b544c303\] lacp : \[\] mac : \[\] name : &#34;eth1&#34; other\_config : {} qos : \[\] statistics : {} status : {} tag : \[\] trunks : \[\] vlan\_mode : \[\] \_uuid : 85c932b2-4f98-4650-8298-ae9e9ca72796 bond\_downdelay : 0 bond\_fake\_iface : false bond\_mode : \[\] bond\_updelay : 0 external\_ids : {} fake\_bridge : false interfaces : \[5219306f-96ec-440a-ac8b-d949ea18d752\] lacp : \[\] mac : \[\] name : &#34;vmbr1&#34; other\_config : {} qos : \[\] statistics : {} status : {} tag : \[\] trunks : \[\] vlan\_mode : \[\] \_uuid : d53c7323-517f-48a2-9235-4505e654d4b1 bond\_downdelay : 0 bond\_fake\_iface : false bond\_mode : \[\] bond\_updelay : 0 external\_ids : {} fake\_bridge : false interfaces : \[91d52d05-d881-4693-ab5c-fc64b5d87518\] lacp : \[\] mac : \[\] name : &#34;veth100i9&#34; other\_config : {} qos : \[\] statistics : {} status : {} tag : \[\] trunks : \[\] vlan\_mode : \[\] In red we have the interfaces I want to to use. the veth interface is the software port on the VM. Eth1 is the hardware interfce that my switch is spanning traffic to. Pro tip: In OVS, the commands are a little unintuitive to me when talking about mirrors.  &#34;select\_src\_port&#34; and &#34;select\_dst\_port=&#34; is the destination of the traffic flow from an interface and not source and destination of the traffic you are mirroring from the point of view of the in and out ports. Confusing, right? For instance I can monitor the input from one interface and the output of another in the mirror. What we want is the input and output of the same interface to get both directions of traffic. This is not unlike how span ports are configured on your hardware switch, the nomenclature just threw me off.```&#34; data-lang=&#34;Find your ports that you want to mirror - you&#39;ll need the physical port if consuming from a real switch like I am, and the software port of the virtualized analyzer.  Remember, in OVS anything you want to mess with is going to have a UUID. You need to match the interfaces with the UUID to verify. ovs-vsctl list port \_uuid : 42dbd5a9-27c6-4f1b-958b-943f67b6801b bond\_downdelay : 0 bond\_fake\_iface : false bond\_mode : \[\] bond\_updelay : 0 external\_ids : {} fake\_bridge : false interfaces : \[b155454d-db6e-4bb8-af88-7cd6b544c303\] lacp : \[\] mac : \[\] name : &#34;eth1&#34; other\_config : {} qos : \[\] statistics : {} status : {} tag : \[\] trunks : \[\] vlan\_mode : \[\] \_uuid : 85c932b2-4f98-4650-8298-ae9e9ca72796 bond\_downdelay : 0 bond\_fake\_iface : false bond\_mode : \[\] bond\_updelay : 0 external\_ids : {} fake\_bridge : false interfaces : \[5219306f-96ec-440a-ac8b-d949ea18d752\] lacp : \[\] mac : \[\] name : &#34;vmbr1&#34; other\_config : {} qos : \[\] statistics : {} status : {} tag : \[\] trunks : \[\] vlan\_mode : \[\] \_uuid : d53c7323-517f-48a2-9235-4505e654d4b1 bond\_downdelay : 0 bond\_fake\_iface : false bond\_mode : \[\] bond\_updelay : 0 external\_ids : {} fake\_bridge : false interfaces : \[91d52d05-d881-4693-ab5c-fc64b5d87518\] lacp : \[\] mac : \[\] name : &#34;veth100i9&#34; other\_config : {} qos : \[\] statistics : {} status : {} tag : \[\] trunks : \[\] vlan\_mode : \[\] In red we have the interfaces I want to to use. the veth interface is the software port on the VM. Eth1 is the hardware interfce that my switch is spanning traffic to. Pro tip: In OVS, the commands are a little unintuitive to me when talking about mirrors.  &#34;select\_src\_port&#34; and &#34;select\_dst\_port=&#34; is the destination of the traffic flow from an interface and not source and destination of the traffic you are mirroring from the point of view of the in and out ports. Confusing, right? For instance I can monitor the input from one interface and the output of another in the mirror. What we want is the input and output of the same interface to get both directions of traffic. This is not unlike how span ports are configured on your hardware switch, the nomenclature just threw me off.```&#34;&gt;ovs-vsctl set mirror span select\_src\_port=@eth1 select\_dst\_port=@eth1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can also do this with the UUID```
+ovs-vsctl set mirror span select_src_port=42dbd5a9-27c6-4f1b-958b-943f67b6801b select_dst_port=42dbd5a9-27c6-4f1b-958b-943f67b6801b&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Now that we have the source of our mirror we just need to send it somewhere. I wanted mine to go to an internal host running some analytics software (on interface veth100i9)```&#34; data-lang=&#34;Now that we have the source of our mirror we just need to send it somewhere. I wanted mine to go to an internal host running some analytics software (on interface veth100i9)```&#34;&gt;ovs-vsctl -- --id=@veth100i9 get port veth100i9 -- set mirror span output-port=@veth100i9&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And that&amp;rsquo;s it. Log into your host and do a tcpdump on whatever interface is mapped to veth100i9 and you should see packets flowing. A few tips:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Verify your span from the hardware switch is working before diving into the software stack.&lt;/li&gt;
+&lt;li&gt;If you&amp;rsquo;re doing this is proxmox, be aware that proxmox networking stack can be unforgiving when you much around outside of their environment.&lt;/li&gt;
+&lt;li&gt;This will not persist across reboots. Add it to /etc/network/interfaces manually to keep it after a restart.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -72,7 +190,41 @@
       <pubDate>Sat, 27 Feb 2016 16:40:04 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/nix4neteng-6-dns-ad-blocking-and-quality-of-experience/</guid>
-      <description>The sixth [and arguably very overdue] installment of my NIX4NetEng series, this began as an overly complex diatribe about DNS. As it evolved, I realized that DNS is so complex and far reaching that it could never be contained in one meager post. DNS is a powerful tool. It has existed for so long that many that have never had the responsibility of running an authoritative or recursive resolver may take for granted the extensive reach of a tool so engrained in the fabric of the internet that it is frequently overlooked, much like a utility such as electricity or running water.</description>
+      <description>
+
+&lt;p&gt;The sixth [and arguably very overdue] installment of my &lt;a href=&#34;https://www.forwardingplane.net/?s=nix4neteng&#34;&gt;NIX4NetEng&lt;/a&gt; series, this began as an overly complex diatribe about &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain_Name_System&#34;&gt;DNS&lt;/a&gt;. As it evolved, I realized that DNS is so complex and far reaching that it could never be contained in one meager post. DNS is a powerful tool. It has existed for so long that many that have never had the responsibility of running an authoritative or recursive resolver may take for granted the extensive reach of a tool so engrained in the fabric of the internet that it is frequently overlooked, much like a utility such as electricity or running water. Over time DNS has been reviled as the weak link in the chain that is the internet and and revered as the binding agent that makes the internet as we know it function. As someone that has run service provider and large campus resolvers, both recursive and authoritative, my opinion is that it is both. In the old days, and even now, black hat players will often target resolvers to perform DNS poisioning and will employ techniques such as flux and double flux to obfuscate their bot herders. Content providers use DNS tricks and anycast DNS to steer eyeballs to the topologically closest resource. Wifi hotspots use DNS to capture and force users through a captive portal. As users at large surf the web, advertisers utilize DNS to deliver advertising. Google does this, Yahoo does it, Hulu and other streaming video services do it. It has also been known to deliver pretty nasty &lt;a href=&#34;https://en.wikipedia.org/wiki/Malvertising&#34;&gt;malware&lt;/a&gt;. That&amp;rsquo;s why when internet and security ninja &lt;a href=&#34;http://blog.samoehlert.com/&#34;&gt;Sam Oehlert&lt;/a&gt; pointed me at this project called &lt;a href=&#34;https://pi-hole.net/&#34;&gt;pi-hole&lt;/a&gt;, I knew that it would be a blog post. Pi-Hole is a recursive resolver based on the venerable &lt;a href=&#34;http://www.thekelleys.org.uk/dnsmasq/doc.html&#34;&gt;dnsmasq&lt;/a&gt; that actively blocks and logs ads. And it WORKS. The initial project was aimed at running this on a raspberry pi as a hardware based resolver for a small network. While this works well, it&amp;rsquo;s really just a linux service that can be run as a &lt;a href=&#34;https://hub.docker.com/r/diginc/pi-hole/&#34;&gt;docker container&lt;/a&gt; or a standard LXC container. I decided to set this up as a linux container on my &lt;a href=&#34;https://www.proxmox.com/en/&#34;&gt;proxmox&lt;/a&gt; box. The install is as simple as running a single command and walking through some simple menus.&lt;/p&gt;
+
+&lt;h2 id=&#34;curl-l-install-pi-hole-net-bash&#34;&gt;curl -L install.pi-hole.net | bash&lt;/h2&gt;
+
+&lt;p&gt;The install is straightforward and allows for both IPv4 &lt;strong&gt;and&lt;/strong&gt; IPv6 ad blocking, should your network support it (which is should!). Like any self funded opensource project, I have found a few caveats and hidden features with it:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Scaling the web interface for a network that performs significant numbers of queries is hard. It seems to have a difficult time displaying from large log files. Perhaps they&amp;rsquo;ll add something like a sqlite db to make this faster, the web interface seems to be updated frequently.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s based on dnsmasq, so adding local hostnames for within your network is a trivial as adding them to the /etc/hosts file on the pihole device. I personally don not like to type IP addresses and my network has been dial stacked with IPv6 for more than a decade, so local DNS resolution is a requirement. I&amp;rsquo;m not memorizing v6 addresses.&lt;/li&gt;
+&lt;li&gt;Again, it&amp;rsquo;s based on dnsmasq, so the flexibility and features are pretty significant and are as simple as tweaking the config file once it&amp;rsquo;s installed.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The query log is available. Security professionals are always interested in DNS query logs - they provide a monumental amount of useful information. With pihole, you have access to that in /etc/log/pihole.log. Here is a snippit of the log&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Feb 27 16:28:04 dnsmasq\[7620\]: /etc/pihole/gravity.list s.youtube.com is 10.209.209.10
+Feb 27 16:28:04 dnsmasq\[7620\]: query\[AAAA\] pubads.g.doubleclick.net from 10.209.89.21
+Feb 27 16:28:04 dnsmasq\[7620\]: /etc/pihole/gravity.list pubads.g.doubleclick.net is 2001:470:c03a:809::a
+Feb 27 16:28:04 dnsmasq\[7620\]: query\[A\] pubads.g.doubleclick.net from 10.209.89.21
+Feb 27 16:28:04 dnsmasq\[7620\]: /etc/pihole/gravity.list pubads.g.doubleclick.net is 10.209.209.10
+Feb 27 16:28:04 dnsmasq\[7620\]: query\[A\] r2---sn-vgqs7nls.googlevideo.com from 10.209.89.21
+Feb 27 16:28:04 dnsmasq\[7620\]: forwarded r2---sn-vgqs7nls.googlevideo.com to 75.75.76.76
+Feb 27 16:28:04 dnsmasq\[7620\]: query\[AAAA\] r2---sn-vgqs7nls.googlevideo.com from 10.209.89.21
+Feb 27 16:28:04 dnsmasq\[7620\]: forwarded r2---sn-vgqs7nls.googlevideo.com to 75.75.76.76
+Feb 27 16:28:04 dnsmasq\[7620\]: query\[AAAA\] manifest.googlevideo.com from 10.209.89.21
+Feb 27 16:28:04 dnsmasq\[7620\]: forwarded manifest.googlevideo.com to 75.75.76.76
+Feb 27 16:28:04 dnsmasq\[7620\]: query\[A\] manifest.googlevideo.com from 10.209.89.21
+Feb 27 16:28:04 dnsmasq\[7620\]: forwarded manifest.googlevideo.com to 75.75.76.76
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;It&amp;rsquo;s easy to add or remove ad domains. Just edit /etc/pihole/gravity.list&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;  &lt;a href=&#34;https://vimeo.com/135965232&#34;&gt;Pi-hole Explained&lt;/a&gt; from &lt;a href=&#34;https://vimeo.com/user40849716&#34;&gt;Pi-hole&lt;/a&gt; on &lt;a href=&#34;https://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;.   Completely ignoring the merit or unethical nature of blocking revenue generating advertisements (which I personally make a small amount of money on from on my &lt;a href=&#34;https://www.youtube.com/buraglio&#34;&gt;youtube channel&lt;/a&gt;), this is a recommended project that exposes networking folks to unix, critical network services, as well as security. &lt;a href=&#34;https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amp;hosted_button_id=3J2L3Z4DHW9UY&#34;&gt;Throw them some beer or coffee money&lt;/a&gt; if you find it useful. They&amp;rsquo;ve earned it.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -81,7 +233,29 @@
       <pubDate>Sun, 21 Dec 2014 18:22:15 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/nix4neteng-5-geoip-tools/</guid>
-      <description>Sometimes in networking and security it becomes necessary to do lookups of location data on IP addresses and prefixes. On my Mac I use homebrew to manage packages, but most of these tools are available with thetypocal apt, yum and port package management systems. For this post, I&amp;rsquo;m going to shift gears and show the install on my mac:``` sliver:~ buraglio$ brew install geoip ==&amp;gt; Downloading https://downloads.sf.net/project/machomebrew/Bottles/geoip-1.6.3.mavericks.bottle.tar.gz ######################################################################## 100.0% ==&amp;gt; Pouring geoip-1.</description>
+      <description>&lt;p&gt;Sometimes in networking and security it becomes necessary to do lookups of location data on IP addresses and prefixes. On my Mac I use &lt;a href=&#34;http://brew.sh/&#34;&gt;homebrew&lt;/a&gt; to manage packages, but most of these tools are available with thetypocal apt, yum and port package management systems. For this post, I&amp;rsquo;m going to shift gears and show the install on my mac:```
+sliver:~ buraglio$ brew install geoip
+==&amp;gt; Downloading &lt;a href=&#34;https://downloads.sf.net/project/machomebrew/Bottles/geoip-1.6.3.mavericks.bottle.tar.gz&#34;&gt;https://downloads.sf.net/project/machomebrew/Bottles/geoip-1.6.3.mavericks.bottle.tar.gz&lt;/a&gt;
+######################################################################## 100.0%
+==&amp;gt; Pouring geoip-1.6.3.mavericks.bottle.tar.gz
+sliver:~ buraglio$ brew install geoipupdate
+==&amp;gt; Downloading &lt;a href=&#34;https://downloads.sf.net/project/machomebrew/Bottles/geoipupdate-2.0.2.mavericks.bottle.tar.gz&#34;&gt;https://downloads.sf.net/project/machomebrew/Bottles/geoipupdate-2.0.2.mavericks.bottle.tar.gz&lt;/a&gt;
+######################################################################## 100.0%
+==&amp;gt; Pouring geoipupdate-2.0.2.mavericks.bottle.tar.gz&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Once this installed we need to do a simple update:```&#34; data-lang=&#34;Once this installed we need to do a simple update:```&#34;&gt;sliver:~ buraglio$ geoipupdate
+sliver:~ buraglio$&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This really doesn&amp;rsquo;t yield any output, but I tend to do it pretty much every time I am using the tool so I know I have up to date information. So lets say that you are a service provider and your customers are calling complaining that they&amp;rsquo;re seeing www.weather.co.uk when going to weather.com or more realistically, they can&amp;rsquo;t get to netflix or amazon video, which tells them they don&amp;rsquo;t support srtreaming to the UK.```
+sliver:~ buraglio$ geoiplookup 141.142.2.2
+GeoIP Country Edition: US, United States
+GeoIP City Edition, Rev 1: US, IL, Illinois, Urbana, 61801, 40.109501, -88.212303, 648, 217&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Nope, that looks ok, it must be something else \[I have actually seen this problem in the past, it&#39;s really no fun to run to ground\]. As you can see, there is a good deal of information there, lat/long, area code, city, state, zip, etc. This data, specifically the lat/long, can be used to do really cool visualization stuff with things like google maps or google earth. As a sanity check, here is a view of bbc.com:```&#34; data-lang=&#34;Nope, that looks ok, it must be something else \[I have actually seen this problem in the past, it&#39;s really no fun to run to ground\]. As you can see, there is a good deal of information there, lat/long, area code, city, state, zip, etc. This data, specifically the lat/long, can be used to do really cool visualization stuff with things like google maps or google earth. As a sanity check, here is a view of bbc.com:```&#34;&gt;sliver:~ buraglio$ geoiplookup 212.58.244.71
+GeoIP Country Edition: GB, United Kingdom
+GeoIP City Edition, Rev 1: GB, N7, Surrey, Tadworth, N/A, 51.283298, -0.233300, 0, 0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Yup, that looks right. The nice thing about this tool is that it can be automated to do all kinds of things with logs from syslog, Bro-IDS, Snort, whatever, and then act on the data or like I mentioned above, plot it out for visualization. The one drawback I&amp;rsquo;ve found is that the IPv6 lookups are sparsely correct, for example:&lt;code&gt;
+sliver:~ buraglio$ geoiplookup6 2400:cb00:2048:1::681c:194f
+sliver:~ buraglio$
+&lt;/code&gt;Looking up 2400:cb00:2048:1::681c:194f which belongs to cloudflare yields me nothink, so there is some work to do there on the IPv6 front. Overall this is a useful tool for quick troubleshooting but it really shines when used in scripts and for visualization.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -90,7 +264,47 @@
       <pubDate>Wed, 15 Oct 2014 17:36:54 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/nix4neteng-4-poodle-and-sslv3-scanning-and-updating/</guid>
-      <description>With the recent release of the POODLE SSLv3 vulnerability, folks are scrambling around trying to figure out what runs what and where. Running a handful of things that do SSL, I was obligated, both personally and professionally, to figure out an easy way to drill down and figure out what does what and then fix the vulnerable services. When there are a lot of devices, this can seem like a daunting task, and it is if you&amp;rsquo;re trying to do it manually.</description>
+      <description>&lt;p&gt;With the recent release of the &lt;a href=&#34;https://www.openssl.org/~bodo/ssl-poodle.pdf&#34;&gt;POODLE SSLv3 vulnerability&lt;/a&gt;, folks are scrambling around trying to figure out what runs what and where.  Running a handful of things that do SSL, I was obligated, both personally and professionally, to figure out an easy way to drill down and figure out what does what and then fix the vulnerable services.  When there are a lot of devices, this can seem like a daunting task, and it is if you&amp;rsquo;re trying to do it manually.  This is where &lt;a href=&#34;http://nmap.org/&#34;&gt;NMAP&lt;/a&gt; comes into play.  NMAP is an extremely powerful tool for scanning and enumerating your own network, not just a tool for the script kiddies to port scan. Since there is no SSL patch at the time of this writing, and since SSLv3 is old and depricated, it is a good idea to see what services support it and then squish them in favor of TLS 1+.  Thankfully, smarter folks than myself have done most of the legwork for accomplishing this task and written most of it down &lt;a href=&#34;http://nmap.org/nsedoc/scripts/ssl-enum-ciphers.html&#34;&gt;here&lt;/a&gt;. NMAP has a wealth of cool scripts and bolt ons that extend it in amazing ways.  To accomplish our tasks we&amp;rsquo;ll ned to do a few things. Install nmap. I ran into issues with the &lt;a href=&#34;http://nmap.org/book/nse-library.html&#34;&gt;nselibs&lt;/a&gt; being incomplete, so I grabbed the source and built it that way as opposed to using yum.```
+git clone git@github.com:nmap/nmap.git&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-We then need to build it from source which requires the dev tools:```&#34; data-lang=&#34;We then need to build it from source which requires the dev tools:```&#34;&gt;sudo yum -y groupinstall &amp;#39;Development Tools&amp;#39;
+cd nmap
+./configure
+sudo make&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and alternatively```
+sudo make install&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-I like to just run it from my directory since there are path considerations.```&#34; data-lang=&#34;I like to just run it from my directory since there are path considerations.```&#34;&gt;(~/nmap) v-chimera $ ./nmap --script ssl-enum-ciphers -p 443 10.14.14.0/27
+
+Starting Nmap 6.46 ( http://nmap.org ) at 2014-10-15 12:21 CDT
+Nmap scan report for gw.test (10.14.14.1)
+Host is up (0.0028s latency).
+PORT    STATE  SERVICE
+443/tcp closed https
+
+Nmap scan report for ssldevice.test (10.14.14.2)
+Host is up (0.0042s latency).
+PORT    STATE SERVICE
+443/tcp open  https
+| ssl-enum-ciphers:
+|   SSLv3:
+|     ciphers:
+|       TLS\_RSA\_WITH\_RC4\_128\_MD5 - strong
+|       TLS\_RSA\_WITH\_RC4\_128\_SHA - strong
+|     compressors:
+|       NULL
+|   TLSv1.0:
+|     ciphers:
+|       TLS\_RSA\_WITH\_RC4\_128\_MD5 - strong
+|       TLS\_RSA\_WITH\_RC4\_128\_SHA - strong
+|     compressors:
+|       NULL
+|\_  least strength: strong
+
+Nmap scan report for nossl.test (10.14.14.3)
+Host is up (0.00049s latency).
+PORT    STATE  SERVICE
+443/tcp closed https&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From here we can see that there is a host that needs to be updated. There are a wealth of docs out there for changing out the supported version. Most of my stuff is apache so I used &lt;a href=&#34;https://zmap.io/sslv3/&#34;&gt;this guide&lt;/a&gt;. For embedded devices, the best option is to filter access [which you should probably be doing anyway] until there is a patched firmware version.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -99,7 +313,45 @@
       <pubDate>Sat, 26 Jul 2014 16:46:07 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/nix4neteng-3-ip-addressing-and-subnet-tools/</guid>
-      <description>IP addressing and subnetting is a common interview subject. I assert that memorizing these things is useful for learning the concepts but ultimately futile in that it is time consuming and inefficient use of engineering time when tools can be utilized to accomplish the same goals in less time with fewer errors. Honestly, I gave up doing this kind of work manually around 10 years ago and have never regretted it, and in actuality, I&amp;rsquo;d probably struggle to do it at this point because it&amp;rsquo;s a repetitive process better suited by code.</description>
+      <description>&lt;p&gt;IP addressing and subnetting is a common interview subject. I assert that memorizing these things is useful for learning the concepts but ultimately futile in that it is time consuming and inefficient use of engineering time when tools can be utilized to accomplish the same goals in less time with fewer errors. Honestly, I gave up doing this kind of work manually around 10 years ago and have never regretted it, and in actuality, I&amp;rsquo;d probably struggle to do it at this point because it&amp;rsquo;s a repetitive process better suited by code. In the old days, subnetting IPv4 manually was a badge of honor (and one that I always hated), but I learned it because I needed to know it for cert tests and daily work. However, once I started doing IPv6 around 2001, it became clear that doing this kind of thing by hand was consuming more time than it needed to. Enter UNIX tools. HEX Hex isn&amp;rsquo;t really a tool as much as it&amp;rsquo;s a hack for your shell.  Remember the &lt;a href=&#34;http://www.forwardingplane.net/2014/04/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration/&#34; title=&#34;NIX4NetEng #1 Managing dotfiles; pwn the unspoken pain of UNIX administration&#34;&gt;post on dotfiles&lt;/a&gt;? This is something that can go right into your .bashrc and allows for the quick and easy translation of decimal to hexidecimal, which is very useful for IPv6 dual stacking because [in my opinion] the appropriate addressing scheme is to match the last octet based on hex and not numerically. So, to do that one needs to be able to easily convert the last octet quickly and easily.  Adding this to your .bashrc will accomplish this:```
+alias hex=&amp;lsquo;printf &amp;ldquo;%x\n&amp;rdquo;&amp;rsquo;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Now, if you have an address of 10.143.27.199, you take the .199 you can utilize the shell alias to convert it to the hex equivalent.  For example: If you&#39;re using static addresses or dhcpv6 with static addressing, you can match the last octet properly.```&#34; data-lang=&#34;Now, if you have an address of 10.143.27.199, you take the .199 you can utilize the shell alias to convert it to the hex equivalent.  For example: If you&#39;re using static addresses or dhcpv6 with static addressing, you can match the last octet properly.```&#34;&gt;(~) desktop $ hex 199
+c7&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you&amp;rsquo;re using static addresses or dhcpv6 with static addressing, you can match the last octet properly.```
+10.143.27.&lt;sup&gt;199&lt;/sup&gt;&amp;frasl;&lt;sub&gt;27&lt;/sub&gt;
+2001:DB8:1b::c7/120&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-There are more than this, but these are the tools I use almost daily. I generally use [sipcalc](http://www.routemeister.net/projects/sipcalc/) at this point since it does what I used to use [ipcalc](http://jodies.de/ipcalc) for and more.  For gathering and verifying information, this is a fantastic tool.```&#34; data-lang=&#34;There are more than this, but these are the tools I use almost daily. I generally use [sipcalc](http://www.routemeister.net/projects/sipcalc/) at this point since it does what I used to use [ipcalc](http://jodies.de/ipcalc) for and more.  For gathering and verifying information, this is a fantastic tool.```&#34;&gt;(~) desktop $ sipcalc 2001:DB8:1b::c7/120
+-\[ipv6 : 2001:DB8:1b::c7/120\] - 0
+``````
+\[IPV6 INFO\]
+Expanded Address - 2001:0db8:001b:0000:0000:0000:0000:00c7
+Compressed address - 2001:db8:1b::c7
+Subnet prefix (masked) - 2001:db8:1b:0:0:0:0:0/120
+Address ID (masked) - 0:0:0:0:0:0:0:c7/120
+Prefix address - ffff:ffff:ffff:ffff:ffff:ffff:ffff:ff00
+Prefix length - 120
+Address type - Aggregatable Global Unicast Addresses
+Network range - 2001:0db8:001b:0000:0000:0000:0000:0000 -
+ 2001:0db8:001b:0000:0000:0000:0000:00ff -&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And for IPv4:&lt;code&gt;
+(~) desktop $ sipcalc 10.143.27.199/27
+-\[ipv4 : 10.143.27.199/27\] - 0
+&lt;/code&gt;&lt;code&gt;
+\[CIDR\]
+Host address - 10.143.27.199
+Host address (decimal) - 177150919
+Host address (hex) - A8F1BC7
+Network address - 10.143.27.192
+Network mask - 255.255.255.224
+Network mask (bits) - 27
+Network mask (hex) - FFFFFFE0
+Broadcast address - 10.143.27.223
+Cisco wildcard - 0.0.0.31
+Addresses in network - 32
+Network range - 10.143.27.192 - 10.143.27.223
+Usable range - 10.143.27.193 - 10.143.27.222
+&lt;/code&gt;  Notable mention: Web tools are also useful and are becoming more prolific than the UNIX tools, but I will assume that you&amp;rsquo;re probably already loged into a UNIX system like a jump box or bastion host anyway and the tools are faster and thinner in that environment. That said, here are some useful web tools: &lt;a href=&#34;http://jodies.de/ipcalc&#34;&gt;ipcalc&lt;/a&gt; has the web interface to their tool. &lt;a href=&#34;http://www.gestioip.net/cgi-bin/subnet_calculator.cgi&#34;&gt;This site&lt;/a&gt; has a v4 and v6 calculator that works well and looks a lot like the output of sipcalc.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -108,7 +360,135 @@
       <pubDate>Sat, 07 Jun 2014 19:54:41 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/nix4neteng-2-ipv46-address-investigation-tools-whois-dig/</guid>
-      <description>I don&amp;rsquo;t care what your vendor alignment of choice is, Cisco, Juniper, Brocade, Alcatel&amp;hellip;.it doesn&amp;rsquo;t matter. At one point or another you&amp;rsquo;re going to need to bird dog an address to see where it&amp;rsquo;s coming from, who owns it, what it&amp;rsquo;s DNS name is or what path you&amp;rsquo;re taking to get to it. We&amp;rsquo;ve already talked about BGP tools, they&amp;rsquo;re a great choice for checking routes across the internet. Hunting down addresses is an interesting one, though, as address management and lookups can bleed into other aspects of networking like path selection, latency, jitter and many other things.</description>
+      <description>
+
+&lt;p&gt;I don&amp;rsquo;t care what your vendor alignment of choice is, Cisco, Juniper, Brocade, Alcatel&amp;hellip;.it doesn&amp;rsquo;t matter. At one point or another you&amp;rsquo;re going to need to bird dog an address to see where it&amp;rsquo;s coming from, who owns it, what it&amp;rsquo;s DNS name is or what path you&amp;rsquo;re taking to get to it.  We&amp;rsquo;ve already talked about &lt;a href=&#34;http://www.forwardingplane.net/2014/03/bgp-tools-troubleshooting-and-monitoring-external-routing-in-a-nutshell/&#34; title=&#34;BGP tools; troubleshooting and monitoring external routing in a nutshell&#34;&gt;BGP tools&lt;/a&gt;, they&amp;rsquo;re a great choice for checking routes across the internet. Hunting down addresses is an interesting one, though, as address management and lookups  can bleed into other aspects of networking like path selection, latency, jitter and many other things.  I&amp;rsquo;m going to touch on a few things and give generalizations on a few others.  First, querying where things originate and who has ownership is infinitely useful, especially if your job description has &amp;ldquo;security&amp;rdquo; anywhere in it, written or implied.  I like to use a range of services, all of which are from the CLI (for speed and scriptability).  My go-to tools for this are the venerable &lt;a href=&#34;http://en.wikipedia.org/wiki/Whois&#34;&gt;whois&lt;/a&gt; and dig tools. Lets say I want to check on the address 192.80.96.88. First, lets figure out if it&amp;rsquo;s got a name.  dig is your friend here.```
+(~) jumphost $ dig -x 192.80.96.88
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.8.3-P1 &amp;lt;&amp;lt;&amp;gt;&amp;gt; -x 192.80.96.88
+;; global options: +cmd
+;; Got answer:
+;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 29443
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; QUESTION SECTION:
+;88.96.80.192.in-addr.arpa. IN PTR
+;; ANSWER SECTION:
+88.96.80.192.in-addr.arpa. 7145 IN PTR local.forwardingplane.net.
+;; Query time: 2 msec
+;; SERVER: 10.209.209.1#53(10.209.209.1)
+;; WHEN: Sat May 31 11:43:18 2014
+;; MSG SIZE rcvd: 82&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Dig is an incredibly powerful DNS tool. I&#39;d recommend learning it as well as you possibly can. [_man dig_](http://linux.die.net/man/1/dig) on any good unix box should give you a good start, [this site](http://www.thegeekstuff.com/2012/02/dig-command-examples/) has some good examples too, I can&#39;t even scratch the surface of how useful DNS tools are, probably a great subject for another NIX4NetEng.  Here we see that the address has reverse DNS (PTR record) of local.forwardingplane.net.  We can poke a bit more at this using DNS, too.```&#34; data-lang=&#34;Dig is an incredibly powerful DNS tool. I&#39;d recommend learning it as well as you possibly can. [_man dig_](http://linux.die.net/man/1/dig) on any good unix box should give you a good start, [this site](http://www.thegeekstuff.com/2012/02/dig-command-examples/) has some good examples too, I can&#39;t even scratch the surface of how useful DNS tools are, probably a great subject for another NIX4NetEng.  Here we see that the address has reverse DNS (PTR record) of local.forwardingplane.net.  We can poke a bit more at this using DNS, too.```&#34;&gt;(~) jumphost $ dig -t ANY local.forwardingplane.net +noall +answer
+
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.8.3-P1 &amp;lt;&amp;lt;&amp;gt;&amp;gt; -t ANY local.forwardingplane.net +noall +answer
+;; global options: +cmd
+local.forwardingplane.net. 221 IN AAAA 2607:dd00:8000:18::88
+local.forwardingplane.net. 221 IN A 192.80.96.88&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Well, we can see here we have a dual stacked host.  We&amp;rsquo;ll look at that more later. Let&amp;rsquo;s see who owns this address space. Whois is the way to go here.  I always start with querying ARIN and go from there.  ```
+(~) jumphost $ whois -h whois.arin.net 192.80.96.88&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;h1 id=&#34;arin-whois-data-and-services-are-subject-to-the-terms-of-use&#34;&gt;ARIN WHOIS data and services are subject to the Terms of Use&lt;/h1&gt;
+
+&lt;h1 id=&#34;available-at-https-www-arin-net-whois-tou-html&#34;&gt;available at: &lt;a href=&#34;https://www.arin.net/whois_tou.html&#34;&gt;https://www.arin.net/whois_tou.html&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;h1 id=&#34;query-terms-are-ambiguous-the-query-is-assumed-to-be&#34;&gt;Query terms are ambiguous.  The query is assumed to be:&lt;/h1&gt;
+
+&lt;h1 id=&#34;n-192-80-96-88&#34;&gt;&amp;ldquo;n 192.80.96.88&amp;rdquo;&lt;/h1&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;h1 id=&#34;use-to-get-help&#34;&gt;Use &amp;ldquo;?&amp;rdquo; to get help.&lt;/h1&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;h1 id=&#34;the-following-results-may-also-be-obtained-via&#34;&gt;The following results may also be obtained via:&lt;/h1&gt;
+
+&lt;h1 id=&#34;http-whois-arin-net-rest-nets-q-192-80-96-88-showdetails-true-showarin-false-ext-netref2&#34;&gt;&lt;a href=&#34;http://whois.arin.net/rest/nets;q=192.80.96.88?showDetails=true&amp;amp;showARIN=false&amp;amp;ext=netref2&#34;&gt;http://whois.arin.net/rest/nets;q=192.80.96.88?showDetails=true&amp;amp;showARIN=false&amp;amp;ext=netref2&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;NetRange:       192.80.96.0 - 192.80.111.255
+CIDR:           192.80.96.0/20
+OriginAS:       AS10932
+NetName:        UC2B-1
+NetHandle:      NET-192-80-96-0-1
+Parent:         NET-192-0-0-0-0
+NetType:        Direct Allocation
+RegDate:        2013-02-27
+Updated:        2013-02-27
+Ref:            &lt;a href=&#34;http://whois.arin.net/rest/net/NET-192-80-96-0-1&#34;&gt;http://whois.arin.net/rest/net/NET-192-80-96-0-1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;OrgName:        UC2B
+OrgId:          CCLAUBBC
+Address:        102 North Neil Street
+City:           Champaign
+StateProv:      IL
+PostalCode:     61820
+Country:        US
+RegDate:        2012-02-28
+Updated:        2014-02-19
+Ref:            &lt;a href=&#34;http://whois.arin.net/rest/org/CCLAUBBC&#34;&gt;http://whois.arin.net/rest/org/CCLAUBBC&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;OrgAbuseHandle: UCBTE-ARIN
+OrgAbuseName:   uc2b-tech
+OrgAbusePhone:  +1-217-265-4226
+OrgAbuseEmail:  uc2b-tech@uc2b.net
+OrgAbuseRef:    &lt;a href=&#34;http://whois.arin.net/rest/poc/UCBTE-ARIN&#34;&gt;http://whois.arin.net/rest/poc/UCBTE-ARIN&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;OrgNOCHandle: UCBTE-ARIN
+OrgNOCName:   uc2b-tech
+OrgNOCPhone:  +1-217-265-4226
+OrgNOCEmail:  uc2b-tech@uc2b.net
+OrgNOCRef:    &lt;a href=&#34;http://whois.arin.net/rest/poc/UCBTE-ARIN&#34;&gt;http://whois.arin.net/rest/poc/UCBTE-ARIN&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;OrgTechHandle: UCBTE-ARIN
+OrgTechName:   uc2b-tech
+OrgTechPhone:  +1-217-265-4226
+OrgTechEmail:  uc2b-tech@uc2b.net
+OrgTechRef:    &lt;a href=&#34;http://whois.arin.net/rest/poc/UCBTE-ARIN&#34;&gt;http://whois.arin.net/rest/poc/UCBTE-ARIN&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;h1 id=&#34;arin-whois-data-and-services-are-subject-to-the-terms-of-use-1&#34;&gt;ARIN WHOIS data and services are subject to the Terms of Use&lt;/h1&gt;
+
+&lt;h1 id=&#34;available-at-https-www-arin-net-whois-tou-html-1&#34;&gt;available at: &lt;a href=&#34;https://www.arin.net/whois_tou.html&#34;&gt;https://www.arin.net/whois_tou.html&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-The first 7 lines of this are the most important. Here we can see that the address space is owned by an entity called [UC2B](http://www.uc2b.net), it is part of a /20 that the origin ASN is 10932 and that it is a direct allocation (as opposed to assigned space from an upstream provider).```&#34; data-lang=&#34;The first 7 lines of this are the most important. Here we can see that the address space is owned by an entity called [UC2B](http://www.uc2b.net), it is part of a /20 that the origin ASN is 10932 and that it is a direct allocation (as opposed to assigned space from an upstream provider).```&#34;&gt;NetRange:       192.80.96.0 - 192.80.111.255
+CIDR:           192.80.96.0/20
+OriginAS:       AS10932
+NetName:        UC2B-1
+NetHandle:      NET-192-80-96-0-1
+Parent:         NET-192-0-0-0-0
+NetType:        Direct Allocation&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I could tell you some horror stories about getting this address space assigned. It took me 7 months to get that allocation from ARIN&amp;hellip;&amp;hellip;.but I digress.  From here we can query the ASN, also using whois, again, the first few lines are generally the most useful.```
+(~) jumphost $ whois -h whois.arin.net 10932
+ASNumber: 10932
+ASName: UC2B
+ASHandle: AS10932
+RegDate: 2012-06-28
+Updated: 2012-06-28
+Ref: &lt;a href=&#34;http://whois.arin.net/rest/asn/AS10932&#34;&gt;http://whois.arin.net/rest/asn/AS10932&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-We can use this information to track down responsible parties, addresses, etc.  It&#39;s a great resource for knowing both technical and non-technical details about address space. [Team Cymru has an extremely powerful whois service](http://www.team-cymru.org/Services/ip-to-asn.html#whois) that allows for significantly more flexibility including time and date.```&#34; data-lang=&#34;We can use this information to track down responsible parties, addresses, etc.  It&#39;s a great resource for knowing both technical and non-technical details about address space. [Team Cymru has an extremely powerful whois service](http://www.team-cymru.org/Services/ip-to-asn.html#whois) that allows for significantly more flexibility including time and date.```&#34;&gt;(~) jumphost $ whois -h whois.cymru.com &amp;#34; -v 192.80.96.88&amp;#34;
+AS      | IP               | BGP Prefix          | CC | Registry | Allocated  | AS Name
+10932   | 192.80.96.88     | 192.80.96.0/20      | US | arin     | 2013-02-27 | UC2B - UC2B,US&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As you can imagine, this can be a robust way to track changes and re-allocations of ASNs and address blocks, especially with the dwindling amounts of IPv4 and the re-assignment of ASNs.  One can see when ownership has changed and verify the correct origin of address blocks.  Great for validation and correlation. These services also work for IPv6. We can see if the V6 space is coming from the same ASN or if it&amp;rsquo;s a different entity (like a &lt;a href=&#34;http://www.tunnelbroker.net&#34;&gt;tunnel&lt;/a&gt; or a totally different provider).&lt;code&gt;
+\[buraglio@local ~\]$ whois -h whois.cymru.com &amp;quot; -v 2607:dd00:8000:18::88&amp;quot;
+\[Querying whois.cymru.com\]
+\[whois.cymru.com\]
+AS      | IP                                       | BGP Prefix          | CC | Registry | Allocated  | AS Name
+10932   | 2607:dd00:8000:18::88                    | 2607:dd00::/32      | US | arin     | 2012-07-23 | UC2B - UC2B,US
+&lt;/code&gt; &lt;/p&gt;
+
+&lt;p&gt;This is really just the tip of the iceberg in this kind of toolset.  There are &lt;em&gt;countless&lt;/em&gt; scripts, binaries and  shell hacks to do no end of interesting and useful things and gather information.  Have some other, better uses or tools?  Post them in the comments!&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -117,7 +497,39 @@
       <pubDate>Thu, 01 May 2014 02:58:20 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/nix4neteng-1-managing-dotfiles-pwn-the-unspoken-pain-of-unix-administration/</guid>
-      <description>Many network engineers are also tasked with maintaining systems that provide network services, those things that make the network easier to use such as DNS and DHCP or management systems that perform useful things like monitor the network, collect flow data or bestow access to the equipment by acting as bastion or jump hosts. In many instances, robust and high availability services run on UNIX, Linux or BSD systems for stability and reliability, so those that manage these systems need to be well versed system admins as well as whatever their other job functions are.</description>
+      <description>&lt;p&gt;Many network engineers are also tasked with maintaining systems that provide network services, those things that make the network easier to use such as DNS and DHCP or management systems that perform useful things like monitor the network, collect flow data or bestow access to the equipment by acting as &lt;a href=&#34;http://en.wikipedia.org/wiki/Bastion_host&#34;&gt;bastion&lt;/a&gt; or jump hosts.  In many instances, robust and high availability services run on UNIX, Linux or BSD systems for stability and reliability, so those that manage these systems need to be well versed system admins as well as whatever their other job functions are.  &lt;a href=&#34;http://packetpushers.net/are-certifications-tests-still-worth-your-resources-in-the-day-of-hybrid-it/&#34;&gt;Hybridization&lt;/a&gt;, if you will.  Nothing new, nothing unexpected.  However, one of the banes of these tasks is having a uniform shell environment across platforms and systems. Why create a customized environment with aliases, environmental variables and other personalized settings more than once? I have struggled with how to do this efficiently across desktop, server, jumphosts and other daily use systems for &lt;strong&gt;years&lt;/strong&gt;. Most of the important variables are controlled by dotfiles.   In what I am hoping is the start of a short series of &amp;ldquo;UNIX stuff for networking folks&amp;rdquo;, I will explain how I did this for myself. UNIX and Linux admins have been dealing with dotfiles forever. GitHub even has a &lt;a href=&#34;http://dotfiles.github.io/&#34;&gt;repo dedicated to&lt;/a&gt; it.  For my environment, I chose to go with &lt;a href=&#34;http://jim.github.io/briefcase/&#34;&gt;Briefcase&lt;/a&gt; and &lt;a href=&#34;http://www.bitbucket.com&#34;&gt;BitBucket&lt;/a&gt;.  Briefcase because it has mechanisms for stripping out sensitive information if needed and bitbucket because I can have private repos without paying money.  This can all certainly be done with local git repos or github and without briefcase. Briefcase is really straightforward to install, it&amp;rsquo;s just a ruby gem, so &lt;em&gt;gem install briefcase&lt;/em&gt; is all that is needed to get it on your machine&lt;em&gt;.&lt;/em&gt;  OSX has it by default.  On my machine I needed to to&lt;em&gt;sudo gem update —system&lt;/em&gt; before it would install.  Your mileage may vary&lt;em&gt;. &lt;/em&gt; Once it&amp;rsquo;s installed, just add your files.  I switched to bash, so I needed to import .bashrc and .bash_profile, but I wanted to make sure I had a backup just in case.```
+mkdir -p tmp/dotfiles
+mv .bashrc tmp/dotfiles/
+mv .bash_profile tmp/dotfiles/&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;briefcase import ~/.bashrc
+briefcase import ~/.bash\_profile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;briefcase git remote add origin git@repo.forwardingplane.net:buraglio/briefcase-dotfiles.git&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;briefcase git commit -am &amp;quot;Initial newhost commit&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;briefcase git checkout origin master&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Obviously replace the remote repo address with your own repo destination.   You can now check the status:```&#34; data-lang=&#34;Obviously replace the remote repo address with your own repo destination.   You can now check the status:```&#34;&gt;briefcase sync&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This should output something like this:```
+Synchronizing dotfiles between /Users/buraglio/.dotfiles and /Users/buraglio
+Symlink verified: /Users/buraglio/.bash_profile -&amp;gt; /Users/buraglio/.dotfiles/bash_profile
+Symlink verified: /Users/buraglio/.bashrc -&amp;gt; /Users/buraglio/.dotfiles/bashrc
+Symlink verified: /Users/buraglio/.profile -&amp;gt; /Users/buraglio/.dotfiles/profile
+Symlink verified: /Users/buraglio/.README.md -&amp;gt; /Users/buraglio/.dotfiles/README.md&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Getting a new branch for an existing host was the biggest hurdle for me, I want a base .bashrc but may want different environment variables for mac and Linux.  I&#39;m not a git expert by any means, so there may be a better way to do this, but it works well for me. To branch a new host, it&#39;s pretty straightforward.  Briefcase is really just a wrapper for git, so prepending &#34;briefcase&#34; before the git commands seems to &#34;just work&#34; (as I learned by trial and error or making this work). On an existing Host:```&#34; data-lang=&#34;Getting a new branch for an existing host was the biggest hurdle for me, I want a base .bashrc but may want different environment variables for mac and Linux.  I&#39;m not a git expert by any means, so there may be a better way to do this, but it works well for me. To branch a new host, it&#39;s pretty straightforward.  Briefcase is really just a wrapper for git, so prepending &#34;briefcase&#34; before the git commands seems to &#34;just work&#34; (as I learned by trial and error or making this work). On an existing Host:```&#34;&gt;git clone git@your.repoaddress.net:username/reponame.git .dotfiles
+mkdir -p tmp/dotfiles
+mv .bashrc tmp/dotfiles/
+mv .bash\_profile tmp/dotfiles/
+briefcase sync
+briefcase git branch \[newhost\]
+briefcase git checkout \[newhost\]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;hellip;Make changes&amp;hellip;&lt;code&gt;
+briefcase git commit -am &amp;quot;Initial newhost commit&amp;quot;
+&lt;/code&gt;briefcase git push origin [newhost] There you have it, easily backed up and distributed environment control.  I&amp;rsquo;m planning to add &lt;a href=&#34;http://joeyh.name/code/etckeeper/&#34;&gt;etckeeper&lt;/a&gt; to this process next.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

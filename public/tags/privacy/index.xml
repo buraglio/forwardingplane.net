@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Privacy on ForwardingPlane.net</title>
@@ -9,7 +8,7 @@
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Mon, 10 Dec 2018 10:23:42 +0000</lastBuildDate>
     
-	<atom:link href="https://forwardingplane.net/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://forwardingplane.net/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +17,26 @@
       <pubDate>Mon, 10 Dec 2018 10:23:42 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/dns-the-treasure-trove-of-information-your-isp-can-see/</guid>
-      <description>In recent years, the nature of privacy on the internet has become a very important topic amongst those concerned with the now lack of net neutrality. The de-facto mechanism for dealing with privacy has been to &amp;ldquo;SSL all the things&amp;rdquo;, which I am very much in favor of. What many do not realize, though, is that simply using SSL for the traffic that transits a given ISP still leaves a wealth of thick, rich, delicious personal data still easily available to your ISP to harvest, sell, and do with as they please.</description>
+      <description>&lt;p&gt;In recent years, the nature of &lt;a href=&#34;http://fortune.com/2017/11/23/net-neutrality-explained-what-it-means-and-why-it-matters/&#34;&gt;privacy on the internet&lt;/a&gt; has become a very important topic amongst those concerned with the now lack of &lt;a href=&#34;https://www.theverge.com/2017/12/14/16776154/fcc-net-neutrality-vote-results-rules-repealed&#34;&gt;net neutrality&lt;/a&gt;. The de-facto mechanism for dealing with privacy has been to &amp;ldquo;&lt;a href=&#34;https://letsencrypt.org/&#34;&gt;SSL all the things&lt;/a&gt;&amp;rdquo;, which I am very much in favor of. What many do not realize, though, is that simply using SSL for the traffic that transits a given ISP still leaves a wealth of thick, rich, delicious personal data still easily available to your ISP to harvest, sell, and do with as they please. This data comes in the form of DNS queries. DNS is the nearly-always-forgotten, crucial aspect of how the internet functions. Without DNS, nothing works. Everything appears broken and manifest as what appears to be a networking problem. ISPs typically provide what is called a &lt;a href=&#34;https://umbrella.cisco.com/blog/2014/07/16/difference-authoritative-recursive-dns-nameservers/&#34;&gt;recursive resolver&lt;/a&gt;, which for most people is handed down by a local provider to the customer premise equipment (CPE; usually a modem or optical terminal of some kind) that they install at a residence. This CPE then hands that resolver to your clients that use it to - you guessed it - recursively resolve DNS queries. These queries can be logged and then mined for browsing habits, etc. Anyone that has ever done any network forensics will know straight away that the value of the information contained in DNS query logs is very, very high. &lt;/p&gt;
+
+&lt;p&gt;What this means is that even though a privacy conscious individual is hiding the bulk of their content in SSL, meaning the bulk of what they’re reading, searching for, and doing, is encrypted, the requests for that content or activity is not. For example, an ISP can potentially see that a client is making many, many queries for $onlineshopping.com and begin selling that data to advertisers. If you think they’re not doing this now, &lt;a href=&#34;https://www.wired.com/story/can-verizon-build-a-strong-brand-from-the-bones-of-yahoo-and-aol/&#34;&gt;think again&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Great, so $bigbadprovider can see your queries. There are a number of pretty good ways to work around this, and &lt;a href=&#34;https://pi-hole.net/&#34;&gt;one of my favorite projects&lt;/a&gt; handily deals with one of them with great simplicity. What I am referring to is the newly popular &lt;a href=&#34;https://scotthelme.co.uk/securing-dns-across-all-of-my-devices-with-pihole-dns-over-https-1-1-1-1/&#34;&gt;DNS over HTTPS&lt;/a&gt;, which is supported by the &lt;a href=&#34;https://one.one.one.one/&#34;&gt;cloudflare 1.1.1.1 service&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;So, as a thought experiment I decided to play Reeses Peanut butter and chocolate with two of my favorite technological creations: the aforementioned PiHole, and &lt;a href=&#34;https://zerotier.com/&#34;&gt;ZeroTier&lt;/a&gt;. Now anyone that isn’t familiar with ZeroTier, you should acquaint yourself - Packet Pushers did a good &lt;a href=&#34;https://packetpushers.net/podcast/pq-134-meet-zerotier-open-source-networking/&#34;&gt;podcast on it back in November of 2017&lt;/a&gt;. It’s functionally an encrypted overlay supporting dual stack networking with auto configuration and gateway capabilities, and it runs on almost everything. I love this overlay technology and have been using it for a while - highly recommended.&lt;/p&gt;
+
+&lt;p&gt;Back to my peanut butter and chocolate experiment. So, given that I had an existing ZeroTier network and an existing PiHole setup at home, I went over to &lt;a href=&#34;https://www.vultr.com/?ref=7692870&#34;&gt;Vultr.com&lt;/a&gt; and spun up a small VM for $3.50/mo, integrated it into my fleet with my Ansible and Salt tools, and installed ZeroTier and Pihole. From there I set up this DNS hierarchy. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://docs.google.com/drawings/d/e/2PACX-1vS-DsmzNWvE335KZtNo6AHX3SySG-VQWhK7i9sNgT6mFMHC5VzRWtMuJg5JraU2dJTFQT4QIGnfaMFP/pub?w=960&amp;amp;h=720&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What this buys me is a fully encrypted DNS path up through the Vultr.com VM host without modifying the underlying DNS transport. And it works surprisingly well. I ran SmokePing from two hosts - both leveraging ZeroTier to do their testing, one on my local network and one in the cloud - to measure latency for a few days before I did this and kept that running after the deployment. Now, it’s not perfect but my family and I have been using this for about a month with minimal issues. Once in a great while we’ll see some slow DNS resolution time, but overall it works fairly well. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.forwardingplane.net/wp-content/uploads/2018/12/Resolver-Queries.png&#34; alt=&#34;Resolver Queries&#34; title=&#34;Resolver Queries.png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;My take &lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The idea of using a public resolver kinda bothers me, I realize it’s probably unfounded, but I know how to and have run resolvers for ISPs and organizations for like 20 years, so I have the burden of knowledge about what is in the logs and how to run my own. Using a secured recursive resolver is simply trading transit privacy for lack of query privacy somewhere else. Then there is the issue of content networks that use DNS queries to take you to the best / topologically closest cache of their content [NOTE: this, along with the forensics data for debugging potential security issues is a &lt;strong&gt;top&lt;/strong&gt; reason that all ISPs should run their own resolvers]. I fully realize that a normal end user running their own resolver is unlikely and that this deployment is a bit overkill. However, as I can demonstrably prove, it works. And it works pretty well. It also has the added bonus of allowing me to have internal DNS resolution of my own hosts and any mobile ZeroTier client. Is it for everyone? No way. Does it prove viability for low/medium traffic use? Sure. The point is really just to get folks thinking about information leaking that they may not have considered. The nature of the internet makes true privacy pretty much impossible, but there are a few ways to make your data a little harder to for companies to compile and capitalize on if you truly don’t want them to.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

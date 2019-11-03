@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WAN on ForwardingPlane.net</title>
@@ -9,7 +8,7 @@
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Tue, 27 Nov 2012 05:04:00 +0000</lastBuildDate>
     
-	<atom:link href="https://forwardingplane.net/tags/wan/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://forwardingplane.net/tags/wan/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +17,28 @@
       <pubDate>Tue, 27 Nov 2012 05:04:00 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/sdn-across-domains-in-the-wan-a-novice-look/</guid>
-      <description>There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how. Brent Salsbury laid out a few use cases here. The why seems pretty straightforward. I do believe it will happen, however, the how is the interesting part. Admittedly, I&amp;rsquo;m a tad of a greenhorn in the SDN space, I&amp;rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.</description>
+      <description>&lt;p&gt;There has been a flurry of discussion on SDN in the WAN lately, specifically, why and how.  Brent Salsbury laid out a few use cases &lt;a href=&#34;http://networkstatic.net/sdn-use-cases-for-service-providers/&#34;&gt;here&lt;/a&gt;.  The why seems pretty straightforward.  I do believe it will happen, however, the &lt;strong&gt;how&lt;/strong&gt; is the interesting part.  Admittedly, I&amp;rsquo;m a tad of a greenhorn in the SDN space, I&amp;rsquo;ve made it work in a lab, I participate as much as I can in the working groups and I attempt (poorly) to keep up.   SDN, and likely OpenFlow, is in our roadmap at work.  Doing SDN in the data center is well documented and fairly well tested. Stanford has it all over their campus LAN and Google is pushing it around their walled garden WAN on custom built hardware.  None of this is new.   The interesting bit is &lt;strong&gt;how do you do it across multiple administrative entities&lt;/strong&gt;?  As I said before, I&amp;rsquo;ll never claim to be an SDN expert, so I need to break this down into simple pieces for my limited mind to comprehend.   BGP solved this years and years ago, how is that accomplished?  Can any of these bits be re-used (why re-invent the wheel)? My caveman mind wants to break this down into requirements: This can likely be controlled by access between peers via an access control mechanism of some sort, i.e. place software limits on how much a given peer can provision in your network, which can be broken down into:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Number of circuits&lt;/li&gt;
+&lt;li&gt;Types of circuits (MPLS, VLAN, DWDM Waves, etc.)&lt;/li&gt;
+&lt;li&gt;Bandwidth per circuit&lt;/li&gt;
+&lt;li&gt;Duration of circuit (path TTL, permanent?)&lt;/li&gt;
+&lt;li&gt;Number of devices involved per circuit&lt;/li&gt;
+&lt;li&gt;Types of SDN (OpenFlow versions, OSCARS, etc)&lt;/li&gt;
+&lt;li&gt;Probably more stuff&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How can this be done?  I don&amp;rsquo;t currently know enough to answer that question, but I suspect it may require a little bit of work in adding a peering framework between control planes (SDN controllers) not unlike how BGP works.  To put this in familiar terminology, for example,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Route maps could be replaced by permissions maps or even an ACL of some sort to establish the abilities of each peer.  &lt;/li&gt;
+&lt;li&gt;Peers would need to agree (configuration-wise and politically) on what abilities can be exchanged before peers could operate, programmatically agree on parameters before any changes can be made.&lt;/li&gt;
+&lt;li&gt;Security parameters would need to be met for the peers to establish to contain the control plane traffic in a safe way, much like an MD5 across a BGP peering.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If this sounds like a tall order, I&amp;rsquo;ll wager you&amp;rsquo;re right and I&amp;rsquo;ll also bet that before it happens we&amp;rsquo;ll have a Blu Ray vs HD-DCD or VHS vs Beta throw down of SDN protocols.   Folks have been trying to do this for years, the &lt;a href=&#34;http://dragon.maxgigapop.net/twiki/bin/view/DRAGON/WebHome&#34;&gt;DRAGON project&lt;/a&gt; tried this years ago and did a decent job.  Our Arlington, VA site was one of the original build outs of it. &lt;a href=&#34;https://oscars.es.net/OSCARS/docs/&#34;&gt;OSCARS&lt;/a&gt; is doing similar stuff and is actively working across &lt;a href=&#34;http://www.es.net/&#34;&gt;ESnet&lt;/a&gt;. &lt;a href=&#34;http://www.internet2.edu/ion/&#34;&gt;Internet2 ION&lt;/a&gt; is another attempt. These have all had their effect on the Research and Education networks, but to be adopted acrossm and more importantly between, service provider networks, there needs to be ways to do them elegantly and securely.  There is nothing that a SP hates more than risk, and without these control mechanisms, there is a pretty large amount of risk.  It&amp;rsquo;s reasonable to think that this may be there and I&amp;rsquo;m just missing it, since I am admittedly a novice in the SDN world, but if by chance I have not missed it because it&amp;rsquo;s not there, it needs to be addressed.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

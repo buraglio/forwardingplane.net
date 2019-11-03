@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Virtualization on ForwardingPlane.net</title>
@@ -9,7 +8,7 @@
     <copyright>Copyright (c) 2019, all rights reserved.</copyright>
     <lastBuildDate>Sat, 02 Mar 2019 17:03:18 +0000</lastBuildDate>
     
-	<atom:link href="https://forwardingplane.net/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://forwardingplane.net/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +17,19 @@
       <pubDate>Sat, 02 Mar 2019 17:03:18 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/freertr-as-a-lab-environment/</guid>
-      <description>A few months ago Kevin Myers of IP Architechs introduced me to a really interesting project called FreeRouter. Being that I absolutely love alternative routing platforms and feature complete simulation environments, this really got me going. I tend to define &amp;ldquo;feature complete&amp;rdquo; in a routing platform as something that can do both IS-IS and MPLS. Given that there aren&amp;rsquo;t many platforms that do both correctly or within a reasonable budget, and offer simulation options, I was pretty excited.</description>
+      <description>&lt;p&gt;A few months ago &lt;a href=&#34;https://www.stubarea51.net/about-me/&#34;&gt;Kevin Myers&lt;/a&gt; of &lt;a href=&#34;https://www.iparchitechs.com/&#34;&gt;IP Architechs&lt;/a&gt; introduced me to a really interesting project called &lt;a href=&#34;http://freerouter.nop.hu/&#34;&gt;FreeRouter&lt;/a&gt;. Being that I absolutely love alternative routing platforms and feature complete simulation environments, this really got me going. I tend to define &amp;ldquo;feature complete&amp;rdquo; in a routing platform as something that can do both IS-IS and MPLS. Given that there aren&amp;rsquo;t many platforms that do both correctly or within a reasonable budget, and offer simulation options, I was pretty excited. I spent a fair amount of time pounding through it. I recommend spending some time with this if you have even remote interest in any of the above technologies. It costs nothing but your time. The project was written and is maintained by a Cisco CCIE and was built (according to his site) as a mechanism to learn. However, the feature list is incredibly complete, and extremely impressive, as seen below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;forwarding: ipv4, ipv6, ipx, mpls, nsh, layer2, irb, atom, eompls, vpls, evpn  
+routing protocols: ospf, isis, bgp, rip, eigrp, babel, olsr, pim, msdp  
+lsp support: p2p, p2mp, mp2mp built by ldp, rsvp-te, sr, sr-te, bier  
+crypto: macsec, ipsec, ikev1, ikev2, tls, dtls, ssh, openvpn  
+tunnel: gre, ipip, l2tp, pptp, lisp, geneve, nvgre, vxlan, etherip  
+encapsulation: ethernet, vlan, nsh, ppp, framerelay, pwether, virtppp, hairpin  
+misc: acl, hqos, nat, pbr, srv6, vrrp, hsrp, transproxy, 6to4, rpl, tunnel, vpdn 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.forwardingplane.net/configuration-archive/freertr-basic-configurations/&#34;&gt;My configurations&lt;/a&gt; can be found in the &lt;a href=&#34;https://www.forwardingplane.net/configuration-archive/&#34;&gt;Configuration Archive&lt;/a&gt; section of this site. It is definitely worth your time to check out.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +38,17 @@
       <pubDate>Sat, 16 May 2015 16:42:40 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/ravello-systems-review-and-use-case-study/</guid>
-      <description>There are a vast number of entities that offer the seemingly ubiquitous “cloud”. “SaaS”, “IaaS”, “BLAHaaS”, buzzword compliance is truly a sought after thing by marketing folks. With the proliferation of virtualization, containers and other “time slicing” of hardware by software the chatter can quickly become noise. As technical professionals and the warm bodies with the responsibility for actually making things work and keeping them running, the onus is on us to be able to decipher the useful from the fluff.</description>
+      <description>&lt;p&gt;There are a vast number of entities that offer the seemingly ubiquitous “cloud”. “SaaS”, “IaaS”, “BLAHaaS”, buzzword compliance is truly a sought after thing by marketing folks. With the proliferation of virtualization, containers and other “time slicing” of hardware by software the chatter can quickly become noise. As technical professionals and the warm bodies with the responsibility for actually making things work and keeping them running, the onus is on us to be able to decipher the useful from the fluff. A staggeringly large number of institutions, enterprise, education, research, and government all rely heavily on virtualization as a cornerstone for cost savings and operational ease. This makes sense, there is real cost savings in both operational and capital money.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ravellosystems.com/&#34;&gt;Ravello&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Recently I was given access to an interesting emerging product brought about by the original developers of the venerable &lt;a href=&#34;http://www.linux-kvm.org/page/Main_Page&#34;&gt;KVM&lt;/a&gt;. Ravello offers something new, something a bit different and something potentially useful for a number of different applications. Ravello is essentially a cloud overlay. I find the interfaces for both the Amazon EC2 and Google compute engine clunky and unintuitive from an operational perspective. While APIs are decent, I am a poor developer and really have no desire to write code to their APIs. When I need results now, I want compatibility and a good interface and I’ll wager most other operational folks do too. This is an element that is hard to acheive and where I was a tad surprised by the Ravello platform. The interface for their cloud overlay was quite elegant and &lt;strong&gt;very&lt;/strong&gt; intuitive. That’s important. However, what it actually does is more significant. The Ravello overlay allows a VM admin to import an existing image in its native form (either VMWare or KVM), deciphers the networking metadata from the images and builds the network for them automatically. This is cool in and of itself, but the real power is the combination of that “admin candy” and the ability to tune the knobs for things like which cloud provider (AWS or GCE) to push your resources to, allow optimization for things like cost or performance and the option to time shutdown of the resources.&lt;/p&gt;
+
+&lt;p&gt;For smaller institutions and enterprises the value seems self evident. As an example, lets say you want to model a change to your data center network which includes an SRX firewall, 3 window servers, 10 linux servers and a load balancer. These resources can all be uploaded into the ravello cloud. It does its best to figure out the network, allowing for some reasonably powerful changes to the configuration right from their interface. Snaphot the entire network from their canvas (which looks like a nice network diagramming tool), make the changes and monitor the result. If it doesn’t work you can roll it back or hack at the consoles of the devices using their VNC based console access to figure out what went wrong.&lt;br /&gt;
+In addition to the aforementioned benefits, there were some other surprises. The time to provision was quite good, importing at the speed of upload and then fairly quickly deciphering the needed pieces. It is also obviously self service, meaning I can import, enable, tweak and disable within a choice of cloud based hosting services; flexibility is always good, especially when it is well implemented.&lt;/p&gt;
+
+&lt;p&gt;Overall my impression of Revello is that is provides some pretty interesting and useful stuff, especially when considering utilizing it as a lab for testing upgrades, changes, etc. Many small to medium sized environments do not have resources to put into a physical lab, virtualizing it for a fraction f the cost has a lot of merit and value. Overflow for event based demand is also an obvious use case and again ease of use implementation is key.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -36,7 +57,41 @@
       <pubDate>Mon, 19 Jan 2015 10:02:10 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/monitoring-vmware-esxi-with-snmp-and-cacti/</guid>
-      <description>VMWare is a powerful tool, and monitoring is a critical service. How does one monitor such an integral piece of infrastructure, and what do they monitor it with? There are powerful commercial ways of monitoring VMware, however, for those with existing SNMP based systems in place, specifically cacti, there are options. To that end, I&amp;rsquo;ll set aside my strong distaste for SNMP [yet again], because those are for a larger, less useful series of posts.</description>
+      <description>&lt;p&gt;VMWare is a powerful tool, and monitoring is a critical service. How does one monitor such an integral piece of infrastructure, and what do they monitor it with? There are powerful commercial ways of monitoring &lt;a href=&#34;http://www.vmware.com/&#34;&gt;VMware&lt;/a&gt;, however, for those with existing &lt;a href=&#34;http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol&#34;&gt;SNMP&lt;/a&gt; based systems in place, specifically &lt;a href=&#34;http://www.cacti.net/&#34;&gt;cacti&lt;/a&gt;, there are options. To that end, I&amp;rsquo;ll set aside my strong distaste for SNMP [yet again], because those are for a larger, less useful series of posts.&lt;/p&gt;
+
+&lt;p&gt;Luckily for those of us that need it there exists in that vast wilderness we call the internet, a user contributed &lt;a href=&#34;http://www.cacti.net/&#34;&gt;cacti&lt;/a&gt; template for monitoring basic functionality with SNMP and cacti and it is available &lt;a href=&#34;http://forums.cacti.net/download/file.php?id=29171&amp;amp;sid=888e5451bc68b1c05a5b7dec6667afd2&#34;&gt;here&lt;/a&gt;, and with the full thread being worth a read &lt;a href=&#34;http://forums.cacti.net/viewtopic.php?f=12&amp;amp;t=52122&#34;&gt;here&lt;/a&gt;. Since VMWare ESXi doesn&amp;rsquo;t have SNMP enabled (or really exposed from what I can tell), you have to do some CLI jockeying to make it work. Full disclosure, I&amp;rsquo;m not a vmware expert by any stretch of the imagination, but I have been hacking at it for a few years because it is low overhead to use comparatively speaking, offers a free version for my lab, makes a nice contrast to my KVM system and is widely deployed, so I want to understand it. Your mileage may vary with what I&amp;rsquo;ve got here.&lt;/p&gt;
+
+&lt;p&gt;Enabling ssh is beyond the scope of this post but details can be found &lt;a href=&#34;http://www.thomasmaurer.ch/2014/01/enable-ssh-on-vmware-esxi-5-5/&#34;&gt;here&lt;/a&gt;. It&amp;rsquo;s fairly straightforward.&lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2015/01/vmware-snmp-device.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2015/01/vmware-snmp-device.png&#34; alt=&#34;vmware-snmp-device&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Details of enabling SNMP for vmware 5.5 can be found &lt;a href=&#34;https://pubs.vmware.com/vsphere-51/index.jsp#com.vmware.vsphere.monitoring.doc/GUID-0EB48A32-34B0-4003-B2D0-ADE3BAFD29F0.html&#34;&gt;here&lt;/a&gt;, essentially one simply needs to run the following commands from within an ssh session:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;esxcli  system snmp set --communities &amp;lt;community&amp;gt;
+esxcli system snmp set --port 161
+esxcli system snmp set --enable true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Getting the cacti scripts in place is a little more involved, but it&amp;rsquo;s still pretty simple. Using the importer just add the new template. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2015/01/Screenshot-2015-01-10-10.09.09.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2015/01/Screenshot-2015-01-10-10.09.09.png&#34; alt=&#34;Screenshot 2015-01-10 10.09.09&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; Once that is imported you&amp;rsquo;ll need to move some scripts into place within the cacti system as below (adjust your paths as needed; I moved them directly from my workstation into place)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scp ss\_esxi\_vhosts.php netmon:/var/lib/cacti/scripts/
+scp cacte\_esxi\_template/resource/snmp\_queries/\* netmon:/usr/share/cacti/resource/snmp\_queries/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;[](&lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2015/01/Screenshot-2015-01-10-10.10.43.png)[![](http://www.forwardingplane.net/wp-content/uploads/2015/01/vmware-snmp-device.png)](http://www.forwardingplane.net/wp-content/uploads/2015/01/vmware-snmp-device.png&#34;&gt;http://www.forwardingplane.net/wp-content/uploads/2015/01/Screenshot-2015-01-10-10.10.43.png)[![](http://www.forwardingplane.net/wp-content/uploads/2015/01/vmware-snmp-device.png)](http://www.forwardingplane.net/wp-content/uploads/2015/01/vmware-snmp-device.png&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;[](&lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2015/01/Screenshot-2015-01-10-10.13.33.png&#34;&gt;http://www.forwardingplane.net/wp-content/uploads/2015/01/Screenshot-2015-01-10-10.13.33.png&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;Then adjust the template being used for your ESXi server or add it as a new host if it was not there already. The new template should show up in the list.&lt;/p&gt;
+
+&lt;p&gt;Once complete the cacti server should start graphing and checking uptime, etc. IF it does not, make sure the scripts are in place and have the correct permissions. It&amp;rsquo;s also useful (although not required) to add the additional parameters to the host.&lt;/p&gt;
+
+&lt;p&gt;Once complete, the cacti system should be able to baseline (and alert if so desited, using thresholds) on any of the newly added variables, including number of VMs, number of VMs using vmware tools, number of VMs running, disk space, processes, network traffic, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2015/01/vmware-create-graphs.png&#34; alt=&#34;vmware-create-graphs&#34; /&gt;  &lt;/p&gt;
+
+&lt;p&gt;I have yet to be able to get successful CPU graphs, but I suspect it is user error on my part and I&amp;rsquo;ve not investigated yet. Overall, I&amp;rsquo;d call it a pretty bigwin for anyone that has an existing cacti installation and wants to include their vmware system(s). It should also be said that the readme that accompanies the template is relatively useful.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -45,7 +100,8 @@
       <pubDate>Fri, 26 Jul 2013 05:28:15 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/building-a-secured-network-in-a-box/</guid>
-      <description>In many environments, the move to virtualization is a path well traveled. My home and lab networks are no exception to this and I&amp;rsquo;m sure nearly everyone who reads these pages has at least been exposed to it in one way or another. I have played with nearly all of the virtualization platforms and am firmly in the camp that there will be a large segment of networking that will move to a virtualized platform especially in the data center and campus segments.</description>
+      <description>&lt;p&gt;In many environments, the move to virtualization is a path well traveled.  My home and lab networks are no exception to this and I&amp;rsquo;m sure nearly everyone who reads these pages has at least been exposed to it in one way or another.  I have played with nearly all of the virtualization platforms and am firmly in the camp that there will be a large segment of networking that will move to a virtualized platform especially in the data center and campus segments.  Virtualization of routing tables has existed for a long time, see &lt;a href=&#34;http://en.wikipedia.org/wiki/Virtual_Routing_and_Forwarding&#34;&gt;VRF-Lite  and MPLS VRF&lt;/a&gt; as well as multi-tenancy technologies like Junipers logical systems so the concept, at some level, has existed in networking for quite some time. &amp;ldquo;How is a small to medium sized environment going to take advantage of this and more interestingly, how can it be secured?&amp;rdquo; &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/Red_onions.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/Red_onions-1024x763.jpg&#34; alt=&#34;Red_onions&#34; /&gt;&lt;/a&gt;This is a question I inadvertently found at least one answer to when building out my own network and testing a great little project called &lt;a href=&#34;http://securityonion.blogspot.com/&#34;&gt;security onion&lt;/a&gt;.  I&amp;rsquo;d seen and used this platform a bit in the past, but it had been at least a version ago and my exposure was pretty short. The problem now, though, was that everything I have in use other than a gigabit switch and a NAS is virtualized.  My firewall, my router, all of my dev and test boxes and all but one of my non-portable machines.  All VMs.  I&amp;rsquo;d gone back and forth between VMware and KVM, and while I like KVM better, management of edge case or non-standard networking stuff wasn&amp;rsquo;t as well documented and &lt;a href=&#34;http://openvswitch.org/&#34;&gt;OVS&lt;/a&gt; either wasn&amp;rsquo;t in the build of CentOS I was using or I didn&amp;rsquo;t know about its inclusion yet, so I settled on VMware ESXi 5 for this particular box.  I needed to be able to span a port on a vswitch.  My hopes were not high, but I figured there may be an unsupported way. Interestingly enough, the VMWare operating system has a mechanism for makeshift &amp;ldquo;spanning&amp;rdquo; a port.  More correctly, it has a way to see &amp;ldquo;all vlans&amp;rdquo; on a given vswitch, and it&amp;rsquo;s quite simple.  Essentially, you have to create a port group on vlan 4095 on the vswitch then set that port group to promiscuous mode. Add the vm NIC that you are going to use to monitor traffic to that port group.  &lt;a href=&#34;http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1004099&#34;&gt;From VMware site&lt;/a&gt;: &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/VMWare-site.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/VMWare-site.png&#34; alt=&#34;VMWare-site&#34; /&gt;&lt;/a&gt; I was pleasanty surprised at how easy it was and was at the point of telling security onion to have interfaces on both of the vswitches in less than 15 minutes. Configuration, Networking, Properties, Security. VLAN 4095. Done.Here are a few screenshots of my VMware config following the steps laid out above. It&amp;rsquo;s far more simple than I could have imagined.   &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/VMWAre-config-networking.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/VMWAre-config-networking.png&#34; alt=&#34;VMWAre-config-networking&#34; /&gt;&lt;/a&gt; &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/VMWare-SPAN-WAN1.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/VMWare-SPAN-WAN1.png&#34; alt=&#34;VMWare-SPAN-WAN1&#34; /&gt;&lt;/a&gt;           &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/VMWARE-Span-WAN2.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/VMWARE-Span-WAN2.png&#34; alt=&#34;VMWARE-Span-WAN2&#34; /&gt;&lt;/a&gt;             At this point Security onion was able to see what was going on.  In my case I allowed for visibility on both sides of my routing firewall, so there was a decent amount of data.     This is the interesting part, I think.  My initial thoughts are that this could be a &amp;ldquo;network in a box&amp;rdquo; for small offices.  No router, no servers (other than the VMware host), essentially a fully functional &amp;ldquo;enterprise&amp;rdquo; network of hosts, including a very high quality IDS device in a single device.  Put whatever firewall / vrouter in there that is supported or familiar, &lt;a href=&#34;http://www.pfsense.org&#34;&gt;pfsense&lt;/a&gt;, &lt;a href=&#34;http://www.juniper.net&#34;&gt;Juniper vSRX&lt;/a&gt;, &lt;a href=&#34;http://www.fortinet.com&#34;&gt;fortinet&lt;/a&gt;, &lt;a href=&#34;http://www.paloaltonetworks.com&#34;&gt;Palo Alto&lt;/a&gt;, they all have virtual devices and they all do a fine job [with the exception of IPv6; the only one I could get DHCPv6-PD to work with was pfsense.  Still need to test the fortinet]. Here is a high level diagram of how mine is put together. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/VMWare-SPAN.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/07/VMWare-SPAN.jpg&#34; alt=&#34;VMWare SPAN&#34; /&gt;&lt;/a&gt; Is this a viable option?  I have no idea, but it does work pretty darned well.  In fact, ironically enough, the day I got this working (July 13, 2013), a post went up over at &lt;a href=&#34;http://www.geekempire.com/2013/07/virtual-security-onion-via-ubuntu-kvm.html&#34;&gt;GeekEmpire&lt;/a&gt; doing almost exactly the same thing with KVM and OVS.  The setup is shockingly similar, right down to using pfSense. I was actually a bit envious, not only because his post went up first, but because he did what I had actually wanted to do by using KVM and OVS.  It&amp;rsquo;s well done, I recommend reading it. I think this is a sign of what will come.  &amp;ldquo;network in a box&amp;rdquo; is an intriguing concept, and I&amp;rsquo;m absolutely &lt;a href=&#34;https://www.google.com/search?q=network+in+a+box&amp;amp;ie=utf-8&amp;amp;oe=utf-8&amp;amp;aq=t&amp;amp;rls=org.mozilla:en-US:official&amp;amp;client=firefox-a&amp;amp;channel=fflb&#34;&gt;positive I am not the only one thinking about it&lt;/a&gt;.  I think, however, that the important part is to see the options available and make sure the masses know that there are many ways to do it.  It is not VMware or nothing, and it&amp;rsquo;s certainly not cisco or the highway.  OpenSource tools like OVS and KVM under a free operating system like Linux can compete at the highest levels and there are documents and how-tos out there.  More importantly, it&amp;rsquo;s not hard.  The same goes for security appliances and even vrouters.  Security Onion and pfSense are both viable platforms and they&amp;rsquo;re just the tip of the iceberg.  At the end of the day it all comes down to options. Opensource, commercial, they all have virtualization strategies and the more you know the better off you&amp;rsquo;ll be in the long run because virt is here to stay.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -54,7 +110,21 @@
       <pubDate>Sun, 30 Jun 2013 14:24:51 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/vmware-esxi-cli-reference/</guid>
-      <description>One of my biggest complaints about VMware is that it is an enterprise application. It has historically catered to the masses, which I completely understand, but those of us that aren&amp;rsquo;t a fortune 500 company are figuratively and operationally shoved into a corner and forced to find hackish ways of doing things to work around the enterprise nature. One really, really good example of this is OS dependency. I hated architecture dependencies back in the old days (x86, SPARC, PPC) and I absolutely despise things that are OS platform dependent now.</description>
+      <description>&lt;p&gt;One of my biggest complaints about VMware is that it is an enterprise application. It has historically catered to the masses, which I completely understand, but those of us that aren&amp;rsquo;t a fortune 500 company are figuratively and operationally shoved into a corner and forced to find hackish ways of doing things to work around the enterprise nature. One really, really good example of this is OS dependency. I hated architecture dependencies back in the old days (x86, SPARC, PPC) and I absolutely despise things that are OS platform dependent now.  It&amp;rsquo;s inconvenient and just plain sucks for anyone using anything but that required platform. This goes for anything, mac dependent, MS dependent, unix dependent, whatever. I don&amp;rsquo;t discriminate in my idealism.  While I realize it is an impossible, idealistic expectation,  I back up my stance 100% regardless. That being said, one of the most irritating of those in recent memory has been VMware. Managing the VMWare ESXi instances that I run for both lab and production work is a pain. Since I&amp;rsquo;m not really a sysadmin or a virtualization engineer my knowledge of this stuff is surely limited I may be going about this in a non-optimal way, but until recently it has required a one-off host or VM running windows with the client to do anything useful. Apparently this has changed with the pay version in 5.something adding a web interface.  Unfortunately this isn&amp;rsquo;t an option at this time for me, it&amp;rsquo;s cost prohibitive. So, when I found it necessary to do some management without a windows VM or host, I was pleasantly surprised to find that I can do simple tasks via the SSH CLI. was able to query power state, start, stop, etc. using simple CLI tools. Now, these are all documented at the VMware KB, but I wanted to throw together a quick reference sheet for all of them in one place so I started compiling it &lt;a href=&#34;http://www.forwardingplane.net/unix/vmware-esxi-cli-reference/&#34;&gt;here&lt;/a&gt;.  Please feel free to shoot over any additions or quick tips that should be on there. This is just the tip of the iceberg, I suspect (or maybe I&amp;rsquo;m just going about my VMware management all wrong; I&amp;rsquo;m open to that as well and suggestions on how to remedy). The most useful for me so far have been inventory and power related.```
+List all VMs:
+vim-cmd vmsvc/getallvms&lt;/p&gt;
+
+&lt;p&gt;List power state of VM:
+vim-cmd vmsvc/power.getstate &lt;VM ID&gt;&lt;/p&gt;
+
+&lt;p&gt;Power on VM
+vim-cmd vmsvc/power.on &lt;VM ID&gt;&lt;/p&gt;
+
+&lt;p&gt;Power off VM
+vim-cmd vmsvc/power.off &lt;VM ID&gt;&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -63,7 +133,35 @@
       <pubDate>Sun, 28 Apr 2013 03:39:54 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/vnc-console-on-vmware-esxi/</guid>
-      <description>Let me preface this post by saying that I am absolutely not an enterprise IT or systems guy, take everything that I write here on out with that as a side dish. I&amp;rsquo;m also very, very cheap. That said, one of the things I really like about KVM is the ability to easily view the console of a guest system using free, non-windows software like VNC. However, much like everything in life, there are reasons to do one thing or another.</description>
+      <description>&lt;p&gt;Let me preface this post by saying that I am absolutely not an enterprise IT or systems guy, take everything that I write here on out with that as a side dish.  I&amp;rsquo;m also very, very cheap. That said, one of the things I really like about KVM is the ability to easily view the console of a guest system using free, non-windows software like VNC. However, much like everything in life, there are reasons to do one thing or another. I love VMware as well. It&amp;rsquo;s refined, well documented, incredibly feature rich and works phenomenally well. It&amp;rsquo;s also an enterprise app and to get a lot of the elegant features you either need a windows machine or the expensive paid version. Or both. I generally have neither money to spend on lab stuff or software licenses, which is why I generally use OSS. VMware, does, however, allow for free limited use of ESXi in such a way that is more than I need for my lab environments.  This is a great compliment to the XEN, KVM and other virtualization stuff I use for entertaining myself, learning new tech and labbing things up. So, when I wanted to see if I could get to the console of a few VMs I have without the paid app or a windows machine running vsphere, &lt;a href=&#34;http://t3chnot3s.blogspot.com/2012/03/how-to-enable-vnc-access-to-vms-on.html&#34;&gt;the internets took care of me&lt;/a&gt;.  This is actually really straight forward and takes very little time.  I made a quick screen cast of adding it to one of my template VMs. There are, of course, a few caveats.  Knowing how to &lt;a href=&#34;http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1714&#34;&gt;properly edit the VMX file&lt;/a&gt; is important.  Knowing that VNC is insecure is also very important. In my lab, this is all behind my security perimeter and it&amp;rsquo;s fairly safe to open it up. In a nutshell, Here is what you need to do:```
+chmod 777 /etc/vmware/firewall/service.xml&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Edit the firewall file:```&#34; data-lang=&#34;Edit the firewall file:```&#34;&gt;vi /etc/vmware/firewall/service.xml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Add this to the bottom before the last line:```
+ VNC
+    outbound
+        tcp
+        dst
+        5800
+           5999
+     inbound
+        tcp
+        dst
+        5800
+           5999
+     true
+     false&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Make sure the ports are configured at you want them to be. I chose 5900 - 5999 since it made sense to me. Then:```&#34; data-lang=&#34;Make sure the ports are configured at you want them to be. I chose 5900 - 5999 since it made sense to me. Then:```&#34;&gt;esxcli network firewall refresh
+esxcli network firewall ruleset list&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Should now see:```
+VNC true&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-at the very bottom. In the .vmx file of each VM:```&#34; data-lang=&#34;at the very bottom. In the .vmx file of each VM:```&#34;&gt;RemoteDisplay.vnc.enabled = &amp;#34;TRUE&amp;#34;
+RemoteDisplay.vnc.port = 5910
+RemoteDisplay.vnc.password = &amp;#34;VNCPassword&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Directly from the VMware site: Any manual additions to the .vmx file from ESX/ESXi are overwritten by the entries stored in the vCenter Server database. If you need to edit a virtual machine&amp;rsquo;s .vmx file, first remove it from vCenter Server&amp;rsquo;s inventory (right-click it and choose Remove from Inventory). After you edit it, register the virtual machine again from the ESX command line.```
+vmware-cmd -s register /vmfs/volumes/datastore/virtual machine directory/virtual machine name.vmx&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Where datastore is the datastore name, virtual machine directory is the directory containing the virtual machine files, and virtual machine name is the name of the virtual machine files. This needs to be the full path, it gave me a weird error trying to do it in the directory without the full path. For example:```&#34; data-lang=&#34;Where datastore is the datastore name, virtual machine directory is the directory containing the virtual machine files, and virtual machine name is the name of the virtual machine files. This needs to be the full path, it gave me a weird error trying to do it in the directory without the full path. For example:```&#34;&gt;vim-cmd solo/registervm /vmfs/volumes/Storage1/vm1/vm1.vmx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Start the VM and connect to the VNC console configured.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -72,7 +170,16 @@
       <pubDate>Mon, 18 Mar 2013 11:02:42 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/why-hardware-firewalls-are-the-walking-dead/</guid>
-      <description>OK, maybe they&amp;rsquo;re not totally dead, but they&amp;rsquo;re being demoted. To the mail room. During the course of my career I&amp;rsquo;ve always had at least some responsibility for firewall and security devices. In those ~15 years, how these boxes are built and function has shifted. From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint.</description>
+      <description>&lt;p&gt;OK, maybe they&amp;rsquo;re not totally dead, but they&amp;rsquo;re being demoted. To the mail room. During the course of my career I&amp;rsquo;ve always had at least some responsibility for firewall and security devices.  In those ~15 years, how these boxes are built and function has shifted.  From the perspective of my career, there were IOS ACLs (yes, I know, not a firewall), there was the IOS firewall versions and there were software packages such as gauntlet, checkpoint.  There was the Cisco PIX. One installation I worked on in a past life even chose to use IPFW on BSD boxes.   Then came was the Sonicwall, a newer take on how to manage a security appliance via a web interface. There was the FWSM.  A few things stayed the same. Dedicated hardware. &lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/03/Firewall-1024x670.jpg&#34; alt=&#34;Free Firewall Clipart Illustrations at http://free.ClipartOf.com/&#34; /&gt; Being a networking guy by nature, it always irritated me that the inline security devices were 3 years behind networking&amp;hellip;.at best. Working in a service provider and in research and education has given me a bit of a different take on firewalls and IPS devices as well and has only solidified this belief.   There are a few things that make firewalls and IPS devices an unholy thing in the world that I live in. Since I &lt;strong&gt;love&lt;/strong&gt; bulleted lists, this is an opportunity to use one:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;They get in the way.&lt;/strong&gt;  Of course they to, that is their job.  Big data flows, Multicast, jumbo frames, IPv6.  There are boxes that can &lt;strong&gt;finally&lt;/strong&gt; do these things, but they are 5-7 years behind and even now are often lacking in support and features.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;They&amp;rsquo;re expensive.&lt;/strong&gt;  When considering CAPEX, they are often prohibitively expensive compared to something like a passive IDS.  Not many budget for a firewall / IPS that can do multi 10G at line rate, IPv6, Multicast and can handle things like GridFTP flows, because until recently they didn&amp;rsquo;t exist.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Speeds and Feeds are always first.&lt;/strong&gt;  I worked on 10G and OC192 on the WAN around 2002 with 10G on the LAN around the same time.  The first real firewall I saw that could even fall into consideration for that was the &lt;a href=&#34;http://webcache.googleusercontent.com/search?q=cache:pLu75PgugigJ:www.force10networks.com/news/pressreleases/2006/pr-2006-08-28_2.asp+&amp;amp;cd=1&amp;amp;hl=en&amp;amp;ct=clnk&amp;amp;gl=us&amp;amp;client=safari&#34;&gt;FPGA based P10&lt;/a&gt; from Force10 in 2005 (we had an early demo).  It was a really innovative device but even it was very clunky since it was an FPGA and caused service interruptions every time you needed to push rules to the FPGAs.  The Juniper SRX came much later at 2009, and even &lt;a href=&#34;http://www.forwardingplane.net/2010/09/updating-srx-idp-signatures/&#34; title=&#34;Updating SRX IDP signatures&#34;&gt;it&lt;/a&gt; &lt;a href=&#34;http://www.forwardingplane.net/2011/01/moving-junos-code-between-srx-cluster-nodes/&#34; title=&#34;Moving JunOS code between SRX cluster nodes&#34;&gt;had&lt;/a&gt; &lt;a href=&#34;http://www.forwardingplane.net/2010/10/enabling-ipv6-on-juniper-srx-5800-cluster/&#34; title=&#34;Enabling IPv6 on Juniper SRX 5800 cluster&#34;&gt;some&lt;/a&gt; &lt;a href=&#34;http://www.forwardingplane.net/2010/09/srx-ipv6-flow-based-processing/&#34; title=&#34;SRX IPv6 flow based processing&#34;&gt;issues&lt;/a&gt; back then.  There exists a handful of options now, the Sonicwall SuperMassive, the Juniper SRX  and the Palo Alto come to mind but they&amp;rsquo;re late.  10G is old hat to some of us.  We&amp;rsquo;re on to 40G and 100G.  What now?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, lets get down to the buzzwords.  Cloud.  Data Center.  Virtualization.  SDN.  OpenFlow.  Ironically enough, being &amp;ldquo;buzzword compliant&amp;rdquo; is actually relevant to this commentary. With the advent of virtualization of nearly everything, including the network, vendors are adding things like virtualized firewalls.  Juniper has added the &lt;a href=&#34;http://www.juniper.net/us/en/dm/edge/products/&#34;&gt;JunosV Firefly&lt;/a&gt;, Cisco has added the &lt;a href=&#34;http://www.cisco.com/en/US/products/ps12233/index.html&#34;&gt;VSG&lt;/a&gt;.  There are surely others.  This movement is just in it&amp;rsquo;s infancy, but it&amp;rsquo;s big and I would venture to say that it is game changing.  With the huge amounts of cores and memory in virtual machine hosts, it makes sense that the network become part of that for management, total cost of ownership and usability. The really interesting part of all of this comes not with the virtualization of firewalls, but with the commoditization of network silicon.  Chip makers that are spinning ASICS need to make sure their ducks are in a row since, in my personal opinion, there are a lot of options for LAN and data center equipment.  &lt;a href=&#34;http://www.aristanetworks.com&#34;&gt;Arista&lt;/a&gt; is already on top of this.  Others vendors will adopt this methodology as merchant silicon adds more abilities.  Firewalls will are on their way now.  Eventually WAN gear will come around. What I&amp;rsquo;m really excited about is the prospect of a merchant silicon based, 40 or 100G OpenFlow based &amp;ldquo;Firewall&amp;rdquo;.  The foundation is already laid for this.  &lt;a href=&#34;http://www.openflowhub.org/display/floodlightcontroller/Firewall+(Dev)&#34;&gt;Floodlight already has a dev module for building a firewall with OpenFlow&lt;/a&gt;.  I&amp;rsquo;ve not tested this extensively yet.  It&amp;rsquo;s on my short list but wether it works or not isn&amp;rsquo;t really even relevant.  The fact of the matter is that this is the way to a comfortable security perimeter at a reasonable speed for a far more reasonable price tag. &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/03/OF-Firewall.jpg&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/03/OF-Firewall.jpg&#34; alt=&#34;OF-Firewall&#34; /&gt;&lt;/a&gt;Think of buying an OpenFlow capable device with 40 and 100G interfaces in it as your firewall and IPS device.  Port cost is very low.  CAPEX is low.  OPEX is also fairly low since it is just a normal piece of network hardware.  Management is accomplished via an OpenFlow controller. Rules are pushed manually or programmatically based entirely on site policy.  IPS functions can be performed via a passive system like BroIDS or Snort triggering rules in OpenFlow much like is being commonly done with &lt;a href=&#34;http://www.forwardingplane.net/2011/10/black-hole-routing/&#34; title=&#34;Black Hole routing&#34;&gt;black hole routers&lt;/a&gt; now. This will happen.  It&amp;rsquo;s already happening. Firewall vendors take notice.  Have a strategy for Virtualization.  Have a strategy for dealing with OpenFlow and SDN. It is my belief that once the reporting and management is even half as good as a &lt;a href=&#34;http://www.paloaltonetworks.com&#34;&gt;Palo Alto&lt;/a&gt; or &lt;a href=&#34;http://www.sonicwall.com&#34;&gt;Sonicwall&lt;/a&gt;, the market will start to change based solely on cost.  &lt;a href=&#34;http://openflow.marist.edu/avior.html&#34;&gt;There is already work being done on this as well&lt;/a&gt;. Am I right?  Time will be the judge, but I suspect I am.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -81,7 +188,75 @@
       <pubDate>Sat, 02 Mar 2013 01:12:02 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/centos-kvm-install-quick-start-to-a-vm/</guid>
-      <description>I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I&amp;rsquo;d shelved years ago. Now, I&amp;rsquo;ve been a virtualization user forever. From VMware (Fusion, ESX), VirtualBox, to Parallels, I&amp;rsquo;ve used them at least in testing if not in production environments. I&amp;rsquo;d not really spent any mentionable amount of time with XEN, qEMU or KVM, but some projects I was working on suggested it for the virtualization mechanism, so I figured I&amp;rsquo;d try to pick it up.</description>
+      <description>&lt;p&gt;I am a network engineer by profession, but with the proliferation of SDN and OpenFlow, I have had to spend a lot of time re-learning a lot of system admin skills that I&amp;rsquo;d shelved years ago.  Now, I&amp;rsquo;ve been a virtualization user forever. From &lt;a href=&#34;http://www.vmware.com&#34;&gt;VMware&lt;/a&gt; (Fusion, ESX), &lt;a href=&#34;https://www.virtualbox.org&#34;&gt;VirtualBox&lt;/a&gt;, to &lt;a href=&#34;www.parallels.com&#34;&gt;Parallels&lt;/a&gt;, I&amp;rsquo;ve used them at least in testing if not in production environments.  I&amp;rsquo;d not really spent any mentionable amount of time with &lt;a href=&#34;http://www.xen.org&#34;&gt;XEN&lt;/a&gt;, &lt;a href=&#34;http://www.qemu.org&#34;&gt;qEMU&lt;/a&gt; or &lt;a href=&#34;www.linux-kvm.org&#34;&gt;KVM&lt;/a&gt;, but some projects I was working on suggested it for the virtualization mechanism, so I figured I&amp;rsquo;d try to pick it up.  I think the hosting provider  of this blog is using it to provide the VPS that this site runs on, so it is clearly production quality.  In looking around for a straightforward how-to, a few things became obvious pretty quickly: KVM is very robust. KVM and qEMU have got a lot of documentation, but not all of it is straightforward. They have a lot of pieces needed to make it work efficiently. It wasn&amp;rsquo;t a plug and run experience, by any means.  I wanted a headless, remotely manageable system that ran on a bare minimum install (i.e. no GUI).  After a late evening of hacking at it,  here is what I finally had to do to get it running and build a functional VM on a fresh install of CentOS 6.3. Install all the dependancies.  And there were many.  Coming from using the VirtualBox CLI, little things that I expected didn&amp;rsquo;t work if I didn&amp;rsquo;t have this or that installed.```
+yum install -y qemu-kvm.x86_64 qemu-kvm-tools.x86_64 &lt;br /&gt;
+kvm libvirt bridge-utils tunctl python-virtinst.noarch avahi&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Restart the deamons```&#34; data-lang=&#34;Restart the deamons```&#34;&gt;/etc/init.d/messagebus restart
+/etc/init.d/avahi-daemon restart
+/etc/init.d/libvirtd restart&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Make the new daemons start at boot:```
+/sbin/chkconfig messagebus on
+/sbin/chkconfig avahi-daemon on&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+I want to bridge rather than NAT.  My VMs need to have a public (or same LAN segment) address as the rest of the hosts for external management and availability of inbound services.  For this, we need to adjust the interfaces.  I want to run the bridge on a second interface and keep the host system management on a dedicated interface.
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;vi /etc/sysconfig/network-scripts/ifcfg-eth1&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Your file should look something like this when done:```&#34; data-lang=&#34;Your file should look something like this when done:```&#34;&gt;DEVICE=&amp;#34;eth1&amp;#34;
+HWADDR=&amp;#34;c0:ff:ee:c0:ff:ee&amp;#34; # (leave this as your MAC address)
+NM\_CONTROLLED=&amp;#34;yes&amp;#34;
+ BRIDGE=br0
+ ONBOOT=&amp;#34;yes&amp;#34;
+UUID=&amp;#34;a9c26927-7650-42e9-a86a-1ae1227eac4b&amp;#34; #leave this as your UUID)
+``````
+vi /etc/sysconfig/network-scripts/ifcfg-br0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Your file should look something like this when done:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DEVICE=&amp;quot;br0&amp;quot;
+TYPE=&amp;quot;Bridge&amp;quot;
+BOOTPROTO=&amp;quot;static&amp;quot;
+IPADDR=&amp;quot;10.10.10.50&amp;quot; # Use your own IP address
+NETMASK=&amp;quot;255.255.255.128&amp;quot;
+GATEWAY=&amp;quot;10.10.10.1&amp;quot;  # Provide your gateway
+IPV6INIT=&amp;quot;yes&amp;quot;
+IPV6\_AUTOCONF=&amp;quot;yes&amp;quot;
+NM\_CONTROLLED=&amp;quot;yes&amp;quot;
+ONBOOT=&amp;quot;yes&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Restart the network to make it active.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;service network restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You&amp;rsquo;re going to use virt tools and virsh to manipulate the guests.  I tried it a few other ways and this seems far more supportable.  I wanted to install a CentOS 6.3 guest, I grabbed the install media from a &lt;a href=&#34;http://cosmos.cites.illinois.edu/pub/centos/6.3/isos/x86_64/&#34;&gt;local mirror&lt;/a&gt;.  I have a volume mounted as /services that I keep stuff in.```
+mkdir /services/vm/template-host
+cd /services/vm/template-host
+wget &lt;a href=&#34;http://cosmos.cites.illinois.edu/pub/centos/6.3/isos/x86_64/CentOS-6.3-x86_64-bin-DVD1.iso&#34;&gt;http://cosmos.cites.illinois.edu/pub/centos/6.3/isos/x86_64/CentOS-6.3-x86_64-bin-DVD1.iso&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Now use the virt-install command to boot the system with the following parameters: 2G of RAM 50G disk named disk.img Console redirected to a VNC instance on port 5901 Network interface attached to br0 4 CPUs CDROM points to install image```&#34; data-lang=&#34;Now use the virt-install command to boot the system with the following parameters: 2G of RAM 50G disk named disk.img Console redirected to a VNC instance on port 5901 Network interface attached to br0 4 CPUs CDROM points to install image```&#34;&gt;virt-install --name template-host --ram 2048 --disk /home/vm/template-host/disk.img,size=50 \\
+--graphics vnc,port=5901 --network bridge=br0 --vcpus=4 --os-type=linux \\
+--cdrom=/home/vm/Install\_Media/CentOS-6.3-x86\_64-bin-DVD1.iso&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, to connect to the console, you&amp;rsquo;ll need to tunnel VNC over ssh.  This can be adjusted, but that&amp;rsquo;s outside of the scope of this. I like to redirect real port numbers for my own sanity.```
+ssh -N -p 22 -c 3des buraglio@vmhost -L 5901/localhost/5901&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-The above command will redirect localhost port 5901 to port 5901 on the host vmhost Connect to the VNC server:&#34; data-lang=&#34;The above command will redirect localhost port 5901 to port 5901 on the host vmhost Connect to the VNC server:&#34;&gt;[![Screen Shot 2013-03-01 at 2.00.37 PM](http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.00.37-PM.png)](http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.00.37-PM.png)
+
+Once connected you should drop right into the console of the KVM instance. Install as a normal system at that point.
+
+Once installed It&amp;#39;ll appear as a normal host console.
+
+[![Screen Shot 2013-03-01 at 2.01.21 PM](http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.01.21-PM.png)](http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.01.21-PM.png)
+
+I found virsh to be the most useful for manipulating the virtual machine.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[root@behemoth Install_Media]# virsh list
+Id            Name                                      State&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;9              template-host                         running
+```Helpful commands I found after 30 minutes of poking around and playing with virsh: virsh list &amp;ndash;show the list of virtual machines virsh destroy &lt;vm name&gt; &amp;ndash;hard shut down a host (I believe) virsh undefine &lt;vm name&gt; &amp;ndash;remove the VM from registration &amp;ndash;this one was hard for me to find.   &lt;a href=&#34;http://www.forwardingplane.net/unix/kvm-virsh-command-referenc/&#34; title=&#34;KVM virsh command reference&#34;&gt;Here&lt;/a&gt; is a complete list of the commands.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -90,10 +265,132 @@
       <pubDate>Thu, 31 Jan 2013 21:48:47 +0000</pubDate>
       
       <guid>https://forwardingplane.net/post/headless-virtualbox-host-on-centos/</guid>
-      <description>Starting from a base CentOS system with nothing configured, and referencing the CentOS wiki, here is how I like to set up a headless virtualbox environment: Disable selinux. It&amp;rsquo;s overly cumbersome and is enabled by default in CentOS. I like to permanently disable it even though the default is permissive. I ride the edge, I know.``` vi /etc/selinux/config
- and change  SELINUX=enabled
- to  SELINUX=disabled
- Then reboot. Using the methodology I originally found found [here](http://stackoverflow.</description>
+      <description>&lt;p&gt;Starting from a base CentOS system with nothing configured, and referencing the &lt;a href=&#34;http://wiki.centos.org/HowTos/Virtualization/VirtualBox&#34;&gt;CentOS wiki&lt;/a&gt;, here is how I like to set up a headless virtualbox environment: Disable selinux. It&amp;rsquo;s overly cumbersome and is enabled by default in CentOS.  I like to permanently disable it even though the default is permissive.  I ride the edge, I know.```
+vi /etc/selinux/config&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+ and change
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;SELINUX=enabled&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+to
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;SELINUX=disabled&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+Then reboot.
+
+Using the methodology I originally found found [here](http://stackoverflow.com/questions/14016286/how-to-programmatically-install-the-latest-epel-release-rpm-without-knowing-its), I like to install the epel repo using this method:```
+cat &amp;lt;&amp;lt;EOM &amp;gt;/etc/yum.repos.d/epel-bootstrap.repo
+ \[epel\]
+ name=Bootstrap EPEL
+ mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=epel-\\$releasever&amp;amp;arch=\\$basearch
+ failovermethod=priority
+ enabled=0
+ gpgcheck=0
+ EOM
+``````
+yum --enablerepo=epel -y install epel-release
+ rm -f /etc/yum.repos.d/epel-bootstrap.repo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install rpmforge repo```
+rpm &amp;ndash;import &lt;a href=&#34;http://apt.sw.be/RPM-GPG-KEY.dag.txt&#34;&gt;http://apt.sw.be/RPM-GPG-KEY.dag.txt&lt;/a&gt;
+ rpm -Uvh &lt;a href=&#34;http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm&#34;&gt;http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm&lt;/a&gt;
+ yum clean all&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Install the virtualbox repo```&#34; data-lang=&#34;Install the virtualbox repo```&#34;&gt;yum install -y wget
+cd /etc/yum.repos.d
+wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+yum update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now the interesting bits, lets get to the vbox install.  Although we have enabled dkms, I like to also install as if we didn&amp;rsquo;t.  It populates the system with the pieces we need in a way that I&amp;rsquo;m used to.  I&amp;rsquo;m not a sysadmin by day, so this may be redundant.  YMMV, etc.   First, install the Development Tools. There are a lot here, it may take a bit depending on machine specs and connectivity speed in relation to mirrors. ```
+yum groupinstall &amp;ldquo;Development Tools&amp;rdquo;
+yum install VirtualBox-4.2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Then start up the service and you should see something like this:```&#34; data-lang=&#34;Then start up the service and you should see something like this:```&#34;&gt;service vboxdrv setup
+Stopping VirtualBox kernel modules \[ OK \]
+Uninstalling old VirtualBox DKMS kernel modulesError! There are no instances of module: vboxhost
+4.2.6 located in the DKMS tree.
+ \[ OK \]
+Trying to register the VirtualBox kernel modules using DKMS
+ \[ OK \]
+Starting VirtualBox kernel modules \[ OK \]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At this point you&amp;rsquo;ve got virtualbox done and installed. Now, the &lt;em&gt;real&lt;/em&gt; interesting part begins: VMs. I have a centos template that I built on my laptop.  It&amp;rsquo;s got the settings I like and I can just import it.  You can also build a new one, but that&amp;rsquo;s for a different post.  I moved the template via scp over to the newly anointed VM host. Now, I just need to import it and I can start cloning.  &lt;a href=&#34;http://www.virtualbox.org/manual/ch08.html&#34;&gt;vboxmanage&lt;/a&gt; is the command we&amp;rsquo;re going to be utilizing heavily and it&amp;rsquo;s really powerful.  ```
+vboxmanage import /home/buraglio/centos-63-template.ova&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Interpreting /home/buraglio/centos-63-template.ova...
+OK.
+Disks: vmdisk1 150 1359413248 http://www.vmware.com/interfaces/specifications/vmdk.html#streamOptimized centos-63-template-disk1.vmdk 512919552 -1 
+Virtual system 0:
+ 0: Suggested OS type: &amp;quot;Linux26\_64&amp;quot;
+ (change with &amp;quot;--vsys 0 --ostype &amp;lt;type&amp;gt;&amp;quot;; use &amp;quot;list ostypes&amp;quot; to list all possible values)
+ 1: Suggested VM name &amp;quot;centos-63-template&amp;quot;
+ (change with &amp;quot;--vsys 0 --vmname &amp;lt;name&amp;gt;&amp;quot;)
+ 2: Number of CPUs: 2
+ (change with &amp;quot;--vsys 0 --cpus &amp;lt;n&amp;gt;&amp;quot;)
+ 3: Guest memory: 4096 MB
+ (change with &amp;quot;--vsys 0 --memory &amp;lt;MB&amp;gt;&amp;quot;)
+ 4: Network adapter: orig ur1-vm1 72.36.126.200/29, config 5, extra type=Bridged
+ 5: CD-ROM
+ (disable with &amp;quot;--vsys 0 --unit 5 --ignore&amp;quot;)
+ 6: SCSI controller, type LsiLogic
+ (change with &amp;quot;--vsys 0 --unit 6 --scsitype {BusLogic|LsiLogic}&amp;quot;;
+ disable with &amp;quot;--vsys 0 --unit 6 --ignore&amp;quot;)
+ 7: IDE controller, type PIIX4
+ (disable with &amp;quot;--vsys 0 --unit 7 --ignore&amp;quot;)
+ 8: IDE controller, type PIIX4
+ (disable with &amp;quot;--vsys 0 --unit 8 --ignore&amp;quot;)
+ 9: Hard disk image: source image=centos-63-template-disk1.vmdk, target path=/home/buraglio/VirtualBox VMs/centos-63-template/centos-63-template-disk1.vmdk, controller=6;channel=0
+ (change target path with &amp;quot;--vsys 0 --unit 9 --disk path&amp;quot;;
+ disable with &amp;quot;--vsys 0 --unit 9 --ignore&amp;quot;)
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Successfully imported the appliance.
+```
+
+It&#39;s there. you should now have a folder in your home directory that has the VM in it. 
+
+```
+ls -la VirtualBox\\ VMs/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;total 12
+drwx&amp;mdash;&amp;mdash; 3 buraglio buraglio 4096 Jan 29 20:23 .
+drwx&amp;mdash;&amp;mdash;. 4 buraglio buraglio 4096 Jan 29 20:23 ..
+drwx&amp;mdash;&amp;mdash; 2 buraglio buraglio 4096 Jan 29 20:23 centos-63-template&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-to really make this useful, I clone all the VMs to the names I want and don&#39;t use the template at all. Now list the vms to verify what you have:```&#34; data-lang=&#34;to really make this useful, I clone all the VMs to the names I want and don&#39;t use the template at all. Now list the vms to verify what you have:```&#34;&gt;vboxmanage list vms
+&amp;#34;centos-63-template&amp;#34; {4875b540-5514-4d0b-bba8-ce255b7f44a2}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We have one VM named &amp;ldquo;centos-63-template&amp;rdquo;, which is exactly what I wanted. Now clone this VM to the first usable VM, I&amp;rsquo;m building a floodlight OpenFlow controller, so I&amp;rsquo;ll name it accordingly.```
+vboxmanage clonevm centos-63-template &amp;ndash;name floodlight1 &amp;ndash;register
+0%&amp;hellip;10%&amp;hellip;20%&amp;hellip;30%&amp;hellip;40%&amp;hellip;50%&amp;hellip;60%&amp;hellip;70%&amp;hellip;80%&amp;hellip;90%&amp;hellip;100%
+Machine has been successfully cloned as &amp;ldquo;floodlight1&amp;rdquo;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Now list the vms to make sure it is listed:```&#34; data-lang=&#34;Now list the vms to make sure it is listed:```&#34;&gt;vboxmanage list vms
+``````
+&amp;#34;centos-63-template&amp;#34; {4875b540-5514-4d0b-bba8-ce255b7f44a2}
+``````
+&amp;#34;floodlight1&amp;#34; {8fb4f03d-d117-43d5-b4bf-24cdcc481686}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now here is the part I really like about virtualbox headless mode (and yes, I know others like qemu and xen can do this), when a virtual machine is started in headless mode, the console of that host can be redirected to an RDP instance. This makes it very convenient to manage systems on an out of band network like an isolated vlan or other non-routed or non-publically available network. It also makes it very convenient for spinning up a new VM that doesn&amp;rsquo;t have an IP stack configured. Its also very handy if you have a bad day and typo a host firewall rule or network config file. This has saved me a trip more than one time. To do this, you&amp;rsquo;ll need the vrdp extension pack.  To list the installed extension packs, once again, use the vboxmanage command  ```
+VBoxManage list extpacks
+Extension Packs: 0&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-The extension pack for my version is available [here](http://download.virtualbox.org/virtualbox/4.2.6/Oracle_VM_VirtualBox_Extension_Pack-4.2.6-82870.vbox-extpack).```&#34; data-lang=&#34;The extension pack for my version is available [here](http://download.virtualbox.org/virtualbox/4.2.6/Oracle_VM_VirtualBox_Extension_Pack-4.2.6-82870.vbox-extpack).```&#34;&gt;sudo VBoxManage extpack install Oracle\_VM\_VirtualBox\_Extension\_Pack-4.2.6-82870.vbox-extpack 
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Successfully installed &amp;#34;Oracle VM VirtualBox Extension Pack&amp;#34;.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At this point we&amp;rsquo;re ready to fire up the VM and connect to the console.```
+vboxheadless -startvm floodlight1 -vrde on -vrdeproperty &amp;ldquo;TCP/Ports&amp;rdquo;=3390&amp;amp;
+Oracle VM VirtualBox Headless Interface 4.2.6
+&amp;copy; 2008-2012 Oracle Corporation
+All rights reserved.&lt;/p&gt;
+
+&lt;p&gt;VRDE server is listening on port 3390.
+```The above command will start the VM &amp;ldquo;floodlight1&amp;rdquo;, enable vrde and set the vrde port to 3390. You should now be able to connect to the console of the host using any free or included RDP compatible client. I use the microsoft office for mac provided rdp client. &lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/01/RDC.png&#34; alt=&#34;RDC&#34; /&gt; You&amp;rsquo;ll see an error when connecting since the server can&amp;rsquo;t be verified.  This is expected.     &lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/01/RDC-Verify.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/01/RDC-Verify.png&#34; alt=&#34;RDC Verify&#34; /&gt;&lt;/a&gt;   Hit connect and ta-da! Console on your VM.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/01/Console.png&#34;&gt;&lt;img src=&#34;http://www.forwardingplane.net/wp-content/uploads/2013/01/Console-1024x658.png&#34; alt=&#34;Console&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;  The best part about this is that it allows for really flexible management of virtual machines from a geographically different location.  Other than the initial install of CentOS 6, this was done 100% remotely, without a windows host and without an expensive hypervisor license. This is perfect for labs and learning virtualization, I&amp;rsquo;d even consider this totally fine for production.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -4,7 +4,7 @@ title = "ForwardingPlane.net"
 copyright = "Copyright (c) 2019, all rights reserved."
 canonifyurls = true
 theme = "hugo-future-imperfect"
-disqusShortname = "forwwardingplane"
+#disqusShortname = "forwwardingplane"
 pygmentsCodeFences = "true"
 
 [author]
@@ -23,11 +23,11 @@ pygmentsCodeFences = true
   identifier = "post"
   url = "/post/"
 
-#[[menu.main]]
-#  name = "Tags"
-#  weight = -110
-#  identifier = "tag"
-#  url = "/tags/"
+[[menu.main]]
+  name = "Tags"
+  weight = -110
+  identifier = "tag"
+  url = "/tags/"
 
 [params.meta]
   keywords = "blog, tech"

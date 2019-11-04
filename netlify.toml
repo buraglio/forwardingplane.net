@@ -4,7 +4,7 @@
 #  from = "/"
 #  to = "/public"
 [[redirects]]
-from = "/feed"
+from = "/feed/"
 to = "/post/index.xml"
 status = 301
 force = true
@@ -13,5 +13,11 @@ force = true
 [[redirects]]
 from = "/resume"
 to = "https://drive.google.com/open?id=1bpYbEtUHWGbmEvGK6IicNjJ1E5DUgrLA"
+status = 301
+force = true
+
+[[redirects]]
+from = "/post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/"
+to = "/2014/01/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/"
 status = 301
 force = true

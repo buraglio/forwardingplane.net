@@ -7,7 +7,10 @@ tags: [How-To, IPv6, Lab Time, Security, UNIX]
 
 I am an absolutely **huge** fan of statistical and instrumentation data, especially when it comes to traffic analysis, visualization and baselining.  I've rambled on about the importance of it at [every opportunity](http://searchnetworking.techtarget.com/news/2240212051/The-Der-Spiegel-NSA-revelations-What-network-engineers-need-to-know).  As a result of that, I have been doing work with netflow and netflow-like data for a fairly long time.  My first collector was the [OSU Flow tools](http://www.splintered.net/sw/flow-tools/) based stuff  back around 13 years ago.  From there I played with all kinds of netflow tools, both [commercial](http://www.arbornetworks.com/) and open source, finally settling most of my focus on [nfdump](http://nfdump.sourceforge.net/) and [nfsen](http://nfsen.sourceforge.net/). A bit of history: nfdump was born out of a research network, requiring it to be able to consume huge amounts of flows efficiently.  This makes it very powerful and very useful for nearly anyone, from the small technology tinkerer to to the enterprise network engineer up through the service provider architect.  nfsen is really just a php wrapper for nfdump, however, the really nice thing about it (other then being free, opensource software) is that it is extendable via [plugins](http://sourceforge.net/apps/trac/nfsen-plugins/).  This is really what makes it a serious player from all angles.     From botnet detection to displaying IP geo-data on a map, there is likely a plugin for it.  Not finding what you are looking for?  Write it!  The architecture to use it is already there and documented. For ease of install, I chose CentOS 6.5.  Once you have a system up and running, to get nfsen/nfdump working, here is what you need to do:
 
-```yum install -y httpd php wget gcc make rrdtool-devel rrdtool-perl perl-MailTools perl-Socket6 flex byacc
+```yum install -y httpd php wget gcc make rrdtool-devel rrdtool-perl 
+```
+
+```yum install -y perl-MailTools perl-Socket6 flex byacc
 ```
 
 ```vi /etc/selinux/config

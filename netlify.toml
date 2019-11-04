@@ -3,3 +3,15 @@
 #[[redirects]]
 #  from = "/"
 #  to = "/public"
+[[redirects]]
+from = "/feed"
+to = "/post/index.xml"
+status = 301
+force = true
+# query = {path = ":path"}
+# conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
+[[redirects]]
+from = "/resume"
+to = "https://drive.google.com/open?id=1bpYbEtUHWGbmEvGK6IicNjJ1E5DUgrLA"
+status = 301
+force = true

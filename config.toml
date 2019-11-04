@@ -63,7 +63,7 @@ pygmentsStyle = "native" # other dark style options: vim, fruity, monokai
 [permalinks]
   posts = "/:year/:month/:title/"
 
-[redirects]
+[[redirects]]
 from = "/feed"
 to = "/post/index.xml"
 status = 301

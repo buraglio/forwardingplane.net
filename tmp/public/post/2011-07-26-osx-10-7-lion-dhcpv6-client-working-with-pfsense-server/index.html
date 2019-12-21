@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/2011-07-26-osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&#8217;s about time.
+Before:
+
+After:
+
+pfSense setup:
+
+Using Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.
+   I didn&#8217;t do anything except use the &#8220;Automatic&#8221; setting in the network control panel, so out of the box OSX 10." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/2011-07-26-osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&#8217;s about time.
+Before:
+
+After:
+
+pfSense setup:
+
+Using Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.
+   I didn&#8217;t do anything except use the &#8220;Automatic&#8221; setting in the network control panel, so out of the box OSX 10."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&#8217;s about time.
+Before:
+
+After:
+
+pfSense setup:
+
+Using Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.
+   I didn&#8217;t do anything except use the &#8220;Automatic&#8221; setting in the network control panel, so out of the box OSX 10.">
+
+
+
+<meta itemprop="wordCount" content="305">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> <p>It looks like MacOS 10.7 (Lion) has fully functioning DHCPv6. It&#8217;s about time.</p>
+
+<p>Before:</p>
+
+<p><a href="http://1.bp.blogspot.com/-6FQwzCiawpg/TjDWmwrbONI/AAAAAAAAAEI/9mOtP9fMbqE/s1600/Screen%2BShot%2B2011-07-25%2Bat%2B8.45.24%2BPM.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 343px;" src="http://1.bp.blogspot.com/-6FQwzCiawpg/TjDWmwrbONI/AAAAAAAAAEI/9mOtP9fMbqE/s400/Screen%2BShot%2B2011-07-25%2Bat%2B8.45.24%2BPM.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5634239095230904530" /></a></p>
+
+<p>After:</p>
+
+<p><a href="http://4.bp.blogspot.com/-stFnUb3g1zI/TjDW1MDpOyI/AAAAAAAAAEY/YgG7fXCfujY/s1600/Screen%2BShot%2B2011-07-26%2Bat%2B7.18.45%2BAM.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 366px;" src="http://4.bp.blogspot.com/-stFnUb3g1zI/TjDW1MDpOyI/AAAAAAAAAEY/YgG7fXCfujY/s400/Screen%2BShot%2B2011-07-26%2Bat%2B7.18.45%2BAM.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5634239343098411810" /></a></p>
+
+<p>pfSense setup:</p>
+
+<p><a href="http://2.bp.blogspot.com/-gSN5Rx7vIUU/TjDW0t1BcEI/AAAAAAAAAEQ/1hQNIlCJl30/s1600/Screen%2BShot%2B2011-07-26%2Bat%2B7.16.50%2BAM.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 341px;" src="http://2.bp.blogspot.com/-gSN5Rx7vIUU/TjDW0t1BcEI/AAAAAAAAAEQ/1hQNIlCJl30/s400/Screen%2BShot%2B2011-07-26%2Bat%2B7.16.50%2BAM.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5634239334984020034" /></a></p>
+
+<p>Using Internet Systems Consortium DHCP Server 4.2.1-P1 as the server (on my pfSense box) I am able to get not only a privacy address (via stateless autoconfigure) but also a normal EUI-64 address as well as an IPv6 address via dhcpv6.</p>
+
+<div>
+</div>
+
+<div>
+  I didn&#8217;t do anything except use the &#8220;Automatic&#8221; setting in the network control panel, so out of the box OSX 10.7 &#8220;Lion&#8221; looks like it does the right thing with DHCPv6, at least at face value.</p> 
+  
+  <div>
+    <div>
+      <span><span style="white-space: pre;"><br /></span></span>
+    </div>
+    
+
+<pre><code>&lt;div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+  &lt;/div&gt; &lt;/div&gt; 
+
+  &lt;div&gt;
+    [[ This is a content summary only. Visit my website for full links, other content, and more! ]]
+  &lt;/div&gt;
+
+  &lt;div class=&quot;sharedaddy sd-sharing-enabled&quot;&gt;
+    &lt;div class=&quot;robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing&quot;&gt;
+      &lt;h3 class=&quot;sd-title&quot;&gt;
+        Share this:
+      &lt;/h3&gt;
+
+      &lt;div class=&quot;sd-content&quot;&gt;
+        &lt;ul&gt;
+          &lt;li class=&quot;share-twitter&quot;&gt;
+            &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;sharing-twitter-33&quot; class=&quot;share-twitter sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2011/07/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/?share=twitter&quot; target=&quot;_blank&quot; title=&quot;Click to share on Twitter&quot;&gt;&lt;span&gt;Twitter&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;share-email&quot;&gt;
+            &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;&quot; class=&quot;share-email sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2011/07/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/?share=email&quot; target=&quot;_blank&quot; title=&quot;Click to email this to a friend&quot;&gt;&lt;span&gt;Email&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;share-print&quot;&gt;
+            &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;&quot; class=&quot;share-print sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2011/07/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/&quot; target=&quot;_blank&quot; title=&quot;Click to print&quot;&gt;&lt;span&gt;Print&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;share-linkedin&quot;&gt;
+            &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;sharing-linkedin-33&quot; class=&quot;share-linkedin sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2011/07/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/?share=linkedin&quot; target=&quot;_blank&quot; title=&quot;Click to share on LinkedIn&quot;&gt;&lt;span&gt;LinkedIn&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;share-facebook&quot;&gt;
+            &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;sharing-facebook-33&quot; class=&quot;share-facebook sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2011/07/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/?share=facebook&quot; target=&quot;_blank&quot; title=&quot;Click to share on Facebook&quot;&gt;&lt;span&gt;Facebook&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;share-reddit&quot;&gt;
+            &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;&quot; class=&quot;share-reddit sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2011/07/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/?share=reddit&quot; target=&quot;_blank&quot; title=&quot;Click to share on Reddit&quot;&gt;&lt;span&gt;Reddit&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;share-tumblr&quot;&gt;
+            &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;&quot; class=&quot;share-tumblr sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2011/07/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/?share=tumblr&quot; target=&quot;_blank&quot; title=&quot;Click to share on Tumblr&quot;&gt;&lt;span&gt;Tumblr&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;share-pinterest&quot;&gt;
+            &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;sharing-pinterest-33&quot; class=&quot;share-pinterest sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2011/07/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/?share=pinterest&quot; target=&quot;_blank&quot; title=&quot;Click to share on Pinterest&quot;&gt;&lt;span&gt;Pinterest&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;share-pocket&quot;&gt;
+            &lt;a rel=&quot;nofollow noopener noreferrer&quot; data-shared=&quot;&quot; class=&quot;share-pocket sd-button share-icon&quot; href=&quot;http://www.forwardingplane.net/2011/07/osx-10-7-lion-dhcpv6-client-working-with-pfsense-server/?share=pocket&quot; target=&quot;_blank&quot; title=&quot;Click to share on Pocket&quot;&gt;&lt;span&gt;Pocket&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;share-end&quot;&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

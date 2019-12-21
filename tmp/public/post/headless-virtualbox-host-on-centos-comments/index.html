@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/headless-virtualbox-host-on-centos-comments/">
+<meta property="og:title" content="Headless VirtualBox host on CentOS" />
+<meta property="og:description" content="[Matt Kazmar]( &ldquo;mkazmar@uic.edu&rdquo;) - Feb 3, 2013
+Why use VirtualBox as opposed to KVM? KVM is included with CentOS and fits your quite well into your Windows-less world&hellip; Nick Buraglio - Feb 3, 2013
+Just simple experience. I know the vbox CLI pretty well already. Additionally, if I build a VM in VirtualBox on another platform I can easily import and export it. KVM is on my [very] short list to learn, I think it is actually better based on some talkes I&rsquo;ve had, I just don&rsquo;t know it yet." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/headless-virtualbox-host-on-centos-comments/" />
+<meta property="article:published_time" content="2013-01-31T21:48:47+00:00" />
+<meta property="article:modified_time" content="2013-01-31T21:48:47+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Headless VirtualBox host on CentOS"/>
+<meta name="twitter:description" content="[Matt Kazmar]( &ldquo;mkazmar@uic.edu&rdquo;) - Feb 3, 2013
+Why use VirtualBox as opposed to KVM? KVM is included with CentOS and fits your quite well into your Windows-less world&hellip; Nick Buraglio - Feb 3, 2013
+Just simple experience. I know the vbox CLI pretty well already. Additionally, if I build a VM in VirtualBox on another platform I can easily import and export it. KVM is on my [very] short list to learn, I think it is actually better based on some talkes I&rsquo;ve had, I just don&rsquo;t know it yet."/>
+
+
+<meta itemprop="name" content="Headless VirtualBox host on CentOS">
+<meta itemprop="description" content="[Matt Kazmar]( &ldquo;mkazmar@uic.edu&rdquo;) - Feb 3, 2013
+Why use VirtualBox as opposed to KVM? KVM is included with CentOS and fits your quite well into your Windows-less world&hellip; Nick Buraglio - Feb 3, 2013
+Just simple experience. I know the vbox CLI pretty well already. Additionally, if I build a VM in VirtualBox on another platform I can easily import and export it. KVM is on my [very] short list to learn, I think it is actually better based on some talkes I&rsquo;ve had, I just don&rsquo;t know it yet.">
+
+
+<meta itemprop="datePublished" content="2013-01-31T21:48:47&#43;00:00" />
+<meta itemprop="dateModified" content="2013-01-31T21:48:47&#43;00:00" />
+<meta itemprop="wordCount" content="203">
+
+
+
+<meta itemprop="keywords" content="How-To,Lab Time,UNIX,Virtualization," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Headless VirtualBox host on CentOS 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Headless VirtualBox host on CentOS </h1>
+    <div class="content"> <p>[Matt Kazmar]( &ldquo;mkazmar@uic.edu&rdquo;) - <time datetime="2013-02-06 16:23:52">Feb 3, 2013</time></p>
+
+<p>Why use VirtualBox as opposed to KVM? KVM is included with CentOS and fits your quite well into your Windows-less world&hellip;
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-02-06 20:16:16">Feb 3, 2013</time></p>
+
+<p>Just simple experience. I know the vbox CLI pretty well already. Additionally, if I build a VM in VirtualBox on another platform I can easily import and export it. KVM is on my [very] short list to learn, I think it is actually better based on some talkes I&rsquo;ve had, I just don&rsquo;t know it yet.
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-02-07 16:48:10">Feb 4, 2013</time></p>
+
+<p>I started messing with it a bit. It looks a bit more integrated than vbox.
+<hr /></p>
+
+<p>[Matt Kazmar]( &ldquo;mkazmar@uic.edu&rdquo;) - <time datetime="2013-02-07 08:57:47">Feb 4, 2013</time></p>
+
+<p>I like KVM for running Windows, of all things. Its a good way to let Windows take advantage of the cheap, stable goodness of Linux mdadm RAID without resorting to the Samba incompatibility fest. With the virtio drivers, its very fast.
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net/2013/03/network-field-day-5/">Networking Field Day 5, participation.</a> - <time datetime="2013-03-06 11:14:07">Mar 3, 2013</time></p>
+
+<p>[&hellip;] blog (which became this site). I’m working more on OpenFlow,  virtualization stuff like KVM, VirtualBox and VMware and bringing up 100G WAN links.  I even had the extremely cool opportunity to do a [&hellip;]
+<hr /></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/how-to">#How-To</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/lab-time">#Lab Time</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/unix">#UNIX</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/virtualization">#Virtualization</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 31 Jan 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

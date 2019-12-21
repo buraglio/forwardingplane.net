@@ -1,0 +1,662 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "Identify and remedy problem IKE and eventd processes on Juniper SRX",
+        "headline" : "Identify and remedy problem IKE and eventd processes on Juniper SRX",
+        "description" : "Recently we encountered a very strange behavior on an SRX 5800 cluster. The cluster, which is in active\/active mode, started dropping OSPF adjacencies to it\x26rsquo;s neighboring routing equipment, in this case, Juniper MX480 and Brocade\/Foundry MLX8. Strange behavior indeed, since for us, these had been rock solid for around 2 years and we\x26rsquo;d never seen this odd behavior before. Honestly, we started looking at the routers first since this was something the SRX has never done before.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-02-04 12:45:18 \x2b0000 \x2b0000",
+        "dateModified" : "2013-02-04 12:45:18 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx\/",
+        "wordCount" : "988",
+        "keywords" : [ "Routing","Security","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Identify and remedy problem IKE and eventd processes on Juniper SRX</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Identify and remedy problem IKE and eventd processes on Juniper SRX"/>
+<meta name="twitter:description" content="Recently we encountered a very strange behavior on an SRX 5800 cluster. The cluster, which is in active/active mode, started dropping OSPF adjacencies to it&rsquo;s neighboring routing equipment, in this case, Juniper MX480 and Brocade/Foundry MLX8. Strange behavior indeed, since for us, these had been rock solid for around 2 years and we&rsquo;d never seen this odd behavior before. Honestly, we started looking at the routers first since this was something the SRX has never done before."/>
+
+        <meta property="og:title" content="Identify and remedy problem IKE and eventd processes on Juniper SRX" />
+<meta property="og:description" content="Recently we encountered a very strange behavior on an SRX 5800 cluster. The cluster, which is in active/active mode, started dropping OSPF adjacencies to it&rsquo;s neighboring routing equipment, in this case, Juniper MX480 and Brocade/Foundry MLX8. Strange behavior indeed, since for us, these had been rock solid for around 2 years and we&rsquo;d never seen this odd behavior before. Honestly, we started looking at the routers first since this was something the SRX has never done before." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/" />
+<meta property="article:published_time" content="2013-02-04T12:45:18+00:00" />
+<meta property="article:modified_time" content="2013-02-04T12:45:18+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Identify and remedy problem IKE and eventd processes on Juniper SRX">
+<meta itemprop="description" content="Recently we encountered a very strange behavior on an SRX 5800 cluster. The cluster, which is in active/active mode, started dropping OSPF adjacencies to it&rsquo;s neighboring routing equipment, in this case, Juniper MX480 and Brocade/Foundry MLX8. Strange behavior indeed, since for us, these had been rock solid for around 2 years and we&rsquo;d never seen this odd behavior before. Honestly, we started looking at the routers first since this was something the SRX has never done before.">
+
+
+<meta itemprop="datePublished" content="2013-02-04T12:45:18&#43;00:00" />
+<meta itemprop="dateModified" content="2013-02-04T12:45:18&#43;00:00" />
+<meta itemprop="wordCount" content="988">
+
+
+
+<meta itemprop="keywords" content="Routing,Security," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/">Building a dynamic security infrastructure [in a box - with SDN]</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-05-29'>
+                                    May 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fidentify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx%2f&amp;text=Identify%20and%20remedy%20problem%20IKE%20and%20eventd%20processes%20on%20Juniper%20SRX&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fidentify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fidentify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fidentify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx%2f&amp;title=Identify%20and%20remedy%20problem%20IKE%20and%20eventd%20processes%20on%20Juniper%20SRX" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fidentify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx%2f&amp;title=Identify%20and%20remedy%20problem%20IKE%20and%20eventd%20processes%20on%20Juniper%20SRX" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fidentify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx%2f&amp;title=Identify%20and%20remedy%20problem%20IKE%20and%20eventd%20processes%20on%20Juniper%20SRX" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fidentify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx%2f&amp;description=Identify%20and%20remedy%20problem%20IKE%20and%20eventd%20processes%20on%20Juniper%20SRX" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fidentify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx/">Identify and remedy problem IKE and eventd processes on Juniper SRX</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2013-02-04'>
+            February 4, 2013</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>Recently we encountered a very strange behavior on an SRX 5800 cluster.  The cluster, which is in active/active mode, started dropping OSPF adjacencies to it&rsquo;s neighboring routing equipment, in this case, Juniper MX480 and Brocade/Foundry MLX8.  Strange behavior indeed, since for us, these had been rock solid for around 2 years and we&rsquo;d never seen this odd behavior before. Honestly, we started looking at the routers first since this was something the SRX has never done before.  After noticing that it was actually link dropping and not just OSPF having issues, we dug deeper into logs (as an aside, this is an <strong>excellent</strong> reason to centrally syslog everything.  And I do mean <strong>everything</strong>).  To our surprise and dismay, it was actually the SRX node0 actually rebooting all of its interface line cards. &ldquo;<em>show chassis routing-engine</em>&rdquo; showed that User was taking up a very significant amount of CPU.  This is a problem.</p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2013/02/Screen-Shot-2013-02-01-at-10.37.27-AM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/02/Screen-Shot-2013-02-01-at-10.37.27-AM.png" alt="Screen Shot 2013-02-01 at 10.37.27 AM" /></a></p>
+
+<p>  As you can probably guess, this isn&rsquo;t a good state.  So, in order to drill down what was causing User to be so abnormally high, we had to do a little sleuthing.  Running &ldquo;<em>show system processes extensive | except 0.00</em>&rdquo; will display any process that isn&rsquo;t zero.  From here it was pretty obvious what was eating the CPU.</p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2013/02/Screen-Shot-2013-02-01-at-10.43.50-AM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/02/Screen-Shot-2013-02-01-at-10.43.50-AM.png" alt="Screen Shot 2013-02-01 at 10.43.50 AM" /></a></p>
+
+<p>  &ldquo;kmd&rdquo; and &ldquo;eventd&rdquo;, as you can see, are chewing up an abnormally high amount of CPU.  First things first, make sure no traceoptions are on. &ldquo;<em>show conf | display set | match traceoptions</em>&rdquo;  We had some on so we disabled them.  Next, lets make sure we know what &ldquo;kid&rdquo; and &ldquo;eventd&rdquo; are. <a href="http://www.juniper.net/techpubs/software/junos/junos94/syslog-messages/kmd-system-log-messages.html">KMD</a> is the key management process. It provides IP Security (IPSec) authentication services for encryption Physical Interface Cards (PICs). <a href="http://www.juniper.net/techpubs/en_US/junos10.1/information-products/topic-collections/syslog-messages/jd0e22130.html">eventd</a> is the event policy process. It performs configured actions in response to events on a routing platform that trigger system log messages. It&rsquo;s all starting to add up.  I&rsquo;ll bet there are a LOT of IPsec messeges in the log. &ldquo;<em>show log messages</em>&rdquo; confirms this.  There are a LOT of KMD messages, which is likely causing events to eat even more resources to generate them. <em>Jan 29 12:02:53 fw1 (FPC Slot 11, PIC Slot 0) init: kmd1 (PID 176) started</em> _Jan 29 12:02:53 _fw1<em> (FPC Slot 11, PIC Slot 0) init: kmd2 (PID 177) started</em> _Jan 29 12:02:53 _fw1<em> (FPC Slot 11, PIC Slot 0) init: kmd3 (PID 178) started</em> _Jan 29 12:02:53 _fw1<em> (FPC Slot 11, PIC Slot 0) init: kmd4 (PID 179) started</em> _Jan 29 12:02:54 _fw1<em> (FPC Slot 11, PIC Slot 1) init: kmd1 (PID 176) started</em> _Jan 29 12:02:55 _fw1<em> (FPC Slot 11, PIC Slot 1) init: kmd2 (PID 177) started</em> _Jan 29 12:02:55 _fw1<em> (FPC Slot 11, PIC Slot 1) init: kmd3 (PID 178) started</em> _Jan 29 12:02:55 _fw1<em> (FPC Slot 11, PIC Slot 1) init: kmd4 (PID 180) started</em> _Jan 29 12:03:13 _fw1<em> (FPC Slot 4, PIC Slot 0) init: kmd1 (PID 176) started</em> _Jan 29 12:03:13 _fw1<em> (FPC Slot 4, PIC Slot 0) init: kmd2 (PID 177) started</em> _Jan 29 12:03:13 _fw1<em> (FPC Slot 4, PIC Slot 0) init: kmd3 (PID 178) started</em> _Jan 29 12:03:13 _fw1<em> (FPC Slot 4, PIC Slot 0) init: kmd4 (PID 179) started</em> _Jan 29 12:03:14 _fw1<em> (FPC Slot 5, PIC Slot 0) init: kmd1 (PID 176) started</em> _Jan 29 12:03:14 _fw1<em> (FPC Slot 5, PIC Slot 0) init: kmd2 (PID 177) started</em> _Jan 29 12:03:14 _fw1<em> (FPC Slot 5, PIC Slot 0) init: kmd3 (PID 178) started</em> _Jan 29 12:03:15 _fw1<em> (FPC Slot 5, PIC Slot 0) init: kmd4 (PID 179) started</em>   Check the security log to verify &ldquo;<em>show log kmed</em>&rdquo; <em>Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_ipc_err_handler: status: 1: usp_ipc_client_open: failed to connect to the server after 5 retries Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_send_msg_to_spu: failed to connect to iked_spu on SPU - Connection refused. Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_ipc_err_handler: status: 1: usp_ipc_client_open: failed to connect to the server after 5 retries Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_send_msg_to_spu: failed to connect to iked_spu on SPU - Connection refused. Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_ipc_err_handler: status: 1: usp_ipc_client_open: failed to connect to the server after 5 retries Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_send_msg_to_spu: failed to connect to iked_spu on SPU - Connection refused. Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_ipc_err_handler: status: 1: usp_ipc_client_open: failed to connect to the server after 5 retries Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_send_msg_to_spu: failed to connect to iked_spu on SPU - Connection refused. Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_ipc_err_handler: status: 1: usp_ipc_client_open: failed to connect to the server after 5 retries</em>   Yeah, looks suspicious.  Lets restart ipsec-key-management and see if that helps. &ldquo;<em>restart ipsec-key-management&rdquo;.  </em> <strong><em>Note: If this does not work, you may have to drop to the shell and kill it like a unix process.  </em></strong> <em>&ldquo;start shell&rdquo;</em> &ldquo;kill -9 kmd&rdquo; Idle process should now be back to normal.</p>
+
+<p><a href="http://www.forwardingplane.net/wp-content/uploads/2013/02/Screen-Shot-2013-02-02-at-12.24.11-PM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2013/02/Screen-Shot-2013-02-02-at-12.24.11-PM.png" alt="Screen Shot 2013-02-02 at 12.24.11 PM" /></a></p>
+
+<p>  CPU&rsquo;s were at a &ldquo;normal&rdquo; state in our environment has the idle process near 90% (+/-).  In the future this will be monitored so that this problem does sneak up on us. Now, the right way to remedy this is to disable those services if you don&rsquo;t need them.  If you do not plan to terminate VPN tunnels, there is no reason to run the services (on by default) to do so.  We opted to both disable and do a more inclusive loopback filter which seems to have taken care of the problem. Take aways from this is multi faceted.  The SRX is a weird beast. It&rsquo;s JunOS, so the inclination is to treat it like a router, but it &rsquo;s not.  It&rsquo;s a firewall.  And an IPS. And a router. I&rsquo;m planning to write up an &ldquo;SRX command cheat sheet&rdquo; for this because it&rsquo;s got enough different pieces and commands that I believe it warrants one.  Secondly, there are a lot of intricacies in monitoring these devices since they arent just routers.  I&rsquo;m hoping to come up with a best practice for monitoring an SRX cluster in a carrier type environment as well.  I&rsquo;m sure they&rsquo;ll both be living documents.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/routing">Routing</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/security">Security</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/427/"
+                class="button big previous">Open source or open standards?</a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/identify-and-remedy-problem-ike-and-eventd-processes-on-juniper-srx-comments/"
+                class="button big next">Identify and remedy problem IKE and eventd processes on Juniper SRX</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/">Building a dynamic security infrastructure [in a box - with SDN]</a>
+              </h3>
+              
+              <time class="published" datetime='2019-05-29'>
+                May 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration-archives on ForwardingPlane.net</title>
+    <link>https://forwardingplane.net/configuration-archive/</link>
+    <description>Recent content in Configuration-archives on ForwardingPlane.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2019, all rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 May 2019 07:23:50 -0600</lastBuildDate>
+    
+	<atom:link href="https://forwardingplane.net/configuration-archive/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Renaming interfaces under linux</title>
+      <link>https://forwardingplane.net/configuration-archive/renaming-interfaces-under-linux/</link>
+      <pubDate>Tue, 28 May 2019 07:23:50 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/renaming-interfaces-under-linux/</guid>
+      <description>There are many of us that learned Linux in the very early days, and with that history comes habits. One habit I have is to look for spec interface names. In particular, I prefer to have my interfaces named eth* (with some notables exceptions here). Modern linux systems seem to have adopted the BSD methodology of naming the interfaces based on what it is &amp;#8211; and while I did do a fair amount of work in BSD, I still prefer the eth naming scheme.</description>
+    </item>
+    
+    <item>
+      <title>ISC dhcp and dhcpv6 relay</title>
+      <link>https://forwardingplane.net/configuration-archive/dhcp-and-dhcpv6-relay/</link>
+      <pubDate>Sat, 16 Mar 2019 10:00:52 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/dhcp-and-dhcpv6-relay/</guid>
+      <description>When deploying dual stack, dhcpv6 is a crucial piece of the puzzle. I personally prefer to run the dhcp process on a linux system and relay it for both v4 and v6. Assuming you are installing isc-dhcpd, the following configurations can be used to delegate host addresses for both IPv4 and IPv6
+ #
+# Sample configuration file for ISC dhcpd for Debian / Ubuntu
+# Examples provided without support by buraglio@forwardingplane.</description>
+    </item>
+    
+    <item>
+      <title>Enabling LLDP</title>
+      <link>https://forwardingplane.net/configuration-archive/enabling-lldp/</link>
+      <pubDate>Wed, 06 Mar 2019 20:00:11 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/enabling-lldp/</guid>
+      <description>Enabling LLDP can aid in understanding network and system topologies, I am very much in favor of running it and largely dismiss the perceived security issues surrounding it, when done correctly and with full knowledge of what it is being enabled.
+Enable LLDP on a SROS based Nokia (formerly Alcatel-Lucent). It is per physical port, so replace 1/1/1 with your physical port and replicate on every port you want it to run on</description>
+    </item>
+    
+    <item>
+      <title>FreeRTR basic configurations</title>
+      <link>https://forwardingplane.net/configuration-archive/freertr-basic-configurations/</link>
+      <pubDate>Sat, 02 Mar 2019 11:00:49 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/freertr-basic-configurations/</guid>
+      <description>From the freertr website:
+freeRouter is a free, open source router os process
+it speaks routing protocols, and (re)encapsulates packets on interfaces (a huge list of encapsulation and routing test cases can be found under self-test page)since it handles packets itself, it is independent of underlaying os capabilities(optionally, it can export forwarding tables through openflow to external switch)since it is an unprivilegized process, it receives and sends packets through socketsthere are external, privileged processes that place traffic to these sockets(it means that internet can be used as backplane for router processes) the command line tries to mimic the industry standards with one exception: no global routing table: every routedinterface must be in a virtual routing table positive side effect: there are no vrf-awareness questions As notes in my FreeRTR post, FreeRTR is a wonderful alternative to labbing up protocols and provides an incredible array of protocol support.</description>
+    </item>
+    
+    <item>
+      <title>Enable Telnet access on MacOS High Sierra</title>
+      <link>https://forwardingplane.net/configuration-archive/enable-telnet-access-on-macos-high-sierra/</link>
+      <pubDate>Sat, 02 Mar 2019 10:11:38 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/enable-telnet-access-on-macos-high-sierra/</guid>
+      <description>Lots of things changed under the hood in MacOS high sierra. One of those was to enable a sandbox like environment and to remove insecure communication protocols. This breaks things like console communication to the network modeling and virtualization platform Eve-NG. It&amp;#8217;s fairly trivial to re-enable it, however. This can be accomplished by doing the following steps.
+Install Homebrew. Open your favorite terminal application (I like to use iTerm2 (also installable via homebrew), but Terminal works fine.</description>
+    </item>
+    
+    <item>
+      <title>Basic IOS-XR command cheat sheet</title>
+      <link>https://forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/</link>
+      <pubDate>Wed, 20 Feb 2019 14:05:58 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/basic-ios-xr-command-cheat-sheet/</guid>
+      <description>Some basic commands that I have found useful in managing an ASR9K / IOS-XR device. This page is likely to grow and change over time.
+Clear ARP
+clear arp-cache &amp;lt;interface&amp;gt; &amp;lt;IPv4 addr&amp;gt; location all  BGP
+show bgp all unicast summary  BGP Routes
+show bgp ipv[4/6] unicast neighbors &amp;lt;neighbor&amp;gt; received route
+show bgp ipv[4/6] unicast advertised neighbor &amp;lt;neighbor&amp;gt; show bgp ipv[4/6] unicast summary
+show bgp ipv[4/6] unicast summary
+clear bgp ipv[4/6] unicast &amp;lt;neighbor&amp;gt; soft in</description>
+    </item>
+    
+    <item>
+      <title>Upgrade Single ASR9k hw-module</title>
+      <link>https://forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/</link>
+      <pubDate>Wed, 20 Feb 2019 13:58:08 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/upgrade-an-asr9k-hardware-module/</guid>
+      <description>ASR9k is a powerful device but management may be daunting to anyone not familiar with IOS-XR. Inserting new line cards in may require a manual upgrade of the module to match the current running code on the chassis
+Show all slow and firmware details:
+show hw-module fpd location rack/slot/subslot In the admin prompt:
+upgrade hw-module fpd all location 0/RSP1/CPU0 During the upgrade, this is the output, it will take a bit of time to perform the update.</description>
+    </item>
+    
+    <item>
+      <title>Nokia SROS useful commands</title>
+      <link>https://forwardingplane.net/configuration-archive/nokia-sros-useful-commands/</link>
+      <pubDate>Tue, 19 Feb 2019 08:30:08 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/nokia-sros-useful-commands/</guid>
+      <description>Nokia (formerly Alcatel-Lucent, formerly Timetra) have an extremely robust routing platform, but it has some notable differences if you&amp;#8217;re coming from a vendor such as Cisco or Juniper (or any vendor platform in the enterprise space, really). Things like &amp;#8220;VLANs&amp;#8221; don&amp;#8217;t really exist, as this is more of a metro / carrier / customer provisioning style device, so modular concepts are expected and baked into the OS at the deepest layers, unlike many of the other vendor platforms that support it but it feels like an add-in or addendum to the base routing instance.</description>
+    </item>
+    
+    <item>
+      <title>Mikrotik OpenVPN server</title>
+      <link>https://forwardingplane.net/configuration-archive/mikrotik-openvpn-example/</link>
+      <pubDate>Mon, 18 Feb 2019 14:14:40 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/mikrotik-openvpn-example/</guid>
+      <description>Mikrotik is one of my favorite routing and MPLS platforms for doing lab and small ISP work. This one is pretty darned easy if you&amp;#8217;re willing to use self-signed certificates, and pretty trivial to add legitimate certificates if you are so inclined.
+/certificate add name=ca common-name=ca key-usage=key-cert-sign,crl-sign
+/certificate sign ca ca-crl-host=10.255.255.4 name=ca
+/certificate export-certificate ca
+/certificate add name=gw-dsl common-name=gw.yourcompany.com
+/certificate add name=vpnclient1 common-name=client1
+/certificate sign gw-dsl ca=ca name=gw.yourcompany.com
+/certificate sign vpnclient1 ca=ca name=client1 /ip pool add name=ovpn-pool range=10.</description>
+    </item>
+    
+    <item>
+      <title>EdgeOS OpenVPN</title>
+      <link>https://forwardingplane.net/configuration-archive/edgeos-openvpn/</link>
+      <pubDate>Mon, 18 Feb 2019 14:05:37 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/edgeos-openvpn/</guid>
+      <description>OpenVPN is a great technology but can be a bit of a bear to configure. A large part of the complexity with OpenVPN is the certificates, many are put off my them and for good reason. They can be confusing and hard to follow. The certificates can be generated off box pretty easily and that&amp;#8217;s how I tend to do it. This configuration should work on both EdgeMAX and Unifi USG devices, although the latter will require some additional work to make it persist across provisioning events.</description>
+    </item>
+    
+    <item>
+      <title>Mikrotik IPv6 DHCPv6-PD configuration</title>
+      <link>https://forwardingplane.net/configuration-archive/mikrotik-ipv6-dhcpv6-pd-configuration/</link>
+      <pubDate>Mon, 18 Feb 2019 13:26:52 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/mikrotik-ipv6-dhcpv6-pd-configuration/</guid>
+      <description>For a small to medium ISPs (especially WISPs) looking to move to IPv6 dual-stack, the right way to deploy is to use DHCPv6 prefix delegation. Here is an example of how to do this in-skin (i.e. on the mikrotik itself rather than a relay).
+/ipv6 dhcp-server
+add address-pool=vl100-v6-pd-pool interface=ether5.100 name=vl100-v6-pd
+add address-pool=vl101-v6-pd-pool interface=ether3.101 name=vl101-v6-pd
+add address-pool=vl102-v6-pd-pool interface=ether2.102 name=vl102-v6-pd
+add address-pool=vl106-v6-pd-pool interface=ether1.106 name=vl106-v6-pd
+add address-pool=vl108-v6-pd-pool interface=ether4.108 name=vl108-v6-pd /ipv6 pool
+add comment=&#34;VLAN103 IPv6 prefix delegation pool&#34;</description>
+    </item>
+    
+    <item>
+      <title>Comcast Business IPv6 Prefix Delegation</title>
+      <link>https://forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/</link>
+      <pubDate>Mon, 18 Feb 2019 12:58:29 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/comcast-business-ipv6-prefix-delegation/</guid>
+      <description>Comcast Business class service has some quirks when using the Cisco branded business gateway. Essentially, the prefix delegation will not work without very specific configuration options on the client. In order to run your own network border (i.e. not using their device as the first hop router for your LAN(s)), the following is required. In addition, with static IP addresses also comes with a static IPv6 prefix delegation.
+For Ubiquity EdgeOS (or a derivative like a Unifi USG) the following needs to be set (eth2 is the port facing the comcast router)</description>
+    </item>
+    
+    <item>
+      <title>Mikrotik Routed VLANs (non-CRS)</title>
+      <link>https://forwardingplane.net/configuration-archive/mikrotik-routed-vlans-non-crs/</link>
+      <pubDate>Mon, 18 Feb 2019 11:57:21 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/mikrotik-routed-vlans-non-crs/</guid>
+      <description>Add a simple set of VLANs to a CCR or other non-CRS RouterBoard.
+/interface vlan add interface=sfpplus1 name=sfpplus1.4 vlan-id=4 comment=&#34;VLAN ID 4&#34;
+add interface=sfpplus1 name=sfpplus1.5 vlan-id=5 comment=&#34;VLAN ID 5&#34;
+add interface=sfpplus1 name=sfpplus1.6 vlan-id=6 comment=&#34;VLAN ID 6&#34;
+add interface=sfpplus1 name=sfpplus1.7 vlan-id=7 comment=&#34;VLAN ID 7&#34;
+add interface=sfpplus1 name=sfpplus1.8 vlan-id=8 comment=&#34;VLAN ID 8&#34;
+add interface=sfpplus1 name=sfpplus1.9 vlan-id=9 comment=&#34;VLAN ID 9&#34; Add IP addressing to each VLAN
+/ipv6 address add address=2001:db8:c33e:f0::1/64 advertise=no
+add address=2001:db8:c:f4::1/64 advertise=yes interface=sfpplus1.</description>
+    </item>
+    
+    <item>
+      <title>EdgeOS weighted load balance</title>
+      <link>https://forwardingplane.net/configuration-archive/edgeos-weighted-load-balance/</link>
+      <pubDate>Mon, 18 Feb 2019 11:37:39 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/edgeos-weighted-load-balance/</guid>
+      <description>set load-balance group LoadBalance_WAN interface route-test initial-delay 15
+set load-balance group LoadBalance_WAN interface route-test interval 5
+set load-balance group LoadBalance_WAN interface route-test type ping target set load-balance group LoadBalance_WAN interface weight 95 # weight based on more bandwidth set load-balance group LoadBalance_WAN interface route-test initial-delay 15
+set load-balance group LoadBalance_WAN interface route-test interval 5
+set load-balance group LoadBalance_WAN interface route-test type ping target set load-balance group LoadBalance_WAN interface weight 5 # weight based on less bandwidth Share this:   Twitter  Email  Print  LinkedIn  Facebook  Reddit  Tumblr  Pinterest  Pocket       </description>
+    </item>
+    
+    <item>
+      <title>VMWare ESXi CLI reference</title>
+      <link>https://forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/</link>
+      <pubDate>Sun, 30 Jun 2013 08:08:11 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/vmware-esxi-cli-reference/</guid>
+      <description>All of these commands require ssh to be enabled on the VMware host and were tested on 5.1.
+Power off a VM
+vim-cmd vmsvc/power.getstate List power state of VM:
+vim-cmd vmsvc/power.of Power on VM
+vim-cmd vmsvc/power.on List all VMs:
+vim-cmd vmsvc/getallvms Other important commands under vmsvc:
+acquiremksticket get.snapshotinfo
+acquireticket get.spaceNeededForConsolidation
+connect get.summary
+convert.toTemplate get.tasklist
+convert.toVm getallvms
+createdummyvm gethostconstraints
+destroy login
+device.connection logout
+device.connusbdev message
+device.disconnusbdev power.getstate
+device.diskadd power.hibernate
+device.diskaddexisting power.off</description>
+    </item>
+    
+    <item>
+      <title>KVM virsh command reference</title>
+      <link>https://forwardingplane.net/configuration-archive/kvm-virsh-command-referenc/</link>
+      <pubDate>Fri, 01 Mar 2013 14:28:32 -0600</pubDate>
+      
+      <guid>https://forwardingplane.net/configuration-archive/kvm-virsh-command-referenc/</guid>
+      <description>From the help command, here is a reference sheet for the virsh command:
+virsh [options]... [&amp;lt;command_string&amp;gt;] virsh [options]... &amp;lt;command&amp;lt;/command [args...] options: -c | --connect=URI hypervisor connection URI -r | --readonly connect readonly -d | --debug=NUM debug level [0-4] -h | --help this help -q | --quiet quiet mode -t | --timing print timing information -l | --log=FILE output logging to file -v short version -V long version --version[=TYPE] version, TYPE is short or long (default short) -e | --escape set escape sequence for console commands (non interactive mode): Domain Management (help keyword &#39;domain&#39;) attach-device attach device from an XML file attach-disk attach disk device attach-interface attach network interface autostart autostart a domain blkdeviotune Set or query a block device I/O tuning parameters.</description>
+    </item>
+    
+  </channel>
+</rss>

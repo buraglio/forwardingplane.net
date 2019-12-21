@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/">
+<meta property="og:title" content="ForwardingPlane.net" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://forwardingplane.net/" />
+
+<meta property="og:updated_time" content="2019-09-08T18:11:58+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ForwardingPlane.net"/>
+<meta name="twitter:description" content=""/>
+
+
+<meta itemprop="name" content="ForwardingPlane.net">
+<meta itemprop="description" content="">
+
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     ForwardingPlane.net 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<main>
+
+
+  
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/public/configuration-archive/upgrade-an-asr9k-hardware-module/'> Upgrade Single ASR9k hw-module</a> </h2>
+    <div class="meta">
+      <div class="date">
+      20 Feb, 2019 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    ASR9k is a powerful device but management may be daunting to anyone not familiar with IOS-XR. Inserting new line cards in may require a manual upgrade of the module to match the current running code on the chassis
+Show all slow and firmware details:
+show hw-module fpd location rack/slot/subslot In the admin prompt:
+upgrade hw-module fpd all location 0/RSP1/CPU0 During the upgrade, this is the output, it will take a bit of time to perform the update.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/public/configuration-archive/upgrade-an-asr9k-hardware-module/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/public/post/upgrade-an-asr9k-hardware-module/'> Upgrade Single ASR9k hw-module</a> </h2>
+    <div class="meta">
+      <div class="date">
+      20 Feb, 2019 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    ASR9k is a powerful device but management may be daunting to anyone not familiar with IOS-XR. Inserting new line cards in may require a manual upgrade of the module to match the current running code on the chassis
+Show all slow and firmware details:
+show hw-module fpd location _rack/slot/subslot_  In the admin prompt:
+upgrade hw-module fpd all location 0/RSP1/CPU0  During the upgrade, this is the output, it will take a bit of time to perform the update.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/public/post/upgrade-an-asr9k-hardware-module/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/public/configuration-archive/nokia-sros-useful-commands/'> Nokia SROS useful commands</a> </h2>
+    <div class="meta">
+      <div class="date">
+      19 Feb, 2019 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    Nokia (formerly Alcatel-Lucent, formerly Timetra) have an extremely robust routing platform, but it has some notable differences if you&#8217;re coming from a vendor such as Cisco or Juniper (or any vendor platform in the enterprise space, really). Things like &#8220;VLANs&#8221; don&#8217;t really exist, as this is more of a metro / carrier / customer provisioning style device, so modular concepts are expected and baked into the OS at the deepest layers, unlike many of the other vendor platforms that support it but it feels like an add-in or addendum to the base routing instance.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/public/configuration-archive/nokia-sros-useful-commands/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/public/post/nokia-sros-useful-commands/'> Nokia SROS useful commands</a> </h2>
+    <div class="meta">
+      <div class="date">
+      19 Feb, 2019 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    Nokia (formerly Alcatel-Lucent, formerly Timetra) have an extremely robust routing platform, but it has some notable differences if you&rsquo;re coming from a vendor such as Cisco or Juniper (or any vendor platform in the enterprise space, really). Things like &ldquo;VLANs&rdquo; don&rsquo;t really exist, as this is more of a metro / carrier / customer provisioning style device, so modular concepts are expected and baked into the OS at the deepest layers, unlike many of the other vendor platforms that support it but it feels like an add-in or addendum to the base routing instance.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/public/post/nokia-sros-useful-commands/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/public/configuration-archive/mikrotik-openvpn-example/'> Mikrotik OpenVPN server</a> </h2>
+    <div class="meta">
+      <div class="date">
+      18 Feb, 2019 - 1 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    Mikrotik is one of my favorite routing and MPLS platforms for doing lab and small ISP work. This one is pretty darned easy if you&#8217;re willing to use self-signed certificates, and pretty trivial to add legitimate certificates if you are so inclined.
+/certificate add name=ca common-name=ca key-usage=key-cert-sign,crl-sign
+/certificate sign ca ca-crl-host=10.255.255.4 name=ca
+/certificate export-certificate ca
+/certificate add name=gw-dsl common-name=gw.yourcompany.com
+/certificate add name=vpnclient1 common-name=client1
+/certificate sign gw-dsl ca=ca name=gw.yourcompany.com
+/certificate sign vpnclient1 ca=ca name=client1 /ip pool add name=ovpn-pool range=10.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/public/configuration-archive/mikrotik-openvpn-example/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/public/post/mikrotik-openvpn-example/'> Mikrotik OpenVPN server</a> </h2>
+    <div class="meta">
+      <div class="date">
+      18 Feb, 2019 - 1 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    Mikrotik is one of my favorite routing and MPLS platforms for doing lab and small ISP work. This one is pretty darned easy if you&rsquo;re willing to use self-signed certificates, and pretty trivial to add legitimate certificates if you are so inclined.
+/certificate add name=ca common-name=ca key-usage=key-cert-sign,crl-sign /certificate sign ca ca-crl-host=10.255.255.4 name=ca /certificate export-certificate ca /certificate add name=gw-dsl common-name=gw.yourcompany.com /certificate add name=vpnclient1 common-name=client1 /certificate sign gw-dsl ca=ca name=gw.yourcompany.com /certificate sign vpnclient1 ca=ca name=client1 /ip pool add name=ovpn-pool range=10.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/public/post/mikrotik-openvpn-example/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/public/configuration-archive/edgeos-openvpn/'> EdgeOS OpenVPN</a> </h2>
+    <div class="meta">
+      <div class="date">
+      18 Feb, 2019 - 5 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    OpenVPN is a great technology but can be a bit of a bear to configure. A large part of the complexity with OpenVPN is the certificates, many are put off my them and for good reason. They can be confusing and hard to follow. The certificates can be generated off box pretty easily and that&#8217;s how I tend to do it. This configuration should work on both EdgeMAX and Unifi USG devices, although the latter will require some additional work to make it persist across provisioning events.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/public/configuration-archive/edgeos-openvpn/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/public/post/edgeos-openvpn/'> EdgeOS OpenVPN</a> </h2>
+    <div class="meta">
+      <div class="date">
+      18 Feb, 2019 - 5 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    OpenVPN is a great technology but can be a bit of a bear to configure. A large part of the complexity with OpenVPN is the certificates, many are put off my them and for good reason. They can be confusing and hard to follow. The certificates can be generated off box pretty easily and that&rsquo;s how I tend to do it. This configuration should work on both EdgeMAX and Unifi USG devices, although the latter will require some additional work to make it persist across provisioning events.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/public/post/edgeos-openvpn/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/public/configuration-archive/mikrotik-ipv6-dhcpv6-pd-configuration/'> Mikrotik IPv6 DHCPv6-PD configuration</a> </h2>
+    <div class="meta">
+      <div class="date">
+      18 Feb, 2019 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    For a small to medium ISPs (especially WISPs) looking to move to IPv6 dual-stack, the right way to deploy is to use DHCPv6 prefix delegation. Here is an example of how to do this in-skin (i.e. on the mikrotik itself rather than a relay).
+/ipv6 dhcp-server
+add address-pool=vl100-v6-pd-pool interface=ether5.100 name=vl100-v6-pd
+add address-pool=vl101-v6-pd-pool interface=ether3.101 name=vl101-v6-pd
+add address-pool=vl102-v6-pd-pool interface=ether2.102 name=vl102-v6-pd
+add address-pool=vl106-v6-pd-pool interface=ether1.106 name=vl106-v6-pd
+add address-pool=vl108-v6-pd-pool interface=ether4.108 name=vl108-v6-pd /ipv6 pool
+add comment="VLAN103 IPv6 prefix delegation pool"
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/public/configuration-archive/mikrotik-ipv6-dhcpv6-pd-configuration/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://forwardingplane.net/public/post/mikrotik-ipv6-dhcpv6-pd-configuration/'> Mikrotik IPv6 DHCPv6-PD configuration</a> </h2>
+    <div class="meta">
+      <div class="date">
+      18 Feb, 2019 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    For a small to medium ISPs (especially WISPs) looking to move to IPv6 dual-stack, the right way to deploy is to use DHCPv6 prefix delegation. Here is an example of how to do this in-skin (i.e. on the mikrotik itself rather than a relay).
+/ipv6 dhcp-server add address-pool=vl100-v6-pd-pool interface=ether5.100 name=vl100-v6-pd add address-pool=vl101-v6-pd-pool interface=ether3.101 name=vl101-v6-pd add address-pool=vl102-v6-pd-pool interface=ether2.102 name=vl102-v6-pd add address-pool=vl106-v6-pd-pool interface=ether1.106 name=vl106-v6-pd add address-pool=vl108-v6-pd-pool interface=ether4.108 name=vl108-v6-pd `````` /ipv6 pool add comment=&quot;VLAN103 IPv6 prefix delegation pool&quot; name=vl103-v6-pd-pool prefix=2001:db8:1a:b000::/48 prefix-length=59 add comment=&quot;VLAN100 IPv6 prefix delegation pool&quot; name=vl100-v6-pd-pool prefix=2001:db8:1a:8800::/48 prefix-length=59 add comment=&quot;VLAN101 IPv6 prefix delegation pool&quot; name=vl101-v6-pd-pool prefix=2001:db8:1a:9000::/48 prefix-length=59 add comment=&quot;VLAN106 IPv6 prefix delegation pool&quot; name=vl106-v6-pd-pool prefix=2001:db8:1a:9800::/48 prefix-length=59 add comment=&quot;VLAN108 IPv6 prefix delegation pool&quot; name=vl108-v6-pd-pool prefix=2001:db8:1a:a000::/48 prefix-length=59 add comment=&quot;VLAN102 IPv6 prefix delegation pool&quot; name=vl102-v6-pd-pool prefix=2001:db8:1a:a800::/48 prefix-length=59 `````` /ipv6 address add address=2001:db8:1a:103::1 disabled=yes interface=bridge.
+  </div>
+
+  <div class="rmore">
+    <a href='https://forwardingplane.net/public/post/mikrotik-ipv6-dhcpv6-pd-configuration/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+
+
+<div class="page-nav">
+  <div class="page-prev">
+    
+        <a href="https://forwardingplane.net/page/2/" title="Previous page" > &lt;&lt; </a>
+    
+  </div> 
+
+  <div class="page-num">
+    3/37
+  </div> 
+
+  <div class="page-next">
+    
+    <a href="https://forwardingplane.net/page/4/" title="Next page"> >> </a>
+    
+  </div> 
+</div> 
+
+
+</main>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

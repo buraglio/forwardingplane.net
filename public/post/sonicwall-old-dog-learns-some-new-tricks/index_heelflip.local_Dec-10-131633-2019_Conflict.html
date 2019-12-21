@@ -1,0 +1,653 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "Sonicwall - Old dog learns [some] new tricks",
+        "headline" : "Sonicwall - Old dog learns [some] new tricks",
+        "description" : "~12 years ago I had a drinking buddy that worked with me at the regional ISP. We had a lot in common, he had been an icon back in the didjits era of punk rock in Champaign Urbana and we had briefly been in a terrible band together. He introduced me to a dude that to this day I just knew as \x26ldquo;Ravi Sonicwall\x26rdquo;. He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying \x26ldquo;when I\x26rsquo;m in town, I buy the beers\x26rdquo;).",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2012",
+        "datePublished": "2012-12-08 00:00:26 \x2b0000 \x2b0000",
+        "dateModified" : "2012-12-08 00:00:26 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/sonicwall-old-dog-learns-some-new-tricks\/",
+        "wordCount" : "878",
+        "keywords" : [ "Firewall","Security","Security","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Sonicwall - Old dog learns [some] new tricks</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sonicwall - Old dog learns [some] new tricks"/>
+<meta name="twitter:description" content="~12 years ago I had a drinking buddy that worked with me at the regional ISP. We had a lot in common, he had been an icon back in the didjits era of punk rock in Champaign Urbana and we had briefly been in a terrible band together. He introduced me to a dude that to this day I just knew as &ldquo;Ravi Sonicwall&rdquo;. He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying &ldquo;when I&rsquo;m in town, I buy the beers&rdquo;)."/>
+
+        <meta property="og:title" content="Sonicwall - Old dog learns [some] new tricks" />
+<meta property="og:description" content="~12 years ago I had a drinking buddy that worked with me at the regional ISP. We had a lot in common, he had been an icon back in the didjits era of punk rock in Champaign Urbana and we had briefly been in a terrible band together. He introduced me to a dude that to this day I just knew as &ldquo;Ravi Sonicwall&rdquo;. He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying &ldquo;when I&rsquo;m in town, I buy the beers&rdquo;)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks/" />
+<meta property="article:published_time" content="2012-12-08T00:00:26+00:00" />
+<meta property="article:modified_time" content="2012-12-08T00:00:26+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Sonicwall - Old dog learns [some] new tricks">
+<meta itemprop="description" content="~12 years ago I had a drinking buddy that worked with me at the regional ISP. We had a lot in common, he had been an icon back in the didjits era of punk rock in Champaign Urbana and we had briefly been in a terrible band together. He introduced me to a dude that to this day I just knew as &ldquo;Ravi Sonicwall&rdquo;. He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying &ldquo;when I&rsquo;m in town, I buy the beers&rdquo;).">
+
+
+<meta itemprop="datePublished" content="2012-12-08T00:00:26&#43;00:00" />
+<meta itemprop="dateModified" content="2012-12-08T00:00:26&#43;00:00" />
+<meta itemprop="wordCount" content="878">
+
+
+
+<meta itemprop="keywords" content="Firewall,Security,Security," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/">Building a dynamic security infrastructure [in a box - with SDN]</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-05-29'>
+                                    May 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fsonicwall-old-dog-learns-some-new-tricks%2f&amp;text=Sonicwall%20-%20Old%20dog%20learns%20%5bsome%5d%20new%20tricks&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fsonicwall-old-dog-learns-some-new-tricks%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fsonicwall-old-dog-learns-some-new-tricks%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fsonicwall-old-dog-learns-some-new-tricks%2f&amp;title=Sonicwall%20-%20Old%20dog%20learns%20%5bsome%5d%20new%20tricks" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fsonicwall-old-dog-learns-some-new-tricks%2f&amp;title=Sonicwall%20-%20Old%20dog%20learns%20%5bsome%5d%20new%20tricks" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fsonicwall-old-dog-learns-some-new-tricks%2f&amp;title=Sonicwall%20-%20Old%20dog%20learns%20%5bsome%5d%20new%20tricks" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fsonicwall-old-dog-learns-some-new-tricks%2f&amp;description=Sonicwall%20-%20Old%20dog%20learns%20%5bsome%5d%20new%20tricks" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fsonicwall-old-dog-learns-some-new-tricks%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks/">Sonicwall - Old dog learns [some] new tricks</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2012-12-08'>
+            December 8, 2012</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>~12 years ago I had a drinking buddy that worked with me at the regional ISP.   We had a lot in common, he had been an icon back in the <a href="http://en.wikipedia.org/wiki/The_Didjits">didjits</a> era of punk rock in Champaign Urbana and we had briefly been in a terrible band together.  He introduced me to a dude that to this day I just knew as &ldquo;Ravi Sonicwall&rdquo;.  He had apparently been recruited from the U of I, written a lot of the low level pieces of the original sonicwall and retired to enjoy life and buy beers (he actually scolded me at a bar for buying him a beer saying &ldquo;when I&rsquo;m in town, I buy the beers&rdquo;). I had purchased a few sonicwall boxes after that, having only really used linux, IOS, checkpoint on nokia boxes and *<em>shudder</em>* Novell Border manager.  I liked the boxes since they had a GUI and I could hand off day-to-day operations to someone that !=Me.  After a year or so in production, I started to become frustrated with them,  the ones I had lacked a CLI completely and had fallen behind on the things I needed to do with them.   Their cost to feature wasn&rsquo;t there for what I needed and the ones I had purchased systematically had hardware failures all within 7 months.  I wrote off sonicwall completely at that point. Fast forward a decade. Sonicwall purchased by Dell. We&rsquo;ve heavily invested in the <a href="http://www.juniper.net/us/en/products-services/security/srx-series/">Juniper SRX</a>. The SRX mostly does what we ask of it (talk to me about Oracle replication through one and their SQL ALG). The SRX has some limitation as far as management and display of eye candy. While I personally like a CLI to rummage around in, not everyone does.  <a href="http://www.paloaltonetworks.com">Palo Alto Networks</a> has an amazing GUI.  Like, the best I&rsquo;ve ever seen.  Sonicwall&hellip;&hellip;well, theirs always left me wanting back in the day.  Now&hellip;..wow, a totally different ballgame. Don&rsquo;t get me wrong, I&rsquo;m not confident that the Sonicwall &ldquo;Super Massive&rdquo; won&rsquo;t compete (in this guys opinion) with a Juniper 5800.  <strong>However, </strong>their transparent mode is a tad better and their web management is an order of magnitude better.  Performance?  I don&rsquo;t think anything can touch an SRX loaded with SPCs, but the numbers are impressive.  I&rsquo;d like to do a bake off once I get some time (and a super massive in my lab) That being said, I gave the Sonicwall we have as a demo a good go around.  I found it&rsquo;s ease of setup pretty refreshing.  For those that have non-networking savvy security folks running these boxes, they&rsquo;ll likely love the interface.  I like the AppFlow Monitor.  It&rsquo;s a nice reprensentation of the transit data in an easy to understand format.  Here is an example of the box in my lab after running a few days. <a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM-1024x256.png" alt="" title="SonicWall AppFlow Monitor " /></a>  [](<a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM.png">http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM.png</a>)   The threat reports are nice as well, very eye candy and they seem pretty accurate based on what we threw at it and what we generally see in the wild west.   <a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.48-PM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.48-PM-1024x256.png" alt="" title="Screen Shot 2012-12-07 at 4.09.48 PM" /></a> <a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM1.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.09.41-PM1-1024x256.png" alt="" title="Screen Shot 2012-12-07 at 4.09.41 PM" /></a> <a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.10.00-PM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.10.00-PM-1024x256.png" alt="" title="Screen Shot 2012-12-07 at 4.10.00 PM" /></a>                         The real time monitor reminds me a lot of the Palo Alto.  It gives some serious eye candy, live, realtime graphs of any traffic transiting the box.  Very eye catching and I can see a use case for it. <a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.48.44-PM.png"><img src="http://www.forwardingplane.net/wp-content/uploads/2012/12/Screen-Shot-2012-12-07-at-4.48.44-PM-1024x635.png" alt="" title="Sonicwall Real Time Monitor" /></a> However, I find the management of the interfaces a bit clunky and the lack of non-beta IPv6 support is a but disappointing.  I&rsquo;ll be testing the IPv6 support soon, I&rsquo;m just waiting on the activation of the box I have to support it. Firmware updates seem to require a registration of the machine in their system, something I understand but the old school networking guy in me really hates feature licensing and remote activation of network hardware.  A lot.  the fact that every vendor seems to be doing it just makes my skin crawl, but such is life. The box comes with an SSL VPN server as well, I&rsquo;ve still been twiddling with getting mine working.  The smaller SOHO devices have wifi built in, but that&rsquo;s way outside of my scope, so I&rsquo;ll leave it at that.   The CLI isn&rsquo;t terrible, either.  It&rsquo;s more IOS that I remember, but a far cry from JunOS.  Tab complete works and there are a decent amount of options.  I&rsquo;ve not yet tried to configure much with it but have used the show commands some.  Here is an example from the small box we have: <em>User:admin</em> <em>Password:</em> <em>labfw&gt; show interface sta</em> _labfw&gt; show interface statistics _ <em>Interface statistics for X0</em> _ InDiscards : 0_ _ InNUcast : 401464_ _ InUcast : 4921467_ _ InOctets : 2207976060_ _ InErrs : 0_ _ OutDiscards : 37_ _ OutNUcast : 9733_ _ OutUcast : 5407031_ _ OutOctets : 3031626437_ _ OutErrs : 0_ _ InUnkProto : 0_ _ InMcast : 291793_ _ InBcast : 109671_ _ OutMcast : 0_ _ OutBcast : 9733_ <em>Interface statistics for X1</em> _ InDiscards : 0_ _ InNUcast : 5401982_ _ InUcast : 4496250_ _ InOctets : 3192806274_ _ InErrs : 0_ _ OutDiscards : 0_ _ OutNUcast : 54_ _ OutUcast : 4582195_ _ OutOctets : 2114718776_ _ OutErrs : 0_ _ InUnkProto : 0_ _ InMcast : 1500142_ _ InBcast : 3901840_ _ OutMcast : 0_ _ OutBcast : 54_  Overall, not a bad platform.  They&rsquo;ve certainly done their homework.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/firewall">Firewall</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/security">Security</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/security">Security</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/95/"
+                class="button big previous">Workflow and my mobile device setups.</a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/sonicwall-old-dog-learns-some-new-tricks-comments/"
+                class="button big next">Sonicwall - Old dog learns [some] new tricks</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/">Building a dynamic security infrastructure [in a box - with SDN]</a>
+              </h3>
+              
+              <time class="published" datetime='2019-05-29'>
+                May 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

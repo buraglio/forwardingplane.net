@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/a-missing-link-comments/">
+<meta property="og:title" content="A missing link in small MPLS, 10G devices." />
+<meta property="og:description" content="Nick Buraglio - Mar 6, 2013
+The qfabric stuff seems even more green than the EX series. Perhaps i should give it another look, but I didn&rsquo;t have the best experience with it in testing. My guess is the mpls support will be about the same as the EX series, but it&rsquo;s certainly one I did not consider. Thanks, I will give it another once over. EtherealMind - Apr 1, 2013" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/a-missing-link-comments/" />
+<meta property="article:published_time" content="2013-03-29T04:43:17+00:00" />
+<meta property="article:modified_time" content="2013-03-29T04:43:17+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A missing link in small MPLS, 10G devices."/>
+<meta name="twitter:description" content="Nick Buraglio - Mar 6, 2013
+The qfabric stuff seems even more green than the EX series. Perhaps i should give it another look, but I didn&rsquo;t have the best experience with it in testing. My guess is the mpls support will be about the same as the EX series, but it&rsquo;s certainly one I did not consider. Thanks, I will give it another once over. EtherealMind - Apr 1, 2013"/>
+
+
+<meta itemprop="name" content="A missing link in small MPLS, 10G devices.">
+<meta itemprop="description" content="Nick Buraglio - Mar 6, 2013
+The qfabric stuff seems even more green than the EX series. Perhaps i should give it another look, but I didn&rsquo;t have the best experience with it in testing. My guess is the mpls support will be about the same as the EX series, but it&rsquo;s certainly one I did not consider. Thanks, I will give it another once over. EtherealMind - Apr 1, 2013">
+
+
+<meta itemprop="datePublished" content="2013-03-29T04:43:17&#43;00:00" />
+<meta itemprop="dateModified" content="2013-03-29T04:43:17&#43;00:00" />
+<meta itemprop="wordCount" content="1731">
+
+
+
+<meta itemprop="keywords" content="IPv6,Musings,Routing," />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     A missing link in small MPLS, 10G devices. 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> A missing link in small MPLS, 10G devices. </h1>
+    <div class="content"> <p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-03-30 13:24:31">Mar 6, 2013</time></p>
+
+<p>The qfabric stuff seems even more green than the EX series. Perhaps i should give it another look, but I didn&rsquo;t have the best experience with it in testing. My guess is the mpls support will be about the same as the EX series, but it&rsquo;s certainly one I did not consider. Thanks, I will give it another once over.
+<hr /></p>
+
+<p><a href="http://etherealmind.com" title="greg.ferro@packetpushers.net">EtherealMind</a> - <time datetime="2013-04-01 02:40:28">Apr 1, 2013</time></p>
+
+<p>The product you want for campus backbones is also what most Enterprises would like to have for Top of Rack switching to extend MPLS to the server access layer. However the SDN market is moving to implement tunnels ( VXLAN) so there won&rsquo;t be any support for MPLS in the data centre (except from MPLS blowhards). There are several problems with MPLS in this platform. Because every MPLS entry and route requires a TCAM entry it&rsquo;s supposed to be expensive because you need a TCAM big enough to hold all the routes in your campus. Five years ago, switches could hold only 8000 MAC addresses, which is a problem today. So MPLS isn&rsquo;t a viable technology. Some of the MPLS tosspots are attempting to develop segmentation protocols to reduce TCAM cnsumption that might give you a long term solution but I&rsquo;m doubtful. There are so many knobs, buttons and levers on MPLS that who knows what is supported and not supported anymore ? (no one seems to know why TCAM is expensive but the vendors would like us to believe it).
+<hr /></p>
+
+<p>[Duane]( &ldquo;Duaneogrant@gmail.com&rdquo;) - <time datetime="2013-03-30 12:42:42">Mar 6, 2013</time></p>
+
+<p>Hi Nick, Have a look at a QFX 3500. It meets most of your requirements but MPLS is a bit of a question. If you look around, there appears to be lots of feature support in there, mostly from the qfabric stuff i&rsquo;m guessing. i don&rsquo;t know how official it is and i haven&rsquo;t had a chance to play with it but it might fit your needs. Have a chat with your SE. I did with mine and he&rsquo;s going to pose the question to the BU for me. We might be able to use them too. good luck! -Duane dg@qfxa# set ? Possible completions: + apply-groups Groups from which to inherit configuration data + apply-groups-except Don&rsquo;t inherit configuration data from these groups &gt; bfd Bidirectional Forwarding Detection (BFD) options &gt; bgp BGP options &gt; connections Circuit cross-connect configuration &gt; dcbx DCBX Protocol &gt; iccp ICCP options &gt; igmp IGMP options &gt; igmp-snooping IGMP Snooping Configuration &gt; isis IS-IS options &gt; lacp Link Aggregation Control Protocol configuration &gt; ldp LDP options &gt; link-management LMP options &gt; lldp Link Layer Detection Protocol &gt; lldp-med LLDP Media Endpoint Discovery &gt; mld MLD options &gt; mld-snooping MLD Snooping configuration &gt; mpls Multiprotocol Label Switching options &gt; msdp MSDP configuration &gt; mstp Multiple Spanning Tree Protocol options &gt; neighbor-discovery IPv6 neighbor discovery &gt; oam Operation, Administration, and Management configuration &gt; ospf OSPF configuration &gt; ospf3 OSPFv3 configuration &gt; pim PIM configuration &gt; rip RIP options &gt; router-advertisement IPv6 router advertisement options &gt; router-discovery ICMP router discovery options &gt; rstp Rapid Spanning Tree Protocol options &gt; rsvp RSVP options &gt; sflow SFLOW protocol &gt; stp Spanning Tree Protocol options &gt; uplink-failure-detection Uplink-failure-detection configuration &gt; vrrp VRRP options &gt; vstp VLAN Spanning Tree Protocol options dg@qfxa# set mpls ? Possible completions: admin-down Set GMPLS LSP to administrative down state &gt; admin-group Administrative group policy &gt; admin-group-extended Extended administrative group policy &gt; admin-groups Administrative groups advertisement-hold-time Time that an &lsquo;LSP down&rsquo; advertisement will be delayed + apply-groups Groups from which to inherit configuration data + apply-groups-except Don&rsquo;t inherit configuration data from these groups &gt; auto-policing Automatic policing of LSPs &gt; bandwidth Bandwidth to reserve (bps) class-of-service Class-of-service value (0..7) &gt; diffserv-te Global diffserv-traffic-engineering options disable Disable MPLS &gt; egress-protection Egress router protection exclude-srlg Exclude SRLG links for secondary path expand-loose-hop Perform CSPF path computation to expand loose hops explicit-null Advertise the EXPLICIT_NULL label when the router is the egress hop-limit Maximum allowed router hops (2..255) icmp-tunneling Allow MPLS LSPs to be used for tunneling ICMP error packets &gt; interface MPLS interface options ipv6-tunneling Allow MPLS LSPs to be used for tunneling IPv6 traffic &gt; label-switched-path Label-switched path &gt; log-updown Logging actions for LSP up/down events &gt; lsp-external-controller External path computing entity mib-mpls-show-p2mp Show p2mp tunnels entries in mpls mib walk no-cspf Disable automatic path computation no-decrement-ttl Do not decrement the TTL within an LSP no-propagate-ttl Disable TTL propagation from IP to MPLS (on push) and MPLS to IP (on pop) no-record Don&rsquo;t record transit routers &gt; oam Periodic OAM optimize-aggressive Run aggressive optimization algorithm based on IGP metric only optimize-hold-dead-delay Delay before tearing down the old optimized path (seconds) optimize-switchover-delay Delay before switching LSP to newly optimized path optimize-timer Periodical path reoptimizations (0..65535 seconds) &gt; path Route of a label-switched path &gt; path-mtu Path MTU configuration preference Preference value priority Preemption priorities record Record transit routers revert-timer Hold-down window before reverting back to primary path, 0 means disable rsvp-error-hold-time Time that RSVP PathErr events will be remembered (seconds) smart-optimize-timer Path optimization interval after a link traversed by the path goes down standby Keep backup paths in continuous standby &gt; static-label-switched-path Static label-switched path &gt; statistics Collect statistics for signaled label-switched paths &gt; traceoptions Trace options for MPLS traffic-engineering Protocols to perform traffic engineering &gt; transit-lsp-association Transit label switch path assoication ultimate-hop-popping Request ultimate hop popping from egress [edit protocols]
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-03-30 20:51:27">Mar 6, 2013</time></p>
+
+<p>That is great info. I&rsquo;d love to hear more about your deployment because honestly the qfx didn&rsquo;t even come onto my radar since my experience was strictly within qfabric. I agree, &ldquo;buy a router&rdquo; is a ridiculous statement to hear when you talk about a 380 building campus. 300+ MX80s? Riiiiight. Let me put those in the back of my company provided Maserati and drive them out to install.
+<hr /></p>
+
+<p>[Duane]( &ldquo;Duaneogrant@gmail.com&rdquo;) - <time datetime="2013-03-30 20:22:19">Mar 6, 2013</time></p>
+
+<p>Hi Nick, I didn&rsquo;t mean to suggest that you use the box in a fabric but rather standalone. Qfabric uses MPLS and ISIS under the hood to accomplish the qfabric magic, so I&rsquo;m hoping that fact coupled with the trident chips ability to deal with multiple tags might result in pretty complete MPLS support. The asic in the EX has a single tag limitation. i&rsquo;ve asked my SE about formal MPLS support and he&rsquo;s going to be talking to the BU next week. Have a look at the control plane on these things: 3Gb of RAM and a 12 core 1.2Ghz processor. That&rsquo;s quite a bit of control plane for a TOR&hellip; I&rsquo;m using the qfx in a relatively complicated ip edge roll. It&rsquo;s still cabled up to the Ixia, but so far, so good. When i ask some other vendors about specific features, they tell me to buy a router to do that job. Given the port counts and speeds that i&rsquo;m talking about, that pushes me into a pretty big box at 10X the cost. if i get around to looking at the qfx with MPLS enabled, i&rsquo;ll be sure to let you know. &ndash;Duane
+<hr /></p>
+
+<p>[Duane]( &ldquo;Duaneogrant@gmail.com&rdquo;) - <time datetime="2013-06-23 18:54:20">Jun 0, 2013</time></p>
+
+<p>Hi Nick, We&rsquo;ve got ex4550s running as well and they are nice boxes too (if you don&rsquo;t need mpls). I had to upgrade to the latest release to get DOM working and stop some spurious PSU messages from being sent, other than that, pretty smooth sailing. RE: Ex9200, there are 3 sizes, and they equate to mx240, mx480 and mx960. That said, the prices tag (and features) do not match the MX. These boxes are tailor made for a use case I have that doesn&rsquo;t require fancy hqos but does require some deep buffers. The REs in the box are 16G of memory and a quad core Intel chip for SDN uses. I don&rsquo;t need that today, but for the price, it makes the box even more useful for me as i look around the network.
+<hr /></p>
+
+<p><a href="http://www.netcraftsmen.net/about-us/bios/staff-articles-and-blogs/pete-welcher.html" title="pjw@netcraftsmen.net">Pete Welcher</a> - <time datetime="2013-04-18 18:27:36">Apr 4, 2013</time></p>
+
+<p>I&rsquo;ve thought along similar lines for quite a while, mostly re Cisco. It might be cost, it might be turf defense by the 6500 team (lots of internal clout until recently). But it might just be positioning &ndash; not anticipating a use case like this, and/or not having models with sufficient CPU / RAM / forwarding chips / whatever. Its a small enough market (?) that engineering something specifically for it is probably not cost effective? The use case I&rsquo;ve seen is small rural provider networks, where a Cisco 6500 costs too much. And where folks want MPLS to eventually scale up better than L2 techniques do. The ME series was perennially overly costly and an order of magnitude slow. 3560-G partially worked in the 1 G edge / 10 G core space for a while. Using VRF Lite, not MPLS.
+<hr /></p>
+
+<p>[Duaneo]( &ldquo;Duaneogrant@gmail.com&rdquo;) - <time datetime="2013-06-23 10:24:53">Jun 0, 2013</time></p>
+
+<p>Hi Nick, After asking my SE a couple of times, the answer I received was, &ldquo;it works, but its not officially supported and I&rsquo;m not sure it&rsquo;s gonna be.&rdquo; That said, have you had a look at the ex9200? It seems to have the mpls support you need and a 32 port 10ge card as well. The box come with a huge RE, mostly to support SDN I suspect and a pretty modest price tag and support costs. Compared to our 7600s and asr9k, the 9200 is a compelling buy if you can make do with the feature set. For fancy hqos, we&rsquo;re stuck with the 9k or mx as the advanced features just aren&rsquo;t there and we&rsquo;re not buying new 7600s. I&rsquo;m hearing some interesting things about the next gen qfx box as well, which is due out later this year.
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2013-06-23 12:02:45">Jun 0, 2013</time></p>
+
+<p>Check out the ex4550 running 12.3. It has a larger route / TCAM table. The ex9200 is essentially an mx960, and while it does have the ports it is far too expensive and huge or what we need.
+<hr /></p>
+
+<p><a href="http://thenetworksherpa.com" title="johnharr.ie@gmail.com">John Harrington (@networksherpa)</a> - <time datetime="2013-04-11 23:27:49">Apr 4, 2013</time></p>
+
+<p>I agree with Duane. The QFX is a rocking standalone box, and I believe MPLS is a committed feature.
+<hr /></p>
+
+<p>[Jawaid Bazyar]( &ldquo;jawaid.bazyar@forethought.net&rdquo;) - <time datetime="2015-05-24 20:38:00">May 0, 2015</time></p>
+
+<p>Check out Telco Systems, www.telco.com. We&rsquo;ve been using their inexpensive MPLS for a couple years.
+<hr /></p>
+
+<p><a href="http://www.forwardingplane.net/" title="nick@buraglio.com">Nick Buraglio</a> - <time datetime="2015-06-20 08:15:00">Jun 6, 2015</time></p>
+
+<p>I&rsquo;ve actually seen these in production but never actually used one myself. I&rsquo;ll give them another look, thanks!
+<hr /></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/ipv6">#IPv6</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/musings">#Musings</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://forwardingplane.net/tags/routing">#Routing</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 29 Mar 2013 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

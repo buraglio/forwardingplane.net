@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/orig/2012-10-27-juniper-to-ios-conversion-chart/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="Moving to JunOS from IOS can be a daunting task. It&#8217;s a completely different command structure and the config, by default, looks like a programming language. I was fortunate enough to have gotten in on using JunOS very early in my career, 1&frasl;3 in to be exact (as of this writing). Not to mention that wen I got started, IOS wasn&#8217;t the only game in town. Remember Xylan? Gandalf? OpenRoute?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/orig/2012-10-27-juniper-to-ios-conversion-chart/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Moving to JunOS from IOS can be a daunting task. It&#8217;s a completely different command structure and the config, by default, looks like a programming language. I was fortunate enough to have gotten in on using JunOS very early in my career, 1&frasl;3 in to be exact (as of this writing). Not to mention that wen I got started, IOS wasn&#8217;t the only game in town. Remember Xylan? Gandalf? OpenRoute?"/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Moving to JunOS from IOS can be a daunting task. It&#8217;s a completely different command structure and the config, by default, looks like a programming language. I was fortunate enough to have gotten in on using JunOS very early in my career, 1&frasl;3 in to be exact (as of this writing). Not to mention that wen I got started, IOS wasn&#8217;t the only game in town. Remember Xylan? Gandalf? OpenRoute?">
+
+
+
+<meta itemprop="wordCount" content="581">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> <p>    Moving to JunOS from IOS can be a daunting task.  It&#8217;s a completely different command structure and the config, by default, looks like a programming language.  I was fortunate enough to have gotten in on using JunOS very early in my career, <sup>1</sup>&frasl;<sub>3</sub> in to be exact (as of this writing).  Not to mention that wen I got started, IOS wasn&#8217;t the only game in town.  Remember Xylan?  Gandalf?  OpenRoute? How about Ascend?</p>
+
+<p>    That being said, a conversion chart is a useful thing.</p>
+
+<p>    These are everywhere on the net.  Recently I was asked to provide some of this for my job, so I took most of what I could find on the net and compiled it together using my favorite one as a template adding this and that from my own bag of what I thought was useful, which was very little since the initial one was pretty complete.  I suspect this may migrate to a &#8220;page&#8221; and not just a post, and will likely be a bit of a living document as I find more and more useful bits and pieces.</p>
+
+<div style="background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px; margin-bottom: 10px; margin-top: 10px; padding: 0px;">
+  <b>Basic CLI and Systems Management Commands</b>
+</div>
+
+<div style="background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px;">
+  <table style="border-collapse: collapse; clear: left; color: black; font-size: 10pt; line-height: 13pt; margin: 5px 0px; padding: 0px;">
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        Junos Command
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        IOS Command
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        set date
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        clock set
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        ping
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        ping
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        request system reboot
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        reload
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        request message
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        send
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show system uptime
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show clock
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show chassis environment
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show environment
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show cli history
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show history
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show system statistics
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip traffic
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show logshow log <em>file name</em>
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show logging
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show system processes
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show processes
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show configuration
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show running config
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        request support information
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show tech-support
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show system users
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show users
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show version | show chassis hardware
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show version
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        traceroute
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        trace
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div style="background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px; margin-bottom: 10px; margin-top: 10px; padding: 0px;">
+  <b>Switching Commands</b>
+</div>
+
+<div style="background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px;">
+  <table style="border-collapse: collapse; clear: left; color: black; font-size: 10pt; line-height: 13pt; margin: 5px 0px; padding: 0px;">
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        Junos Command
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        IOS Command
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ethernet-switching interfaces
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        No equivalent command
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show spanning-tree bridge
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show spanning-tree
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ethernet-switching table
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show mac address-table
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show log messages
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show logging
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div style="background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px; margin-bottom: 10px; margin-top: 10px; padding: 0px;">
+  <b>Interface Commands</b>
+</div>
+
+<div style="background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px;">
+  <table style="border-collapse: collapse; clear: left; color: black; font-size: 10pt; line-height: 13pt; margin: 5px 0px; padding: 0px;">
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        Junos Command
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        IOS Command
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        clear interface statistics
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        clear counters
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show interfaces<br />show interfaces detail<br />show interfaces extensive
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show interfaces
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show interfaces<br />show interfaces detail<br />show interfaces extensive
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip interface
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show interfaces terse
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip interface brief
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div style="background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px; margin-bottom: 10px; margin-top: 10px; padding: 0px;">
+  <b>Routing Protocol Commands</b>
+</div>
+
+<div style="background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px;">
+  <table style="border-collapse: collapse; clear: left; color: black; font-size: 10pt; line-height: 13pt; margin: 5px 0px; padding: 0px;">
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        Junos Command
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        IOS Command
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        clear arp
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        clear arp-cache
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show arp
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show arp
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show route
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip route
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show route summary
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip route summary
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show policy<br />show policy <em>policy-name</em>
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show route-map
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show system connections
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show tcp
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ospf database
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip ospf database
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ospf interface
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip ospf interface
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ospf neighbor
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip ospf neighbor
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        clear bgp neighbor
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        clear ip bgp
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        clear bgp damping
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        clear ip bgp dampening
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show route protocol bgp
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip bgp
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show route community
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip bgp community
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show route damping decayed
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip bgp dampened paths
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show bgp neighbor
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip bgp neighbors
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show route advertising-protocol bgp<em>neighbor-address</em>
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip bgp neighbors <em>address</em> advertised-routes
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show route receive-protocol bgp<em>neighbor-address</em>
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip bgp neighbors <em>address</em> received-routes
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show bgp group
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip bgp peer-group
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show route aspath-regex
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip bgp regexp
+      </td>
+    </tr>
+    
+    <tr style="font-size: 10pt; line-height: 13pt;">
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show bgp summary
+      </td>
+      
+      <td style="border: 1px solid rgb(221, 221, 221); font-size: 10pt; line-height: 13pt; min-width: 0.6em; padding: 5px; vertical-align: top;">
+        show ip bgp summary
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p><strong>Other Useful JunOS commands</strong><br />
+<span style="font-size: 13px; line-height: 17.33333396911621px;"><br /><span style="font-family: Courier New, Courier, monospace;"><i>show conf | display set</i></span></span> <span style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px;">&#8211;display the configuration in a single line per command syntax, useful for cut and paste</span><br />
+<span style="font-size: 13px; line-height: 17.33333396911621px;"><span style="font-family: Courier New, Courier, monospace;"><i>show conf | display xml</i></span></span><span style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px;"> </span><span style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px;">&#8211;display the configuration as XML, useful for programming to the XMLRPC interface</span><br />
+<span style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px;">Adding</span><span style="font-size: 13px; line-height: 17.33333396911621px;"><span style="font-family: Courier New, Courier, monospace;"> <i>| no-more</i> </span></span><span style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px;">to a command such as:</span><br />
+<span style="font-family: Courier New, Courier, monospace;"><i><span style="font-size: 13px; line-height: 17.33333396911621px;">request </span><span style="background-color: white; font-size: 13px; line-height: 17.33333396911621px;"> </span><span style="background-color: white; font-size: 13px; line-height: 17.33333396911621px;">support information | no-more</span></i></span> <span style="background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 17.33333396911621px;">&#8211;removes the need to space bar through long output.  Can also be used for piping to a file like </span><br />
+<em><span style="font-family: Courier New, Courier, monospace; font-size: x-small;"><span style="line-height: 17.33333396911621px;">request </span><span style="background-color: white; line-height: 17.33333396911621px;"> </span><span style="background-color: white; line-height: 17.33333396911621px;">support information | no-more | save <filename></span></span></em></p>
+
+<div>
+  [[ This is a content summary only. Visit my website for full links, other content, and more! ]]
+</div>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-16" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-16" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-16" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-16" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

@@ -1,0 +1,874 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/forwardingplane.net\/"
+        },
+        "articleSection" : "post",
+        "name" : "Juniper interface type naming convention",
+        "headline" : "Juniper interface type naming convention",
+        "description" : "I found most of this on a web page somewhere tha tI can\x26rsquo;t seem to find again. Below are some common useful junos tidbits regarding routing tables and interface types\/names:\nJunOS CLI supports the basic grep command (like | include) so any show commands can be grepped. I believe the grep command implies the -i flag for case insensitivity.\nThe routing table is presented in such a way to group types of routes.",
+        "inLanguage" : "en",
+        "author" : "Nick Buragliotruenativemain",
+        "creator" : "Nick Buragliotruenativemain",
+        "publisher": "Nick Buragliotruenativemain",
+        "accountablePerson" : "Nick Buragliotruenativemain",
+        "copyrightHolder" : "Nick Buragliotruenativemain",
+        "copyrightYear" : "2011",
+        "datePublished": "2011-04-13 01:04:00 \x2b0000 \x2b0000",
+        "dateModified" : "2011-04-13 01:04:00 \x2b0000 \x2b0000",
+        "url" : "https:\/\/forwardingplane.net\/post\/juniper-interface-type-naming-convention\/",
+        "wordCount" : "867",
+        "keywords" : [ "Routing","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Juniper interface type naming convention</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.58.3" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Juniper interface type naming convention"/>
+<meta name="twitter:description" content="I found most of this on a web page somewhere tha tI can&rsquo;t seem to find again. Below are some common useful junos tidbits regarding routing tables and interface types/names:
+JunOS CLI supports the basic grep command (like | include) so any show commands can be grepped. I believe the grep command implies the -i flag for case insensitivity.
+The routing table is presented in such a way to group types of routes."/>
+
+        <meta property="og:title" content="Juniper interface type naming convention" />
+<meta property="og:description" content="I found most of this on a web page somewhere tha tI can&rsquo;t seem to find again. Below are some common useful junos tidbits regarding routing tables and interface types/names:
+JunOS CLI supports the basic grep command (like | include) so any show commands can be grepped. I believe the grep command implies the -i flag for case insensitivity.
+The routing table is presented in such a way to group types of routes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/juniper-interface-type-naming-convention/" />
+<meta property="article:published_time" content="2011-04-13T01:04:00+00:00" />
+<meta property="article:modified_time" content="2011-04-13T01:04:00+00:00" />
+
+        <meta property="og:image" content="https://forwardingplane.net//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Juniper interface type naming convention">
+<meta itemprop="description" content="I found most of this on a web page somewhere tha tI can&rsquo;t seem to find again. Below are some common useful junos tidbits regarding routing tables and interface types/names:
+JunOS CLI supports the basic grep command (like | include) so any show commands can be grepped. I believe the grep command implies the -i flag for case insensitivity.
+The routing table is presented in such a way to group types of routes.">
+
+
+<meta itemprop="datePublished" content="2011-04-13T01:04:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-04-13T01:04:00&#43;00:00" />
+<meta itemprop="wordCount" content="867">
+
+
+
+<meta itemprop="keywords" content="Routing," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/main.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/add-on.css">
+            <link rel="stylesheet" href="https://forwardingplane.net/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://forwardingplane.net/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://forwardingplane.net/post/">
+                            <i class="post">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/about">
+                            <i class="about">&nbsp;</i>about
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://forwardingplane.net/configuration-archive">
+                            <i class="configuration-archive">&nbsp;</i>configuration-archive
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://forwardingplane.net/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://forwardingplane.net/post/">
+                            <h3>
+                                <i class="post">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/about">
+                            <h3>
+                                <i class="about">&nbsp;</i>about
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://forwardingplane.net/configuration-archive">
+                            <h3>
+                                <i class="configuration-archive">&nbsp;</i>configuration-archive
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-08'>
+                                    September 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-07-29'>
+                                    July 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-06-30'>
+                                    June 30, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/">Building a dynamic security infrastructure [in a box - with SDN]</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-05-29'>
+                                    May 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fjuniper-interface-type-naming-convention%2f&amp;text=Juniper%20interface%20type%20naming%20convention&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fforwardingplane.net%2fpost%2fjuniper-interface-type-naming-convention%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fforwardingplane.net%2fpost%2fjuniper-interface-type-naming-convention%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fjuniper-interface-type-naming-convention%2f&amp;title=Juniper%20interface%20type%20naming%20convention" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fforwardingplane.net%2fpost%2fjuniper-interface-type-naming-convention%2f&amp;title=Juniper%20interface%20type%20naming%20convention" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fforwardingplane.net%2fpost%2fjuniper-interface-type-naming-convention%2f&amp;title=Juniper%20interface%20type%20naming%20convention" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fforwardingplane.net%2fpost%2fjuniper-interface-type-naming-convention%2f&amp;description=Juniper%20interface%20type%20naming%20convention" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fforwardingplane.net%2fpost%2fjuniper-interface-type-naming-convention%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://forwardingplane.net/post/juniper-interface-type-naming-convention/">Juniper interface type naming convention</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2011-04-13'>
+            April 13, 2011</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>I found most of this on a web page somewhere tha tI can&rsquo;t seem to find again. Below are some common useful junos tidbits regarding routing tables and interface types/names:</p>
+
+<p>JunOS CLI supports the basic grep command (like | include) so any show commands can be grepped. I believe the grep command implies the -i flag for case insensitivity.</p>
+
+<p>The routing table is presented in such a way to group types of routes.</p>
+
+<p>**inet.0 is the ipv4 unicast routing table</p>
+
+<p>**</p>
+
+<p>**inet.1 is the ipv4 multicast routing table</p>
+
+<p>**</p>
+
+<p>**inet.3 is the MPLS routing table</p>
+
+<p>**</p>
+
+<p><strong>inet6.0 is the ipv6 routing table</strong></p>
+
+<p>Juniper interface types</p>
+
+<p>Most common ones you&rsquo;ll probably see:</p>
+
+<p>**fe: Fast Ethernet 100Base-TX (Fast Ethernet, 100 Mbps).</p>
+
+<p>fxp0: Management and internal Ethernet The management Ethernet interface is an out-of-band management interface within the routing platform.</p>
+
+<p>fxp1: Interface that connects the routing engine and packet forwarding engine.</p>
+
+<p>xe: 1GE optical interface on ex switches</p>
+
+<p>ge: Gigabit and 10gigabit Ethernet. Includes Gigabit Ethernet IQ interfaces.</p>
+
+<p>me0: - out of band management interface on ex switches</p>
+
+<p>lo: Loopback This interface is internally generated. The logical interface lo0.16383 is a non-configurable interface for routing platform control traffic.</p>
+
+<p>vcp: - virtual chassis interface (EX4200 only)</p>
+
+<p>Other ones you may run into:</p>
+
+<p>ae: Aggregated Ethernet A virtual aggregated link.</p>
+
+<p>**</p>
+
+<p>**as: Aggregated SONET/SDH A virtual aggregated link.</p>
+
+<p>**</p>
+
+<p>**at: ATM1 or ATM2 IQ Asynchronous Transfer Mode</p>
+
+<p>**</p>
+
+<p>**cau4: Channelized AU-4 IQ Configured on the Channelized STM-1 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**coc1: Channelized OC-1 IQ Configured on the Channelized OC-12 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**coc12: Channelized OC-12 IQ Configured on the Channelized OC-12 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**cstm1: Channelized STM-1 IQ Configured on the Channelized STM-1 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**ce1: Channelized E1 IQ Configured on the Channelized E1 IQ PIC or Channelized STM-1 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**ct1: Channelized T1 IQ Configured on the Channelized DS-3 IQ PIC or Channelized OC-12 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**ct3: Channelized T3 IQ Configured on the Channelized DS-3 IQ PIC or Channelized OC-12 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**cp: Collector Configured on the Monitoring Services II PIC.</p>
+
+<p>**</p>
+
+<p>**ds: DS-0 Configured on the Channelized DS-3 to DS-0 PIC, Channelized E1 PIC, Channelized OC-12 IQ PIC,</p>
+
+<p>**</p>
+
+<p>**dsc: Discard Allows you to identify the ingress point of a denial-of-service (DoS) attack.</p>
+
+<p>**</p>
+
+<p>**e1: E1 Includes the channelized STM-1 to E1 interfaces.</p>
+
+<p>**</p>
+
+<p>**e3: E3 Includes the E3 IQ interfaces.</p>
+
+<p>**</p>
+
+<p>**es: Encryption, Allows you to configure a security association (SA) name with a logical interface.</p>
+
+<p>**</p>
+
+<p>**gr: Generic Route Encapsulation tunnel Allows you to configure a unicast tunnel using GRE encapsulation.</p>
+
+<p>**</p>
+
+<p>**gre: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**ip: IP-over-IP encapsulation tunnel Allows you to configure a unicast tunnel using IP-IP encapsulation.</p>
+
+<p>**</p>
+
+<p>**ipip: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**ls: Link services Supports bundles that contain links.</p>
+
+<p>**</p>
+
+<p>**lsi: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**ml: Multilink Includes Multilink Frame Relay and Multilink PPP.</p>
+
+<p>**</p>
+
+<p>**mo: Monitoring services Includes the monitoring services and monitoring services<br />
+II interfaces: The logical interface mo-fpc/pic/port.16383 is an internally generated, non-configurable interface for routing platform control traffic.</p>
+
+<p>**</p>
+
+<p>**mt: Multicast tunnel Internal routing platform interface for VPNs.</p>
+
+<p>**</p>
+
+<p>**mtun: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**oc3: OC-3 IQ Configured on the Channelized OC-12 IQ PIC.</p>
+
+<p>**</p>
+
+<p>**pe: This interface is present on the first-hop routing platform. Encapsulates packets destined for the rendezvous point (RP) routing platform.</p>
+
+<p>**</p>
+
+<p>**pd: This interface is present on the RP De-encapsulates packets at the RP.</p>
+
+<p>**</p>
+
+<p>**pimd: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**pime: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**rlsq: - a redundant bundle interface, made of two or more lsq interface. If you have redundant AS Pics.</p>
+
+<p>**</p>
+
+<p>**se: Serial Includes the EIA-530, V.35, and X.21 interfaces.</p>
+
+<p>**</p>
+
+<p>**so: SONET/SDH Both are widely used methods for very high speed transmission of voice and data signals across the numerous world-wide fiber-optic networks.</p>
+
+<p>**</p>
+
+<p>**sp: Adaptive services The logical interface sp-fpc/pic/port.16383 is an internally generated, non-configurable interface for routing platform control traffic.</p>
+
+<p>**</p>
+
+<p>**t1: T1 Includes the channelized DS-3 to DS-1 interfaces.</p>
+
+<p>**</p>
+
+<p>**t3: T3 Includes the channelized OC-12 to DS-3 interfaces.</p>
+
+<p>**</p>
+
+<p>**tap: Internally generated This interface is internally generated and is not configurable.</p>
+
+<p>**</p>
+
+<p>**vsp: Voice services, The Adaptive Services (AS) Physical Interface Card (PIC) supports the compressed real-time transport protocol (RTP) on this interface.</p>
+
+<p>**</p>
+
+<p>**vt: Virtual loopback tunnel On routing platforms equipped with a Tunnel PIC, enables egress filtering.<br />
+**<br />
+Other interesting terminology regarding the juniper architecture is the module layout:</p>
+
+<p>**RE: Routing Engine, Like a cisco supervisor module. Central brains of the system</p>
+
+<p>**</p>
+
+<p>**PFE: Packet forwarding Engine. Controls the data packet forwarding of the system.</p>
+
+<p>**</p>
+
+<p>**SCB: Switch control board. Contains ASICs that handle route lookups and memory management.</p>
+
+<p>**</p>
+
+<p>**PIC: Physical interface card. Sort of like a port, but can contain multiple interfaces.</p>
+
+<p>**</p>
+
+<p><strong>FPC: Flexible PIC concentrator. Like a linecard that has module slots. Can handle different types of PICs</strong></p>
+
+<p>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://forwardingplane.net/tags/routing">Routing</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://forwardingplane.net/post/ipv6-features-matrix-for-network-hardware-comments/"
+                class="button big previous">IPv6 Features matrix for Network Hardware</a></li>
+    
+
+    
+        <li><a href="https://forwardingplane.net/post/better-support-for-linux-and-annoyed-about-it/"
+                class="button big next">Better support for Linux (and annoyed about it)</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/elastiflow-template-vm/">ElastiFlow Template VM</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-08'>
+                September 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/basic-automation-for-wisps-and-small-to-medium-isps/">Basic automation for WISPs and small to medium ISPs</a>
+              </h3>
+              
+              <time class="published" datetime='2019-07-29'>
+                July 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/the-bgp-conundrum/">The BGP conundrum</a>
+              </h3>
+              
+              <time class="published" datetime='2019-06-30'>
+                June 30, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://forwardingplane.net/post/building-a-dynamic-security-infrastructure-in-a-box-with-sdn/">Building a dynamic security infrastructure [in a box - with SDN]</a>
+              </h3>
+              
+              <time class="published" datetime='2019-05-29'>
+                May 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        Copyright (c) 2019, all rights reserved.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://forwardingplane.net/js/util.js"></script>
+      <script src="https://forwardingplane.net/js/main.js"></script>
+      <script src="https://forwardingplane.net/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nick Buraglio" />
+<meta name="description" content="A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy…." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://forwardingplane.net/post/orig/2010-08-31-juniper-srx-cluster/">
+<meta property="og:title" content="" />
+<meta property="og:description" content="I have had the opportunity to work pretty extensively on the Juniper SRX firewall/IDS platform over the last few months. In doing so, I&#8217;ve found many &#8220;gotchas&#8221; the hard way.
+Here are a few that I&#8217;ve found so far:
+Clustering is a beast in and of itself. I think it needs a bit more polishing, but it could be that we just need to refine our design.
+On the SRX 650 it works, but you must be on the right code version (I got it to work under 9." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forwardingplane.net/post/orig/2010-08-31-juniper-srx-cluster/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="I have had the opportunity to work pretty extensively on the Juniper SRX firewall/IDS platform over the last few months. In doing so, I&#8217;ve found many &#8220;gotchas&#8221; the hard way.
+Here are a few that I&#8217;ve found so far:
+Clustering is a beast in and of itself. I think it needs a bit more polishing, but it could be that we just need to refine our design.
+On the SRX 650 it works, but you must be on the right code version (I got it to work under 9."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="I have had the opportunity to work pretty extensively on the Juniper SRX firewall/IDS platform over the last few months. In doing so, I&#8217;ve found many &#8220;gotchas&#8221; the hard way.
+Here are a few that I&#8217;ve found so far:
+Clustering is a beast in and of itself. I think it needs a bit more polishing, but it could be that we just need to refine our design.
+On the SRX 650 it works, but you must be on the right code version (I got it to work under 9.">
+
+
+
+<meta itemprop="wordCount" content="646">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://forwardingplane.net/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+      
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://forwardingplane.net/">ForwardingPlane.net</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://forwardingplane.net/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/about"><div class="nav-item-title">about</div></a>
+    
+    <a class="nav-item" href="https://forwardingplane.net/configuration-archive"><div class="nav-item-title">configuration-archive</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">in</div></a>
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  </h1>
+    <div class="content"> <p>I have had the opportunity to work pretty extensively on the Juniper SRX firewall/IDS platform over the last few months.  In doing so, I&#8217;ve found many &#8220;gotchas&#8221; the hard way.</p>
+
+<p>Here are a few that I&#8217;ve found so far:</p>
+
+<p>Clustering is a beast in and of itself.  I think it needs a bit more polishing, but it could be that we just need to refine our design.</p>
+
+<p>On the SRX 650 it works, but you must be on the right code version (I got it to work under 9.6R2.11 and have left it alone since).</p>
+
+<p>On the 5800 it works a bit better, but if you want to do active/active, it is very lacking in features.<br />
+We have a unique setup where I am employed, and this usually means we are left a bit on our own as far as configurations (although our Juniper SE is amazing and did a lot to get this all working).<br />
+That said, we have a design that isn&#8217;t really fully supported on the SRX yet, although I believe it will be as code matures.<br />
+What we&#8217;ve done is to create a cluster using no reth interfaces.  Instead, we&#8217;re relying on routing to ake the decisions as far as what traffic goes where.  This was a different approach than we had originally used on the smaller 650 cluster elsewhere in the network.</p>
+
+<div style="clear: both; text-align: center;">
+  <a href="http://1.bp.blogspot.com/_t5EEUl7btNU/TH18bIBhtkI/AAAAAAAACn4/wgLW1b-H7Zs/s1600/simplesrx.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/_t5EEUl7btNU/TH18bIBhtkI/AAAAAAAACn4/wgLW1b-H7Zs/s320/simplesrx.png" /></a>
+</div>
+
+<p>What this means is multi-faceted.<br />
+Standard jtac isn&#8217;t going to understand what you&#8217;ve done.  Using advanced jtac is the only way to get things moving in a timely fashion should you encounter issues.  We have agility service on ours, so that makes it even easier.</p>
+
+<p>IDP doesn&#8217;t work asymmetrically.  If an traffic cones in on one node and leaves through the other, IDP doesn&#8217;t apply.  IDP information is not shared through the control link at the time of this writing.<br />
+IDP updates across the cluster don&#8217;t work well in this way.  My &#8220;node0&#8221; node can get the updates but since node0 holds the loopback interface that traffic is sourced from, I cannot get out from node1.  Again, this data is not shared over the control link between the cluster nodes.  There are nasty ways around this with static routes, but I prefer not to use them.  <br />
+The best way I found to get around this is to manually fail over the cluster and install the IDP updates on node1 after node0 has installed them and then to fail back.<br />
+This brings me to the next issue we ran into.  Upgrading the cluster junos software.<br />
+Juniper&#8217;s recommended method for upgrading is to upgrade each one, then reboot both at the same time.<br />
+to me this is a bit odd, since the reason most folks want a cluster is to avoid things like this.  Well, I can say for experience, if you upgrade the node0 and reboot it without doing the same to node1, all heck breaks loose.  The cluster won&#8217;t come up cleanly even after the secondary is upgraded and the only way I found to alleviate the off traffic problems we were seeing was to bounce them both at the same time.  Annoying to say the least.<br />
+Oh, if you want to run Active/Active and have it actually work the way we have it set up, you&#8217;ll need at least JunOS 10.2.R2.11.</p>
+
+<p>That said, I really do believe that the SRX is the best carrier class security appliance on the market.  Our entire network (which is not insignificant or standard in size or traffic patterns), can run off of one box with 4 SPCs and not even touch the processing power.  They are a powerhouse and have that trademark JunOS cli, and all of the advantages that come with it.</p>
+
+<div>
+  [[ This is a content summary only. Visit my website for full links, other content, and more! ]]
+</div>
+
+<div class="sharedaddy sd-sharing-enabled">
+  <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+    <h3 class="sd-title">
+      Share this:
+    </h3>
+    
+    <div class="sd-content">
+      <ul>
+        <li class="share-twitter">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-59" class="share-twitter sd-button share-icon" href="http://www.forwardingplane.net/2010/08/juniper-srx-cluster/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a>
+        </li>
+        <li class="share-email">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.forwardingplane.net/2010/08/juniper-srx-cluster/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a>
+        </li>
+        <li class="share-print">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.forwardingplane.net/2010/08/juniper-srx-cluster/" target="_blank" title="Click to print"><span>Print</span></a>
+        </li>
+        <li class="share-linkedin">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-59" class="share-linkedin sd-button share-icon" href="http://www.forwardingplane.net/2010/08/juniper-srx-cluster/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a>
+        </li>
+        <li class="share-facebook">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-59" class="share-facebook sd-button share-icon" href="http://www.forwardingplane.net/2010/08/juniper-srx-cluster/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a>
+        </li>
+        <li class="share-reddit">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.forwardingplane.net/2010/08/juniper-srx-cluster/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a>
+        </li>
+        <li class="share-tumblr">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.forwardingplane.net/2010/08/juniper-srx-cluster/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a>
+        </li>
+        <li class="share-pinterest">
+          <a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-59" class="share-pinterest sd-button share-icon" href="http://www.forwardingplane.net/2010/08/juniper-srx-cluster/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a>
+        </li>
+        <li class="share-pocket">
+          <a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="http://www.forwardingplane.net/2010/08/juniper-srx-cluster/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a>
+        </li>
+        <li class="share-end">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 1 Jan 0001 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "forwwardingplane" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:my%20lastname%20at%20forwardingplane%20dot%20net"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/buraglio" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/forwardingplane" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/buraglio" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://forwardingplane.net/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

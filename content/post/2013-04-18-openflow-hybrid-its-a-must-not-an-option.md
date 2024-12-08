@@ -1,0 +1,30 @@
+---
+id: 572
+title: 'OpenFlow Hybrid.  It&#039;s a must, not an option.'
+date: '2013-04-18T10:17:37-05:00'
+author: buraglio
+layout: post
+guid: 'http://www.forwardingplane.net/?p=572'
+permalink: /2013/04/18/openflow-hybrid-its-a-must-not-an-option/
+themeblvd_noindex:
+    - 'true'
+dsq_thread_id:
+    - '3630070393'
+Views:
+    - '250'
+categories:
+    - 'Crystal Ball'
+    - OpenFlow
+    - SDN
+---
+
+OpenFlow is, of course, a hot buzzword.  It's the newest, and in my opinion, the most innovative thing to hit data networking since dynamic routing.  The ability to programmatically, systematically and potentially dynamically control traffic at the flow level through a network is innovative, exciting and terrifying [to many network engineers and architects] at the same time.  Allowing applications to touch the network change behavior is something that many engineers are not terribly comfortable with.  I will even admit that a few years ago I was pretty tentative about software changing network hardware.  <a title="Black Hole routing" href="http://www.forwardingplane.net/2011/10/black-hole-routing/" target="_blank" rel="noopener noreferrer">Building a Blackhole router</a> was an easy way for me to acquaint myself with this and get comfortable with software changing things without human interaction.   Most of my discomfort with this process was the fact that I'm not a good developer.  I can hack scripts and read most basic code in Shell, C, Perl, Python and Ruby but I don't actively do anything but an occasional script or <a title="VDXrancid contrib scripts" href="http://www.forwardingplane.net/2012/11/vdxrancid-contrib-scripts/" target="_blank" rel="noopener noreferrer">hack</a> <a title="alurancid and pfrancid" href="http://www.forwardingplane.net/2011/06/alurancid-and-pfrancid/" target="_blank" rel="noopener noreferrer">to</a> <a title="Alcatel Lucent RANCID scripts" href="http://www.forwardingplane.net/2010/12/alcatel-lucent-rancid-scripts/" target="_blank" rel="noopener noreferrer">existing projects</a>.
+<a href="http://www.forwardingplane.net/wp-content/uploads/2013/04/Enterprise-Network.jpg"><img class="size-medium wp-image-592 alignright" alt="Enterprise Network" src="http://www.forwardingplane.net/wp-content/uploads/2013/04/Enterprise-Network-265x300.jpg" width="265" height="300" /></a>Conversely, we're all pretty comfortable with networks as they exist today.  The typical "enterprise pyramid" is best practice and works very well.  Good physical design is good physical design.  However, where this, and any other network gets hairy is when it scales to hyper scale or the operations team is thin.
+Here is where things get interesting.  Call it what you want, SDN is changing the way we as networking professionals think about this support model.  Remember managing fat wireless access points?  It became unruly and impossible at scale and once wireless ceased to be a convenience network it was nearly impossible.  Enter wireless controllers and thin access points.  5-7 years later this is now the standard.  The differences, though, is that wireless was still a relatively small footprint comparatively speaking and it wasn't a critical infrastructure before those changes had to happen.
+The problem that we face now is that we have critical infrastructure and legacy support mechanisms.  It is unreasonable to think that we'll be ripping out a traditional, functional network and replacing it with a greenfield OpenFlow network, regardless of what the researchers and heavy proponents think.  Just like with the transitional mechanisms used in IPv6 deployments, there needs to be a transitional period where both traditional and OpenFlow networks can coexist.  There are a few options for this, but this is a problem that the <a href="http://networkstatic.net/hybrid-openflow-using-the-normal-action/" target="_blank" rel="noopener noreferrer">OFPP Normal action</a> can potentially solve.     <a href="https://openflow.stanford.edu/static/openflowj/releases/1.0.1/apidocs/org/openflow/protocol/OFPort.html#OFPP_NORMAL" target="_blank" rel="noopener noreferrer">OFPP Normal</a> will send a packet in the openflow pipeline to the native switching mechanisms for traditional forwarding, much like having a default route in an IGP handles anything without a more specific route.
+Based on the <a href="http://www.openflow.org/documents/openflow-spec-v1.0.0.pdf" target="_blank" rel="noopener noreferrer">OpenFlow 1.0 spec</a>, an OpenFlow enabled switch is not required to support all actions, <strong>may</strong> support the NORMAL action.  I am here to say that my opinion is that this is something that has to happen.  It's is reasonable to say that my understanding of OpenFlow is still evolving, but building networks is something I've been doing for 15 years.  Green fielding a totally OpenFlow network is almost certainly not going to happen in 95% of cases.  Backwards compatibility with existing networking is going to have to happen.
+<a href="http://www.forwardingplane.net/wp-content/uploads/2013/04/tantrum.jpg"><img class="alignleft size-full wp-image-594" alt="tantrum" src="http://www.forwardingplane.net/wp-content/uploads/2013/04/tantrum.jpg" width="200" height="183" /></a>As a case study, lets look at the adoption of IPv6.  We actually *need* IPv6.  Has adoption been smooth?  No.  Entities have been dragged into it kicking and screaming and tightly holding on to mechanisms like NAT as a way to delay the inevitable.  I could go on forever about how enterprises, service providers and any other network has caused more harm, pain and unnecessary expense than good by delaying IPv6 over and over....but I digress.
+We [mostly] don't <strong>need</strong> OpenFlow yet.  Yes, it's useful.  Yes, it has use cases that make a lot of sense.  Making it easy (read: painless) is the key to deployment.   My first reaction is that hybrid mode is the way to do this.  If your vendor doesn't have a hybrid strategy, make them aware that they need one.
+&nbsp;
+&nbsp;
+&nbsp;

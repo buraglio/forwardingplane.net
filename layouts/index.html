@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+<h1>Content</h1>
+
+<p>
+    The ForwardingPlane
+</p>
+
+<h1><a href="post/">Latest posts</a></h1>
+<br>
+<h1><a href="about/">About</a></h1>
+<br>
+<h1><a href="https://github.com/buraglio/resume">Resume</a></h1>
+<br>
+<div class="posts-list">
+{{ with .Site.GetPage "/post" }}
+    {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
+        <div class="post">
+            <p>
+                <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
+                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+                {{ .Summary }}
+            </p>
+        </div>    
+    {{ end }}
+{{ end }}
+</div>
+
+
+{{ end }}

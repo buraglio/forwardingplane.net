@@ -1,6 +1,6 @@
 ---
 id: 2334
-title: 'Strategy Series: Don't sweat the details; or take a risk and embrace change'
+title: 'Strategy Series: Do not sweat the details; or take a risk and embrace change'
 date: '2020-01-27T03:17:50-06:00'
 author: buraglio
 layout: post

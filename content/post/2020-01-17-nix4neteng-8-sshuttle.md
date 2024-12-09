@@ -1,6 +1,6 @@
 ---
 id: 2313
-title: 'NIX4NetEng #8 &#8211; sshuttle'
+title: 'NIX4NetEng #8; sshuttle'
 date: '2020-01-17T22:36:14-06:00'
 author: buraglio
 layout: post

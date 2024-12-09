@@ -1,6 +1,6 @@
 ---
 id: 2594
-title: 'PODCAST: MODEM.show &#8211; The road not-so-less traveled'
+title: 'PODCAST: MODEM.show; The road not-so-less traveled'
 date: '2023-08-25T17:13:39-05:00'
 author: buraglio
 layout: post

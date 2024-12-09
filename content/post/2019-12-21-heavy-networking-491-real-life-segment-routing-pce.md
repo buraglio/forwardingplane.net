@@ -1,6 +1,6 @@
 ---
 id: 2306
-title: 'Heavy Networking 491: Real-Life Segment Routing &#038; PCE'
+title: 'Heavy Networking 491: Real-Life Segment Routing; PCE'
 date: '2019-12-21T14:38:00-06:00'
 author: buraglio
 layout: post

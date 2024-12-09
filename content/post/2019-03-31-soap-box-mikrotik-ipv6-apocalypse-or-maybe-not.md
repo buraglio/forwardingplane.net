@@ -1,6 +1,6 @@
 ---
 id: 1647
-title: 'Soap Box: Mikrotik &quot;IPv6 Apocalypse&quot;, or maybe not.'
+title: 'Soap Box: Mikrotik; "IPv6 Apocalypse", or maybe not.'
 date: '2019-03-31T11:35:10-05:00'
 author: buraglio
 excerpt: 'Neighbor table and route-cache have been problems in IPv6 implementations since the beginning. No one is immune to the basics. '

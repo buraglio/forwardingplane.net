@@ -1,6 +1,6 @@
 ---
 id: 1679
-title: 'Building a dynamic security infrastructure [in a box &#8211; with SDN]'
+title: 'Building a dynamic security infrastructure [in a box; with SDN]'
 date: '2019-05-29T06:17:13-05:00'
 author: buraglio
 layout: post

@@ -1,6 +1,6 @@
 ---
 id: 2310
-title: 'The Brothers WISP &#8211; Greg Talks 2 – White Papers, Troubleshooting Access, Anxiety Control'
+title: 'The Brothers WISP; Greg Talks 2 – White Papers, Troubleshooting Access, Anxiety Control'
 date: '2020-01-12T04:20:09-06:00'
 author: buraglio
 layout: post

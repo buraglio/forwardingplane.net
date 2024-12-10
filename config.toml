@@ -14,8 +14,8 @@ pygmentsCodeFences = "true"
 [params]
 
   [[params.navlinks]]
-  name = "posts/"
-  url = "posts/"
+  name = "blog/"
+  url = "post/"
 
   [[params.navlinks]]
   name = "tags/"
@@ -30,7 +30,7 @@ pygmentsCodeFences = "true"
   url = "https://github.com/buraglio/resume/"
 
   [[params.navlinks]]
-  name = "configuration archive/"
+  name = "config archive/"
   url = "configuration-archive/"
 
   [[params.navlinks]]

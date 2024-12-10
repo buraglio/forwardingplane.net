@@ -8,31 +8,13 @@ This site is maintained by [Nick Buraglio](http://linkedin.com/in/buraglio/). �
 
 My resume / C.V. can be found [here](https://www.github.com/buraglio/resume/)
 
-I have a lot of interests. I hold a bachelors degree in arts and technology (sequence in photography) with a minor in film studies and some of a minor in applied computer science from [Illinois State University](https://ilstu.edu/) and am currently a member of the Planning and Architecture team for the [Energy Sciences Network](https://www.es.net) (ESnet).  In previous professional lives, I have been employed by the [University of Illinois](https://www.illinois.edu/) as a Lead Network Engineer, functioned as the Lead Network Engineer for the [National Association of Telecommunications Officers and Advisors (NATOA) broadband project of the year](http://uc2b.net/2012/09/13/uc2b-awarded-national-association-of-telecommunications-officers-and-advisors-natoa-2012-community-broadband-project-of-the-year/), [UC2B](http://uc2b.net/).  I have worked in the network provider industry in one way or another since the mid-1990s, holding Network Engineering positions at Regional Internet Providers as well as at the [National Center for Supercomputing Applications](https://www.ncsa.uiuc.edu/). I've participated in [SCinet](https://scinet.supercomp.org/) on several occasions and was part of the Network Engineering working group that built and maintained the [TeraGrid](https://www.teragrid.org/). My professional resume can be found [here](http://buraglio.com/nick/resume). Along with many interests comes many hobbies. I have been known to dabble in [zymology](http://en.wikipedia.org/wiki/Zymurgist) ([making beer and mead](http://buraglio.com/nick/category/beer/recipe)), [grappling](http://en.wikipedia.org/wiki/Grappling) ([Brazilian Jiu Jitsu](http://en.wikipedia.org/wiki/Brazilian_Jiu_Jitsu), [submission wrestling](http://en.wikipedia.org/wiki/Submission_wrestling)) and as of 1/2009 hold a purple belt in Brazilian Jiu Jitsu under [Jack McVicker](http://en.wikipedia.org/wiki/Submission_wrestling). I am also interested in [circuit training](http://en.wikipedia.org/wiki/Circuit_training),
-[Cycling](http://en.wikipedia.org/wiki/Cycling) and [Skateboarding](http://en.wikipedia.org/wiki/Skateboarding). I also have interests [camping](http://en.wikipedia.org/wiki/Camping) and [backpacking](http://en.wikipedia.org/wiki/Backpacking_(wilderness)).
-I generally enjoy being creative and like to draw, do photography, and make jewelry as time permits.
+I have a lot of interests. I hold a bachelors degree in arts and technology (sequence in photography) with a minor in film studies and some of a minor in applied computer science from [Illinois State University](https://ilstu.edu/) and am currently a member of the Planning and Architecture team for the [Energy Sciences Network](https://www.es.net) (ESnet) and am a co-chair for the [IPv6 Operations working group in the IETF](https://datatracker.ietf.org/wg/v6ops/about/).  
 
-[![](httpis://farm5.static.flickr.com/4101/4905501229_694a8701b7.jpg)](https://farm5.static.flickr.com/4101/4905501229_694a8701b7.jpg)
 
-I have acquired a few industry certifications over the years, most of them are from back in the 1990s when I could leverage them for something.  My jobs over the last 18 years have really not seen much value in them, so many are expired and the ones that aren't were taken cold (as in, "here is a free exam if you take it now").
+In previous professional lives, I have been employed by the [University of Illinois](https://www.illinois.edu/) as a Lead Network Engineer, functioned as the Lead Network Engineer for the [National Association of Telecommunications Officers and Advisors (NATOA) broadband project of the year](http://uc2b.net/2012/09/13/uc2b-awarded-national-association-of-telecommunications-officers-and-advisors-natoa-2012-community-broadband-project-of-the-year/), [UC2B](http://uc2b.net/).  I have worked in the network provider industry in one way or another since the mid-1990s, holding Network Engineering positions at Regional Internet Providers as well as at the [National Center for Supercomputing Applications](https://www.ncsa.uiuc.edu/). I've participated in [SCinet](https://scinet.supercomp.org/) on several occasions and was part of the Network Engineering working group that built and maintained the [TeraGrid](https://www.teragrid.org/). My professional resume can be found [here](http://buraglio.com/nick/resume).
 
-To date, the ones I remember are:
+I generally enjoy being creative and like to draw, do photography, and make jewelry as time permits. I love to watch movies and have frequently lamented that the best job I ever had was at a video store in the early 1990s. Sometimes I make [T-Shirt designs that are based on obscure movie or pop culture](https://www.teepublic.com/user/cinematic-omelete-studios), and sometimes I play an aging skateboarder in a punk rock band.
 
-**LPI (Linux, Beta exam taken free at Comdex, 1998ish?)**
+[![](Nick Buraglio)](https://www.ietf.org/lib/dt/media/photo/NB-BW_ea24tzu.jpg)
 
-**MCSE (NT4) (Microsoft 1999)**
-
-**Inet+ (ComTIA, 1999?)**
-
-**ASE (apple something or other, 1998?)**
-
-**CCNA (Cisco, 1999-2000?)**
-
-**CCDA (Cisco, 2000)**
-
-**CCNP minus BCRAN (Cisco, 2000)**
-
-**JNCIA JunOS (Juniper, 2011)** **BCNE (Brocade, 2010)**
-
-I occasionally hang out on several public and private Slack channels - I am not terribly hard to find.  
-Thanks to [Brent Salisbury](http://www.networkstatic.net) for talking me into blogging again and for not only helping provide inspiration, ideas and content but also for promoting my stuff.  He also provided the nice paragraph above and is a cool dude. I like to participate in community projects, for fun and profit, and have been loosely involved in such projects as pfSense and RANCID (mostly to add or change things I need at the time) but I try to maintain good relationships and help further the projects and the community as a whole. I've been known to do consulting from time to time as my work and home life permits, it's generally focused on the service provider side but I'm usually open to any interesting projects.  Feel free to contact me if I can be of help. I can be best contacted via email, but will usually answer DMs on Twitter and comments on here.  My twitter handle is [@forwardingplane](http://www.twitter.com/forwardingplane).  Please excuse my sometimes delayed responses, a family and a usually-more-than-full-time gig makes for a busy life.
+I occasionally hang out on several public and private Slack channels or on BlueSky - I am not terribly hard to find, but I am usually a bit slow to respond.

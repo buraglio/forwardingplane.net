@@ -11,54 +11,47 @@ pygmentsCodeFences = "true"
 
 [author]
   name = "Nick Buraglio"
+[params]
 
-SectionPagesMenu = "main"
+  [[params.navlinks]]
+  name = "posts/"
+  url = "posts/"
 
-# use Chroma for syntax highlight
-pygmentsStyle = "native" # other dark style options: vim, fruity, monokai
-# enable syntax highlight for code blocks
-#pygmentsCodeFences = true
+  [[params.navlinks]]
+  name = "tags/"
+  url = "tags/"
 
-[[menu.main]]
-  name = "Posts"
-  weight = -120
-  identifier = "post"
-  url = "/post/"
+  [[params.navlinks]]
+  name = "about/"
+  url = "about/"
 
-[[menu.main]]
-  name = "Tags"
-  weight = -110
-  identifier = "tag"
-  url = "/tags/"
+[[params.navlinks]]
+  name = "resume/"
+  url = "https://github.com/buraglio/resume/"
+
+  [[params.navlinks]]
+  name = "configuration archive/"
+  url = "configuration-archive/"
+
+  [[params.navlinks]]
+  name = "BlueSky/"
+  url = "https://bsky.app/profile/forwardingplane.net/"
+
+  [[params.navlinks]]
+  name = "mastodon/"
+  url = "https://dial.modem.show/@forwardingplane#"
+
+  [[params.navlinks]]
+  name = "disclaimer/"
+  url = "disclaimer/"
+
+
+  
 
 [params.meta]
   keywords = "blog, tech, Nick Buraglio, SDN, Security, OpenFlow, Service Provider"
   description = "A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy….The Lunatic fringe."
 
-#[params.postAmount]
-#[params]
-[social]
-  github = "buraglio"
-  twitter = "forwardingplane"
-  linkedin = "buraglio"
-  email = "my lastname at forwardingplane dot net"
-
-[menu]
-
-  [[menu.main]]
-    identifier = "about"
-    name = "about"
-    url = "/about"
-
-#  [[menu.main]]
-#    identifier = "resume"
-#    name = "resume"
-#    url = "/resume"
-
-#  [[menu.main]]
-#    identifier = "configuration-archive"
-#    name = "configuration-archive"
-#    url = "/configuration-archive"
 
 [permalinks]
   posts = "/:year/:month/:title/"

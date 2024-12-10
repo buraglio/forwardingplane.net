@@ -3,21 +3,8 @@
 <h1>Content</h1>
 
 <p>
-    The ForwardingPlane
-</p>
+    The ForwardingPlane - A wealth of rambling run-on sentences, misspellings, rants, and technical babble. 
 
-<h1><a href="post/">Latest posts</a></h1>
-<br>
-<h1><a href="about/">About</a></h1>
-<br>
-<h1><a href="configuration-archive/">About</a></h1>
-<br>
-<h1><a href="disclaimer/">About</a></h1>
-<br>
-<h1><a href="tags/">Resume</a></h1>
-<br>
-<h1><a href="https://github.com/buraglio/resume">Resume</a></h1>
-<br>
 <div class="posts-list">
 {{ with .Site.GetPage "/post" }}
     {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}

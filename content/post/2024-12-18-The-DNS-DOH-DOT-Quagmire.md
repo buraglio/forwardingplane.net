@@ -19,3 +19,20 @@ It turns out that there is a fair bit more to understand, and most of it centers
 
 Kevin Myers once said “It’s always MTU, unless it’s DNS”, and my experience as a network engineer has proven that correct more times than can be attributed to coincidence.
 DNS is such an important component of the internet that the IETF typically has TWO DNS working group meetings per IETF event to accommodate the large numbers of drafts and changes.
+
+In 25+ years of doing IT, DNS has frequently been a part of the responsibilities. Things have....changed. DNS is the BGP of the application services - we have put a great many things into it. Things that may be unexpected. Diving into DoH and DoT have opened that can of records back up to me. Let's start with DoT since I have a personal affinity for it (although given the fact that browsers have pushed DoH I suspect it will become more common). 
+Building a DoT and DoH server is more than simply creating a configuration that references some certificates. There are new records that tell things like browsers that there are in fact services available. 
+
+
+
+Testing DoT - 
+`kdig -d @dot.chi.mpls.rsvp +tls-ca +tls-host=dot.chi.mpls.rsvp buraglio.com -t aaaa`
+Testing DoH - 
+https://doh.chi.mpls.rsvp/dns-query
+
+```bash
+# json
+curl -vH 'accept: application/dns-json' 'https://doh.chi.mpls.rsvp/dns-query?name=www.forwardingplane.net&type=AAAA' | jq .
+# dns wireformat
+curl -vH 'accept: application/dns-message' 'https://doh.chi.mpls.rsvp/dns-query?name=www.forwardingplane.net&type=AAAA'  | hexdump -c
+```

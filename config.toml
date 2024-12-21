@@ -42,10 +42,6 @@ pygmentsCodeFences = "true"
   url = "https://dial.modem.show/@forwardingplane#"
 
   [[params.navlinks]]
-  name = "keys/"
-  url = "keys/"
-
-  [[params.navlinks]]
   name = "publications/"
   url = "publications/"
 

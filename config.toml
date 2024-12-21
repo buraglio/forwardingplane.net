@@ -41,6 +41,10 @@ pygmentsCodeFences = "true"
   name = "mastodon/"
   url = "https://dial.modem.show/@forwardingplane#"
 
+    [[params.navlinks]]
+  name = "keys/"
+  url = "keys/"
+
   [[params.navlinks]]
   name = "disclaimer/"
   url = "disclaimer/"

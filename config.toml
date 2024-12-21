@@ -41,19 +41,21 @@ pygmentsCodeFences = "true"
   name = "mastodon/"
   url = "https://dial.modem.show/@forwardingplane#"
 
-    [[params.navlinks]]
+  [[params.navlinks]]
   name = "keys/"
   url = "keys/"
+
+  [[params.navlinks]]
+  name = "publications/"
+  url = "publications/"
 
   [[params.navlinks]]
   name = "disclaimer/"
   url = "disclaimer/"
 
 
-  
-
 [params.meta]
-  keywords = "blog, tech, Nick Buraglio, SDN, Security, OpenFlow, Service Provider"
+  keywords = "blog, tech, Nick Buraglio, IPv6, Security, OpenFlow, Service Provider, ISP, Mikrotik, buraglio, IPv6-only, IETF"
   description = "A wealth of run on sentences, misspelled words, and grammatical errors related to Routing, Switching, Security, Strategy….The Lunatic fringe."
 
 

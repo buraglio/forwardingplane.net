@@ -10,8 +10,6 @@ autopostToMastodon-post-status:
     - 'off'
 autopostToMastodonshare-lastSuccessfullTootURL:
     - 'https://dial.modem.show/@forwardingplane/110952554295032035'
-Views:
-    - '283'
 categories:
     - Podcast
 tags:

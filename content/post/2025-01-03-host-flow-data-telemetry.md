@@ -110,7 +110,7 @@ metadata:
 
 The end result is a reasonably good view of what hosts generate on their network interfaces, which can be used for any number of things from capacity planning to intrusion detection. 
 
-![Akvorado Screen Shot of host sflow data](/wp-content/2025/01/akvorado.png)
+![Akvorado Screen Shot of host sflow data](/wp-content/uploads/2025/01/akvorado.png)
 
 If there is a clear theme here, it is good documentation. Each of these components has terrific, easy to follow documentation.
 

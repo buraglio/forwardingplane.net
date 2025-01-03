@@ -14,12 +14,12 @@ tags:
     - sFlow
 ---
 
-An often overlooked dimention of data collection is flow data from hosts. This is not a new concept, there have been tools built for this for a very long time, but in many cases, and especially over the last 8-10 years, many system engineers have gravitated toward tooling like [grafana](https://grafana.com/) and [prometheus](https://prometheus.io/).
+An often overlooked dimension of data collection is flow data from hosts. This is not a new concept, there have been tools built for this for a very long time, but in many cases, and especially over the last 8-10 years, many system engineers have gravitated toward tooling like [grafana](https://grafana.com/) and [prometheus](https://prometheus.io/).
 While these are fine tools and if done well provide an excellent view of host health, they aren't really a full picture of host *behavior*. Because this is generally expected to be handled by the network, it's frequently overlooked. However, because many environments do not implement sflow on their layer 2 devices, it can be beneficial to export this data from the hosts themselves.
 
 For this recipe, we'll need three ingredients.
 
-### Host Systems and flow generation
+## Host Systems and flow generation
 Let's suppose you have some cloud systems that there is a requirement or desire to have network flow analytics. Similar to an internal environment, tools exist to export flow data (both Netflow and sFlow), but they are exported as unencrypted datagrams that are likely undesirable to have open and viewable across a public network. Even if the network is using [private network interconnects (PNI)](https://en.wikipedia.org/wiki/PNI), it's a good idea to encrypt the transport of this information.
 
 There are two options here, [hsflowd](https://github.com/sflow/host-sflow) and pmacct. both work, both are available in apt sources for ubuntu, but pmacctd is more flexible.
@@ -70,8 +70,7 @@ syslog: daemon
   ifindex=3 ifname=ens3 direction=out
   ```
 
-
-### Collection system
+## Collection system
 There are a number of ways to do this, manually configured discreet wireguard tunnels, [ZeroTier](https://www.zerotier.com/), or as used here, [Tailscale](https://tailscale.com/) tunnels. If someone was so inclined they could even do it with IPsec, although I can't imagine trying to manage that with any amount of sanity left intact. Tailscale is very easy to set up, and has a very generous entry level free tier with a very polished web management dashboard and *exceptionally* good documentation. 
 
 Akvorado requires hosts to support SNMP polling, so we'll need to install snmpd on each host and restrict the access. SNMPv3 is preferable, but I had some issues getting that to work with akvorado, although [it should be supported](https://github.com/akvorado/akvorado/discussions/494).
@@ -93,7 +92,7 @@ sysLocation    Somewhereville, IL, US
 sysContact     Snake Plisskin <iheardhewasdead@escapefrom.ny>
 ```
 
-### Flow Collector
+## Flow Collector
 For a flow collector, [Akvorado](https://github.com/akvorado/akvorado) is a great choice both for feature completeness, ease of use (i.e. great docs), and cost (FOSS). Akvorado has a very good docker implementation with [a simple and straightforward quick-start guide](https://demo.akvorado.net/docs/intro#quick-start).
 
 Following the quick start guide and using docker, the akvrado system should be fairly easy to make work. Two important details are the metadata configuration in `/opt/akvorado/config/inlet.yaml`. Look for the metadata configuration and add your SNMP configuration
@@ -111,7 +110,7 @@ metadata:
 
 The end result is a reasonably good view of what hosts generate on their network interfaces, which can be used for any number of things from capacity planning to intrusion detection. 
 
-![Akvorado Screen Shot of host sflow data](/wp-content/2025/01/03akvorado.png)
+![Akvorado Screen Shot of host sflow data](/wp-content/2025/01/akvorado.png)
 
 If there is a clear theme here, it is good documentation. Each of these components has terrific, easy to follow documentation.
 

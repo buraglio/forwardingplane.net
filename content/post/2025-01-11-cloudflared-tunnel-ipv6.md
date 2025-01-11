@@ -1,6 +1,6 @@
 ---
 title: Mikrotik Winbox linux .desktop file
-date: 2025-01-211
+date: 2025-01-11
 author: Nick Buraglio
 layout: post
 categories:
@@ -23,7 +23,7 @@ This configuration tweak assumes the use of a Linux service and the cloudflared 
 
 `sudo systemctl edit --full cloudflared.service` and edit the ExecStart to include `--edge-ip-version 6`
 
-the final edit should look something like: 
+the final edit should look something like:
 
 ```
 [Unit]

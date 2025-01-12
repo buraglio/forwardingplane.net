@@ -13,17 +13,20 @@ tags:
     - ipv6
 ---
 
-Cloudflare offers a [powerful tunneling service](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) that allows for a host on a private network to expose a service but retain protection using cloudflare's powerful CDN tools. At the time of this post that service is a lagacy IP first service, but with one minor tweak it can operate with IPv6-only hosts. Meaning one can provision an IPv6-only host, but provide a dual stacked service. If that sounds powerful, that's because it is. This is especially useful for environments where they may be limited in their legacy IP allocations, mandated to keep a single IPv6 stack, or, if they just don't want to bother with legacy IP and potentially NAT to keep the network stack simple, secure, and clean.
-The cloudflare tunneling can be found in your cloudflare account under ZeroTrust > Networks > Tunnels. 
+Cloudflare offers a [powerful tunneling service](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) that allows for a host on a private network to expose a service but retain
+protection using cloudflares' powerful CDN tools. At the time of this post that service is a legacy IP first service, but with one minor tweak it can operate with IPv6-only hosts. Meaning one can provision an
+IPv6-only host, but provide a dual stacked service. If that sounds powerful, that's because it is. This is especially useful for environments where they may be limited in their legacy IP allocations, mandated
+to keep a single IPv6 stack, or, if they just don't want to bother with legacy IP and potentially NAT to keep the network stack simple, secure, and clean.
+The cloudflare tunneling can be found in your cloudflare account under ZeroTrust > Networks > Tunnels.
 
 
 Making this work is remarkably simple, but the how-to is buried in a [GitHub issue](https://github.com/cloudflare/cloudflared/issues/842).
 
-This configuration tweak assumes the use of a Linux service and the cloudflared package. In order to enable IPv6 tunne;l connectivity, simply edit the cloudflared.service as such:
+This configuration tweak assumes the use of a Linux service and the cloudflared package. In order to enable IPv6 tunnel connectivity, simply edit the cloudflared.service as such:
 
 `sudo systemctl edit --full cloudflared.service` and edit the ExecStart to include `--edge-ip-version 6`
 
-the final edit should look something like:
+The final edit should look something like:
 
 ```
 [Unit]

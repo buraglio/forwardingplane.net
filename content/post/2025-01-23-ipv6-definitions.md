@@ -5,8 +5,12 @@ author: Nick Buraglio
 layout: page
 categories:
     - configuration
+    - ipv6-only
+    - ipv6
+    - ietf
 tags:
     - ipv6
+    - ietf
 ---
 
 Since IPv6 is gaining momentum, and is generally operating alongside other protocols, it has become important to define the operating modes that may exist in any IPv6 environment. This allows for consistent communication and understanding of a fundamental part of operating a production network. Most of this hard work has been done by the IETF, and 99% of those definitions as can be referenced by engineers and architects when creating designs, proposals, and documentation, can be found in one really well crafted RFC. Within the [RFC8925](https://www.rfc-editor.org/rfc/rfc8925.html) terminology section there are easy to understand definitions for most operating modes that an engineer will see in the wild. As this is an RFC that defines an operational option for running a network, it is very complete in its description of operational models.

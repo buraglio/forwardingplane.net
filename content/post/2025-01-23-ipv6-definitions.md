@@ -1,6 +1,6 @@
 ---
 title: Defining IPv6 operating modes
-date: 2025-01-13
+date: 2025-01-17
 author: Nick Buraglio
 layout: page
 categories:

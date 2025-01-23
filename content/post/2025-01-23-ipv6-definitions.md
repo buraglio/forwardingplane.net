@@ -2,7 +2,7 @@
 title: Defining IPv6 operating modes
 date: 2025-01-17
 author: Nick Buraglio
-layout: page
+layout: post
 categories:
     - configuration
     - ipv6-only

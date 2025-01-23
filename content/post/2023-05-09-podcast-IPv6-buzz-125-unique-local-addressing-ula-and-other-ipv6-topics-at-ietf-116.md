@@ -1,6 +1,6 @@
 ---
 id: 2579
-title: 'PODCAST: Pv6 Buzz 125: Unique Local Addressing (ULA) And Other IPv6 Topics At IETF 116'
+title: 'PODCAST: IPv6 Buzz 125: Unique Local Addressing (ULA) And Other IPv6 Topics At IETF 116'
 date: '2023-05-09T14:21:25-05:00'
 author: buraglio
 layout: post

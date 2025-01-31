@@ -5,5 +5,11 @@
 /topics/sdn/feed/ /post/index.xml 200!
 /topics/routing/feed/ /post/index.xml 200!
 /topics/security/feed/ /post/index.xml 200!
-/resume https://drive.google.com/open?id=1bpYbEtUHWGbmEvGK6IicNjJ1E5DUgrLA 200!
+/resume https://github.com/buraglio/resume/blob/main/Nick-Buraglio-Resume.pdf 200!
 /post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/ /2014/01/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/ 200!
+
+/.well-known/webfinger https://social.forwardingplane.net/.well-known/webfinger
+/.well-known/nodeinfo https://social.forwardingplane.net/.well-known/nodeinfo
+/.well-known/host-meta https://social.forwardingplane.net/.well-known/host-meta
+
+

@@ -8,8 +8,8 @@
 /resume https://github.com/buraglio/resume/blob/main/Nick-Buraglio-Resume.pdf 200!
 /post/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/ /2014/01/install-nfsen-and-nfdump-on-centos-6-5-for-netflow-and-or-sflow-collection/ 200!
 
-/.well-known/webfinger https://social.forwardingplane.net/.well-known/webfinger
-/.well-known/nodeinfo https://social.forwardingplane.net/.well-known/nodeinfo
-/.well-known/host-meta https://social.forwardingplane.net/.well-known/host-meta
+/.well-known/webfinger https://social.forwardingplane.net/.well-known/webfinger 200!
+/.well-known/nodeinfo https://social.forwardingplane.net/.well-known/nodeinfo 200!
+/.well-known/host-meta https://social.forwardingplane.net/.well-known/host-meta 200!
 
 

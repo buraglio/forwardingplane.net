@@ -12,7 +12,7 @@ force = true
 # conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
 [[redirects]]
 from = "/resume"
-to = "https://drive.google.com/open?id=1bpYbEtUHWGbmEvGK6IicNjJ1E5DUgrLA"
+to = "https://github.com/buraglio/resume/blob/main/Nick-Buraglio-Resume.pdf"
 status = 301
 force = true
 
@@ -23,19 +23,19 @@ status = 301
 force = true
 
 [[redirects]]
-from = "/.well-known/webfinger"
+from = ".well-known/webfinger"
 to = "social.forwardingplane.net/.well-known/webfinger"
 status = 301
 force = true
 
 [[redirects]]
-from = "/.well-known/nodeinfo"
+from = ".well-known/nodeinfo"
 to = "social.forwardingplane.net/.well-known/nodeinfo"
 status = 301
 force = true
 
 [[redirects]]
-from = "/.well-known/host-meta"
+from = ".well-known/host-meta"
 to = "social.forwardingplane.net/.well-known/host-meta"
 status = 301
 force = true

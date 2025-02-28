@@ -70,13 +70,25 @@ and then
 - `-o, --output`: Specifies the output file to save resolved addresses (default: `resolved_addresses.txt`).
 - `-n --normalize`: Specifies that the output should be a simple normalization of the URL - i.e. strip the http(s):// and trailing /$.
 - `-r --resolve`: Specifies that the domain should be resolved and places as their literal IPv6 and/or legacy IPv4 addresses (default: -n).
+- `-l --iptables`: Prints output in linux iptables format (requires -r)
+- `-t --sros`: Prints output in Nokia SROS output (requires -r)
+- `-j --junos`: Prints output as a JunOS prefix-list (requires -r)
+- `-c --cisco`: Specifies the output as a Cisco IOS prefix-list (requires -r)
+- `-x --iosxr`: Prints the output as an IOS-XR prefix-set (requires -r)
+- `-z --filter-name`: Sets the name of the filter in -c, -x, -t, and -j
 - `-h, --help`  : Displays the help message.
 
-## Example
+## Examples
 ```sh
 python urlresolver.py -f someurls.txt -o someresults.txt
 ```
 This will read domain names from `someurls.txt`, resolve their A and AAAA records, and save the results in `someresults.txt`.
+
+```
+urlresolver.py -r -j -f someurls.txt -o junos.txt -z someurls
+```
+This will read domain names from `someurls.txt`, resolve their A and AAAA records, and save the results in a junos prefix-list formatted list named `junos.txt` where the prefix-list name is `someurls`.
+
 
 ## Input File Format
 The input file should contain one URL per line, e.g.,

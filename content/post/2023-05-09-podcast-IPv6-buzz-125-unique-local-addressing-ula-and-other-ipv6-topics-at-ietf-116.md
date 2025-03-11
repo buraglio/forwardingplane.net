@@ -27,10 +27,7 @@ categories:
 <p>Give it a listen here or in your favorite podcatcher. </p>
 <!-- /wp:paragraph -->
 
-<!-- wp:embed {"url":"https://feeds.packetpushers.net/link/19801/16106092/IPv6_Buzz_125_Unique_Local_Addressing_ULA_And_Other_IPv6_Topics_At_IETF_116.mp3","type":"rich","providerNameSlug":"embed-handler"} -->
-<figure class="wp-block-embed is-type-rich is-provider-embed-handler wp-block-embed-embed-handler"><div class="wp-block-embed__wrapper">
-https://feeds.packetpushers.net/link/19801/16106092/IPv6_Buzz_125_Unique_Local_Addressing_ULA_And_Other_IPv6_Topics_At_IETF_116.mp3
-</div></figure>
+<iframe width="320" height="30" src="https://packetpushers.net/?powerpress_embed=55196-podcast&amp;powerpress_player=mediaelement-audio" title="Blubrry Podcast Player" frameborder="0" scrolling="no"></iframe>
 <!-- /wp:embed -->
 
 <!-- wp:paragraph -->

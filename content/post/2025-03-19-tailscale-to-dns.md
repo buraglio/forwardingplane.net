@@ -1,5 +1,5 @@
 ---
-title: Tailscale to DNS Updater
+title: Tailscale DNS Updater
 
 date: 2025-03-19
 author: Nick Buraglio
@@ -17,8 +17,6 @@ tags:
 One of the very few things that irritates me about TailScale is that it uses ULA addressing and doesn't allow for custom address block definitions (i.e., I can't use my own GUA block). While this is definitely a "me problem", it is something that is irksome to me nonetheless. So, in order to get access to my systems over TailScale, over IPv6, I created this python script to grab the v6 addresses and put them into a format conducive to, say, an internal BIND view, or pihole (v5). Or even shove them into Cloudflare (see caveat below).
 
 ---------
-
-# Tailscale DNS Updater
 
 This Python script retrieves IPv6 addresses from the Tailscale API and updates Cloudflare DNS records accordingly. It also includes options to format the output as a BIND zone file or a Pi-hole local.list format.
 

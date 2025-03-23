@@ -5,13 +5,10 @@ copyright = "Copyright (c) 2025, all rights reserved."
 canonifyurls = true
 enableRobotsTXT = true
 theme = "hugo-theme-console"
-#disqusShortname = "forwardingplane"
+disqusShortname = "forwardingplane"
 pygmentsCodeFences = "true"
 googleAnalytics = "G-TVRH5QV4ET"
 
-services:
-  disqus:
-    shortname: forwardingplane
 
 [author]
   name = "Nick Buraglio"

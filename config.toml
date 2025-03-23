@@ -8,7 +8,7 @@ theme = "hugo-theme-console"
 #disqusShortname = "forwwardingplane"
 pygmentsCodeFences = "true"
 #theme_colors = "default-dark" # uses color css file under static/css/default-dark.css
-googleAnalytics = "G-370732829"
+googleAnalytics = "G-TVRH5QV4ET"
 
 
 [author]

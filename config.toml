@@ -1,13 +1,12 @@
 baseURL = "https://forwardingplane.net/"
 languageCode = "en-us"
 title = "ForwardingPlane.net"
-copyright = "Copyright (c) 2024, all rights reserved."
+copyright = "Copyright (c) 2025, all rights reserved."
 canonifyurls = true
 enableRobotsTXT = true
 theme = "hugo-theme-console"
-#disqusShortname = "forwwardingplane"
+disqusShortname = "forwardingplane"
 pygmentsCodeFences = "true"
-#theme_colors = "default-dark" # uses color css file under static/css/default-dark.css
 googleAnalytics = "G-TVRH5QV4ET"
 
 

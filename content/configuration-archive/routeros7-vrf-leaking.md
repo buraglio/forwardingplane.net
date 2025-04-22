@@ -18,9 +18,9 @@ Have you ever wanted to leak routes between two VRFs on a mikrotik? I did. And I
 ```
 /routing bgp vpn 
 
-add export.redistribute=connected .route-targets=1:1 import.route-targets=1:2 label-allocation-policy=per-vrf name=bgp-mpls-vpn-1 \ route-distinguisher=1.2.3.4:1 vrf=vrf1 
+add export.redistribute=connected .route-targets=1:1 import.route-targets=1:2 label-allocation-policy=per-vrf name=bgp-mpls-vpn-1 route-distinguisher=1.2.3.4:1 vrf=vrf1 
 
-add export.redistribute=connected .route-targets=1:2 import.route-targets=1:1 label-allocation-policy=per-vrf name=bgp-mpls-vpn-2 \ route-distinguisher=1.2.3.4:1 vrf=vrf2
+add export.redistribute=connected .route-targets=1:2 import.route-targets=1:1 label-allocation-policy=per-vrf name=bgp-mpls-vpn-2 route-distinguisher=1.2.3.4:1 vrf=vrf2
 ```
 
 Pretty simple, yeah? Now we just wait until they fix leaking with @main.

@@ -14,7 +14,7 @@ tags:
 ---
 
 
-There are so many ways to create IPv6 Subnet plans. As discussed in [IPv6 Buzz 180](https://packetpushers.net/podcasts/ipv6-buzz/ipb180-ipv6-basics-deployment/), an address plan is one of, if not the first step. Because getting started in the IPv6 subnet planning can be somewhat daunting, I wrote this go application to help bootstrap the process. [This open source tool](https://github.com/buraglio/ipv6planner) can be used along with the [web version of ipv6utils](https://tools.forwardingplane.net), or the CLI tool.
+There are so many ways to create IPv6 Subnet plans. As discussed in [IPv6 Buzz 180](https://packetpushers.net/podcasts/ipv6-buzz/ipb180-ipv6-basics-deployment/), an address plan is one of, if not the first step. Because getting started in the IPv6 subnet planning can be somewhat daunting, I wrote this go application to help bootstrap the process. [This open source tool](https://github.com/buraglio/ipv6planner) can be used along with the [web version of ipv6utils](https://tools.forwardingplane.net), or the [CLI tool](https://github.com/buraglio/ipv6utils).
 
 It's not the Swiss army knife, but it's enough to build a starting point. It currently supports:
 

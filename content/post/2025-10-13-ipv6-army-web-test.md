@@ -1,7 +1,7 @@
 
 ---
 title: An alternative to test-ipv6.com
-date: 2025-10-09
+date: 2025-10-13
 author: Nick Buraglio
 layout: post
 categories:

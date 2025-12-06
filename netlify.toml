@@ -1,8 +1,5 @@
 [context.production.environment]
-  HUGO_VERSION = "v0.122.2"
-#[[redirects]]
-#  from = "/"
-#  to = "/public"
+  HUGO_VERSION = "0.122.0"
 [[redirects]]
 from = "/feed/"
 to = "/post/index.xml"

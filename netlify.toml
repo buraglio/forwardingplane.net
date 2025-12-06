@@ -1,5 +1,9 @@
 [context.production.environment]
-  HUGO_VERSION = "0.122.0"
+HUGO_VERSION = "0.92.0"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+# HUGO_THEME = "repo"
+
 [[redirects]]
 from = "/feed/"
 to = "/post/index.xml"

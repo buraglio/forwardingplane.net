@@ -58,3 +58,8 @@ googleAnalytics = "G-TVRH5QV4ET"
 
 [permalinks]
   posts = "/:year/:month/:title/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

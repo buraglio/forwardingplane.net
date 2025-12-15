@@ -21,6 +21,6 @@ And so the effort to define a new documentation space began.
 
 Now, working ion the IETF is a developed skill that takes a lot of diplomacy, a good amount of knowledge of the system, an understanding of the technology, and patience. I once presented on IPv6 migration and referenced a very specific quite from the fantastic movie ["The Shawshank Redemption"](https://www.imdb.com/title/tt0111161/):
 
-Patience and time.  
+Patience and time. 
 
 This kind of progress is no different. After a couple of years of work, we emerged with [RFC9637](https://datatracker.ietf.org/doc/rfc9637/), which allocates `3fff::/20` in addition to the existing `2001:db8:/32` allocated in [RFC3849](https://datatracker.ietf.org/doc/rfc3849/). So go forth, design large networks, and use `3fff::/20` in your documentation - stop using GUA space!

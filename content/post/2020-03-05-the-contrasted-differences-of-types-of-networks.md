@@ -18,11 +18,15 @@ categories:
 ---
 
 <!-- wp:paragraph -->
-<p>Today more than ever, networking has fundamental similarities. The days of routing IPX/SPX, AppleTalk, Banyan Vines or provisioning ATM and Frame Relay links are moving into the past. Most networks are now based on ethernet*. Most run at least IPv4 as a routed protocol. They leverage similar connectivity techniques such as an interior gateway protocol, a layer2 mechanism such as VLANs or VPLS, and an identifiable border (e.g. an autonomous system). This, however, is where the similarities mostly end.&nbsp;While it is true that in networking there are problems and there are solutions, the differences and uniqueness of particular environments creates a quick divergence of what a reasonable solution is to a given problem.  </p>
+
+Today more than ever, networking has fundamental similarities. The days of routing IPX/SPX, AppleTalk, Banyan Vines or provisioning ATM and Frame Relay links are moving into the past. Most networks are now based on ethernet*. Most run at least IPv4 as a routed protocol. They leverage similar connectivity techniques such as an interior gateway protocol, a layer2 mechanism such as VLANs or VPLS, and an identifiable border (e.g. an autonomous system). This, however, is where the similarities mostly end. While it is true that in networking there are problems and there are solutions, the differences and uniqueness of particular environments creates a quick divergence of what a reasonable solution is to a given problem. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>As our industry evolves and becomes more blended, it becomes increasingly important for engineers familiar with one particular set of problems and solutions to familiarize themselves with the others. Along those lines, <a href="https://www.stubarea51.net">Kevin Myers</a>, <a href="https://blog.networkcollective.com/user/jordan/">Jordan Marti</a>n, and myself sat down and had a pretty frank discussion about the differences, the similarities, and some navel gazing about what the future holds in the networking space. Give it a listen <a href="https://networkcollective.com/2020/03/cr-networks-equal/">here</a> or right here below:</p>
+
+As our industry evolves and becomes more blended, it becomes increasingly important for engineers familiar with one particular set of problems and solutions to familiarize themselves with the others. Along those lines, [Kevin Myers](https://www.stubarea51.net), [Jordan Marti](https://blog.networkcollective.com/user/jordan/)n, and myself sat down and had a pretty frank discussion about the differences, the similarities, and some navel gazing about what the future holds in the networking space. Give it a listen [here](https://networkcollective.com/2020/03/cr-networks-equal/) or right here below:
+
 <!-- /wp:paragraph -->
 
 <!-- wp:audio -->

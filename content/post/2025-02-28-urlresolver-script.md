@@ -66,7 +66,7 @@ and then
 
 
 ### Options:
-- `-f, --file`  : Specifies the input file containing URLs (default: `url.txt`).
+- `-f, --file` : Specifies the input file containing URLs (default: `url.txt`).
 - `-o, --output`: Specifies the output file to save resolved addresses (default: `resolved_addresses.txt`).
 - `-n --normalize`: Specifies that the output should be a simple normalization of the URL - i.e. strip the http(s):// and trailing /$.
 - `-r --resolve`: Specifies that the domain should be resolved and places as their literal IPv6 and/or legacy IPv4 addresses (default: -n).
@@ -76,7 +76,7 @@ and then
 - `-c --cisco`: Specifies the output as a Cisco IOS prefix-list (requires -r)
 - `-x --iosxr`: Prints the output as an IOS-XR prefix-set (requires -r)
 - `-z --filter-name`: Sets the name of the filter in -c, -x, -t, and -j
-- `-h, --help`  : Displays the help message.
+- `-h, --help` : Displays the help message.
 
 ## Examples
 ```sh

@@ -26,7 +26,7 @@ This only supports IPv6 because there is no reason to support legacy IPv4 when e
 [source address selection rules](https://datatracker.ietf.org/doc/html/rfc6724) when dual-stacked the IPv6 ULA will never be used 
 without [rfc6724-update](https://datatracker.ietf.org/doc/draft-ietf-6man-rfc6724-update/).
 
-If you want it to do legacy IP, feel free to fork it.  Source available [here](https://github.com/buraglio/ts-cf-dns).
+If you want it to do legacy IP, feel free to fork it. Source available [here](https://github.com/buraglio/ts-cf-dns).
 
 ## Features
 

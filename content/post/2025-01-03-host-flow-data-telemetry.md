@@ -37,7 +37,7 @@ sflow {
      collector { ip=100.68.194.88 udpport=6343 }
      # collector {ip=fd7a:115c:a1e0::e601:c258 udpport=6343 }
      #pcap { dev = ens3 }
-     nflog { group = 5  probability = 0.0025 }
+     nflog { group = 5 probability = 0.0025 }
 }
 ```
 
@@ -84,12 +84,12 @@ agentAddress udp:100.65.156.88:161
 createUser snmpv3user-changeme MD5 snmpv3MD5-changeme AES snmpv3encAES-changeme
 rwuser snmpv3user-changeme priv 1.3.6.1.2.1
 #snmp2 config
-rocommunity hostSNMPv2-changeme  default
-rocommunity6 hostSNMPv2-changeme  default
-rouser   authOnlyUser
+rocommunity hostSNMPv2-changeme default
+rocommunity6 hostSNMPv2-changeme default
+rouser authOnlyUser
 #owner
-sysLocation    Somewhereville, IL, US
-sysContact     Snake Plisskin <iheardhewasdead@escapefrom.ny>
+sysLocation Somewhereville, IL, US
+sysContact Snake Plisskin <iheardhewasdead@escapefrom.ny>
 ```
 
 ## Flow Collector

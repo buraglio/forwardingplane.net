@@ -22,55 +22,153 @@ categories:
     - UNIX
 ---
 
-Securing SSH is a form or art.  It's often debated, much like blocking all ICMP packets (which I normally disagree with).  If you need good proof, read <a href="http://lonesysadmin.net/2012/11/20/changing-sshd-port-numbers-continues-to-be-a-bad-idea/">these</a> <a href="http://lonesysadmin.net/2012/10/19/on-using-alternate-ports-for-ssh/">posts</a> by <a href="https://twitter.com/plankers">Bob Plankers</a>.  There is a camp that likes to promote moving to a non-standard port.  There is a faction that likes to block it completely except from a handful of hosts.  Then there are those that like to leave it open all together.  Running naked in the digital jungle.
-I tend to err on the side of blocking except for jump hosts.  This is a pretty time proven methodology.  However, what about the hosts that <strong>need</strong> to be open? A hardened jump host or public shell box comes to mind.
-Enter <a href="http://www.sshguard.net">sshguard</a>.
+Securing SSH is a form or art.  It's often debated, much like blocking all ICMP packets (which I normally disagree with).  If you need good proof, read [these](http://lonesysadmin.net/2012/11/20/changing-sshd-port-numbers-continues-to-be-a-bad-idea/) [posts](http://lonesysadmin.net/2012/10/19/on-using-alternate-ports-for-ssh/) by [Bob Plankers](https://twitter.com/plankers).  There is a camp that likes to promote moving to a non-standard port.  There is a faction that likes to block it completely except from a handful of hosts.  Then there are those that like to leave it open all together.  Running naked in the digital jungle.
+I tend to err on the side of blocking except for jump hosts.  This is a pretty time proven methodology.  However, what about the hosts that **need** to be open? A hardened jump host or public shell box comes to mind.
+Enter [sshguard](http://www.sshguard.net).
 SSH Guard is an amazing little piece of software that takes the heavy lifting out of blocking all of those scans and automates removal of blocks.  It works across a myriad of popular unix platforms.
-From <a href="http://www.sshguard.net">http://www.sshguard.net</a>:
-<em>Sshguard monitors servers from their logging activity. When logs convey that someone is doing a Bad Thing, sshguard reacts by blocking he/she/it for a bit. Sshguard has a touchy personality: when a naughty tyke insists disturbing your host, it reacts firmer and firmer.</em>
-<em>Sshguard supports many services out of the box, recognizes severallog formats, and can operate many firewall systems. Many users appreciate its ease of use, compatibility and feature richness.</em>
+From [http://www.sshguard.net](http://www.sshguard.net):
+*Sshguard monitors servers from their logging activity. When logs convey that someone is doing a Bad Thing, sshguard reacts by blocking he/she/it for a bit. Sshguard has a touchy personality: when a naughty tyke insists disturbing your host, it reacts firmer and firmer.*
+*Sshguard supports many services out of the box, recognizes severallog formats, and can operate many firewall systems. Many users appreciate its ease of use, compatibility and feature richness.*
 I like it because they have not left out some of the less common distros, but sinceI've mostly converted over to CentOS, this focus is how to set it up on Centos 6.3.   We'll assume you have epel repo and rpmforge repo installed.
-I prefer <a href="http://www.balabit.com/network-security/syslog-ng">syslog-ng</a> so lets install that.
-<pre>sudo yum -y install syslog-ng</pre>
-<pre>chkconfig syslog-ng on</pre>
-<pre>chkconfig rsyslog off</pre>
+I prefer [syslog-ng](http://www.balabit.com/network-security/syslog-ng) so lets install that.
+
+```
+sudo yum -y install syslog-ng
+```
+
+
+```
+chkconfig syslog-ng on
+```
+
+
+```
+chkconfig rsyslog off
+```
+
 This isn't necessary, but I'd recommend it.
 Next, I lke to disable selinux.  It's on be default in CentOS and I really don't need what it offers.  I find it annoying and far too restrictive and this won't build correctly without it disabled in my experience.
-<pre>sudo vi /etc/selinux/config</pre>
+
+```
+sudo vi /etc/selinux/config
+```
+
 Change the line that reads
-<pre><code>SELINUX=enabled</code></pre>
+
+```
+SELINUX=enabled
+```
+
 to
-<pre><code>SELINUX=disabled</code></pre>
-You'll need to reboot to make this take effect. Note that this will disable selinux completely and permanently.  <a href="http://www.revsys.com/writings/quicktips/turn-off-selinux.html">There are ways to temporarily disable it</a> if you would prefer.
-<pre>sudo reboot</pre>
+
+```
+SELINUX=disabled
+```
+
+You'll need to reboot to make this take effect. Note that this will disable selinux completely and permanently.  [There are ways to temporarily disable it](http://www.revsys.com/writings/quicktips/turn-off-selinux.html) if you would prefer.
+
+```
+sudo reboot
+```
+
 Download sshguard.  I didn't find it in any repos for Centos 6.x.  I may be mistaken, but I went this route.
-<pre>wget http://sourceforge.net/projects/sshguard/files/sshguard/sshguard-1.5/sshguard-1.5.tar.bz2/download</pre>
+
+```
+wget http://sourceforge.net/projects/sshguard/files/sshguard/sshguard-1.5/sshguard-1.5.tar.bz2/download
+```
+
 Unpack it.
-<pre>bunzip2 sshguard-1.5.tar.bz2</pre>
-<pre>tar -xvf sshguard-1.5.tar</pre>
-<pre>cd sshguard-1.5</pre>
+
+```
+bunzip2 sshguard-1.5.tar.bz2
+```
+
+
+```
+tar -xvf sshguard-1.5.tar
+```
+
+
+```
+cd sshguard-1.5
+```
+
 I like to do minimal installs of Linux, so I need to add gcc before I can compile.  This will likely install some dependancies if it's a new minimal install.  Same goes for make
-<pre>sudo yum install gcc make</pre>
-<pre>sudo ./configure --with-firewall=iptables</pre>
-<pre>sudo make &amp;&amp; sudo make install</pre>
+
+```
+sudo yum install gcc make
+```
+
+
+```
+sudo ./configure --with-firewall=iptables
+```
+
+
+```
+sudo make && sudo make install
+```
+
 OK, you should have it installed at this point.  You can verify by doing:
-<pre>ls -la /usr/local/sbin/sshguard</pre>
+
+```
+ls -la /usr/local/sbin/sshguard
+```
+
 which should yield something like this:
-<pre>-rwxr-xr-x 1 root root 399995 Dec 16 02:28 /usr/local/sbin/sshguard</pre>
-<pre></pre>
+
+```
+-rwxr-xr-x 1 root root 399995 Dec 16 02:28 /usr/local/sbin/sshguard
+```
+
+
+```
+
+```
+
 Great, now we need to create firewall tables for sshguard for IPv4, and if you're keeping up to date, IPv6.
-<pre>sudo iptables -N sshguard</pre>
-<pre>sudo ip6tables -N sshguard</pre>
+
+```
+sudo iptables -N sshguard
+```
+
+
+```
+sudo ip6tables -N sshguard
+```
+
 Now tell iptables to drop that traffic. Make sure you don't have a permit ssh rule above this line or it won't work.
-<pre>sudo iptables -A INPUT -j sshguard</pre>
-<pre>sudo ip6tables -A INPUT -j sshguard</pre>
-<pre></pre>
+
+```
+sudo iptables -A INPUT -j sshguard
+```
+
+
+```
+sudo ip6tables -A INPUT -j sshguard
+```
+
+
+```
+
+```
+
 Save your config.  
-<pre>sudo iptables-save &lt; /etc/sysconfig/iptables</pre>
-<pre>sudo ip6tables-save &lt; /etc/sysconfig/ip6tables</pre>
+
+```
+sudo iptables-save < /etc/sysconfig/iptables
+```
+
+
+```
+sudo ip6tables-save < /etc/sysconfig/ip6tables
+```
+
 For the examples below, we'll just look at IPv4 to keep the post a bit shorter, but the v6 pieces are all identical save for the file names.  If you're running v6 you should remember to secure it just as you would v4.
 Mine ruleset is pretty vanilla, mostly stock with the exception of ssl and dns.
-<pre># Completed on Sat Dec 15 21:02:09 2012
+
+```
+# Completed on Sat Dec 15 21:02:09 2012
 # Generated by iptables-save v1.4.7 on Sat Dec 15 21:02:09 2012
 *filter
 :INPUT ACCEPT [0:0]
@@ -88,13 +186,25 @@ Mine ruleset is pretty vanilla, mostly stock with the exception of ssl and dns.
 -A INPUT -j REJECT --reject-with icmp-host-prohibited
 -A FORWARD -j REJECT --reject-with icmp-host-prohibited
 COMMIT
-# Completed on Sat Dec 15 21:02:09 2012</pre>
+# Completed on Sat Dec 15 21:02:09 2012
+```
+
 Note: I did have to relocate the sshguard rule to right below the first INPUT rule to make it actually effective.
-<pre></pre>
+
+```
+
+```
+
 Now we need to activate it.  This is pretty straightforward.  We essentially need to tell syslog to call sshguard based on activity and it's why I prefer syslog-ng.  It's very flexible and easy to add this stuff right in.  I've been using it for over a decade and it the most flexible syslog server I've found.  
-<pre>vi /etc/syslog-ng/syslog-ng.conf</pre>
-Based on the <a href="http://www.sshguard.net/docs/setup/getlogs/syslog-ng/">instructions at the sshguard site</a> (which also have details for extending this to more than just ssh; I'll do a post on that for CentOS at some point too), just add the following to the bottom of your syslog-ng.conf file:
-<pre># pass only entries with auth+authpriv facilities from programs other than sshguard
+
+```
+vi /etc/syslog-ng/syslog-ng.conf
+```
+
+Based on the [instructions at the sshguard site](http://www.sshguard.net/docs/setup/getlogs/syslog-ng/) (which also have details for extending this to more than just ssh; I'll do a post on that for CentOS at some point too), just add the following to the bottom of your syslog-ng.conf file:
+
+```
+# pass only entries with auth+authpriv facilities from programs other than sshguard
 filter f_sshguard { facility(auth, authpriv) and not program("sshguard"); };
 # pass entries built with this format
 destination sshguard {
@@ -102,19 +212,47 @@ destination sshguard {
  template("$DATE $FULLHOST $MSGHDR$MESSAGE\n")
  );
 };
-log { source(s_sys); filter(f_sshguard); destination(sshguard); };</pre>
+log { source(s_sys); filter(f_sshguard); destination(sshguard); };
+```
+
 Then restart syslog-ng
-<pre>sudo service syslog-ng stop</pre>
-<pre>sudo service syslog-ng start</pre>
-<div>You'll probably see these errors, they can be ignored if you're not using the afsql module.</div>
-<div></div>
-<pre>Plugin module not found in 'module-path'; module-path='/lib64/syslog-ng', module='afsql'</pre>
-<pre>Starting syslog-ng: Plugin module not found in 'module-path'; module-path='/lib64/syslog-ng', module='afsql'</pre>
+
+```
+sudo service syslog-ng stop
+```
+
+
+```
+sudo service syslog-ng start
+```
+
+You'll probably see these errors, they can be ignored if you're not using the afsql module.
+
+
+```
+Plugin module not found in 'module-path'; module-path='/lib64/syslog-ng', module='afsql'
+```
+
+
+```
+Starting syslog-ng: Plugin module not found in 'module-path'; module-path='/lib64/syslog-ng', module='afsql'
+```
+
 ssh into localhost or in from an outside host. This will create a log and cause syslog-ng to call sshguard. At that point you should see this when looking for sshguard:
-<pre>ps auxww | grep sshguard</pre>
-<pre>root 14010 0.0 0.0 16924 1260 ? Sl 20:49 0:00 /usr/local/sbin/sshguard</pre>
+
+```
+ps auxww | grep sshguard
+```
+
+
+```
+root 14010 0.0 0.0 16924 1260 ? Sl 20:49 0:00 /usr/local/sbin/sshguard
+```
+
 You should see it in your iptables rules:
-<pre>[buraglio@centos63 sysconfig]# sudo iptables -L
+
+```
+[buraglio@centos63 sysconfig]# sudo iptables -L
 Chain INPUT (policy ACCEPT)
 target prot opt source destination
 ACCEPT all -- anywhere anywhere state RELATED,ESTABLISHED
@@ -127,12 +265,26 @@ ACCEPT udp -- anywhere anywhere state NEW udp dpt:domain
 ACCEPT tcp -- anywhere anywhere state NEW tcp dpt:domain
 ACCEPT tcp -- anywhere anywhere state NEW tcp dpt:ndmp
 ACCEPT tcp -- anywhere anywhere state NEW tcp dpt:dnp
-REJECT all -- anywhere anywhere reject-with icmp-host-prohibited</pre>
-<pre>Chain FORWARD (policy ACCEPT)
+REJECT all -- anywhere anywhere reject-with icmp-host-prohibited
+```
+
+
+```
+Chain FORWARD (policy ACCEPT)
 target prot opt source destination
-REJECT all -- anywhere anywhere reject-with icmp-host-prohibited</pre>
-<pre>Chain OUTPUT (policy ACCEPT)
-target prot opt source destination</pre>
-<pre>Chain sshguard (1 references)
-target prot opt source destination</pre>
+REJECT all -- anywhere anywhere reject-with icmp-host-prohibited
+```
+
+
+```
+Chain OUTPUT (policy ACCEPT)
+target prot opt source destination
+```
+
+
+```
+Chain sshguard (1 references)
+target prot opt source destination
+```
+
 That's pretty much it. Let it sit and wait. It will block scanners automagically and then unblock them after a period of time.

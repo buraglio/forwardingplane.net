@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup/'
 permalink: /2012/11/24/workflow-and-my-every-day-workstation-setup/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/11/workflow-and-my-every-day-workstation.html
 dsq_thread_id:
     - '3686144452'
 Views:
@@ -22,4 +16,48 @@ categories:
     - UNIX
 ---
 
-<span style="font-family: inherit;">Recently, there was a <a href="http://forum.packetpushers.net/showthread.php/309-Productivity-or-Social-Apps?p=1276" target="_blank" rel="noopener noreferrer">thread over at Packet Pushers</a> about what folks use for their daily workflow.  I quickly realized that my setup is pretty simple (as I like it) and relied on a large amount of terminal based tools, which makes sense since I have been a UNIX (or UNIX based) OS user since my migration from the original MacOS back in the 1990s.  Anyway, Since I wrote most of this up already, I thought I'd post it here:</span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: inherit;"><u><b>Envoronment and Editing</b></u></span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: inherit;"><span style="background-color: white; color: #333333;">Editor: VIM via Terminal.app or BBEdit. Occasionally Textedit, but primarily I use VIM</span></span><br /><span style="font-family: inherit;"><span style="background-color: white; color: #333333;">Calendar: iCal</span><span style="background-color: white; color: #333333;">Mail: <a href="http://mailplaneapp.com/" target="_blank" rel="noopener noreferrer">Mailplane</a> ($24.95) and Mail.app (Free) (different accounts).</span><span style="background-color: white; color: #333333;">Blogging software: Blogger interface or Wordpress editor depending on site.  Both Free.</span><span style="background-color: white; color: #333333;">Screen capture: built in Mac hotkey (Apple+4), Free.</span><span style="background-color: white; color: #333333;">Screen video capture: <a href="http://www.evological.com/evocam.html" target="_blank" rel="noopener noreferrer">Evocam</a> or a clunky script I wrote that records to flv ($30)</span><span style="background-color: white; color: #333333;">Reminder/ToDo: Apple reminders app (Free; works across all their platforms)</span><span style="background-color: white; color: #333333;">Shell: zsh, of course (Free)</span></span><br /><span style="background-color: white; color: #333333;">Network Diagram tool: </span><a href="http://www.omnigroup.com/products/omnigraffle/" target="_blank" rel="noopener noreferrer">OmniGraffle Professional</a><span style="background-color: white; color: #333333;"> ($199.99)</span><span style="font-family: inherit;"><span style="background-color: white; color: #333333;"><br /></span><span style="background-color: white; color: #333333;"><br /></span></span><br /><u><b>Communications</b></u><br /><u><b><br /></b></u><span style="font-family: inherit;"><span style="background-color: white; color: #333333;">IM: Skype, MS Lync and Messages.app (Free, Free, Free)</span><br style="-webkit-box-shadow: none !important; background-color: white; color: #333333;" /><span style="background-color: white; color: #333333;"><u><b>Virtualization</b></u></span></span><br /><span style="font-family: inherit;"><span style="background-color: white; color: #333333;"><b><u><br /></u></b></span><span style="background-color: white; color: #333333;"><a href="https://www.virtualbox.org/" target="_blank" rel="noopener noreferrer">Virtual Box</a> or <a href="http://store.vmware.com/store/vmware/pd/productID.165310200/Currency.USD/?src=PaidSearch_Google_eBiz_Fusion_US_Brand" target="_blank" rel="noopener noreferrer">VMWare Fusion</a> on my laptop, depending on the application. See <a href="http://forum.packetpushers.net/showthread.php/309-Productivity-or-Social-Apps?p=1276" target="_blank" rel="noopener noreferrer">this post</a> for good reasons. (Free, $50)</span><br style="-webkit-box-shadow: none !important; background-color: white; color: #333333;" /><span style="background-color: white; color: #333333;"><br /></span></span><br /><span style="font-family: inherit;"><span style="background-color: white; color: #333333;"><b><u>Random Apps</u></b></span></span><br /><span style="font-family: inherit;"><span style="background-color: white; color: #333333;"><b><u><br /></u></b></span><span style="background-color: white; color: #333333;"><a href="https://itunes.apple.com/us/app/caffeine/id411246225?mt=12" target="_blank" rel="noopener noreferrer">Caffeine</a> (Keep screen awake easily, prevents sleep mode; Free)  </span></span><br /><span style="font-family: inherit;"><span style="background-color: white; color: #333333;"><a href="https://itunes.apple.com/us/app/growl/id467939042?mt=12" target="_blank" rel="noopener noreferrer">Growl</a> (Notifications; $3.99)</span><span style="background-color: white; color: #333333;"><a href="http://www.abyssoft.com/software/teleport/" target="_blank" rel="noopener noreferrer">Teleport</a> (Secure virtual KVM; Free)</span></span><br /><span style="font-family: inherit;"><span style="background-color: white; color: #333333;"><a href="https://itunes.apple.com/us/app/datavault-password-manager/id408865957?mt=12" target="_blank" rel="noopener noreferrer">DataVault Password Manager</a> for password sync and storage ($9.99; may look into 1Password)</span><br style="-webkit-box-shadow: none !important; background-color: white; color: #333333;" /><span style="background-color: white; color: #333333;"><a href="http://db.tt/iIXz2oDO" target="_blank" rel="noopener noreferrer">Dropbox</a> for Cloud storage (Free, paid also available)</span></span><br /><span style="font-family: inherit;"><span style="background-color: white; color: #333333;"><a href="https://spideroak.com/download/referral/1ddbb514c7eede1e37ad6411e76b549c" target="_blank" rel="noopener noreferrer">Spideroak</a> for Secure cloud folder sync (Free, Paid options available and worth the money)</span></span><br /><span style="font-family: inherit;"><span style="background-color: white; color: #333333;"><a href="http://www.crashplan.com/" target="_blank" rel="noopener noreferrer">Crashplan</a> for Backup ($Varies depending on plan.  Free option available.  This app is amazing, check it out)</span></span><br /><br /><span style="color: #333333;"><a href="https://itunes.apple.com/us/app/pocket/id568494494?mt=12" target="_blank" rel="noopener noreferrer">Pocket</a> for offline reading (Free)</span><br /><div style="font-family: inherit;"><br /></div><br /><span style="font-family: inherit;"><span style="background-color: white; color: #333333;"><u><b>Browser</b></u></span></span><br /><span style="font-family: inherit;"><span style="background-color: white; color: #333333;"><b><u><br /></u></b></span><span style="background-color: white; color: #333333;">Chrome for day to day browsing</span><span style="background-color: white; color: #333333;">  Disconnect and Collusion for privacy and blocking of tracking</span><span style="background-color: white; color: #333333;">  Adblock</span><span style="background-color: white; color: #333333;">  Flashblock</span><span style="background-color: white; color: #333333;">  IPvfoo</span><span style="background-color: white; color: #333333;">  Tapatalk Notifier </span><span style="background-color: white; color: #333333;">  Tweetdeck</span><br style="-webkit-box-shadow: none !important; background-color: white; color: #333333;" /><span style="background-color: white; color: #333333;">Safari for quick testing</span><span style="background-color: white; color: #333333;">Firefox for stuff that won't work in anything else.</span></span><div>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</div>
+Recently, there was a [thread over at Packet Pushers](http://forum.packetpushers.net/showthread.php/309-Productivity-or-Social-Apps?p=1276) about what folks use for their daily workflow.  I quickly realized that my setup is pretty simple (as I like it) and relied on a large amount of terminal based tools, which makes sense since I have been a UNIX (or UNIX based) OS user since my migration from the original MacOS back in the 1990s.  Anyway, Since I wrote most of this up already, I thought I'd post it here:**
+<u>*
+
+*Envoronment and Editing**
+</u>**
+Editor: VIM via Terminal.app or BBEdit. Occasionally Textedit, but primarily I use VIM
+Calendar: iCalMail: [Mailplane](http://mailplaneapp.com/) ($24.95) and Mail.app (Free) (different accounts).Blogging software: Blogger interface or Wordpress editor depending on site.  Both Free.Screen capture: built in Mac hotkey (Apple+4), Free.Screen video capture: [Evocam](http://www.evological.com/evocam.html) or a clunky script I wrote that records to flv ($30)Reminder/ToDo: Apple reminders app (Free; works across all their platforms)Shell: zsh, of course (Free)
+Network Diagram tool: [OmniGraffle Professional](http://www.omnigroup.com/products/omnigraffle/) ($199.99)
+
+
+<u>*
+
+*Communications**
+</u>**<u>*
+
+*
+**
+</u>IM: Skype, MS Lync and Messages.app (Free, Free, Free)**<u>*
+
+*Virtualization**
+</u>**
+**
+**
+[Virtual Box](https://www.virtualbox.org/) or [VMWare Fusion](http://store.vmware.com/store/vmware/pd/productID.165310200/Currency.USD/?src=PaidSearch_Google_eBiz_Fusion_US_Brand) on my laptop, depending on the application. See [this post](http://forum.packetpushers.net/showthread.php/309-Productivity-or-Social-Apps?p=1276) for good reasons. (Free, $50)**
+
+
+**Random Apps**
+**
+**
+**
+[Caffeine](https://itunes.apple.com/us/app/caffeine/id411246225?mt=12) (Keep screen awake easily, prevents sleep mode; Free)  **[Growl](https://itunes.apple.com/us/app/growl/id467939042?mt=12) (Notifications; $3.99)[Teleport](http://www.abyssoft.com/software/teleport/) (Secure virtual KVM; Free)
+[DataVault Password Manager](https://itunes.apple.com/us/app/datavault-password-manager/id408865957?mt=12) for password sync and storage ($9.99; may look into 1Password)<br style="-webkit-box-shadow: none !important; background-color: white; color: #333333;" />[Dropbox](http://db.tt/iIXz2oDO) for Cloud storage (Free, paid also available)
+[Spideroak](https://spideroak.com/download/referral/1ddbb514c7eede1e37ad6411e76b549c) for Secure cloud folder sync (Free, Paid options available and worth the money)
+[Crashplan](http://www.crashplan.com/) for Backup ($Varies depending on plan.  Free option available.  This app is amazing, check it out)
+
+[Pocket](https://itunes.apple.com/us/app/pocket/id568494494?mt=12) for offline reading (Free)
+
+
+<u>*
+
+*Browser**
+</u>**
+**
+**
+Chrome for day to day browsing  Disconnect and Collusion for privacy and blocking of tracking  Adblock  Flashblock  IPvfoo  Tapatalk Notifier   Tweetdeck<br style="-webkit-box-shadow: none !important; background-color: white; color: #333333;" />Safari for quick testingFirefox for stuff that won't work in anything else.

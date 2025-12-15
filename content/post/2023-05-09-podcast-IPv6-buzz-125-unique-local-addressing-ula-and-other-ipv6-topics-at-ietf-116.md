@@ -20,16 +20,22 @@ categories:
 ---
 
 <!-- wp:paragraph -->
-<p>Once again I was fortunate enough to be invited to talk with the experts on IPv6 Buzz about everything IPv6 and my experience with attending IETF 116. You can check out the episode <a href="https://packetpushers.net/podcast/ipv6-buzz-125-unique-local-addressing-ula-and-other-ipv6-topics-at-ietf-116/">here</a>. Discussion mostly includes <a href="https://datatracker.ietf.org/doc/draft-fbnvv-v6ops-site-multihoming/">Discussions on multihoming IPv6</a>, but we run the spectrum of addressing, documentation, and all of the fun topics! </p>
+
+Once again I was fortunate enough to be invited to talk with the experts on IPv6 Buzz about everything IPv6 and my experience with attending IETF 116. You can check out the episode [here](https://packetpushers.net/podcast/ipv6-buzz-125-unique-local-addressing-ula-and-other-ipv6-topics-at-ietf-116/). Discussion mostly includes [Discussions on multihoming IPv6](https://datatracker.ietf.org/doc/draft-fbnvv-v6ops-site-multihoming/), but we run the spectrum of addressing, documentation, and all of the fun topics! 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Give it a listen here or in your favorite podcatcher. </p>
+
+Give it a listen here or in your favorite podcatcher. 
+
 <!-- /wp:paragraph -->
 
-<iframe width="320" height="30" src="https://packetpushers.net/?powerpress_embed=55196-podcast&amp;powerpress_player=mediaelement-audio" title="Blubrry Podcast Player" frameborder="0" scrolling="no"></iframe>
+<iframe width="320" height="30" src="https://packetpushers.net/?powerpress_embed=55196-podcast&powerpress_player=mediaelement-audio" title="Blubrry Podcast Player" frameborder="0" scrolling="no"></iframe>
 <!-- /wp:embed -->
 
 <!-- wp:paragraph -->
-<p> </p>
+
+ 
+
 <!-- /wp:paragraph -->

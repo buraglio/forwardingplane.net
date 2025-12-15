@@ -1,6 +1,6 @@
 ---
 id: 714
-title: 'Building FlowVisor on Centos 6 &#8211; quick and dirty'
+title: 'Building FlowVisor on Centos 6 – quick and dirty'
 date: '2013-07-05T04:22:23-05:00'
 author: buraglio
 layout: post
@@ -25,20 +25,34 @@ categories:
     - UNIX
 ---
 
-I had the need to build a FlowVisor instance under CentOS.  Since nearly all of the docs I could find were for debian, I threw this together.  I utilized this <a href="http://groups.geni.net/geni/wiki/FlowVisor" target="_blank" rel="noopener noreferrer">GENI doc</a> and the <a href="https://github.com/OPENNETWORKINGLAB/flowvisor/wiki/Installation-from-Source" target="_blank" rel="noopener noreferrer">github docs</a> as a simple reference.  This is the quick and dirty method I used:
+I had the need to build a FlowVisor instance under CentOS.  Since nearly all of the docs I could find were for debian, I threw this together.  I utilized this [GENI doc](http://groups.geni.net/geni/wiki/FlowVisor) and the [github docs](https://github.com/OPENNETWORKINGLAB/flowvisor/wiki/Installation-from-Source) as a simple reference.  This is the quick and dirty method I used:
 Install the prerequisites:
-<pre>sudo yum -y install ant eclipse java-1.6.0-openjdk.x86_64 git
-sudo yum -y groupinstall "Development Tools"</pre>
+
+```
+sudo yum -y install ant eclipse java-1.6.0-openjdk.x86_64 git
+sudo yum -y groupinstall "Development Tools"
+```
+
 Create my standard directories:
-<pre>mkdir /services
+
+```
+mkdir /services
 cd /services
-git clone git://github.com/OPENNETWORKINGLAB/flowvisor.git</pre>
+git clone git://github.com/OPENNETWORKINGLAB/flowvisor.git
+```
+
 Navigate, add user and install
-<pre>cd flowvisor
+
+```
+cd flowvisor
 adduser flowvisor
-sudo make fvuser=flowvisor fvgroup=flowvisor install</pre>
+sudo make fvuser=flowvisor fvgroup=flowvisor install
+```
+
 Here is the relativde output I saw:
-<pre>[root@collector flowvisor]# sudo make fvuser=flowvisor fvgroup=flowvisor install
+
+```
+[root@collector flowvisor]# sudo make fvuser=flowvisor fvgroup=flowvisor install
 ant
 Buildfile: build.xml
 init:
@@ -86,24 +100,41 @@ ln: creating symbolic link `fvctl': File exists
 Generating a default config FlowVisor config
 Trying to generate SSL Server Key with passwd from scripts/envs.sh
 Generating cert with common name == flowvisor
-keytool error: java.lang.Exception: Key pair not generated, alias &lt;mykey&gt; already exists
+keytool error: java.lang.Exception: Key pair not generated, alias <mykey> already exists
 Enter password for account 'fvadmin' on the flowvisor:
 Generating default config in db
-Outputing config file /etc/flowvisor/config.json</pre>
+Outputing config file /etc/flowvisor/config.json
+```
+
 Start the controller:
-<pre>sudo /etc/init.d/flowvisor start</pre>
+
+```
+sudo /etc/init.d/flowvisor start
+```
+
 Output from controller starting:
-<pre>Starting flowvisor with the configuration stored in DB
+
+```
+Starting flowvisor with the configuration stored in DB
 If DB unpopulated, load config using 'fvconfig load config.json'
 [root@collector flowvisor]#
 Message from syslogd@collector at Jul  3 08:49:51 ...
-1&gt;Jul  3 08:49:51 flowvisor: ERROR none : log level enabled: CRIT
+1>Jul  3 08:49:51 flowvisor: ERROR none : log level enabled: CRIT
 Message from syslogd@collector at Jul  3 08:49:51 ...
-1&gt;Jul  3 08:49:51 flowvisor: ERROR none : log level enabled: ALERT
+1>Jul  3 08:49:51 flowvisor: ERROR none : log level enabled: ALERT
 Message from syslogd@collector at Jul  3 08:49:51 ...
-1&gt;Jul  3 08:49:51 flowvisor: WARN none : log level enabled: WARN</pre>
-<pre>This yields a "working" flow visor.
-Lock it down with a password:</pre>
-<pre>yum -y install pwgen
-test -f /etc/flowvisor.passwd || sudo sh -c 'pwgen -sB 24 &gt; /etc/flowvisor.passwd'
-service flowvisor restart</pre>
+1>Jul  3 08:49:51 flowvisor: WARN none : log level enabled: WARN
+```
+
+
+```
+This yields a "working" flow visor.
+Lock it down with a password:
+```
+
+
+```
+yum -y install pwgen
+test -f /etc/flowvisor.passwd || sudo sh -c 'pwgen -sB 24 > /etc/flowvisor.passwd'
+service flowvisor restart
+```

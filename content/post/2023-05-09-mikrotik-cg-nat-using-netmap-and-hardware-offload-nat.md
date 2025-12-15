@@ -17,57 +17,87 @@ tags:
 ---
 
 <!-- wp:paragraph -->
-<p>I will preface this with that I always say: <strong>do not implement this without IPv6 unless you literally have no other choice</strong>. IPv6 will allow for a significant resource offload because most eyeball services (Netflix, Youtube, Google, Facebook, etc.) will prefer IPv6, thus removing your requirement for more IPv4 NAT state and overload / port utilization. </p>
+
+I will preface this with that I always say: **do not implement this without IPv6 unless you literally have no other choice**. IPv6 will allow for a significant resource offload because most eyeball services (Netflix, Youtube, Google, Facebook, etc.) will prefer IPv6, thus removing your requirement for more IPv4 NAT state and overload / port utilization. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Because I found no simple how-to for using NETMAP for CGN on a Mikrotik, here is one. This simple configuration will map all TCP ports 1024-9087 to 198.51.100.0/24 and all UDP ports from 1024-9087 to 192.0.2.0/24. This is a very simple configuration that can be adjusted and further refined with address-lists for the to-addresses, etc. </p>
+
+Because I found no simple how-to for using NETMAP for CGN on a Mikrotik, here is one. This simple configuration will map all TCP ports 1024-9087 to 198.51.100.0/24 and all UDP ports from 1024-9087 to 192.0.2.0/24. This is a very simple configuration that can be adjusted and further refined with address-lists for the to-addresses, etc. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>This was tested on an RB2004 running ROS 7.8</p>
+
+This was tested on an RB2004 running ROS 7.8
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><code>/ip firewall address-list add address=100.64.0.0/21 comment="CGN Client block 1" list=cgn1</code></p>
+
+`/ip firewall address-list add address=100.64.0.0/21 comment="CGN Client block 1" list=cgn1`
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><code>/ip firewall nat add action=netmap chain=srcnat comment="TCP: NetMap TCP CGNAT Rule" out-interface=WAN protocol=tcp src-address-list=cgn1 to-addresses=198.51.100.0/24 to-ports=1024-9087</code></p>
+
+`/ip firewall nat add action=netmap chain=srcnat comment="TCP: NetMap TCP CGNAT Rule" out-interface=WAN protocol=tcp src-address-list=cgn1 to-addresses=198.51.100.0/24 to-ports=1024-9087`
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><code>/ip firewall nat add action=netmap chain=srcnat comment="UDP: NetMap UDP CGNAT Rule" out-interface=WAN protocol=udp src-address-list=cgn1 to-addresses=192.0.2.0/24 to-ports=1024-9087</code></p>
+
+`/ip firewall nat add action=netmap chain=srcnat comment="UDP: NetMap UDP CGNAT Rule" out-interface=WAN protocol=udp src-address-list=cgn1 to-addresses=192.0.2.0/24 to-ports=1024-9087`
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>This will essentially create a 4:1 ratio of client to NAT considering UDP and TCP as equal, which they will not be. </p>
+
+This will essentially create a 4:1 ratio of client to NAT considering UDP and TCP as equal, which they will not be. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><code>/ip firewall nat add action=masquerade chain=srcnat comment="Masquerade to WAN Rule" out-interface=WAN src-address-list=masquerade-list</code></p>
+
+`/ip firewall nat add action=masquerade chain=srcnat comment="Masquerade to WAN Rule" out-interface=WAN src-address-list=masquerade-list`
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>It is also possible to offload NAT translations into hardware if your platform supports it, and requires some changes to the internal switch chip. </p>
+
+It is also possible to offload NAT translations into hardware if your platform supports it, and requires some changes to the internal switch chip. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p></p>
+
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Assuming switch 0: </p>
+
+Assuming switch 0: 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><code>/interface/ethernet/switch&nbsp;set&nbsp;0&nbsp;l3-hw-offloading=yes</code><br><code>/interface/ethernet/switch/port&nbsp;set&nbsp;[find]&nbsp;l3-hw-offloading=yes</code><br><code>/interface/ethernet/switch/port&nbsp;set&nbsp;sfp-sfpplus2&nbsp;l3-hw-offloading=no</code></p>
+
+`/interface/ethernet/switch set 0 l3-hw-offloading=yes`
+`/interface/ethernet/switch/port set [find] l3-hw-offloading=yes`
+`/interface/ethernet/switch/port set sfp-sfpplus2 l3-hw-offloading=no`
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>And add the firewall filter rule:<br><code>/ip firewall filter add action=fasttrack-connection chain=forward comment="Hardware Offload for IPv4 Fasttrack" connection-state=established,related hw-offload=yes</code></p>
+
+And add the firewall filter rule:
+`/ip firewall filter add action=fasttrack-connection chain=forward comment="Hardware Offload for IPv4 Fasttrack" connection-state=established,related hw-offload=yes`
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>There may be better ways to do this, but this worked in the case I needed it for. </p>
+
+There may be better ways to do this, but this worked in the case I needed it for. 
+
 <!-- /wp:paragraph -->

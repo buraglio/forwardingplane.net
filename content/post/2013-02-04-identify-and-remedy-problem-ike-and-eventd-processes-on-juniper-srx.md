@@ -42,21 +42,21 @@ As you can probably guess, this isn't a good state.  So, in order to drill down
 It's all starting to add up.  I'll bet there are a LOT of IPsec messeges in the log.
 "*show log messages*" confirms this.  There are a LOT of KMD messages, which is likely causing events to eat even more resources to generate them.
 *Jan 29 12:02:53 fw1 (FPC Slot 11, PIC Slot 0) init: kmd1 (PID 176) started*
-*Jan 29 12:02:53 <em>fw1* (FPC Slot 11, PIC Slot 0) init: kmd2 (PID 177) started</em>
-*Jan 29 12:02:53 <em>fw1* (FPC Slot 11, PIC Slot 0) init: kmd3 (PID 178) started</em>
-*Jan 29 12:02:53 <em>fw1* (FPC Slot 11, PIC Slot 0) init: kmd4 (PID 179) started</em>
-*Jan 29 12:02:54 <em>fw1* (FPC Slot 11, PIC Slot 1) init: kmd1 (PID 176) started</em>
-*Jan 29 12:02:55 <em>fw1* (FPC Slot 11, PIC Slot 1) init: kmd2 (PID 177) started</em>
-*Jan 29 12:02:55 <em>fw1* (FPC Slot 11, PIC Slot 1) init: kmd3 (PID 178) started</em>
-*Jan 29 12:02:55 <em>fw1* (FPC Slot 11, PIC Slot 1) init: kmd4 (PID 180) started</em>
-*Jan 29 12:03:13 <em>fw1* (FPC Slot 4, PIC Slot 0) init: kmd1 (PID 176) started</em>
-*Jan 29 12:03:13 <em>fw1* (FPC Slot 4, PIC Slot 0) init: kmd2 (PID 177) started</em>
-*Jan 29 12:03:13 <em>fw1* (FPC Slot 4, PIC Slot 0) init: kmd3 (PID 178) started</em>
-*Jan 29 12:03:13 <em>fw1* (FPC Slot 4, PIC Slot 0) init: kmd4 (PID 179) started</em>
-*Jan 29 12:03:14 <em>fw1* (FPC Slot 5, PIC Slot 0) init: kmd1 (PID 176) started</em>
-*Jan 29 12:03:14 <em>fw1* (FPC Slot 5, PIC Slot 0) init: kmd2 (PID 177) started</em>
-*Jan 29 12:03:14 <em>fw1* (FPC Slot 5, PIC Slot 0) init: kmd3 (PID 178) started</em>
-*Jan 29 12:03:15 <em>fw1* (FPC Slot 5, PIC Slot 0) init: kmd4 (PID 179) started</em>
+*Jan 29 12:02:53 *fw1* (FPC Slot 11, PIC Slot 0) init: kmd2 (PID 177) started*
+*Jan 29 12:02:53 *fw1* (FPC Slot 11, PIC Slot 0) init: kmd3 (PID 178) started*
+*Jan 29 12:02:53 *fw1* (FPC Slot 11, PIC Slot 0) init: kmd4 (PID 179) started*
+*Jan 29 12:02:54 *fw1* (FPC Slot 11, PIC Slot 1) init: kmd1 (PID 176) started*
+*Jan 29 12:02:55 *fw1* (FPC Slot 11, PIC Slot 1) init: kmd2 (PID 177) started*
+*Jan 29 12:02:55 *fw1* (FPC Slot 11, PIC Slot 1) init: kmd3 (PID 178) started*
+*Jan 29 12:02:55 *fw1* (FPC Slot 11, PIC Slot 1) init: kmd4 (PID 180) started*
+*Jan 29 12:03:13 *fw1* (FPC Slot 4, PIC Slot 0) init: kmd1 (PID 176) started*
+*Jan 29 12:03:13 *fw1* (FPC Slot 4, PIC Slot 0) init: kmd2 (PID 177) started*
+*Jan 29 12:03:13 *fw1* (FPC Slot 4, PIC Slot 0) init: kmd3 (PID 178) started*
+*Jan 29 12:03:13 *fw1* (FPC Slot 4, PIC Slot 0) init: kmd4 (PID 179) started*
+*Jan 29 12:03:14 *fw1* (FPC Slot 5, PIC Slot 0) init: kmd1 (PID 176) started*
+*Jan 29 12:03:14 *fw1* (FPC Slot 5, PIC Slot 0) init: kmd2 (PID 177) started*
+*Jan 29 12:03:14 *fw1* (FPC Slot 5, PIC Slot 0) init: kmd3 (PID 178) started*
+*Jan 29 12:03:15 *fw1* (FPC Slot 5, PIC Slot 0) init: kmd4 (PID 179) started*
  
 Check the security log to verify "*show log kmed*"
 *Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_ipc_err_handler: status: 1: usp_ipc_client_open: failed to connect to the server after 5 retries

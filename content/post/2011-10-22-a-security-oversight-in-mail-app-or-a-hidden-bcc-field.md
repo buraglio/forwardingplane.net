@@ -21,7 +21,10 @@ Doing a bit of google searching, I found that this is pretty easily doable with 
 *defaults write com.apple.mail UserHeaders '{"Bcc" = "archive-address@domain.com"; }' *
 
 Done. Great. So, lets test it. Send email and check bcc'd address.  Email is there.  Strange, however, the bcc field doesn't show up, or show anything at all.  That's right, there is absolutely no indication that this email is being bcc'd to another address. 
-This isn't really a problem for me, since I know that I set it up.  What it does mean, though, is that this could be applied to an unsuspecting user account, with absolutely <b>no authentication necessary, **and have every outgoing message silently sent to a harvesting account.  There is no easy way to check for this that I have found save for using terminal:
+This isn't really a problem for me, since I know that I set it up.  What it does mean, though, is that this could be applied to an unsuspecting user account, with absolutely *
+
+*no authentication necessary, **
+and have every outgoing message silently sent to a harvesting account.  There is no easy way to check for this that I have found save for using terminal:
 
 
 *[buraglio@dalek:~ ] defaults read com.apple.mail UserHeaders                                   *

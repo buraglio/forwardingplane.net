@@ -37,6 +37,5 @@ The pre-compiled binary is compiled for Apple silicon, but since it's go it can 
   - Decode MAC addresses from non-privacy SLAAC addresses
 - **Decode link local addresses** (-a)
   - Decode link local address to MAC, and MAC to link local
----
 
 Because why not, I also forked this and made a webified version that is available with essentially the same functionality [here](https://tools.forwardingplane.net).

@@ -16,8 +16,14 @@ Lets just say, for instance, that you have an MX series router at somewhere on y
 
 Now, it's no secret that I am a fan of Juniper gear, and [I've talked about this before](http://tech.buraglio.com/2010/12/junos-issu.html). But frankly, our MX series that have logical systems need upgraded so infrequently, I actually forgot about this little tidbit.  For whatever reason, it really surprised me during the last upgrade I did even though it makes perfect sense and I knew about it already. What that time comes that you need to upgrade JunOS, you'll have to keep one very important thing in mind:
 
-<b>You can't take advantage of NSR in any logical system that isn't the default. ****
-<b>**Additionally, You can't choose the protocol or the logical system that NSR works on, it's on for all protocols on the default logical system if you enable it. 
+*
+
+*You can't take advantage of NSR in any logical system that isn't the default. **
+**
+*
+
+***
+Additionally, You can't choose the protocol or the logical system that NSR works on, it's on for all protocols on the default logical system if you enable it. 
 
 What does this actually mean?  Well, it means that if I do an ISSU (which you should still do even with logical systems), anything outside of my default logical system will re-converge.  If my eBGP sessions are outside, they'll drop and have to re-establish.  This isn't really that great of an idea if you peer with folks that keep dampen-happy.  Personally, I don;t like my BGP sessions to drop if they don't need to.  I'd rather deal with an IGP adjacency change than a bunch of BGP sessions having to re-establish and churn through potentially a handful of full tables. 
 

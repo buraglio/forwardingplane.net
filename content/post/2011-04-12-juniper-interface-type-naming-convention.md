@@ -17,9 +17,12 @@ JunOS CLI supports the basic grep command (like | include) so any show commands 
 
 The routing table is presented in such a way to group types of routes.
 
-<b>inet.0 is the ipv4 unicast routing table
+*
 
-****inet.1 is the ipv4 multicast routing table
+*inet.0 is the ipv4 unicast routing table
+
+**
+**inet.1 is the ipv4 multicast routing table
 
 ****inet.3 is the MPLS routing table
 
@@ -30,7 +33,9 @@ Juniper interface types
 
 Most common ones you'll probably see:
 
-<b>fe: Fast Ethernet 100Base-TX (Fast Ethernet, 100 Mbps).
+*
+
+*fe: Fast Ethernet 100Base-TX (Fast Ethernet, 100 Mbps).
 
 fxp0: Management and internal Ethernet The management Ethernet interface is an out-of-band management interface within the routing platform.
 
@@ -50,7 +55,8 @@ Other ones you may run into:
 
 ae: Aggregated Ethernet A virtual aggregated link.
 
-****as: Aggregated SONET/SDH A virtual aggregated link.
+**
+**as: Aggregated SONET/SDH A virtual aggregated link.
 
 ****at: ATM1 or ATM2 IQ Asynchronous Transfer Mode
 
@@ -130,9 +136,12 @@ II interfaces: The logical interface mo-fpc/pic/port.16383 is an internally gene
 ****vt: Virtual loopback tunnel On routing platforms equipped with a Tunnel PIC, enables egress filtering.
 ****Other interesting terminology regarding the juniper architecture is the module layout:
 
-<b>RE: Routing Engine, Like a cisco supervisor module. Central brains of the system
+*
 
-****PFE: Packet forwarding Engine. Controls the data packet forwarding of the system.
+*RE: Routing Engine, Like a cisco supervisor module. Central brains of the system
+
+**
+**PFE: Packet forwarding Engine. Controls the data packet forwarding of the system.
 
 ****SCB: Switch control board. Contains ASICs that handle route lookups and memory management.
 

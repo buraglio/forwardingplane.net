@@ -23,9 +23,14 @@ The infrastructure was mostly stagnant for about 10 years, adding a new switch o
 A few take aways that I've [re-]discovered are:
 
 A pfsense box makes a fantastic router for a smaller operation.  It also makes a completely acceptable replacement for a Cisco for far less money. 
-Even spending half a million dollars with Cisco does <b><u>not</u>** entitle you to any features that may be available in the SUP2T hardware (and not yet in the software).  Lame, cisco, lame. **HP procurve makes very nice Layer2 boxes with lifetime warranties. 
+Even spending half a million dollars with Cisco does 
+**not**
+ entitle you to any features that may be available in the SUP2T hardware (and not yet in the software).  Lame, cisco, lame. **HP procurve makes very nice Layer2 boxes with lifetime warranties. 
 Cutting over an ISP live really is not a lot of fun. 
-Not having PI address space is <b>very** inconvenient. 
+Not having PI address space is *
+
+*very**
+ inconvenient. 
 Traffic shaping, rate limiting or QoS are possibly my least favorite thing to do now. 
 End users don't care about IPv6 (boo! hiss!)
 

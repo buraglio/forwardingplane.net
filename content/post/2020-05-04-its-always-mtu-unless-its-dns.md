@@ -37,7 +37,7 @@ They can’t get to google. They cannot get email. Netflix won’t stream. **The
 
 
     - At least one of the large US providers owns a company that literally analyzes this data for use
-    - Cellular devices comprise a *<em>huge*</em> amount of the active devices on the internet (we’ll save the smug IPv6 network deployment talk about this fact for another day).
+    - Cellular devices comprise a **huge** amount of the active devices on the internet (we’ll save the smug IPv6 network deployment talk about this fact for another day).
 
 
 So really, an average user changing this data on their home network but still carrying around a smartphone is really closing a door but leaving the windows wide open. Yes, I do realize there are apps that account for this, but none are seamless and your mom is almost certainly not going to use it.

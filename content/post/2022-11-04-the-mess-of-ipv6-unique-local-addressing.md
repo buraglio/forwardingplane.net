@@ -62,7 +62,7 @@ TL;DR:
 - Care must be taken when ULA is used because:<!-- wp:list -->
 
 <!-- wp:list-item -->
-<li>**Operating systems will ignore its existence in the presence of IPv4 without intentional customization, requiring notable operational overhead**
+- **Operating systems will ignore its existence in the presence of IPv4 without intentional customization, requiring notable operational overhead**
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
@@ -73,7 +73,7 @@ TL;DR:
 - Without quirky hacks, it is limited to a /48 in size 
 <!-- /wp:list-item -->
 
-<!-- /wp:list --></li>
+<!-- /wp:list -->
 <!-- /wp:list-item -->
 
 <!-- /wp:list -->

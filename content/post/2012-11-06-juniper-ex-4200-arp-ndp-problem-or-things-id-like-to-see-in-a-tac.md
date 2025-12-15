@@ -19,13 +19,19 @@ categories:
 
     The PR search that jtac offers is pretty awful.  It's hard to find, can't seem to find known PRs and is generally clunky and yuckie.  In their defense, most TAC KBs are not good.  However, and try doing a google search for this and you'll find links to [https://www.juniper.net/prsearch/simplesearch.jsp](https://www.juniper.net/prsearch/simplesearch.jsp), which doesn't work.  You'll also find a lot of reference to that URL when searching the JTAC KB, as noted [here](http://kb.juniper.net/InfoCenter/index?page=content&id=KB17924&actp=search&viewlocale=en_US&searchid=1352170024537) under the heading "Where can I search known Junos bugs?". 
 
-    I'm going to make a [giant] assumption that this is <b>not **user error on my part. ** ** This is a problem that needs fixed.  I'm into making lists lately, so here is another one:**
+    I'm going to make a [giant] assumption that this is *
+
+*not **
+user error on my part. ** ** This is a problem that needs fixed.  I'm into making lists lately, so here is another one:**
 Things I would like to see in a TAC
 
 
 - Competent first level engineers.  
 - Know when to escalate, there is no shame in asking for help. 
-- Engineers that have at least some <b>soft** skills. 
+- Engineers that have at least some *
+
+*soft**
+ skills. 
 - People skills are nearly as important as tech chops, especially in a TAC
 - Efficient troubleshooting process.
 - This can be taught, come on guys, get to it.

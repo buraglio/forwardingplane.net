@@ -14,7 +14,12 @@ categories:
 ---
 
 I'm an awful sysadmin.  Running services permanently isn't really my forte, I tend to lean more on the "I'll get this proof of concept all working, prove that it works or doesn't, then roll it on for polishing by someone else" kinda guy.  That final 15% is something I'm constantly working to refine and better myself at accomplishing.   I'm decent at debugging network services, and can be handy in a "oh crap, it's down!" scamerio, but day to day sysadmin...not really my speciality.**I know enough programming to be dangerous and have enough experience to know how to set up or fix pretty much any OS with nearly any service on it.  15 years as a slash and burn Network Engineer will often lend itself to that.  That being said, I do enjoy playing with new options, software packages and and LOVE instrumentation.  Then I came across [this](http://host-sflow.sourceforge.net/).     [Host based sflow](http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html).....for more than just network traffic.
-This idea is <b><u>fantastic</u>**. **<b>Why** did I never think of it?!?!?!?
+This idea is 
+**fantastic**
+. ***
+
+*Why**
+ did I never think of it?!?!?!?
 
 Essentially it's [sflow](http://en.wikipedia.org/wiki/SFlow), a mechanism for monitoring network traffic, or thats at least how I thought of it being from the network side.  It's a lot like Netflow, but an open standard.  Many network devices support it for sampling transit routed packets.  It never occured to me to run it on hosts for other things like.....http hits, disk utilization....memory usage.  This seems perfect for a cloud environment, or for a VM farm....or anywhere you don't want to run snmpd or some weird commercial agent on a host.
 I already have an [nfsen](http://nfsen.sourceforge.net/)/[nfdump](http://nfdump.sourceforge.net/) instance, but it should work with any open source or commercial collector that supports sflow, which is a huge number.  Intermapper flow, inmon, there is a long list. 

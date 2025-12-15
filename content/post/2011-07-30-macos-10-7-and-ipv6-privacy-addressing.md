@@ -21,7 +21,13 @@ With MacOS 10.7 (Lion) it's now on by default. To disable it, you need to open a
 
 *sudo sysctl -w net.inet6.ip6.use_tempaddr=0
 *
-Poof! There you go.[ You should be using DHCPv6 anyway](http://tech.buraglio.com/2011/07/osx-107-lion-dhcpv6-client-working-with.html) =)[ ](http://events.internet2.edu/2011/jt-uaf/agenda.cfm?go=session&id=10001852&event=1151)[<b>*cue vendors getting off their rear ends and implementing dhcpv6 relay***](http://events.internet2.edu/2011/jt-uaf/agenda.cfm?go=session&id=10001852&event=1151)**<b>---edit---****A good point made by Charley Kline, to make this persist across reboots a line needs to be added to your /etc/sysctl.conf. ****
+Poof! There you go.[ You should be using DHCPv6 anyway](http://tech.buraglio.com/2011/07/osx-107-lion-dhcpv6-client-working-with.html) =)[ ](http://events.internet2.edu/2011/jt-uaf/agenda.cfm?go=session&id=10001852&event=1151)[*
+
+**cue vendors getting off their rear ends and implementing dhcpv6 relay**
+*](http://events.internet2.edu/2011/jt-uaf/agenda.cfm?go=session&id=10001852&event=1151)***
+
+*---edit---**
+**A good point made by Charley Kline, to make this persist across reboots a line needs to be added to your /etc/sysctl.conf. ****
 ****To accomplish this, edit /etc/sysctl.conf****
 *****sudo vi /etc/sysctl.conf*****
 ****Add the following line:****

@@ -27,9 +27,7 @@ Even spending half a million dollars with Cisco does
 **not**
  entitle you to any features that may be available in the SUP2T hardware (and not yet in the software).  Lame, cisco, lame. **HP procurve makes very nice Layer2 boxes with lifetime warranties. 
 Cutting over an ISP live really is not a lot of fun. 
-Not having PI address space is *
-
-*very**
+Not having PI address space is **very**
  inconvenient. 
 Traffic shaping, rate limiting or QoS are possibly my least favorite thing to do now. 
 End users don't care about IPv6 (boo! hiss!)

@@ -20,9 +20,7 @@ After about a month of off-and-on searching, I finally went back to my UNIX root
 RSYNC='/usr/bin/rsync'ITUNESSRC='/Users/Shared/iTunes' # iTunes FolderITUNESDST='/Volumes/Volume_1/Catalog\ Backups/iTunes' #Destination for iTunes BackupIPHOTOSRC='/Users/Shared/iPhoto' #iPhoto FolderIPHOTODST='/Volumes/Volume_1/Catalog\ Backups/iPhoto' #Destination for iPhoto BackupPARAMS='--ignore-existing --delete --progress --recursive --perms --times --size-only --whole-file' # Any parameters for rsyncEXCLUDEITUNES='-exclude='.*' -exclude='*.m4v'' # Files or folders for exclusionEXCLUDEIPHOTO='-exclude='.*'' # Files or folders for exclusion
 $RSYNC $PARAMS $EXCLUDEITUNES $ITUNESSRC $ITUNESDST
 $RSYNC $PARAMS $EXCLUDEIPHOTO $IPHOTOSRC $IPHOTODST
-Thats it. Since the "--delete" flag is in place, I recommend use of the "--dry-run" flag the first time to make sure it does what you want, since delete *
-
-*will**
+Thats it. Since the "--delete" flag is in place, I recommend use of the "--dry-run" flag the first time to make sure it does what you want, since delete **will**
  remove everything in it's path and make the folder match. I just have this run from cron every day using this line in my users crontab.
 
 @daily /opt/local/bin/rsynccatalogs.sh

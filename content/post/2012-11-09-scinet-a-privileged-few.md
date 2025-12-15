@@ -12,9 +12,7 @@ categories:
     - Musings
 ---
 
-     Every year there is an international conference for High Performance Computing, or HPC as it is often called.  This is a bit of a niche in that it's something that many enterprises and researchers need but don't do themselves and so many don't have a grasp as to what all is invoved.  It's a specialized,  potentially expensive and very different environment as well as mindset than the general sysadmin or network engineer will ever see.  The compute power is rated on it's [own scale](http://www.top500.org/) and it is very competitive. **    While this is a very interesting subject in and of itself, it's not really the most compelling part of this corner of the technology world.  What *
-
-*is**
+     Every year there is an international conference for High Performance Computing, or HPC as it is often called.  This is a bit of a niche in that it's something that many enterprises and researchers need but don't do themselves and so many don't have a grasp as to what all is invoved.  It's a specialized,  potentially expensive and very different environment as well as mindset than the general sysadmin or network engineer will ever see.  The compute power is rated on it's [own scale](http://www.top500.org/) and it is very competitive. **    While this is a very interesting subject in and of itself, it's not really the most compelling part of this corner of the technology world.  What **is**
  the interesting piece is the foundation needed to make all of this work.  Compute power is obviously integral and I'll never try to minimize its importance, but what happens when the huge data sets can't get to the compute resources?  How do the big iron machines communicate? **
 You guessed it, it's the network. 
 

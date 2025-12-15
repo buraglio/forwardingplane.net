@@ -1,6 +1,6 @@
 ---
 id: 572
-title: 'OpenFlow Hybrid. It's a must, not an option.'
+title: "OpenFlow Hybrid. It's a must, not an option."
 date: '2013-04-18T10:17:37-05:00'
 author: buraglio
 layout: post

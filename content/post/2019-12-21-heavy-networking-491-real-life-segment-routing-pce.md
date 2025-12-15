@@ -13,19 +13,25 @@ categories:
 ---
 
 <!-- wp:paragraph -->
-<p>Segment Routing. The technology that will likely cement itself (or already has, depending on who you ask) as the next evolution of carrier networks. Three years ago I was asked to participate in a very deep <a href="http://techfieldday.com/event/srr1/">round table</a> put together by the <a href="https://techfieldday.com/">Tech Field Day</a> crew and the only topic on the table was <a href="https://www.segment-routing.net">Segment Routing</a>. Needless to say, I was <a href="https://www.forwardingplane.net/post/care-segment-routing/">enamored by the advantages</a> that the raw technology provided, and thus far that enthusiasm has not diminished. Over the last few years the technology has only matured, gotten more feature rich, and more widely supported. So, back in Mid-November of this year (2019) when I was asked to talk about my experiences with SR on <a href="https://packetpushers.net/podcast/heavy-networking-491-real-life-segment-routing-pce/">Packet Pushers Heavy Networking</a>, it was a no-brainer.</p>
+
+Segment Routing. The technology that will likely cement itself (or already has, depending on who you ask) as the next evolution of carrier networks. Three years ago I was asked to participate in a very deep [round table](http://techfieldday.com/event/srr1/) put together by the [Tech Field Day](https://techfieldday.com/) crew and the only topic on the table was [Segment Routing](https://www.segment-routing.net). Needless to say, I was [enamored by the advantages](https://www.forwardingplane.net/post/care-segment-routing/) that the raw technology provided, and thus far that enthusiasm has not diminished. Over the last few years the technology has only matured, gotten more feature rich, and more widely supported. So, back in Mid-November of this year (2019) when I was asked to talk about my experiences with SR on [Packet Pushers Heavy Networking](https://packetpushers.net/podcast/heavy-networking-491-real-life-segment-routing-pce/), it was a no-brainer.
+
 <!-- /wp:paragraph -->
 
 <!-- wp:image -->
-<figure class="wp-block-image"><img src="https://www.segment-routing.net/images/home/end2end.png" alt=""/></figure>
+<figure class="wp-block-image">![](https://www.segment-routing.net/images/home/end2end.png)</figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>In this hour long podcast, <a href="https://ethancbanks.com/about/">Ethan</a> and I chat about <a href="https://www.segment-routing.net/tutorials/2016-09-27-segment-routing-mpls-data-plane/">SR-MPLS</a>, <a href="https://www.segment-routing.net/tutorials/2017-12-05-srv6-introduction/">SRv6</a>, <a href="https://packetpushers.net/pce-pcep-overview/">PCE</a>, and we go pretty deep into traffic engineering, one of the really strong tools in the SR toolbox.</p>
+
+In this hour long podcast, [Ethan](https://ethancbanks.com/about/) and I chat about [SR-MPLS](https://www.segment-routing.net/tutorials/2016-09-27-segment-routing-mpls-data-plane/), [SRv6](https://www.segment-routing.net/tutorials/2017-12-05-srv6-introduction/), [PCE](https://packetpushers.net/pce-pcep-overview/), and we go pretty deep into traffic engineering, one of the really strong tools in the SR toolbox.
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Give it a listen.</p>
+
+Give it a listen.
+
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->

@@ -15,13 +15,17 @@ categories:
 ---
 
 <!-- wp:paragraph -->
-<p>2 Jan 2021 seems like as good a time as any to start thinking about change. Change is inevitable. The only constant is change. Adapt or die. There are any number of stereotypical and cheesy mantras that can be chanted over a beating drum whilst sitting around a fire. However, saying them and coping with change are very different beasts. As<a href="https://forwardingplane.net/2020/01/27/strategy-series-dont-sweat-the-details-or-take-a-risk-and-embrace-change/"> I have written in the not so distant past</a>, most change invokes an inherent fear of failure and aversion to risk. This is pretty normal stuff, but in the world of IT, it can be more of a risk to stagnate. In <a href="https://networkcollective.com/2020/12/navigating-change/">this podcast</a> recorded in early December 2020, we discuss a few of the finer details of change as it relates to IT and networking and express our opinions on the matter. As we fall face first into 2021, remembering that it's ok to fail, it is fine to be apprehensive, and that we all work better when we collaborate should be at the top of all of our lists. I really enjoyed making this, give it a listen, I think folks will identify with what we have to say. </p>
+
+2 Jan 2021 seems like as good a time as any to start thinking about change. Change is inevitable. The only constant is change. Adapt or die. There are any number of stereotypical and cheesy mantras that can be chanted over a beating drum whilst sitting around a fire. However, saying them and coping with change are very different beasts. As[ I have written in the not so distant past](https://forwardingplane.net/2020/01/27/strategy-series-dont-sweat-the-details-or-take-a-risk-and-embrace-change/), most change invokes an inherent fear of failure and aversion to risk. This is pretty normal stuff, but in the world of IT, it can be more of a risk to stagnate. In [this podcast](https://networkcollective.com/2020/12/navigating-change/) recorded in early December 2020, we discuss a few of the finer details of change as it relates to IT and networking and express our opinions on the matter. As we fall face first into 2021, remembering that it's ok to fail, it is fine to be apprehensive, and that we all work better when we collaborate should be at the top of all of our lists. I really enjoyed making this, give it a listen, I think folks will identify with what we have to say. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p></p>
+
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p></p>
+
+
 <!-- /wp:paragraph -->

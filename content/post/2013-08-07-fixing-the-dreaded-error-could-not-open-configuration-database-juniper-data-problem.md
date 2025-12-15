@@ -1,6 +1,6 @@
 ---
 id: 762
-title: 'Fixing the dreaded &quot;error: could not open configuration database (juniper.data+)&quot; problem.'
+title: 'Fixing the dreaded "error: could not open configuration database (juniper.data+)" problem.'
 date: '2013-08-07T10:52:04-05:00'
 author: buraglio
 layout: post
@@ -25,13 +25,23 @@ categories:
 ---
 
 Working on some MX series routers recently I encountered a problem I'd never seen before, essentially preventing the configuration from being committed:
-<pre>buraglio@rtr# commit check
+
+```
+buraglio@rtr# commit check
 re0:
-error: could not open configuration database (juniper.data+)</pre>
+error: could not open configuration database (juniper.data+)
+```
+
 This is a very annoying problem and is terribly inconvenient as you can probably imagine. So, my first instinct is to drop down to the shell and starting hacking at it UNIX style.
-<pre>buraglio@rtr&gt;start shell</pre>
+
+```
+buraglio@rtr>start shell
+```
+
 From there I wanted to see the file system and check out the stats of what it thinks we have.
-<pre>buraglio@rtr% df -h
+
+```
+buraglio@rtr% df -h
 Filesystem     Size    Used   Avail Capacity  Mounted on
 /dev/ad0s1a    3.5G    313M    2.9G    10%    /
 devfs          1.0K    1.0K      0B   100%    /dev
@@ -48,9 +58,13 @@ buraglio@rtr% clearM     28M      0B   100%    /packages/mnt/jcryp
 /dev/md10      7.9G     11M    7.2G     0%    /mfs
 /dev/ad0s1e    393M     36K    362M     0%    /config
 procfs         4.0K    4.0K      0B   100%    /proc
-/dev/ad1s1f     18G    4.2G     12G    26%    /var</pre>
+/dev/ad1s1f     18G    4.2G     12G    26%    /var
+```
+
 ... and check the mounted partitions.
-<pre>buraglio@rtr% mount
+
+```
+buraglio@rtr% mount
 /dev/ad0s1a on / (ufs, local, noatime)
 devfs on /dev (devfs, local, multilabel)
 /dev/md0 on /packages/mnt/jbase (cd9660, local, noatime, read-only, verified)
@@ -66,9 +80,13 @@ devfs on /dev (devfs, local, multilabel)
 /dev/md10 on /mfs (ufs, asynchronous, local, noatime)
 /dev/ad0s1e on /config (ufs, local, noatime)
 procfs on /proc (procfs, local, noatime)
-/dev/ad1s1f on /var (ufs, local, noatime)</pre>
+/dev/ad1s1f on /var (ufs, local, noatime)
+```
+
 I ran a fsck to get some stats and see what the problem could be since it appears that there is no free space even though the router reports that it has it.
-<pre>buraglio@rtr% fsck -y -f /dev/ad1s1f
+
+```
+buraglio@rtr% fsck -y -f /dev/ad1s1f
 ** /dev/ad1s1f (NO WRITE)
 ** Last Mounted on /var
 ** Phase 1 - Check Blocks and Sizes
@@ -78,14 +96,26 @@ I ran a fsck to get some stats and see what the problem could be since it appear
 ** Phase 5 - Check Cyl groups
 FREE BLK COUNT(S) WRONG IN SUPERBLK
 SALVAGE? no
-605 files, 2202492 used, 7040218 free (786 frags, 879929 blocks, 0.0% fragmentation)</pre>
+605 files, 2202492 used, 7040218 free (786 frags, 879929 blocks, 0.0% fragmentation)
+```
+
 Playing around in the shell presented this error as well
-<pre>/var: create/symlink failed, no inodes free</pre>
+
+```
+/var: create/symlink failed, no inodes free
+```
+
 So, it appears as if the /var partition is the issue. On my router /var is mounted as /dev/ad1s1f, so lets unmount this partition and try to fix it. In my experience Juniper will shy away from telling you to do anything in the shell, so do this at your own risk. Rebooting the router would also fix this issue, but I'm a form believer that rebooting networking equipment to fix issues is a lazy way to fix problems and will only serve to atrophy any troubleshooting skills you may have.
-<pre>
-buraglio@rtr% umount -f /var</pre>
+
+```
+
+buraglio@rtr% umount -f /var
+```
+
 Now run fsck again to repair the file system
-<pre>buraglio@rtr% fsck -y -f /dev/ad1s1f
+
+```
+buraglio@rtr% fsck -y -f /dev/ad1s1f
 ** /dev/ad1s1f
 ** Last Mounted on /var
 ** Phase 1 - Check Blocks and Sizes
@@ -96,11 +126,19 @@ Now run fsck again to repair the file system
 FREE BLK COUNT(S) WRONG IN SUPERBLK
 SALVAGE? yes
 605 files, 2203376 used, 7039334 free (782 frags, 879819 blocks, 0.0% fragmentation)
-***** FILE SYSTEM WAS MODIFIED *****</pre>
+***** FILE SYSTEM WAS MODIFIED *****
+```
+
 Now that the problematic bits have been repaired, we re-mount the partition
-<pre>buraglio@rtr% mount /dev/ad1s1f /var/</pre>
+
+```
+buraglio@rtr% mount /dev/ad1s1f /var/
+```
+
 Verify the mount
-<pre>buraglio@rtr% mount
+
+```
+buraglio@rtr% mount
 /dev/ad0s1a on / (ufs, local, noatime)
 devfs on /dev (devfs, local, multilabel)
 /dev/md0 on /packages/mnt/jbase (cd9660, local, noatime, read-only, verified)
@@ -116,13 +154,17 @@ devfs on /dev (devfs, local, multilabel)
 /dev/md10 on /mfs (ufs, asynchronous, local, noatime)
 /dev/ad0s1e on /config (ufs, local, noatime)
 procfs on /proc (procfs, local, noatime)
-/dev/ad1s1f on /var (ufs, local, noatime)</pre>
+/dev/ad1s1f on /var (ufs, local, noatime)
+```
+
 We should now be able to commit correctly.
-<pre>buraglio@rtr% cli
+
+```
+buraglio@rtr% cli
 {master}
-buraglio@rtr&gt;
+buraglio@rtr>
 {master}
-buraglio@rtr&gt; edit
+buraglio@rtr> edit
 Entering configuration mode
 The configuration has been changed but not committed
 {master}[edit]
@@ -140,5 +182,7 @@ commit complete
 re0:
 commit complete
 {master}[edit]
-buraglio@rtr#</pre>
-And....you're done. Hopefully this will help someone fight this problem, I only found a <a href="http://www.gns3.net/labs/juniper/jncia-junos/operational-monitoring-and-maintenance/" target="_blank" rel="noopener noreferrer">handful</a> of <a href="http://forums.juniper.net/t5/Junos-and-Junosphere/Commit-Errors/td-p/17615" target="_blank" rel="noopener noreferrer">other references</a> to it that was useful but it didn't address my exact scenario.
+buraglio@rtr#
+```
+
+And....you're done. Hopefully this will help someone fight this problem, I only found a [handful](http://www.gns3.net/labs/juniper/jncia-junos/operational-monitoring-and-maintenance/) of [other references](http://forums.juniper.net/t5/Junos-and-Junosphere/Commit-Errors/td-p/17615) to it that was useful but it didn't address my exact scenario.

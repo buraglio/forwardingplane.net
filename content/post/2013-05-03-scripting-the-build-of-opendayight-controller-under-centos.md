@@ -24,9 +24,11 @@ categories:
     - UNIX
 ---
 
-<a href="https://twitter.com/blinken_lichten" target="_blank" rel="noopener noreferrer">Jon Langemak</a> has a great write up on <a href="http://www.dasblinkenlichten.com/installing-opendaylight-on-centos/" target="_blank" rel="noopener noreferrer">building the OpenDaylight controller under CentOS</a>. Since I'll have to do this a bunch of times, I though tI'd take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the <a href="https://git.opendaylight.org/" target="_blank" rel="noopener noreferrer">OpenDaylight GIT repo</a> and that you <a href="http://www.revsys.com/writings/quicktips/turn-off-selinux.html" target="_blank" rel="noopener noreferrer">disable SELinux</a>.
+[Jon Langemak](https://twitter.com/blinken_lichten) has a great write up on [building the OpenDaylight controller under CentOS](http://www.dasblinkenlichten.com/installing-opendaylight-on-centos/). Since I'll have to do this a bunch of times, I though tI'd take what he so generously put online and build a very rudimentary script for deploying ODC under CentOS. The prerequisites are that you already have an account and ssh key at the [OpenDaylight GIT repo](https://git.opendaylight.org/) and that you [disable SELinux](http://www.revsys.com/writings/quicktips/turn-off-selinux.html).
 Here is the script:
-<pre>#!/bin/bash
+
+```
+#!/bin/bash
 # Install Opendaylight controller under CentOS
 # by nick [at] buraglio.com http://www.twitter.com/buraglio
 # http://www.forwardingplane.net
@@ -74,7 +76,7 @@ echo "************************"
 echo "Configure Java Env variables"
 echo "************************"
 export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk.x86_64
-echo "JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk.x86_64" &gt;&gt; /etc/environment
+echo "JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk.x86_64" >> /etc/environment
 echo "************************"
 echo "Load the controller"
 echo "************************"
@@ -82,10 +84,14 @@ cd /services/opendaylight/controller/opendaylight/distribution/opendaylight/targ
 echo "************************"
 echo "Start OpenDaylight OF controller"
 echo "************************"
-./run.sh</pre>
+./run.sh
+```
+
 Once up and running, it's pretty trivial to point something like an HP switch at the controller.
 For an HP5400, just decide what VLAN(s) you want to use OpenFlow on. I chose 999 as my test VLAN.
-<pre>sw-5400-of# conf t
+
+```
+sw-5400-of# conf t
 sw-5400-of(config)# vlan 999 name test-openflow999
 sw-5400-of(vlan-999)# untagged A3-A4
 sw-5400-of(vlan-999)# exit
@@ -106,11 +112,15 @@ sw-5400-of# show openflow
   VID State HW Active controller Pseudo-URL Conn
   ---- ----- --- -------------------------------------------------- ----
   666 Off On No
-  999 On On tcp:10.17.4.22:6633 Yes</pre>
+  999 On On tcp:10.17.4.22:6633 Yes
+```
+
 From here we can see the box in the openflow controller.
  
  
-<p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2013/05/Screen-Shot-2013-05-03-at-4.20.03-PM.png"><img class="wp-image-636 aligncenter" alt="Screen Shot 2013-05-03 at 4.20.03 PM" src="http://www.forwardingplane.net/wp-content/uploads/2013/05/Screen-Shot-2013-05-03-at-4.20.03-PM.png" width="499" height="340" /></a></p>
+
+[![](http://www.forwardingplane.net/wp-content/uploads/2013/05/Screen-Shot-2013-05-03-at-4.20.03-PM.png)](http://www.forwardingplane.net/wp-content/uploads/2013/05/Screen-Shot-2013-05-03-at-4.20.03-PM.png)
+
  
 I'm still having some issues pushing flows, I'm sure I can work it out but here is a quick screencast of me trying to push a flow.  More posts will be added as soon as I can get the flows to push correctly.
 <iframe width="420" height="315" src="http://www.youtube.com/embed/T1OR2lpzl1Q" frameborder="0" allowfullscreen></iframe>

@@ -15,13 +15,16 @@ categories:
 ---
 
 <!-- wp:paragraph -->
-<p>Well there has been a lot of hubbub about IPv6 unique local addressing lately. You know, that address space defined by <a href="https://datatracker.ietf.org/doc/html/rfc4193/">RFC 4193</a>? The one that most folks think of as "RFC1918 for IPv6" (It's not that)? Well, we recorded a podcast with <a href="https://twitter.com/EHorley">Ed Horley</a> over at <a href="https://www.modem.show/post/s02e03/">modem.show</a> to talk about it. Interested in how ULA is different than GUA (globally unique addressing)? Wanna understand what is broken about it (the list is significant)? Head over and give it a listen, or steam it from <a href="https://anchor.fm/modulate-demodulate/embed/episodes/The-Foibles-and-Frailties-of-IPv6-ULA-e1gvfa8">right here</a>. </p>
+
+Well there has been a lot of hubbub about IPv6 unique local addressing lately. You know, that address space defined by [RFC 4193](https://datatracker.ietf.org/doc/html/rfc4193/)? The one that most folks think of as "RFC1918 for IPv6" (It's not that)? Well, we recorded a podcast with [Ed Horley](https://twitter.com/EHorley) over at [modem.show](https://www.modem.show/post/s02e03/) to talk about it. Interested in how ULA is different than GUA (globally unique addressing)? Wanna understand what is broken about it (the list is significant)? Head over and give it a listen, or steam it from [right here](https://anchor.fm/modulate-demodulate/embed/episodes/The-Foibles-and-Frailties-of-IPv6-ULA-e1gvfa8). 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":2515,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image size-large is-style-rounded"><img src="https://forwardingplane.net/wp-content/uploads/2022/04/will-work-for-IPv6-1024x731.png" alt="" class="wp-image-2515"/></figure>
+<figure class="wp-block-image size-large is-style-rounded">![](https://forwardingplane.net/wp-content/uploads/2022/04/will-work-for-IPv6-1024x731.png)</figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p></p>
+
+
 <!-- /wp:paragraph -->

@@ -18,15 +18,19 @@ categories:
 ---
 
 <!-- wp:paragraph -->
-<p>As some may know, I have been head down in the segment routing game for almost two full years. As such, it has enabled me to get down into the gritty details of how SR - specifically SR-MPLS, and to a lesser extent the alternatives <a href="https://www.segment-routing.net/tutorials/2017-12-05-srv6-introduction/">SRv6</a> and <a href="https://tools.ietf.org/html/draft-bonica-spring-sr-mapped-six-01">SRm6</a> - actually work in practice. Given that this is a fairly new technology, and that it is more service provider focused, there are limited resources available outside of the vendor documentation and and what is there tends to get drown our with the hype around things like SD-WAN and and other more marketed technologies. </p>
+
+As some may know, I have been head down in the segment routing game for almost two full years. As such, it has enabled me to get down into the gritty details of how SR - specifically SR-MPLS, and to a lesser extent the alternatives [SRv6](https://www.segment-routing.net/tutorials/2017-12-05-srv6-introduction/) and [SRm6](https://tools.ietf.org/html/draft-bonica-spring-sr-mapped-six-01) - actually work in practice. Given that this is a fairly new technology, and that it is more service provider focused, there are limited resources available outside of the vendor documentation and and what is there tends to get drown our with the hype around things like SD-WAN and and other more marketed technologies. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":2384,"sizeSlug":"large","className":"is-style-default"} -->
-<figure class="wp-block-image size-large is-style-default"><img src="https://forwardingplane.net/wp-content/uploads/2020/07/SR-Path-1024x509.png" alt="" class="wp-image-2384"/></figure>
+<figure class="wp-block-image size-large is-style-default">![](https://forwardingplane.net/wp-content/uploads/2020/07/SR-Path-1024x509.png)</figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>As some may (or may not) recall, <a href="https://www.linkedin.com/in/ethanbanks/">Ethan Banks</a> and I did a <a href="https://forwardingplane.net/2019/12/21/heavy-networking-491-real-life-segment-routing-pce/">Heavy Networking on SR</a> back in late October. This is a bit of a deeper dive that I was very fortunate to be invited to present at along with one of the original authors protocol drafts, <a href="https://www.linkedin.com/in/jeff-tantsura-bb229b2/">Jeff Tantsura</a>. This video is a <a href="https://networkcollective.com/">Network Collective</a> publication aimed at getting the letter of the law (Jeff) and the spirit of the law (me) socialized out to a broader audience. Interested in what SR-MPLS is? Have a listen and hopefully you will complete the video with a much deeper understanding of what it is and what it does. </p>
+
+As some may (or may not) recall, [Ethan Banks](https://www.linkedin.com/in/ethanbanks/) and I did a [Heavy Networking on SR](https://forwardingplane.net/2019/12/21/heavy-networking-491-real-life-segment-routing-pce/) back in late October. This is a bit of a deeper dive that I was very fortunate to be invited to present at along with one of the original authors protocol drafts, [Jeff Tantsura](https://www.linkedin.com/in/jeff-tantsura-bb229b2/). This video is a [Network Collective](https://networkcollective.com/) publication aimed at getting the letter of the law (Jeff) and the spirit of the law (me) socialized out to a broader audience. Interested in what SR-MPLS is? Have a listen and hopefully you will complete the video with a much deeper understanding of what it is and what it does. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->
@@ -34,5 +38,6 @@ categories:
 <!-- /wp:html -->
 
 <!-- wp:paragraph -->
-<p></p>
+
+
 <!-- /wp:paragraph -->

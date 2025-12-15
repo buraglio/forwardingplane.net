@@ -14,4 +14,4 @@ categories:
     - UNIX
 ---
 
-Google has introduced a very powerful set of python based command line (CLI) tools called <a href="http://code.google.com/p/googlecl/">GoogleCL</a>. This post was made using GoogleCL from my Mac. I highly recommend checking it out if you like to automate or script stuff.<div>[[ This is a content summary only. Visit my website for full links, other content, and more! ]]</div>
+Google has introduced a very powerful set of python based command line (CLI) tools called [GoogleCL](http://code.google.com/p/googlecl/). This post was made using GoogleCL from my Mac. I highly recommend checking it out if you like to automate or script stuff.

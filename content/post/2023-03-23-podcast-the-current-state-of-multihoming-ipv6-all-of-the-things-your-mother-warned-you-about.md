@@ -15,15 +15,21 @@ categories:
 ---
 
 <!-- wp:paragraph -->
-<p>“Multihoming IPv6 is a pathway to many things some consider to be ……unnatural.” ―Darth Sidious, maybe. The current state of usability for multihoming IPv6 is fairly limited, and not terribly supportable. That said, it <em><strong>is</strong></em> doable, if you have the fortitude and hardware / software to make it happen. </p>
+
+“Multihoming IPv6 is a pathway to many things some consider to be ……unnatural.” ―Darth Sidious, maybe. The current state of usability for multihoming IPv6 is fairly limited, and not terribly supportable. That said, it ***is*** doable, if you have the fortitude and hardware / software to make it happen. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>In this episode of <a href="https://modem.show">MODEM</a>, we get super nerdy about the current state of multihoming IPv6 and all of the gory details and exposed limitations. Join Chris Cummings, myself, and John Osmond as we discuss a <a href="https://datatracker.ietf.org/doc/draft-fbnvv-v6ops-site-multihoming/">new IETF draft</a> that describes the current state of multihoming in the IPv6 world. And no, we aren’t just talking about BGP. </p>
+
+In this episode of [MODEM](https://modem.show), we get super nerdy about the current state of multihoming IPv6 and all of the gory details and exposed limitations. Join Chris Cummings, myself, and John Osmond as we discuss a [new IETF draft](https://datatracker.ietf.org/doc/draft-fbnvv-v6ops-site-multihoming/) that describes the current state of multihoming in the IPv6 world. And no, we aren’t just talking about BGP. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Links to the episode on your favorite podcatcher here: <a href="https://www.modem.show/post/s03e02/" target="_blank" rel="noreferrer noopener">https://www.modem.show/post/s03e02/</a> or stream it from here:</p>
+
+Links to the episode on your favorite podcatcher here: [https://www.modem.show/post/s03e02/](https://www.modem.show/post/s03e02/) or stream it from here:
+
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->
@@ -31,5 +37,7 @@ categories:
 <!-- /wp:html -->
 
 <!-- wp:paragraph -->
-<p><a href="https://www.modem.show/post/s03e02/" target="_blank" rel="noreferrer noopener"></a></p>
+
+[](https://www.modem.show/post/s03e02/)
+
 <!-- /wp:paragraph -->

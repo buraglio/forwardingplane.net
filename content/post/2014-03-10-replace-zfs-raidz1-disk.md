@@ -28,37 +28,70 @@ Machine stats are as such:
 AMD Sempron(tm) Processor 2800+
 2G NON-ECC memory
 The following disks:
-<p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2014/03/Screenshot-2014-03-10-13.49.35.png"><img class="wp-image-936 aligncenter" alt="Screenshot 2014-03-10 13.49.35" src="http://www.forwardingplane.net/wp-content/uploads/2014/03/Screenshot-2014-03-10-13.49.35-1024x280.png" width="553" height="151" /></a></p>
-The NAS was a long standing device on my network.  I've been using <a href="http://www.nas4free.org/" target="_blank" rel="noopener noreferrer">NAS4FREE</a> for quite some time with fantastic results.  The disks are simply desktop drives, nothing fancy.  When I rebuilt it all using ZFS I found that I had not done 2 things.  I had not documented the warranty status of the devices and I had not enabled SMART monitoring.  I know, amateur hour at its finest; I'm OK with it, it's just for home use and I have offsite storage for anything super important.
-*<em>As an aside, if you're looking to build a NAS I would both recommend <a href="http://www.nas4free.org/" target="_blank" rel="noopener noreferrer">NAS4FREE</a> as well as doing something as simple as documenting the warranty information of each disk in the description field.</em>
+
+[![](http://www.forwardingplane.net/wp-content/uploads/2014/03/Screenshot-2014-03-10-13.49.35-1024x280.png)](http://www.forwardingplane.net/wp-content/uploads/2014/03/Screenshot-2014-03-10-13.49.35.png)
+
+The NAS was a long standing device on my network.  I've been using [NAS4FREE](http://www.nas4free.org/) for quite some time with fantastic results.  The disks are simply desktop drives, nothing fancy.  When I rebuilt it all using ZFS I found that I had not done 2 things.  I had not documented the warranty status of the devices and I had not enabled SMART monitoring.  I know, amateur hour at its finest; I'm OK with it, it's just for home use and I have offsite storage for anything super important.
+**As an aside, if you're looking to build a NAS I would both recommend [NAS4FREE](http://www.nas4free.org/) as well as doing something as simple as documenting the warranty information of each disk in the description field.*
 So, when I enabled SMART monitoring and email reporting. I found that several of my disks were failing their end-to-end tests when this started showing up in my inbox:
  
-<pre>The following warning/error was logged by the smartd daemon:
+
+```
+The following warning/error was logged by the smartd daemon:
 Device: /dev/ada1, Failed SMART usage Attribute: 184 End-to-End_Error.
-<span style="line-height: 1.5em;">Device info:</span></pre>
-<pre>ST2000DM001-1CH164, S/N:xxxxxxxx, WWN:5-000c50-08147e2a4, FW:CC26, 2.00 TB</pre>
+Device info:
+```
+
+
+```
+ST2000DM001-1CH164, S/N:xxxxxxxx, WWN:5-000c50-08147e2a4, FW:CC26, 2.00 TB
+```
+
  
-Bad news. However, with ZFS it is supposed to be fantastically easy to do disk replacements.  I had chosen RAIDZ1 for both volumes, so they could each supposedly sustain a single disk failure. There are a lot of online references for zfs. I used <a href="http://panoramicsolution.com/blog/?p=353" target="_blank" rel="noopener noreferrer">this page</a> as a starting point for replacing my disk. I dropped to the shell on the NAS and did the following to identify the right disk to remove:
-<pre>nas:~# camcontrol devlist
-&lt;ST31000340AS SD15&gt; at scbus0 target 0 lun 0 (ada0,pass0)
-&lt;ST2000DM001-1CH164 CC26&gt; at scbus1 target 0 lun 0 (ada1,pass1)
-&lt;ST2000DM001-1CH164 CC24&gt; at scbus2 target 0 lun 0 (ada2,pass2)
-&lt;ST2000DM001-1CH164 CC26&gt; at scbus3 target 0 lun 0 (ada3,pass3)
-&lt;WDC WD20EARS-00MVWB0 51.0AB51&gt; at scbus4 target 0 lun 0 (ada4,pass4)
-&lt;ST31500341AS CC1H&gt; at scbus5 target 0 lun 0 (ada5,pass5)
-&lt;ST2000DM001-1CH164 CC29&gt; at scbus6 target 0 lun 0 (ada6,pass6)
-&lt;ST31500341AS CC1H&gt; at scbus7 target 0 lun 0 (ada7,pass7)
-&lt;ST2000DM001-9YN164 CC82&gt; at scbus8 target 0 lun 0 (ada8,pass8)
-&lt;TOSHIBA THNCF512MPG 1.00&gt; at scbus11 target 0 lun 0 (ada9,pass9)</pre>
-ada8 needs replaced.  The volume it exists in is zfs0.  The formula used is <em>"zpool &lt;command&gt; &lt;pool&gt; &lt;device&gt;"</em>
-<pre>zpool offline zfs0 ada8</pre>
+Bad news. However, with ZFS it is supposed to be fantastically easy to do disk replacements.  I had chosen RAIDZ1 for both volumes, so they could each supposedly sustain a single disk failure. There are a lot of online references for zfs. I used [this page](http://panoramicsolution.com/blog/?p=353) as a starting point for replacing my disk. I dropped to the shell on the NAS and did the following to identify the right disk to remove:
+
+```
+nas:~# camcontrol devlist
+<ST31000340AS SD15> at scbus0 target 0 lun 0 (ada0,pass0)
+<ST2000DM001-1CH164 CC26> at scbus1 target 0 lun 0 (ada1,pass1)
+<ST2000DM001-1CH164 CC24> at scbus2 target 0 lun 0 (ada2,pass2)
+<ST2000DM001-1CH164 CC26> at scbus3 target 0 lun 0 (ada3,pass3)
+<WDC WD20EARS-00MVWB0 51.0AB51> at scbus4 target 0 lun 0 (ada4,pass4)
+<ST31500341AS CC1H> at scbus5 target 0 lun 0 (ada5,pass5)
+<ST2000DM001-1CH164 CC29> at scbus6 target 0 lun 0 (ada6,pass6)
+<ST31500341AS CC1H> at scbus7 target 0 lun 0 (ada7,pass7)
+<ST2000DM001-9YN164 CC82> at scbus8 target 0 lun 0 (ada8,pass8)
+<TOSHIBA THNCF512MPG 1.00> at scbus11 target 0 lun 0 (ada9,pass9)
+```
+
+ada8 needs replaced.  The volume it exists in is zfs0.  The formula used is *"zpool <command> 
+ <device>"*
+
+```
+zpool offline zfs0 ada8
+```
+
 None of my stuff is hot swap, so I have to shut down the box.
-<pre>shutdown -h now</pre>
+
+```
+shutdown -h now
+```
+
 Yank out the old disk and install the new one.
-<pre>zpool replace zfs0 ada8</pre>
-<pre>zpool online zfs0 ada8</pre>
+
+```
+zpool replace zfs0 ada8
+```
+
+
+```
+zpool online zfs0 ada8
+```
+
 After that you'll see the disk getting resilvered, which will take a while.
-<pre>nas:~# zpool status zfs0
+
+```
+nas:~# zpool status zfs0
 pool: zfs0
 state: DEGRADED
 status: One or more devices is currently being resilvered. The pool will
@@ -79,5 +112,7 @@ ada6 ONLINE 0 0 0
 replacing-5 OFFLINE 0 0 0
 6070465578770542405 OFFLINE 0 0 0 was /dev/ada8/old
 ada8 ONLINE 0 0 0 (resilvering)
-errors: No known data errors</pre>
+errors: No known data errors
+```
+
 After the resilvering process you should have a repaired volume.

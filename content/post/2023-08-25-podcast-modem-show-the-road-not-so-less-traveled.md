@@ -19,11 +19,15 @@ tags:
 ---
 
 <!-- wp:paragraph -->
-<p>Over the last few years I have pulled back from the social networks and refocused in a way that has allowed for more time not doing tech. Overall this has been an extremely healthy choice that has only strengthened my desire to learn new things, experience different ways of thinking, and expand my overall vision past technical endeavors. This has led to some enlightening thoughts surrounding how not hyper-focusing on one thing is, in reality, a very good thing overall, and contrary to what social media may imply, will only serve your overall well being, which in turn can fuel passion toward things that can actually be beneficial career-wise. </p>
+
+Over the last few years I have pulled back from the social networks and refocused in a way that has allowed for more time not doing tech. Overall this has been an extremely healthy choice that has only strengthened my desire to learn new things, experience different ways of thinking, and expand my overall vision past technical endeavors. This has led to some enlightening thoughts surrounding how not hyper-focusing on one thing is, in reality, a very good thing overall, and contrary to what social media may imply, will only serve your overall well being, which in turn can fuel passion toward things that can actually be beneficial career-wise. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>In this podcast, we shift gears a bit and take a step back from deep tech and attempt to provide some experienced based advice for those working on careers. Suggested by our own Jay Stewart, we each give a bit of our origin story and attempt to provide some hard learned lessons about it being completely OK - and in fact healthier - to not have the always-labbing grindset, to take chances, and to embrace risk and *gasp* pick a topic to specialize in. </p>
+
+In this podcast, we shift gears a bit and take a step back from deep tech and attempt to provide some experienced based advice for those working on careers. Suggested by our own Jay Stewart, we each give a bit of our origin story and attempt to provide some hard learned lessons about it being completely OK - and in fact healthier - to not have the always-labbing grindset, to take chances, and to embrace risk and *gasp* pick a topic to specialize in. 
+
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->

@@ -1,6 +1,6 @@
 ---
 id: 457
-title: 'IPv6 Toolkit 1.3 fun &#8211; scan6'
+title: 'IPv6 Toolkit 1.3 fun – scan6'
 date: '2013-02-20T04:53:38-06:00'
 author: buraglio
 layout: post
@@ -35,7 +35,7 @@ It's pretty straightforward to build assuming you have the Developers Tools and 
 <em>gcc -Wall -o rs6 tools/rs6.c -lpcap -lm</em>
 <em>gcc -Wall -o scan6 tools/scan6.c -lpcap -lm</em>
 <em>gcc -Wall -o tcp6 tools/tcp6.c -lpcap -lm</em>
-&nbsp;
+ 
 That's it.  If you want to install it in the global environment, to a "<em>make install</em>"
 Now for the good stuff.  The docs are well written for this tool. Here is an example of scanning a local segment in verbose mode and the output:
 <em>(~/Downloads/ipv6-toolkit-v6.8) tardis $ sudo ./scan6 -i en6 -l -e -v</em>
@@ -83,4 +83,4 @@ tcp6
 With the content providers and consumer ISPs providing native IPv6 more and more every day (my comcast service has a DHCPv6-PD /64 and a DHCPv6 /128 provisioned by default) the world at large is doing more v6.  If you've got MS windows on your network and it's even relatively new, you've got v6 unless you policy it as disabled.  It's tunneling it.
 Make these part of your arsenal for testing gear, pen testing, whatever. I promise it's worth your time.
 </div>
-&nbsp;
+ 

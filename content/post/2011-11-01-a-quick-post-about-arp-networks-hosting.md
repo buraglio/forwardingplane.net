@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2011/11/a-quick-post-about-arp-networks-hosting/'
 permalink: /2011/11/01/a-quick-post-about-arp-networks-hosting/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2011/11/quick-post-about-arp-networks-hosting.html
 dsq_thread_id:
     - '3682722811'
 Views:

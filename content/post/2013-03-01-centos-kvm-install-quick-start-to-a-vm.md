@@ -1,6 +1,6 @@
 ---
 id: 467
-title: 'CentOS KVM Install &#8211; Quick Start to a VM'
+title: 'CentOS KVM Install – Quick Start to a VM'
 date: '2013-03-01T19:12:02-06:00'
 author: buraglio
 layout: post
@@ -60,7 +60,7 @@ TYPE="Bridge"
 BOOTPROTO="static"
 IPADDR="10.10.10.50" # Use your own IP address
 NETMASK="255.255.255.128"
-GATEWAY="10.10.10.1"  # Provide your gateway
+GATEWAY="10.10.10.1" # Provide your gateway
 IPV6INIT="yes"
 IPV6_AUTOCONF="yes"
 NM_CONTROLLED="yes"
@@ -87,10 +87,10 @@ I like to redirect real port numbers for my own sanity.
 <pre>ssh -N -p 22 -c 3des buraglio@vmhost -L 5901/localhost/5901</pre>
 The above command will redirect localhost port 5901 to port 5901 on the host vmhost
 Connect to the VNC server:
-<p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.00.37-PM.png"><img class="aligncenter  wp-image-470" alt="Screen Shot 2013-03-01 at 2.00.37 PM" src="http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.00.37-PM.png" width="404" height="251" /></a></p>
+<p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.00.37-PM.png"><img class="aligncenter wp-image-470" alt="Screen Shot 2013-03-01 at 2.00.37 PM" src="http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.00.37-PM.png" width="404" height="251" /></a></p>
 <p style="text-align: left;">Once connected you should drop right into the console of the KVM instance. Install as a normal system at that point.</p>
 <p style="text-align: left;">Once installed It'll appear as a normal host console.</p>
-<p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.01.21-PM.png"><img class="aligncenter  wp-image-469" alt="Screen Shot 2013-03-01 at 2.01.21 PM" src="http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.01.21-PM.png" width="430" height="253" /></a></p>
+<p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.01.21-PM.png"><img class="aligncenter wp-image-469" alt="Screen Shot 2013-03-01 at 2.01.21 PM" src="http://www.forwardingplane.net/wp-content/uploads/2013/03/Screen-Shot-2013-03-01-at-2.01.21-PM.png" width="430" height="253" /></a></p>
 <p style="text-align: left;">I found virsh to be the most useful for manipulating the virtual machine.</p>
 <pre>[root@behemoth Install_Media]# virsh list
 Id            Name                                      State
@@ -100,5 +100,5 @@ Helpful commands I found after 30 minutes of poking around and playing with virs
 virsh list --show the list of virtual machines
 virsh destroy &lt;vm name&gt; --hard shut down a host (I believe)
 virsh undefine &lt;vm name&gt; --remove the VM from registration --this one was hard for me to find.
-&nbsp;
+ 
 <a title="KVM virsh command reference" href="http://www.forwardingplane.net/unix/kvm-virsh-command-referenc/" target="_blank" rel="noopener noreferrer">Here</a> is a complete list of the commands.

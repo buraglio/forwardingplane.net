@@ -1,6 +1,6 @@
 ---
 id: 1105
-title: 'NIX4NetEng #5 &#8211; GeoIP tools'
+title: 'NIX4NetEng #5 – GeoIP tools'
 date: '2014-12-21T12:22:15-06:00'
 author: buraglio
 layout: post

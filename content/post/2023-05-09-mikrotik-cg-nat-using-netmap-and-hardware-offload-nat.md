@@ -61,7 +61,7 @@ tags:
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><code>/interface/ethernet/switch&nbsp;set&nbsp;0&nbsp;l3-hw-offloading=yes</code><br><code>/interface/ethernet/switch/port&nbsp;set&nbsp;[find]&nbsp;l3-hw-offloading=yes</code><br><code>/interface/ethernet/switch/port&nbsp;set&nbsp;sfp-sfpplus2&nbsp;l3-hw-offloading=no</code></p>
+<p><code>/interface/ethernet/switch set 0 l3-hw-offloading=yes</code><br><code>/interface/ethernet/switch/port set [find] l3-hw-offloading=yes</code><br><code>/interface/ethernet/switch/port set sfp-sfpplus2 l3-hw-offloading=no</code></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

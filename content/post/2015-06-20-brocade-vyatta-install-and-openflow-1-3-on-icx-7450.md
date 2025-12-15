@@ -48,9 +48,9 @@ The output should look something like this
  Running controller post install scripts ...
  Running install scripts ...
  Stopping NODEJS server 9000 .............. [ OK ]
- Starting NODEJS server  .................. [ OK ]
+ Starting NODEJS server .................. [ OK ]
    Server @ http://10.42.44.20:9000/
- Install completed @ :  2015-06-17 15:32:26.464365
+ Install completed @ : 2015-06-17 15:32:26.464365
 </pre>
 Monitoring the connection to the controller from the controller can be accomplished by using the included tool: /opt/bvc/bin/taillog which operates just like you think, by tailing a log file.
 Checking for capability can be pretty easily accomplished by looking at the restconf modules:
@@ -74,7 +74,7 @@ server 10.42.2.2
 interface ethernet 1/1/1
 port-name port1
 crypto key generate rsa modulus 2048
-ip ssh  authentication-retries 5
+ip ssh authentication-retries 5
 ip ssh timeout 120
 ip ssh key-authentication yes
 username buraglio enable
@@ -89,9 +89,9 @@ OpenFlow wants to use SSL by default. When configuring this it failed in a way t
 <pre>SSH@icx-of-test#sh openflow controller
 Openflow controller information
 --------------------------------------------------------------------------------
-  Controller   Mode      TCP/SSL   IP-address        Port   Status
+  Controller Mode TCP/SSL IP-address Port Status
 --------------------------------------------------------------------------------
-  1  (Equal)   active    TCP       10.42.44.20     6653   OPENFLOW_ESTABLISHED
+  1 (Equal) active TCP 10.42.44.20 6653 OPENFLOW_ESTABLISHED
 </pre>
 This command will make it talk to the BVC over unencrypted TCP:
 <pre>openflow controller ip-address 10.42.44.20 no-ssl port 6653
@@ -101,13 +101,13 @@ Path explorer has most of the interesting bits in it.
 <a href="http://www.forwardingplane.net/wp-content/uploads/2015/06/BVC-4.png"><img class="alignright size-full wp-image-1297" src="http://www.forwardingplane.net/wp-content/uploads/2015/06/BVC-4.png" alt="BVC-4" width="1080" height="610" /></a>
 Other handy commands:
 <pre>SSH@icx-of-test#sh openflow inter
-  interface     Show interfaces where OpenFlow is enabled
+  interface Show interfaces where OpenFlow is enabled
   &lt;cr&gt;
 SSH@icx-of-test#sh openflow interface
 Total number of Openflow interfaces: 2
-Port   Link   Speed Tag MAC            OF-portid   Name           Mode
-1/1/1  Up     1G    No  cc4e.248b.4570 1           port1          Hybrid-Layer23
-1/1/48 Down   None  No  cc4e.248b.459f 48          port48         Hybrid-Layer23
+Port Link Speed Tag MAC OF-portid Name Mode
+1/1/1 Up 1G No cc4e.248b.4570 1 port1 Hybrid-Layer23
+1/1/48 Down None No cc4e.248b.459f 48 port48 Hybrid-Layer23
 </pre>
 The topology explorer is pretty cool, lots of eye candy.
 <a href="http://www.forwardingplane.net/wp-content/uploads/2015/06/BVC-1.png"><img class="alignright size-full wp-image-1294" src="http://www.forwardingplane.net/wp-content/uploads/2015/06/BVC-1.png" alt="BVC-1" width="996" height="754" /></a>

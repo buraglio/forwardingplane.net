@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/11/juniper-ex-4200-arp-ndp-problem-or-things-id-like-to-see-in-a-tac/'
 permalink: /2012/11/06/juniper-ex-4200-arp-ndp-problem-or-things-id-like-to-see-in-a-tac/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/11/juniper-ex-4200-arp-ndp-problem-or.html
 Views:
     - '97'
 categories:

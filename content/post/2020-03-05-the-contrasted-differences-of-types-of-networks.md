@@ -18,7 +18,7 @@ categories:
 ---
 
 <!-- wp:paragraph -->
-<p>Today more than ever, networking has fundamental similarities. The days of routing IPX/SPX, AppleTalk, Banyan Vines or provisioning ATM and Frame Relay links are moving into the past. Most networks are now based on ethernet*. Most run at least IPv4 as a routed protocol. They leverage similar connectivity techniques such as an interior gateway protocol, a layer2 mechanism such as VLANs or VPLS, and an identifiable border (e.g. an autonomous system). This, however, is where the similarities mostly end.&nbsp;While it is true that in networking there are problems and there are solutions, the differences and uniqueness of particular environments creates a quick divergence of what a reasonable solution is to a given problem.  </p>
+<p>Today more than ever, networking has fundamental similarities. The days of routing IPX/SPX, AppleTalk, Banyan Vines or provisioning ATM and Frame Relay links are moving into the past. Most networks are now based on ethernet*. Most run at least IPv4 as a routed protocol. They leverage similar connectivity techniques such as an interior gateway protocol, a layer2 mechanism such as VLANs or VPLS, and an identifiable border (e.g. an autonomous system). This, however, is where the similarities mostly end. While it is true that in networking there are problems and there are solutions, the differences and uniqueness of particular environments creates a quick divergence of what a reasonable solution is to a given problem. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

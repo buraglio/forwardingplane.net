@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2010/12/a-bit-of-ipv6-humor-for-the-holidays/'
 permalink: /2010/12/23/a-bit-of-ipv6-humor-for-the-holidays/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2010/12/bit-of-ipv6-humor-for-holidays.html
 Views:
     - '54'
 categories:

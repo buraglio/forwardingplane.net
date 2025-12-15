@@ -42,8 +42,8 @@ Feb 27 16:28:04 dnsmasq[7620]: forwarded manifest.googlevideo.com to 75.75.76.76
 <ul>
 	<li>It's easy to add or remove ad domains. Just edit /etc/pihole/gravity.list</li>
 </ul>
-&nbsp;
+ 
 <iframe src="https://player.vimeo.com/video/135965232" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 <a href="https://vimeo.com/135965232">Pi-hole Explained</a> from <a href="https://vimeo.com/user40849716">Pi-hole</a> on <a href="https://vimeo.com">Vimeo</a>.
-&nbsp;
-Completely ignoring the merit or unethical nature of blocking revenue generating advertisements (which I personally make a small amount of money on from on my <a href="https://www.youtube.com/buraglio" target="_blank" rel="noopener noreferrer">youtube channel</a>), this is a recommended project that exposes networking folks to unix, critical network services, as well as security. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=3J2L3Z4DHW9UY" target="_blank" rel="noopener noreferrer">Throw them some beer or coffee money</a> if you find it useful. They've earned it.
+ 
+Completely ignoring the merit or unethical nature of blocking revenue generating advertisements (which I personally make a small amount of money on from on my <a href="https://www.youtube.com/buraglio" target="_blank" rel="noopener noreferrer">youtube channel</a>), this is a recommended project that exposes networking folks to unix, critical network services, as well as security. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3J2L3Z4DHW9UY" target="_blank" rel="noopener noreferrer">Throw them some beer or coffee money</a> if you find it useful. They've earned it.

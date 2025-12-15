@@ -11,7 +11,7 @@ themeblvd_title:
 themeblvd_keywords:
     - 'NSA, Security, Networking, SDN, OpenFlow, IDS, Bro, Snort'
 themeblvd_description:
-    - 'NSA spy catalog and what''s not being said.  Speculation about the NSA security backdoor catalog and toolbox.  '
+    - 'NSA spy catalog and what''s not being said. Speculation about the NSA security backdoor catalog and toolbox. '
 themeblvd_noindex:
     - 'true'
 dsq_thread_id:

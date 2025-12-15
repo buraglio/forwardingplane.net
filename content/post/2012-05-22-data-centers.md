@@ -1,17 +1,11 @@
 ---
 id: 21
-title: 'Data Centers&#8230;..'
+title: 'Data Centers..'
 date: '2012-05-22T03:45:00-05:00'
 author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/05/data-centers/'
 permalink: /2012/05/22/data-centers/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/05/data-centers.html
 Views:
     - '133'
 categories:

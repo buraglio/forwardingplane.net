@@ -1,6 +1,6 @@
 ---
 id: 1018
-title: 'NIX4NetEng #2 IPv4/6 address investigation tools &#8211; whois + dig'
+title: 'NIX4NetEng #2 IPv4/6 address investigation tools – whois + dig'
 date: '2014-06-07T13:54:41-05:00'
 author: buraglio
 layout: post
@@ -51,70 +51,70 @@ local.forwardingplane.net. 221 IN AAAA 2607:dd00:8000:18::88
 local.forwardingplane.net. 221 IN A 192.80.96.88</pre>
 Well, we can see here we have a dual stacked host.  We'll look at that more later.
 Let's see who owns this address space. Whois is the way to go here.  I always start with querying ARIN and go from there.
-&nbsp;
+ 
 <pre>(~) jumphost $ whois -h whois.arin.net 192.80.96.88
 #
 # ARIN WHOIS data and services are subject to the Terms of Use
 # available at: https://www.arin.net/whois_tou.html
 #
 #
-# Query terms are ambiguous.  The query is assumed to be:
-#     "n 192.80.96.88"
+# Query terms are ambiguous. The query is assumed to be:
+# "n 192.80.96.88"
 #
 # Use "?" to get help.
 #
 #
 # The following results may also be obtained via:
-# http://whois.arin.net/rest/nets;q=192.80.96.88?showDetails=true&amp;showARIN=false&amp;ext=netref2
+# http://whois.arin.net/rest/nets;q=192.80.96.88?showDetails=true&showARIN=false&ext=netref2
 #
-NetRange:       192.80.96.0 - 192.80.111.255
-CIDR:           192.80.96.0/20
-OriginAS:       AS10932
-NetName:        UC2B-1
-NetHandle:      NET-192-80-96-0-1
-Parent:         NET-192-0-0-0-0
-NetType:        Direct Allocation
-RegDate:        2013-02-27
-Updated:        2013-02-27
-Ref:            http://whois.arin.net/rest/net/NET-192-80-96-0-1
-OrgName:        UC2B
-OrgId:          CCLAUBBC
-Address:        102 North Neil Street
-City:           Champaign
-StateProv:      IL
-PostalCode:     61820
-Country:        US
-RegDate:        2012-02-28
-Updated:        2014-02-19
-Ref:            http://whois.arin.net/rest/org/CCLAUBBC
+NetRange: 192.80.96.0 - 192.80.111.255
+CIDR: 192.80.96.0/20
+OriginAS: AS10932
+NetName: UC2B-1
+NetHandle: NET-192-80-96-0-1
+Parent: NET-192-0-0-0-0
+NetType: Direct Allocation
+RegDate: 2013-02-27
+Updated: 2013-02-27
+Ref: http://whois.arin.net/rest/net/NET-192-80-96-0-1
+OrgName: UC2B
+OrgId: CCLAUBBC
+Address: 102 North Neil Street
+City: Champaign
+StateProv: IL
+PostalCode: 61820
+Country: US
+RegDate: 2012-02-28
+Updated: 2014-02-19
+Ref: http://whois.arin.net/rest/org/CCLAUBBC
 OrgAbuseHandle: UCBTE-ARIN
-OrgAbuseName:   uc2b-tech
-OrgAbusePhone:  +1-217-265-4226
-OrgAbuseEmail:  uc2b-tech@uc2b.net
-OrgAbuseRef:    http://whois.arin.net/rest/poc/UCBTE-ARIN
+OrgAbuseName: uc2b-tech
+OrgAbusePhone: +1-217-265-4226
+OrgAbuseEmail: uc2b-tech@uc2b.net
+OrgAbuseRef: http://whois.arin.net/rest/poc/UCBTE-ARIN
 OrgNOCHandle: UCBTE-ARIN
-OrgNOCName:   uc2b-tech
-OrgNOCPhone:  +1-217-265-4226
-OrgNOCEmail:  uc2b-tech@uc2b.net
-OrgNOCRef:    http://whois.arin.net/rest/poc/UCBTE-ARIN
+OrgNOCName: uc2b-tech
+OrgNOCPhone: +1-217-265-4226
+OrgNOCEmail: uc2b-tech@uc2b.net
+OrgNOCRef: http://whois.arin.net/rest/poc/UCBTE-ARIN
 OrgTechHandle: UCBTE-ARIN
-OrgTechName:   uc2b-tech
-OrgTechPhone:  +1-217-265-4226
-OrgTechEmail:  uc2b-tech@uc2b.net
-OrgTechRef:    http://whois.arin.net/rest/poc/UCBTE-ARIN
+OrgTechName: uc2b-tech
+OrgTechPhone: +1-217-265-4226
+OrgTechEmail: uc2b-tech@uc2b.net
+OrgTechRef: http://whois.arin.net/rest/poc/UCBTE-ARIN
 #
 # ARIN WHOIS data and services are subject to the Terms of Use
 # available at: https://www.arin.net/whois_tou.html
 #</pre>
 The first 7 lines of this are the most important.
 Here we can see that the address space is owned by an entity called <a href="http://www.uc2b.net" target="_blank" rel="noopener noreferrer">UC2B</a>, it is part of a /20 that the origin ASN is 10932 and that it is a direct allocation (as opposed to assigned space from an upstream provider).
-<pre>NetRange:       192.80.96.0 - 192.80.111.255
-CIDR:           192.80.96.0/20
-OriginAS:       AS10932
-NetName:        UC2B-1
-NetHandle:      NET-192-80-96-0-1
-Parent:         NET-192-0-0-0-0
-NetType:        Direct Allocation</pre>
+<pre>NetRange: 192.80.96.0 - 192.80.111.255
+CIDR: 192.80.96.0/20
+OriginAS: AS10932
+NetName: UC2B-1
+NetHandle: NET-192-80-96-0-1
+Parent: NET-192-0-0-0-0
+NetType: Direct Allocation</pre>
 I could tell you some horror stories about getting this address space assigned. It took me 7 months to get that allocation from ARIN.......but I digress.  From here we can query the ASN, also using whois, again, the first few lines are generally the most useful.
 <pre>(~) jumphost $ whois -h whois.arin.net 10932
 ASNumber: 10932
@@ -126,15 +126,15 @@ Ref: http://whois.arin.net/rest/asn/AS10932</pre>
 We can use this information to track down responsible parties, addresses, etc.  It's a great resource for knowing both technical and non-technical details about address space.
 <a href="http://www.team-cymru.org/Services/ip-to-asn.html#whois" target="_blank" rel="noopener noreferrer">Team Cymru has an extremely powerful whois service</a> that allows for significantly more flexibility including time and date.
 <pre>(~) jumphost $ whois -h whois.cymru.com " -v 192.80.96.88"
-AS      | IP               | BGP Prefix          | CC | Registry | Allocated  | AS Name
-10932   | 192.80.96.88     | 192.80.96.0/20      | US | arin     | 2013-02-27 | UC2B - UC2B,US</pre>
+AS | IP | BGP Prefix | CC | Registry | Allocated | AS Name
+10932 | 192.80.96.88 | 192.80.96.0/20 | US | arin | 2013-02-27 | UC2B - UC2B,US</pre>
 As you can imagine, this can be a robust way to track changes and re-allocations of ASNs and address blocks, especially with the dwindling amounts of IPv4 and the re-assignment of ASNs.  One can see when ownership has changed and verify the correct origin of address blocks.  Great for validation and correlation.
 These services also work for IPv6. We can see if the V6 space is coming from the same ASN or if it's a different entity (like a <a href="http://www.tunnelbroker.net" target="_blank" rel="noopener noreferrer">tunnel</a> or a totally different provider).
 <pre>[buraglio@local ~]$ whois -h whois.cymru.com " -v 2607:dd00:8000:18::88"
 [Querying whois.cymru.com]
 [whois.cymru.com]
-AS      | IP                                       | BGP Prefix          | CC | Registry | Allocated  | AS Name
-10932   | 2607:dd00:8000:18::88                    | 2607:dd00::/32      | US | arin     | 2012-07-23 | UC2B - UC2B,US</pre>
-&nbsp;
+AS | IP | BGP Prefix | CC | Registry | Allocated | AS Name
+10932 | 2607:dd00:8000:18::88 | 2607:dd00::/32 | US | arin | 2012-07-23 | UC2B - UC2B,US</pre>
+ 
 <p style="text-align: left;">This is really just the tip of the iceberg in this kind of toolset.  There are <em>countless </em>scripts, binaries and  shell hacks to do no end of interesting and useful things and gather information.  Have some other, better uses or tools?  Post them in the comments!</p>
 <p style="text-align: center;"></p>

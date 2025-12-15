@@ -21,6 +21,6 @@ categories:
 ---
 
 Tune in!
-&nbsp;
-&nbsp;
-<iframe style="border: 0; outline: 0;" src="http://cdn.livestream.com/embed/techfieldday?layout=4&amp;color=0xe7e7e7&amp;autoPlay=false&amp;mute=false&amp;iconColorOver=0x888888&amp;iconColor=0x777777&amp;allowchat=true&amp;height=385&amp;width=640" height="385" width="570" frameborder="0" scrolling="no"></iframe>
+ 
+ 
+<iframe style="border: 0; outline: 0;" src="http://cdn.livestream.com/embed/techfieldday?layout=4&color=0xe7e7e7&autoPlay=false&mute=false&iconColorOver=0x888888&iconColor=0x777777&allowchat=true&height=385&width=640" height="385" width="570" frameborder="0" scrolling="no"></iframe>

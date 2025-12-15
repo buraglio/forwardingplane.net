@@ -34,5 +34,5 @@ I met with and <a href="http://www.forwardingplane.net/2014/04/blending-the-net
 At then end of the day, though, the best part of this is not that there are a few interesting topics, it is the fact that all of the topics and players are unique, top shelf and potentially game changing. It's essentially an all star lineup (again) with the likes of <a href="http://www.brocade.com" target="_blank" rel="noopener noreferrer">Brocade</a>, <a href="http://www.solarwinds.com/" target="_blank" rel="noopener noreferrer">Solarwinds</a>, <a href="http://www.nec.com" target="_blank" rel="noopener noreferrer">NEC</a>, <a href="http://www.velocloud.com/" target="_blank" rel="noopener noreferrer">VeloCloud</a> and <a href="http://www.cloudgenix.com/" target="_blank" rel="noopener noreferrer">Cloudgenix</a>.
 This entire line up is right up my alley, as a large number of them are WAN or SDN oriented, which is where I spend the majority of my normal working days.
 In addition to all of that, I'll finally get to meet <a href="http://twitter.com/networkingnerd" target="_blank" rel="noopener noreferrer">NetworkingNerd</a> in real life.
-&nbsp;
-&nbsp;
+ 
+ 

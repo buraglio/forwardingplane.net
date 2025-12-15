@@ -11,7 +11,7 @@ themeblvd_title:
 themeblvd_keywords:
     - 'security, openflow, science DMZ, routing, black hole routing, ipv6, buraglio, nick buraglio, infosec, open perimeter network'
 themeblvd_description:
-    - 'There are use cases for having a network with no security appliances in the path.  Here is how to secure it in a way that is functionally equivalent.   '
+    - 'There are use cases for having a network with no security appliances in the path. Here is how to secure it in a way that is functionally equivalent. '
 themeblvd_noindex:
     - 'true'
 dsq_thread_id:
@@ -67,5 +67,5 @@ Here are the bullets.
 	<li><strong>Make use of regularly scheduled external vulnerability scanning</strong></li>
 </ul>
 <p style="padding-left: 60px;">This is a great way to verify your exposure and works for any sized network.  Highly recommended.</p>
-&nbsp;
+ 
 Clearly this isn't for everyone, and that's ok.  For anyone that has struggled with issues involving security appliances either based on protocol, horsepower or interface speeds, there are options.

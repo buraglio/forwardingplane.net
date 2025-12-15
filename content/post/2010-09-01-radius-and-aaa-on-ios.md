@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2010/09/radius-and-aaa-on-ios/'
 permalink: /2010/09/01/radius-and-aaa-on-ios/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2010/09/radius-and-aaa-on-ios.html
 Views:
     - '73'
 categories:

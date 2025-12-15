@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2010/08/juniper-srx-cluster/'
 permalink: /2010/08/31/juniper-srx-cluster/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2010/08/juniper-srx-cluster.html
 Views:
     - '195'
 categories:

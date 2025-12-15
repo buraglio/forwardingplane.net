@@ -9,7 +9,7 @@ permalink: /2013/05/19/mpls-pseudowire-vll-between-junos-and-brocade-mlxxmr/
 themeblvd_title:
     - 'MPLS Pseudowire between Juniper and Brocade'
 themeblvd_keywords:
-    - 'MPLS Pseudowire  Juniper Brocade VLL VPLS l2circuit junos'
+    - 'MPLS Pseudowire Juniper Brocade VLL VPLS l2circuit junos'
 themeblvd_description:
     - 'MPLS Pseudowire between Juniper and Brocade'
 themeblvd_noindex:
@@ -24,7 +24,7 @@ categories:
 ---
 
 I love to be the "uncola" of networking sites.  I like interop and I don't do a lot with Cisco because I don't have access to much of their gear anymore.  So, that being the case, I had a need to bring up a l2circuit (in JunOS speak), or VLL (in Brocade speak) between an MX480 and an MLX.  Since they are very different platforms, I had to do some digging and playing around to get it to work.
-You should have a rudimentary understanding of MPLS (which is about what I have) to do this.  l2circuit / pseudowire / vll are all synonymous for the scope of this post.
+You should have a rudimentary understanding of MPLS (which is about what I have) to do this. l2circuit / pseudowire / vll are all synonymous for the scope of this post.
 JunOS:
 <pre>set protocols l2circuit neighbor interface virtual-circuit-id
 set protocols l2circuit neighbor interface encapsulation-type ethernet

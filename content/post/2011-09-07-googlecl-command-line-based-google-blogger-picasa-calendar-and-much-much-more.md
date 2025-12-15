@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2011/09/googlecl-command-line-based-google-blogger-picasa-calendar-and-much-much-more/'
 permalink: /2011/09/07/googlecl-command-line-based-google-blogger-picasa-calendar-and-much-much-more/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2011/09/new-post.html
 dsq_thread_id:
     - '3718647227'
 Views:

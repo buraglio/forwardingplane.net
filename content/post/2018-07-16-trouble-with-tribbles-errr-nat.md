@@ -1,6 +1,6 @@
 ---
 id: 1471
-title: 'Trouble with Tribbles &#8230;..errr NAT'
+title: 'Trouble with Tribbles ..errr NAT'
 date: '2018-07-16T04:24:00-05:00'
 author: buraglio
 layout: post

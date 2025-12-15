@@ -29,5 +29,5 @@ categories:
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->
-<iframe width="320" height="30" src="https://packetpushers.net/?powerpress_embed=46786-podcast&amp;powerpress_player=mediaelement-audio" frameborder="0" scrolling="no"></iframe>
+<iframe width="320" height="30" src="https://packetpushers.net/?powerpress_embed=46786-podcast&powerpress_player=mediaelement-audio" frameborder="0" scrolling="no"></iframe>
 <!-- /wp:html -->

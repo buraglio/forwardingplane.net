@@ -13,7 +13,7 @@ themeblvd_keywords:
 themeblvd_noindex:
     - 'true'
 themeblvd_description:
-    - 'NIX4NetEng #1 Managing dotfiles; own the unspoken pain of UNIX administration.  Use GIT to manage environmental variables stored in dotfles'
+    - 'NIX4NetEng #1 Managing dotfiles; own the unspoken pain of UNIX administration. Use GIT to manage environmental variables stored in dotfles'
 dsq_thread_id:
     - '2651737200'
 Views:

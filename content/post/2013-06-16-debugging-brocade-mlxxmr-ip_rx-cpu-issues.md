@@ -31,14 +31,14 @@ idle                    68435           11
 ip_rx                   724619          72
 ospf                    36942           3
 snmp                    82753           8
-I needed to get info on that ip_rx process.  Google actually wasn't terribly helpful, so I dig out what I wanted, except for the process for breaking into the management module monitor mode.  The golden ticket ended up being "ctrl+y m enter" from the console.  That drops you into the OS mode or management module monitor mode that looks like this.<a href="http://www.forwardingplane.net/wp-content/uploads/2013/06/Screen-Shot-2013-06-16-at-7.04.20-PM.png"><img class="alignright  wp-image-674" alt="Screen Shot 2013-06-16 at 7.04.20 PM" src="http://www.forwardingplane.net/wp-content/uploads/2013/06/Screen-Shot-2013-06-16-at-7.04.20-PM.png" width="552" height="281" /></a>
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+I needed to get info on that ip_rx process.  Google actually wasn't terribly helpful, so I dig out what I wanted, except for the process for breaking into the management module monitor mode.  The golden ticket ended up being "ctrl+y m enter" from the console.  That drops you into the OS mode or management module monitor mode that looks like this.<a href="http://www.forwardingplane.net/wp-content/uploads/2013/06/Screen-Shot-2013-06-16-at-7.04.20-PM.png"><img class="alignright wp-image-674" alt="Screen Shot 2013-06-16 at 7.04.20 PM" src="http://www.forwardingplane.net/wp-content/uploads/2013/06/Screen-Shot-2013-06-16-at-7.04.20-PM.png" width="552" height="281" /></a>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 Basically this is what I gathered for the Brocade TAC.
 <pre>MP-1 OS&gt;set sample-task ip_rx
 MP-1 OS&gt;set sample-rate 5

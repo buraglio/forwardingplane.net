@@ -11,7 +11,7 @@ themeblvd_title:
 themeblvd_keywords:
     - 'netflow, security, networking, routing, openflow, sflow, buraglio, nfdump, nfsen, centos, nfsen centos install, SDN, OpenVSwitch'
 themeblvd_description:
-    - 'How to install and configure nfdump and nfsen under CentOS 6.5 for netflow (or sflow) collection and analysis.  '
+    - 'How to install and configure nfdump and nfsen under CentOS 6.5 for netflow (or sflow) collection and analysis. '
 themeblvd_noindex:
     - 'true'
 dsq_thread_id:
@@ -54,7 +54,7 @@ Now you need the actual code. I like to grab the latest from sourceforge. (nfdum
 wget http://downloads.sourceforge.net/project/nfsen/stable/nfsen-1.3.6p1/nfsen-1.3.6p1.tar.gz</pre>
 <pre>tar -zxvf nfdump-1.6.11.tar.gz
 ./configure --enable-nfprofile --enable-nftrack --enable-sflow
-make &amp;&amp; sudo make install</pre>
+make && sudo make install</pre>
 By default 1.6.11 enables v9 and ipfix =)
 <pre>adduser netflow
 vi /etc/group</pre>
@@ -63,11 +63,11 @@ Add user netflow to group apache
 change www user to apache
 Add your host to the file to allow for collection, my %sources looks like this:
 <pre>%sources = (
-    'home'    =&gt; { 'port' =&gt; '9995', 'col' =&gt; '#0000ff', 'type' =&gt; 'netflow' },
-    'internal'    =&gt; { 'port' =&gt; '9996', 'col' =&gt; '#FF0000', 'type' =&gt; 'netflow' },
-#    'gw'    =&gt; { 'port' =&gt; '9995', 'col' =&gt; '#0000ff', 'type' =&gt; 'netflow' },
-#    'peer1'        =&gt; { 'port' =&gt; '9996', 'IP' =&gt; '172.16.17.18' },
-#    'peer2'        =&gt; { 'port' =&gt; '9996', 'IP' =&gt; '172.16.17.19' },
+    'home' =&gt; { 'port' =&gt; '9995', 'col' =&gt; '#0000ff', 'type' =&gt; 'netflow' },
+    'internal' =&gt; { 'port' =&gt; '9996', 'col' =&gt; '#FF0000', 'type' =&gt; 'netflow' },
+# 'gw' =&gt; { 'port' =&gt; '9995', 'col' =&gt; '#0000ff', 'type' =&gt; 'netflow' },
+# 'peer1' =&gt; { 'port' =&gt; '9996', 'IP' =&gt; '172.16.17.18' },
+# 'peer2' =&gt; { 'port' =&gt; '9996', 'IP' =&gt; '172.16.17.19' },
 );</pre>
 As you can see, I have two valid sources with different ports and different colors. You can make all netflow, all sflow, or any combination of protocol.
 change directory to /home/netflow
@@ -104,16 +104,16 @@ case "$1" in
 esac
 exit 0</pre>
 Then chkconfig it on to start it at boot:
-<pre>chmod 755 nfsen &amp;&amp; chkconfig --add nfsen &amp;&amp; chkconfig nfsen on</pre>
+<pre>chmod 755 nfsen && chkconfig --add nfsen && chkconfig nfsen on</pre>
 That's pretty much it. Once you configure your netflow or sflow source, you should start seeing data in ~5-10 minutes. Point your browser at your web server and see: Mine is set as https://netmon/nfsen/nfsen.php (you'll need to include the "nfsen.php" uness you edit your apache config to recognize "nfsen.php" as in index.
-<p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2014/01/Screen-Shot-2014-01-11-at-3.13.53-PM.png"><img class="aligncenter  wp-image-878" alt="Screen Shot 2014-01-11 at 3.13.53 PM" src="http://www.forwardingplane.net/wp-content/uploads/2014/01/Screen-Shot-2014-01-11-at-3.13.53-PM-913x1024.png" width="548" height="614" /></a></p>
+<p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2014/01/Screen-Shot-2014-01-11-at-3.13.53-PM.png"><img class="aligncenter wp-image-878" alt="Screen Shot 2014-01-11 at 3.13.53 PM" src="http://www.forwardingplane.net/wp-content/uploads/2014/01/Screen-Shot-2014-01-11-at-3.13.53-PM-913x1024.png" width="548" height="614" /></a></p>
 Common issues:
 I see this one every time: "ERROR: nfsend connect() error: Permission denied!" It's always a permissions issue, as documented <a href="https://code.google.com/p/nfsenplugins/wiki/NFSEN_Installation_Gotchas" target="_blank" rel="noopener noreferrer">here</a>.  You need to make sure that the nfsen package can read the nfsen.comm socket file. I fixed mine by doing
 <pre>chmod g+rwx ~netflow/</pre>
 My nfsen.conf file is using /home/netflow as the $BASEDIR.
 <pre style="text-align: center;"> <a href="http://www.forwardingplane.net/wp-content/uploads/2014/01/Screenshot-2014-01-11-13.04.17.png"><img class=" wp-image-873 aligncenter" alt="Screenshot 2014-01-11 13.04.17" src="http://www.forwardingplane.net/wp-content/uploads/2014/01/Screenshot-2014-01-11-13.04.17.png" width="474" height="161" /></a></pre>
-&nbsp;
-&nbsp;
+ 
+ 
 You'll likely see "Frontend - Backend version mismatch!", this is a known issue. There is a patch to fix it <a href="http://sourceforge.net/p/nfsen/bugs/43/" target="_blank" rel="noopener noreferrer">here</a>, I never bothered since it did not cause any issues for me.
 Disk full. Depending on your setup, you may generate a firehose worth of data. I have filled disks in less than a day in the past on a good sized regional WAN. I generally keep a month of data, but you can store as much data as disk you want to buy. I have a script run from cron to prune data, if you want to do the same:
 <pre>vi /usr/local/etc/rmflowdata.sh</pre>

@@ -1,6 +1,6 @@
 ---
 id: 908
-title: 'Tail-F NCS: upsetting network management&#8230;in a good way.'
+title: 'Tail-F NCS: upsetting network managementin a good way.'
 date: '2014-02-26T22:36:26-06:00'
 author: buraglio
 layout: post
@@ -41,6 +41,6 @@ Standardize and deploy ACLs across a range of platforms in geographically divers
 Don't take my word for it, I'm clearly excited about it and can't wait to get my hands on it.  Watch the NCS demo:
 <span style="line-height: 1.5em;">Tail-f Systems NCS Demo at Networking Field Day 7</span>
 <iframe src="//player.vimeo.com/video/87189864" height="281" width="500" allowfullscreen=""></iframe>
-&nbsp;
+ 
 All of the videos can be found <a href="http://techfieldday.com/appearance/tail-f-systems-presents-at-networking-field-day-7/" target="_blank" rel="noopener noreferrer">here</a>.
 Rosetta Stone images courtesy of <a href="http://www.ancientegypt.co.uk/writing/rosetta.html" target="_blank" rel="noopener noreferrer">http://www.ancientegypt.co.uk/writing/rosetta.html</a> and <a href="http://taboodada.wordpress.com/" target="_blank" rel="noopener noreferrer">http://taboodada.wordpress.com/</a>

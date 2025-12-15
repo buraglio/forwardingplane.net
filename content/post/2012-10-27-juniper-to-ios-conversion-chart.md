@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/10/juniper-to-ios-conversion-chart/'
 permalink: /2012/10/27/juniper-to-ios-conversion-chart/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/10/juniper-to-ios-conversion-chart.html
 Views:
     - '1191'
 categories:

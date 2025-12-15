@@ -13,7 +13,7 @@ themeblvd_title:
 themeblvd_keywords:
     - 'soapbox, nick buraglio, buraglio, IOS, cisco, juniper, junos, sdn, openflow, take risks'
 themeblvd_description:
-    - 'Open minded network engineers go further and know more.  Don''t be risk-averse.  '
+    - 'Open minded network engineers go further and know more. Don''t be risk-averse. '
 dsq_thread_id:
     - '3626961294'
 Views:
@@ -33,5 +33,5 @@ In addition, utilizing hardware and software from different vendors forces stand
 I have run into the excuse of "we already have institutional knowledge of x" all throughout my career, and while I certainly understand the viewpoint, I find this to be a surmountable excuse.  If there exists a product or solution that is better suited for the task at hand, brand should be irrelevant.  There are enough valid, cost effective and [arguably] technically superior options out there that brand loyalty should take a far, far back seat.  Learning is our job and we need to be willing and able to adapt to thrive.  I'm not saying that comfort level and familiarity should not be a factor, not at all.  Supportability is paramount.  However, that should be <strong>a</strong> factor, not the <strong>only</strong> factor.
 Don't be afraid to take risks.  Lab up new things.  You will truly never know if something is better, worse or a wash unless you give it a chance.  You may just learn something by accident.
 The point I'm trying to make is that we do ourselves and potentially the consumers of the service we build a disservice when we blindly write off options because of our own personal comfort level.
-&nbsp;
-&nbsp;
+ 
+ 

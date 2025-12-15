@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/10/directionality/'
 permalink: /2012/10/31/directionality/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/10/directionality_31.html
 geo_latitude:
     - '40.0552842'
 geo_longitude:

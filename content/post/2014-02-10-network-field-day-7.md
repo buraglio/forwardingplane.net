@@ -32,4 +32,4 @@ To be included in such an event is an amazing experience in and of itself, but t
 </ul>
 I'm particularly excited about this lineup, it's a great mix of production, innovation and forward thinking thinking participants and the opportunity to have the brain trust in the aforementioned list around to discuss networking with is invaluable.
 Tune in. Participate. #NFD7 hashtag on Twitter.
-&nbsp;
+ 

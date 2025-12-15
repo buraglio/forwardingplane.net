@@ -1,6 +1,6 @@
 ---
 id: 1506
-title: 'DNS &#8211; the treasure trove of information your ISP can see'
+title: 'DNS – the treasure trove of information your ISP can see'
 date: '2018-12-10T04:23:42-06:00'
 author: buraglio
 layout: post
@@ -24,7 +24,7 @@ tags:
 <p>Great, so $bigbadprovider can see your queries. There are a number of pretty good ways to work around this, and <a href="https://pi-hole.net/">one of my favorite projects</a> handily deals with one of them with great simplicity. What I am referring to is the newly popular <a href="https://scotthelme.co.uk/securing-dns-across-all-of-my-devices-with-pihole-dns-over-https-1-1-1-1/">DNS over HTTPS</a>, which is supported by the <a href="https://one.one.one.one/">cloudflare 1.1.1.1 service</a>. </p>
 <p>So, as a thought experiment I decided to play Reeses Peanut butter and chocolate with two of my favorite technological creations: the aforementioned PiHole, and <a href="https://zerotier.com/">ZeroTier</a>. Now anyone that isn’t familiar with ZeroTier, you should acquaint yourself - Packet Pushers did a good<a href="https://packetpushers.net/podcast/pq-134-meet-zerotier-open-source-networking/"> podcast on it back in November of 2017</a>. It’s functionally an encrypted overlay supporting dual stack networking with auto configuration and gateway capabilities, and it runs on almost everything. I love this overlay technology and have been using it for a while - highly recommended.</p>
 <p>Back to my peanut butter and chocolate experiment. So, given that I had an existing ZeroTier network and an existing PiHole setup at home, I went over to <a href="https://www.vultr.com/?ref=7692870">Vultr.com</a> and spun up a small VM for $3.50/mo, integrated it into my fleet with my Ansible and Salt tools, and installed ZeroTier and Pihole. From there I set up this DNS hierarchy. </p>
-<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://docs.google.com/drawings/d/e/2PACX-1vS-DsmzNWvE335KZtNo6AHX3SySG-VQWhK7i9sNgT6mFMHC5VzRWtMuJg5JraU2dJTFQT4QIGnfaMFP/pub?w=960&amp;h=720" /></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://docs.google.com/drawings/d/e/2PACX-1vS-DsmzNWvE335KZtNo6AHX3SySG-VQWhK7i9sNgT6mFMHC5VzRWtMuJg5JraU2dJTFQT4QIGnfaMFP/pub?w=960&h=720" /></p>
 <p><span style="font-family: Helvetica;">What this buys me is a fully encrypted DNS path up through the Vultr.com VM host without modifying the underlying DNS transport. And it works surprisingly well. I ran SmokePing from two hosts - both leveraging ZeroTier to do their testing, one on my local network and one in the cloud - to measure latency for a few days before I did this and kept that running after the deployment. Now, it’s not perfect but my family and I have been using this for about a month with minimal issues. Once in a great while we’ll see some slow DNS resolution time, but overall it works fairly well. </span></p>
 <p> </p>
 <p><span style="font-family: Helvetica; font-size: 12px;"><span style="font-family: Helvetica;"><img style="display: block; margin-left: auto; margin-right: auto;" title="Resolver Queries.png" src="https://www.forwardingplane.net/wp-content/uploads/2018/12/Resolver-Queries.png" alt="Resolver Queries" width="597" height="223" border="0" /></span></span></p>

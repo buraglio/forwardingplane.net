@@ -21,8 +21,8 @@ categories:
 In the last few years I have moved all of my virtualization to <a href="https://www.proxmox.com/en/">proxmox</a> and docker. Seeing as I like to look at packets because I am a closet security guy, and being as I have been working off-and-on on a security project in recent times, I wanted to be able to span a port not only from a hardware switch, but also within my software switches. I had been using linux bridge, which I am not a fan of, so when I started down this path I did not look hard to find a way to do so under that platform. Instead I used it as an opportunity to move some of the internal bridges to <a href="http://openvswitch.org/">OpenVSwitch</a>. I wanted to create an OVS span port internally.
 I had experience with OVS in the past for SDN work that I was doing, but I had never created a mirror port. I briefly thought about using OpenFlow to do it, but the unnecessary complexity was off putting. Instead I chose to create a simple mirror of a span port from my switch. So, traffic flow goes as such:
 <a href="http://www.forwardingplane.net/wp-content/uploads/2017/03/OVS-SPAN-1.png"><img class="wp-image-1383 size-full alignleft" src="http://www.forwardingplane.net/wp-content/uploads/2017/03/OVS-SPAN-1.png" alt="" width="573" height="148" /></a>
-&nbsp;
-&nbsp;
+ 
+ 
 This was fairly trivial, and I was seeing packets in no time. I'm not going to go through creating an OVS bridge in proxmox, there are lots of <a href="https://pve.proxmox.com/wiki/Open_vSwitch">documents</a> on how to do that. Once you have your switch port SPAN up and running, and the physical interface in the OVS bridge, you essentially just need to add the following:
 Create the mirror
 <pre>ovs-vsctl -- --id=@m create mirror name=span -- add bridge vmbr1 mirrors @m</pre>

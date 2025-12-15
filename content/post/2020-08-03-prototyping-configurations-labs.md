@@ -27,7 +27,7 @@ categories:
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>The good news is that today this is easy to spin up - even on your own. It does not require a large investment in a pallet of hardware; it is fairly inexpensive to get started. There are many options in this space.  <a href="https://www.eve-ng.net/">Eve-NG</a>, <a href="https://www.gns3.com/">GNS3</a>, even just raw qemu, can aid in getting something very useful up and trucking. Once you have the environment, you need to populate it with images. There are plenty of options for doing so: Juniper, Arista, FreeRTR, Mikrotik, all offer no cost VMs of their platforms for lab environments. It is easy to get started there.  Now that we have some resources we can get rolling, because although it is very important, all that above is not really what this post is about. </p>
+<p>The good news is that today this is easy to spin up - even on your own. It does not require a large investment in a pallet of hardware; it is fairly inexpensive to get started. There are many options in this space. <a href="https://www.eve-ng.net/">Eve-NG</a>, <a href="https://www.gns3.com/">GNS3</a>, even just raw qemu, can aid in getting something very useful up and trucking. Once you have the environment, you need to populate it with images. There are plenty of options for doing so: Juniper, Arista, FreeRTR, Mikrotik, all offer no cost VMs of their platforms for lab environments. It is easy to get started there. Now that we have some resources we can get rolling, because although it is very important, all that above is not really what this post is about. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -39,7 +39,7 @@ categories:
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>For a while now I have had a "<a href="https://forwardingplane.net/configuration-archive/">configuration archive</a>" section of the blog. Mostly drawn from a deep well of junk I threw in <a href="https://www.evernote.com/referral/Registration.action?sig=0eb7394b4a9ae2ca2bb5fff6a3cb5d82c393d801a89a1f8d565d2ee678604dde&amp;uid=19302328">evernote</a> over the last 10+ years, they are "pro-tips", esoteric commands, or tidbits I found otherwise difficult to run down. What I am talking about here, though, are reference architectures. These are configurations that all fit together like a puzzle. I've been throwing them onto my <a href="https://github.com/buraglio">Github</a> for a while now, and as I build more I will add them. If someone were so inclined, they could likely grab the repo and push it out with a "working network" as a result. However, these are not meant to be perfect. They are purposely dirty because they represent a learning process and a safe environment for experimentation which is critical for expanding knowledge.  The list of the newest are below, they will likely change as I experiment with them, but they should provide a basic overview of how to do a few things in a larger environment than just a few nodes, and provide a context to some of the less talked about protocols and how they work together. </p>
+<p>For a while now I have had a "<a href="https://forwardingplane.net/configuration-archive/">configuration archive</a>" section of the blog. Mostly drawn from a deep well of junk I threw in <a href="https://www.evernote.com/referral/Registration.action?sig=0eb7394b4a9ae2ca2bb5fff6a3cb5d82c393d801a89a1f8d565d2ee678604dde&uid=19302328">evernote</a> over the last 10+ years, they are "pro-tips", esoteric commands, or tidbits I found otherwise difficult to run down. What I am talking about here, though, are reference architectures. These are configurations that all fit together like a puzzle. I've been throwing them onto my <a href="https://github.com/buraglio">Github</a> for a while now, and as I build more I will add them. If someone were so inclined, they could likely grab the repo and push it out with a "working network" as a result. However, these are not meant to be perfect. They are purposely dirty because they represent a learning process and a safe environment for experimentation which is critical for expanding knowledge. The list of the newest are below, they will likely change as I experiment with them, but they should provide a basic overview of how to do a few things in a larger environment than just a few nodes, and provide a context to some of the less talked about protocols and how they work together. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -59,7 +59,7 @@ categories:
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="https://github.com/buraglio/Juniper-SR-PCE">A  multi vendor Segment Routed network (primarily Juniper)</a></p>
+<p><a href="https://github.com/buraglio/Juniper-SR-PCE">A multi vendor Segment Routed network (primarily Juniper)</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

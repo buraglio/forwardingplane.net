@@ -1,6 +1,6 @@
 ---
 id: 1351
-title: 'BGP RPKI &#8211; why aren&#039;t we using it more?'
+title: 'BGP RPKI – why aren&#039;t we using it more?'
 date: '2016-05-21T10:33:44-05:00'
 author: buraglio
 layout: post

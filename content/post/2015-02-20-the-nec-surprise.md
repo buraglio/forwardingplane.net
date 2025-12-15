@@ -28,7 +28,7 @@ categories:
 When <a href="http://necam.com/">NEC</a> began talking about SDN at <a href="http://techfieldday.com/event/nfd9/">Network Field Day 9</a>, I was not sure what to expect. I knew they had been heavily involved with openflow since the early days, and many years ago I was able to get my hands on their early OpenFlow controller and was immediately frustrated by its cryptic nature and frankly, poor documentation. Their switches were fine and were heavily utilized in early OpenFlow deployments. I knew they had decent support and were squarely on board the SDN train. Their controller, in 2010, was not terribly fun to work with. It was (if memory serves) prohibitively expensive and the support manual was nearly as cryptic as the controller. Because it's my personality type, I went in with a very open mind, hoping to be surprised. After all, it'd been 4+ years since I'd seen that controller.
 Well, I am here to report that I will happily eat some crow.
 <a href="http://www.forwardingplane.net/wp-content/uploads/2015/02/Eat-Crow.jpg"><img class=" size-full wp-image-1162 aligncenter" src="http://www.forwardingplane.net/wp-content/uploads/2015/02/Eat-Crow.jpg" alt="Eat Crow" width="293" height="200" /></a>
-&nbsp;
+ 
 A few things became very apparent to me as I sat and watched the presentation from NEC, which you can view in its entirety below:
 <ul>
 	<li>NEC is not messing around with their SDN offering. They've been in the openflow game since the beginning and the polish on their controller shows it. The topology is quite nice and they've got a finished looking product that would find itself at home in a decent sized NOC.</li>
@@ -41,10 +41,10 @@ In addition, NEC has spun up an "app store" for SDN apps and allowed for some cr
 &lt;speculation&gt;
 There are a few things I find interesting about the NEC offering and about NEC in general. Being in a service provider environment off and on for most of my career, the fact that NEC is getting involved so heavily is intriguing. Unlike most of the other DC focused companies, NEC plays in the carrier market. While this particular briefing did not include any carrier updates, it would surprise me if this wasn't being investigated behind some big doors. It makes sense to me and it would be a surprise if it did not occur to someone else. The SP market is fickle and slow to change, but ripe for fresh ideas. I see a lot of potential both there and in the DC / campus / enterprise.
 &lt;/speculation&gt;
-&nbsp;
-<iframe src="//player.vimeo.com/video/119508255?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+ 
+<iframe src="//player.vimeo.com/video/119508255?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 <a href="https://vimeo.com/119508255">Introduction to NEC Networking</a> from <a href="https://vimeo.com/sfoskett">Stephen Foskett</a> on <a href="https://vimeo.com">Vimeo</a>.
-<iframe src="//player.vimeo.com/video/119508725?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<iframe src="//player.vimeo.com/video/119508725?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 <a href="https://vimeo.com/119508725">NEC ProgrammableFlow vCOps Solution</a> from <a href="https://vimeo.com/sfoskett">Stephen Foskett</a> on <a href="https://vimeo.com">Vimeo</a>.
-<iframe src="//player.vimeo.com/video/119510207?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<iframe src="//player.vimeo.com/video/119510207?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 <a href="https://vimeo.com/119510207">ProgrammableFlow SCVMM Demo</a> from <a href="https://vimeo.com/sfoskett">Stephen Foskett</a> on <a href="https://vimeo.com">Vimeo</a>.

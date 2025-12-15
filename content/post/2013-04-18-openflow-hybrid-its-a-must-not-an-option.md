@@ -1,6 +1,6 @@
 ---
 id: 572
-title: 'OpenFlow Hybrid.  It&#039;s a must, not an option.'
+title: 'OpenFlow Hybrid. It&#039;s a must, not an option.'
 date: '2013-04-18T10:17:37-05:00'
 author: buraglio
 layout: post
@@ -25,6 +25,6 @@ The problem that we face now is that we have critical infrastructure and legacy 
 Based on the <a href="http://www.openflow.org/documents/openflow-spec-v1.0.0.pdf" target="_blank" rel="noopener noreferrer">OpenFlow 1.0 spec</a>, an OpenFlow enabled switch is not required to support all actions, <strong>may</strong> support the NORMAL action.  I am here to say that my opinion is that this is something that has to happen.  It's is reasonable to say that my understanding of OpenFlow is still evolving, but building networks is something I've been doing for 15 years.  Green fielding a totally OpenFlow network is almost certainly not going to happen in 95% of cases.  Backwards compatibility with existing networking is going to have to happen.
 <a href="http://www.forwardingplane.net/wp-content/uploads/2013/04/tantrum.jpg"><img class="alignleft size-full wp-image-594" alt="tantrum" src="http://www.forwardingplane.net/wp-content/uploads/2013/04/tantrum.jpg" width="200" height="183" /></a>As a case study, lets look at the adoption of IPv6.  We actually *need* IPv6.  Has adoption been smooth?  No.  Entities have been dragged into it kicking and screaming and tightly holding on to mechanisms like NAT as a way to delay the inevitable.  I could go on forever about how enterprises, service providers and any other network has caused more harm, pain and unnecessary expense than good by delaying IPv6 over and over....but I digress.
 We [mostly] don't <strong>need</strong> OpenFlow yet.  Yes, it's useful.  Yes, it has use cases that make a lot of sense.  Making it easy (read: painless) is the key to deployment.   My first reaction is that hybrid mode is the way to do this.  If your vendor doesn't have a hybrid strategy, make them aware that they need one.
-&nbsp;
-&nbsp;
-&nbsp;
+ 
+ 
+ 

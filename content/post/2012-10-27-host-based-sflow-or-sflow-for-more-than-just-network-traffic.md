@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/10/host-based-sflow-or-sflow-for-more-than-just-network-traffic/'
 permalink: /2012/10/27/host-based-sflow-or-sflow-for-more-than-just-network-traffic/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/10/host-based-sflow-or-sflow-for-more-than.html
 Views:
     - '69'
 categories:

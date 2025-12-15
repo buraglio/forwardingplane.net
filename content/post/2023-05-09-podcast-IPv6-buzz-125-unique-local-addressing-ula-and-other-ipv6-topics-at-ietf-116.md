@@ -27,7 +27,7 @@ categories:
 <p>Give it a listen here or in your favorite podcatcher. </p>
 <!-- /wp:paragraph -->
 
-<iframe width="320" height="30" src="https://packetpushers.net/?powerpress_embed=55196-podcast&amp;powerpress_player=mediaelement-audio" title="Blubrry Podcast Player" frameborder="0" scrolling="no"></iframe>
+<iframe width="320" height="30" src="https://packetpushers.net/?powerpress_embed=55196-podcast&powerpress_player=mediaelement-audio" title="Blubrry Podcast Player" frameborder="0" scrolling="no"></iframe>
 <!-- /wp:embed -->
 
 <!-- wp:paragraph -->

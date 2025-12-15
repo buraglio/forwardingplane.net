@@ -25,7 +25,7 @@ categories:
 ---
 
 If you are running a network and aren't using <a href="http://shrubbery.net/rancid/" target="_blank" rel="noopener noreferrer">RANCID</a>, you should give it a serious look.  RANCID is a cross platform configuration management toolkit for backing up router configurations and certain environmental and hardware information into version control.  It's been around for as long as I can remember and supports nearly every platform I can think of, including a <a title="VDXrancid contrib scripts" href="http://www.forwardingplane.net/2012/11/vdxrancid-contrib-scripts/" target="_blank" rel="noopener noreferrer">few</a> <a title="alurancid and pfrancid" href="http://www.forwardingplane.net/2011/06/alurancid-and-pfrancid/" target="_blank" rel="noopener noreferrer">modules</a> that I cobbled together myself.  There is are a few nice web based front ends for CVS and SVN, I prefer to use <a href="http://www.viewvc.org" target="_blank" rel="noopener noreferrer">ViewVC</a> because I have a lot of experience with it, however, there may be cases where a web server isn't a good option, unavailable or just too much work.  In this case, you'll want to know how to diff those configs from the CLI using the existing tools.  I find myself always forgetting the exact syntax of how to do this, so here it is. I prefer to use SVN, so we'll talk about that one here.
-&nbsp;
+ 
 svn list will give a list of current devices in version control:
 <pre>svn list</pre>
 <pre>rtr1.company.com
@@ -70,4 +70,4 @@ Index: 710rtr.ui-iccn.org
   ip ospf cost 8
   ip address 10.209.143.1/30
 </pre>
-That's basically it.  Anything you can do from svn, you can do with your RANCID gathered SVN data.  
+That's basically it. Anything you can do from svn, you can do with your RANCID gathered SVN data. 

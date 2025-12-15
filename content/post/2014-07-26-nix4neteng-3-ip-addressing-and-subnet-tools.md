@@ -11,7 +11,7 @@ themeblvd_title:
 themeblvd_keywords:
     - 'ipv6 subnet calculator, ipv4 ubnet calculator, subnet calculator, unix, SDN, openflow, ipv6, nick buraglio, buraglio, sipcalc, ipcalc, hex convertor, decimal to hexidecimal converter, nix4neteng, devops'
 themeblvd_description:
-    - 'Utilize command line tools for checking ipv4 and ipv6 addressing.  '
+    - 'Utilize command line tools for checking ipv4 and ipv6 addressing. '
 themeblvd_noindex:
     - 'true'
 dsq_thread_id:
@@ -69,7 +69,7 @@ Cisco wildcard - 0.0.0.31
 Addresses in network - 32
 Network range - 10.143.27.192 - 10.143.27.223
 Usable range - 10.143.27.193 - 10.143.27.222</pre>
-&nbsp;
+ 
 Notable mention:
 Web tools are also useful and are becoming more prolific than the UNIX tools, but I will assume that you're probably already loged into a UNIX system like a jump box or bastion host anyway and the tools are faster and thinner in that environment. That said, here are some useful web tools:
 <a href="http://jodies.de/ipcalc" target="_blank" rel="noopener noreferrer">ipcalc</a> has the web interface to their tool.

@@ -45,7 +45,7 @@ If you're interested in seeing or hearing some more about these products, I did 
 <iframe src="https://player.vimeo.com/video/252898981" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 <iframe src="https://player.vimeo.com/video/252898794" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 <iframe src="https://player.vimeo.com/video/252898704" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-&nbsp;
+ 
 The real point is that to really see the performance of your network and to fully understand the true user experience you need to have total visibility into the entire ecosystem, not just the pieces that you can control.
 <h6></h6>
 <h6>*For anyone wigged out about the eyeball pic, those are my eyes <a href="http://www.nickburaglio.com/2015/09/02/eg-html/">7 days after Lasik</a>.</h6>

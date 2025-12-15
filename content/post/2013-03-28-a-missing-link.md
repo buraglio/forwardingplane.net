@@ -9,7 +9,7 @@ permalink: /2013/03/28/a-missing-link/
 themeblvd_noindex:
     - 'true'
 themeblvd_title:
-    - 'Small 10G MPLS routers.  "Cheap, Fast, Reliable.  Pick Two" '
+    - 'Small 10G MPLS routers. "Cheap, Fast, Reliable. Pick Two" '
 themeblvd_keywords:
     - 'MPLS, OpenFlow, 10G, 40G, Brocade, Cisco, Juniper, Alcatel-Lucent, Arista'
 themeblvd_description:
@@ -25,7 +25,7 @@ categories:
 ---
 
 Lately I've been lamenting the fact that there seems to be a lack of options in a very specific product level.  Lets say you have a network that looks like this:
-&nbsp;
+ 
 <a href="http://www.forwardingplane.net/wp-content/uploads/2013/03/10G-Bldg1.jpg"><img class="alignleft size-full wp-image-568" alt="10G-Bldg" src="http://www.forwardingplane.net/wp-content/uploads/2013/03/10G-Bldg1.jpg" width="432" height="599" /></a>Right Away you're limited since you need MPLS and more than 2 10G interfaces. Even more so if you require full support for IPv6 and ISIS.
 If budget is of any concern, you're in real trouble.
 For many, Cisco pricing and smartnet is potentially going to exclude anything reasonable from them.  There are a substantial amount of non-enterprise folks out there that can't afford the significant Cisco price tag but need the features.  I am here to say, this is a problem.  The attitude of "if you want the best you have to pay for it" doesn't apply.  There is a real need for viable alternatives, not just because we need them, but because competition is a good thing for everyone.
@@ -35,7 +35,7 @@ HP has some great products in the Procurve series.  They're inexpensive, rock s
 Then you have Alcatel Lucent.   They do MPLS, they're carrier devices.  They offer a 1U (
 (<a href="http://www.alcatel-lucent.com/products/7210-service-access-switch" target="_blank" rel="noopener noreferrer">7210 Service Access Switch</a>) device but I have no idea on cost and I'm still looking for 10G port density.  I suspect it is very reasonable.  Their <a title="Alcatel Lucent RANCID scripts" href="http://www.forwardingplane.net/2010/12/alcatel-lucent-rancid-scripts/" target="_blank" rel="noopener noreferrer">CLI is a bit different</a> but they're very robust devices.  I've not used any but the 7750, so I cant comment as to how the smaller ones look.  It's a possibility if it has the 10G ports.
 Arista is very close but they fall short on the MPLS support.
-&nbsp;
+ 
 The primary take away from this commentary is that there are not a lot of options that meet the following criteria:
 <ul>
 	<li>1-2U</li>
@@ -50,4 +50,4 @@ The primary take away from this commentary is that there are not a lot of option
 	<li><strong>Reasonably priced</strong></li>
 </ul>
 I keep coming back to the old adage of "Cheap, Fast, Reliable.  Pick Two" and it drives me crazy.  We should have more options but I don't think we do.  I would absolutely <strong>love</strong> to be wrong, but every time I look at this I feel like I am picking out a cell phone plan.  The affordable ones are never quite enough and the plan above is overkill and too expensive.
-&nbsp;
+ 

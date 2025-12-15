@@ -15,7 +15,7 @@ categories:
 
 For a long time I ran a blog called <a href="http://www.forwardingplane.net">tech.buraglio.com</a> that was a self hosted wordpress site. After having kids and getting a bit busier at work, I decided to move everything that I had been hosting (images, scripts, hacks, blogs and DNS) to "the cloud". I managed to do this for everything but my primary DNS resolver, which I had always intended to keep, and one <a href="http://www.shitenonions.com">wordpress blog</a> that I hosted for someone else.
 <p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2012/12/bloggerpress.jpg"><img class="size-medium wp-image-84 aligncenter" title="bloggerpress" src="http://www.forwardingplane.net/wp-content/uploads/2012/12/bloggerpress-300x200.jpg" alt="" width="300" height="200" /></a></p>
-&nbsp;
+ 
 I moved my image hosting from gallery2 to flickr (backup on picasaweb), secondary DNS to nether.net and afraid.org, scripts, hacks and the like to google code and my blogs to blogger.  Blogger was <strong>very</strong> easy, stable and highly available.  It was also far less flexible.
 <p style="text-align: center;"><img class="aligncenter" src="http://www.undertheradarblog.com/wp-content/uploads/2011/12/Top-5-Best-Free-Cloud-Storage-Services-That-You-Need-And-Are-Useful.png" alt="" width="480" height="253" /></p>
 I continued to write from time to time, mostly ramblings or notes on some weird thing I has to set up.  I noticed that a few of my posts were getting a decent amount of traffic, something I was a bit surprised about.  I started to write a bit more......more traffic.  I started cross posting to <a href="http://www.twitter.com/buraglio" target="_blank" rel="noopener noreferrer">twitter</a>.  More traffic.  OK, maybe what I was jotting down was actually useful to someone.  Or I had a stalker.  Probably not the latter.
@@ -40,8 +40,8 @@ For every post, I've had to create a redirect entry in my .htaccess file.  Most
 I got really used to the google analytics, so I had to add a plugin for that.  I chose <a href="http://wordpress.org/extend/plugins/google-analyticator/" target="_blank" rel="noopener noreferrer">Google Analyticator</a>.  ....Then I realized that users having to create  accounts is lame, so I added <a href="http://wordpress.org/extend/plugins/social-connect/" target="_blank" rel="noopener noreferrer">Social Connect</a>.
 So far, that's pretty much it.  However, since this is a public unix box I need to make sure it's relatively safe, so I would highly recommend installing <a href="http://www.sshguard.net" target="_blank" rel="noopener noreferrer">sshguard</a> in addition to whatever other firewall rules it can dynamically block offensive hosts and then unblock them after a period of time.  I am also a big fan of <a href="http://www.duosecurity.com" target="_blank" rel="noopener noreferrer">duo security</a> for <a href="http://en.wikipedia.org/wiki/Two-factor_authentication" target="_blank" rel="noopener noreferrer">two factor auth</a>.
 We'll see how this goes......
-&nbsp;
-&nbsp;
+ 
+ 
 <script type="text/javascript">// <![CDATA[
 google_ad_client = "ca-pub-5397547757892743";
 /* Wordpress Small */

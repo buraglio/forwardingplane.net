@@ -43,4 +43,4 @@ Done.  That should open a finder window with the App in it.  You can copy it t
 Edits made and Poof!  Now I can see my syslogs from within cacti.
 <p style="text-align: center;"> <a href="http://www.forwardingplane.net/wp-content/uploads/2013/01/Screen-Shot-2013-01-08-at-11.44.40-PM.png">
 </a></p>
-&nbsp;
+ 

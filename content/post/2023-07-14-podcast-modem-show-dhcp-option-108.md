@@ -149,7 +149,7 @@ tags:
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>We have recently recorded <a href="https://www.modem.show/post/s03e03/">an episode of MODEM</a> on my recent experience building and running an IPv6-mostly network, and there is <a href="https://packetpushers.net/podcast/ipv6-buzz-110-the-peculiar-power-of-dhcpv6-option-108/">a great IPv6 Buzz Podcast</a> on the same topic that is very good.  You can take a listen here, or in your favorite podcatcher, or streamed below. </p>
+<p>We have recently recorded <a href="https://www.modem.show/post/s03e03/">an episode of MODEM</a> on my recent experience building and running an IPv6-mostly network, and there is <a href="https://packetpushers.net/podcast/ipv6-buzz-110-the-peculiar-power-of-dhcpv6-option-108/">a great IPv6 Buzz Podcast</a> on the same topic that is very good. You can take a listen here, or in your favorite podcatcher, or streamed below. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->

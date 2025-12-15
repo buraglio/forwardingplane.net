@@ -33,6 +33,6 @@ What skeptics hear is "There is a hole in the boat, we're all going to die" or "
 Most of this is just sensationalism and FUD. In my opinion, though, it is all based in truth .  It may be "drastic" but it's not dramatic.  It's natural evolution.  It will happen slowly.  We will have to change they way we do things. The proven fact we as networking and security professionals need to remember is that change going to happen with or without SDN, it's the nature of an innovative field like technology to change.  None of us would be doing what we do without being inquisitive enough to figure out problems, challenge norms and shift thinking.
 SDN, just like IPv6, is happening.  Personally I'd rather be knowledgeable about as opposed to in the dark and scrambling to learn about them at the 11th hour.<em id="__mceDel"> </em>
 &lt;/soapbox&gt;
-&nbsp;
-&nbsp;
-&nbsp;
+ 
+ 
+ 

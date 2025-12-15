@@ -40,11 +40,11 @@ Listing interfaces in OVS can be a helpful way to aid in building the faucet con
 <pre>root@pve1:~# ovs-vsctl --columns=ofport,name list interface
 ofport : 65534
 name : "vmbr4"
-ofport              : 1
+ofport : 1
 name : "eno2"
-ofport              : 4
+ofport : 4
 name : "tap115i1"
-ofport              : 2
+ofport : 2
 name : "enx00051ba65ece"</pre>
 For spanning the data into the VM, the basic configuration within faucet looks like this and should reside in /etc/faucet/faucet.yaml. The real meat here is the mirror statement on port 4.
 <pre>dps:

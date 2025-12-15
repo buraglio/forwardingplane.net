@@ -1,17 +1,11 @@
 ---
 id: 1711
-title: 'Brocade VDX First Impressions&#8230;.'
+title: 'Brocade VDX First Impressions.'
 date: '2012-12-08T11:53:00-06:00'
 author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/11/brocade-vdx-first-impressions/'
 permalink: /2012/12/08/brocade-vdx-first-impressions/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /feeds/3291015193216494208/posts/default/4545645563452829653
 themeblvd_noindex:
     - 'true'
 dsq_thread_id:
@@ -52,8 +46,8 @@ That being said, some people have very specific data center requirements that ar
 <div>But I digress.  We can get into the Data Center design details later.  Below would be a theoretical data center reference design for a fabric deployment.  Please bear in mind that I mostly like to focus on the WAN and SP bits, so take my data center speculations and musings with a grain of salt.</div>
 <div></div>
 <div></div>
-<a href="http://www.forwardingplane.net/wp-content/uploads/2012/11/Flexible-DC.jpg"><img class="alignnone  wp-image-149" title="Flexible DC" src="http://www.forwardingplane.net/wp-content/uploads/2012/11/Flexible-DC.jpg" alt="" width="508" height="576" /></a>
-&nbsp;
+<a href="http://www.forwardingplane.net/wp-content/uploads/2012/11/Flexible-DC.jpg"><img class="alignnone wp-image-149" title="Flexible DC" src="http://www.forwardingplane.net/wp-content/uploads/2012/11/Flexible-DC.jpg" alt="" width="508" height="576" /></a>
+ 
 The Brocade VDX does most of what can be expected of a layer 2 fabric.  It really is the "easy" part of a DC design.  If you can avoid STP, I would heavily recommend it.  I have an unnatural dislike for spanning tree.
 The unexpected things I ran into with my very brief hands-on with the VDX were just that, unexpected.  I could reliably crash ssh on the boxes by sending a public key at login, which is default behavior for a normal ssh client.  This was very annoying and implied that they don't yet support ssh keys for authentication.  One can work around it by doing <em>ssh -o PubkeyAuthentication=no -l &lt;name&gt; </em>and worked with the newest version of putty, which I don't use.  The version of OpenSSH on my Mac running 10.8.2 had an issue with it, as did the linux jumphost I used.
 There is no way, in current software to manage this centrally like you can with qfabric.  Each device is an individual switch.  I suspect this will change since it's pretty inconvenient and I know many folks have asked for it.  This was my biggest issue with it.
@@ -65,4 +59,4 @@ It is easily integrated into RANCID.<a href="http://www.forwardingplane.net/2012
 It looks EXACTLY like IOS so folks familiar with Ciscos venerable IOS command line will have absolutely no issue picking this right up.
 Some of the things I didn't get to do during this first run were to put a packet cannon like an IXIA on it and jam traffic up to, and ideally beyond the limits and see how it reacts and to point existing SNMP based tools at it (other than basic up/down status).  I'd also like to push the limits of the interconnect between geographic locations and see the latency and efficiency of the VLAG ports when moving traffic and virtual machines.  With luck these will happen at some point soon.
 Bear in mind that this is a relatively new product.  I would probably place the best competitor for this as the Juniper Qfabric or Microfabric, bith of which are a larger scale product and suffer from some of the same issues.  I'm excited to see more about it, it did its job pretty well.  Juniper and cisco take notice, these bits are important and <a href="http://www.plexxi.com">more than just brocade are working on it</a>.
-&nbsp;
+ 

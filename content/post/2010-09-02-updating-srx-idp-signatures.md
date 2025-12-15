@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2010/09/updating-srx-idp-signatures/'
 permalink: /2010/09/02/updating-srx-idp-signatures/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2010/09/updating-srx-idp-signatures.html
 dsq_thread_id:
     - '3627823907'
 Views:

@@ -37,7 +37,7 @@ Using the methodology I originally found found <a href="http://stackoverflow.com
 <pre>cat &lt;&lt;EOM &gt;/etc/yum.repos.d/epel-bootstrap.repo
  [epel]
  name=Bootstrap EPEL
- mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=epel-\$releasever&amp;arch=\$basearch
+ mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=epel-\$releasever&arch=\$basearch
  failovermethod=priority
  enabled=0
  gpgcheck=0
@@ -119,7 +119,7 @@ Now list the vms to make sure it is listed:
 <pre>"floodlight1" {8fb4f03d-d117-43d5-b4bf-24cdcc481686}</pre>
 Now here is the part I really like about virtualbox headless mode (and yes, I know others like qemu and xen can do this), when a virtual machine is started in headless mode, the console of that host can be redirected to an RDP instance. This makes it very convenient to manage systems on an out of band network like an isolated vlan or other non-routed or non-publically available network. It also makes it very convenient for spinning up a new VM that doesn't have an IP stack configured. Its also very handy if you have a bad day and typo a host firewall rule or network config file. This has saved me a trip more than one time.
 To do this, you'll need the vrdp extension pack.  To list the installed extension packs, once again, use the vboxmanage command
-&nbsp;
+ 
 <pre>VBoxManage list extpacks
 Extension Packs: 0</pre>
 The extension pack for my version is available <a href="http://download.virtualbox.org/virtualbox/4.2.6/Oracle_VM_VirtualBox_Extension_Pack-4.2.6-82870.vbox-extpack" target="_blank" rel="noopener noreferrer">here</a>.
@@ -127,7 +127,7 @@ The extension pack for my version is available <a href="http://download.virtualb
 0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
 Successfully installed "Oracle VM VirtualBox Extension Pack".</pre>
 At this point we're ready to fire up the VM and connect to the console.
-<pre>vboxheadless -startvm floodlight1 -vrde on -vrdeproperty "TCP/Ports"=3390&amp;
+<pre>vboxheadless -startvm floodlight1 -vrde on -vrdeproperty "TCP/Ports"=3390&
 Oracle VM VirtualBox Headless Interface 4.2.6
 (C) 2008-2012 Oracle Corporation
 All rights reserved.
@@ -135,11 +135,11 @@ VRDE server is listening on port 3390.</pre>
 The above command will start the VM "floodlight1", enable vrde and set the vrde port to 3390. You should now be able to connect to the console of the host using any free or included RDP compatible client. I use the microsoft office for mac provided rdp client.
 <img class="aligncenter size-full wp-image-406" alt="RDC" src="http://www.forwardingplane.net/wp-content/uploads/2013/01/RDC.png" width="469" height="154" />
 You'll see an error when connecting since the server can't be verified.  This is expected.
-&nbsp;
-&nbsp;
+ 
+ 
 <a href="http://www.forwardingplane.net/wp-content/uploads/2013/01/RDC-Verify.png"><img class="aligncenter size-full wp-image-405" alt="RDC Verify" src="http://www.forwardingplane.net/wp-content/uploads/2013/01/RDC-Verify.png" width="497" height="298" /></a>
-&nbsp;
+ 
 Hit connect and ta-da! Console on your VM.
-<p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2013/01/Console.png"><img class="aligncenter  wp-image-407" alt="Console" src="http://www.forwardingplane.net/wp-content/uploads/2013/01/Console-1024x658.png" width="491" height="316" /></a></p>
-&nbsp;
+<p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2013/01/Console.png"><img class="aligncenter wp-image-407" alt="Console" src="http://www.forwardingplane.net/wp-content/uploads/2013/01/Console-1024x658.png" width="491" height="316" /></a></p>
+ 
 The best part about this is that it allows for really flexible management of virtual machines from a geographically different location.  Other than the initial install of CentOS 6, this was done 100% remotely, without a windows host and without an expensive hypervisor license. This is perfect for labs and learning virtualization, I'd even consider this totally fine for production.

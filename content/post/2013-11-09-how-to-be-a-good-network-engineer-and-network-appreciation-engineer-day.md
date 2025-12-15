@@ -51,5 +51,5 @@ Don't be a Luddite.
 Love what you do.  In IT the only constant is change.  Embrace it.  Learn new technology.  Think outside of the box and step outside of your comfort zone.  Never be comfortable with "good enough".  Strive to know more about whatever it is you are working on.  Be positive.  Help others learn.  Don't worry about credit and recognition and just do great work, if you do the rest will work itself out.
 This post is my ode to the network engineer.  On Network Engineer appreciation day (which should be a thing.  if it doesn't exist, I decree it is every November 12th), think of these things and remember that even if no one remembers network engineer appreciation day, we'll still keep the packets moving and fill in the rest of the gaps too.
 Cheers.
-&nbsp;
-&nbsp;
+ 
+ 

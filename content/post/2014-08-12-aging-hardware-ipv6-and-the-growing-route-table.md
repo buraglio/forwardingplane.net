@@ -35,5 +35,5 @@ It's a banner day, make no mistake.  512k ipv4 routes in the global default fre
 I often have a thought when discussing the merits of ipv6 with anyone that is arguing as to why they don't want or need to deploy it:
 Would the internet/their network be a better place if we spent as much time making ipv6 work instead of going well out of our way to work around it?
 &lt;end rant&gt; =)
-&nbsp;
-&nbsp;
+ 
+ 

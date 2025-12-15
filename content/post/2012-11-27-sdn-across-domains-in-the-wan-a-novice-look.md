@@ -1,17 +1,11 @@
 ---
 id: 1707
-title: 'SDN across domains in the WAN &#8211; a novice look'
+title: 'SDN across domains in the WAN – a novice look'
 date: '2012-11-27T05:04:00-06:00'
 author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/11/sdn-across-domains-in-the-wan-a-novice-look/'
 permalink: /2012/11/27/sdn-across-domains-in-the-wan-a-novice-look/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/11/sdn-across-domains-in-wan-novice-look.html
 dsq_thread_id:
     - '2154143226'
 Views:

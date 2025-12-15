@@ -13,7 +13,7 @@ themeblvd_noindex:
 themeblvd_title:
     - 'Configure transit vlans on MX series JunOS'
 themeblvd_description:
-    - 'How to confiure a transit vlan on an MX series JunOS device in conjunction with a layer3 unit.  '
+    - 'How to confiure a transit vlan on an MX series JunOS device in conjunction with a layer3 unit. '
 dsq_thread_id:
     - '3626763679'
 Views:
@@ -76,14 +76,14 @@ set interfaces et-5/0/0 unit 10 family inet6 address 2001:fd8:a100:100::1/64
 Now check your bridge table:
 <pre>
 buraglio@mx480> show bridge domain
-Routing instance        Bridge domain            VLAN ID     Interfaces
-default-switch          vlan-123                 123
+Routing instance Bridge domain VLAN ID Interfaces
+default-switch vlan-123 123
                                                              et-5/0/0.123
                                                              xe-1/0/0.0
                                                              xe-1/0/1.0
-default-switch          vlan-124                 124
+default-switch vlan-124 124
                                                              et-5/0/0.124
                                                              xe-1/0/2.0
                                                              xe-1/0/3.0
 </pre>
-That's it.  Pretty straightforward.  
+That's it. Pretty straightforward. 

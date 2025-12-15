@@ -13,7 +13,7 @@ themeblvd_noindex:
 themeblvd_keywords:
     - 'Sonicwall, SonicOS, RANCID, sonrancid, security, devops, SDN, buraglio, Nick Buraglio, UNIX'
 themeblvd_description:
-    - 'Back up and archive SonicWall firewall configurations using RANCID.  '
+    - 'Back up and archive SonicWall firewall configurations using RANCID. '
 dsq_thread_id:
     - '3020195776'
 Views:

@@ -22,7 +22,7 @@ categories:
 <div>You have one, right? Even if your entire strategy is “collect some flow data”, there is absolutely NO reason not to have a netflow implementation, and frankly, it will save you time and money over time if you make the effort to do it. I love network data and analytics and I have waxed poetic about how important they are at every opportunity. There are a myriad of options for analytics and flow data. If you’re not doing something, you’re doing it wrong. I can go on and on about the importance of network data for budgeting, security, capacity planing, and general knowledge of what your network is actually doing, but that’s for another day (contact me directly if you really want to chat details on that subject). Today is about network flow data - the foundational bits and pieces of what the heck your network, big or small, is actually doing. I’ve been having a breakdance fight with flow data packages for almost two decades, and I’ve jotted down a few of my more notable experiences. Regardless of your needs, budget, abilities, or time, there is a solution for you.</div>
 <div></div>
 <div> <iframe class="giphy-embed" src="https://giphy.com/embed/11FirB7GcukiwU" width="480" height="331" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
-&nbsp;
+ 
 <center>
 <a href="https://giphy.com/gifs/breakin-boogaloo-shrimp-11FirB7GcukiwU">via GIPHY</a></center>
 <div></div>

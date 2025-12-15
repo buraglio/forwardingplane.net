@@ -19,7 +19,7 @@ tags:
 ---
 
 <!-- wp:paragraph -->
-<p>Over the last few years I have pulled back from the social networks and refocused in a way that has allowed for more time not doing tech. Overall this has been an extremely healthy choice that has only strengthened my desire to learn new things, experience different ways of thinking, and expand my overall vision past technical endeavors. This has led to some enlightening thoughts surrounding how not hyper-focusing on one thing is, in reality, a very good thing overall, and contrary to what social media may imply, will only serve your overall well being, which in turn can fuel passion toward things that can actually be beneficial career-wise.  </p>
+<p>Over the last few years I have pulled back from the social networks and refocused in a way that has allowed for more time not doing tech. Overall this has been an extremely healthy choice that has only strengthened my desire to learn new things, experience different ways of thinking, and expand my overall vision past technical endeavors. This has led to some enlightening thoughts surrounding how not hyper-focusing on one thing is, in reality, a very good thing overall, and contrary to what social media may imply, will only serve your overall well being, which in turn can fuel passion toward things that can actually be beneficial career-wise. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

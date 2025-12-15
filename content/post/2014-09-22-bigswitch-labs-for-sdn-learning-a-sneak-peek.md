@@ -30,7 +30,7 @@ At the time of this writing, the lab consists of 3 modules: Building cloud fabri
 From the technology presentation standpoint, the BigSwitch offering is quite impressive.
 The reality of it is that, in my experience, GUIs don't always have the most intuitive or complete implementations and they're hard to automate.  Now, from what I've seen to far the bigswitch offing is the exception to that rule.  The setup is very functional and goes through a range of great material. for comparison, below is the tenants display from the web interface:
 <a href="http://www.forwardingplane.net/wp-content/uploads/2014/09/Screenshot-2014-09-12-10.47.37.png"><img class="aligncenter wp-image-1082" src="http://www.forwardingplane.net/wp-content/uploads/2014/09/Screenshot-2014-09-12-10.47.37.png" alt="Screenshot 2014-09-12 10.47.37" width="500" height="307" /></a>
-&nbsp;
+ 
 and the corresponding show command:
 <a href="http://www.forwardingplane.net/wp-content/uploads/2014/09/Screenshot-2014-09-12-10.33.49.png"><img class="aligncenter wp-image-1074" src="http://www.forwardingplane.net/wp-content/uploads/2014/09/Screenshot-2014-09-12-10.33.49.png" alt="show tenant" width="500" height="306" /></a>
 Nevertheless, part of my usual workflow is to use one to define the other when I can.  What I mean by that is that if I don't know exactly how to accomplish my goal in the GUI, I switch to the CLI and see what I can do from there, returning to the GUI to see what has changed and then reverse engineer it from that perspective.  The opposite is also true, I have used the CLI to define the GUI <em>:cough:</em> <a href="http://www.juniper.net/us/en/products-services/security/netscreen/" target="_blank" rel="noopener noreferrer">netscreen</a> <em>:cough:</em>. The important thing to note here, though, is that the tools all work as if it is a real environment, because it <em>is</em> a real environment.
@@ -39,5 +39,5 @@ The god among men here, really, is the <em>debug rest</em> command.  This comma
 In the time I've spent within this system I have been thoroughly impressed with how well it functioned.  I had no issues whatsoever with how the training presented the material, executed the commands or displayed the responses.  My only suggestion would be to add a configuration guide for the CLI =)
 Below is a quick youtube video of some of the functions.
 <iframe src="//www.youtube.com/embed/gBeQk0W2Cqg" width="500" height="300" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-&nbsp;
+ 
 * Yes, I know SDN is supposed to "kill the CLI".  I don't by the sensationalism for the short to medium term.

@@ -26,9 +26,9 @@ What can you do? Well, if you're not technical, good luck. Perhaps if this happe
 Another of the side effects is this could potentially be an even higher adoption of SSL, which is good, but may also lead to a higher adoption of the vile SSL decryption practice. Lets hope not.
 What will I do? Not sure. I have extensive experience running DNS servers and VPNs. I may just start connecting to one of my VPS devices and run everything over OpenVPN from both mobile and traditional connections. There are some super simple <a href="https://github.com/kylemanna/docker-openvpn">docker how-tos</a> out there that Ive used in the past. VPS service are cheap, I have a few but my <a href="https://prgmr.com/xen/">prgmr.com</a> VPS is my favorite. Don't forget to tunnel IPv6 too.
 Welcome to 2017.
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+ 
+ 
+ 
+ 
+ 
+ 

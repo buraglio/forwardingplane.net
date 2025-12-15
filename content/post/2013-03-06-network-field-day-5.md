@@ -1,6 +1,6 @@
 ---
 id: 514
-title: 'Network Field Day 5 &#8211; Participate Remotely'
+title: 'Network Field Day 5 – Participate Remotely'
 date: '2013-03-06T08:59:05-06:00'
 author: buraglio
 layout: post
@@ -27,10 +27,10 @@ categories:
 Last year, <a href="http://techfieldday.com/event/nfd5/">Networking Field Day</a> was something that I'd heard of but wasn't really aware of what is really was.  I occasionally looked at Twitter and saw the hash tags but did not know much about how it was set up or what it was about.  In fact, I actually thought it was supposed to be like the HAM radio field day stuff where you go out and build out an emergency network on the fly.  OK, I should have done more homework, admittedly.
 Fast forward 6 months.
 I'm working more and more with <a href="http://www.networkstatic.com">Brent Salisbury</a> on day job stuff and he's encouraging me to brush the dust off of my <a href="http://www.forwardingplane.net">old blog</a> (which became this site). I'm working more on <a title="Building a Floodlight OpenFlow controller on CentOS 6" href="http://www.forwardingplane.net/2013/02/building-a-floodlight-openflow-controller-on-centos-6/" target="_blank" rel="noopener noreferrer">OpenFlow</a>,  virtualization stuff like <a title="CentOS KVM Install – Quick Start to a VM" href="http://www.forwardingplane.net/2013/03/centos-kvm-install-quick-start-to-a-vm/" target="_blank" rel="noopener noreferrer">KVM</a>, <a title="Headless VirtualBox host on CentOS" href="http://www.forwardingplane.net/2013/01/headless-virtualbox-host-on-centos/" target="_blank" rel="noopener noreferrer">VirtualBox</a> and <a href="http://www.vmware.com" target="_blank" rel="noopener noreferrer">VMware</a> and bringing up 100G WAN links.  I even had the extremely cool opportunity to do a <a href="http://packetpushers.net/show-131-golf-cart-in-my-fibre-tunnel/">Packet Pushers Podcast</a>.
-Many of these things are a direct result of becoming more engaged in the larger community, a networking community I had pretty much carved myself out of back in 2002 when I left the service provider world for R&amp;E.  This self isolation was a bit of an oversight on my part. What I did not realize was that, as someone in R&amp;E, I had a unique perspective on some of the industry products and direction and was often seeing things a lot sooner than the general enterprise world.
+Many of these things are a direct result of becoming more engaged in the larger community, a networking community I had pretty much carved myself out of back in 2002 when I left the service provider world for R&E.  This self isolation was a bit of an oversight on my part. What I did not realize was that, as someone in R&E, I had a unique perspective on some of the industry products and direction and was often seeing things a lot sooner than the general enterprise world.
 As I got more and more engaged I realized that there were a <strong>lot</strong> of great folks out there that like to collaborate, share and write about their professional experiences in our field of choice.  These same people were doing innovative and interesting things that I didn't know about.  <a href="http://techfieldday.com/event/nfd5/" target="_blank" rel="noopener noreferrer">NFD</a> was one of those things.  So, I started to write down more of the things I was thinking and doing.  I figured that at least someone would find them useful or interesting or at least fodder for solving insomnia.  When I was asked to participate and come out to NFD5, I was both ecstatic and humbled at the same time.  This was the place where the networking industry thought leaders go to convene and discuss directionality as well as current networking technologies.
 Just to relay the scale and scope of the folks involved, here is the list of delegates for NFD5:
-&nbsp;
+ 
 <table width="100%">
 <tbody>
 <tr>
@@ -71,7 +71,7 @@ Just to relay the scale and scope of the folks involved, here is the list of del
 <td><a href="http://twitter.com/EtherealMind">@EtherealMind</a></td>
 </tr>
 <tr>
-<td colspan="2">Over the last twenty odd years, Greg has worked Sales, Technical and IT Management but mostly he delivers Network Architecture and Design. Today he works as a Freelance Consultant for F100 companies in the UK &amp; Europe focussing on Data Centres, Security and Operational Automation.</td>
+<td colspan="2">Over the last twenty odd years, Greg has worked Sales, Technical and IT Management but mostly he delivers Network Architecture and Design. Today he works as a Freelance Consultant for F100 companies in the UK & Europe focussing on Data Centres, Security and Operational Automation.</td>
 </tr>
 <tr>
 <td rowspan="2" width="80" height="60"><a href="http://techfieldday.com/delegate/john-herbert/"><img title="http://techfieldday.com/wp-content/uploads/2012/09/johnherbert-wpcf_60x60.jpeg" alt="http://techfieldday.com/wp-content/uploads/2012/09/johnherbert-wpcf_60x60.jpeg" src="http://techfieldday.com/wp-content/uploads/2012/09/johnherbert-wpcf_60x60.jpeg" /></a></td>
@@ -79,7 +79,7 @@ Just to relay the scale and scope of the folks involved, here is the list of del
 <td><a href="http://twitter.com/MrTugs">@MrTugs</a></td>
 </tr>
 <tr>
-<td colspan="2">John has worked in the networking industry for 14 years, and obtained his CCIE Routing &amp; Switching in early 2001.</td>
+<td colspan="2">John has worked in the networking industry for 14 years, and obtained his CCIE Routing & Switching in early 2001.</td>
 </tr>
 <tr>
 <td rowspan="2" width="80" height="60"><a href="http://techfieldday.com/delegate/jon-langemak/"><img title="http://techfieldday.com/wp-content/uploads/2013/02/profile_picture-wpcf_52x60.jpg" alt="http://techfieldday.com/wp-content/uploads/2013/02/profile_picture-wpcf_52x60.jpg" src="http://techfieldday.com/wp-content/uploads/2013/02/profile_picture-wpcf_52x60.jpg" /></a></td>
@@ -136,6 +136,6 @@ The list of vendor participants is also deep.  <a href="http://www.cisco.com" t
 Unfortunately for me, I was not able to attend due to work scheduling and coordination of family stuff, something I truly lament.  To think that I was even considered to be on that list is truly humbling and something I'm very proud of.
 Not being able to attend, I wanted to participate as much as I could, so I started looking around and talking to folks and found the link to the live feed as well as the Twitter hashtag. It seems like a good idea to put this out there to as many folks as possible to not only bring attention to the fact that this is happening, but that you can participate from wherever you are.  I would encourage anyone who reads this and is interested in Networking as a profession, or is already in our industry, to pay attention to the Tech Field Day events.  Watch the live stream.  Ask questions and make comments on Twitter via the hashtag <a href="https://twitter.com/search?q=%23NFD5" target="_blank" rel="noopener noreferrer">#NFD5</a>.  Get involved.
 During the event you should be able to do a live stream from right inside this post or from the <a href="http://techfieldday.com/event/nfd5/" target="_blank" rel="noopener noreferrer">NFD5 page</a>.
-&nbsp;
-&nbsp;
-<iframe style="border: 0; outline: 0;" src="http://cdn.livestream.com/embed/techfieldday?layout=4&amp;color=0xe7e7e7&amp;autoPlay=false&amp;mute=false&amp;iconColorOver=0x888888&amp;iconColor=0x777777&amp;allowchat=true&amp;height=301&amp;width=500" height="301" width="500" frameborder="0" scrolling="no"></iframe>
+ 
+ 
+<iframe style="border: 0; outline: 0;" src="http://cdn.livestream.com/embed/techfieldday?layout=4&color=0xe7e7e7&autoPlay=false&mute=false&iconColorOver=0x888888&iconColor=0x777777&allowchat=true&height=301&width=500" height="301" width="500" frameborder="0" scrolling="no"></iframe>

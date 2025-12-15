@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/11/and-a-purple-pony/'
 permalink: /2012/11/05/and-a-purple-pony/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/11/and-purple-pony.html
 Views:
     - '88'
 categories:

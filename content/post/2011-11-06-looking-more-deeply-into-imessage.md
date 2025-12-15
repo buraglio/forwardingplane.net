@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2011/11/looking-more-deeply-into-imessage/'
 permalink: /2011/11/06/looking-more-deeply-into-imessage/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2011/11/looking-more-deeply-into-imessage.html
 Views:
     - '74'
 categories:

@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/11/using-a-brocade-mlxe-as-a-replicator-to-an-ids/'
 permalink: /2012/11/25/using-a-brocade-mlxe-as-a-replicator-to-an-ids/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/11/using-brocade-mlxe-as-replicator-to-ids.html
 themeblvd_noindex:
     - 'true'
 Views:

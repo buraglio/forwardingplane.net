@@ -32,12 +32,12 @@ The following disks:
 The NAS was a long standing device on my network.  I've been using <a href="http://www.nas4free.org/" target="_blank" rel="noopener noreferrer">NAS4FREE</a> for quite some time with fantastic results.  The disks are simply desktop drives, nothing fancy.  When I rebuilt it all using ZFS I found that I had not done 2 things.  I had not documented the warranty status of the devices and I had not enabled SMART monitoring.  I know, amateur hour at its finest; I'm OK with it, it's just for home use and I have offsite storage for anything super important.
 *<em>As an aside, if you're looking to build a NAS I would both recommend <a href="http://www.nas4free.org/" target="_blank" rel="noopener noreferrer">NAS4FREE</a> as well as doing something as simple as documenting the warranty information of each disk in the description field.</em>
 So, when I enabled SMART monitoring and email reporting. I found that several of my disks were failing their end-to-end tests when this started showing up in my inbox:
-&nbsp;
+ 
 <pre>The following warning/error was logged by the smartd daemon:
 Device: /dev/ada1, Failed SMART usage Attribute: 184 End-to-End_Error.
 <span style="line-height: 1.5em;">Device info:</span></pre>
 <pre>ST2000DM001-1CH164, S/N:xxxxxxxx, WWN:5-000c50-08147e2a4, FW:CC26, 2.00 TB</pre>
-&nbsp;
+ 
 Bad news. However, with ZFS it is supposed to be fantastically easy to do disk replacements.  I had chosen RAIDZ1 for both volumes, so they could each supposedly sustain a single disk failure. There are a lot of online references for zfs. I used <a href="http://panoramicsolution.com/blog/?p=353" target="_blank" rel="noopener noreferrer">this page</a> as a starting point for replacing my disk. I dropped to the shell on the NAS and did the following to identify the right disk to remove:
 <pre>nas:~# camcontrol devlist
 &lt;ST31000340AS SD15&gt; at scbus0 target 0 lun 0 (ada0,pass0)

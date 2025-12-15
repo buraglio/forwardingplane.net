@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2011/08/switching-from-macports-to-homebrew/'
 permalink: /2011/08/06/switching-from-macports-to-homebrew/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2011/08/switching-from-macports-to-homebrew.html
 themeblvd_noindex:
     - 'true'
 Views:

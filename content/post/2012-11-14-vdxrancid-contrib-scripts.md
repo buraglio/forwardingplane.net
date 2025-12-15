@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/11/vdxrancid-contrib-scripts/'
 permalink: /2012/11/14/vdxrancid-contrib-scripts/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/11/vdxrancid-contrib-scripts.html
 geo_latitude:
     - '40.6875665'
 geo_longitude:

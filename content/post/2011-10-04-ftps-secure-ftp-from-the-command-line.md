@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2011/10/ftps-secure-ftp-from-the-command-line/'
 permalink: /2011/10/04/ftps-secure-ftp-from-the-command-line/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2011/10/ftps-secure-ftp-from-command-line.html
 dsq_thread_id:
     - '3630858643'
 Views:
@@ -21,11 +15,11 @@ categories:
     - UNIX
 ---
 
-I have recently enabled<a href="http://www.duosecurity.com/"> Duo Security</a> for many of my personal services, and I can't recommend them enough.   Personal <a href="http://en.wikipedia.org/wiki/Two-factor_authentication">two factor authentication</a> is very useful and really powerful.  It works on my iPhone and I have yet to run into any real issues....except for one.  I can't use automation to scp or sftp anything anymore and keep my two factor auth working in a way I'm comfortable with.
+I have recently enabled<a href="http://www.duosecurity.com/"> Duo Security</a> for many of my personal services, and I can't recommend them enough. Personal <a href="http://en.wikipedia.org/wiki/Two-factor_authentication">two factor authentication</a> is very useful and really powerful. It works on my iPhone and I have yet to run into any real issues....except for one. I can't use automation to scp or sftp anything anymore and keep my two factor auth working in a way I'm comfortable with.
 <br />
-<br />Enter <a href="http://en.wikipedia.org/wiki/Ftps">ftps</a>.  FTP is a terrible, yet immensely useful protocol.  I chose to use <a href="https://security.appspot.com/vsftpd.html">vsftp</a> under debian Linux with Implicit TLS/SSL, meaning there is no negotiation of protocol as with explicit ftps (or ftpes).  It's secure, or none.
+<br />Enter <a href="http://en.wikipedia.org/wiki/Ftps">ftps</a>. FTP is a terrible, yet immensely useful protocol. I chose to use <a href="https://security.appspot.com/vsftpd.html">vsftp</a> under debian Linux with Implicit TLS/SSL, meaning there is no negotiation of protocol as with explicit ftps (or ftpes). It's secure, or none.
 <br />
-<br />Configuring this is pretty easy, but it does require some editing of the /etc/vsftpd.conf file.  I added some stuff to make it do ftpes as such:
+<br />Configuring this is pretty easy, but it does require some editing of the /etc/vsftpd.conf file. I added some stuff to make it do ftpes as such:
 <br />
 <br /><i>ssl_enable=YES
 <br />allow_anon_ssl=NO
@@ -37,9 +31,9 @@ I have recently enabled<a href="http://www.duosecurity.com/"> Duo Security</a> f
 <br />
 <br />This and a few other tweaks that aren't relevant here, make ftpes work on my machine.
 <br />
-<br />Now, clients are another story.  Most of the modern GUI based clients work.  I know <a href="http://filezilla-project.org/">filezilla</a> works, and it's free.  The problem I have, is that I need to do this programmatically, via a script.
+<br />Now, clients are another story. Most of the modern GUI based clients work. I know <a href="http://filezilla-project.org/">filezilla</a> works, and it's free. The problem I have, is that I need to do this programmatically, via a script.
 <br />
-<br />A bit of digging didn't yield much, however, I did come across <a href="http://lftp.yar.ru/">lftp</a>.    lftp is an extremely powerful command line ftp client that has a LOT of features, one of which is ftpes support.  Now, the one problem with lftp is that it is extremely full featured.  Like, overly featured.  So much so, that it can be a bit daunting to make it do what you want, which in my case was pretty simple.
+<br />A bit of digging didn't yield much, however, I did come across <a href="http://lftp.yar.ru/">lftp</a>. lftp is an extremely powerful command line ftp client that has a LOT of features, one of which is ftpes support. Now, the one problem with lftp is that it is extremely full featured. Like, overly featured. So much so, that it can be a bit daunting to make it do what you want, which in my case was pretty simple.
 <br />
 <br />I wrote a simple script to make it do what I wanted, which was just to upload a file and move it around.
 <br />

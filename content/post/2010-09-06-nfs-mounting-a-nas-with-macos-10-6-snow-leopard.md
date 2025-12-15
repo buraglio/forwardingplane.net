@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2010/09/nfs-mounting-a-nas-with-macos-10-6-snow-leopard/'
 permalink: /2010/09/06/nfs-mounting-a-nas-with-macos-10-6-snow-leopard/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /feeds/3291015193216494208/posts/default/4274823194488986030
 Views:
     - '100'
 categories:

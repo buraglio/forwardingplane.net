@@ -23,11 +23,11 @@ tags:
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>As defined by RFC4193:&nbsp;</p>
+<p>As defined by RFC4193: </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><em>“This IETF standards document defines an IPv6 unicast address format that is globally unique and is intended for local communications.&nbsp; These addresses are called Unique Local IPv6 Unicast Addresses and are abbreviated in this document as Local IPv6 addresses.&nbsp; They are not expected to be routable on the global Internet.&nbsp; They are routable inside of a more limited area such as a site.&nbsp; They may also be routed between a limited set of sites.”</em></p>
+<p><em>“This IETF standards document defines an IPv6 unicast address format that is globally unique and is intended for local communications. These addresses are called Unique Local IPv6 Unicast Addresses and are abbreviated in this document as Local IPv6 addresses. They are not expected to be routable on the global Internet. They are routable inside of a more limited area such as a site. They may also be routed between a limited set of sites.”</em></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -58,14 +58,14 @@ tags:
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Without quirky hacks, it is limited to a /48 in size&nbsp;</li>
+<li>Without quirky hacks, it is limited to a /48 in size </li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
 
 <!-- wp:paragraph -->
-<p>Sounds crazy, right? This video of the entire talk explains it better than I can likely type out.  The real point is that there isn't really an analog for private IPv4 space, so moving to IPv6 will take a little bit of care, a lot of learning, and a fair amount of perspective.</p>
+<p>Sounds crazy, right? This video of the entire talk explains it better than I can likely type out. The real point is that there isn't really an analog for private IPv4 space, so moving to IPv6 will take a little bit of care, a lot of learning, and a fair amount of perspective.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:embed {"url":"https://www.youtube.com/embed/H98OL06ZAwM","type":"rich","providerNameSlug":"embed-handler","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->

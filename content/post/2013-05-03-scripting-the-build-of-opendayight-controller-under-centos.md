@@ -103,15 +103,15 @@ sw-5400-of# show openflow
   Openflow aggregate management VlanId [0] : 0
   Openflow second aggregate management VlanId [0] : 0
   Openflow aggregate configuration VlanId [0] : 0
-  VID  State HW  Active controller Pseudo-URL                       Conn
+  VID State HW Active controller Pseudo-URL Conn
   ---- ----- --- -------------------------------------------------- ----
-  666  Off   On                                                     No
-  999  On    On  tcp:10.17.4.22:6633                                Yes</pre>
+  666 Off On No
+  999 On On tcp:10.17.4.22:6633 Yes</pre>
 From here we can see the box in the openflow controller.
-&nbsp;
-&nbsp;
+ 
+ 
 <p style="text-align: center;"><a href="http://www.forwardingplane.net/wp-content/uploads/2013/05/Screen-Shot-2013-05-03-at-4.20.03-PM.png"><img class="wp-image-636 aligncenter" alt="Screen Shot 2013-05-03 at 4.20.03 PM" src="http://www.forwardingplane.net/wp-content/uploads/2013/05/Screen-Shot-2013-05-03-at-4.20.03-PM.png" width="499" height="340" /></a></p>
-&nbsp;
+ 
 I'm still having some issues pushing flows, I'm sure I can work it out but here is a quick screencast of me trying to push a flow.  More posts will be added as soon as I can get the flows to push correctly.
 <iframe width="420" height="315" src="http://www.youtube.com/embed/T1OR2lpzl1Q" frameborder="0" allowfullscreen></iframe>
 I suspect it is user error and I just need to read the docs.  More to come for sure.  This controller is very, very slick.

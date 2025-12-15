@@ -54,6 +54,6 @@ This list and the implications of it by themselves are enough to raise heads, ey
 <img class="wp-image-582 alignright" alt="levitate-dana" src="http://www.forwardingplane.net/wp-content/uploads/2013/04/levitate-dana.jpg" width="491" height="227" />
 Another double take piece of informationis that the project core components are based on the <a href="http://www.opendaylight.org/announcements/2013/04/industry-leaders-collaborate-opendaylight-project-donate-key-technologies" target="_blank" rel="noopener noreferrer">Cisco OnePK</a>.  The fact that the core is the <a href="http://www.cisco.com/en/US/prod/iosswrel/onepk.html" target="_blank" rel="noopener noreferrer">Cisco OnePK</a> is certainly interesting, but the real gem of this is that there is potential collaboration and, more importantly, competition [and innovation] for an SDN controller and networking industry recognition that this "software defined networking revolution" is happening.
 Just like any complicated relationship there will be problems, posturing, compromise and impasses.  My thoughts are that the outcome of whatever daylight becomes or doesn't is actually irrelevant.  There is now a far more powerful and encompassing movement happening.  ASIC companies are on board. The Linux foundation is involved.  Flexibility is implied.  Community involvement is encouraged.  Mountains are moving.
-&nbsp;
-&nbsp;
-&nbsp;
+ 
+ 
+ 

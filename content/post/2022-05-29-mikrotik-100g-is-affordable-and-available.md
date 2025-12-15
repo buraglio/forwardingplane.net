@@ -15,7 +15,7 @@ categories:
 ---
 
 <!-- wp:paragraph -->
-<p>So, you need a 100G router or switch, but are deeply concerned about:&nbsp;</p>
+<p>So, you need a 100G router or switch, but are deeply concerned about: </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->

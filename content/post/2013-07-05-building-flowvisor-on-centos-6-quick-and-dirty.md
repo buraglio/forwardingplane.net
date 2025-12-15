@@ -1,6 +1,6 @@
 ---
 id: 714
-title: 'Building FlowVisor on Centos 6 &#8211; quick and dirty'
+title: 'Building FlowVisor on Centos 6 – quick and dirty'
 date: '2013-07-05T04:22:23-05:00'
 author: buraglio
 layout: post

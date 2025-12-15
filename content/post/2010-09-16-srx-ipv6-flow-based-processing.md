@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2010/09/srx-ipv6-flow-based-processing/'
 permalink: /2010/09/16/srx-ipv6-flow-based-processing/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2010/09/srx-ipv6-flow-based-processing.html
 dsq_thread_id:
     - '3634721127'
 Views:

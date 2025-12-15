@@ -6,12 +6,6 @@ author: buraglio
 layout: post
 guid: 'http://new.forwardingplane.net/2012/11/workflow-and-my-every-day-workstation-setup/'
 permalink: /2012/11/24/workflow-and-my-every-day-workstation-setup/
-blogger_blog:
-    - www.forwardingplane.net
-blogger_author:
-    - 'Nick Buraglio'
-blogger_permalink:
-    - /2012/11/workflow-and-my-every-day-workstation.html
 dsq_thread_id:
     - '3686144452'
 Views:

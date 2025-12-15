@@ -52,7 +52,7 @@ Unpack it.
 I like to do minimal installs of Linux, so I need to add gcc before I can compile.  This will likely install some dependancies if it's a new minimal install.  Same goes for make
 <pre>sudo yum install gcc make</pre>
 <pre>sudo ./configure --with-firewall=iptables</pre>
-<pre>sudo make &amp;&amp; sudo make install</pre>
+<pre>sudo make && sudo make install</pre>
 OK, you should have it installed at this point.  You can verify by doing:
 <pre>ls -la /usr/local/sbin/sshguard</pre>
 which should yield something like this:

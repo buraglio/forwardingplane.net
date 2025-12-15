@@ -1,6 +1,6 @@
 ---
 id: 27
-title: 'iMessage: I've been left wanting'
+title: "iMessage: I've been left wanting"
 date: '2011-10-15T14:37:00-05:00'
 author: buraglio
 layout: post

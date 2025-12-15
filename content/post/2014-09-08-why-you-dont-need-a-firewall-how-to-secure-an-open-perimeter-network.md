@@ -1,6 +1,6 @@
 ---
 id: 1051
-title: 'Why you don't need a firewall [how to secure an open perimeter network]'
+title: "Why you don't need a firewall [how to secure an open perimeter network"
 date: '2014-09-08T01:30:07-05:00'
 author: buraglio
 layout: post

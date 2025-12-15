@@ -31,7 +31,7 @@ A rough breakdown of the pros and cons from my inaugural run:
 
 	- Elegant Interface
 	- Eye candy
-	- One stop shop***
+	- One stop shop
 	- Good support for common stuff, seems expandable.
 	- Great [community of support](https://thwack.solarwinds.com); very "FOSS-Like"
 	- Lots of knobs and dials for tuning.

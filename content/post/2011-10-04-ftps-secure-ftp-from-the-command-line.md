@@ -53,4 +53,4 @@ I wrote a simple script to make it do what I wanted, which was just to upload a 
 
 #!/bin/sh
 
-**/usr/bin/lftp -u user,password remote.host.com ****<***
+**/usr/bin/lftp -u user,password remote.host.com ****<

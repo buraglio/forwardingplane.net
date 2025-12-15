@@ -22,7 +22,7 @@ Now, it's no secret that I am a fan of Juniper gear, and [I've talked about this
 **
 *
 
-***
+
 Additionally, You can't choose the protocol or the logical system that NSR works on, it's on for all protocols on the default logical system if you enable it. 
 
 What does this actually mean?  Well, it means that if I do an ISSU (which you should still do even with logical systems), anything outside of my default logical system will re-converge.  If my eBGP sessions are outside, they'll drop and have to re-establish.  This isn't really that great of an idea if you peer with folks that keep dampen-happy.  Personally, I don;t like my BGP sessions to drop if they don't need to.  I'd rather deal with an IGP adjacency change than a bunch of BGP sessions having to re-establish and churn through potentially a handful of full tables. 

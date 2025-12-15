@@ -126,7 +126,7 @@ buraglio@rtr% fsck -y -f /dev/ad1s1f
 FREE BLK COUNT(S) WRONG IN SUPERBLK
 SALVAGE? yes
 605 files, 2203376 used, 7039334 free (782 frags, 879819 blocks, 0.0% fragmentation)
-***** FILE SYSTEM WAS MODIFIED *****
+***** FILE SYSTEM WAS MODIFIED 
 ```
 
 Now that the problematic bits have been repaired, we re-mount the partition

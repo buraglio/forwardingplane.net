@@ -71,8 +71,8 @@ Dec 27 05:58:05 KMD_INTERNAL_ERROR: iked_re_ipc_err_handler: status: 1: usp_ipc_
  
 Yeah, looks suspicious.  Lets restart ipsec-key-management and see if that helps.
 "*restart ipsec-key-management".  *
-***Note: If this does not work, you may have to drop to the shell and kill it like a unix process.  ***
-*"start shell"****  ***
+***Note: If this does not work, you may have to drop to the shell and kill it like a unix process.  
+*"start shell"****  
 ******"kill -9 kmd"
 Idle process should now be back to normal.
 

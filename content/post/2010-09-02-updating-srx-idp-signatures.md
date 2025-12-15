@@ -15,7 +15,7 @@ categories:
     - Security
 ---
 
-*IDP signatures need to be updated often.  On the SRX platform, there is also the notion of a "detector".  This also meeds to be updated on a regular basis. it seems.  Over the past few weeks, we've needed to update the IDP signatures and detector on our SRX 5800 cluster several times, and the results have normally been fine. **Updating the IDP signatures has never been **that**
+*IDP signatures need to be updated often.  On the SRX platform, there is also the notion of a "detector".  This also meeds to be updated on a regular basis. it seems.  Over the past few weeks, we've needed to update the IDP signatures and detector on our SRX 5800 cluster several times, and the results have normally been fine. **Updating the IDP signatures has never been that**
  big of a problem (see postings about updating stuff on cluster nodes).  But we ran into issues due to the fact that we'd recently disabled application id to troubleshoot another problem.  This was basically causing all of our updates to fail on node1 (the secondary node) when using our [op script](http://www.juniper.net/techpubs/software/junos/junos82/swconfig82-automation/html/op-scripts-overview.html) to push the updates over (sorry, I can't share it). 
 
 A few things that I like to make sure to run before and after all of my SRX work are the following:

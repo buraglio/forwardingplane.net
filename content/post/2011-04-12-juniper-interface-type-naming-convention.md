@@ -26,7 +26,7 @@ The routing table is presented in such a way to group types of routes.
 
 ****inet.3 is the MPLS routing table
 
-****inet6.0 is the ipv6 routing table****
+****inet6.0 is the ipv6 routing table
 
 Juniper interface types
 

@@ -1,6 +1,6 @@
 ---
 id: 10
-title: 'Juniper EX 4200 ARP / NDP problem; or things I'd like to see in a TAC'
+title: "Juniper EX 4200 ARP / NDP problem; or things I'd like to see in a TAC"
 date: '2012-11-06T03:58:00-06:00'
 author: buraglio
 layout: post

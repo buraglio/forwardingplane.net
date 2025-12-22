@@ -1,4 +1,3 @@
-
 ---
 title: Mikrotik Winbox linux .desktop file
 date: 2024-12-21

@@ -14,7 +14,7 @@ tags:
     - productivity
 ---
 
-Email. Possibly the most useful and least sexy of the core set of internet applictions. In past lives I ran exchange, postfix, CC:Mail, and very, very large sendmail installations. Since early 2005, though, I have outsourced my own personal email to Google. As an original "google Apps for Your Domain" tester, I had early access to the bevy of tools that Google had to offer, and at my favorite price - $0. 
+Email. Possibly the most useful and least sexy of the core set of internet applictions. In past lives I ran [Microsoft Exchange](https://en.wikipedia.org/wiki/Microsoft_Exchange_Server), [Postfix](https://en.wikipedia.org/wiki/Postfix_(software)), [cc:Mail](https://en.wikipedia.org/wiki/Cc:Mail), and very, very large [Sendmail](https://en.wikipedia.org/wiki/Sendmail) installations. Since early 2005, though, I have outsourced my own personal email to Google. As an original "google Apps for Your Domain" tester, I had early access to the bevy of tools that Google had to offer, and at my favorite price - $0. 
 Occasionally I'd look at other options, but I always come back to GSuite.
 
 This time around I put some time into it, taking some notes and fully intending to try to move my primary domain away. I had a set of "must" requirements, but am willing to make some major concessions.
@@ -53,7 +53,7 @@ A looming, but not insignificant issue, too, is the mining of my data for advert
 This is obviously non-comprehensive and should be double checked as things chance and I can make mistakes.
 
 # Comprehensive Family Email Service Comparison (2025)
-## Google Workspace • Apple iCloud+ / Apple One Mail • Proton Family • Microsoft 365 Family • Cloudflare Email Routing
+## Google Workspace • Apple iCloud+ / Apple One Mail • [Proton Family; Referral Link](https://pr.tn/ref/XE0EKRE2) • Microsoft 365 Family • Cloudflare Email Routing
 
 This post makes an attemt to compare, to the best possible approxomation:
 
@@ -167,9 +167,9 @@ Cloudflare fits as a useful **front‑door** in front of whichever hosted mailbo
 
 | Aspect                    | Google Workspace                           | Apple iCloud+                          | Proton Family                             | Microsoft 365 Family                     | Cloudflare Email Routing                           |
 |---------------------------|--------------------------------------------|----------------------------------------|--------------------------------------------|--------------------------------------------|-----------------------------------------------------|
-| Spam filtering strength   | Industry‑leading ML filtering              | Good consumer filtering                 | Good, sometimes strict                     | Enterprise‑grade Exchange backend         | Light filtering & auth checks; major filtering is at destination mailbox |
+| Spam filtering strength   | Industry‑leading ML filtering              | Good consumer filtering                 | Good, sometimes strict                     | Enterprise‑grade [Exchange](https://en.wikipedia.org/wiki/Microsoft_Exchange_Server) backend         | Light filtering & auth checks; major filtering is at destination mailbox |
 | Rules / filters           | Powerful filters + labels                  | Basic rules                             | Powerful filtering & labels                | Rich Outlook rules                         | Routing rules; advanced scripting via Workers       |
-| Abuse protections         | Mature anti‑abuse stack                    | Good enough for consumers               | Strong, privacy‑centric                    | Enterprise‑grade protections               | SPF/DKIM/DMARC‑aware forwarding and SRS rewriting   |
+| Abuse protections         | Mature anti‑abuse stack                    | Good enough for consumers               | Strong, privacy‑centric                    | Enterprise‑grade protections               | [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework)/[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail)/DMARC‑aware forwarding and SRS rewriting   |
 
 Cloudflare’s main contribution is **properly forwarding authenticated mail** (SPF, DKIM, DMARC) without breaking deliverability, not spam scoring. The downstream mailbox still does the heavy spam work.
 
@@ -181,7 +181,7 @@ Cloudflare’s main contribution is **properly forwarding authenticated mail** (
 |---------------------------|----------------------------------|---------------------------------|------------------------------------|-----------------------------------|----------------------------------------------------------------|
 | IPv6 on MX (inbound mail) | **Yes** (dual‑stack)            | **Yes** (dual‑stack)           | **No** (IPv4‑only MX)              | **Yes** (dual‑stack)             | **Yes**: Cloudflare MX supports IPv6 for inbound              |
 | Forwarding over IPv6      | Will connect to upstream via IPv6 if destination MX has AAAA| Will connect to upstream via IPv6 if destination MX has AAAA| N/A                                |Will connect to upstream via IPv6 if destination MX has AAAA| Will connect to upstream via IPv6 if destination MX has AAAA  |
-| SPF/DKIM/DMARC            | Fully supported                 | Supported, mostly automatic     | Fully supported                    | Fully supported                  | Preserves auth; uses SRS for envelope sender rewriting        |
+| [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework)/[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail)/DMARC            | Fully supported                 | Supported, mostly automatic     | Fully supported                    | Fully supported                  | Preserves auth; uses SRS for envelope sender rewriting        |
 | DNS control               | You manage domain DNS            | Limited to Apple’s UI           | You manage domain DNS              | Full in business; fixed in consumer | Cloudflare manages DNS if domain is on Cloudflare             |
 
 Key points:

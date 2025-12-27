@@ -78,7 +78,7 @@ A looming, but not insignificant issue, too, is the mining of my data for advert
 | Category | Google Workspace | Apple iCloud+ | Proton Family | Microsoft 365 Family |
 |-----------|------------------|----------------|----------------|----------------------|
 | **Email client** | Gmail Web & Mobile | Apple Mail/iCloud.com | Proton apps + Bridge | Outlook desktop/web/mobile |
-| **Documents/Office** | Docs, Sheets, Slides | Pages, Numbers, Keynote | – | Word, Excel, PowerPoint |
+| **Documents/Office** | Docs, Sheets, Slides | Pages, Numbers, Keynote | Proton docs and Proton spreadsheets (new) | Word, Excel, PowerPoint |
 | **Storage** | Google Drive | iCloud Drive | Proton Drive (encrypted) | OneDrive (1 TB/user) |
 | **Calendar** | Google Calendar | Calendar | Proton Calendar | Outlook Calendar |
 | **Password Manager** | Google Password Manager | iCloud Keychain | Proton Pass | Microsoft Autofill |

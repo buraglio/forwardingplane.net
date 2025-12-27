@@ -107,7 +107,7 @@ A looming, but not insignificant issue, too, is the mining of my data for advert
 | **DNS management** | Full control | Limited iCloud setup | Full DNS control | Limited unless business plan |
 | **Protocol support** | IMAP/POP/SMTP, Web | IMAP/SMTP | Proton Bridge (IMAP/SMTP) | IMAP/POP/Exchange ActiveSync |
 
-> **Note:** Proton Mail supports IPv6 for its VPN and general web properties, but not yet for incoming email delivery (MX hosts remain IPv4-only).
+> **Note:** Proton Mail supports IPv6 for some of its VPN they have indicated support for expanding that to all services eventually.
 
 ---
 
@@ -129,17 +129,19 @@ A looming, but not insignificant issue, too, is the mining of my data for advert
 | **All-around collaboration and admin** | Google Workspace |
 | **Apple-only household simplicity** | iCloud+ Family |
 | **Privacy-first and encryption** | Proton Family |
-| **Cross-platform productivity + storage** | Microsoft 365 Family |
+| **Compatibility with Enterprise Productivity or large storage needs** | Microsoft 365 Family |
 
 ---
 
 ## 8. Key Takeaways
 
-- **Proton Mail lacks IPv6 on MX** (IPv4-only inbound mail).  
+- **Proton Mail lacks IPv6 on MX, web front ends** (IPv4-only inbound mail).  
 - **Google Workspace** and **Microsoft 365** deliver enterprise-grade spam filtering with proper IPv6 dual-stack.  
 - **Apple iCloud+** offers simple family sharing and domain email for Apple users.  
 - **Proton Family** is the strict privacy champion but trades off deeper mail routing and IPv6.  
 
 ---
 
-_Last updated: December 2025._
+For me, google is still the clear winner, with the large pill of "if the product is free, you're the product". A very close second is Proton, which I still may completely move to. 
+
+_Last updated: December 26th, 2025._

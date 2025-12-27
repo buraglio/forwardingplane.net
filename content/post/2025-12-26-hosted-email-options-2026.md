@@ -29,7 +29,7 @@ This time around I put some time into it, taking some notes and fully intending 
 - Filtering / tagging with robust match criteria
 - Reasonably strong email search capabilities
 
-### Nice to have, weighted 1st to last
+### Nice to have, no preference in weight
 
 - Supports Email Alias 
 - Supports multi-recepient aliases
@@ -47,7 +47,7 @@ I've tasted that pain and simply have no desire to do it again.
 
 ---
 
-I will also add that I do, in fact, like gmail hossting. It's worked for me for literally two decades. It has essentially everything I need and my requirements are fairly tightly tied to it. Coincidentally, one of the largest concerns I have for this potential move is that 1. I will miss something I truly need, and secondarily, but only slightly, that I will have a bear of a time de-coupling what I use "Login with Google" for. Ideally those things would all become passkeys, but we all know that process is low. 
+I will also add that I do, in fact, like gmail hosting. It's worked for me for literally two decades. It has essentially everything I need and my requirements are fairly tightly tied to it. Coincidentally, one of the largest concerns I have for this potential move is that 1. I will miss something I truly need, and secondarily, but only slightly, that I will have a bear of a time de-coupling what I use "Login with Google" for. Ideally those things would all become passkeys, but we all know that process is slow.
 A looming, but not insignificant issue, too, is the mining of my data for advertising (kinda came to grips with that, sadly) and more concerningly AI. Google is all-in and I don't necessarily want my personal email to be used for that even if it is largely inevitable due to the sheer footprint of gmail. I like privacy, and did move one of my mail domains to proton for about 8 months a few years ago.
 
 ## 1. Overall positioning
@@ -66,7 +66,7 @@ A looming, but not insignificant issue, too, is the mining of my data for advert
 | Feature                            | Google Workspace | Apple iCloud+ / Apple One | Proton Family | Microsoft 365 Family |
 |------------------------------------|------------------|----------------------------|----------------|----------------------|
 | **Custom domain email**            | Yes, core feature | Yes, via iCloud+ setup | Yes, multiple domains | No native (requires business plan) |
-| **Plan structure**                 | Per-user business | Family Sharing (6 users) | Family plan (multiple users) | 6-person family plan |
+| **Plan structure**                 | Per-user business | Family Sharing (6 users) | Family plan (multiple users - up to 6 on listed family plan; options for fewer at lower cost) | 6-person family plan |
 | **Email aliases per user**         | Up to 30 | 3–5 | Multiple per user | Up to 10 aliases |
 | **Shared/group address support**   | Yes, groups + shared mailboxes | No built-in groups | No shared inbox, forwarding only | No consumer groups |
 | **Catch-all**                      | Supported | Not available | Supported | Not supported |

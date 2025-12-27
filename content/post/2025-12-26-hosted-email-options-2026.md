@@ -29,7 +29,7 @@ This time around I put some time into it, taking some notes and fully intending 
 - Filtering / tagging with robust match criteria
 - Reasonably strong email search capabilities
 
-### Nice to have, no preference in weight
+### Nice to have, no preference in weight:
 
 - Supports Email Alias 
 - Supports multi-recepient aliases

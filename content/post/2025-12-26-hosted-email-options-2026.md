@@ -73,7 +73,7 @@ with emphasis on:
 - IPv6 and standards
 - Costs and typical use cases
 
-Cloudflare is fundamentally different from the other four: it provides **routing/forwarding**, not mailboxes or a hosted inbox, but it is powerful and could be used to simply move around an email address.
+[Cloudflare email routing](https://www.cloudflare.com/developer-platform/products/email-routing/) is fundamentally different from the other four: it provides **routing/forwarding**, not mailboxes or a hosted inbox, but it is powerful and could be used to simply move around an email address.
 
 ---
 
@@ -169,9 +169,9 @@ Cloudflare fits as a useful **front‑door** in front of whichever hosted mailbo
 |---------------------------|--------------------------------------------|----------------------------------------|--------------------------------------------|--------------------------------------------|-----------------------------------------------------|
 | Spam filtering strength   | Industry‑leading ML filtering              | Good consumer filtering                 | Good, sometimes strict                     | Enterprise‑grade [Exchange](https://en.wikipedia.org/wiki/Microsoft_Exchange_Server) backend         | Light filtering & auth checks; major filtering is at destination mailbox |
 | Rules / filters           | Powerful filters + labels                  | Basic rules                             | Powerful filtering & labels                | Rich Outlook rules                         | Routing rules; advanced scripting via Workers       |
-| Abuse protections         | Mature anti‑abuse stack                    | Good enough for consumers               | Strong, privacy‑centric                    | Enterprise‑grade protections               | [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework)/[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail)/DMARC‑aware forwarding and SRS rewriting   |
+| Abuse protections         | Mature anti‑abuse stack                    | Good enough for consumers               | Strong, privacy‑centric                    | Enterprise‑grade protections               | [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework)/[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail)/[DMARC](https://en.wikipedia.org/wiki/DMARC)‑aware forwarding and [SRS](https://en.wikipedia.org/wiki/Sender_Rewriting_Scheme) rewriting   |
 
-Cloudflare’s main contribution is **properly forwarding authenticated mail** (SPF, DKIM, DMARC) without breaking deliverability, not spam scoring. The downstream mailbox still does the heavy spam work.
+Cloudflare's main contribution is **properly forwarding authenticated mail** ([SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework), [DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail), [DMARC](https://en.wikipedia.org/wiki/DMARC)) without breaking deliverability, not spam scoring. The downstream mailbox still does the heavy spam work.
 
 ---
 
@@ -181,7 +181,7 @@ Cloudflare’s main contribution is **properly forwarding authenticated mail** (
 |---------------------------|----------------------------------|---------------------------------|------------------------------------|-----------------------------------|----------------------------------------------------------------|
 | IPv6 on MX (inbound mail) | **Yes** (dual‑stack)            | **Yes** (dual‑stack)           | **No** (IPv4‑only MX)              | **Yes** (dual‑stack)             | **Yes**: Cloudflare MX supports IPv6 for inbound              |
 | Forwarding over IPv6      | Will connect to upstream via IPv6 if destination MX has AAAA| Will connect to upstream via IPv6 if destination MX has AAAA| N/A                                |Will connect to upstream via IPv6 if destination MX has AAAA| Will connect to upstream via IPv6 if destination MX has AAAA  |
-| [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework)/[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail)/DMARC            | Fully supported                 | Supported, mostly automatic     | Fully supported                    | Fully supported                  | Preserves auth; uses SRS for envelope sender rewriting        |
+| [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework)/[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail)/[DMARC](https://en.wikipedia.org/wiki/DMARC)            | Fully supported                 | Supported, mostly automatic     | Fully supported                    | Fully supported                  | Preserves auth; uses [SRS](https://en.wikipedia.org/wiki/Sender_Rewriting_Scheme) for envelope sender rewriting        |
 | DNS control               | You manage domain DNS            | Limited to Apple’s UI           | You manage domain DNS              | Full in business; fixed in consumer | Cloudflare manages DNS if domain is on Cloudflare             |
 
 Key points:

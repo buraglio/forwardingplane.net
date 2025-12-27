@@ -180,7 +180,7 @@ Cloudflare’s main contribution is **properly forwarding authenticated mail** (
 | Network / Standard        | Google Workspace                 | Apple iCloud Mail               | Proton Mail / Family               | Microsoft 365 Family              | Cloudflare Email Routing                                      |
 |---------------------------|----------------------------------|---------------------------------|------------------------------------|-----------------------------------|----------------------------------------------------------------|
 | IPv6 on MX (inbound mail) | **Yes** (dual‑stack)            | **Yes** (dual‑stack)           | **No** (IPv4‑only MX)              | **Yes** (dual‑stack)             | **Yes**: Cloudflare MX supports IPv6 for inbound              |
-| Forwarding over IPv6      | N/A                              | N/A                             | N/A                                | N/A                               | Will connect to upstream via IPv6 if destination MX has AAAA  |
+| Forwarding over IPv6      | Will connect to upstream via IPv6 if destination MX has AAAA| Will connect to upstream via IPv6 if destination MX has AAAA| N/A                                |Will connect to upstream via IPv6 if destination MX has AAAA| Will connect to upstream via IPv6 if destination MX has AAAA  |
 | SPF/DKIM/DMARC            | Fully supported                 | Supported, mostly automatic     | Fully supported                    | Fully supported                  | Preserves auth; uses SRS for envelope sender rewriting        |
 | DNS control               | You manage domain DNS            | Limited to Apple’s UI           | You manage domain DNS              | Full in business; fixed in consumer | Cloudflare manages DNS if domain is on Cloudflare             |
 
@@ -191,7 +191,7 @@ Key points:
   - Forwards mail using IPv6 when the *destination* provider supports it; falls back to IPv4 otherwise.
 - **Proton Mail**:
   - As of now, Proton’s MX records are **IPv4‑only**, so mail directly to Proton requires IPv4 connectivity.
-  - This limitation disappears if you place Cloudflare in front, since Cloudflare terminates on IPv4 and can still be dual‑stack at the outer edge.
+  - This limitation disappears if you place Cloudflare in front, since Cloudflare terminates on IPv4 and can still be dual‑stack at the outer edge. However, the web front ends are also IPv4-only, so Proton is functionally a single stacked solution as if now. They have slowly been rolling IPv6 out for things like VPN, so I do expect it "some day". 
 
 ---
 

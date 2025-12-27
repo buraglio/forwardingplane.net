@@ -52,7 +52,7 @@ A looming, but not insignificant issue, too, is the mining of my data for advert
 
 This is obviously non-comprehensive and should be double checked as things chance and I can make mistakes.
 
-# Comprehensive Family Email Service Comparison (2025)
+# Comprehensive Family Email Service Comparison (Q4 2025 / Q1 2026)
 ## Google Workspace • Apple iCloud+ / Apple One Mail • [Proton Family; Referral Link](https://pr.tn/ref/XE0EKRE2) • Microsoft 365 Family • Cloudflare Email Routing
 
 This post makes an attemt to compare, to the best possible approxomation:

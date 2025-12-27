@@ -175,7 +175,7 @@ Cloudflare’s main contribution is **properly forwarding authenticated mail** (
 
 ---
 
-## 6. IPv6 and standards (with Proton correction)
+## 6. IPv6 and standards
 
 | Network / Standard        | Google Workspace                 | Apple iCloud Mail               | Proton Mail / Family               | Microsoft 365 Family              | Cloudflare Email Routing                                      |
 |---------------------------|----------------------------------|---------------------------------|------------------------------------|-----------------------------------|----------------------------------------------------------------|

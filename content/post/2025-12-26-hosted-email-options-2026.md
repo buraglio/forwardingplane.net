@@ -53,7 +53,7 @@ A looming, but not insignificant issue, too, is the mining of my data for advert
 This is obviously non-comprehensive and should be double checked as things chance and I can make mistakes.
 
 # Comprehensive Family Email Service Comparison (Q4 2025 / Q1 2026)
-## Google Workspace • Apple iCloud+ / Apple One Mail • [Proton Family; Referral Link](https://pr.tn/ref/XE0EKRE2) • Microsoft 365 Family • Cloudflare Email Routing
+## Google Workspace • Apple iCloud+ / Apple One Mail • [Proton Family; Referral Link](https://pr.tn/ref/XE0EKRE2) • Microsoft 365 Family • Fastmail • Cloudflare Email Routing
 
 This post makes an attemt to compare, to the best possible approxomation:
 
@@ -61,6 +61,7 @@ This post makes an attemt to compare, to the best possible approxomation:
 - **Apple iCloud+ / Apple One Mail**
 - **Proton Family**
 - **Microsoft 365 Family**
+- **Fastmail**
 - **Cloudflare Email Routing**
 
 with emphasis on:
@@ -82,9 +83,10 @@ with emphasis on:
 | Service                     | Type of service                                   | Hosting vs forwarding                               | Ideal for                                                |
 |----------------------------|---------------------------------------------------|-----------------------------------------------------|----------------------------------------------------------|
 | **Google Workspace**       | Full email + productivity suite                   | **Hosting**: mailboxes + apps                       | Families / small orgs wanting Gmail + Docs/Drive/Meet   |
-| **Apple iCloud+ / One**    | Consumer iCloud storage + mail                    | **Hosting**: mailboxes in Apple’s cloud             | All‑Apple households                                     |
+| **Apple iCloud+ / One**    | Consumer iCloud storage + mail                    | **Hosting**: mailboxes in Apple's cloud             | All‑Apple households                                     |
 | **Proton Family**          | Privacy‑focused encrypted bundle                  | **Hosting**: encrypted mailboxes                    | Families prioritizing privacy and Swiss jurisdiction    |
 | **Microsoft 365 Family**   | Consumer Office + Outlook + OneDrive              | **Hosting**: Outlook mailboxes                      | Families needing Office apps + 1 TB/user storage        |
+| **Fastmail**               | Independent email & calendar service              | **Hosting**: mailboxes + calendar/contacts          | Power users wanting flexible, standards-based email with custom domains |
 | **Cloudflare Email Routing** | Email routing/forwarding layer only             | **Forwarding only**: no inboxes, no sending         | Using your own inbox elsewhere with free custom-domain addresses |
 
 Cloudflare Email Routing acts as an SMTP “traffic director”: it receives mail for your domain, then forwards it on to another mailbox you own (Gmail, Outlook, Proton, etc.). It **does not** store mail long‑term or provide an inbox, and you cannot send mail directly from Cloudflare’s addresses without pairing it with another outbound provider.
@@ -95,22 +97,22 @@ Cloudflare Email Routing acts as an SMTP “traffic director”: it receives mai
 
 ### 2.1 Core domain & family structure
 
-| Feature                            | Google Workspace          | Apple iCloud+ / One      | Proton Family                      | Microsoft 365 Family               | Cloudflare Email Routing                    |
-|------------------------------------|---------------------------|--------------------------|-------------------------------------|------------------------------------|----------------------------------------------|
-| Custom domain for email            | Yes (first‑class)         | Yes via iCloud+          | Yes, multiple domains               | Not in consumer; needs business   | Yes (for routing only)                       |
-| Who owns the mailbox?             | Google                    | Apple                    | Proton                              | Microsoft                          | Your downstream provider (Gmail, etc.)       |
-| “Family plan” concept              | Business plan used by family | iCloud Family Sharing | Dedicated family bundle             | Family plan (up to 6 users)       | N/A (per domain; no user accounts)          |
-| Per‑user separation                | Full accounts             | Individual Apple IDs     | Separate encrypted accounts         | Separate Microsoft accounts        | Not applicable (no mailboxes)               |
+| Feature                            | Google Workspace          | Apple iCloud+ / One      | Proton Family                      | Microsoft 365 Family               | Fastmail                                    | Cloudflare Email Routing                    |
+|------------------------------------|---------------------------|--------------------------|-------------------------------------|------------------------------------|---------------------------------------------|----------------------------------------------|
+| Custom domain for email            | Yes (first‑class)         | Yes via iCloud+          | Yes, multiple domains               | Not in consumer; needs business   | Yes (first‑class, up to 100 domains)        | Yes (for routing only)                       |
+| Who owns the mailbox?             | Google                    | Apple                    | Proton                              | Microsoft                          | Fastmail (Australian, independent)          | Your downstream provider (Gmail, etc.)       |
+| "Family plan" concept              | Business plan used by family | iCloud Family Sharing | Dedicated family bundle             | Family plan (up to 6 users)       | Family plan options available               | N/A (per domain; no user accounts)          |
+| Per‑user separation                | Full accounts             | Individual Apple IDs     | Separate encrypted accounts         | Separate Microsoft accounts        | Full separate accounts                      | Not applicable (no mailboxes)               |
 
 ### 2.2 Aliases, groups, and catch‑all
 
-| Aspect                            | Google Workspace                         | Apple iCloud+                          | Proton Family                         | Microsoft 365 Family                  | Cloudflare Email Routing                                |
-|-----------------------------------|------------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|--------------------------------------------------------|
-| Aliases per user                  | Many (up to ~30)                         | Several per iCloud mailbox             | Multiple addresses/aliases per user    | Multiple per Outlook.com account      | Many routing rules per domain                          |
-| Aliases serve inbox where?       | Same user mailbox                        | Same Apple ID mailbox                  | Same Proton mailbox                    | Same Outlook mailbox                  | Forward to *another* provider’s mailbox                |
-| Shared/group email (e.g., support@) | First‑class groups, shared mailboxes   | No true groups; manual forwarding      | No multi‑user group inbox              | No consumer distribution list         | Can create `support@` → single destination mailbox     |
-| One address → multiple recipients | Yes (groups / distribution lists)       | Not natively                           | No                                     | Not in consumer tier                  | One rule = one destination; fan‑out requires tricks    |
-| Catch‑all                         | Supported                                | No                                     | Supported                              | No                                   | Supported (catch‑all can forward anywhere)             |
+| Aspect                            | Google Workspace                         | Apple iCloud+                          | Proton Family                         | Microsoft 365 Family                  | Fastmail                                      | Cloudflare Email Routing                                |
+|-----------------------------------|------------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|-----------------------------------------------|--------------------------------------------------------|
+| Aliases per user                  | Many (up to ~30)                         | Several per iCloud mailbox             | Multiple addresses/aliases per user    | Multiple per Outlook.com account      | 600+ per account                              | Many routing rules per domain                          |
+| Aliases serve inbox where?       | Same user mailbox                        | Same Apple ID mailbox                  | Same Proton mailbox                    | Same Outlook mailbox                  | Same Fastmail mailbox                         | Forward to *another* provider's mailbox                |
+| Shared/group email (e.g., support@) | First‑class groups, shared mailboxes   | No true groups; manual forwarding      | No multi‑user group inbox              | No consumer distribution list         | First‑class aliases and folder sharing        | Can create `support@` → single destination mailbox     |
+| One address → multiple recipients | Yes (groups / distribution lists)       | Not natively                           | No                                     | Not in consumer tier                  | Not directly; use forwarding rules            | One rule = one destination; fan‑out requires tricks    |
+| Catch‑all                         | Supported                                | No                                     | Supported                              | No                                   | Supported                                     | Supported (catch‑all can forward anywhere)             |
 
 **Cloudflare difference:**  
 Cloudflare can easily create many addresses and a catch‑all, but **each routing rule forwards to one destination mailbox**. A given `support@domain.com` rule goes to a single inbox, not multiple users directly. If you want fan‑out, you chain Cloudflare into another system (e.g., a list at your final provider, or use Workers for custom logic).
@@ -151,13 +153,13 @@ To **send** mail as `you@yourdomain.com` when using Cloudflare:
 
 ## 4. Cloud app ecosystems and integration
 
-| Category                | Google Workspace                           | Apple iCloud+ / One                       | Proton Family                             | Microsoft 365 Family                     | Cloudflare Email Routing                    |
-|-------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|----------------------------------------------|
-| Email client            | Gmail web + apps, IMAP/POP                 | Mail apps + iCloud.com                     | Proton web/app + Bridge                    | Outlook desktop/web/mobile                 | None (uses your target provider’s client)    |
-| Documents/Office        | Docs, Sheets, Slides                       | Pages, Numbers, Keynote                    | None (use external editors)                | Word, Excel, PowerPoint, OneNote           | None                                        |
-| Storage                 | Google Drive                               | iCloud Drive                               | Proton Drive (encrypted)                   | OneDrive (1 TB/user)                       | None                                        |
-| Calendar                | Google Calendar                            | Apple Calendar                             | Proton Calendar                            | Outlook Calendar                           | None                                        |
-| Extra privacy tools     | Admin + security tools                     | Private Relay (limited), Hide My Email     | Encrypted Calendar/Drive, VPN, Pass        | Defender, Family Safety                    | Email security/analytics via routing rules   |
+| Category                | Google Workspace                           | Apple iCloud+ / One                       | Proton Family                             | Microsoft 365 Family                     | Fastmail                                     | Cloudflare Email Routing                    |
+|-------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|----------------------------------------------|----------------------------------------------|
+| Email client            | Gmail web + apps, IMAP/POP                 | Mail apps + iCloud.com                     | Proton web/app + Bridge                    | Outlook desktop/web/mobile                 | Modern web client, full IMAP/SMTP/JMAP       | None (uses your target provider's client)    |
+| Documents/Office        | Docs, Sheets, Slides                       | Pages, Numbers, Keynote                    | None (use external editors)                | Word, Excel, PowerPoint, OneNote           | None (use external editors)                  | None                                        |
+| Storage                 | Google Drive                               | iCloud Drive                               | Proton Drive (encrypted)                   | OneDrive (1 TB/user)                       | File storage (varies by plan)                | None                                        |
+| Calendar                | Google Calendar                            | Apple Calendar                             | Proton Calendar                            | Outlook Calendar                           | Fastmail Calendar (CalDAV)                   | None                                        |
+| Extra privacy tools     | Admin + security tools                     | Private Relay (limited), Hide My Email     | Encrypted Calendar/Drive, VPN, Pass        | Defender, Family Safety                    | Masked Email, privacy-focused by default     | Email security/analytics via routing rules   |
 
 Cloudflare fits as a useful **front‑door** in front of whichever hosted mailbox solution you choose, rather than competing with them directly.
 
@@ -165,11 +167,11 @@ Cloudflare fits as a useful **front‑door** in front of whichever hosted mailbo
 
 ## 5. Spam filtering, rules, and quality
 
-| Aspect                    | Google Workspace                           | Apple iCloud+                          | Proton Family                             | Microsoft 365 Family                     | Cloudflare Email Routing                           |
-|---------------------------|--------------------------------------------|----------------------------------------|--------------------------------------------|--------------------------------------------|-----------------------------------------------------|
-| Spam filtering strength   | Industry‑leading ML filtering              | Good consumer filtering                 | Good, sometimes strict                     | Enterprise‑grade [Exchange](https://en.wikipedia.org/wiki/Microsoft_Exchange_Server) backend         | Light filtering & auth checks; major filtering is at destination mailbox |
-| Rules / filters           | Powerful filters + labels                  | Basic rules                             | Powerful filtering & labels                | Rich Outlook rules                         | Routing rules; advanced scripting via Workers       |
-| Abuse protections         | Mature anti‑abuse stack                    | Good enough for consumers               | Strong, privacy‑centric                    | Enterprise‑grade protections               | [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework)/[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail)/[DMARC](https://en.wikipedia.org/wiki/DMARC)‑aware forwarding and [SRS](https://en.wikipedia.org/wiki/Sender_Rewriting_Scheme) rewriting   |
+| Aspect                    | Google Workspace                           | Apple iCloud+                          | Proton Family                             | Microsoft 365 Family                     | Fastmail                                           | Cloudflare Email Routing                           |
+|---------------------------|--------------------------------------------|----------------------------------------|--------------------------------------------|--------------------------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| Spam filtering strength   | Industry‑leading ML filtering              | Good consumer filtering                 | Good, sometimes strict                     | Enterprise‑grade [Exchange](https://en.wikipedia.org/wiki/Microsoft_Exchange_Server) backend         | Excellent, customizable filtering                   | Light filtering & auth checks; major filtering is at destination mailbox |
+| Rules / filters           | Powerful filters + labels                  | Basic rules                             | Powerful filtering & labels                | Rich Outlook rules                         | Very powerful Sieve-based filtering                 | Routing rules; advanced scripting via Workers       |
+| Abuse protections         | Mature anti‑abuse stack                    | Good enough for consumers               | Strong, privacy‑centric                    | Enterprise‑grade protections               | Strong anti-spam, manual learning                   | [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework)/[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail)/[DMARC](https://en.wikipedia.org/wiki/DMARC)‑aware forwarding and [SRS](https://en.wikipedia.org/wiki/Sender_Rewriting_Scheme) rewriting   |
 
 Cloudflare's main contribution is **properly forwarding authenticated mail** ([SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework), [DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail), [DMARC](https://en.wikipedia.org/wiki/DMARC)) without breaking deliverability, not spam scoring. The downstream mailbox still does the heavy spam work.
 
@@ -177,12 +179,13 @@ Cloudflare's main contribution is **properly forwarding authenticated mail** ([S
 
 ## 6. IPv6 and standards
 
-| Network / Standard        | Google Workspace                 | Apple iCloud Mail               | Proton Mail / Family               | Microsoft 365 Family              | Cloudflare Email Routing                                      |
-|---------------------------|----------------------------------|---------------------------------|------------------------------------|-----------------------------------|----------------------------------------------------------------|
-| IPv6 on MX (inbound mail) | **Yes** (dual‑stack)            | **Yes** (dual‑stack)           | **No** (IPv4‑only MX)              | **Yes** (dual‑stack)             | **Yes**: Cloudflare MX supports IPv6 for inbound              |
-| Forwarding over IPv6      | Will connect to upstream via IPv6 if destination MX has AAAA| Will connect to upstream via IPv6 if destination MX has AAAA| N/A                                |Will connect to upstream via IPv6 if destination MX has AAAA| Will connect to upstream via IPv6 if destination MX has AAAA  |
-| [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework)/[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail)/[DMARC](https://en.wikipedia.org/wiki/DMARC)            | Fully supported                 | Supported, mostly automatic     | Fully supported                    | Fully supported                  | Preserves auth; uses [SRS](https://en.wikipedia.org/wiki/Sender_Rewriting_Scheme) for envelope sender rewriting        |
-| DNS control               | You manage domain DNS            | Limited to Apple’s UI           | You manage domain DNS              | Full in business; fixed in consumer | Cloudflare manages DNS if domain is on Cloudflare             |
+| Network / Standard        | Google Workspace                 | Apple iCloud Mail               | Proton Mail / Family               | Microsoft 365 Family              | Fastmail                                  | Cloudflare Email Routing                                      |
+|---------------------------|----------------------------------|---------------------------------|------------------------------------|-----------------------------------|-------------------------------------------|----------------------------------------------------------------|
+| IPv6 on MX (inbound mail) | **Yes** (dual‑stack)            | **Yes** (dual‑stack)           | **No** (IPv4‑only MX)              | **Yes** (dual‑stack)             | **No** (IPv4‑only MX)                     | **Yes**: Cloudflare MX supports IPv6 for inbound              |
+| IPv6 on SMTP (outbound)   | **Yes**                         | **Yes**                        | **No** (IPv4‑only)                 | **Yes**                          | **No** (IPv4‑only SMTP)                   | N/A (forwarding only)                                         |
+| Forwarding over IPv6      | Will connect to upstream via IPv6 if destination MX has AAAA| Will connect to upstream via IPv6 if destination MX has AAAA| N/A                                |Will connect to upstream via IPv6 if destination MX has AAAA| N/A                                       | Will connect to upstream via IPv6 if destination MX has AAAA  |
+| [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework)/[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail)/[DMARC](https://en.wikipedia.org/wiki/DMARC)            | Fully supported                 | Supported, mostly automatic     | Fully supported                    | Fully supported                  | Fully supported, easy setup               | Preserves auth; uses [SRS](https://en.wikipedia.org/wiki/Sender_Rewriting_Scheme) for envelope sender rewriting        |
+| DNS control               | You manage domain DNS            | Limited to Apple's UI           | You manage domain DNS              | Full in business; fixed in consumer | Full DNS control                          | Cloudflare manages DNS if domain is on Cloudflare             |
 
 Key points:
 
@@ -203,6 +206,7 @@ Key points:
 | Apple iCloud+ Family   | 200 GB–2 TB tiers         | ~$36–$120/year total    | Up to 6         | 200 GB–2 TB shared iCloud          | Includes mail + Photos + Drive |
 | Proton Family          | Family bundle             | ~$240–$360/year total   | ~6              | Hundreds of GB–few TB encrypted    | Includes VPN + Pass            |
 | Microsoft 365 Family   | Family plan               | ~$100/year total        | Up to 6         | 1 TB OneDrive per user (6 TB total) | Includes Office apps           |
+| Fastmail               | Standard/Professional     | ~$50–$120/user/year     | Per user        | 30–100 GB/user (varies by plan)    | Independent, standards-focused |
 | Cloudflare Email Routing | Included with Cloudflare | Typically free for routing | Per domain    | None (no mailbox storage)         | You must still pay for a mailbox provider |
 
 Cloudflare Email Routing effectively reduces cost by letting you:
@@ -239,6 +243,7 @@ Practical patterns:
 - **Apple iCloud+** – Best for an all‑Apple household that wants simple, integrated mail and storage.
 - **Proton Family** – Best for families that value privacy, encryption, and Swiss jurisdiction over convenience and integrations.
 - **Microsoft 365 Family** – Best for families wanting Office apps plus large personal storage (1 TB per user) with solid consumer email.
+- **Fastmail** – Best for power users and email enthusiasts who want a clean, standards-based email experience with excellent custom domain support, powerful filtering, and no ads or tracking from an independent provider.
 - **Cloudflare Email Routing** – Best as a **free, DNS‑level front door** to give your domain professional emails that forward into an existing mailbox; useful when you want:
 
   - Custom domain addresses,
@@ -249,6 +254,6 @@ Practical patterns:
 
 
 
-For me, google is still the clear winner, but it does come with the large pill of "if the product is free, you're the product". A very close second is Proton, which I still may completely move to.
+For me, google is probably still the clear winner, but it does come with the large pill of "if the product is free, you're the product". A very close tie for second is Proton and, presumably Fastmail. I have no experience with Fastmail but it looks very promising.
 
-_Last updated: December 26th, 2025._
+_Last updated: December 29th, 2025, Added Fastmail._

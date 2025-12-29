@@ -254,6 +254,6 @@ Practical patterns:
 
 
 
-For me, google is still the clear winner, but it does come with the large pill of "if the product is free, you're the product". A very close second is Proton, which I still may completely move to.
+For me, google is probably still the clear winner, but it does come with the large pill of "if the product is free, you're the product". A very close tie for second is Proton and, presumably Fastmail. I have no experience with Fastmail but it looks very promising.
 
-_Last updated: December 26th, 2025._
+_Last updated: December 29th, 2025, Added Fastmail._

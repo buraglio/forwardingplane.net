@@ -3,6 +3,31 @@ title: Packet Buffer Sizing Resources
 date: 2026-01-16T12:00:00-06:00
 author: Nick Buraglio
 excerpt: A curated collection of resources on router and switch packet buffer sizing, bufferbloat, and related research - largely derived from Jim Warner's UCSC buffer page.
+description: "Comprehensive reference for router and switch packet buffer specifications by ASIC family. Buffer sizes for Memory sizes for Broadcom Memory sizes for Trident, Memory sizes for Memory sizes for Tomahawk, Memory sizes for Memory sizes for Memory sizes for Jericho, Memory sizes for Memory sizes for Memory sizes for Memory sizes for Memory sizes for Memory sizes for Memory sizes for Mellanox Spectrum, Memory sizes for Tofino, and more from Cisco, Arista, Juniper, Dell, and other vendors."
+keywords:
+  - packet buffer sizing
+  - switch buffer specifications
+  - network buffer memory
+  - Broadcom Trident buffer
+  - Broadcom Tomahawk buffer
+  - Memory sizes for Memory sizes for Broadcom Memory sizes for Jericho buffer
+  - Mellanox Spectrum buffer
+  - bufferbloat
+  - microburst handling
+  - switch ASIC memory
+  - datacenter switch buffers
+  - deep buffer switch
+  - shallow buffer switch
+  - VoQ virtual output queuing
+tags:
+  - networking
+  - switching
+  - buffers
+  - datacenter
+  - ASIC
+categories:
+  - configuration-archive
+  - reference
 layout: page
 ---
 

@@ -1,0 +1,140 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/trident.html","20260106010555","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661555");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+Introduced: <a href="https://web.archive.org/web/20260106010555/https://people.ucsc.edu/~warner/Bufs/trident-news.pdf">March 2010</a>
+<p>
+The Broadcom BCM56840 series of silicon switchs have a code name 
+<b>Trident</b>.  
+It is called <i>merchant silicon</i> because Broadcom makes the part available to switch manufacturers who build competing products.
+In the trade press, this is often called a <i>switch ASIC</i> but Trident is actually a full custom design. 
+This gives it a speed advantage over manufacturers that use gate-array ASICs where all customization is done in a final metalization layer. 
+The following graphic shows the range of vendors that are using the same silicon:
+<p>
+<img src="https://web.archive.org/web/20260106010555im_/https://people.ucsc.edu/~warner/Bufs/trident.JPG" alt="7 switches from Juniper, IBM, Alcatel-Lucent, HP, Arista, Cell and Cisco">
+<p>
+A debate rages between manufacturers that claim generic silicon leads to generic switches that will have mediocre performance [cisco] and manufacturers like Arista that proudly
+proclaim that chip design is not their expertise and they have better things to do with their engineering dollars. Other manufacturers claim to use merchant silicon in some
+products and custom silicon in others [Brocade]. While Broadcom does not have direct end customers to guide development of new features, they get advice from the manufacturers that build 
+products
+on which potential features will lead to better products -- and greater sales.
+<p>
+The Trident+ has a 9 MByte block of buffer which is partitioned by the switch software between dedicated per-port buffers and a dynamic buffer pool that can be allocated on demand.  
+This memory is organized as 46080 cells of 208 bytes each.  These cells are chained together to build buffers to hold packets of varying sizes.
+It is possible that the manufacturer may have staticly allocated all the memory directly to the ports and there is no dynamic pool.  
+Teasing this out of data presented by manufacturer data sheets is difficult.
+<p>
+A flagship feature of the Trident+ is ultra low latency achieved with cut 
+through switching. This may be important in data center applications. It 
+definitely is a money maker for the high frequency trader crowd. <b>It is 
+irrelevant to file transfers over long RTT paths.</b> To achieve the low
+latency performance, the Trident needs extemely fast access to its buffers.
+It gets that by putting them on the silicon with the switch. All Trident+
+products show the same amount of packet buffer because the on-chip RAM
+cannot be augmented. 
+<p>
+It might be that all Trident+ products carve up the buffers in the same
+way. But it seems unlikely that would be true.  Broadcom parameterizes
+lots of controls in the switch. This lets the manufacturer set them to best
+advantage. We know that the BCM56840 is capable of flow control, and that
+not all manufacturers include it in their feature set. Flow control -- if it 
+is used -- is part of a buffer management scheme. So we know that there
+are differences. It would be unwise to assume anything about the maximum
+queue depth without explicit confirmation from the manufacturer -- or 
+in-house testing.
+<p>
+One thing that sets the Trident apart from its silicon merchant brethren
+like Intel is that Broadcom does not openly publish the technical data 
+sheets for its products on its web site.  Most users don't read chip
+data sheets; perhaps none should. And if manufacturers did a better 
+job with product specifications, none would need to. 
+<p>
+Industry pundits say that the only reason the Cisco Nexus 3064 contains a
+heart of Trident is because Cisco's silicon was late and they needed
+a cut through low latency product.  Whether that is true or not, the 
+Cisco ASIC that drives the 3548 is in production. A side note is that
+Cisco is less shy about exposing internal details than is Broadcom.
+<p>
+The <a href="https://web.archive.org/web/20260106010555/http://www.broadcom.com/products/Switching/Data-Center/BCM56850-Series">
+<b>trident2</b></a> was announced by Broadcom in August 2012. 
+After a delay, products were announced by synchronized press releases
+from switch vendors in November 2013.
+<p>
+<h2>Addition 1 Jan 2016</h2>
+<p>
+Juniper has written extensively on <a href="https://web.archive.org/web/20260106010555/https://people.ucsc.edu/~warner/Bufs/ex4600-buffer.pdf">
+buffering features</a> of its Trident+ and Trident-II products.
+They refer to their default as a <i>balanced</i> configuration that works
+for both data center lossless traffic and best effort lossy traffic.
+The default trident+ configuration has 2 MBytes in the dynamicly allocated best 
+effort egress queue.
+A system tuned for best effort traffic without lossless queues
+will improve this to 4.99 MBytes.  If multicast
+queues can be eliminated from the mix, this would push up to about 6 MBytes.
+These numbers scale up 30 percent for Trident-II, reflecting its larger
+buffer pool.
+<p>
+Juniper has extensive controls of the buffer knobs.  See, for example:
+<p>
+<li><a href="https://web.archive.org/web/20260106010555/https://people.ucsc.edu/~warner/Bufs/junOS-best-effort-buffer.pdf">best effort</a></li>
+<li><a href="https://web.archive.org/web/20260106010555/https://people.ucsc.edu/~warner/Bufs/junOS-best-effort-buffer-flow-ctl.pdf">best effort w flow control</a></li>
+<p>
+While these could be implemented by any manufacturers,
+they might not all be exposed in the switch
+config the way that Juniper has done. 
+<p>
+Referring to the <a href="https://web.archive.org/web/20260106010555/https://people.ucsc.edu/~warner/buffer.html">buffer table</a>, it
+is from the size of the shared unicast best effort egress buffer 
+that I base the estimate of 5 MBytes best burst size. 
+This is not what derives from Juniper's default parameters. It is reserved for
+those that read the manuals.
+<p>
+Arista has a series of <i>Day in the life of a packet</i> papers that
+explain in some detail how the 
+<a href="https://web.archive.org/web/20260106010555/https://people.ucsc.edu/~warner/Bufs/Arista_7050X_Switch_Architecture.pdf">Trident+ and Trident-II
+</a> work. Mostly, packets move quickly through input processing. Flow
+control might be an exception to this. Dropped packets are mostly from
+the egress queues.
+<p>
+BM56840 is a family of parts that includes both Trident and Trident+.
+Broadcom does not use internal development names like <i>Trident</i>
+in their literature. Neas as I can tell, at intoduction, the Trident
+required an external PHY chip to connect to the SFP+ ports. The 
+trident+ (BCM56846) permits building a product without PHY chips
+which lowers cost and power consumption. The switch characteristics
+(speeds and feeds, address table sizes, packet buffer size) are the same.
+</td></tr>
+</table>
+
+
+<!--
+     FILE ARCHIVED ON 01:05:55 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:18:41 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.5
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.007
+  esindex: 0.01
+  cdx.remote: 80.344
+  LoadShardBlock: 271.148 (3)
+  PetaboxLoader3.resolve: 159.637 (3)
+  PetaboxLoader3.datanode: 173.71 (4)
+  load_resource: 89.759
+-->

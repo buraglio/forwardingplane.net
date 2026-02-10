@@ -1,0 +1,84 @@
+<html> 
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/summary","20260106010650","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661610");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<title>Buffer summary thoughts</title></head>
+<table width="700">
+<tr><td>
+<b>Probably the best place to start is with the problem: <a href="https://web.archive.org/web/20260106010650/https://people.ucsc.edu/~warner/Bufs/microburst">
+microbursts.</a></b>
+<p>
+If packet buffers can be provided at point where packets get delayed, it may
+be possible to queue packets and deliver them when a burst has subsided.
+Without a buffer, those packets would be dropped.
+<p>
+The easiest to understand <i>cause</i> of short term packet bunching is where 
+a switch is being used to slow a packet stream. For example data might be 
+arriving from the WAN on a 40 Gb/s connection while being sent along to an 
+end host at 10 Gb/s. This is <i>short term</i> because the burst can
+be no longer than the TCP window size.  If packets are coming in faster than 
+they can be fed out, some buffer can help.
+<p>
+Bursts can also be caused by cross traffic. If some packets in a stream are slowed down, the packets behind may catch up. Packets from a flow that started out
+evenly spaced will arrive in clumps because of the action of cross traffic.  
+The more cross traffic, the more clumping.
+<p>
+Too much buffer can, it turns out, also cause a problem.  
+<p>
+If two 10G connected researchers send streams off your campus at the same time,
+and your off-campus connection is 10G, you don't have a <i>microburst</i> problem.  You have oversubscription.  Buffers won't help. 
+<p>
+Alan Weckel from Del'Oro Group made the point that 10 Gig-E is driven by the
+data center. The needs of the network are just a 
+<a href="https://web.archive.org/web/20260106010650/http://www.ethernetsummit.com/English/Collaterals/Proceedings/2013/20130403_Keynote2_Weckel.pdf">footnote.</a>  
+There is are lots of switches out there that are designed to solve someone else's problem. 
+<ul>
+<li>Switches designed for the data center interconnects will have ultra-low latency. RTTs are short so buffer requirements are minimal.  Flow control or priorty flow control would be useful. 
+<li>Switches designed to cope with <a href="https://web.archive.org/web/20260106010650/https://people.ucsc.edu/~warner/Bufs/incast.html">
+<i>incast</i></a> in the data center will have more generous buffers. 
+These switches are for data center secenarios with high East-West 
+traffic. You can easily kick the price of a switch up by 10X.  
+But it will be a nice switch.
+<li>Switches designed for the LAN access layer may have multiservice features like QoS.  Manufacturers will emphasize the number of different queues to sort out video, voice and data.
+</ul>
+<p>
+Writing a purchase order for large buffers makes sense where there is a down speed step.  It makes sense in the core of the network
+where cross traffic can cause packets to bunch up. 
+But in the campus, big expensive buffers may not have a payback. 
+Ability to buffer 6 Mbytes is <a href="https://web.archive.org/web/20260106010650/http://people.ucsc.edu/~warner/I2-techs.ppt">sufficient</a> for a 10 Gb/s sender and a 1 Gb/s receiver. 
+<p>
+There is an analogy to adding RAM to a computer.  
+A computer that does not have sufficient RAM to build a working set of memory pages will thrash its swap files.
+But once you have added enough RAM to get a working set, adding more will not 
+improve performance.
+</td></tr>
+</table>
+<!--
+     FILE ARCHIVED ON 01:06:50 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:17:52 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.628
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.008
+  esindex: 0.011
+  cdx.remote: 50.056
+  LoadShardBlock: 175.93 (3)
+  PetaboxLoader3.datanode: 94.776 (4)
+  PetaboxLoader3.resolve: 111.12 (2)
+  load_resource: 83.032
+-->

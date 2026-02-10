@@ -1,0 +1,48 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/HP","20260106010721","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661641");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010721im_/https://people.ucsc.edu/~warner/Bufs/HP5900.jpg" alt="beauty pics of two switches">
+<p>
+The <b>XG</b> model has 1G/10G ports and is of similar form factor to other Trident+ switches.
+Hewlett-Packard is more flexible on packaging by giving you the option of single or dual power supplies.
+<p>
+Also a Trident+ derivative, the <b>G</b> model has 1 Gb/s Tw-Pair ports and both 10G SFP+ and QSFP+ 40G
+uplink ports.
+<p>
+HP has what they call <a href="https://web.archive.org/web/20260106010721/https://people.ucsc.edu/~warner/Bufs/c04111469.pdf"><i>Quick Specs</i></a> which is a document that runs about 30 pages.
+HP appears to offer these switches for Open Flow applications, but not in this data sheet. If HP has an ONIE
+loader in their switches, they aren't talking about it here.  While this web page
+is not about pricing, the current (June 2014) CDWG rate is $16K for the SFP+ model and $6K for the tw-pair 1G model.
+</td></tr>
+<!--
+     FILE ARCHIVED ON 01:07:21 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:19:31 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.507
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.008
+  esindex: 0.011
+  cdx.remote: 24.396
+  LoadShardBlock: 93.883 (3)
+  PetaboxLoader3.datanode: 105.905 (4)
+  load_resource: 81.339
+  PetaboxLoader3.resolve: 64.406
+-->

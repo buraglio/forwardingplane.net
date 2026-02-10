@@ -1,0 +1,141 @@
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/microburst","20260106010654","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661614");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<title>Microburst</title></head>
+<table width="700">
+<tr><td>
+<h1>Answer</h1> <b>Jim Warner says: A microburst is a burst of frames too 
+short to be measured by polling.</b>
+<p>
+At its genesis in 1990, SNMP designers went to great pains to keep the front 
+end data collection agent as simple as possible. SNMP started with zero
+market share. If the client was not light weight, it would
+have been relegated to the dust bin of ideas that were too expensive for
+the real world.  That required a polling
+model. Agent gets a question; agent answers question. No state retained.
+Polling is inefficient. And that really comes home when you attempt to
+run the poll rate up high enough to improve time resolution to see
+short events. 
+<p>
+-----------------------------------------------------------
+<p>
+Nice paper with empirical data on bursts in the data center.
+<p>
+<a href="https://web.archive.org/web/20260106010654/http://research.microsoft.com/pubs/136788/wren09.pdf">
+http://research.microsoft.com/pubs/136788/wren09.pdf</a>
+<p>
+-----------------------------------------------------------
+<p>
+Arista has an 
+<a href="https://web.archive.org/web/20260106010654/http://people.ucsc.edu/~warner/Bufs/7148sx-ixnetwork-microburst.pdf"> 
+article</a> on microbursts written in response to a Miercom test report that
+they did not like. They also published a <a href="https://web.archive.org/web/20260106010654/https://people.ucsc.edu/~warner/Bufs/AristaMicrobursts.pdf">
+white paper</a> explaining microbursts.
+<pre>
+Dale Shaw dale.shaw+cisco-nsp at gmail.com 
+Fri Apr 24 00:38:01 EDT 2009
+
+Next message: [c-nsp] The dreaded microburst - definition and troubleshooting
+
+Hi all,
+
+Is there a universally agreed upon definition for a 'microburst'?
+
+Is there a defined time measurement - i.e. 5ms, 10ms, 50ms, 100ms,
+1000ms - during which a certain bps or pps threshold must be
+met/exceeded?
+
+Does anyone have any tips for troubleshooting microbursts,
+particularly in relation to the c7200 platform exhibiting "no buff"
+drops? We're going to capture some data (w/SPAN on an adjacent switch)
+but it would be nice to be able to look at the data and somehow marry
+it up with incrementing drop counters on the affected c7200 interface.
+
+It would be nice to be able to explain such drops like "within the
+measurement window, we saw traffic at bps/pps rate x, and we know that
+anything beyond bps/pps rate y will result in drops".
+
+I suppose it's platform-specific, but how does one come up with an
+accurate benchmark? Is such precision just wishful thinking in the
+murky world of microbursts? :-)
+
+cheers,
+Dale
+
+=================================================
+
+Ian Cox icox at cisco.com 
+Fri Apr 24 12:56:21 EDT 2009
+Previous message: [c-nsp] The dreaded microburst - definition and troubleshooting
+
+
+The definition I generally use is this:
+
+
+[snip]
+A microburst is when packet drops occur when there is not sustained or
+noticeable congestion upon a link or device.
+
+Example: The 1 minute utilization of a link is 20% and packet drops are
+occurring.
+
+Microbursts happen in every packet based network where flow control is
+not extended end to end in all types of switches both blocking and
+non-blocking.
+[end snip]
+
+I principally work on high end switching and the 4 main ways we see it
+occur:
+- Speed Mismatch (10G into 1G, 10G into 10M) More extreme the speed
+mismatch the more dramatic the issue.
+- Network Oversubscription, Example 20 1G hosts using 1x10G uplink
+- L2 Unicast Flood - Synchronization of flood from multiple hosts
+- L2 Multicast - Synchronization of multicast from multiple hosts in
+large any to any multicast environments.
+
+Microbursts are how packet networks work that do not have end to end
+flow control. (End to end flow control is no panacea, you then have to
+create  ways to prevent deadlock situations)  You can use larger buffers
+to mask the issue, but that increases the latency and causes jitter. You
+can end up with the situation of packets arriving in extreme cases tens
+of seconds latter. Dropping packets is not the end of the world, it puts
+a limit on how large the latency and jitter can grow.
+
+
+Ian
+
+ cisco-nsp mailing list  cisco-nsp at puck.nether.net
+ https://puck.nether.net/mailman/listinfo/cisco-nsp
+ archive at http://puck.nether.net/pipermail/cisco-nsp/
+ 
+
+<!--
+     FILE ARCHIVED ON 01:06:54 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:18:35 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.501
+  exclusion.robots: 0.016
+  exclusion.robots.policy: 0.007
+  esindex: 0.009
+  cdx.remote: 31.739
+  LoadShardBlock: 162.629 (3)
+  PetaboxLoader3.datanode: 112.208 (4)
+  PetaboxLoader3.resolve: 107.819 (2)
+  load_resource: 86.45
+-->

@@ -1,0 +1,65 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/arista_7124SX","20260106010656","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661616");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+If you are a customer or potential customer for Arista data center switches, you should get a copy of <i>Arista Warrier</i> by Gary Donahue. Published October 2012.
+<p>
+The 7124SX uses Intel's Ethernet Switch FM4000, introduced <b>August 2006</b>. Intel's data sheet has the following diagram:
+<p>
+<img src="https://web.archive.org/web/20260106010656im_/https://people.ucsc.edu/~warner/Bufs/FM4000block.png">
+<p>
+The <i>Shared Memory Fabric</i> is partially dedicated to each port with the remainder in a dynamic pool. 
+In our summary table, <i>1.238 + 0.02 MB</i> is the dynamic pool + fixed port allocation. 
+The sum is the largest buffer that is available to a single flow -- assuming the dynamic pool is not otherwise engaged by traffic queued on other ports.
+<p>
+Some Arista 7124SX information is from <i>The Open Industry Network Performance &amp; Power Test for Cloud Networks Evaluating 10/40 GbE Switches Spring 2013 Edition</i> dated July 2013.  Quoting a single sentence:
+<p>
+"The Arista 7124SX has a 2MB packet
+buffer pool and uses Dynamic Buffer
+Allocation (DBA) to manage congestion."  n.b. The quote is from the Lippis 
+Report and not from Arista.  Arista's claim is that there is 2 MB of RAM 
+and 1.7 MB of this is available to be used as packet buffers. Arista 
+published a short <a href="https://web.archive.org/web/20260106010656/https://people.ucsc.edu/~warner/Bufs/AristaMicrobursts.pdf">microburst white paper</a> that backs this up.
+<p>
+See <a href="https://web.archive.org/web/20260106010656/http://lippisreport.com/2013/07/open-industry-network-performance-and-power-test-for-cloud-networks-evaluating-1040-gbe-switches/"> page 29.</a> Get this from http://lippisreport.com. Requires registration.
+<p>
+Info on the 7148SX comes from an Arista <a href="https://web.archive.org/web/20260106010656/https://people.ucsc.edu/~warner/Bufs/7148sx-ixnetwork-microburst.pdf"> rant</a> expressing displeasure at how sleezey the test-for-hire industry is. 
+Arista seems to want to define <i>microburst</i> in terms relating specifically to the financial services industry. A <a href="https://web.archive.org/web/20260106010656/https://people.ucsc.edu/~warner/Bufs/microburst">broader definition</a> is a clump of packets big enough to run out buffers but not so big as to be visible in polled SNMP stats.  
+I believe that <i>microburst</i> tolerance is a fair characterization of a feature that is useful in big-data-high-latency file transfer applications. But the rest of the rant seems spot on.
+<p>
+The 7148SX uses four FM4000s to double the port count and provide chip-to-chip interconnects.  A packet that routes through a single FM4000 has access only to one chip's dynamic pool. A packet that routes through an interconnect may be able to access the dynamic pools along its path -- if there is flow control in the interconnects.  
+<p>
+<b>End of Life</b> for the 7124SX and 7148SX has been announced.  The 7150S-xx replacement 
+switches will use a newer Intel/Fulcrum switch -- the FM6000.  n.b. The <i>Warrior</i> book was written
+before the announcement of the replacement switches.
+</html>
+<!--
+     FILE ARCHIVED ON 01:06:56 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:38:07 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.678
+  exclusion.robots: 0.021
+  exclusion.robots.policy: 0.01
+  esindex: 0.013
+  cdx.remote: 21.388
+  LoadShardBlock: 108.7 (3)
+  PetaboxLoader3.datanode: 112.019 (4)
+  load_resource: 10.188
+-->

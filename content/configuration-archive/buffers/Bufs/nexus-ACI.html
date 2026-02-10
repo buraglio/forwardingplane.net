@@ -1,0 +1,88 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/nexus-ACI.html","20260106010731","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661651");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Nexus ACI</h2>
+<p>
+<b>Application Centric Infrastructure</b> [ACI] has
+been described as Cisco's answer to SDN. At its core, it 
+applies security labels to encapsulate packets. Encapsulation
+done in 2014 required custom silicon and was outside the
+reach of merchant silicon of the day. It may be possible to
+do ACI with today's programmable pipeline ASICs -- or maybe
+not.
+<p>
+The 9300 models appear to be the oldest of the fleet (2014).
+They are a hybrid design with Broadcom Trident2 forwarding
+engines and a custom Cisco ALE [Application Leaf Engine] chip to fix the warts.
+That the hybrid products have been discontinued and Cisco now uses
+<i>full custom</i> suggests that the original products were a stand
+in for an ASIC that had fallen behind in development.
+<p>
+In <b>2016</b> Cisco introduced Nexus 9200 ACI switches. <i>ACI</i>
+stands for <i>ACI Spine Engine</i>. The ACI ASICs work stand-alone --
+without a Trident-2 forwarding engine.
+<p>
+In <b>March 2016</b> Cisco added the LSE [Leaf Spine Engine] which is
+touted as the first 16 nM geometry switch engine. It 
+has a two-slice design with 40 MBytes split two ways. The LSE has
+<i>Elephant trap</i> auto prioritization which will keep large
+flows from trashing the performance of small flows.
+<p>
+In <b>March 2017</b> Cisco added the <b>FX</b> version of this
+ASIC.
+<p>
+In <b>December 2017</b> Cisco announced the <b>FX2</b> which
+provides netflow collection and export.
+<p>
+In <b>October 2018</b> Cisco announced the <b>GX</b> which has
+80 MB of buffer split across four slices.
+It is described in BRKDCN-3222.
+<p>
+In <b>June 2020</b> Cisco <a href="https://web.archive.org/web/20260106010731/https://people.ucsc.edu/~warner/Bufs/GX2-blog.pdf">announced</a> the 
+<b>GX2</b> with 100 MB of buffer. There are two ASIC varients: 
+<b>GX2B</b> with 2 slice-pairs
+and <b>GX2A</b> with 4 slice-pairs.
+Exactly what makes <i>slice-pair</i> is not clear.
+Perhaps there are separate slices for <i>input</i> and <i>output</i>.
+The ASIC has 7 nm fabrication technology and is built out of
+chiplets rather than an integrated single die.
+<p>
+<a href="https://web.archive.org/web/20260106010731/https://people.ucsc.edu/~warner/Bufs/nexus-9K-microburst.pdf"><b>Microburst monitoring</b></a> 
+is a feature in ALE, ASE and LSE ASICs. This chapter is from
+<i>CiscoNexus 9000 SeriesNX-OS Quality of Service Configuration Guide,
+Release 7.x</i> first published January 2015 and modified September 2018.
+
+
+
+
+<!--
+     FILE ARCHIVED ON 01:07:31 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:36:57 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.467
+  exclusion.robots: 0.015
+  exclusion.robots.policy: 0.006
+  esindex: 0.01
+  cdx.remote: 26.17
+  LoadShardBlock: 182.812 (3)
+  PetaboxLoader3.datanode: 181.412 (4)
+  load_resource: 26.089
+-->

@@ -1,0 +1,98 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/7280R3.html","20260106010742","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661662");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<h2>Arista fixed configuration Jericho2 deep buffer switches</h2>
+<table width="700">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010742im_/https://people.ucsc.edu/~warner/Bufs/arista-1.png" alt="beauty shot">
+<h3>7280CR3-32P4 and 7280CR3K-32P4</h3>
+<br>
+<img src="https://web.archive.org/web/20260106010742im_/https://people.ucsc.edu/~warner/Bufs/arista-2.png" alt="beauty shot">
+<h3>7280CR3-32D4 and 7280CR3K-32D4</h3>
+<br>
+<img src="https://web.archive.org/web/20260106010742im_/https://people.ucsc.edu/~warner/Bufs/arista-3.png" alt="beauty shot">
+<h3>7280PR3-24 and 7280PR3K-24</h3>
+<br>
+<img src="https://web.archive.org/web/20260106010742im_/https://people.ucsc.edu/~warner/Bufs/arista-4.png" alt="beauty shot">
+<h3>7280DR3-24 and 7280DR3K-24</h3>
+<br>
+<img src="https://web.archive.org/web/20260106010742im_/https://people.ucsc.edu/~warner/Bufs/arista-5.png" alt="beauty shot">
+<h3>7280CR3-96 and 7280CR3K-96</h3>
+<br>
+<b><a href="https://web.archive.org/web/20260106010742/https://www.arista.com/7684-r3-series-webinar">Announcement webinar</a> 23 May 2019, first ship Q3 2019</b>
+<p>
+Cisco does not make fixed configuration switches with Jericho2 ASICs; they use the ASICs 
+in high-end line cards for chassis solutions. Arista makes chassis cards too, but not reviewed here.
+Arista makes switches with QSFP-DD and OSFP optics plugins. Jericho2 switches can contain
+external TCAM, or not. External TCAM is indicated by a <b>K</b> in the model number.
+Overall, <a href="https://web.archive.org/web/20260106010742/https://people.ucsc.edu/~warner/Bufs/7280R3-Data-Sheet.pdf"> there are ten models.</a>
+<p>
+<b>OSFP</b> means <b>Octal</b>SFP, so 8 lanes, 50 Gb/s PAM4 yields 400 Gb/s.
+<p>
+<b>QSFP-DD</b> means 2X quad, so 8 lanes, 50 Gb/s PAM4. Yields 400 Gb/s. QSFP-DD has its
+plug connector on the back end arranged so that a QSFP module can slide into the slot and
+be recognized as a single density QSFP. This provides backward compatibilty and what they
+call <i>investment protection</i>.
+<p>
+<b>OSFP</b> modules are larger which lets them disipate more heat and thus do stuff
+beyond the thermal limits of QSFP-DD. An example announced on March 9, 2020 is the
+coherant 400G-ZR transceiver paired with an EDFA optical amplifier.
+<p>
+<img src="https://web.archive.org/web/20260106010742im_/https://people.ucsc.edu/~warner/Bufs/osfp-line.png" alt="picture of a transciever and line amplifer in OSFP packages">
+<p>
+This transceiver and amplifier pair are expected to start shipping in the second half of 2020.
+
+<h2>Packet Buffers</h2>
+Each Jericho2 ASIC is co-packaged with an <a href="https://web.archive.org/web/20260106010742/https://people.ucsc.edu/~warner/Bufs/hbm-explanation.html">8 GB hbm</a> memory.
+This memory is used to store packets when the on-chip 16 MB memory starts to fill.
+The question <i>dynamic vs static</i> buffers is answered for Broadcom in
+an <a href="https://web.archive.org/web/20260106010742/https://people.ucsc.edu/~warner/Bufs/Arista7800R3SwitchArchitectureWP.pdf">Arista architecture white paper</a>. Buffer
+allocation is <b>dynamic</b>. Quoting:
+<br>
+<blockquote>
+. . . the majority of the buffer is allocated in a
+dynamic manner wherever it is required across potentially millions of VoQs per system:
+<li> ~30% buffer reserved for traffic per Traffic Class per Output Port
+<li> ~15% buffer for multi-destination traffic
+<li> ~55% available as a dynamic buffer pool
+<p>
+<table width="700">
+<tr><td>Output Port Characteristic</td><td>Max Packet Buffer Depth</td><td>Max Packet Buffer Depth (msec)</td></tr>
+<tr><td>10 Gb/s output port</td><td>50 MByte</td><td>40 msec</td></tr>
+<tr><td>25 Gb/s output port</td><td>125 MByte</td><td>40 msec</td></tr>
+<tr><td>40 Gb/s output port</td><td>200 MByte</td><td>40 msec</td></tr>
+<tr><td>50 Gb/s output port</td><td>250 MByte</td><td>40 msec</td></tr>
+<tr><td>100 Gb/s output port</td><td>500 MByte</td><td>40 msec</td></tr>
+<tr><td>400 Gb/s output port</td><td>500 MByte</td><td>10 msec</td></tr>
+</table>
+</blovkquote>
+
+<!--
+     FILE ARCHIVED ON 01:07:42 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:31:55 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.779
+  exclusion.robots: 0.027
+  exclusion.robots.policy: 0.011
+  esindex: 0.015
+  cdx.remote: 35.61
+  LoadShardBlock: 584.992 (3)
+  PetaboxLoader3.datanode: 657.883 (4)
+  load_resource: 83.789
+-->

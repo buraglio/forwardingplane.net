@@ -1,0 +1,1010 @@
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/nanog-thread","20260106010643","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661603");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<title>Nanog thread</title></head>
+<pre>
+10GE TOR (Top Of Rack) port buffers (was Re: 10G switch recommendaton)
+Hi, 
+
+Is there a reason switch vendors 1U TOR 10GE aggregation switches are 
+all cut-through and there are no models with deep buffers? 
+I've ben looking at all vendors I can think of and all have the same models. 
+
+TOR switches as cut-through with little buffers, and chassis based 
+boxes with deep buffers. 
+
+TOR: 
+Juniper EX4500 208KB/10GE (4MB shared per PFE) 
+Cisco 4900M 728KB/10GE (17.5MB shared) 
+Cisco Nexus 3064 140KB/10GE (9MB shared) 
+Cisco Nexus 5000 680KB/10GE 
+Force10 S2410 I can't find it anymore, but it wasn't much 
+Arista 7148SX 123KB/10GE (80KB per port plus 5MB dynamic) 
+Arista 7050S 173KB/10GE (9MB shared) 
+Brocade VDX 6730-32 170KB/10GE 
+Brocade TurboIron 24X 85KB/10GE 
+HP 6600-24XG 4500KB/10GE 
+HP 5820-24XG-SFP+ 87KB/10GE 
+Extreme Summit X650 375KB/10GE 
+
+Chassis: 
+Juniper EX8200-8XS 512MB/10GE 
+Cisco WS-X6708-10GE 32MB/10GE (or 24MB) 
+Cisco N7K-M132XP-12 36MB/10GE 
+Arista DCS-7548S-LC 48MB/10GE 
+Brocade BR-MLX-10Gx8-X 128MB/10GE (not sure) 
+
+1GE aggregation. 
+Force10 S60 1250MB shared 
+HP 5830 3000MB shared 
+
+I am at a loss why there are no 10GE TOR switches with deep buffers. 
+Apparently there is a need for deep buffers as the vendors make them 
+available in the chassis linecards. 
+There also are deep buffer 1GE aggregation switches. 
+
+Is there some (technical) reason for this? 
+I can imagine some vendors would say that you need to scale up to a 
+chassis if you need deep buffers, but at least one vendor should be 
+able to get quite some customers with a 10G deep buffer TOR switch. 
+
+I understand that flow-control should prevent loss with microbursts, 
+but in my customers get adverse effects, with strong negative 
+performance if they let flow-control do its thing. 
+
+Any pointers why this is, or if there is a solution for microburst 
+loss would be greatly appreciated. 
+
+Thanks, 
+
+Bas
+ 
+saku at ytti 
+
+Jan 27, 2012, 8:55 AM 
+
+<b>Post #2 of 27 (2118 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On (2012-01-27 17:35 +0100), bas wrote: 
+
+&gt; Chassis: 
+&gt; Juniper EX8200-8XS 512MB/10GE 
+&gt; Cisco WS-X6708-10GE 32MB/10GE (or 24MB) 
+&gt; Cisco N7K-M132XP-12 36MB/10GE 
+&gt; Arista DCS-7548S-LC 48MB/10GE 
+&gt; Brocade BR-MLX-10Gx8-X 128MB/10GE (not sure) 
+&gt; 
+&gt; 1GE aggregation. 
+&gt; Force10 S60 1250MB shared 
+&gt; HP 5830 3000MB shared 
+
+I'd take some of these with grain of salt, take EX8200-8XS, PDF 
+indeed does agree: 
+--- 
+Total buffer size is 512 MB on each EX8200-8XS 10-Gigabit 
+Ethernet port or each EX8200-40XS port group, and 42 MB 
+on each EX8200-48T and EX8200-48F Gigabit Ethernet port, 
+providing 50-100 ms of bandwidth delay buffering 
+--- 
+
+However 512MB is about 400ms of buffering, while 512Mb is 50ms. So I think 
+JNPR PDF is just wrong. 
+Similar error may exist for some other quoted numbers. 
+
+But generally nice list, especially the 10GE fixed config looked realistic, 
+sometimes I wish we'd have 'dpreview' style page for routers and switches, 
+especially now with dozen or more vendors selling 'same' trident+ switch, 
+differentiating them is hard. 
+
+-- 
+++ytti
+ 
+
+	
+ 
+tom.ammon at utah 
+
+Jan 27, 2012, 9:55 AM 
+
+<b>Post #3 of 27 (2122 views) </b>
+
+RE: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+
+The HP6600 is a store and forward, not a cut-through. The HP reps that I have
+dealt with seem to be pretty open to sharing architecture drawings of their 
+stuff, so I bet you could probably get your hands on the same one that I have.
+Their NDA is a mutual disclosure, though, so that might make things tough
+depending on your organization's policies. 
+
+Tom 
+
+
+ 
+
+	
+ 
+kilobit at gmail 
+
+Jan 27, 2012, 1:40 PM 
+
+<b>Post #4 of 27 (2107 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On Fri, Jan 27, 2012 at 5:55 PM, Saku Ytti <saku [at] ytti> wrote: 
+&gt; On (2012-01-27 17:35 +0100), bas wrote: 
+&gt; But generally nice list, especially the 10GE fixed config looked realistic, 
+&gt; sometimes I wish we'd have 'dpreview' style page for routers and switches, 
+&gt; especially now with dozen or more vendors selling 'same' trident+ switch, 
+&gt; differentiating them is hard. 
+
+But do you generally agree that "the market" has a requirement for a 
+deep-buffer TOR switch? 
+
+Or am I crazy for thinking that my customers need such a solution? 
+
+Bas
+ 
+
+	
+
+Jan 27, 2012, 1:52 PM 
+
+<b>Post #5 of 27 (2117 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+In a message written on Fri, Jan 27, 2012 at 10:40:03PM +0100, bas wrote: 
+&gt; But do you generally agree that "the market" has a requirement for a 
+&gt; deep-buffer TOR switch? 
+&gt; 
+&gt; Or am I crazy for thinking that my customers need such a solution? 
+
+You're crazy. :) 
+
+You need to google "bufferbloat", which while the aim has been more 
+at (SOHO) routers that have absurd (multi-second) buffers, the 
+concepts at play work here as well. 
+
+Let's say you have a VOIP application with 250ms of jitter tolerance, 
+and you're going 80ms across country. You then add in a switch on 
+one end that has 300ms of buffer. 
+
+Ooops, you go way over, but only from time to time when the switch 
+is full, getting 300+80ms of latency for a few packets. 
+
+Dropped packets are a _GOOD_ thing. If your ethernet switch can't 
+get the packet out another port in ~1-2ms it should drop it. The 
+output port is congested, congestion is what tells the sender to 
+back off. If you buffer the packets you get congestion collapse, 
+which is far worse for throughput in the end, and in particular has 
+severely detremental effects on the others on the LAN, not just the box 
+filling the buffers. 
+
+A network dropping packets is healthy, telling the upstream boxes 
+to throttle to the appropiate speeds with packet loss which is how 
+TCP operates. I can' tell you how many times I've seen network 
+engineers tell me "no matter how big I make the buffers performance 
+gets worse and worse". Well duh, you're just introducing more and 
+more latency in your network, and making TCP backoff fail, rather 
+than work properly. I go in and slash their 50-100 packet buffers 
+down to 5 and magically the network performs great, even when full. 
+
+Now, how much buffer do you need? One packet is the minimum. If 
+you can't buffer one packet it becomes hard to reach 100% utilization 
+on a link. Anyone who's tried with a pure cut-through switch can 
+tell you it tops out around 90% (with multiple senders to a single 
+egress). Amazing one packet of buffer almost entirely fixes the 
+problem. 
+
+When I can manually set the buffers, I generally go for 1ms of buffers 
+on high speed (e.g. 10GE) links, and might increase that to as much as 
+15 ms of buffers on extremely low speed links, like sub-T1. 
+
+Remember, your RTT will vary (jitter) +- the sum of all buffers on all 
+hops along the path. A 10 hop path with 15ms per hop could see 150ms of 
+jitter if all links go between full and not full! 
+
+Buffers in most network gear is bad, don't do it. 
+
+-- 
+Leo Bicknell - bicknell [at] ufp - CCIE 3440 
+PGP keys at http://www.ufp.org/~bicknell/
+ 
+
+	
+ 
+kilobit at gmail 
+
+Jan 27, 2012, 2:30 PM 
+
+<b>Post #6 of 27 (2108 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+Hi, 
+
+On Fri, Jan 27, 2012 at 10:52 PM, Leo Bicknell <bicknell [at] ufp> wrote: 
+&gt; In a message written on Fri, Jan 27, 2012 at 10:40:03PM +0100, bas wrote: 
+&gt;&gt; But do you generally agree that "the market" has a requirement for a 
+&gt;&gt; deep-buffer TOR switch? 
+&gt;&gt; 
+&gt;&gt; Or am I crazy for thinking that my customers need such a solution? 
+&gt; 
+&gt; You're crazy. :) 
+&gt; 
+&gt; You need to google "bufferbloat", which while the aim has been more 
+&gt; at (SOHO) routers that have absurd (multi-second) buffers, the 
+&gt; concepts at play work here as well. 
+
+While your reasoning holds truth it does not explain why the expensive 
+chassis solution (good) makes my customers happy, and the cheaper TOR 
+solution makes my customers unhappy..... 
+
+Bufferbloat does not matter to them as jitter and latency does not matter. 
+As long as the TCP window size negotioation is not reset the total 
+amount of bit/sec increases for them. 
+
+If deep buffers are bad I would expect high-end chassis solutions not 
+to offer them either.  But the market seems to offer expensive deep buffer 
+chassis solutions  and cheap (per 10GE) TOR solutions. 
+
+IMHO there is no reasoning why.... 
+(why the expensive solution is not offered in a 1U box) 
+
+My customers want to buffer 10 to 24 * 10GE in a 1 or 2 10GE uplinks 
+to do this they need some buffers.... 
+
+Bas
+ 
+
+	
+ 
+gbonser at seven 
+
+Jan 27, 2012, 2:36 PM 
+
+<b>Post #7 of 27 (2105 views) </b>
+
+RE: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+&gt; 
+&gt; Buffers in most network gear is bad, don't do it. 
+&gt; 
+
++1 
+
+I'm amazed at how many will spend money on switches with more buffering but won't
+take steps to ease the congestion. Part of the reason is trying to convince 
+non-technical people that packet loss in and of itself doesn't have to be a bad 
+thing, that it allows applications to adapt to network conditions. They can use 
+tools to see packet loss, that gives them something to complain about. They don't 
+know how to interpret jitter or understand what impact that has on their 
+applications. They just know that they can run some placket blaster and see a 
+packet dropped and want that to go away, so we end up in "every packet is 
+precious" mode. 
+
+They would rather have a download that starts and stops and starts and stops 
+rather than have one that progresses smoothly from start to finish and trying to 
+explain to them that performance is "bursty" because nobody wants to allow a 
+packet to be dropped sails right over their heads. 
+
+They'll accept crappy performance with no packet loss before they will accept 
+better overall performance with an occasional packet lost. 
+
+If an applications is truly intolerant of packet loss, then you need to address 
+the congestion, not get bigger buffers.
+ 
+
+	
+ 
+kilobit at gmail 
+
+Jan 27, 2012, 2:53 PM 
+
+<b>Post #8 of 27 (2102 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+While I agree _again_!!!!! 
+
+It does not explain why TOR boxes have little buffers and chassis box 
+have many..... 
+
+
+
+	
+ 
+gbonser at seven 
+
+Jan 27, 2012, 3:01 PM 
+
+<b>Post #9 of 27 (2112 views) </b>
+
+RE: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+&gt; -----Original Message----- 
+&gt; From: bas 
+&gt; Sent: Friday, January 27, 2012 2:54 PM 
+&gt; To: George Bonser 
+&gt; Subject: Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) 
+&gt; 
+&gt; While I agree _again_!!!!! 
+&gt; 
+&gt; It does not explain why TOR boxes have little buffers and chassis box 
+&gt; have many..... 
+
+Because that is what customers think they want so that is what they sell. Customers don't realize that the added buffers are killing performance. 
+
+I have had network sales reps tell me "you want this switch over here, it has 
+bigger buffers" when that is exactly the opposite of what I want unless I am 
+sending a bunch of UDP through very brief microbursts. If you are sending TCP 
+streams, what you want is less buffering. Spend the extra money on more 
+bandwidth to relieve the congestion. 
+
+Going to 4 10G aggregated uplinks instead of 2 might get you a much better 
+performance boost than increasing buffers. But it really depends on the 
+end to end application.
+ 
+
+	
+ 
+bicknell at ufp 
+
+Jan 27, 2012, 3:03 PM 
+
+<b>Post #10 of 27 (2105 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+In a message written on Fri, Jan 27, 2012 at 11:30:14PM +0100, bas wrote: 
+&gt; While your reasoning holds truth it does not explain why the expensive 
+&gt; chassis solution (good) makes my customers happy, and the cheaper TOR 
+&gt; solution makes my customers unhappy..... 
+&gt; 
+&gt; Bufferbloat does not matter to them as jitter and latency does not matter. 
+&gt; As long as the TCP window size negotioation is not reset the total 
+&gt; amount of bit/sec increases for them. 
+
+I obviously don't know your application. The bufferbloat problem 
+exists for 99.99% of the standard applications in the world. There 
+are, however, a few corner cases. For instance, if you want to 
+move a _single_ TCP stream at more than 1Gbps you need deep buffers. 
+Dropping a single packet slows throughput too much due to a slow-start 
+event. For most of the world with hundreds or thousands of TCP 
+streams across a single port, such problems never occur. 
+
+&gt; If deep buffers are bad I would expect high-end chassis solutions not 
+&gt; to offer them either. 
+&gt; But the market seems to offer expensive deep buffer chassis solutions 
+&gt; and cheap (per 10GE) TOR solutions. 
+
+The margin on a top-of-rack switch is very low. 48 port gige with 
+10GE uplinks are basically commodity boxes, with plenty of competition. 
+Saving $100 on the bill of materials by cutting out some buffer 
+makes the box more competitive when it's at a $2k price point. 
+
+In contrast, large, modular chasses have a much higher margin. They are 
+designed with great flexability, to take things like firewall modules 
+and SSL accelerator cards. There are configs where you want some (not 
+much) buffer due to these active appliances in the chassis, plus it is 
+easier to hide an extra $100 of RAM in a $100k box. 
+
+Also, as was pointed out to me privately, it is also important to loook 
+at adaptive queue management features. The most famous is WRED, but 
+there are other choices. Having a queue management solution on your 
+routers and switches that works in concert with the congestion control 
+mechanism used by the end stations always results in better goodput. 
+Many of the low end switches have limited or no AQM choices, while the 
+higher end switches with fancier ASICs can default to something like 
+WRED. Be sure it is the deeper buffers that are making the difference, 
+and not simply some queue management. 
+
+-- 
+Leo Bicknell - bicknell [at] ufp - CCIE 3440 
+PGP keys at http://www.ufp.org/~bicknell/
+ 
+
+	
+ 
+kilobit at gmail 
+
+Jan 27, 2012, 3:08 PM 
+
+<b>Post #11 of 27 (2110 views) </b>
+ 
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+Hi, 
+
+On Fri, Jan 27, 2012 at 11:54 PM, George Bonser <gbonser [at] seven> wrote: 
+&gt;&gt; 
+&gt;&gt; My customers want to buffer 10 to 24 * 10GE in a 1 or 2 10GE uplinks to 
+&gt;&gt; do this they need some buffers.... 
+&gt;&gt; 
+&gt;&gt; Bas 
+&gt; 
+&gt; It might be cheaper for them to go to 3 or 4 10G uplinks than to 
+&gt; replace all their switch hardware. 
+
+Im my (our) busines model _is_ the internet connectivity... 
+We could give the customer double the port capacity, if they were 
+willing to pay, but in real life they do not care... 
+
+While all respondents replies hold truth a (technial business) logic. 
+None shed a light why there isn't TOR box that does 10GE 
+deepbuffers...
+ 
+
+	
+ 
+kilobit at gmail 
+
+Jan 27, 2012, 3:24 PM 
+
+<b>Post #12 of 27 (2108 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On Sat, Jan 28, 2012 at 12:01 AM, George Bonser <gbonser [at] seven> wrote:
+ 
+&gt; Going to 4 10G aggregated uplinks instead of 2 might get you a much 
+&gt; better performance boost than increasing buffers. 
+&gt; But it really depends on the end to end application. 
+
+Also these TOR boxes go to my (more expensive ASR9K and MX) boxes, so 
+from an CAPEX standpoint I simply do not want to give them more ports 
+than required.
+ 
+
+	
+ 
+kilobit at gmail 
+
+Jan 27, 2012, 3:30 PM 
+
+<b>Post #13 of 27 (2108 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+Hi, 
+
+&gt; The margin on a top-of-rack switch is very low.  48 port gige with 
+&gt; 10GE uplinks are basically commodity boxes, with plenty of competition. 
+&gt; Saving $100 on the bill of materials by cutting out some buffer 
+&gt; makes the box more competitive when it's at a $2k price point. 
+
+The list of 10GE TOR switches I sent earlier are list from $20K to $100K 
+So actual purchase cost for us would be $10K to $30K 
+$500 for some (S)(Q)(bla)RAM shouldn't hold back a vendor from 
+releasing a bitchin switch.... 
+
+Again this argument does not explain why there are 1GE aggregation 
+switches with deep buffers.. 
+
+&gt; Also, as was pointed out to me privately, it is also important to loook 
+&gt; at adaptive queue management features.  The most famous is WRED, but 
+&gt; there are other choices.  Having a queue management solution on your 
+&gt; routers and switches that works in concert with the congestion control 
+&gt; mechanism used by the end stations always results in better goodput. 
+&gt; Many of the low end switches have limited or no AQM choices, while the 
+&gt; higher end switches with fancier ASICs can default to something like 
+&gt; WRED.  Be sure it is the deeper buffers that are making the difference, 
+&gt; and not simply some queue management. 
+
+All true... Still no reason why not to offer a deep buffer TOR...
+ 
+
+	
+ 
+joelja at bogus 
+
+Jan 27, 2012, 3:32 PM 
+
+<b>Post #14 of 27 (2106 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On 1/27/12 14:53 , bas wrote: 
+&gt; While I agree _again_!!!!! 
+&gt; 
+&gt; It does not explain why TOR boxes have little buffers and chassis box 
+&gt; have many..... 
+
+you need purportionally more buffer when you need to drain 16 x 10 gig 
+into 4 x 10Gig then when you're trying to drain 10Gb/s into 2 x 1Gb/s 
+
+there's a big incentive bom wise to not use offchip dram buffer in a 
+merchant silicon single chip switch vs something that's more complex. 
+
+
+
+	
+ 
+joelja at bogus 
+
+Jan 27, 2012, 3:38 PM 
+
+<b>Post #15 of 27 (2109 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On 1/27/12 15:01 , George Bonser wrote: 
+&gt; 
+&gt; 
+&gt;&gt; -----Original Message----- From: bas Sent: Friday, January 27, 2012 
+&gt;&gt; 2:54 PM To: George Bonser Subject: Re: 10GE TOR port buffers (was 
+&gt;&gt; Re: 10G switch recommendaton) 
+&gt;&gt; 
+&gt;&gt; While I agree _again_!!!!! 
+&gt;&gt; 
+&gt;&gt; It does not explain why TOR boxes have little buffers and chassis 
+&gt;&gt; box have many..... 
+&gt; 
+&gt; Because that is what customers think they want so that is what they 
+&gt; sell. Customers don't realize that the added buffers are killing 
+&gt; performance. 
+
+It is possible, trivial in fact to buy a switch that has a buffer too 
+small to provide stable performance at some high fraction of it's uplink 
+utilization. You can differentiate between the enterprise/soho 1gig 
+switch you bought to support your ip-phones and wireless APs and the 
+datacenter spec 1u tor along these lines. 
+
+It is also possible and in fact easy to have enough to accumulate 
+latency in places where you should be discarding packets earlier. 
+
+I'd rather not be in either situation, but in the later I can police my 
+way out of it. 
+
+
+&gt; I have had network sales reps tell me "you want this switch over 
+&gt; here, it has bigger buffers" when that is exactly the opposite of 
+&gt; what I want unless I am sending a bunch of UDP through very brief 
+&gt; microbursts. If you are sending TCP streams, what you want is less 
+&gt; buffering. Spend the extra money on more bandwidth to relieve the 
+&gt; congestion. 
+&gt; 
+&gt; Going to 4 10G aggregated uplinks instead of 2 might get you a much 
+&gt; better performance boost than increasing buffers. But it really 
+&gt; depends on the end to end application. 
+&gt; 
+&gt; 
+&gt; 
+ 
+
+	
+ 
+kilobit at gmail 
+
+Jan 27, 2012, 3:40 PM 
+
+<b>Post #16 of 27 (2106 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+Hi All, 
+
+On Sat, Jan 28, 2012 at 12:32 AM, Joel jaeggli <joelja [at] bogus> wrote: 
+&gt; On 1/27/12 14:53 , bas wrote: 
+&gt;&gt; While I agree _again_!!!!! 
+&gt;&gt; 
+&gt;&gt; It does not explain why TOR boxes have little buffers and chassis box 
+&gt;&gt; have many..... 
+&gt; 
+&gt; you need purportionally more buffer when you need to drain 16 x 10 gig 
+&gt; into 4 x 10Gig then when you're trying to drain 10Gb/s into 2 x 1Gb/s 
+&gt; 
+&gt; there's a big incentive bom wise to not use offchip dram buffer in a 
+&gt; merchant silicon single chip switch vs something that's more complex. 
+
+I'm almost ready to throw the towel in the ring, and declare myself a looney.. 
+I can imagine at least one vendor ingnoring the extra BOM capex, and 
+simpky try to please #$%^#@! like me. 
+
+C NSP has been full with threads about appalling microburst 
+performance of the 6500 for years.. 
+One would think a vendor would jump to a copetitive edge like this...
+ 
+
+	
+ 
+joelja at bogus 
+
+Jan 27, 2012, 4:00 PM 
+
+<b>Post #17 of 27 (2109 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On 1/27/12 15:40 , bas wrote: 
+&gt; Hi All, 
+&gt; 
+&gt; On Sat, Jan 28, 2012 at 12:32 AM, Joel jaeggli <joelja [at] bogus> wrote: 
+&gt;&gt; On 1/27/12 14:53 , bas wrote: 
+&gt;&gt;&gt; While I agree _again_!!!!! 
+&gt;&gt;&gt; 
+&gt;&gt;&gt; It does not explain why TOR boxes have little buffers and chassis box 
+&gt;&gt;&gt; have many..... 
+&gt;&gt; 
+&gt;&gt; you need purportionally more buffer when you need to drain 16 x 10 gig 
+&gt;&gt; into 4 x 10Gig then when you're trying to drain 10Gb/s into 2 x 1Gb/s 
+&gt;&gt; 
+&gt;&gt; there's a big incentive bom wise to not use offchip dram buffer in a 
+&gt;&gt; merchant silicon single chip switch vs something that's more complex. 
+&gt; 
+&gt; I'm almost ready to throw the towel in the ring, and declare myself a looney.. 
+&gt; I can imagine at least one vendor ingnoring the extra BOM capex, and 
+&gt; simpky try to please #$%^#@! like me. 
+&gt; 
+&gt; C NSP has been full with threads about appalling microburst 
+&gt; performance of the 6500 for years.. 
+
+And people who care have been using something other than a c6500 for 
+years. it's a 15 year old architecture, and it's had a pretty good run, 
+but it's 2012. 
+
+An ex8200 has 512MB per port on non-oversuscribed 10Gig ports and 42MB 
+per port on 1Gig ports. that's a lot of ram. 
+
+to take this back to actual tors. 
+
+a broadcom 56840 based switch has something in the neighborhood of 9MB 
+available for packet buffer on chip if you need more then more drams are 
+in order. while the TOR can cut-through-switch the chassis can't. the 
+tor is also probably not built with offchip cam (there are examples of 
+off chip cam as well) for much the same reason. 
+
+&gt; One would think a vendor would jump to a copetitive edge like this... 
+&gt; 
+ 
+
+	
+ 
+nick at foobar 
+
+Jan 27, 2012, 4:51 PM 
+
+<b>Post #18 of 27 (2100 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On 27 Jan 2012, at 23:08, bas <kilobit [at] gmail> wrote: 
+&gt; Im my (our) busines model _is_ the internet connectivity... 
+&gt; We could give the customer double the port capacity, if they were 
+&gt; willing to pay, but in real life they do not care... 
+&gt; 
+&gt; While all respondents replies hold truth a (technial business) logic. 
+&gt; None shed a light why there isn't TOR box that does 10GE deepbuffers 
+
+There are a couple of reasons for this: first, dropping the amount of buffer 
+space decreases the cost of the hardware. Secondly, you really only need 
+large buffers when you need to shape traffic. Shaping traffic is important 
+if you're down stepping from a faster port to a slower port (this is a 
+common use case for a blade switch like a c6500), or else if you're 
+running qos on the port and you need to implement sophisticated queuing 
+and policing. You can't run qos effectively without having generous buffers 
+which is why LAN switches typically have very little buffer space and metro 
+Ethernet switches typically have lots. 
+
+In the case of a tor switch, the use case is typically in a situation where 
+you're not downstepping from a higher speed to a lower speed, and where you 
+don't really need fancy qos. So as its not generally needed for the sort of 
+things that tor switches are used for, its not added to the hardware spec. 
+
+Nick
+ 
+
+	
+ 
+gbonser at seven 
+
+Jan 27, 2012, 4:57 PM 
+
+<b>Post #19 of 27 (2093 views) </b>
+ 
+RE: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+&gt; 
+&gt; It is also possible and in fact easy to have enough to accumulate 
+&gt; latency in places where you should be discarding packets earlier. 
+&gt; 
+&gt; I'd rather not be in either situation, but in the later I can police my 
+&gt; way out of it. 
+
+That is why I added the "it depends on the end to end application" caveat.
+ 
+
+	
+ 
+gbonser at seven 
+
+Jan 27, 2012, 5:03 PM 
+
+<b>Post #20 of 27 (2099 views) </b>
+
+RE: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+
+I assumed since he was asking about a "top of rack" (TOR) switch, he was 
+actually using it as a top of rack switch and adding a couple more uplinks 
+to his core would be cheaper than replacing all the hardware. Not 
+understanding the topology and the application makes good recommendations 
+a crap shoot, at best. 
+
+
+From: Nick Hilliard 
+Sent: Friday, January 27, 2012 4:51 PM 
+To: bas 
+Cc: George Bonser; nanog 
+Subject: Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) 
+
+
+In the case of a tor switch, the use case is typically in a situation 
+where you're not downstepping from a higher speed to a lower speed, 
+and where you don't really need fancy qos. ÂSo as its not generally 
+needed for the sort of things that tor switches are used for, its notÂ
+added to the hardware spec.Â 
+
+NickÂ
+ 
+
+	
+ 
+bicknell at ufp 
+
+Jan 27, 2012, 5:19 PM 
+
+<b>Post #21 of 27 (2092 views) </b>
+ 
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+In a message written on Fri, Jan 27, 2012 at 04:00:36PM -0800, Joel jaeggli wrote:
+ 
+&gt; And people who care have been using something other than a c6500 for 
+&gt; years. it's a 15 year old architecture, and it's had a pretty good run, 
+&gt; but it's 2012. 
+
+One of the frustrating things, which the c6500 embodies best, is 
+that the chassis has had many generations of linecards. 
+
+It came out in 1999, running CatOS, with a 32Gbps shared bus. 
+
+It exists now as a IOS box with a 720Gbps bus, running distributed 
+switching. 
+
+While you can call both a 6500, they share little more than some 
+sheet metal, fans, and copper traces on the backplane. Wisdom 
+learned running CatOS on 1st generation cards flat out does not 
+apply to current generation cards. And woe be the admin who mixes 
+and matches generations of cards, there are a million different 
+configurations and pitfalls. 
+
+Cisco is not the only vendor, and the 6500 is not the only product with 
+this problem. It makes conversation extremely difficult though, you 
+can't say a "6500 has xyz property" without detailing a lot more about 
+the config of the box. 
+
+-- 
+Leo Bicknell - bicknell [at] ufp - CCIE 3440 
+PGP keys at http://www.ufp.org/~bicknell/
+ 
+
+	
+ 
+lukasz at bromirski 
+
+Jan 27, 2012, 6:32 PM 
+
+<b>Post #22 of 27 (2100 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On 2012-01-28 01:00, Joel jaeggli wrote: 
+
+&gt;&gt; C NSP has been full with threads about appalling microburst 
+&gt;&gt; performance of the 6500 for years.. 
+&gt; And people who care have been using something other than a c6500 for 
+&gt; years. it's a 15 year old architecture, and it's had a pretty good run, 
+&gt; but it's 2012. 
+&gt; An ex8200 has 512MB per port on non-oversuscribed 10Gig ports and 42MB 
+&gt; per port on 1Gig ports. that's a lot of ram. 
+
+6500 has up to 256MB for non-oversubscribed 10GE ports. People 
+complaining about microburst tend to use the cheapest 6704 linecard, 
+and 'microbursts' are a problem seen across most of the products that 
+don't even try to have a 1/12th of a 6500 history. 
+
+Everyone has it's own problems, and as people already said, not 
+understanding the way properly sized buffers influence the way TCP 
+traffic behaves can do more harm than good. 
+
+-- 
+"There's no sense in being precise when | £ukasz Bromirski 
+you don't know what you're talking | jid:lbromirski [at] jabber 
+about." John von Neumann | http://lukasz.bromirski.net
+ 
+
+	
+ 
+saku at ytti 
+
+Jan 28, 2012, 2:07 AM 
+
+<b>Post #23 of 27 (2087 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On (2012-01-27 22:40 +0100), bas wrote: 
+
+&gt; But do you generally agree that "the market" has a requirement for a 
+&gt; deep-buffer TOR switch? 
+&gt; 
+&gt; Or am I crazy for thinking that my customers need such a solution? 
+
+No, you're not crazy. If your core is higher rate than your customer, then 
+you need at minimum serialization delay difference of buffering. 
+If core is 10G and access 100M, you need buffer for minimum of 100 packets, 
+to handle the single 10G incoming, without any extra buffering. 
+
+Now if you add QoS on top of this, you probably need 100 per each class you 
+are going to support. 
+And if switch does support QoS but operator configures only BE, and 
+operator does not limit BE queue size, operator will see buffer bloat, and 
+think it's clueless vendor dropping expensive memory there for the lulz, 
+while it's just misconfigured box. 
+
+When it comes to these trident+ 64x10GE/48x10GE+4x40G, your serialization 
+delay difference between interfaces is minimal, and so is buffering demand. 
+
+-- 
+++ytti
+ 
+
+	
+ 
+mohta at necom830 
+
+Jan 28, 2012, 4:06 AM 
+
+<b>Post #24 of 27 (2087 views) </b>
+
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+Saku Ytti wrote: 
+
+&gt; No, you're not crazy. If your core is higher rate than your customer, 
+&gt; then you need at minimum serialization delay difference of buffering. 
+&gt; If core is 10G and access 100M, you need buffer for minimum of 100 
+&gt; packets, to handle the single 10G incoming, without any extra buffering. 
+
+The required amount of memory is merely 150KB. 
+
+&gt; Now if you add QoS on top of this, you probably need 100 per each 
+&gt; class you are going to support. 
+
+If you have 10 classes, it is still 1.5MB. 
+
+&gt; And if switch does support QoS but operator configures only BE, and 
+&gt; operator does not limit BE queue size, operator will see buffer bloat, 
+
+1.5MB @ 10Gbps is only 1.2ms, which is not buffer bloat. 
+
+Masataka Ohta
+ 
+
+	
+ 
+saku at ytti 
+
+Jan 28, 2012, 4:38 AM 
+
+<b>Post #25 of 27 (2080 views) </b>
+ 
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On (2012-01-28 21:06 +0900), Masataka Ohta wrote: 
+
+&gt; The required amount of memory is merely 150KB. 
+
+Assuming we don't support jumbo frames and switch cannot queue sub packet 
+sizes (normally they can't but VXR at least has 512B cell concept, so 
+tx-ring is packet size agnostic, but this is just PA-A3) 
+
+&gt; If you have 10 classes, it is still 1.5MB. 
+
+Yup, that's not bad at all in 100M port, infact 10 classes would be quite 
+much. 
+
+&gt; &gt; And if switch does support QoS but operator configures only BE, and 
+&gt; &gt; operator does not limit BE queue size, operator will see buffer bloat, 
+&gt; 
+&gt; 1.5MB @ 10Gbps is only 1.2ms, which is not buffer bloat. 
+
+You can't buffer these in ingress or you risk HOLB issue, you must buffer 
+these in the egress 100M and drop in ingress if egress buffer is full. 
+
+But I fully agree, it's not buffer bloat. But having switch which does 
+support very different traffic rates in ingress and egress (ingress could 
+even be LACP, which further mandates larger buffers on egress) and if you 
+also need to support QoS towards customer, the amount of buffer quickly 
+reaches the level some of these vendors are supporting. 
+When it becomes buffer bloat, is when inexperienced operator allows all of 
+the buffer to be used for single class in matching ingress/egress rates. 
+
+-- 
+++ytti
+
+<b>Post #26 of 27</b>
+ 
+Saku Ytti wrote: 
+
+&gt;&gt;&gt; And if switch does support QoS but operator configures only BE, and 
+&gt;&gt;&gt; operator does not limit BE queue size, operator will see buffer bloat, 
+&gt;&gt; 
+&gt;&gt; 1.5MB @ 10Gbps is only 1.2ms, which is not buffer bloat. 
+&gt; 
+&gt; You can't buffer these in ingress or you risk HOLB issue, you must buffer 
+&gt; these in the egress 100M and drop in ingress if egress buffer is full. 
+
+1.5MB @ 100Mbps is 120ms, which is prohibitively lengthy 
+even as BE. 
+
+The solution is to have less number of classes. 
+
+For QoS assurance, you only need to have two classes for 
+infinitely many flows with different QoS, if flows in higher 
+priority class receive policing against reserved bandwidths 
+of the flow. 
+
+Masataka Ohta 
+
+
+
+&gt; 
+&gt; But I fully agree, it's not buffer bloat. But having switch which does 
+&gt; support very different traffic rates in ingress and egress (ingress could 
+&gt; even be LACP, which further mandates larger buffers on egress) and if you 
+&gt; also need to support QoS towards customer, the amount of buffer quickly 
+&gt; reaches the level some of these vendors are supporting. 
+&gt; When it becomes buffer bloat, is when inexperienced operator allows all of 
+&gt; the buffer to be used for single class in matching ingress/egress rates. 
+&gt; 
+ 
+
+	
+ 
+saku at ytti 
+
+Jan 28, 2012, 5:09 AM 
+
+<b>Post #27 of 27 (221 views) </b>
+ 
+Re: 10GE TOR port buffers (was Re: 10G switch recommendaton) [In reply to]
+On (2012-01-28 21:53 +0900), Masataka Ohta wrote: 
+
+&gt; 1.5MB @ 100Mbps is 120ms, which is prohibitively lengthy 
+&gt; even as BE. 
+&gt; 
+&gt; The solution is to have less number of classes. 
+
+The solution is to per class define max queue size, so user with fewer 
+queues configured will not use all available buffer in remaining queues. 
+JNPR MX is happy to buffer &gt;4s on 10GE on QX interfaces. Reading some posts 
+on this thread seems to imply vendor is not knowing what they are doing, 
+but in this case there is good reason why there is potentially lot of 
+buffer space and it's simply operator mistake not to limit it if 
+application is just single class in single vlan/untagged 10G interface 
+
+-- 
+++ytti
+
+<!--
+     FILE ARCHIVED ON 01:06:43 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:17:56 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.067
+  exclusion.robots: 0.032
+  exclusion.robots.policy: 0.014
+  esindex: 0.016
+  cdx.remote: 304.418
+  LoadShardBlock: 110.534 (3)
+  PetaboxLoader3.datanode: 82.163 (4)
+  PetaboxLoader3.resolve: 88.177 (2)
+  load_resource: 85.329
+-->

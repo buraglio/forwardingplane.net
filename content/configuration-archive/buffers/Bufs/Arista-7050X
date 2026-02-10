@@ -1,0 +1,79 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Arista-7050X","20260106010612","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661572");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010612im_/https://people.ucsc.edu/~warner/Bufs/7050QX-32.png" alt="Picture of 32 port QSFP+ switch">
+<p>
+Introduced in November, 2013.  This switch uses a single Trident II switch ASIC. Its ports can run in 40 Gb/s mode or in 4 x 10 Gb/s mode. 12 MBytes of buffer memory is available. 
+<p>
+The 7050X is a fixed configuration 1RU switch. 
+<a href="https://web.archive.org/web/20260106010612/https://people.ucsc.edu/~warner/Bufs/7050SX-128_64_Datasheet.pdf">Data sheet</a>
+<p>
+There is an <a href="https://web.archive.org/web/20260106010612/https://people.ucsc.edu/~warner/Bufs/Arista_7050X_Switch_Architecture.pdf">architecture paper</a> that explains a lot about the Trident II. Arista has a program named LANZ (Latenacy Analyzer) that can do high resolution reporting on buffer queues. This program requires hardware support from the switching element to interrogate buffer stats on a sub-millisecond scale.  LANZ was not available for the Trident+ predecessor of the X-series switches.
+<p>
+Generally, there is little on this web page about switch costs. 
+Arista put the following in their <a href="https://web.archive.org/web/20260106010612/http://www.aristanetworks.com/en/news/pressrelease/630-pr-20131002-01">press release</a> dated Oct 2 2013:
+<p>
+<b>The 7050QX-32 and 7050SX-128 are available immediately. Pricing starts at under $1500 per 40GbE port.</b>
+<p>
+An Arista engineer pointed out that the 7050X is really a
+<a href="https://web.archive.org/web/20260106010612/https://people.ucsc.edu/~warner/Bufs/arista-7050X.png"> family of products</a> with SFP+, 10G-base-T and QSFP+ variants.  The sheet was snipped from http://www.arista.com/en/products/7050x-series
+<p>
+Arista further points out that the notion of distinct queues for input and output doesn't fit shared memory switches. As soon as a packet lands in switch memorythe lookup engines work to figure its disposition. At that point, it's waiting its turn to use the output port. The important point is that biggest burst that the fabric can enjoy without dropping a packet is 5 MB for trident+ and 8 MB for the trident 2.
+<p>
+<b>From the data sheet</b>
+<p>
+<h2>Dynamic Buffer Allocation</h2>
+<p>
+In cut-through mode, the Arista 7050SX switches forward packets with a 
+latency of 550 nanoseconds to 650 nanoseconds. Upon
+congestion, the packets are buffered in shared packet memory that 
+has a total size of 12 Mbytes. Unlike other architectures that have
+fixed per-port packet memory, the 7050X Series use Dynamic 
+Buffer Allocation (DBA) to allocate up to 6.7MB of packet memory to a
+single port for lossless forwarding. The 7050SX2-128 and 
+7050SX2-72Q have an enhanced 16Mbyte buffer that is optimized for more
+demanding environments.
+<p>
+<h2>End of Life</h2>
+Last day to order the product was 20 March 2017.
+<p>
+End of product life is 20 March 2020.
+<p>
+Replacement uses trident2+.
+
+</td></tr>
+</table>
+
+
+<!--
+     FILE ARCHIVED ON 01:06:12 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:20:12 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.748
+  exclusion.robots: 0.027
+  exclusion.robots.policy: 0.012
+  esindex: 0.013
+  cdx.remote: 34.671
+  LoadShardBlock: 1962.221 (3)
+  PetaboxLoader3.datanode: 1640.65 (4)
+  PetaboxLoader3.resolve: 250.693 (2)
+  load_resource: 51.686
+-->

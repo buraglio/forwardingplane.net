@@ -1,0 +1,79 @@
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Huawei6720.html","20260106010548","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661548");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Huawei S6720</title>
+</head>
+<table width="725">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010548im_/https://people.ucsc.edu/~warner/Bufs/S6720.png" alt="Front and back of 1RU switches">
+<p>
+These switches have 24 and 48 10 Gb/s SFP+ ports and QSFP uplinks that
+match the speeds and feeds of Broadcom's Trident2. The pictures certainly
+suggest that these are similar to Trident2 products. A careful reading
+of the <a href="https://web.archive.org/web/20260106010548/https://people.ucsc.edu/~warner/Bufs/6720-specifications.pdf">specifications</a>
+suggests that these switches were probably inspired
+by the Broadcom competitors, but contain Huawei silicon. The data sheets
+and docs make no mention of either cut-thru switching or VxLAN. And
+the introduction date measured by the first version date in the documentation
+is July 2015 which lags behind other Trident2 implementations.
+<p>
+This is Huawei's second 10 Gb/s switch. Their first issue was/is the
+6700 family. It was introduced in October 2014. These switches do not
+have the uplink slot on the back and that cuts the max PPS forwarding
+rate relative to 6720.
+<p>
+Huawei's specifications are <i>frustrating</i>. There are no references
+to RFCs. And specifications for system packet buffers are nowhere to be
+found. Well, almost nowhere. Huawei commissioned a 
+<a href="https://web.archive.org/web/20260106010548/https://people.ucsc.edu/~warner/Bufs/Tolly215159HuaweiS6720EISwitchFeatures.pdf">Tolly review</a> of
+the product. Curiously, Tolly reports an entirely respectible 8 Mbyte
+buffer for a single port. Tolly says nothing about how he got the number.
+And it isn't in Huawei's information. 
+<p>
+Reviewing Huawei documentation is certainly a special experience. The
+sum of the contents of of the books that make up the manual set are
+over 180 Megabytes of PDFs. The <i>Command reference</i> by itself is 33 MB and over
+8,800 pages long. Information on buffers in switches from other manufacturers
+is usually
+contained in the QoS chapter, or failing that -- in the command reference.
+Huawei seems to have gone to special pains to describe buffer management
+<i>without</i> disclosing what is in the box. I lifted the 
+<a href="https://web.archive.org/web/20260106010548/https://people.ucsc.edu/~warner/Bufs/6720-buffer.pdf">most relevant page</a> from the Command Reference. 
+I suspect that
+the chip has 12 MB of packet memory and 8 MB is the port limit when the
+switch operates in <i>extreme</i> mode.
+<p>
+Without any information, I suspect that these Huawei switches may well be a price
+leader among switches in their class. 
+</td><tr>
+</table>
+<!--
+     FILE ARCHIVED ON 01:05:48 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:34:22 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.485
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.008
+  esindex: 0.009
+  cdx.remote: 121.785
+  LoadShardBlock: 101.642 (3)
+  PetaboxLoader3.datanode: 111.857 (4)
+  load_resource: 15.57
+-->

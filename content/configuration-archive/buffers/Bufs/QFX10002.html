@@ -1,0 +1,120 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/QFX10002.html","20260106010740","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661660");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Juniper QFX10002-36Q</h2>
+
+<img src="https://web.archive.org/web/20260106010740im_/https://people.ucsc.edu/~warner/Bufs/qfx36q.JPG" alt="picture of 2RJ switch">
+<p>
+
+Introduced in March 2015.
+This is not merchant silicon. Packet memory is external to the switch chip.
+This switch is (your pick) 
+<p>
+<table width="700">
+<tr>
+<td width="140">Model</td><td width="80">Sw ASICs</td><td align="center"> 
+<i>------------------- Pick one -------------------</i></td>
+</tr>
+</table>
+<table border="2" width="700">
+<tr>
+<td width="140">QFX10002-36Q</td>
+<td width="80" align="center">3</td>
+<td> 144 ports of 10 Gb/s</td>
+<td> 36 ports of 40 Gb/s</td>
+<td> 12 ports of 100 Gb/s</td>
+</tr>
+<tr>
+<td>QFX10002-72Q</td>
+<td width="80" align="center">6</td>
+<td> 288 ports of 10 Gb/s</td>
+<td> 72 ports of 40 Gb/s</td>
+<td> 24 ports of 100 Gb/s</td>
+</tr>
+</table>
+<p>
+A detailed <a href="https://web.archive.org/web/20260106010740/https://people.ucsc.edu/~warner/Bufs/Juniper-QFX10002-Technical.pdf">architecture paper</a>
+<p>
+Thanks to Rafal Jan Szarecki from Juniper wrote me in August 2015 with this info:
+<p>
+<table>
+<tr><td width="30"></td>
+<td width="600">
+QFX1000x use VoQ architecture.
+<p>
+The memory is 4GB per Q5 asic. Each asic drives 12 QSFP+/QSFP28, so it is exposed to 480Gbps traffic at most (Q5 can do slightly more). Memory manager allows to allocate 100ms worth of buffer per port, if there is available memory.
+When QSFP28 (100GE) is used 2 other adjacent QSFP sockets are offline.
+</td></tr>
+</table>
+<p>
+I suspect this is the same information that is on page 4 of the architecture 
+paper cited above.  At 100 Gb/s, 100 mS of buffer is 1250 MBytes.
+The switch <a href="https://web.archive.org/web/20260106010740/http://www.juniper.net/assets/us/en/local/pdf/datasheets/1000531-en.pdf"> data sheet</a> says about queuing architecture:
+<p>
+<table>
+<tr><td width="30"></td>
+<td width="600">
+<p>
+<i>Virtual Output Queue (VOQ)</i>
+<p>
+The QFX10000 switches support a Virtual Output Queue (VOQ)-
+based architecture designed for very large deployments. VOQ
+refers to a queue on the egress port that is maintained by the
+ingress PFE. With VOQ architecture, packets are queued and
+dropped on ingress during congestion with no head-of-line
+blocking.
+</table>
+<p>
+Juniper has a <a href="https://web.archive.org/web/20260106010740/https://people.ucsc.edu/~warner/Bufs/juniper-VoQ.pdf"> blog post</a> that explains in some detail how their VoQ
+works but does not explain queue size management.
+<p>
+The main theme for this page is <i>How much buffer is there for a single flow?</i>
+We would need to know the switch policies for dynamic buffer assignment. 
+If the switch does not have dynamic buffers, the result will be disappointing.
+100 output ports and 8 queues per port, would mean 100 x 8 = 800 port-queues. 
+If 12 ports are sharing 4 GBytes and there are 800 port-queues per input port, 
+there is on average about a 0.5 Mbyte per queue.
+<p>
+Juniper does not use fixed allocations. An extract from their 890 page <a href="https://web.archive.org/web/20260106010740/https://people.ucsc.edu/~warner/Bufs/juniper-qfx-buf.pdf">
+Traffic Management Feature Guide</a>
+explains the details. Ports are permitted to claim up to 100 mS
+of buffer space as long as the 4 GByte pool remains below 90 percent full. The limit
+is on the total across all queues on each port. But queue allocation shares are adjustable
+and it is possible to put the entire allocation into the best effort queue. So the packet
+queue sizes are 1.25 GB for 100 Gb/s ports, 125 MB for 10 Gb/s ports.
+
+
+</td></tr>
+</table>
+<!--
+     FILE ARCHIVED ON 01:07:40 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:39:56 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.481
+  exclusion.robots: 0.016
+  exclusion.robots.policy: 0.009
+  esindex: 0.009
+  cdx.remote: 18.188
+  LoadShardBlock: 121.884 (3)
+  PetaboxLoader3.datanode: 117.949 (4)
+  PetaboxLoader3.resolve: 62.68 (2)
+  load_resource: 62.179
+-->

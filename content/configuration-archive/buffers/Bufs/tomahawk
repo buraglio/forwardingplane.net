@@ -1,0 +1,78 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/tomahawk","20260106010547","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661547");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="600">
+<tr><td>
+As noted in the <a href="https://web.archive.org/web/20260106010547/https://people.ucsc.edu/~warner/Bufs/tomahawk.pdf"> September 2014 press release</a>, Broadcom is sampling their first switch chip that uses 25 Gb/s SERDES. The Trident chips 
+used a 10 Gb/s SERDES and presents 10 G and 40 G ports. The Tomahawk steps up the SERDES speed by 2.5x. The SERDES is "Serializer / Deserializer." Its
+job is to convert parallel words in the switch data path to a bit stream for transmission. And it does the reverse for reception.
+Tomahawk (named after a nuclear missle) is the code name for the BCM56960.
+Rochan Sankar, director of product marketing at Broadcom says the packet 
+memory pool is 16 Mbytes. Compare with Trident2 (12 Mbytes) and Trident+ (9 Mbytes).
+<p>
+Note that reports in the trade press of much larger buffer sizes are 
+characterized by Broadcom as <i>journalistic errors.</i>
+
+<p>
+<b>Update April 2015</b>
+<p>
+Products are now being pre-announced. See Dell Z9100.
+<p>
+<b>Update August 2015</b>
+<p>
+Remember that there is a disclaimer about rumors at the top level and 
+that material on switch devices should be used as a guide for questions-to-ask
+rather than an index into truth.
+<p>
+A birdie at a trade show said that Tomahawk is a four-core design. Chip
+manufacturers use multiple cores when they can't get the performance
+they want from a single lookup engine. As an example of a multi-core
+switch, see the description of <a href="https://web.archive.org/web/20260106010547/https://people.ucsc.edu/~warner/Bufs/Brocade_ICX6610_architecture.pdf"> 
+Marvell's packet processor</a>, at page six.
+<p>
+If the birdie is right, 16 MBytes of packet memory is divided into four 4-MB
+chuncks and that split sets the max microburst size that Tomahawk can absorb.
+It also means that the comparison of Tomahawk with Trident2 in the top
+paragraph is misleading because Trident is a single core design.
+<p>
+<b>Ivan's Blog</b>
+<p>
+Ivan Pepellnjak wrote a blog article in December 2015 with title
+<a href="https://web.archive.org/web/20260106010547/http://blog.ipspace.net/2015/12/broadcom-tomahawk-101.html">
+Broadcom Tomahawk 101</a>. Ivan has other material that is buried 
+behind his webinar pay wall.
+<p>
+</td></tr>
+</table>
+<p>
+<div id="mav">
+<!--
+     FILE ARCHIVED ON 01:05:47 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:25:13 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.59
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.009
+  esindex: 0.045
+  cdx.remote: 116.599
+  LoadShardBlock: 146.646 (3)
+  PetaboxLoader3.datanode: 135.173 (4)
+  PetaboxLoader3.resolve: 46.648
+  load_resource: 67.415
+-->

@@ -1,0 +1,69 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/allied-2552","20260106010718","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661638");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+Allied Telesis responded to my question: "Do you have a switch based on
+Broadcom merchant silicon?" Answer: Yes. DC2552XS.
+<p>
+The data sheet shows 9 Mbytes of packet buffer memory -- hallmark of the 
+Broadcom Trident+. The data sheet and the Users Manual are silent on how
+the buffer is allocated. I asked. The answer is in email from Josh Shalack, Allied
+Telesis Systems Engineer on August 21, 2013:
+<p>
+<i>The initial buffer allocation currently has about 20% of the total buffer 
+being shared out across the 64 by 10Gig ports, with the rest then being 
+dynamically allocated to ports where queues fill up. At the moment there 
+is no user control of these settings. At this stage there are no plans 
+for larger buffers on our 10G switches. . . .</i>
+<p>
+===
+Of course, since the buffers are in the switch silicon, the buffers are
+what they are.
+<p>
+This is a layer 2 switch with IPv4 management protocols. Packet MTU is
+12,288 bytes and cannot be changed. There is no 
+routing and no IPv6 in the data sheet or the manual.  LLDP (link layer
+discovery protocol) is also not part of the feature set. It has the ability
+to honor flow control pause frames, but does not <i>send</i> pause frames.
+No buffers are needed to give senders a window to pause since the request 
+will never be made. Some Trident+ derivative switches have an FCoE feature
+set with Priority Flow Control. Allied Telesis does not.
+With that for a flow control feature set, 7 Mbytes in the dynamic buffer pool
+paints a consistent picture. 
+<p>
+To be clear, flow control and QoS are not desirable features in a switch
+dropped into a Big Data transfer pathway. At our peril, we are looking at
+feature sets as guide posts to unstated internal design decisions.
+</table>
+</html> 
+<!--
+     FILE ARCHIVED ON 01:07:18 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:19:25 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.515
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.009
+  esindex: 0.01
+  cdx.remote: 333.201
+  LoadShardBlock: 182.067 (3)
+  PetaboxLoader3.datanode: 142.525 (4)
+  PetaboxLoader3.resolve: 89.084 (2)
+  load_resource: 58.523
+-->

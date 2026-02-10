@@ -1,0 +1,91 @@
+<html> 
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/incast.html","20260106010757","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661677");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<title>incast</title></head>
+<table width="700">
+<tr><td>
+Tom Hutton from UCSD has suggested 
+<a href="https://web.archive.org/web/20260106010757/https://people.ucsc.edu/~warner/Bufs/understanding-tcp-incast.pdf">
+Understanding TCP Incast Throughput Collapse in Datacenter Networks</a> [2009]
+as a good tutorial on <i>incast</i>.
+<p>
+In RFC 6298 (June 2011) the initial TCP retransmission time out (RTO) was made 
+shorter. The initial RTO value is used when TCP starts until a measured 
+RTT can be derived frm the stream. The previous value was 3 seconds; the 
+new recommendation is 1 second.  This makes people that use TCP in datacenters
+for short RTT flows feel misunderstood and unappreciated. 
+<p>
+Within a data center, an adjusted initial RTO was shown by the authors of <i>Understanding...</i> 
+to go a long way toward addressing the ills caused by 
+incast. Clearly, ultra-short initial RTOs would <b> not</b> be a good idea for 
+science data set transfer over WAN distances. The incast problem is that the
+nature of the work (<i>e.g.</i> MapReduce, distributed file system) causes client 
+responders to synchronize their messages which in turn creates an overload 
+on the link carrying results back to the server querier.
+<p>
+<i>Understanding. . .</i> did not seriously consider large buffers as a solution to
+<i>incast</i>. They said:
+<blockquote>
+The authors also attempted a variety of non-TCP work-arounds
+and identified the shortcomings of each. Increasing the size
+of switch and router buffers delays the onset problem to configurations
+with more concurrent senders. However, switches
+and routers with large buffers are expensive, and even large
+buffers may be filled up quickly with ever higher speed links.
+</blockquote>
+
+<i>Understanding</i> used <a href="https://web.archive.org/web/20260106010757/https://people.ucsc.edu/~warner/Bufs/nortel5500"> Nortel 5500</a> switches for their experimental
+work.  These switches are included in the 
+<a href="https://web.archive.org/web/20260106010757/http://people.ucsc.edu/~warner/buffer.html"> buffer tabulation table.</a>
+An important point is that mega-datacenters have <i>voted</i> with their
+purchases and merchant silicon switch chips with integrated buffers
+have won the TOR beauty contest. One can only conclude that while the
+Kilobytes in older switches were insuffient, the Megabytes in current
+SoC switches solve the problem.
+<p>
+Broadcom addressed the data center situation in
+<a href="https://web.archive.org/web/20260106010757/https://people.ucsc.edu/~warner/Bufs/SBT-ETP100.pdf">
+Broadcom Smart-Buffer Technology in Data Center Switches</a> in April
+2012. As commercial white papers go, this one is less painful than most.
+<i>n.b.</i> Written from the perspective of the day that dynamic buffers
+were a Broadcom innovation that provided a competitive advantage over
+other chip manufacturers. That is no longer the case.
+<p>
+That the authors of <i> Understanding</i> reject really large buffers [&gt;1000 MB] as a
+solution to this problem, this has clearly not stopped vendors from offering
+them.
+<p>
+Cisco put together a 2011 white paper that covers <a href="https://web.archive.org/web/20260106010757/https://people.ucsc.edu/~warner/Bufs/white_paper_c11-690561.pdf">
+networking for big data</a> that shows buffer use at stages of <i>map/reduce</i>.
+</td></tr>
+</table>
+<!--
+     FILE ARCHIVED ON 01:07:57 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:18:23 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.589
+  exclusion.robots: 0.021
+  exclusion.robots.policy: 0.009
+  esindex: 0.011
+  cdx.remote: 18.432
+  LoadShardBlock: 456.689 (3)
+  PetaboxLoader3.datanode: 232.423 (4)
+  PetaboxLoader3.resolve: 178.313
+  load_resource: 34.353
+-->

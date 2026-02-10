@@ -1,0 +1,70 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Dell6248","20260106010800","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661680");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010800im_/https://people.ucsc.edu/~warner/Bufs/dell6248.png" alt="switch beauty shot">
+<p>
+<b>2007</b> -- mentioned in a NetworkWorld article.
+<p>
+Several high energy physics sites selected these switches as the most cost-effective solution at the time. 
+Some experiences with the 6248 are recounted on the 
+<a href="https://web.archive.org/web/20260106010800/https://people.ucsc.edu/~warner/Bufs/Boulder.pdf">Faster-Data</a> web site.
+Dell has newer switches that are probably a better choice.
+<p>
+We have a Dell 6248 switch. During its boot sequence it finds and initializes two BCM56314_A0 devices.  
+These are Broadcom switch ASICs that predate the Trident family.  
+Each supports 24 Gig-E ports and higher speed uplinks.  
+It is likely that the 6224 (24 port version of this product) would find only one BCM56314.
+<p>
+Dell has <a href="https://web.archive.org/web/20260106010800/http://www.dell.com/us/business/p/powerconnect-6200-series/pd">information</a> that says each ASIC has 6.1 Mbit of packet buffer, so 0.75 MB.
+As with other multiple chip designs, the packet memory is available only for ports served from each ASIC.  
+Dell does not claim dynamic buffer allocation.
+<p>
+Miercom did a <a href="https://web.archive.org/web/20260106010800/https://people.ucsc.edu/~warner/Bufs/miercom-100827.pdf">comparative test</a> of switches that included the 6248.
+Their method permits seeing the burst size available to a single port.
+They saw drops when the test burst exceeded 64 1518-byte frames. We'll take
+the Miercom result and assign 97 KB as the per-port buffer.  Or maybe it is the per-port-per-queue buffer. 
+Dell documentation does not explain how they divide buffer resources among queues.
+This is important because there is no CLI command to reduce the number of queues and hence coalesce packet memory to make more of it available to a single flow.
+<p>
+The Miercom <i>important observation</i> was that Cisco's custom ASIC dropped only the minimum number of packets in an overflow situation while the competition using Broadcom ASICs appeared to do a full buffer flush.
+The author of the Miercom report believes that this difference in behavior will mean the Cisco ASIC will perform better
+in a priority queuing environment. Perhaps.  
+But for scientific computing, this is a whimpy buffer size in any case.
+<p>
+As a footnote, the Miercom study did not include jumbo frames. 
+</td></tr>
+</table>
+
+
+<!--
+     FILE ARCHIVED ON 01:08:00 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:38:24 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.628
+  exclusion.robots: 0.06
+  exclusion.robots.policy: 0.01
+  esindex: 0.02
+  cdx.remote: 117.421
+  LoadShardBlock: 153.156 (3)
+  PetaboxLoader3.datanode: 145.213 (4)
+  load_resource: 140.549
+  PetaboxLoader3.resolve: 98.842
+-->

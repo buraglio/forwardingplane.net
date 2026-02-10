@@ -1,0 +1,52 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/4500-X","20260106010700","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661620");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010700im_/https://people.ucsc.edu/~warner/Bufs/4500-X.JPG">
+<p>
+The 4500-X started shipping in May 2012. 
+From 4500-X <a href="https://web.archive.org/web/20260106010700/https://people.ucsc.edu/~warner/Bufs/4500-X-whitepaper.pdf">white paper</a>
+<ul>
+<h3>Advanced Quality of Service and Buffering</h3>
+<p>
+Advanced QoS with up to eight configurable queues per port and customizable queue size per queue
+<p>
+Active queue management through dynamic buffer limiting (DBL) to ensure bandwidth protection for low-rate critical and well-behaving flows such as voice traffic
+<p>
+32 mega bytes of centralized buffering optimized to handle bursty video traffic and server microbursts, helping make sure that business-critical packets are not lost because of insufficient buffering
+</ul>
+With control of the distribution of buffer memory across queues, it is possible
+to allocate all the beans to a single queue, making the switch behave like a
+on queue pony.
+
+<!--
+     FILE ARCHIVED ON 01:07:00 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:39:01 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.481
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.009
+  esindex: 0.01
+  cdx.remote: 88.373
+  LoadShardBlock: 123.752 (3)
+  PetaboxLoader3.datanode: 74.153 (4)
+  PetaboxLoader3.resolve: 47.197
+  load_resource: 13.387
+-->

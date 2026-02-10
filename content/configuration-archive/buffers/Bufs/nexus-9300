@@ -1,0 +1,120 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/nexus-9300","20260106010743","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661663");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+<h2>Nexus 9300</h2>
+<img src="https://web.archive.org/web/20260106010743im_/https://people.ucsc.edu/~warner/Bufs/nexus-93.JPG" alt="data sheet beauty shots of switches">
+<p>
+</td></tr><tr><td align="center">
+<b>Beauty shots of two switch family members</b>
+</td></tr><tr><td>
+<p>
+</td></tr><tr><td>
+<b>Introduced September 2014</b> : End of life announced August 2017
+<p>
+n.b. The 92xx switches are newer than the 93xx. Covered separately.
+<p>
+The 9300 and 9500 switches were introduced in November 2013. These switches can run in either NX OS mode
+or ACI mode. In NX mode, they are stand-alone switches. In ACI mode they run from a controller.
+<p>
+The 9300 uses Broadcom's Trident II as its main switching engine. An important thing to
+remember about the Trident II is that it has 128 <a href="https://web.archive.org/web/20260106010743/https://people.ucsc.edu/~warner/Bufs/SerDes">SerDes</a> that 
+can each run at 10 Gb/s.
+It can be organized as 128 ports of 10 G/s, or 32 ports of 40 Gb/s. Each 40 Gb/s port
+uses four SerDes in parallel. There is no data path in or out of the Trident II except
+through the SerDes. It is not possible to augment the 12 MBytes of packet buffers managed
+directly by the Trident II.
+<p>
+Ivan Pepelnjak has a 
+<a href="https://web.archive.org/web/20260106010743/http://blog.ipspace.net/2014/06/trident-2-chipset-and-nexus-9500.html">
+relevent blog</a> on how Nexus and Trident II fit together. It contains a link to a
+<i>Cisco Live!</i> slide deck on the Nexus 9500/9300 switches.
+<p>
+Cisco calls the main switching engine the <b>NFE</b> (Network Forwarding Engine). They have dedicated
+some of the SerDes to interonnect to a Cisco proprietary ASIC that can be used to augment
+the fixed 12 MByte packet memory of the Trident II.  Cisco calls this ASIC their <b>ALE</b>.
+That stands for Application Leaf Engine. This ASIC has other functions besides augmenting
+switch buffers. It has 10 Gb/s SerDes' for its interconnect to the Trident II and additional
+SerDes' that provide ports that are intended to connect the switch to the network core.
+<p>
+<img src="https://web.archive.org/web/20260106010743im_/https://people.ucsc.edu/~warner/Bufs/9300-ALE.JPG" alt="Diagram shows ALE attached to Trident II">
+<p>
+If you dig deep enough through the 9300 docs, you'll find explicit mention of Trident II.
+This is more than speculation. There is a lot more to the 9300 family than <i> just</i> Broadcom.
+Note that referencing the Trident II ports as <i>Front-Panel Ports</i> is confusing. 
+The ALE ports at the top of the diagram are also on the front panel.
+The Nexus 9500 uses the same (or similar) ASICs. The top ports are 
+used to connect to the chassis backplane instead of being exposed on the front panel.
+<p>
+A <a href="https://web.archive.org/web/20260106010743/https://people.ucsc.edu/~warner/Bufs/Nexus-9300-buffer.pdf">23-page paper</a> details how the ALE and Trident II work together.
+<b>It is complicated</b>. At least, I think it is complex. For one thing, there are actually
+two different ALE ASICs: the ALE and ALE-2. They have 40 MB and 25 MB of buffer memory, respectively.
+It is not clear from the data sheets which 93xx model has which ALE variant. The difference between
+ALE and ALE-2 is more than just then size of the interconnects and amount of packet memory. 
+They allocate the memory, each in its own special way. The following figure, also from the cited
+paper, shows how ALE either does or doesn't augment packet memory on a <i>per port</i> basis:
+<p>
+<img src="https://web.archive.org/web/20260106010743im_/https://people.ucsc.edu/~warner/Bufs/9300-boost.JPG" alt="Diagram shows buffer boost path through ALE">
+<p>
+If a port has <i>buffer boost</i> turned on, all its packets will take a trip 
+in and out of the ALE.  Cisco calls this <i>hair pinning</i>. If buffer boost 
+is not on, packets between front ports on the NFE will not take extra trip through 
+the ALE. All the buffers in the hairpin section of the ALE are global, available to any port 
+configured to use them. Climbing down into the weeds, the 40 MB ALE divides memory into
+three separate pools that are reserved for northbound, southbound and hairpin traffic. Relying on
+this description rather than reading the paper (or asking Cisco) is not recommended. The point, I 
+think, is that the amount of packet memory may depend on the direction through the maze. 
+<p>
+The 9300 has <i>dynamic queue limits</i> to keep one port from hogging all the buffer resources.
+Limit factors are selected from eleven settings that cap a single queue or port to between 
+1 percent [option 0] and 89 percent [option 10] of available buffer space. 
+The default setting is <i>option 8</i>, so the cap is 67 percent. The 9300 also has
+<i>burst profiles</i> that help decide: when there is congestion -- should packets be 
+preferentially dropped from the long flow or the short flow? 
+<p>
+Because I need to select a number to put in the master table, I think the most 
+extra ALE memory you can count on to absorb a microburst is 9 Mbytes. You can get
+more under some circumstances in on direction. That is in addition to the 10 or 12 
+MBytes in the Trident II. I am going to say <b>21.</b>  So, there.
+
+Note that there are lots of piles of memory littering the landscape. It has become
+truely difficult to answer the question "how much memory is there?" 
+My guess is that this is not the only example of this kind of complexity.
+<p>
+<h2>Miercom Report</h2>
+<p>
+Miercom is a <i>test for hire</i> house. They were commissioned by Cisco
+to do <a href="https://web.archive.org/web/20260106010743/https://people.ucsc.edu/~warner/Bufs/20140802.pdf"> Buffer Performance
+Testing</a> to show the bonofides of the Nexus relative to the
+Arista 7150S that uses an Intel Fulcrum SoC. 
+
+<!--
+     FILE ARCHIVED ON 01:07:43 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:37:03 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.732
+  exclusion.robots: 0.024
+  exclusion.robots.policy: 0.01
+  esindex: 0.014
+  cdx.remote: 59.12
+  LoadShardBlock: 107.744 (3)
+  PetaboxLoader3.datanode: 114.065 (4)
+  load_resource: 16.086
+-->

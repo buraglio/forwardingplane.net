@@ -1,0 +1,121 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/7280SE","20260106010622","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661582");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+Arista announced on July 15, 2014. Distinguishing features: Very deep buffers, 100 Gb/s uplink ports. Of course, <i>announcement</i> is not the same as <i>shipping product</i>.
+In a webinar, Arista said that the QSFP100 model will ship at the end of 
+the year. The other two models will have first customer shipments in 
+September 2014. A <a href="https://web.archive.org/web/20260106010622/https://people.ucsc.edu/~warner/Bufs/arista-dune.pdf">trade magazine article</a>
+ties these switches to Broadcom's Dune. 
+<p>
+There are three models. One has port parity with Broadcom trident switches (48 10-Gb/s ports and 4 QSFP 40 Gb/s uplinks). The others
+have 100 Gb/s uplink capability. This is explained in the <a href="https://web.archive.org/web/20260106010622/https://people.ucsc.edu/~warner/Bufs/7280SE-Datasheet.pdf">data sheet</a>.
+According to Q&A; on an Arista webinar, buffering on 100 Gb/s ports is 1500 Mbytes. The target is 50 mS. 
+<p>
+As is often the case, more details are available to those that dig. The switch <a href="https://web.archive.org/web/20260106010622/https://people.ucsc.edu/~warner/Bufs/7280E-QA-External.pdf">Q &amp; A</a> has more details about switch buffering.
+<p>
+According to Arista, this is the same technology as their 7500 flagship chassis switch presented in a 1 RU fixed configuration package. Some information on list
+pricing is available in the <a href="https://web.archive.org/web/20260106010622/http://www.enterprisetech.com/2014/07/15/arista-cranks-leaf-switches-100ge-big-data-storage/">trade rags.</a>
+<p>
+As is common on this website, the data sheets are copies rather than links. This is to allow detection of changes. 
+You may get more current information from the vendor's web page. 
+The 100 Gb/s MXP interfaces use 10 Gb/s SERDES, so ten lanes. Actually twelve lanes, 
+ten are used in 100 Gb/s mode. The original data sheet has been updated; the QSFP100 
+parts are no longer marked with an asterik to indicate 
+<i>future</i> availability. See vendor's web pages.
+<p>
+<h3>Dune switch family</h3>
+<p>
+Arista has made four generations of dune switches.
+<p>
+<img src="https://web.archive.org/web/20260106010622im_/https://people.ucsc.edu/~warner/Bufs/arista-dune-family.png" alt "time line from the 7500 in 2010 to the 7500r2 in 2017">
+<p>
+<h2>ViON Price List for DIR-TSO-2710  -- Nov 14, 2014</h2>
+<p>
+<table border="1">
+<tr><td width="150">
+<b>Product #</b>
+</td><td width="700">
+<b>Description</b>
+</td><td width="80">
+<b>List</b>
+</td></tr><tr><td>
+<tr><td>
+DCS-7280SE-72-F
+</td><td>
+Arista 7280E, 48x10GbE (SFP+) &amp; 2x100GbE MXP switch, 2x AC and 2xC13-C14 cords
+</td><td align="right">
+$49,995
+</td></tr><tr><td>
+DCS-7280SE-72-R
+</td><td>
+Arista 7280E, 48x10GbE (SFP+) &amp; 2x100GbE MXP switch, 2x AC and 2xC13-C14 cords
+</td><td align="right">
+$49,995
+</td></tr><tr><td>
+
+DCS-7280SE-72#
+</td><td>
+Arista 7280E, 48x10GbE (SFP+) &amp; 2x100GbE MXP switch. Requires 2 PSU and 4 fans sold separately
+</td><td align="right">
+$48,295
+</td></tr><tr><td>
+DCS-7280SE-64-F
+</td><td>
+Arista 7280E, 48x10GbE (SFP+) &amp; 4x40GbE QSFP+ switch, 2x AC and 2xC13-C14 cords
+</td><td align="right">
+$34,995
+</td></tr><tr><td>
+DCS-7280SE-64-R
+</td><td>
+Arista 7280E, 48x10GbE (SFP+) &amp; 4x40GbE QSFP+ switch, 2x AC and 2xC13-C14 cords
+</td><td align="right">
+$34,995
+</td></tr><tr><td>
+DCS-7280SE-64#
+</td><td>
+Arista 7280E, 48x10GbE (SFP+) &amp; 4x40GbE QSFP+ switch, Requires 2 PSU and 4 fans sold separately
+</td><td align="right">
+$33,295
+</td></tr><tr><td>
+DCS-7280SE-68-R
+</td><td>
+Arista 7280E, 48x10GbE (SFP+) &amp; 2x100GbE QSFP100 switch, 2x AC and 2xC13-C14 cords. Price check 2016.
+</td><td align="right">
+$39,995
+</td></tr>
+</table>
+<p>
+These are list prices, and no one pays list.
+</td></tr>
+</table>
+<!--
+     FILE ARCHIVED ON 01:06:22 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:32:19 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.622
+  exclusion.robots: 0.025
+  exclusion.robots.policy: 0.012
+  esindex: 0.011
+  cdx.remote: 11.241
+  LoadShardBlock: 110.453 (3)
+  PetaboxLoader3.datanode: 123.234 (4)
+  load_resource: 25.071
+-->

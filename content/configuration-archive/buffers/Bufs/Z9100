@@ -1,0 +1,54 @@
+<html> 
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Z9100","20260106010749","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661669");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Dell Z9100</h2>
+<img src="https://web.archive.org/web/20260106010749im_/https://people.ucsc.edu/~warner/Bufs/Z9100.JPG" alt="Beauty pic of 1RU QSFP switch">
+<p>
+<img src="https://web.archive.org/web/20260106010749im_/https://people.ucsc.edu/~warner/Bufs/Dell-z9100.png" alt "shows 2 10gbe sfp ports">
+<p>
+First product announcement that uses the new Broadcom Tomahawk switch.
+Trade press <a href="https://web.archive.org/web/20260106010749/https://people.ucsc.edu/~warner/Bufs/dell-tomahawk.pdf">article</a> April 23, 2015. Dell has released
+a <a href="https://web.archive.org/web/20260106010749/https://people.ucsc.edu/~warner/Bufs/Dell-Networking-Z9100-spec-sheet.pdf"> data sheet</a> that specs
+packet buffer at 16 MB.  The ports are all QSFP28. This is plug 
+compatible with the older version of QSFP that had 4 ea 10 Gb/s lanes. 
+"28" is the signalling speed of each lane required to get a payload rate
+of 25 Gb/s. Tomahawk is capable of downshifting the speed of the lanes for
+plug compatibility with 10G / 40G ports. The Z9100 will have an ONIE boot 
+loader and the first available sofware will be FTOS, a Force-10 derivative. 
+Dell expects other partners like Cumulous and Big Switch will also offer
+compatible switch images.
+<p>
+12 May 2015
+
+
+<!--
+     FILE ARCHIVED ON 01:07:49 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:25:21 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.678
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.008
+  esindex: 0.012
+  cdx.remote: 8.293
+  LoadShardBlock: 94.096 (3)
+  PetaboxLoader3.datanode: 94.564 (4)
+  load_resource: 22.49
+-->

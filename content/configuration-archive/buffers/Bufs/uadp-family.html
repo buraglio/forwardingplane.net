@@ -1,0 +1,133 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/uadp-family.html","20260106010557","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661557");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Catalyst Unified Data Access Plane (UADP) Switches</h2>
+<p>
+UADP is a family of ASIC based switches hailing to 2013 with version 1.0. Cisco
+presents these ASICs as poster children for the <i>value add</i> of Cisco's
+craft over capabilities of merchant silicon. Here <i>unified</i> refers to
+inclusion of hardware to run the CAPWAP protocol and enhance the speed of
+WLAN controllers.
+<p>
+One of the features of UADP is that it provides for a high speed interconnect
+to build stacks of switches. As such, it seems to have been designed with
+the access layer specifically in mind. 
+<p>
+There are five versions of UADP: 1.0, 1.1, 2.0, 2.0 XL and 3.0. This is
+highlighted in <a href="https://web.archive.org/web/20260106010557/https://people.ucsc.edu/~warner/Bufs/uadp-family.pdf">UADP family white paper</a>.
+Earlier Catalyst switches that preceded the UADP ASICs (3750, 2960) are
+listed in the <i>Other shared memory</i> section. These switches are very old.
+<p>
+UADP partitions packet memory with the largest chunk (64 percent) in a dynamic
+pool for burst absorption. A large chunk (25 percent) is reserved for the stacking
+ports with the balance dedicated to ports as a minimum allocation. A Cisco white
+paper refers the reader to cisco.com for further details -- without any guidance
+where said details might be found. Perhaps the reference is
+<a href="https://web.archive.org/web/20260106010557/https://people.ucsc.edu/~warner/Bufs/9000-QoS-and-Queuing.pdf">Cisco Catalyst 9000 Switching Platforms: QoS and Queuing White Paper</a>.
+<p>
+<h2>Update August 2019</h2>
+<p>
+The following diagram appeared in BRKARC-2035 in 2019. It did not appear in
+earlier renditions of the slides for that session.
+<p>
+<a href="https://web.archive.org/web/20260106010557/https://people.ucsc.edu/~warner/Bufs/9500-32C-big.PNG"> <img src="https://web.archive.org/web/20260106010557im_/https://people.ucsc.edu/~warner/Bufs/9500-32C.png" border="2"></a>
+<p>
+This 32-port 100 Gb/s switch uses two UADP 3 ASICS -- each with dual cores.
+Within each ASIC, memory is shared between the cores. <i>Note Bene</i> the 
+ASIC-to-ASIC internconnect at the top of the diagram. Operating this 
+interconnect requires 25 percent of the buffer capacity. Quoting
+from <a href="https://web.archive.org/web/20260106010557/https://people.ucsc.edu/~warner/Bufs/Cat9K-QoS-whitepaper.pdf">Qos and Queuing</a>:
+<ul> <i>All switches that use the UADP 3.0 ASIC support a unified buffer between the two ASIC cores. That will increase the burst absorption, as it is a single shared buffer between all ports on the switch.</i>
+</ul>
+Of course, they don't mean <i>on the switch</i>. They mean <i>on the ASIC.</i>
+<p>
+<h2>Table 4 in the <a href="https://web.archive.org/web/20260106010557/https://people.ucsc.edu/~warner/Bufs/Cat9K-QoS-whitepaper.pdf"><i>QoS and Queuing</i></a> Paper</h2>
+<p>
+Emphasis added for <i>buffer</i> rows.
+<table width="700" border="1">
+<tr><td>Quality of Service UADP scale </td><td>UADP Mini </td><td>UADP 2.0 </td><td>UADP 2.0 XL </td><td>UADP 3.0</td></tr>
+<tr><td>Used in Catalyst switch</td><td>Cat 9200</td><td>Cat 9300</td><td>Cat 9300, 9400, 9500</td><td>Cat 9500 High, 9600</td></tr>
+<tr><td>Class-maps (Ingress) per policy </td><td>256 </td><td>256 </td><td>256 </td><td>256</td></tr>
+<tr><td>Class-maps (egress) per policy </td><td>256 </td><td>256 </td><td>256 </td><td>256</td></tr>
+<tr><td>Policers (Ingress) per policy </td><td>63 </td><td>63 </td><td>63 </td><td>63</td></tr>
+<tr><td>Policers (engress) per policy </td><td>63 </td><td>63 </td><td>63 </td><td>63</td></tr>
+<tr><td>Total Policy-maps per switch </td><td>1599 </td><td>1599 </td><td>1599 </td><td>1599</td></tr>
+<tr><td>Aggregate Policers 1R2C per Core </td><td>1024 </td><td>4096 </td><td>4096 </td><td>4096</td></tr>
+<tr><td>Aggregate Policers 2R3C per Core </td><td>512 </td><td>2048 </td><td>2048 </td><td>2048</td></tr>
+<tr><td>Table-maps (ingress) </td><td>16 </td><td>16 </td><td>16 </td><td>16</td></tr>
+<tr><td>Table-maps (egress) </td><td>16 </td><td>16 </td><td>16 </td><td>16</td></tr>
+<tr><td>Markdown table (exceed action) </td><td>8 </td><td>8 </td><td>8 </td><td>8</td></tr>
+<tr><td>Markdown table (Violate action) </td><td>8 </td><td>8 </td><td>8 </td><td>8</td></tr>
+<tr><td>Egress Queues per port </td><td>8 </td><td>8 </td><td>8 </td><td>8</td></tr>
+<tr><td><b>Buffer per Core (MB)</b></td><td><b>6</b></td><td><b>8</b></td><td><b>16</b></td><td><b>18</b></td></tr>
+<tr><td><b>Buffer per ASIC (MB)</b></td><td><b>6</b></td><td><b>16</b></td><td><b>32</b></td><td><b>36</b></td></tr>
+<tr><td>QoS ACLs per Core </td><td>1000 </td><td>5000 </td><td>18000 </td><td>16000</td></tr>
+<tr><td>QoS ACLs per Core per Direction </td><td>1000 </td><td>5000 </td><td>18000 </td><td>8000</td></tr>
+<tr><td>WRED (Up to Queues) </td><td>NA </td><td>4 </td><td>4 </td><td>8</td></tr>
+<tr><td>VCU (ingress) </td><td>192 </td><td>192 </td><td>192 </td><td>192</td></tr>
+<tr><td>VCU (egress) </td><td>96 </td><td>96 </td><td>96 </td><td>96</td></tr>
+</table>
+<h2>Extract from table 3 in the <a href="https://web.archive.org/web/20260106010557/https://people.ucsc.edu/~warner/Bufs/Cat9K-QoS-whitepaper.pdf"><i>QoS and Queuing</i></a> Paper for UADP-3.0</h2>
+<p>
+Looking only at UADP-3.0 to avoid clutter
+<table width="700" border="1">
+<tr><td>Queue</td><td>1 Gbps hard max</td><td>1 Gbps soft max</td><td>10 G hard max</td><td>10 G soft max</td><td>25 G hard max</td>
+<td>25 G soft max</td><td>40 G hard max</td><td>40 G soft max</td><td>100 G hard max</td><td>100 G soft max</td></tr>
+<tr><td>Q0</td><td>112</td><td>448</td><td>240</td><td>960</td><td>480</td><td>1920</td><td>720</td><td>2880</td><td>1920</td><td>7680</td></tr>
+<tr><td>Q1</td><td>336</td><td>672</td><td>360</td><td>1440</td><td>720</td><td>2880</td><td>1080</td><td>4320</td><td>2880</td>
+<td>11520</td></tr>
+</table>
+<p>
+The numbers in the table are <i>buffer units</i>. These are the default settings; they can be increased by 12X. 
+The buffer units for UADP-1.0 are <a href="https://web.archive.org/web/20260106010557/https://people.ucsc.edu/~warner/Bufs/uadp-buf.png">256 bytes</a> and probably the same for UADP-3.0. 
+A single port can use up to <i>Soft max</i> from the shared pool if other ports are not contending for the shared resource. 
+Since it is <i>shared</i>, memory is insufficient for more than
+a few ports to claim the maximum. The buffer allocation per port will be reduced from <i>soft max</i>
+down to <i>hard max</i> as the shared pool nears depletion.
+<p>
+Q0 is the highest prority queue and is used for things like BGP keep alive and spanning tree messages. User
+traffic is expected in Q1 and that is the focus here. It is possible to complicate matters by turning on
+additional queues.
+<p>
+To see the maximum burst absorption for a single port at extreme (12X)  configuration expressed in bytes:
+<table width="700" border="1">
+<tr><td>Queue</td><td>1 Gbps hard max</td><td>1 Gbps soft max</td><td>10 G hard max</td><td>10 G soft max</td><td>25 G hard max</td>
+<td>25 G soft max</td><td>40 G hard max</td><td>40 G soft max</td><td>100 G hard max</td><td>100 G soft max</td></tr>
+<tr><td>Q1</td><td></td><td>2.1 MB</td><td></td><td>4.4 MB</td><td></td><td>8.8 MB</td><td></td>
+<td>13.3 MB</td><td></td><td>33.4 MB</td></tr>
+</table>
+In the extreme configuration above, a single 100 Gbps port can claim the entire buffer, the balance being reserved
+for the stacking ring ports.
+
+<!--
+     FILE ARCHIVED ON 01:05:57 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:36:25 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.618
+  exclusion.robots: 0.022
+  exclusion.robots.policy: 0.009
+  esindex: 0.016
+  cdx.remote: 26.858
+  LoadShardBlock: 153.989 (3)
+  PetaboxLoader3.datanode: 130.909 (4)
+  PetaboxLoader3.resolve: 38.41
+  load_resource: 33.092
+-->

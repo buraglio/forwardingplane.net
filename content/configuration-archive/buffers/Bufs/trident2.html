@@ -1,0 +1,111 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/trident2.html","20260106010730","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661650");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+Broadcom's follow-on act to the trident+ switch integrated circuit is the shiny new 
+<a href="https://web.archive.org/web/20260106010730/https://people.ucsc.edu/~warner/Bufs/StrataXGS_Trident_II_presentation.pdf">StrataXGS Trident II BCM56850</a>.
+<p>
+<img src="https://web.archive.org/web/20260106010730im_/https://people.ucsc.edu/~warner/Bufs/trident2-arch.PNG" alt "packet forwarding pipeline inside trident2>
+<p>
+<li> <b>BCM56850</b> Used for switches with 32 x 40 Gb/s ports
+<li> <b>BCM56854</b> Used for switches w 48 z 10 Gb/s and 6 x 40 Gb/s ports
+<p>
+It was announced in 2012, but became available in production volumes in November 2013.
+A Broadcom marketing manager wrote a white paper describing a new
+<a href="https://web.archive.org/web/20260106010730/https://people.ucsc.edu/~warner/Bufs/flex-table.pdf"><b>smart-table</b></a> feature.
+Beyond the slide deck referenced at the top of this page, Broadcom does not share detailed information about their products except under nondisclosure. But you can guess that -- if 
+a new switch was introduced in November or December of 2013 and it has lots of 40 Gb/s ports, well -- it walks like a duck.
+<p>
+We believe that Broadcom has <i>wins</i> from switch manufacturers Arista, Cisco and Extreme Networks -- that have been spotted so far. 
+<p>
+In common with the trident+, all the packet buffers are on the switch chip. Where the Trident+ has 9 MBytes of packet buffers, the Trident II has 12 Mbytes. The memory is segmented into dedicated per-port buffers and a dynamic shared pool that can be loaned to any queue and port that needs it. Most of the memory is in the shared pool. For more information, see the listing for the Arista 7050X. 
+While we have not seen switches implemented with more than a single Trident+ chip, the Trident II can be used in larger switches with crossbar connections between switching elements.
+The Arista 7250 is an example. Broadcom produced a <a href="https://web.archive.org/web/20260106010730/https://people.ucsc.edu/~warner/Bufs/Broadcom-OCP-Trident2-leaf-spine.pdf">generic OCP submission</a> for the Trident2 ASIC in 2013.
+<p>
+One of the new features introduced with the Trident2 is support for VXLAN. Specifically, the Trident2 has support for NVGRE (Network Virtualization General Route Encapsulation). 
+This will stimulate a raft of switches with data center features built on Trident II silicon. For more information see the blogs at https://dcxtc.wordpress.com/tag/vxlan/ 
+<p>
+The 56850 has 128 SERDES to provision 32 quad ports. If this was used for 1RU switches with 10 Gb/s ports, 48 SERDES would be stranded in the box with no place to connect.
+That seems like it would be sufficient reason to have the 56854 varient.
+<p>
+<b id="plus">Update April 2015 -- Trident-II+ BCM56860 announced</b>
+<p>
+The trident was followed by the trident+. Thus it is with the trident-II. 
+Details in the <a href="https://web.archive.org/web/20260106010730/https://people.ucsc.edu/~warner/Bufs/trident-II+.pdf">press release</a>. 
+The new chip is made with 28 nM features which is a step smaller than the 40 nM geometries in its
+predecessor. VxLAN performance is also much better. The II+ can support eight 100 Gb/s ports. It is built with 10 Gb/s SERDES and so requires an external 
+<a href="https://web.archive.org/web/20260106010730/https://people.ucsc.edu/~warner/Bufs/gearbox.pdf"><i>gearbox</i> IC</a> to step up to 25 Gb/s lanes. P/N for gearbox BCM82792.
+<p>
+StrataXGS Trident-II+ (BCM56860) Series Key Features
+<p>
+<li>Standards-compliant high-density 10GbE/40GbE/100GbE switch SoC
+<li>Single-pass routing in/out of tunnels (RIOT) at 1.28 Tbps
+<li>High-performance tunneling support for VXLAN, NVGRE, MPLS, SPB, and pre-standard Geneve
+<li>128 low-power optimized 10Gbps serial interfaces with up to 8 ports of 100GbE
+<li>Broadview™ instrumentation featuring buffer statistics tracking (BST) and flex counters
+<li>Enhanced ContentAware engines with 4x larger ACL rule databases versus previous generation devices
+<li>OpenFlow 1.3.1+ support scaling to several 10,000's of flows using OF-DPA and third-party controllers
+<li>Configurable SmartTable technology to maximize L2 MAC,L3 Host, LPM forwarding database capacities
+<li>Full IPv4 and IPv6 unicast and multicast routing support
+<li>Integrated SmartBuffer for optimal burst absorption, dynamic thresholding and lossless service
+<li>SmartHash™ flexible engine featuring highly scalable ECMP load balancing and network resiliency
+<li>FlexPort technology enables dynamically configurable ports/MACs
+<li>Ethernet Port Multiplier technology supports fine-grained channelization over Ethernet and enterprise fabrics
+<p>
+<b>Trident 2 vs Mellanox SX</b>
+<p>
+Mellanox commissioned (paid) Tolly to do comparison tests against an
+Arista switch representing the universe of Trident-II products. Tolly
+was able to show that the Mellanox SX was better than the Broadcom
+Trident-II when the packet rate is really high. That happens when there
+are lots of small frames. The Tolly report is #215111.
+<p>
+Especially interesting is the claim that Trident drops out of cut-thru
+mode to store and forward whenever more than one speed is present in
+the port ensemble. Mellanox doesn't do this, so can show lower port-to-port
+latency. Tolly presents this <i>suprising</i> result in <i>figure 2</i>:
+<p>
+<img src="https://web.archive.org/web/20260106010730im_/https://people.ucsc.edu/~warner/Bufs/tolly215111.jpg">
+<p>
+Pure speculation: Because Mellanox dedicates memory to each output
+port, each buffer chunk will be fed out at a known speed and cut-through
+rules can be followed. Because Trident shares memory, any buffer chunck
+might be headed for any port, so changing the mode of the switch
+when speed matching happens anywhere might be the best solution.
+The RFC2544 test seems carefully constructed to assure that buffers
+aren't stressed. 
+
+
+</td></tr>
+</table>
+<!--
+     FILE ARCHIVED ON 01:07:30 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:20:01 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.707
+  exclusion.robots: 0.024
+  exclusion.robots.policy: 0.01
+  esindex: 0.013
+  cdx.remote: 34.692
+  LoadShardBlock: 250.521 (3)
+  PetaboxLoader3.datanode: 197.426 (4)
+  PetaboxLoader3.resolve: 47.885
+  load_resource: 8.654
+-->

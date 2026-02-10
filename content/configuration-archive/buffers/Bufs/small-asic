@@ -1,0 +1,66 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/small-asic","20260106010630","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661590");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="650">
+<tr><td>
+James Ventre did a 
+<a href="https://web.archive.org/web/20260106010630/https://people.ucsc.edu/~warner/Bufs/asic-to-port-mappings.html">bunch of research</a> 
+uncovering some unpublished info on which ASICs talk to which ports.
+The original link for his work is:
+<p>
+http://networking.ventrefamily.com/2010/08/asic-to-port-mappings.html
+<p>
+Taken with attribution but without permission.
+<p>
+The <a href="https://web.archive.org/web/20260106010630/https://people.ucsc.edu/~warner/Bufs/2960G-bulletin.pdf">Cisco 2960G</a> first ship was May 2006.
+<p>
+<i>End-to-End Network QoS Design</i> contains a description of the output queue
+strategy for the 3750G that probably applies to the 2960G as well.
+<ul>
+A unique feature of the Catalyst 3750 is that it supports flexible buffer
+allocations to hardware queues, which may be dynamically loaned or borrowed
+against (as needed). Specifically, each queue can lend part of its buffering 
+capacity, unless a specified minimum reserve threshold has been reached.
+In addition, each queue may borrow up to four times its capacity from
+a common pool of buffers (which are not allocated to any specific queue) 
+should these be available for use. The recommended buffer allocations for
+queues 1 through 4 are 20 percent, 30 percent, 35 percent and 15 percent,
+respectively. Correspondingly, the recommended parameters for reserve thresholds
+and maximum (overload) thresholds are 100 percent and 400 percent, respectively.
+For the priority queue, all thresholds should be set to 100 percent.
+</ul>
+What the book does <i>not</i> say is how many packets or how much memory
+is in the buffer pool. So, I <a href="https://web.archive.org/web/20260106010630/https://people.ucsc.edu/~warner/Bufs/3750G-buf.pdf">asked.</a>
+
+
+
+<!--
+     FILE ARCHIVED ON 01:06:30 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:38:39 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.469
+  exclusion.robots: 0.016
+  exclusion.robots.policy: 0.007
+  esindex: 0.009
+  cdx.remote: 64.969
+  LoadShardBlock: 950.141 (3)
+  PetaboxLoader3.datanode: 162.148 (4)
+  PetaboxLoader3.resolve: 877.728 (3)
+  load_resource: 113.015
+-->

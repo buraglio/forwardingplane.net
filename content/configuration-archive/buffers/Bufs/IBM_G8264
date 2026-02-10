@@ -1,0 +1,117 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/IBM_G8264","20260106010748","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661668");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+ <i>The Open Industry Network Performance &amp; Power Test for Cloud Networks Evaluating 10/40 GbE Switches Spring 2013 Edition</i> from Lippis Enterprises dated July 2013 says <b>nothing</b> about a dynamic buffer pool for the G8264.  
+The G8264 is reported next to the Arista 7050S-64 that also uses the Trident+ switch chip where dynamic buffering is described in detail. 
+IBM appears to have decided that dynamic packet buffers were not interesting to their market segment -- so they didn't pay to have it tested.  
+In 2013, the emphasis in the product manual is for data center applications like Fiber Channel over Ethernet. 
+Fiber channel is more deterministic than Ethernet and dynamic buffering is not deterministic.  
+<p>
+</td></tr><tr><td>
+The referenced <a href="https://web.archive.org/web/20260106010748/http://lippisreport.com/2015/01/open-industry-network-performance-power-test-for-cloud-networks-evaluating-1040100-gbe-switches/"><i>Nework Performance</i></a> 
+Report has been reissued. The link is to the version of January 2015. The 2011 version of the report has 125 pages. By 
+2015, it has grown to 165 pages.
+<p>
+Earlier in the product life cycle IBM commissioned a competitive <a href="https://web.archive.org/web/20260106010748/https://people.ucsc.edu/~warner/Bufs/tolly-IBM-G8264.PDF">switch test</a> #211108 by the Tolly Group in March 2011 that <b>does</b> report on buffering.  Summarizing:
+<p>
+</td></tr><tr><td>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td>Switch</td>
+<td>9216 byte packets</td>
+<td>Imputed buffer</td>
+<td>Tolly test</td>
+</tr><tr>
+<td>IBM G8264</td>
+<td>1000 packets</td>
+<td>9.22 Mbytes</td>
+<td>#211108</td>
+</tr><tr>
+<td>Arista 7148X</td>
+<td>335 packets</td>
+<td>3.09 Mbytes</td>
+<td>#211108</td>
+</tr><tr>
+<td>Cisco 5548P</td>
+<td>105 packets</td>
+<td>0.97 Mbytes</td>
+<td>#211108</td>
+</tr><tr>
+<td>Juniper EX4500</td>
+<td>25 packets</td>
+<td>0.23 Mbytes</td>
+<td>#211108</td>
+</tr><tr>
+<td>Juniper EX4200 </td>
+<td>8 packets</td>
+<td>0.07 Mbytes</td>
+<td>#211127</td>
+</tr><tr>
+<td>HP 3800</td>
+<td>25 packets</td>
+<td>0.23 Mbytes</td>
+<td>#211127</td>
+</tr><tr>
+<td>Cisco 3750-X</td>
+<td>1 packet</td>
+<td>0.01 Mbytes</td>
+<td>#211127</td>
+</tr>
+</table>
+<p>
+</td></tr><tr><td>
+The report from Tolly test (#211127) cites work from July 2011. The test was commissioned by Hewlett Packard and probably should not be compared directly with the others in the table. Some packet memory appears to have been held back in queues that were not used when the measurements were made.
+<p>
+</td></tr><tr><td>
+<p>
+Refer to the disclaimer at the top of page that says <i>rumor, innuendo and extrapolation</i>. 
+Tolly attributes something more than 100 percent of the buffer is available for microbursts. 
+That seems suspicious. 
+The buffer imputed to the Cisco 5548 switch also exceeds the manufacturer's claims.  
+Unlike other tests reported in this Tolly paper, there is no RFC that says
+how to measure microburst capability.
+Absent some real skullduggery, the relative results are probably useful.
+<p>
+The Lippis Report mentions RFC2889 when they describe their microburst measurements. But if you read what they are saying carefully, they cite only the test configuration. There was no microburst test defined in August 2000. The RFC is useful for its framework of how you should think about this sort of test, but microburst tests have not been standardized.
+<p>
+Regardless of whether IBM might have a <i>dynamic buffer control</i> that 
+I missed when I read the manual, the warning stands: 
+Use of particular silicon is no guarantee of availability of a feature absent 
+its presence in the switch data sheet or other documentation. 
+Reliance on reports from a for-hire tester of something not claimed in the 
+data sheet is also probably not wise.
+</td></tr>
+</table>
+</html>
+<!--
+     FILE ARCHIVED ON 01:07:48 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:19:14 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 3.536
+  exclusion.robots: 0.016
+  exclusion.robots.policy: 0.008
+  esindex: 0.01
+  cdx.remote: 31.84
+  LoadShardBlock: 238.856 (3)
+  PetaboxLoader3.datanode: 177.539 (4)
+  PetaboxLoader3.resolve: 57.192
+  load_resource: 13.804
+-->

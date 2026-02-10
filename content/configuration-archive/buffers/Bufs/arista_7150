@@ -1,0 +1,98 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/arista_7150","20260106010712","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661632");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750"><tr><td>
+The Intel FM6000 <i>Alta</i> is the single chip silicon switch at the heart of the 7150S products.
+The FM6000 was announced in November 2010; chip and product delivery took 2 years.
+Of note, the <a href="https://web.archive.org/web/20260106010712/https://people.ucsc.edu/~warner/Bufs/intel-fulcrum.png">Intel/Fulcrum switches</a> 
+have capability to monitor buffer utilization with
+millisecond granularity.  Arista makes this visible with their LANZ utility. As is
+explained in <i>Arista Warrior</i>, among the merchant silicon switches, Intel is
+way ahead in providing this monitoring capability.
+<p>
+<b>LANZ</b> can monitor the number of buffer blocks owned by a queue and spit out timestamp
+reports when the queue length is above a user specified threshold. The reports can fob off
+in many of the usual ways -- CLI logging to a local file, syslog, etc. The queue length can
+be polled at sub-millisecond rates, so pretty short bursts can be seen.  LANZ is not
+available for Trident+ products, and <i>Arista Warrior</i> explains that ability to
+do this particular measurement is not built into the chip.
+</td></tr><tr><td>
+<p>
+</td></tr><tr><td>
+<p>
+The <a href="https://web.archive.org/web/20260106010712/https://people.ucsc.edu/~warner/Bufs/7150S_Datasheet.pdf">datasheet</a> for all 7150 models says about buffers:
+</td></tr><tr><td>
+<p>
+<img src="https://web.archive.org/web/20260106010712im_/https://people.ucsc.edu/~warner/Bufs/7150buffer.png">
+</td></tr><tr><td>
+<p>
+</td></tr><tr><td>
+At the chip level, there is a single buffer pool:
+</td></tr><tr><td>
+<p>
+<img src="https://web.archive.org/web/20260106010712im_/https://people.ucsc.edu/~warner/Bufs/7150diagram.png">
+</td></tr><tr><td>
+<p>
+</td></tr><tr><td>
+A snippet from the full data sheet shows packet memory claims:
+<p>
+<img src="https://web.archive.org/web/20260106010712im_/https://people.ucsc.edu/~warner/Bufs/7150datasheet.png">
+</td></tr><tr><td>
+<p>
+Intel's <a href="https://web.archive.org/web/20260106010712/http://www.intel.com/content/www/us/en/switch-silicon/ethernet-switch-fm6000-series.html">
+product brief</a> on the FM6000
+has a more modest claim of 8 MB <i>Shared packet memory size</i>. 
+These could both be true if 9.5 MBytes is total packet
+RAM and 8 MBytes is the size of the dynamic pool.  
+But perhaps that is stretching too far...
+<p>
+</td></tr><tr><td>
+<p>
+</td></tr><tr><td>
+The FM6000 has a varient p/n specifically for openflow. 
+A <a href="https://web.archive.org/web/20260106010712/https://people.ucsc.edu/~warner/Bufs/ethernet-switch-fm6000-sdn-paper.pdf">white paper</a> exposes some additional
+details on the family architecture. <a href="https://web.archive.org/web/20260106010712/https://people.ucsc.edu/~warner/Bufs/intel-memory-efficiency-paper.pdf">Another white paper</a> contrasts Intel's shared memory design with 
+virtual output queuing.
+</td></tr>
+</table>
+<p>
+Quoting from the Lippis Report (July 2013)
+<p>
+The three-year cost to power
+the Arista 7150S-24 1/10GbE is estimated
+at $546.74 and represents approximately
+4.21% of its list price.
+<p>
+So, if you wanted to know the retail price, you could probably figure it out.
+<p>
+
+<!--
+     FILE ARCHIVED ON 01:07:12 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:38:13 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.645
+  exclusion.robots: 0.023
+  exclusion.robots.policy: 0.01
+  esindex: 0.012
+  cdx.remote: 13.643
+  LoadShardBlock: 355.365 (3)
+  PetaboxLoader3.datanode: 340.559 (4)
+  load_resource: 118.125
+  PetaboxLoader3.resolve: 90.005
+-->

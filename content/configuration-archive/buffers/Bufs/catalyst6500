@@ -1,0 +1,1566 @@
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/catalyst6500","20260106010713","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661633");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<title>packet buffers</title></head>
+
+
+<table border="1" cellpadding="3" cellspacing="0" id="wp9001370table4000024">
+<tr align="left" valign="top">
+<td><a name="wp9001370"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-indent: 0pt; text-transform: none" class="pChart_headCMT">Model</p>
+</td>
+<td><a name="wp9001371"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-indent: 0pt; text-transform: none" class="pChart_headCMT">Port Type</p>
+</td>
+<td><a name="wp9001372"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-indent: 0pt; text-transform: none" class="pChart_headCMT">RX Queue</p>
+</td>
+<td><a name="wp9001373"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-indent: 0pt; text-transform: none" class="pChart_headCMT">TX Queue</p>
+
+</td>
+<td><a name="wp9001374"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-indent: 0pt; text-transform: none" class="pChart_headCMT">Total Buffer</p>
+</td>
+<td><a name="wp9001375"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-indent: 0pt; text-transform: none" class="pChart_headCMT">RX Buffer</p>
+</td>
+<td><a name="wp9001376"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-indent: 0pt; text-transform: none" class="pChart_headCMT">TX Buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="7" rowspan="1"><a name="wp9001552"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">Catalyst 6500 bits and pieces</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-SUP720-3B</p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2 x GE</p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q4T</p>
+
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">512 KB</p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">80 KB</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">432 KB</p>
+</td>
+
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">VS-S720-10G-3C</p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2 x 10GE</p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q4T</p>
+
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P3Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">191 MB</p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">105 MB</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">88 MB</p>
+</td>
+
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">VS-S720-10G-3C</p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">3 x 1GE</p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q4T</p>
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P3Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">17.7 MB</p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">9.6 MB</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8.1 MB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">VS-S2T-10G</p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2 x 10 Gb/s and 3 x 1 Gb/s<p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q4T 10 G port</p>
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T 10 G port</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">
+<a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/sup2t">512 MB</a></p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"><a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/sup2t#notsure">not sure</a></p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">
+<a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/C6800-SUP6T.html">C6800-SUP6T</a></p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 x 10 Gb/s and 2 x 40 Gb/s<p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q4T 10 G port</p>
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T 10 G port</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">
+~1 GB</p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">40 G port = 5 MB; 10 G port = 1.25 MB</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">40 G port = 1 GB; 10 G port = 250 MB</a></p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td colspan="7" rowspan="1"><a name="wp9001377"></a>
+<p style="font-style: normal; font-variant: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">C6800 line cards</p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">
+<a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/8P40G.html">C6800-8P40G</a></p> </td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 x 40GE QSFP+</p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8Q4T</p>
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">5 MB regular; 10 MB performance</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1 GB regular; 2 GB performance</a></p>
+</td> </tr>
+<tr align="left" valign="top">
+<td colspan="7" rowspan="1"><a name="wp9001377"></a>
+<p style="font-style: normal; font-variant: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">CEF720 Modules</p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6904-40G-2T</p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">4 x 40GE CFP modules </p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8Q4T</p>
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">5 MB per 40G CFP</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"><a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/X6904">88 MB per 40G CFP</a></p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6908-10G-2T</p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 x 10GE X2 </p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8Q4T</p>
+
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">256 MB per port</p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 MB per port</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 MB per port</p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6816-10G-2T </p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">4 x 10GE X2 performance </p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8Q4T</p>
+
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 MB per port</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 MB per port</p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6816-10G-2T </p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x 10GE X2 oversubscribed </p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1p7q2t</p>
+
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">90 MB per group</p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6816-10T-2T </p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">4 x 10GbaseT performance</p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8Q4T</p>
+
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 MB per port</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 MB per port</p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6816-10T-2T</p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x 10GbaseT oversubscribed</p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1p7q2t</p>
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">90 MB per group</p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6848-TX-2T</p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48-port 1GbaseT</p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1p7q2t</p>
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">166 KB per port</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.17 MB per port</p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6848-SFP-2T</p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48-port SFP</p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1p7q2t</p>
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"></p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">166 KB per port</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.17 MB per port</p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001384"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"><a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/67-eol">WS-X6716-10GE-3C</a></p>
+</td>
+<td><a name="wp9001385"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x 10GE</p>
+</td>
+<td><a name="wp9001386"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8Q4T</p>
+
+</td>
+<td><a name="wp9001387"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001388"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">199 MB</p>
+</td>
+<td><a name="wp9001389"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">109 MB</p>
+</td>
+<td><a name="wp9001390"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">90 MB</p>
+</td> </tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001391"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"><a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/67-eol">WS-X6716-10GE-3CXL</a></p>
+</td>
+<td><a name="wp9001392"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x 10GE</p>
+</td>
+<td><a name="wp9001393"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8Q4T</p>
+</td>
+<td><a name="wp9001394"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+
+</td>
+<td><a name="wp9001395"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">199 MB</p>
+</td>
+<td><a name="wp9001396"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">109 MB</p>
+</td>
+<td><a name="wp9001397"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">90 MB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001398"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"><a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/67-eol">WS-X6708-10GE-3CXL</a></p>
+</td>
+<td><a name="wp9001399"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 x 10GE</p>
+</td>
+<td><a name="wp9001400"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8Q4T</p>
+</td>
+<td><a name="wp9001401"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001402"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">199 MB</p>
+
+</td>
+<td><a name="wp9001403"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">109 MB</p>
+</td>
+<td><a name="wp9001404"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">90 MB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001405"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"><a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/67-eol">WS-X6708-10GE-3C</a></p>
+</td>
+<td><a name="wp9001406"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 x 10GE</p>
+</td>
+<td><a name="wp9001407"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8Q4T</p>
+</td>
+<td><a name="wp9001408"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q4T</p>
+</td>
+<td><a name="wp9001409"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">199 MB</p>
+</td>
+<td><a name="wp9001410"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">109 MB</p>
+
+</td>
+<td><a name="wp9001411"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">90 MB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001412"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"><a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/67-eol">WS-X6704-10GE</a></p>
+</td>
+<td><a name="wp9001413"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">4 x 10GE</p>
+</td>
+<td><a name="wp9001414"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q8T</p>
+</td>
+<td><a name="wp9001415"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P7Q8T</p>
+</td>
+<td><a name="wp9001416"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 MB</p>
+</td>
+<td><a name="wp9001417"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2 MB</p>
+</td>
+<td><a name="wp9001418"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">14 MB</p>
+
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001426"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"><a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/67-eol">WS-X6724-SFP</a></p>
+</td>
+<td><a name="wp9001427"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">24 x GE SFP</p>
+</td>
+<td><a name="wp9001428"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q8T</p>
+</td>
+<td><a name="wp9001429"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P3Q8T</p>
+</td>
+
+<td><a name="wp9001430"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.3 MB</p>
+</td>
+<td><a name="wp9001431"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">166 KB</p>
+</td>
+<td><a name="wp9001432"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.2 MB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001440"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"><a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/67-eol">WS-X6748-GE-TX</a></p>
+</td>
+<td><a name="wp9001441"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x GE TX</p>
+
+</td>
+<td><a name="wp9001442"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q8T</p>
+</td>
+<td><a name="wp9001443"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P3Q8T</p>
+</td>
+<td><a name="wp9001444"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.3 MB</p>
+</td>
+<td><a name="wp9001445"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">166 KB</p>
+</td>
+
+<td><a name="wp9001446"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.2 MB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001454"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT"><a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/67-eol">WS-X6748-SFP</a></p>
+</td>
+<td><a name="wp9001455"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x GE SFP</p>
+</td>
+<td><a name="wp9001456"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q8T</p>
+</td>
+<td><a name="wp9001457"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P3Q8T</p>
+
+</td>
+<td><a name="wp9001458"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.3 MB</p>
+</td>
+<td><a name="wp9001459"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">166 KB</p>
+</td>
+<td><a name="wp9001460"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.2 MB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001475"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6516-GBIC</p>
+</td>
+<td><a name="wp9001476"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x GE GBIC</p>
+</td>
+<td><a name="wp9001477"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q4T</p>
+</td>
+<td><a name="wp9001478"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T</p>
+
+</td>
+<td><a name="wp9001479"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">512 KB</p>
+</td>
+<td><a name="wp9001480"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">73 KB</p>
+</td>
+<td><a name="wp9001481"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">439 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001482"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6516A-GBIC</p>
+</td>
+<td><a name="wp9001483"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x GE GBIC</p>
+</td>
+<td><a name="wp9001484"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q4T</p>
+</td>
+<td><a name="wp9001485"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T</p>
+</td>
+<td><a name="wp9001486"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1 MB</p>
+
+</td>
+<td><a name="wp9001487"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">135 KB</p>
+</td>
+<td><a name="wp9001488"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">946 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001489"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6516-GE-TX</p>
+</td>
+<td><a name="wp9001490"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x 10/100/1000</p>
+</td>
+<td><a name="wp9001491"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q4T</p>
+</td>
+<td><a name="wp9001492"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T</p>
+</td>
+<td><a name="wp9001493"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">512 KB</p>
+</td>
+<td><a name="wp9001494"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">73 KB</p>
+
+</td>
+<td><a name="wp9001495"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">439 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001496"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6524-100FX-MM</p>
+</td>
+<td><a name="wp9001497"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">24 x 100FX Multimode</p>
+</td>
+<td><a name="wp9001498"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q0T</p>
+</td>
+<td><a name="wp9001499"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P3Q1T</p>
+</td>
+<td><a name="wp9001500"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.1 MB</p>
+</td>
+<td><a name="wp9001501"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">28 KB</p>
+</td>
+<td><a name="wp9001502"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1088 KB</p>
+
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001503"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6548-RJ-21</p>
+</td>
+<td><a name="wp9001504"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100</p>
+</td>
+<td><a name="wp9001505"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q0T</p>
+</td>
+<td><a name="wp9001506"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P3Q1T</p>
+</td>
+<td><a name="wp9001507"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.1 MB</p>
+</td>
+<td><a name="wp9001508"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">28 KB</p>
+</td>
+<td><a name="wp9001509"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1088 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001510"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6548-RJ-45</p>
+</td>
+<td><a name="wp9001511"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100</p>
+</td>
+<td><a name="wp9001512"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q0T</p>
+</td>
+<td><a name="wp9001513"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P3Q1T</p>
+</td>
+
+<td><a name="wp9001514"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.1 MB</p>
+</td>
+<td><a name="wp9001515"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">28 KB</p>
+</td>
+<td><a name="wp9001516"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1088 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001517"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6548-GE-TX</p>
+
+</td>
+<td><a name="wp9001518"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100/1000</p>
+</td>
+<td><a name="wp9001519"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001520"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001521"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.4 MB shared between 8 ports</p>
+</td>
+
+<td><a name="wp9001522"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">185 KB shared between 8 ports</p>
+</td>
+<td><a name="wp9001523"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.2 MB shared between 8 ports</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001524"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6548V-GE-TX</p>
+</td>
+<td><a name="wp9001525"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100/1000 with Cisco inline power</p>
+
+</td>
+<td><a name="wp9001526"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001527"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001528"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.4 MB shared between 8 ports</p>
+</td>
+<td><a name="wp9001529"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">185 KB shared between 8 ports</p>
+</td>
+
+<td><a name="wp9001530"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.2 MB shared between 8 ports</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001531"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6548-GE-45AF</p>
+</td>
+<td><a name="wp9001532"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100/1000 with 802.3af inline power</p>
+</td>
+<td><a name="wp9001533"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q2T shared between 8 ports</p>
+
+</td>
+<td><a name="wp9001534"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001535"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.4 MB shared between 8 ports</p>
+</td>
+<td><a name="wp9001536"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">185 KB shared between 8 ports</p>
+</td>
+<td><a name="wp9001537"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.2 MB shared between 8 ports</p>
+</td>
+
+</tr>
+
+<tr align="left" valign="top">
+<td colspan="7" rowspan="1"><a name="wp9001538"></a>
+<p style="font-style: normal; font-variant: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">dCEF256 Modules</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001545"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6816-GBIC</p>
+</td>
+<td><a name="wp9001546"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x GE GBIC</p>
+
+</td>
+<td><a name="wp9001547"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q4T</p>
+</td>
+<td><a name="wp9001548"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T</p>
+</td>
+<td><a name="wp9001549"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">512 KB</p>
+</td>
+<td><a name="wp9001550"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">73 KB</p>
+</td>
+
+<td><a name="wp9001551"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">439 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td colspan="7" rowspan="1"><a name="wp9001552"></a>
+<p style="font-style: normal; font-variant: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">Classic Modules</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001559"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6024-10FL-MT</p>
+
+</td>
+<td><a name="wp9001560"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">24 x 10Base FL</p>
+</td>
+<td><a name="wp9001561"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001562"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001563"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">64 KB</p>
+</td>
+
+<td><a name="wp9001564"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 KB</p>
+</td>
+<td><a name="wp9001565"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">56 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001566"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6148-RJ-21</p>
+</td>
+<td><a name="wp9001567"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100</p>
+
+</td>
+<td><a name="wp9001568"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001569"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001570"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+</td>
+<td><a name="wp9001571"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+
+<td><a name="wp9001572"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001573"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6148-RJ-21V</p>
+</td>
+<td><a name="wp9001574"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100 with Cisco inline power</p>
+</td>
+<td><a name="wp9001575"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+
+</td>
+<td><a name="wp9001576"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001577"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+</td>
+<td><a name="wp9001578"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+<td><a name="wp9001579"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+</td>
+
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001580"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6148-21AF</p>
+</td>
+<td><a name="wp9001581"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100 with 802.3AF inline power</p>
+</td>
+<td><a name="wp9001582"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001583"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+
+</td>
+<td><a name="wp9001584"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+</td>
+<td><a name="wp9001585"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+<td><a name="wp9001586"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001587"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6148-RJ-45</p>
+</td>
+<td><a name="wp9001588"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100</p>
+</td>
+<td><a name="wp9001589"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001590"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001591"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+
+</td>
+<td><a name="wp9001592"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+<td><a name="wp9001593"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001594"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6148-RJ-45V</p>
+</td>
+<td><a name="wp9001595"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100 with Cisco inline power</p>
+</td>
+<td><a name="wp9001596"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001597"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001598"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+</td>
+<td><a name="wp9001599"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+
+</td>
+<td><a name="wp9001600"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001601"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6148-45AF</p>
+</td>
+<td><a name="wp9001602"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100 with 802.3AF inline power</p>
+</td>
+<td><a name="wp9001603"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001604"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001605"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+</td>
+<td><a name="wp9001606"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+<td><a name="wp9001607"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001608"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6148-GE-TX</p>
+</td>
+<td><a name="wp9001609"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100/1000 no jumbo</p>
+</td>
+<td><a name="wp9001610"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001611"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001612"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.4 MB shared between 8 ports</p>
+</td>
+<td><a name="wp9001613"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">185 KB shared between 8 ports</p>
+</td>
+<td><a name="wp9001614"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.2 MB shared between 8 ports</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001608"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6148A-GE-TX</p>
+</td>
+<td><a name="wp9001609"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100/1000 jumbo 9216 </p>
+</td>
+<td><a name="wp9001610"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001611"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1p3q8t shared between 8 ports</p>
+</td>
+<td><a name="wp9001612"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">5.5 MB per port</p>
+</td>
+<td><a name="wp9001613"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">120 KB </p>
+</td>
+<td><a name="wp9001614"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">5.4 MB </p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001615"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6148V-GE-TX</p>
+</td>
+<td><a name="wp9001616"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100/1000 with Cisco inline power</p>
+</td>
+<td><a name="wp9001617"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001618"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T shared between 8 ports</p>
+</td>
+
+<td><a name="wp9001619"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.4 MB shared between 8 ports</p>
+</td>
+<td><a name="wp9001620"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">185 KB shared between 8 ports</p>
+</td>
+<td><a name="wp9001621"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.2 MB shared between 8 ports</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001622"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6148-GE-45AF</p>
+
+</td>
+<td><a name="wp9001623"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100/1000 with 802.3AF inline power</p>
+</td>
+<td><a name="wp9001624"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001625"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T shared between 8 ports</p>
+</td>
+<td><a name="wp9001626"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.4 MB shared between 8 ports</p>
+</td>
+
+<td><a name="wp9001627"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">185 KB shared between 8 ports</p>
+</td>
+<td><a name="wp9001628"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.2 MB shared between 8 ports</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001629"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6224-100FX-MT</p>
+</td>
+<td><a name="wp9001630"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">24 x 100FX</p>
+
+</td>
+<td><a name="wp9001631"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001632"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001633"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">64 KB</p>
+</td>
+<td><a name="wp9001634"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 KB</p>
+</td>
+
+<td><a name="wp9001635"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">56 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001636"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6248-RJ-45</p>
+</td>
+<td><a name="wp9001637"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100</p>
+</td>
+<td><a name="wp9001638"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+
+</td>
+<td><a name="wp9001639"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001640"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">64 KB</p>
+</td>
+<td><a name="wp9001641"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 KB</p>
+</td>
+<td><a name="wp9001642"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">56 KB</p>
+</td>
+
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001643"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6248-TEL</p>
+</td>
+<td><a name="wp9001644"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100 (RJ21)</p>
+</td>
+<td><a name="wp9001645"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001646"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+
+</td>
+<td><a name="wp9001647"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">64 KB</p>
+</td>
+<td><a name="wp9001648"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 KB</p>
+</td>
+<td><a name="wp9001649"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">56 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001650"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6248A-TEL</p>
+</td>
+<td><a name="wp9001651"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100 (Telco)</p>
+</td>
+<td><a name="wp9001652"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001653"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001654"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+
+</td>
+<td><a name="wp9001655"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+<td><a name="wp9001656"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001657"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6316-GE-TX</p>
+</td>
+<td><a name="wp9001658"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x 10/100/1000</p>
+</td>
+<td><a name="wp9001659"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q4T</p>
+</td>
+<td><a name="wp9001660"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T</p>
+</td>
+<td><a name="wp9001661"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">512 KB</p>
+</td>
+<td><a name="wp9001662"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">73 KB</p>
+
+</td>
+<td><a name="wp9001663"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">439 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001664"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6324-100FX-MM</p>
+</td>
+<td><a name="wp9001665"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">24 x 100FX</p>
+</td>
+<td><a name="wp9001666"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001667"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001668"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+</td>
+<td><a name="wp9001669"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+<td><a name="wp9001670"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001671"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6324-100FX-SM</p>
+</td>
+<td><a name="wp9001672"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">24 x 100FX</p>
+</td>
+<td><a name="wp9001673"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001674"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001675"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+</td>
+<td><a name="wp9001676"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+<td><a name="wp9001677"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001678"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6348-RJ-45</p>
+</td>
+<td><a name="wp9001679"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100</p>
+</td>
+<td><a name="wp9001680"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001681"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+
+<td><a name="wp9001682"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+</td>
+<td><a name="wp9001683"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+<td><a name="wp9001684"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001685"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6348-RJ-45V</p>
+
+</td>
+<td><a name="wp9001686"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100 with Cisco inline power</p>
+</td>
+<td><a name="wp9001687"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001688"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001689"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+</td>
+
+<td><a name="wp9001690"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+<td><a name="wp9001691"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001692"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6348-RJ-21V</p>
+</td>
+<td><a name="wp9001693"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">48 x 10/100 with Cisco inline power</p>
+
+</td>
+<td><a name="wp9001694"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001695"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+</td>
+<td><a name="wp9001696"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">128 KB</p>
+</td>
+<td><a name="wp9001697"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 KB</p>
+</td>
+
+<td><a name="wp9001698"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">112 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001699"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6408-GBIC</p>
+</td>
+<td><a name="wp9001700"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 x GE GBIC</p>
+</td>
+<td><a name="wp9001701"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q4T</p>
+
+</td>
+<td><a name="wp9001702"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T</p>
+</td>
+<td><a name="wp9001703"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">512 KB</p>
+</td>
+<td><a name="wp9001704"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">80 KB</p>
+</td>
+<td><a name="wp9001705"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">432 KB</p>
+</td>
+
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001706"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6408A-GBIC</p>
+</td>
+<td><a name="wp9001707"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">8 x GE GBIC</p>
+</td>
+<td><a name="wp9001708"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1Q4T</p>
+</td>
+<td><a name="wp9001709"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">2Q2T</p>
+
+</td>
+<td><a name="wp9001710"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">512 KB</p>
+</td>
+<td><a name="wp9001711"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">73 KB</p>
+</td>
+<td><a name="wp9001712"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">439 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001713"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6416-GE-MT</p>
+</td>
+<td><a name="wp9001714"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x 10/100/1000</p>
+</td>
+<td><a name="wp9001715"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q4T</p>
+</td>
+<td><a name="wp9001716"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T</p>
+</td>
+<td><a name="wp9001717"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">512 KB</p>
+
+</td>
+<td><a name="wp9001718"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">73 KB</p>
+</td>
+<td><a name="wp9001719"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">439 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001720"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">WS-X6416-GBIC</p>
+</td>
+<td><a name="wp9001721"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x GE GBIC</p>
+</td>
+<td><a name="wp9001722"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P1Q4T</p>
+</td>
+<td><a name="wp9001723"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1P2Q2T</p>
+</td>
+<td><a name="wp9001724"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">512 KB</p>
+</td>
+<td><a name="wp9001725"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">73 KB</p>
+</td>
+<td><a name="wp9001726"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">439 KB</p>
+</td>
+</tr>
+
+<tr align="left" valign="top">
+<td><a name="wp9001720"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">
+<a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/6880.html">C6880-X-16P10G</a></p>
+</td>
+<td><a name="wp9001721"></a>
+
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">16 x 10GE SFP+</p>
+</td>
+<td><a name="wp9001722"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1p7q4t</p>
+</td>
+<td><a name="wp9001723"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1p7q4t</p>
+</td>
+<td><a name="wp9001724"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">about 50 MB per group</p>
+</td>
+<td><a name="wp9001725"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">1.25 MB or 1.5 MB</p>
+</td>
+<td><a name="wp9001726"></a>
+<p style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_bodyCMT">
+<a href="https://web.archive.org/web/20260106010713/https://people.ucsc.edu/~warner/Bufs/6880.html">24 MB or 48 MB</a></p>
+</td>
+</tr>
+
+</table>
+</div>
+
+<p class="pBodyRelative"></p>
+
+ <a name="wp9002604"></a>
+<p style="font-size: 10pt; font-style: normal; font-variant: normal; font-weight: bold; margin-left: 0pt; margin-right: 0pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pSubhead1CMT">Comments, suggestions, corrections to warner@ucsc.edu</p>
+
+ <a name="wp9002605"></a>
+
+<div style="font-style: normal; font-variant: normal; font-weight: normal; margin-bottom: 7pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pBodyCMT">Opinions herein are solely those of jim warner. The University has no opinions, and if they did, these would not be them. </div>
+
+ <a name="wp9002606"></a>
+<div align="left">
+
+<!--
+     FILE ARCHIVED ON 01:07:13 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:40:05 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.615
+  exclusion.robots: 0.02
+  exclusion.robots.policy: 0.009
+  esindex: 0.047
+  cdx.remote: 12.812
+  LoadShardBlock: 103.055 (3)
+  PetaboxLoader3.datanode: 121.402 (4)
+  PetaboxLoader3.resolve: 38.451
+  load_resource: 67.058
+-->

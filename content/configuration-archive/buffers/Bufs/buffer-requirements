@@ -1,0 +1,202 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/buffer-requirements","20260106010600","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661560");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+<h2>Ancient History of Buffer Sizing</h2>
+<p>
+The 56 Kb/s NSF funded national network existed from 1986-1988. It was replaced by
+a T-1 (1.5 Mb/s) backbone. The DS-3 (45 Mb/s) replacement for the T-1 network became production
+ready in October 1991. It ran til 1995. The network was provided by ANS, a consortium of MCI,
+IBM and MERIT (Michigan Educational Research Information Triad) and was called ANSNET. 
+<p>
+LBL researchers observed serious congestion based collapse of Internet traffic in 1986.
+They disected the problem and worked <i>fixes</i> into BSD4.3 in a <a href="https://web.archive.org/web/20260106010600/https://people.ucsc.edu/~warner/Bufs/Jac88.pdf">
+paper published in 1988.</a> Exponential backoff of the sending rate was triggered on
+detection of packet loss. That along with <i>slow start</i> fixed congestion collapse
+of the Internet.
+<p>
+In 1994 Villamizar and Song published a paper that is credited with the rule of
+thumb that recommended router buffer sizes equal to the BW * Delay product (D*BW). D is
+the round trip transit delay time. They 
+had some experimental data taken on ANSNET with a small number of TCP flows. The
+number of flows was <i>small</i>. This may have favored flow synchronization. And
+that would increase the utility of large buffers.
+The paper <a href="https://web.archive.org/web/20260106010600/http://dl.acm.org/citation.cfm?id=205520"><i> High performance TCP in
+ANSNET</i></a> is available on-line to those that have permission to read
+the ACM Digital Library or a ready credit card. D*BW has been used by equipment manufacturers
+to size buffers in backbone routers on little more than this work from 20 years ago.
+<p>
+This paper has been cited many times and been the subject of lots of commentary.
+It can be explained that payload stored in the queue is sufficient  
+to feed the bottleneck circuit while TCP recovers from the slow-down caused by
+tail dropping packets. Thus there is no idle time on the circuit. 
+It seems to assume that many flows will back off at the same time from a buffer-full
+event. The flows are in this sense synchronized.
+<p>
+The history of the NSFNet included frantic efforts to build <i>it</i> fast enough to
+provide service before the network collapsed upon itself, <i>It's so popular that no one goes
+there any more.</i> There is an emphasis on keeping links full and to a lesser extent,
+minimizing retransmissions so that the <i>goodput</i> is as high as possible. What
+there was not is high concern for the well being of individual persistent flows.
+<p>
+The underpinnings of the D*BW buffer sizing prescription are weak.
+Much to the delight of researchers who write papers on protocol performance,
+this nut has yielded much meat.
+<p>
+<h2>Revised Buffer Size Theory</h2>
+<p>
+In 2004 G. Appenzeller in McKeown's group at Stanford published 
+<a href="https://web.archive.org/web/20260106010600/http://conferences.sigcomm.org/sigcomm/2004/papers/p277-appenzeller1.pdf">
+<i>Sizing Router Buffers</i></a>. They said Villamizar over-estimated required 
+router buffers by 100X. Their formula for required buffers is D*BW/sqrt(N) where N
+is the number of flows.  10,000 simultaneous flows at the core of the network yields
+100X difference in buffer. The assumption here is that on the backbone, the flows
+that make up the payload are <b>not</b> synchronized and behave independently.
+<p>
+Least anyone think -- If there is enough buffer no packets will drop -- that is <b>not</b>
+what the researchers had in mind.  Their objective is to keep link utilization high in the
+face of packet loss. This requires operating in a regime where flows don't synchronize and
+back off together. Dropping packets is the feedback mechanism that adjusts senders to keep
+the network from over filling; it is supposed to be a <i>share the pain</i> system.
+<p>
+On point of what is important to researchers: The interest in small buffers comes from
+the difficulty of building buffers in an all-optical router. There is a belief that we
+are headed that direction, and best to start preparing for it now. That is important,
+but it isn't directly related to big data set transfers today.
+<p>
+McKeown's lab published an <a href="https://web.archive.org/web/20260106010600/http://yuba.stanford.edu/~nbehesht/publications/BufferSizing-Experiments---IMC08">
+experimental report</a> in 2008 that verifies Appenzeller D*BW/sqrt(N) buffer requirements on the Level(3) 
+commercial backbone. The default buffer size was 190 mS, consistent with the 1994 Villamizar recommendation. 
+In this study buffers were reduced 40X before the first packet was dropped. This provides empirical confirmation
+of Appenzeller on at least one significant network. The details like link utilization are important but I defer
+to the cited paper.
+<p>
+That the commercial Internet might enjoy smaller buffers is not a result that can be blindly 
+applied to research networks that specialize in big data file transfers. Two important differences:
+<p><ul>
+<li>In the commercial internet the backbone links run at higher speed than any of the access links. 
+This causes a pacing effect on each flow with gaps between the packets.
+<li>A small count of large flows may by itself lead to synchronization that further requires increased buffers.
+</ul>
+<p>
+These differences not withstanding, Ben Zhao <i>et al</i> considered network use for high-performance
+scientific computing in <a href="https://web.archive.org/web/20260106010600/http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4620212">
+<i>Performance of high-speed TCP applications in networks with very small buffers</i><a>. They also investigated
+pacing packets as a method of further reducing buffer requirements.
+<p>
+TCP disiplines like <i>Reno</i> and <b>CUBIC</b> are <b>AIMD</b> -- Additive Increase Multiplicate Decrease. After each round trip, a increment (the additive increase) is 
+added to the window size and this continues until the buffer at the bottleneck
+link overflows and packets are tail-dropped. <i><b>AIMD</b></i> trys to 
+fill buffers. This increases the round trip time. Full buffers have no
+reserve capacity to absorb transient bursts.
+<p>
+<h2>A Review Paper</h2>
+A 2009 paper written like a review but published as an opinion editorial summarizes
+a lot of the nuances.
+<p>
+  http://www2.ee.unsw.edu.au/~vijay/pubs/jrnl/09ccr.pdf
+<p>
+<h2>Delay-based congestion detection</h2>
+<p>
+In 2015 Google proposed <b>TIMELY,</b> <a href="https://web.archive.org/web/20260106010600/https://people.ucsc.edu/~warner/Bufs/TIMELY.pdf">RTT delay-based congestion detection</a> for use in the data center.
+A big advantage is that no change in the network was required. Hardware timers in new NICs has the microsecond accuracy
+necessary to make this work.  
+<p>
+In 2016 Google proposed <a href="https://web.archive.org/web/20260106010600/https://people.ucsc.edu/~warner/Bufs/slides-100-iccrg-a-quick-bbr-update-bbr-in-shallow-buffers-00.pdf">
+BBR (Bottleneck Bandwidth and RTT)</a> congestion control. No cooperation is needed from
+the network. RTT measurements are made at rates that bracket the current data rate. The <i>high</i> probes
+look for increases in available BW at the bottleneck. When the RTT creeps upward -- this taken as a signal
+of buffer occupancy congestion. BBR is suitable for use in wide area networks. Google is using it for
+their bulk TCP traffic (<i>e.g.</i>youtube).
+<p>
+<h2>A False God ?</h2>
+<p>
+A focus on full link utilization and maximizing <i>goodput</i> may not be what leads to happy users. 
+Buffer size should be selected to control stalling of individual flows. A 2005 paper
+<a href="https://web.archive.org/web/20260106010600/http://www.caida.org/~amogh/papers/buffers-INF05.pdf"><i>Buffer Sizing for Congested Internet Links</i></a>
+developed <i>Buffer Sizing for Congested Links (BSCL)</i> that incorporates per-flow performance along with 
+link utilization. The authors made use of a network simulation program to explore effect of buffer size on
+on performance under the assumption of varying numbers of flows bottlenecked at the target link. Their conclusions
+in their Table I are that D*BW over-estimates buffer requirements by between 5x and 10X. For massively oversubscribed
+links, buffer requirements shift to greater than D*BW, but at that level of load, happiness is no longer
+a possibility. Sadly, their model of
+a router has output queuing. They acknowledge that virtual output queuing will yield a different result, but 
+then move on without further comment.
+<p>
+<h2>Pacing</h2>
+TCP Reno and friends emit packets in back-to-back bursts. If we could just get them to stop doing that, the effect
+on buffer requirements would be beneficial. This problem shines its importance most brightly when access connections
+to the network run at the same (or greater) speed as the backbone links.
+The question of how to do pacing and how much it might help has been of some interest. 
+Mark Allman and Ethan Blanton wrote
+<a href="https://web.archive.org/web/20260106010600/http://www.icsi.berkeley.edu/pubs/networking/measuringinteractions05.pdf">
+<i>Notes on Burst Mitigation for Transport Protocols</i></a> that suggests ways
+to smooth out TCP.
+A recent paper (2015) is
+<a href="https://web.archive.org/web/20260106010600/http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6663496"><i>
+Edge versus host pacing of TCP traffic in small buffer networks</i></a>. 
+At risk of a strained analogy, given freeway congestion, we could 
+either add more lanes [expensive] or add metering to the on-ramps 
+[not as expensive]. Networks that permit access links at the same speed 
+as their backbone circuits are set up for a much more difficult time
+providing queue memory than those that do not. <a href="https://web.archive.org/web/20260106010600/https://reproducingnetworkresearch.wordpress.com/2013/03/13/cs244-13-tcp-pacing-and-buffer-sizing/">TCP Pacing and Buffer Sizing</a> attempts to shine light on the question of whether pacing actually helps or results in 
+flow synchronization that makes things worse. Answer: it helps.
+<p>
+This may not be hopeless. An article <a href="https://web.archive.org/web/20260106010600/https://lwn.net/Articles/564978/">
+<i>TSO sizing and the FQ scheduler</i></a> in LWN.net describes how it
+is possible to smooth out dumping packets into the net. This reference is
+cited by an 
+<a href="https://web.archive.org/web/20260106010600/https://fasterdata.es.net/host-tuning/linux/fair-queuing-scheduler/"> 
+ESnet host tuning</a> web page.
+<p>
+<h2>Conclusion</h2>
+<p>
+It is tempting to reason thusly:
+<ul>
+<li>Cisco, Juniper, Arista all make routers with large buffers
+<li>They wouldn't do that if there was no purpose to it
+<li>Since there is a purpose, the prudent designer will get as much buffer as possible as a hedge against not having enough.
+</ul>
+The down side to <i>more-is-better</i> is that memory in high speed devices comes at 
+considerable cost, and it consumes a lot of power. Having more than you need is wasteful.
+<p>
+I believe that some product specs are set by the marketing department. If customers tell the equipment manufacturers that
+they need really large buffers, that will be sufficient to make products appear. It is remarkable how persistent 
+the 1994 Villamizar and Song recommendation has been. 
+<p>
+To drive home a point made above, the effect of large buffers is <b>not</b> to eliminate packet loss. It is to keep
+bottleneck links full <i>in spite</i> of packet loss.
+<p>
+This page last edited Nov 30 2019
+
+<!--
+     FILE ARCHIVED ON 01:06:00 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:18:06 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.474
+  exclusion.robots: 0.015
+  exclusion.robots.policy: 0.007
+  esindex: 0.009
+  cdx.remote: 89.682
+  LoadShardBlock: 293.548 (3)
+  PetaboxLoader3.resolve: 6676.981 (3)
+  PetaboxLoader3.datanode: 262.108 (4)
+  load_resource: 6720.511
+-->

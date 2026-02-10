@@ -1,0 +1,148 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/tomahawk-3.html","20260106010654","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661614");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<h2>Tomahawk-3</h2>
+<table width="700">
+<tr><td>
+Announced <b>Christmas 2017</b>.
+<p>
+There are lots of trade rag articles that all seem to have been derived from
+Broadcom's 
+<a href="https://web.archive.org/web/20260106010654/https://www.broadcom.com/company/news/product-releases/2323373"> 
+product press release.</a> I will not regurgitate.
+<p>
+For those attempting to keep the team roster in order, a similar announcement
+for this ASIC's predecessor used Roman numerals (<b>tomahawk-ii</b>) while the 
+new part is <b>Tomahawk 3</b>. It is probably not right to make a big deal
+about this. Family part numbers for Tomahawk3 taken from the datasheet referenced at the end of this page:
+<p>
+<ul>
+<table width="350" border="1">
+<tr><td> Device</td><td>I/O Bandwidth</td><td>Buffer</td></tr>
+<tr><td> BCM56980</td><td>12.8 Tbps</td><td>64 MB</td></tr>
+<tr><td> BCM56982</td><td>8.0 Tbps</td><td>64 MB</td></tr>
+<tr><td> BCM56983</td><td>6.4 Tbps</td><td>32 MB</td></tr>
+<tr><td> BCM56984</td><td>6.4 Tbps</td><td>64 MB</td></tr>
+</table>
+</ul>
+<p>
+There are 256 Serdes in the parent BCM56980 part. Each runs at 50 Gb/s, so 12.8 Tb/s.
+Through the power of long division, the BCM56982 part will have 160 Serdes.  
+Off into the world of wild speculation, a single 400 Gb/s port will have eight lanes.
+So there's a new QSFP-DD format with twice the lane density. A Top of Rack configuration
+might have 48 100 Gb/s ports along
+with eight 400 Gb/s uplink ports. It would need 160 Serdes. Something like that. To
+break the ports out at 100 Gb/s will result in 128 ports with 2 lanes each. That
+works for 2 x 50 Gb/s lanes, but that has no backward capability with QSFP28 which
+uses 4 lanes. Inphi makes gearbox ASICs that can break a 50 Gb/s PAM4 lane in to 
+two NRZ 25 Gb/s lanes.
+<p>
+There is a <a href="https://web.archive.org/web/20260106010654/https://people.ucsc.edu/~warner/Bufs/BCM56980&#32;Series.pdf">series announcement</a>. Perhaps more
+illuminating, Broadcom's architect talked about 
+<a href="https://web.archive.org/web/20260106010654/https://people.ucsc.edu/~warner/Bufs/StanfordGuestLecture-April-08-2019.pdf">switch design generally with
+Tomahawk-3</a> as an example. If there is a <i>take home</i> it is that there
+are multiple competing design objectives and assumptions customers might make
+may not be same as the manufacturer.
+<p>
+Since there are no products for this just-announced ASIC, it is interesting to
+consider the design challenges at this density. The IEEE has been
+<a href="https://web.archive.org/web/20260106010654/https://people.ucsc.edu/~warner/Bufs/kipp_50GE_NGOATH_01_0116.pdf"> doing just that.</a>
+<p>
+<h2>Update March 2018</h2>
+<p>
+Broadcom disclosed some additional details in a 
+<a href="https://web.archive.org/web/20260106010654/https://www.broadcom.com/company/news/product-releases/2323373">
+press release slide deck</a>. Quoting 
+<p><ul>
+<i>New, state-of-the-art, integrated 12.8Tbps shared-buffer architecture offers 3X to 5X higher incast absorption and provides the highest performance and lowest end-to-end latency for RoCEv2 based workloads</ul></i>. 
+This does not say that Tomahawk-3
+has a <b>fully shared</b> buffer. Nvidia/Mellanox believes it does not.
+
+<img src="https://web.archive.org/web/20260106010654im_/https://people.ucsc.edu/~warner/Bufs/tomahawk-3.jpg"> On the not-so-good side, BCM
+remains shy about disclosing the amount of packet memory. Tomahawk and Tomahawk-ii have their packet
+memory divided into four separate chunks, each managed by its own slice. 
+<p>
+In October 2018 an announcement of Arista products incorporating the Tomahawk-3 revealed that 
+packet buffer is 64 MB. See the table up top for current family members.
+<p>
+<h2>Update November 2019</h2>
+<p>
+Not really news -- just an observation. Per the introductory slide deck the SERDES can run
+in either PAM4 50 Gb/s or NRZ 25 Gb/s mode. So 100 Gb/s QSFPs can be plugged into QSFP-DD slots
+and <i>just work</i>. But clearly burning a lot of SERDES at less than 50 Gb/s will hurt max
+performance. A design that will accomodate 100 Gb/s QSFP <b>and</b> preserve max performance
+will use a <i>gearbox</i> for its speed match function. Facebook Minipack and Arista 7368 do this.
+<p>
+<h2>November 2019 Buffer update</h2>
+<p>
+The actual claim in the product into sheet is that Tomahawk-3 is 4X
+better at burst absorption. It is not made clear <i>4X better than what</i>.
+A discussion on the OCP-network call on November 11,2019 made it clear that
+at minimum, there is a hard split into two 32 MB partitions. Each partition
+is further split into quads, but these may be configurable. Into this
+discussion it was said that Broadcom probably doesn't want these details
+revealed outside those who have signed nondisclosure agreements. 
+That stopped the discussion. Sigh.
+<p>
+<h2>A final note -- and a datasheet</h2>
+<p>
+Starting mid-2017 a <a href="https://web.archive.org/web/20260106010654/https://people.ucsc.edu/~warner/Bufs/tomahawk3-datasheet.pdf">datasheet</a> was
+released for the Tomahawk-3. Note that a section at the end shows evolution
+of this datasheet over 2 years. 
+<p>
+<h2>Cat fight!!</h2>
+Tolly posted a paper in June 2021 singing the virtues of Nvidia Spectrum-3 ASIC
+over an unnamed rival referred to a <i>commodity Silicon.</i> The speeds and
+feeds of the Spectrum-3 (32 ports of 400 Gb/s) brackets the possible 
+contenders for the honor of unknown switch. It could be a Broadcom Tomahawk-3.
+Or perhaps it is the silicon behind Cisco's Nexus 9332-GX2B. It is hard
+to imagine tnat any of the providers besides Cisco and Broadcom could be
+the <i>commodity player</i>.
+<p>
+Broadcom has gone to some trouble to make the case that they didn't do it.
+They published a blog <a href="https://web.archive.org/web/20260106010654/https://people.ucsc.edu/~warner/Bufs/Tomahawk3-vs-commodity.pdf">Tomahawk 3 performance vs. Tolly's Commodity switch</a> on October 21 2021. The original Tolly
+report is copyrighted so I won't include it here. It is available as report
+#221125. A summary of the Broadcom report is:
+<ul>
+We have repeated the Tolly studies on our Tomahawk-3 ASIC and clearly 
+we are not the <i>commodity switch</i> of which they speak.
+</ul>
+The Cisco Nexus 9332-GX2B has been out long enough to be covered by
+a CiscoLive! presentation, but for Covid. The datasheet says it is
+a two-slice design but I really need to see diagrams to be clear
+what they're talking about. 
+<p>
+A bright point in the Broadcom blog is that it appears that -- perhaps
+with careful parameter tuning -- as much as 62 MBytes of the packet 
+buffer is available to absorb a microburst. That is a nice number to have.
+
+
+<!--
+     FILE ARCHIVED ON 01:06:54 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:27:46 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.574
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.007
+  esindex: 0.01
+  cdx.remote: 53.102
+  LoadShardBlock: 151.574 (3)
+  PetaboxLoader3.datanode: 165.726 (4)
+  load_resource: 20.332
+-->

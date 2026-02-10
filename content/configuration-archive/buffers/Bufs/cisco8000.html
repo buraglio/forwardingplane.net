@@ -1,0 +1,120 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/cisco8000.html","20260106010726","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661646");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Cisco 8000 Silicon One</h2>
+<p>
+Fancy public announcement in <b>12 December 2019</b>
+<p>
+<a href="https://web.archive.org/web/20260106010726/https://people.ucsc.edu/~warner/Bufs/cisco8000.PNG"><img src="https://web.archive.org/web/20260106010726im_/https://people.ucsc.edu/~warner/Bufs/cisco8000-sm.png" border="2"></a>
+This slide taken without permission from Lane Wigley's presentation at Networkers Barcelona.
+<p>
+In a webcast event on December 12, 2019 that lasted over one hour, Cisco managed to sing high praises 
+without disclosing any content of technical interest. The project was 5 years in
+the making and cost $1B to develop.  Silicon One will be a family of ASICs, the
+first of which is the Q100.  At Cisco Live! in Barcelona
+at the end of January 2020 Lane Wigley talked in 
+<a href="https://web.archive.org/web/20260106010726/https://www.ciscolive.com/global/on-demand-library.html?search=BRKSPG-2280#/session/1561564052105001knIl">
+breakout session BRKSPG-2280</a>
+to describe the new product line and describe technical content. Some form of registration or club membership
+may be required to access the recording.
+<p>
+Broadcom has ASIC families -- each tuned to its task in the network hierarchy.
+Tomahawk is the least flexible where all effort has been given over to blinding
+speed; Trident has more flexibility and programmability; Jericho has deep
+buffers but less speed. Broadcom's crossbar element for the Jericho family
+is <b>Ramon</b>, so yet another ASIC.  Cisco's <b>Silicon One</b> will do 
+it all in a single architecture. The <b>Silicon One Q100</b> has 16 nm
+feature size.
+<p>
+Jericho2 and Cisco's Q100 have in common that they both use HBM memory connected
+to the switching ASIC at the chiplet level. This either improves speed or saves
+power. Those are probably the same thing.  
+All Broadcom switch ASICs dice packets into cells. The cells, typically about
+256 Bytes, are moved to the output port where they are reassembled into packets.
+This works well for cut-through switching. <b>Silicon One</b> moves packets through
+the switch as <i>packets</i>. This has the advantage that there is no difference
+between internal ports that connect to the interchip fabric elements and the panel
+ports at the edge of the device that connect to the outside world.
+<p>
+Cut-through switching is of little use to routers. And the first use of Silicon One
+is to build routers. We are promised that the Silicon One architecture is good for
+everything and that it will pop up all over Cisco's products, perhaps with the
+Q100 ASIC or perhaps with some other as yet unannounced ASIC.
+<p>
+In January 2020 Lawrence Wobker presenting at Tech Field Day disclosed the
+packet memory of the Q100 ASIC is 8 GB of HBM.
+<p>
+At this writing [June 2020] there is no ordering guide and no pricing which
+means that the products have not reached <i>general availability</i>. But soon.
+<p>
+<h2>Update</h2>
+<p>
+The 8201 and 8202 are on the February 2021 price list, so orderable.
+New family members introduced in October 2020 using silicon with
+7 nm features. <b>Q200</b> parts have HBM chiplet off-die memory
+and are intended for routing. <b>Q200L</b> parts do not have off-die
+memory and are intended for switching. Cisco has not disclosed
+packet memory for Silicon One. They have said that it is <b>big</b>.
+The following graphic shows ten family members. It first appeared in a Cisco blog:
+<p>
+<a href="https://web.archive.org/web/20260106010726/https://people.ucsc.edu/~warner/Bufs/cisco-silicon-one-family.jpg"><img src="https://web.archive.org/web/20260106010726im_/https://people.ucsc.edu/~warner/Bufs/cisco-silicon-sm.jpg" border="2"></a>
+<p>
+The <b>G100</b> part was introduced March 11, 2021. Its distinguishing feature
+is PAM4 SerDes that run at 112 Gb/s yielding 100 Gb/s lanes and 800 Gb/s 
+QFP-DD interface speeds. There is a
+<a href="https://web.archive.org/web/20260106010726/https://people.ucsc.edu/~warner/Bufs/white-paper-sp-product-family.pdf"> white paper</a> that describes 
+the parts that have been introduced as of March 2021.
+<p>
+<h2>Update 2 </h2>
+Lane Wigley presented at Cisco Live <b>8000 Series Architecture - BRKSPG-2033</b> in March 2021. Still no word about on-chip
+memory. But the HBM memory is either 4 GB or 8 GB depending on model.
+<p>
+<h2>Update 3 </h2>
+In October 2021 the <a href="https://web.archive.org/web/20260106010726/https://people.ucsc.edu/~warner/Bufs/silicon-one-p100-processor-ds.pdf"> P100</a> 
+member of the family was announced. It has 192 112G SerDes. Eight of the
+SerDes lanes will support 800 Gb/s ports. As a stand-alone switch, it
+has port totals of 19.2 Tb/s. As a line card element half the SerDes
+are used internally toward the fabric, so 9.6 Tb/s to the ports. The family portrait
+was re-issued:
+<p>
+<a href="https://web.archive.org/web/20260106010726/https://people.ucsc.edu/~warner/Bufs/cisco-silicon-one-family-2.jpg"><img src="https://web.archive.org/web/20260106010726im_/https://people.ucsc.edu/~warner/Bufs/cisco-silicon-one-family-2sm.jpg" border="2"></a>
+<p>
+Description of the internal packet buffer remains <i>Large, fully shared, on-die packet buffer</i>
+without dislosure of the packet buffer size. Cisco does have an extensive paper
+on Silicon One's buffer architecture. <a href="https://web.archive.org/web/20260106010726/https://people.ucsc.edu/~warner/Bufs/silicon-one-buffer.pdf"> 
+http://people.ucsc.edu/~warner/Bufs/silicon-one-buffer.pdf</a>. All the examples
+of different types of buffer architecture not withstanding, it does not
+give us the answer to the <i>how much buffer</i> question. It supports a
+guess that the 7 nM parts have 100 Mbyte of packet buffer.
+
+<!--
+     FILE ARCHIVED ON 01:07:26 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:32:10 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.769
+  exclusion.robots: 0.027
+  exclusion.robots.policy: 0.012
+  esindex: 0.014
+  cdx.remote: 43.238
+  LoadShardBlock: 90.321 (3)
+  PetaboxLoader3.datanode: 78.98 (4)
+  load_resource: 8.25
+-->

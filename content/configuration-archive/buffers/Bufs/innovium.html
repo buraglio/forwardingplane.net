@@ -1,0 +1,151 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/innovium.html","20260106010601","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661561");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2><a href="https://web.archive.org/web/20260106010601/http://innovium.com/">Innovium</a> Teralynx 7</h2>
+<p>
+Public announcement date: <b>March 14, 2017</b>
+<p>
+A family of chips aimed at the data center with hopes of eating Broadcom's
+lunch.  New high watermark with 70 MB buffer on-chip
+packet memory. This is just an announcement -- no product yet.
+<p>
+There is a <a href="https://web.archive.org/web/20260106010601/https://people.ucsc.edu/~warner/Bufs/Innovium-Whitepaper.pdf"> white paper</a>. And there 
+is a a PR-based <a href="https://web.archive.org/web/20260106010601/https://people.ucsc.edu/~warner/Bufs/innovium.pdf">trade magazine article</a>. 
+<p>
+To get 128 QSFP28 ports requires either 512 SERDES or 256 SERDES and an
+appropriate <b>gearbox</b> to split a single 50 G PAM4 lane into two 25 G NRZ
+lanes. These devices are made by Inphi.
+<p>
+<h2>March 22, 2018 update</h2>
+<p>
+Innovium presented a slide at the 2018 OpenCompute Summit announcing
+that the milestone of <i>sampling</i> had been reached.
+<p>
+<img src="https://web.archive.org/web/20260106010601im_/https://people.ucsc.edu/~warner/Bufs/innovium-update.png" alt="trade show slide">
+<p>
+<p>
+At this point, samples will be sent to qualified manufacturers who will
+prototype and build products. So, nothing that can be ordered. I asked
+on the OpenCompute show floor
+whether the buffer was a single unified pool. Answer: you need to sign
+a non-disclosure to find out. Innovium claims that the Teralynx latency
+is the best in the industry. Tomahawk 3 is specified by several of
+their OEMs [e.g. Arista] as 700 nS. Cisco clocks their 3432D Teralyx as 370 nS.
+With that performance, it is unlikely that the Teralynx has a 
+slice architecture.
+<p>
+There are momma bear, papa bear, baby bear versions of the Teralynx 7 ASIC:
+<table width="700" border="1">
+<tr>
+<td>Part Numbers</td><td>Capacity (Tbps)</td><td>Number of SerDes @ Gbps</td>
+<td>10/25/50G Ports</td><td>100G Ports  </td><td>200G Ports</td><td>400G Ports</td>
+</tr><tr>
+<td><a href="https://web.archive.org/web/20260106010601/https://people.ucsc.edu/~warner/Bufs/Innovium_TL8.pdf"><b>Teralynx 8</b></a></td>
+</tr><tr>
+<td>IVM88700</td><td> 25.6</td><td> 256@ 10/25/50/100</td><td> 256</td><td> 256</td><td> 128</td><td> 64</td>
+</tr><tr>
+<td>IVM88500</td><td> 12.8</td><td> 256 @ 10/25/50</td><td> 128</td><td> 128</td><td> 64</td><td> 32</td>
+</tr><tr>
+<td>IVM88300</td><td> 8.0</td><td> 160 @ 10/25/50</td><td> 80</td><td> 80</td><td> 40</td><td> 20</td>
+</tr><tr>
+<td><b><a href="https://web.archive.org/web/20260106010601/https://people.ucsc.edu/~warner/Bufs/Innovium-TL7-Product_Brief_v1.0.pdf">Teralynx 7</b></a></td>
+</tr><tr>
+<td>IVM77700</td><td>12.8<td>256 @ 10/25/50</td><td>168<td>128<td>64<td>32</td>
+</tr><tr>
+<td>IVM77600<td>8.0</td><td>160 @ 10/25/50</td><td>160<td>80<td>40<td>20</td>
+</tr><tr>
+<td>IVM77500<td>6.4</td><td>256 @ 10/25<td>168</td><td>64<td>32<td>–</td>
+</tr><tr>
+<td>IVM77510<td>6.4</td><td>128 @ 10/25/50</td><td>128<td>64<td>32<td>16</td>
+</tr><tr>
+<td>IVM77310<td>3.2</td><td>128 @ 10/25<td>128</td><td>32</td><td>16<td>–</td>
+</tr><tr>
+<td><b><a href="https://web.archive.org/web/20260106010601/https://people.ucsc.edu/~warner/Bufs/Innovium-TL5-Product-Brief-v1.2.pdf">Teralynx 5</b></a></td>
+</tr><tr>
+<td>IVM55610</td><td>6.4</td><td>128 @ 10/25/50</td><td>128</td><td>64</td><td>32</td><td>16</td>
+</tr><tr>
+<td>IVM55510</td><td> 4.8</td><td> 128 @ 10/25/50</td><td> 128</td><td> 64</td><td> 32</td><td> 16</td>
+</tr><tr>
+<td>IVM55300</td><td> 3.2</td><td> 128 @ 10/25</td><td> 128</td><td> 32</td><td> 16</td><td> -</td>
+</tr><tr>
+<td>IVM55200</td><td> 2.4</td><td> 96 @ 10/25</td><td> 96</td><td> 24</td><td> 12</td><td> -</td>
+</tr><tr>
+<td>IVM55100</td><td> 1.2</td><td> 48 @ 10/25</td><td> 48</td><td> 12</td><td> 6</td><td> -</td>
+</table>
+
+<p>
+Teralynx was the top dog switch at 12.8 Tb/s in the category of
+vaporware. That ended with Broadcom's Tomahawk 3 announcement
+at the end of 2017 because Broadcom was shipping samples to their
+whitebox vendors. With Teralynx's March announcement, they are now
+shipping as well.
+<p>
+<h2>May 2020 update</h2>
+<p>
+TERALYNX 8 Family Highlights
+<ul> <li> Robust 112G SerDes IO with best economics for next-generation switches
+<ul>
+<li> Up to 256 long-reach (LR) 112G PAM4 SerDes to enable switch
+configurations such as 32 x 800G, 64 x 400G, 128 x 200 and 256 x 100G
+<li> Enables industry’s most compact 32 x 800G (25.6 Tbps) switch
+in 1RU form factor
+<li>Enables a range of connectivity options, including 10/25/50/100/200/400 GbE
+</ul>
+<li> TERASCALE fabric delivers industry’s most scalable interconnect with lowest latency
+<ul>
+<li>Range of pin-compatible SKU options, including 25.6 Tbps, 12.8 Tbps and 8Tbps
+<li>Largest on-chip buffer of <b>170 MB</b> for a data-center switch
+<li>Highest radix with 256 ports to help flatten network tiers
+</ul></ul>
+Innovium <a href="https://web.archive.org/web/20260106010601/https://people.ucsc.edu/~warner/Bufs/Innovium_TL8.pdf">announced the Teralynx8</a> on April 29, 
+2020. The chip has a 7 nm geometry. The smallest of the Teralynx 8 ASICs
+(IVM88300) has a 114 MByte buffer.
+<p>
+<h2>April 2021 update</h2>
+<p>
+<a href="https://web.archive.org/web/20260106010601/https://www.nextplatform.com/2021/04/21/innovium-hitches-its-switches-to-sonics-boom/" < a> Article in The Next Platform</a> announces that innovium
+has done a SONiC port for Teralynx. It appears that design wins for
+Teralynx have been mostly private. Perhaps that will change. Innovium is
+rumored to be used in AWS and confirmed at LinkedIn. There may be
+ODM products aimed at second tier users, given the SONiC port.
+Anyway, read the article.
+</table>
+<p>
+<p>
+<b>Reorganization</b>
+<p>
+<p>
+This page had a table showing switch performance evolution. It was
+poorly placed and has been <a href="https://web.archive.org/web/20260106010601/https://people.ucsc.edu/~warner/Bufs/buf-hist.html"> moved.</a>
+<!--
+     FILE ARCHIVED ON 01:06:01 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:28:41 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.559
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.008
+  esindex: 0.011
+  cdx.remote: 54.945
+  LoadShardBlock: 195.562 (3)
+  PetaboxLoader3.datanode: 173.206 (4)
+  PetaboxLoader3.resolve: 55.214
+  load_resource: 55.379
+-->

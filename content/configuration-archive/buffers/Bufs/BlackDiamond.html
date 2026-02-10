@@ -1,0 +1,93 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/BlackDiamond.html","20260106010630","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661590");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Extreme BlackDiamond X8</h2>
+<p>
+<img src="https://web.archive.org/web/20260106010630im_/https://people.ucsc.edu/~warner/Bufs/BlackDiamond.png" alt="Big honking switch beauty shot">
+<p>
+Announced in 2011. Started shipping in 2012. 
+<p>
+100 Gb/s cards accept 4 CFP2 transceivers. A chassis can support up to 32 100-G 
+ports. The only interfaces supported are SR10 and LR4.
+<p>
+This is an 8-slot switch 
+with 20 Tb/s backplane capacity. The <a href="https://web.archive.org/web/20260106010630/https://people.ucsc.edu/~warner/Bufs/BlackDiamond-X8-DS.pdf">
+data sheet</a> has nothing to say about packet buffers. A 
+<a href="https://web.archive.org/web/20260106010630/https://people.ucsc.edu/~warner/Bufs/BlackDiamond-FAQ.pdf">FAQ produced in 2011 </a> before the first products were shipped has some info:
+<p>
+<b>23. What will the switch buffer sizes on BlackDiamond X8 switches be?</b>
+<p>
+<blockquote>
+The I/O modules will support a 9 Mbyte (72 Mbit) packet buffer per 24 x 10 GbE ports or 6 x 40 GbE ports. This
+means that the 24.port 40 GbE module will have 36 Mbyte, the 12.port 40 GbE and the 48.port 10 GbE
+modules will have 18 MByte. Each of the switching fabric modules (FM) will support a 36 Mbyte (288 Mbit)
+packet buffer. This means that the FM packet buffer total will be 144 Mbytes when four FMs are installed.
+</blockquote>
+<p>
+These are very modest buffers. That there is buffer in the fabric
+modules is interesting. This may be more useful for multicast replication
+than it is for buffering large flows.
+<p>
+<h3>Note added June 2016</h3>
+<p>
+Extreme has a <a href="https://web.archive.org/web/20260106010630/https://people.ucsc.edu/~warner/Bufs/Extreme-Buffer-WP.pdf">white paper on buffers</a> 
+that was added to their web site in 2014. Extreme reviews the problem of 
+network congestion -- much as this web page does. There is not a lot of 
+exciting new material here. There is a confirmation that the 
+kit is assembled with Broadcom trident silicon.  The paper says in its
+concluding sections that FADT (Fair adaptive Dynamic Threshold) adapts
+perfectly to a wire range of workloads. But it also says [page 6]:
+<ul>
+Extreme Networks Summit X670 TOR switch provides 9MB
+of smart packet buffer across 48, 10GbE and 4, 40GbE ports.
+Similarly, the Extreme Networks Black Diamond X8 utilizes
+shared smart buffering technology both on its I/O modules
+as well as on its fabric modules or example, the 24-port 40G
+module uses four packet processing silicon chips, each of
+which provides 9MB (72Mb) of smart packet buffer. <b>A small
+number of buffers are reserved on a per-port/per-queue basis,
+which is configurable.</b> The rest of the buffers are available as
+a shared pool that can be allocated dynamically across ports/
+queues.
+</ul>
+The emphasized sentence above says that Extreme 
+software exposes knobs that permit buffer thesholds to
+be adjusted to position the switch between dynamic pool allocation and 
+port allocation. Knobs are good.
+<p>
+The paper somewhat over discusses buffer bloat and should not be relied upon in this regard. Owners
+of Extreme switches should use this psper to get their manufacturer's slant.
+</td></tr>
+</table>
+<!--
+     FILE ARCHIVED ON 01:06:30 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:39:39 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.515
+  exclusion.robots: 0.015
+  exclusion.robots.policy: 0.007
+  esindex: 0.009
+  cdx.remote: 7.536
+  LoadShardBlock: 110.777 (3)
+  PetaboxLoader3.datanode: 166.608 (4)
+  load_resource: 158.284
+  PetaboxLoader3.resolve: 62.574
+-->

@@ -1,0 +1,58 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/deep-buf","20260106010629","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661589");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Switches with Deep Buffers</h2>
+<p>
+These 1 RU switches use memory external to their switch chip(s) to provide 
+deep buffers.  Nothing should be read into the relative buffer depth of the 
+Arista and Force10 switches.  Once the decision is made to host packet
+memory off the switch chip, it is easy to provide obscene amounts of 
+memory.  To get sufficient speed, the design will probably use several
+interleaved banks -- and it becomes difficult to do this given chip 
+densities without providing a lot of RAM.
+<p>
+For example, Arista claims 50 mS buffers are simultaneously available for
+each of its 48 Gig-E ports.  That takes 300 Mbytes. Yet the 7048 has more
+than twice that.  Something more than buffer requirements is acting
+here.
+<p>
+If your high performance computing environment includes serving Gb/s 
+connected servers from your 10 Gb/s WAN feed, either the Force10 S60 or
+the Arista 7048 will assure that you can feed out line rate arrivals 
+through the downward speed step without spilling packets. A less 
+charitable perspective would be that the ship has sailed for 1 Gb/s 
+connected devices and that HPC full players should get better computers.
+</td></tr>
+</table>
+<!--
+     FILE ARCHIVED ON 01:06:29 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:39:08 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.49
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.008
+  esindex: 0.012
+  cdx.remote: 6.621
+  LoadShardBlock: 237.749 (3)
+  PetaboxLoader3.resolve: 86.883 (2)
+  PetaboxLoader3.datanode: 149.579 (4)
+  load_resource: 21.702
+-->

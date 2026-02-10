@@ -1,0 +1,59 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Arista-7250X","20260106010704","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661624");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010704im_/https://people.ucsc.edu/~warner/Bufs/7250QX-64.PNG">
+<p>
+Introduced in November, 2013.  This switch uses six Trident II switch ASICs connected with fabric crossbar chips. While one switch ASIC can support 32 ports, when a crossbar is used to expand the port count, switch chip interfaces are used to talk to the backplane fabric.  It takes 6X the switch chips to get 2X the ports. Its ports can run in 40 Gb/s mode or in 4 x 10 Gb/s mode. 12 MBytes of buffer memory is available on each switch ASIC to support its packets.
+<p>
+12 MBytes of packet memory is on each switch ASIC and is available to buffer packets to and from the switches ports.  This memory is <i>per switch chip</i> and is not a global resource.
+<p>
+The 7250X is a fixed configuration 64 port 2RU switch. The Arista 7300X is a modular version of the same architecture and much larger port counts..
+<p>
+There is an <a href="https://web.archive.org/web/20260106010704/https://people.ucsc.edu/~warner/Bufs/Arista-7250X.pdf">architecture paper</a> that explains a lot about the products.
+<p>
+Generally, there is little on this web page about switch costs. Arista put the following in their press release dated Nov 4 2013:
+<p>
+<b>The 7250QX-64 is available now and shipping for $1500 per 40GbE port.</b>
+<p>
+<h2>7300X</h2>
+<p>
+Introduced at the same time as the fixed configuration 7250X, the schematic diagram shows how the switch uses trident-II ASICs both for panel ports
+and as internal crossbar elements.
+<p>
+<img src="https://web.archive.org/web/20260106010704im_/https://people.ucsc.edu/~warner/Bufs/7300X.png" alt="system diagram of 7300X">
+</td></tr>
+</table>
+
+
+<!--
+     FILE ARCHIVED ON 01:07:04 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:20:18 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.636
+  exclusion.robots: 0.02
+  exclusion.robots.policy: 0.009
+  esindex: 0.011
+  cdx.remote: 9.932
+  LoadShardBlock: 652.857 (3)
+  PetaboxLoader3.datanode: 558.084 (4)
+  PetaboxLoader3.resolve: 2148.893 (2)
+  load_resource: 2107.057
+-->

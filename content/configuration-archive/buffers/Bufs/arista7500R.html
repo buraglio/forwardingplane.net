@@ -1,0 +1,134 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/arista7500R.html","20260106010712","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661632");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Arista 7500R switches</h2>
+<p>
+Introduced March 29, 2016. <a href="https://web.archive.org/web/20260106010712/https://people.ucsc.edu/~warner/Bufs/7500R-press.pdf">Press release</a> and <a href="https://web.archive.org/web/20260106010712/https://people.ucsc.edu/~warner/Bufs/Arista7500R.pdf">architecture paper</a>
+<p>
+<a href="https://web.archive.org/web/20260106010712/https://people.ucsc.edu/~warner/Bufs/7504R-beauty-shots.jpg"><img src="https://web.archive.org/web/20260106010712im_/https://people.ucsc.edu/~warner/Bufs/7504R-beauty-shots-s.jpg" border="4" alt="beauty shot of circuit boards"></a>
+<p>
+Networkworld thinks this as based on the Broadcom Jericho switch chip. They said:
+<p>
+<ul>
+The products leverage the Broadcom Jericho chipset which is optimized for 100 Gig-E, deep buffers and routing.
+</ul>
+<p>
+A January 2016 posting on NANOG said:
+<p>
+<ul>
+The BCM88670 (Jericho) is what powers the new Cisco NCS55XX devices. The processor
+is linerate above around 100 bytes per packet without external TCAM, supports 256K
+IPv4/64K IPv6 FIB entries (or mixed amounts). These chips are being used for high
+scale 100G, the initial NCS5508 linecard is a 36x100G QSFP28 one.
+<p>
+Juniper has chosen to use their own silicon for most of their dense 100G platforms,
+but you will see these chips used by pretty much everyone else I imagine at some point i
+n the next year.
+</ul>
+Arista has an extra cost software option called <a href="https://web.archive.org/web/20260106010712/https://people.ucsc.edu/~warner/Bufs/FlexRoute-WP.pdf"> FlexRoute</a> that works like hamburger
+helper. It dilutes and extends the expensive TCAM [hamburger] to make it appear that
+there is more than it first appeared. With <i>helper</i>, 256K worth of TCAM is
+stretched to cover 1M routes, along with a promise that future recipes may cut
+that even further.
+<p>
+Arista makes explicit buffer claims in the architecture paper cited above 
+and repeated here. Arista's Martin Hull claims 50 mS of data can be stored
+on each input port. There is probably some double counting here, but that
+should be OK.
+<p>
+Table 4: Default per-VoQ Output Port Limits
+<table border="1">
+<tr><td width="250">
+Output Port Characteristics
+</td><td width="150" align="center">Maximum Packet
+Queue Depth
+</td><td width="150" align="center">
+Maximum Packet
+Buffer Depth (MB)
+</td><td width="150" align="center">
+Maximum Packet
+Buffer Depth (msec)
+</td></tr><tr><td></td><td></td><td></td><td>
+</td></tr><tr><td>
+VoQ for a 100Mbps output port
+</td><td align="center">5,000 packets
+</td><td align="center">1.25 MB
+</td><td align="center">12.5 msec
+</td></tr><tr><td>
+VoQ for a 1G output port
+</td><td align="center">12,500 packets
+</td><td align="center">12.5 MB
+</td><td align="center">12.5 msec
+</td></tr><tr><td>
+VoQ for a 10G output port
+</td><td align="center">50,000 packets
+</td><td align="center">50 MB
+</td><td align="center">5 msec
+</td></tr><tr><td>
+VoQ for a 25G output port
+</td><td align="center">125,000 packets
+</td><td align="center">125 MB
+</td><td align="center">5 msec
+</td></tr><tr><td>
+VoQ for a 40G output port
+</td><td align="center">200,000 packets
+</td><td align="center">200 MB
+</td><td align="center">5 msec
+</td></tr><tr><td>
+VoQ for a 50G output port
+</td><td align="center">250,000 packets
+</td><td align="center">250 MB
+</td><td align="center">5 msec
+</td></tr><tr><td>
+VoQ for a 100G output port
+</td><td align="center">500,000 packets
+</td><td align="center">500 MB
+</td><td align="center">5 msec
+</td><tr>
+</table>
+<p>
+<h1>Buffer monitoring</h1>
+According to the data sheet:
+<p>
+<ul>
+Latency Analyzer and Microburst Detection (LANZ)
+<ul>
+<li> Configurable Congestion Notification (CLI, Syslog) *
+<li> Streaming Events (GPB Encoded) *
+<li> Capture/Mirror of congested traffic *
+</ul>
+<p>
+* Not currently supported in EOS
+</ul>
+</ul>
+<!--
+     FILE ARCHIVED ON 01:07:12 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:29:07 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.487
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.008
+  esindex: 0.011
+  cdx.remote: 75.397
+  LoadShardBlock: 234.197 (3)
+  PetaboxLoader3.datanode: 255.134 (4)
+  load_resource: 35.615
+-->

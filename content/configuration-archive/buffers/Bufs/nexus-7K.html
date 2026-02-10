@@ -1,0 +1,76 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/nexus-7K.html","20260106010632","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661592");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750"><tr><td>
+<h2>Nexus 7000 and 7700</h2>
+<p>
+The Nexus 7000 was introduced in 2008. The 7700 appeared in June 2013.
+These are large rack mount chassis switches that accept between one
+and sixteen interface cards.
+Not clear whether this was the <a href="https://web.archive.org/web/20260106010632/https://people.ucsc.edu/~warner/Bufs/catx">initial intent:</a> 
+Nexus 7xxx switches are
+aimed at the data center while the Catalyst 6500/6800 switches are targetted 
+at the campus. 
+<p>
+The Nexus brothers share technology, including ASICs and architecture. 
+But none of
+the parts from the 7000 work in a 7700 chassis and <i>vice versa.</i> Interface
+cards in the M series use EARL (Encoded Address Recognition Logic) ASICs.
+It is mature technology that has been around since the Catalyst 5000. As
+a side effect, the set of features is pretty rich. Newer ASICs on F
+series cards go faster but don't yet do as many tricks. F series cards
+are full on VoQ (virtual output port queuing).
+<p>
+The Nexus 7000 M2 2-port 100 Gb/s interface hashes traffic across
+ten VQI (virtual queue index) so that parallel lookup engines can 
+dispose of all packets. A single flow always hashes to a single
+VQI.  So any one flow is limited to the VQI capacity -- or 10 Gb/s.
+The 7000-M2 looks
+like a 100 Gb/s interface in an environment with a very large count
+of small flows that hash evenly across all the virtual channels.
+For the case of a small count of large flows, this design makes
+poor use of resources. The F3 100 Gb/s card does not have this
+characteristic.
+<p>
+Cisco gives talks on the Nexus 7xxx at their annual customer 
+meetings. Beyond the buffer sizes listed in the 
+<a href="https://web.archive.org/web/20260106010632/https://people.ucsc.edu/~warner/buffer.html">table</a>, it would be
+difficult to say much in summary that would be better than a link
+to the source material:
+<p>
+<a href="https://web.archive.org/web/20260106010632/https://www.ciscolive.com/online/connect/sessionDetail.ww?backBtn=true&amp;SESSION_ID=76273">https://www.ciscolive.com/online/connect/sessionDetail.ww?backBtn=true&SESSION;_ID=76273</a>
+<p>
+Note that this link is from <i>Ciscolive!</i> Milan, 2014. Newer versions appear every year. 
+Older versions of this talk are available on-line of you want a more focused
+view of the older cards.
+
+
+<!--
+     FILE ARCHIVED ON 01:06:32 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:39:58 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.54
+  exclusion.robots: 0.023
+  exclusion.robots.policy: 0.009
+  esindex: 0.011
+  cdx.remote: 48.13
+  LoadShardBlock: 173.847 (3)
+  PetaboxLoader3.datanode: 71.463 (4)
+  load_resource: 26.965
+-->

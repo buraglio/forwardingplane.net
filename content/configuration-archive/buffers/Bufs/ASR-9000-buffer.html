@@ -1,0 +1,133 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/ASR-9000-buffer.html","20260106010628","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661588");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750"><tr><td>
+The ASR9000 is a Virtual Output Queue (VOQ) design with memory on
+the input side of the line cards. Packets are pulled across the cross-bar
+fabric when output capacity is available and sent along their way. VOQ
+switch design prevents head of line blocking.
+The hard work is done by NPU - Network Processor Units.  A 
+<a href="https://web.archive.org/web/20260106010628/https://people.ucsc.edu/~warner/Bufs/ASR-buffer.JPG">slide</a>
+from CiscoLive! gives buffer sizes for 10 Gb/s line cards in mS for several configurations. The
+slide is the source of the data in this table:
+<p>
+</td></tr><p>
+<table border="1" width="750">
+<tr> <td> </td>
+<td>   </td>
+<td>   </td>
+<td>NPU speed</td>
+<td>per port buffer</td>
+</tr>
+<tr> <td>First Generation</td>
+<td>Trident -L, -B</td>
+<td>17M PPS</td>
+<td>15 Gb/s</td>
+<td>50 mS</td>
+</tr>
+<tr> <td>First Generation</td>
+<td>Trident -E</td>
+<td>17M PPS</td>
+<td>15 Gb/s</td>
+<td>150 mS</td>
+</tr>
+<tr>
+<td>Second Generation</td>
+<td>Typhoon SE</td>
+<td>44M PPS</td>
+<td>60  Gb/s</td>
+<td>339 mS x 2 ports/NPU</td>
+</tr>
+<tr>
+<td>Second Generation</td>
+<td>Typhoon TR</td>
+<td>44M PPS</td>
+<td>60  Gb/s</td>
+<td>170 mS x 2 ports/NPU</td>
+</tr>
+<tr>
+<td>Second Generation</td>
+<td>Typhoon SE</td>
+<td>44M PPS</td>
+<td>60  Gb/s</td>
+<td>226 mS x 3 ports/NPU</td>
+</tr>
+<tr>
+<td>Second Generation</td>
+<td>Typhoon TR</td>
+<td>44M PPS</td>
+<td>60  Gb/s</td>
+<td>113 mS x 3 ports/NPU</td>
+</tr>
+</table>
+<tr><td>
+<p>
+<table width="750">
+<tr><td>
+There are three 100 Gb/s line cards with a different <a href="https://web.archive.org/web/20260106010628/https://people.ucsc.edu/~warner/Bufs/ASR-100G">story</a>.
+<p>
+<i>Trident</i> is not related to the Broadcom device of the same name. First Gen NPUs can handle 10 Gb/s ports comfortably, so:
+</td></tr>
+</table>
+<p>
+<img src="https://web.archive.org/web/20260106010628im_/https://people.ucsc.edu/~warner/Bufs/ASR-trident.JPG">
+<p>
+<table width="750">
+<tr><td>
+Second Gen NPUs can handle up to 6 x 10 Gb/s although other components 
+could become a bottleneck e.g. with only a single Route Swith Processor. 
+Three is safe in all configs. So, for example:
+</td></tr>
+</table>
+<p>
+<img src="https://web.archive.org/web/20260106010628im_/https://people.ucsc.edu/~warner/Bufs/ASR-typhoon.JPG">
+</table>
+<table border="1" width="750"><tr><td>
+Q. What is the default queue buffer size?
+<p>
+A. That depends on the QoS configuration. Each network processing unit 
+(NPU) has frame memory attached to it and this frame memory is where 
+packet buffering is seen. The Trident -L and -B cards send a 50ms burst 
+of traffic.The Trident -E card sends a maximum 150ms burst of traffic. 
+The Typhoon base line card is about three times as much as the Trident, 
+so it sends 300ms per NPU and it is serve first-come first-served. So, 
+if on a Trident card there is one interface on NPU, that interface can 
+use either 50ms or 150ms of buffering. If you created two sub-interfaces, 
+then 150ms will shared by those two sub-interfaces and then it depends on 
+the queue limit configuration in the Q0S policy as to how much of that 
+buffer you want to be assigned for the interface. You can allow 
+oversubscription, but then you run into packet anarchy.
+<p>
+Snatched from: 
+https://supportforums.cisco.com/document/143011/understanding-cisco-asr-9000-series-aggregation-services-routers-platform
+</td></tr>
+
+<!--
+     FILE ARCHIVED ON 01:06:28 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:39:53 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.658
+  exclusion.robots: 0.021
+  exclusion.robots.policy: 0.008
+  esindex: 0.012
+  cdx.remote: 7.031
+  LoadShardBlock: 408.226 (3)
+  PetaboxLoader3.datanode: 359.994 (4)
+  load_resource: 38.478
+-->

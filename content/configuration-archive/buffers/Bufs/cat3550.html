@@ -1,0 +1,101 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/cat3550.html","20260106010738","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661658");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Catalyst 3550</h2>
+<p>
+Introduced <a href="https://web.archive.org/web/20260106010738/https://people.ucsc.edu/~warner/Bufs/cat3550.png">December 2001</a>
+<p>
+It is now hard to find documentation on switches from the turn of
+the century. If there were architecture deep dives for this switch,
+they are gone now.  A discussion of <a href="https://web.archive.org/web/20260106010738/https://people.ucsc.edu/~warner/Bufs/Sw-buffer-size.pdf">
+switch buffer sizes</a> makes it clear that at the time such
+info was considered proprietary. The answer for the Catalyst
+3550 appears to be 2 MByte. What is not clear is whether the
+3550 buffer was organized as packet or particle buffers. That
+makes a big difference in the effective buffering capability.  
+The 3550 was a revolutionary 
+introduction. It is a follow-on to the Catalyst 3500XL family and
+the first to be able to merge L2 and L3 into an edge product.
+At introduction, it was a 10/100 Mb/s switch with 1 Gig uplinks.
+That permitted switching to be done in a single port ASIC.
+Some details along with buffer size are in the <a href="https://web.archive.org/web/20260106010738/https://people.ucsc.edu/~warner/Bufs/3550-datasheet.PDF">data sheet.</a>
+<p>
+A switch diagram from a 2003 Networkers slide deck shows
+the shared memory architecture. Packet payloads go into the
+shared memory while header info needed for routing is stored
+in SRAM. <i>Satellite</i> refers to the port ASIC [Satellite ASIC].
+Shared memory is <i>off chip</i>.
+<p>
+<img src="https://web.archive.org/web/20260106010738im_/https://people.ucsc.edu/~warner/Bufs/cat3550-arch.png">
+<p>
+Here are some paragraphs snipped from <a href="https://web.archive.org/web/20260106010738/https://people.ucsc.edu/~warner/Bufs/3550QoS.pdf">
+QOS Review</a>:
+<ul>
+<b>Queue Size Configuration on Gigabit Ports</b>
+<p>
+The 3550 switch uses central buffering. This means that there are no 
+fixed buffer sizes per port. However, there is a fixed number of 
+packets on a Gigabit port that can be queued. This fixed number is 
+4096. By default, each queue in a Gigabit port can have up to 1024 
+packets, regardless of the packet size. However, you can modify 
+the way in which these 4096 packets are split among the four queues. 
+<p>
+<b>Queue Management and Queue Size on Non-Gigabit Ports</b>
+<p>
+There is no queue management scheme available on 10/100-Mbps ports 
+(no WRED or tail drop with two thresholds). All four queues are 
+FIFO queues. There is also no maximum queue size that reserves 
+4096 packets for each Gigabit port. 10/100-Mbps ports store 
+packets in each queue until it is full because of a lack of 
+resources. You can reserve a minimum number of packets per queue. 
+This minimum is set to 100 packets per queue by default. You can 
+modify this min reserve value for each queue if you define 
+different min reserve values and assign one of the values to each queue.
+<p>
+</ul>
+A <a href="https://web.archive.org/web/20260106010738/https://people.ucsc.edu/~warner/Bufs/Catalyst&#32;3550&#32;Tutorial.pdf">Cat 3550 tutorial</a> says
+that the answer is that total shared memory is 2 Mbytes in agreement
+with the datasheet. The funny thing is that 3550 lists buffer capacity
+in terms of <i>packets</i> instead of <i>Bytes.</i> Nowhere does Cisco
+claim that the 3550 has a particle memory architecture. I suspect
+that buffer memory is off-chip and there is a lot of it. All buffers
+are sized for a max length packet - 1500 bytes.   Memory
+for the Gig-E ports may not be shared and therefore outside the 2 MB
+of shared memory used by the access ports.
+<p>
+Cisco has an entire book: <i>Cisco Catalyst QoS: Quality of
+Service in Campus Networks</i> [2003]. It contains an entire
+chapter on the Cat3550 and there is nothing that helps make
+this any clearer. Perhaps in 2017 it is not that important.
+
+<!--
+     FILE ARCHIVED ON 01:07:38 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:37:38 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.633
+  exclusion.robots: 0.023
+  exclusion.robots.policy: 0.01
+  esindex: 0.011
+  cdx.remote: 29.013
+  LoadShardBlock: 147.362 (3)
+  PetaboxLoader3.datanode: 106.117 (4)
+  load_resource: 25.211
+-->

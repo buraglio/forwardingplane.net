@@ -1,0 +1,43 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/NEC","20260106010746","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661666");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+NEC says <a href="https://web.archive.org/web/20260106010746/https://people.ucsc.edu/~warner/Bufs/NEC_PF5820.pdf"> this switch</a> uses merchant silicon, but they have declined to respond to a 
+<a href="https://web.archive.org/web/20260106010746/http://networkingnerd.net/2012/04/09/nec-network-field-day-3/">direct question</a> from Ivan Pepelnjak about whether it is a Broadcom Trident+. Given the speeds and feeds, it looks like that kind of duck, so here it lands in the table. What sets the PF5820 apart from the other switches in this section is that it is explicitly sold to be an openflow programmable switch and not hyped as  merely another Top of Rack data center piece of hardware.
+<p>
+SDN is a software play. The quality of the supporting software will be crucial.  But this web page is about buffering and not about SDN. And so far, we know nothing about buffering.  
+</td></tr><tr><td>
+If your plan is to get the cheapest Trident+ switch that has dynamic buffer allocation, it is unlikely that NEC will be the cheapest.
+A <a href="https://web.archive.org/web/20260106010746/http://www.networkworld.com/news/2012/012412-ibm-nec-openflow-255224.html">Network World</a> article pegs the list price of the PF5820 at $30K. The 1G/10G PF5240 is $25K list.
+</td></tr>
+</table>
+<!--
+     FILE ARCHIVED ON 01:07:46 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:19:28 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.602
+  exclusion.robots: 0.02
+  exclusion.robots.policy: 0.01
+  esindex: 0.011
+  cdx.remote: 17.015
+  LoadShardBlock: 231.228 (3)
+  PetaboxLoader3.datanode: 124.093 (4)
+  load_resource: 17.973
+-->

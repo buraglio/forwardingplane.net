@@ -1,0 +1,60 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Cisco3100","20260106010726","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661646");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010726im_/https://people.ucsc.edu/~warner/Bufs/cisco-3132Q.png">
+<p>
+Introduced on September 30, 2013, this switch is an evolution of the Nexus 3000 which is built 
+around the Trident+ switch chip. In what amounts to a breath of fresh air, Cisco explicitly says this 
+is a Trident II product in figure 3 in their <a href="https://web.archive.org/web/20260106010726/https://people.ucsc.edu/~warner/Bufs/cisco-3100-arch.pdf">architecture paper.</a>
+The discussion on page 8 hints at the fine details of the size of the dynamic pool. Some buffer 
+space is reserved for each port and queue, least a packet arrive with no place to land it. This 
+would lead to head-of-line blocking.
+<p>
+The size of the dynamic buffer pool is 12.2 MBytes less whatever is required for dedicated port 
+buffers. The amount of dedicated buffer space depends on the number of ports. And the number of ports depends
+on whether some of the QSFP ports are running as four SFP+ ports.  More ports means less memory in
+the dynamic pool. I think.
+<p>
+The 3132Q breaks one of the QSFPs into four SFP+ jacks. These ports are <i>either/or</i> with respect
+to the associated QSFP jack. Cisco can do this because of better packing of the QSFP jacks relative to
+other vendor offerings on the front panel leaves space for it.
+<p>
+Cisco has the 3172PQ with 48 SFP+ and 6 QSFP+ slots.  It looks like the 12 of the QSFP+ ports have
+been presented as 48 SFP+ ports so that breakout cables are not required. It also uses a Trident II
+switch chip.  Cisco uses Trident II switches along with some custom silicon in the Nexus 9000.
+</td></tr><tr><td>
+<img src="https://web.archive.org/web/20260106010726im_/https://people.ucsc.edu/~warner/Bufs/3172pq.jpg" < td></tr>
+</table>
+
+<!--
+     FILE ARCHIVED ON 01:07:26 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:20:41 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.498
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.008
+  esindex: 0.011
+  cdx.remote: 86.388
+  LoadShardBlock: 258.418 (3)
+  PetaboxLoader3.resolve: 51.877 (3)
+  PetaboxLoader3.datanode: 138.021 (4)
+  load_resource: 13.59
+-->

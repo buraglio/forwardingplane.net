@@ -1,0 +1,102 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/arista7504","20260106010731","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661651");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+The 7504E was introduced in 2013 and entered legacy status in 2016 with the introduction of the 7500R series.
+<p>
+Each line card has six packet processors. Each processor has 3 Gbytes. The same line cards are used in the 4- and 8-slot switches. 
+<p>
+<img src="https://web.archive.org/web/20260106010731im_/https://people.ucsc.edu/~warner/Bufs/arista-buf.png">
+<p>
+Wondering whether Arista queue sizes were defaults or are user-adjustable, I 
+asked their TAC. TAC responded via email on 8/6/13:
+<p>
+You can indeed change the voq limit on 7508 with the following command: 
+"platform petraA voq tail-drop (value between 1 &amp; 50 megabytes)". The effective 
+changes can be observed under "show platform petraA buffers" as (For example, 
+when the value is kept at 5 megabytes):
+<pre>
+VOQ Limits (bytes)
+   Normal              :     5242880
+</pre>
+Arista commissioned a <a href="https://web.archive.org/web/20260106010731/https://people.ucsc.edu/~warner/Bufs/7508-microburst.pdf">microburst test</a> 
+for the 7508 as part of a review from NetworkWorld in 2012.  
+The results are much less clear. Key points are:
+<ul>
+<li> There is no industry standard test for microburst capability
+<li> In virtual output port queuing, results depend on the crossbar scheduler
+<li> These conclusions probably hold across all VoQ switches, independent of manufacturer.
+</ul>
+My [Warner's] opinion is that the first test is flawed. Here's an analogy.
+I want to test a highway bridge rated to carry 5 tons. I might carefully
+drive a truck weighing 10 tons across the bridge while monitoring
+it for distortion under load which would let me predict its reserve strength. 
+What I would <b>not</b> do is run a 500 ton load across the bridge. I want
+stress the structure at a small multiple of its rating -- not destroy it.
+<p>
+Massive overload of all the paths through the switch will cause most of
+crossbar arbitration requests to fail. A scheduler that can handle a
+credible overload may crumple into a whimpering ball on the floor. Most
+of the time, most of the input queues are empty and the scheduler can bypass
+them to focus on queues that contain traffic. But NetworkWorld's steady-state
+test fills all the queues simultaneously.
+If failed attempts to thread a packet through the switch fabric have
+the same cost as a success and the failure rate is pushed to astronomical
+levels, the test has nothing to do with reality.
+<p>
+What this really demonstrates is the first bullet above. There are no standards
+for a microburst test. And when engineers try to make up a test designed
+to fit the test equipment on their bench, the results are not good.
+<p>
+<h2>Architecture talk</h2>
+Hugh Holbrook gave a talk at Networking Field Day 10 in August 2015 with
+title <b>7500 architecture and Why Buffers Matter</b>. It is about 30 minutes.
+<p>
+<a href="https://web.archive.org/web/20260106010731/https://www.youtube.com/watch?v=BWbtJMkGf54"> https://www.youtube.com/watch?v=BWbtJMkGf54</a>
+<p>
+In the talk
+<ul>
+<li>The VoQ architecture is explained fully
+<li>The 7500E uses switch chips with external memory and crossbar chips. Both
+of these come from Broadcom.
+<li>Simulations that show generous buffers are good for data centers 
+<li>Explanation of the TCP capture effect
+<li><i>Buffer bloat</i> happens when too much buffer is placed at the edge of the network.
+The 7500E buffers are at the core.
+<p>
+<h3>Dune switch family</h3>
+<p>
+Arista has made four generations of dune switches.
+<p>
+<img src="https://web.archive.org/web/20260106010731im_/https://people.ucsc.edu/~warner/Bufs/arista-dune-family.png" alt "time line from the 7500 in 2010 to the 7500r2 in 2017">
+
+<!--
+     FILE ARCHIVED ON 01:07:31 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:32:24 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.64
+  exclusion.robots: 0.055
+  exclusion.robots.policy: 0.011
+  esindex: 0.013
+  cdx.remote: 1411.702
+  LoadShardBlock: 148.366 (3)
+  PetaboxLoader3.datanode: 146.042 (4)
+  load_resource: 9.995
+-->

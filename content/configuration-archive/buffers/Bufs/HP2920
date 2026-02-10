@@ -1,0 +1,56 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/HP2920","20260106010639","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661599");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010639im_/https://people.ucsc.edu/~warner/Bufs/HP2920-24.jpg">
+<p>
+Many years ago when I remarked to an HP salesman that HP was making switches that were pretty light on buffer (see HP3800),
+he commented that HP understood this and products in the pipe line would address this.  The 2900 family is part of what
+was in that pipe.
+<p>
+As is clear from the picture, the front panel has personality options for the top four ports. Everything you see is 1 GigE.
+Not shown, on the back are optional module slots that can add dual 10 GigE ports -- either SFP+ or Tw pair. According to
+the <a href="https://web.archive.org/web/20260106010639/https://people.ucsc.edu/~warner/Bufs/HP2920.pdf">data sheet</a> this switch family is OpenFlow capable. HP has a <a href="https://web.archive.org/web/20260106010639/https://people.ucsc.edu/~warner/Bufs/hp2920-openflow.pdf">white paper</a> to back this up.
+<p>
+The packet buffer sizes are from the switch data sheet.  In what appears to be an attempt to back up these numbers, HP had Tolly do a for-hire test. This is Tolly Report #213106 in March 2013. 
+I find the methodology for the microburst test described in the report to be, well, weird. Frames injected into one port are flooded to 23 output ports -- perhaps using multicast, the description leaves out that detail.
+Rather than testing ability to overload an output port, Tolly is measuring the ability to temporarily overload the switching function of the ASIC. Multicast traffic can do that.  So if that's your application -- lots of 
+bursty multicast, this is your switch.  I guess.
+<p>
+HP claims that their switch chip is a custom design. They refer to this as their ProVision ASIC. From the way they use the term, I'm assuming that "ProVision"
+is a generic family name of a group of evolving switch ASICs and not a single thing. In any case, this is not merchant silicon.
+<p>
+If your requirement is to assemble a cost-effective SDN test bed for OpenFlow 1.0, these switches appear to be a terrific value.
+</tr></td>
+</table>
+
+<!--
+     FILE ARCHIVED ON 01:06:39 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:38:00 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.494
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.008
+  esindex: 0.009
+  cdx.remote: 39.688
+  LoadShardBlock: 193.374 (3)
+  PetaboxLoader3.datanode: 180.003 (4)
+  load_resource: 25.098
+-->

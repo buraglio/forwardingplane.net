@@ -1,0 +1,77 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/mellanox-spectrum","20260106010627","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661587");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010627im_/https://people.ucsc.edu/~warner/Bufs/spectrum.png" alt="Mellanox spectrum beauty pictures">
+<p>
+Mellanox <a href="https://web.archive.org/web/20260106010627/https://people.ucsc.edu/~warner/Bufs/spectrum.pdf">announced their 100 Gb/s switch chip</a> on June 18, 2015. In common with
+Broadcom's Tomahawk ASIC, it has 128 ser-des. <i>Ser-des</i> is the <i>serializer-deserializer</i>
+that converts words in the switch to and from a serial bit stream.  Ser-des can be combined in groups
+of four to make QSFP 4-lane ports that can run at 100 Gb/s or 40 Gb/s. Or they
+can be used individually to create 25 Gb/s or 10 Gb/s ports.  Both Tomahawk
+and Spectrum have 16 MBytes of packet memory. 
+<p>
+Tomahawk has four switch cores while Spectrum has one. Each core manages its
+own packet buffer pool, so Broadcom can marshal at most 4 MBytes toward 
+a big flow.
+Spectrum can dedicate the entire dynamic buffer pool to a single hot flow.
+Tomahawk presumably uses a 4-core design to improve lookups per second in 
+quest of non-blocking performance. Mellanox claims non-blocking performance
+without a multi-core design. Mellanox is driving home the 
+4-core vs single core difference with 
+a <a href="https://web.archive.org/web/20260106010627/https://people.ucsc.edu/~warner/Bufs/tolly-report-performance-evaluation-2016-march.pdf">
+Tolly Report</a> from March 2016. This was followed with a 
+<a href="https://web.archive.org/web/20260106010627/https://people.ucsc.edu/~warner/Bufs/OCP&#32;Networking&#32;Workshop&#32;-&#32;100GbE&#32;Do&#32;The&#32;Math&#32;June&#32;2016.pptx">presentation at
+an Open Compute Project</a> workshop in June 2016.
+
+<p>
+Mellanox held a series of road show events to introduce the Spectrum switches.
+Ours was Sept 28, 2015 at the Computer History Museam in San Jose. The
+<i>hors d'oeuvre</i> were excellent. It was not hard to find someone from
+the Sunnyvale facility that knew something about the product. So:
+<p>
+Q: How much control do we get over Spectrum's buffer allocation strategy?
+<p>
+A: Hooks are in the SDK. But if you use Mellanox software -- no access.
+<p>
+Spectrum is the first Mellanox hardware with an adjustable buffer 
+strategy. And the <i>first ship</i> software is a direct port of code
+from a switch that did not have dynamic buffering. So the slightly longer
+answer is that buffer adjustment is on the feature roadmap.
+<p>
+KernelSoftware.com <a href="https://web.archive.org/web/20260106010627/https://people.ucsc.edu/~warner/Bufs/spectrum-price.html">prices</a> as of April 2016.
+<p>
+</td></tr>
+</table>
+
+<!--
+     FILE ARCHIVED ON 01:06:27 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:34:38 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.5
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.008
+  esindex: 0.01
+  cdx.remote: 46.189
+  LoadShardBlock: 1200.937 (3)
+  PetaboxLoader3.datanode: 774.51 (4)
+  PetaboxLoader3.resolve: 134.218 (2)
+  load_resource: 81.103
+-->

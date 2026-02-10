@@ -1,0 +1,73 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Cisco-5672UP","20260106010553","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661553");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="600">
+<tr><td>
+Cisco announced the 5672UP in January, 2014. 
+It uses the same port ASIC as the Nexus 6001 introduced a year earlier. 
+The port ASIC can support 3 x 40 Gb/s or 12 x 10 Gb/s ports.
+<i>UP</i> in the model name indicates that sixteen of the ports are <i>Unified</i>.
+This means they can run Ethernet, Fiber Channel, or Fiber Channel over Ethernet.
+<p>
+Nexus 5xxx switches are configured with an array of port ASICs connected
+by a cross-bar fabric. A major difference between the 55xx and 56xx is
+that in the former, buffer is dedicated per-port. The later has more buffer
+and it forms a shared pool for all the ports on the ASIC. A key point is
+in this slide:
+<p>
+<img src="https://web.archive.org/web/20260106010553im_/https://people.ucsc.edu/~warner/Bufs/nexus-5600.PNG" alt="Slide shows 14 MB out of 16 MB buffer is shared.">
+<p>
+In <i>big data</i> wide area networking, burst absorption is more important than
+predictable performance. And the 5672 has an array of cool ways to find out when
+and where you are dropping frames and to see how full buffers are running. In
+common with many other Cisco data sheets, information about buffers is hard to
+find. It is exposed in deep dive sessions at Cisco-live, which is where I
+stole the slide. Note that buffer allocation is <i>flexible</i>. That means 
+some configuration will be required to get it to do the right thing for
+SciDMZ applications. This is hardly unique.
+<p>
+Some of the input buffer packet memory is dedicated to each port. This is 
+necssary to avoid head-of-line blocking. A small amount is used to hold 
+packets sent to span ports. 14 MB is therefore the size of the shared pool.
+There is also 9 MB of output packet buffers.  
+3 MB of this is used for unicast packets.
+Under the most optimistic situation where only a single flow is claiming
+buffer space, 17 MB is available for burst absorption.
+<p>
+Both the Nexus 6001 and 5672UP have fine grained buffer monitoring built
+into their switch ASICs. You can <a href="https://web.archive.org/web/20260106010553/https://people.ucsc.edu/~warner/Bufs/nexus-buffer-mon.pdf">read 
+about it</a>.
+</td></tr>
+</table>
+
+
+
+<!--
+     FILE ARCHIVED ON 01:05:53 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:39:48 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.683
+  exclusion.robots: 0.021
+  exclusion.robots.policy: 0.008
+  esindex: 0.012
+  cdx.remote: 13.304
+  LoadShardBlock: 96.399 (3)
+  PetaboxLoader3.datanode: 98.587 (4)
+  load_resource: 15.293
+-->

@@ -1,0 +1,173 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/pica8","20260106010655","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661615");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Pica8 P3930 and P3922</h2>
+<p>
+<img src="https://web.archive.org/web/20260106010655im_/https://people.ucsc.edu/~warner/Bufs/p3930.png" alt "beauty shots of two switches">
+<p>
+Pica8 proudly proclaims they are a <i>white box</i> switch vendor. Sort of a different kind of bird,
+their <a href="https://web.archive.org/web/20260106010655/https://people.ucsc.edu/~warner/Bufs/infoworld-p8.pdf">
+story</a> is told by NETWORKWORLD. 
+Some users with whole data centers full of computers are probably using white box switches running
+in-house software for their operations.  They might be Pica8s.
+This is an <a href="https://web.archive.org/web/20260106010655/https://people.ucsc.edu/~warner/Bufs/pica8-datasheet-picos.pdf">open software</a> play. 
+<p>
+From a Sept 9, 2013 press release:
+<blockquote>
+Leveraging its new relationship with Accton Technology, Pica8 is introducing the P-3922, a 48-port 10 GbE SFP+ base unit, with four 40 GbE QSFP+ or 16 10 GbE QSFP+ uplinks. 
+The switch includes full function switching, routing, industry-leading OpenFlow support and open Debian Linux. The P-3922.s US list price is $15,900, and is available now and can be purchased through Pica8's global network of resellers and system integrators.
+</blockquote>
+In November 2014 Pica8 issued a <a href="https://web.archive.org/web/20260106010655/http://www.pica8.com/documents/pica-whitepaper-white-box.pdf">white paper</a> explaining their value proposition.
+<p>
+Kernelsoftware.com sells Quanta switches which has some relation to Pica8. The difference between LY2 and LY2R is the latter connects SFP+ sockets directly to the switch ASIC without an intervening PHY chip. 
+The PHY chip can provide features like MACSEC. PHY chips increase the switch AC power draw, so they should be avoided unless features of the PHY are a requirement.
+
+October 13, 2014.
+</td></tr>
+</table>
+<table width="800" border="2&quot;">
+<tr><td>
+Mfg P/N
+</td><td>
+Description
+</td><td>
+Condition
+</td><td>
+Weight
+</td><td>
+Com
+</td><td>
+EDU
+</td></tr>
+<tr> <td>
+1LY2BZZ0008
+</td><td>
+T3048-LY2 FRONT TO BACK AIR FLOW (SWITCH INSTALLED WITH PORTS IN THE FRONT OF THE RACK) IPV6 LAYER 3 / LAYER 2 TOP OF THE RACK MANAGED SWITCH 1U HEIGHT SWITCH F
+</td><td>
+New
+</td><td>
+19.00
+</td><td>
+$7,141.28
+</td><td>
+$7,141.28
+</td></tr><tr><td>
+1LY2BZZ0009
+</td><td>
+T3048-LY2 BACK TO FRONT AIR FLOW (SWITCH INSTALLED WITH PORTS IN THE REAR OF THERACK) IPV6 LAYER 3 / LAYER 2 TOP OF THE RACK MANAGED SWITCH 1U HEIGHT SWITCH FO
+</td><td>
+New
+</td><td>
+19.00
+</td><td>
+$7,141.28
+</td><td>
+$7,141.28
+</td></tr><tr><td>
+1LY2BZZ000M
+</td><td>
+LY2R QUANTA CODE F-B 48X 10G SFP+ &amp; 4X 40G QSFP+
+</td><td>
+New
+</td><td>
+10.50
+</td><td>
+$5,417.53
+</td><td>
+$5,417.53
+</td<><tr><td>
+1LY2BZZ000N
+</td><td>
+LY2R QUANTA CODE B-F 48X 10G SFP+ &amp; 4X 40G QSFP+
+</td><td>
+New
+</td><td>
+10.50
+</td><td>
+$5,417.53
+</td><td>
+$5,417.53
+</td></tr>
+</table>
+<p>
+<table width="600" border="2">
+<tr width="700"><td>
+Here's a snippet from the PicOS 2.6 Command Reference page 70 that hints it
+is possible to control buffer burst performance. It is pretty vague
+on details such as <i>what are the units?</i> and <i>does 0 queue-limit
+mean no limit or something different?</i>
+</td></tr><tr><td>
+<h2> interface ethernet-switching-options buffer queue-limit</h2>
+<pre>
+interface ethernet-switching-options buffer queue-limit
+You can set the limit value of queue buffer.
+<b>Command Syntax</b>
+set interface ethernet-switching-options buffer queue-limit <value>
+delete interface ethernet-switching-options buffer queue-limit
+<b>Parameter</b>
+. <value>the queue-limit values indentifier,ranges from 0 to 20000
+<b>Example</b>
+. This example is to configure the buffer queue limit:
+admin@XorPlus# set interface ethernet-switching-options buffer queue-limit 0
+admin@XorPlus# delete interface ethernet-switching-options buffer queue-limit
+admin@XorPlus#commit
+</pre>
+</td></tr><tr><td>
+<h2>Email to Pica8 support to understand that got . . .</h2>
+<pre>
+Hi Jim,
+ 
+1 <i>What are the units of 'value'? Packets, bytes, or cells?</i>
+     The units value is cells.
+ 
+2. <i>If the value is set to zero, does that mean no buffer or no limit on the buffer, 
+   or something different?</i>
+     if the dynamic cells set to zero, the dynamic buffer will no limit.
+ 
+3. <i>If the queue-limit is off, does that mean one output port can take the entire dynamic queue?</i>
+     Yes, PicOS one output port may be take the the entire dynamic queue.
+ 
+4. <i>What is the default condition?</i>
+     If not configure the queue-limit, Picos default use fixed and dynamic 
+     cells, but the cell size is different on different ASIC.
+ 
+5. <i>This command is not included in the configuration guide, and that book as 
+   buffer commands that are not in the command reference. Is one of these books obsolete?</i>
+     This configuration guide can not update to the new commands, we will upgdate it.
+ 
+Mikel Tang
+Pica8, Inc.
+</pre>
+</td></tr>
+
+<!--
+     FILE ARCHIVED ON 01:06:55 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:19:02 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.474
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.007
+  esindex: 0.01
+  cdx.remote: 124.806
+  LoadShardBlock: 150.519 (3)
+  PetaboxLoader3.datanode: 151.538 (4)
+  load_resource: 27.984
+-->

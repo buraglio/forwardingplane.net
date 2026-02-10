@@ -1,0 +1,61 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/C9600R.html","20260106010654","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661614");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<h2>Catalyst 9600R</h2>
+<table width="700">
+<tr><td>
+<b>Introduced April 2019</b>
+<p>
+<img src="https://web.archive.org/web/20260106010654im_/https://people.ucsc.edu/~warner/Bufs/9600-chassis.PNG" alt="Front view of 6-slot box w cards">
+<p>
+Single or dual [shown here] <a href="https://web.archive.org/web/20260106010654/https://people.ucsc.edu/~warner/Bufs/datasheet-C9600-sup.pdf">supervisors</a> go in the center slots. 
+Positions 1,2,5 and 6 hold <a href="https://web.archive.org/web/20260106010654/https://people.ucsc.edu/~warner/Bufs/nb-06-cat9600-series-line-data-sheet-cte-en.pdf"> line cards.</a> 
+There are two line card varients -- SFP+ and QSFP
+as shown here. For every QSFP port set in 100 Gb/s mode, a port is disabled.
+With 24 ports per card and half disabled, the switch can support 48 100-Gb/s
+ports across four line cards. With that restriction, Cisco says the switch is <i>line rate</i>. 
+There is an asterik on that with a minimum packet size. At 40 Gb/s, all portts can be used --
+so 96 ports. The switch uses Cisco's <a href="https://web.archive.org/web/20260106010654/https://people.ucsc.edu/~warner/Bufs/uadp-family.html">UADP3.0 switch ASIC</a>.
+<p>
+This switch has all the <i>smarts</i> on the supervisor card and the
+line cards are just a collection of jacks. There is no buffering or queuing
+on the line cards.  That Cisco calls this <i>Supervisor 1</i> may portend
+a more powerful future supervisor that can hold more TCAM or activate
+more simultaneous 100 G ports. No product announcements here.
+<p>
+Each ASIC has 36 MB packet buffer, not all of which is available for burst
+absorption. Estimate that after fixed port and backplane allocations are
+accounted, 23 MB is the size of the dynamically assignable pool. Packet memory
+on each ASIC is local and therefore not available for sharing with ports on
+other ASICs.
+<p>
+
+<!--
+     FILE ARCHIVED ON 01:06:54 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:36:49 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.507
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.008
+  esindex: 0.011
+  cdx.remote: 41.827
+  LoadShardBlock: 226.373 (3)
+  PetaboxLoader3.datanode: 238.419 (4)
+  load_resource: 36.268
+-->

@@ -1,0 +1,95 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/C9300.html","20260106010648","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661608");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h3>
+C9300-24T <i>introduced</i> July 2017
+<p>
+C9300-48T <i>introduced</i> July 2017
+<p>
+C9300-24UX <i>introduced</i> Nov 2017
+</h3>
+<p>
+These switches are the successor to the Catalyst 3850. C3850s
+use the UADP 1.0 and (later) 1.1 ASICs. The C9300s use the UADP 2.0
+custom Cisco silicon. The entire family is stackable switches. The
+bus that interconnects stack members runs at 480 Gb/s. But individual
+stack members probably contain multiple ASICs or multi-core ASICs
+that also use the stack system internally for core-to-core interconnect. The stacking architecture
+permits packets to be recirculated through the switch processing
+engine to implement things like VxLAN routing. In product videos
+cisco hypes recirulation as a major enhancement that teaches old
+ASICs new tricks. Other vendors have pipeline architectures with
+multiple stages to achieve the same end. That may be a better idea.
+Words about the <a href="https://web.archive.org/web/20260106010648/https://people.ucsc.edu/~warner/Bufs/cat3850">UADP 1.0</a> are relevant to
+these products as well.
+<p>
+What Cisco has to
+say about packet buffers is:
+<p>
+<table width="650" border="2">
+<tr><td> Packet Buffer per SKU</td><td>16 MB buffer for 24- or 48-port Gigabit Ethernet models</td></tr>
+<tr><td> </td><td>32 MB buffer for 24-port Multigig models</td></tr>
+</table>
+<p>
+This was extracted from table 4 of the <a href="https://web.archive.org/web/20260106010648/https://people.ucsc.edu/~warner/Bufs/datasheet-c78-738977.pdf">24-page data sheet.</a>  The information is less than
+satisfying. Perhaps Cisco will publish a real architecture paper. If the multigig UX model
+uses the same UADP ASIC as the gig-E models, then the per-core buffer would be the same.
+So, it's a mystery. It does seem that the UADP 2.0 core engine has more packet memory than the 6 MB of the 1.1 predecessor.
+<i>Buffer per SKU</i> is not what we want to know. We want <i>buffer per core</i>.
+<p>
+<h2>Uplink modules</h2>
+<p>
+The C9300 switches can use uplink modules from its C3850 predecessor. In addition, it
+has it's own models which are not backward compatible to the C3850.
+<p>
+<img src="https://web.archive.org/web/20260106010648im_/https://people.ucsc.edu/~warner/Bufs/c9300-modules.png">
+<p>
+<h1>Catalyst C9500</h1>
+<p>
+<h3>C9500-24Q <i>introduced</i> July 2017</h3>
+<p>
+<h3>C9500-40X <i>introduced</i> September 2017</h3>
+<p>
+The C9500-24Q and C9500-40X use the UADP2.0 XL ASIC. The C9300s use
+the UADP 2.0 ASIC. The <a href="https://web.archive.org/web/20260106010648/https://people.ucsc.edu/~warner/Bufs/uadp2.0family.png">differences</a>
+are shown in the table. Both 2.0 ASICs have 28 nm features.
+<p>
+<a href="https://web.archive.org/web/20260106010648/https://people.ucsc.edu/~warner/Bufs/cat-9500-40x.png"> <img src="https://web.archive.org/web/20260106010648im_/https://people.ucsc.edu/~warner/Bufs/cat-9500-40x-sm.png" border="2"></a>
+<p>
+<p>
+Last update March 2021.
+</td></tr>
+</table>
+
+<!--
+     FILE ARCHIVED ON 01:06:48 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:36:40 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.609
+  exclusion.robots: 0.02
+  exclusion.robots.policy: 0.009
+  esindex: 0.01
+  cdx.remote: 17.458
+  LoadShardBlock: 85.516 (3)
+  PetaboxLoader3.datanode: 88.918 (4)
+  load_resource: 45.802
+  PetaboxLoader3.resolve: 39.231
+-->

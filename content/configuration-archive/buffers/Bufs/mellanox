@@ -1,0 +1,98 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/mellanox","20260106010711","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661631");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+<img src="https://web.archive.org/web/20260106010711im_/https://people.ucsc.edu/~warner/Bufs/mellanox.jpg">
+<p>
+These switches are members of a family that use Mellanox's <a href="https://web.archive.org/web/20260106010711/https://people.ucsc.edu/~warner/Bufs/switchX.pdf">SwitchX</a> silicon
+that was introduced in a press release on April 25, 2011. This silicon
+permits mixing Ethernet, Infiniband and Fiber Channel ports in the same
+device. <a href="https://web.archive.org/web/20260106010711/http://www.theregister.co.uk/2012/10/15/mellanox_switchx_2_sdn_openflow/">SwitchX-2</a> 
+was introduced in October 2012. Amit Katz gave an 
+<a href="https://web.archive.org/web/20260106010711/http://www.mellanox.com/webinars/2012/sdn/sdn_thank_you.php">
+introductory web presentation</a> in 2012. In Q&A; following the presentation,
+Katz was asked what, exactly, is the difference between X and X-2. What
+Mellanox was willing to say is that X-2 has enhanced microcode that makes
+better use of internal tables to permit OpenFlow 1.3 to work better.
+<p>
+Mellanox had a substantial presence at the Ethernet Summit in May 2014. This 
+is <b>not</b> yet another Broadcom top of rack switch. Mellanox has
+expertise both as a silicon ASIC manufacturer and as a switch manufacturer. They 
+point out that the speed of a single switch is only part of the speed of
+a <i>system</i>. To the extent that increased port count lets you reduce
+chassis count, you can get a big boost in system performance by traversing,
+on average, fewer switches. And in a pure Mellanox data center, inter-switch
+links can be kicked up to 56 Gb/s -- not a standard, but a substantial
+increment over 40 Gb/s.
+<p>
+Latency is important for the data center and would
+also be important for HPC clusters. It is not important in the WAN.
+Mellanox ASICs were developed for Infiniband and enhanced so a single
+switch chip part could be programmatically set up for either Infinband
+or Ethernet. Perhaps because of its Infiniband roots, the chip is not
+a shared memory design. Each port has its own buffers and there is no
+common pool or sharing. Long RTT networks need large packet memory that is
+available to buffer bursts. 
+<p>
+Mellanox hired Tolly to do 
+<a href="https://web.archive.org/web/20260106010711/http://www.mellanox.com/related-docs/products/Tolly212113MellanoxSwitchSXPerformance.pdf"> performance report</a> #212113 on their Ethernet
+products in May 2012. Tolly's <i>fair testing</i> charter not
+withstanding, he tests only the parameters commisioned by his patron.
+While Tolly reports for other similar products have highlighted the 
+ability to deal with <i>microbursts</i>, buffer capabilities are not
+even whispered for Mellanox. And Mellanox <a href="https://web.archive.org/web/20260106010711/https://people.ucsc.edu/~warner/Bufs/PB_SX1024.pdf">SX1024</a>
+and <a href="https://web.archive.org/web/20260106010711/https://people.ucsc.edu/~warner/Bufs/sx1036.pdf">SX1036</a> 
+data sheets do not contain
+information about packet memory or buffer depth. We are greatful to
+Amit Katz for proving the buffer sizes in the table via email: 128 KB
+for 40/56 Gb/s ports and 64 KB for SFP+ ports.
+<p>
+In Februrary 2015 Mellanox commissioned a another Tolly performance report <a href="https://web.archive.org/web/20260106010711/https://people.ucsc.edu/~warner/Bufs/Tolly-215111-Mellanox-SwitchX-2_Performance.pdf">215111</a> 
+to emphasize their <i>bone fides</i> relative to the Broadcom Trident2
+switch ASICs. Mellanox claims the evidence shows that Broadcom cut-thru mode
+is only available when all ports are running at a common speed. When the
+ASIC is called upon to do a speed conversion, Broadcom shifts out of
+cut-thru mode. While the first Tolly report came out ahead of the SwitchX-2
+announcement, the later report says it represents performance with the
+newer ASIC. Indeed, while the model number remains SX1036, part numbers
+changed between X and X-2. While the new data sheet carries the new part
+number, no additional information about buffer details has been provided.
+Mellanox claims switchX-2 is able to maintain cut-thru mode in
+the face of speed matching.
+<p>
+Mellanox switches are ripping fast. They are undoubtedly the right
+choice for many applications. If your application needs WAN-sized
+buffers, SX switches will not, however, be your choice.
+
+
+<!--
+     FILE ARCHIVED ON 01:07:11 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:34:33 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.888
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.008
+  esindex: 0.009
+  cdx.remote: 2110.534
+  LoadShardBlock: 800.129 (3)
+  PetaboxLoader3.resolve: 655.623 (4)
+  PetaboxLoader3.datanode: 188.22 (4)
+  load_resource: 81.05
+-->

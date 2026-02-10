@@ -1,0 +1,124 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/NCS5508.html","20260106010700","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661620");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Cisco NCS 5508</h2>
+<p>
+<img src="https://web.archive.org/web/20260106010700im_/https://people.ucsc.edu/~warner/Bufs/NCS5508.PNG" alt="beauty shot">
+<p>
+As of Feb 2016
+<p>
+Weighing in at 150 lbs and using enough electricity to keep you warm in winter, the
+NCS 5508 was introduced November 17, 2015. 
+<p>
+<i>NCS</i> stands for <i>Network Convergence System</i>. Cisco makes it clear that this switch is intended as a datacenter (or cloud) aggregation
+device and not as a replacement for the CRS Internet core router. And the data sheet bares
+this out -- the device can hold 250,000 IPv4 TCAM routes, so not enough for a default-free
+table. It can also hold a large number of /32 host routes in CAM.  It is clear that the <a href="https://web.archive.org/web/20260106010700/https://people.ucsc.edu/~warner/Bufs/NCS5508-datasheet.pdf">data sheet</a> offers 
+no guidance on the amount of packet memory.
+<p>
+Thanks to Dale Carder for pointing to a NANOG post http://seclists.org/nanog/2016/Jan/319
+that pegs this as a Dune design. Since Dune uses packet memory external 
+to the switch, the NCS 5508 should have gobs. But Cisco doesn't say.
+If the normal progression of information is followed, there will be a
+<i>deep dive</i> at Networkers in Spring 2016 that will expose 
+more details.
+<p>
+It is interesting that the NCS 5508 device uses QSFP28 optical modules instead
+of CPAK. Perhaps this means something.
+
+<p>
+<h3>update October 2016</h3>
+<p>
+There is now an <a href="https://web.archive.org/web/20260106010700/https://people.ucsc.edu/~warner/Bufs/ncs5500-architecture-white-paper.pdf">architecture white paper</a> that makes
+many things clear. 4 GB of packet memory is on the line cards but external to the Jericho ASICs. 
+Each ASIC has its own packet buffer. This is a VoQ design with heavy buffers on the input side and
+light buffers on egress. Target is 10 mS of buffer for every queue.
+Details in the paper, but different cards have
+different amounts of route memory.
+<p>
+Line cards for the 5508 come in <i>regular</i> and <i>scale</i>. Scale has TCAM for lots of routes
+external to the ASIC. The space required for the external TCAM reduces the number of ports that can
+be supported on each line card.
+<p>
+<h3>update March 2017</h3>
+An <a href="https://web.archive.org/web/20260106010700/https://people.ucsc.edu/~warner/Bufs/updated-ncs5500-architecture.pdf">updated architecture paper</a> in December 2016 corrects some
+errors in packet forwarding rates per ASIC. So, read this one instead of the citation above.
+<p>
+<h3>Fixed format NCS 5501 and 5502 switches</h3>
+<p>
+<img src="https://web.archive.org/web/20260106010700im_/https://people.ucsc.edu/~warner/Bufs/ncs5501.jpg" alt="beauty shot">
+<p>
+The 5501 1 RU switch has one Jericho/Dune ASIC. Single chip TOR class switches use
+a family member without crossbar connections called <b>Qumran-MX</b>. 
+Variants are <i>regular</i> and <i>scale</i>. Regular has forty-eight 10 Gb/s ports and six 100 Gb/s ports.
+<i>Scale</i> has forty 10 Gb/s ports and four 100 Gb/s ports.
+<p>
+The 5502 2 RU switch has eight ASICs interconnected with a cross-bar fabric. Both <i>regular</i> and
+<i> scale</i> have 48 QSFP28 100 Gb/s ports.
+
+<h3>October 2016 List prices</h3>
+<p>
+<table border="1" width="600">
+<tr><td>
+NCS-5501-SE	
+</td><td>
+$ 120,000.00		
+</td><td>
+NCS5501 - 40x10G and 4x100G Scale Chassis	
+</td></tr>
+<tr><td>
+NCS-5501	
+</td><td>
+$ 108,000.00		
+</td><td>
+NCS5501 Fixed 48x10G and 6x100G chassis
+</td></tr>
+<tr><td>
+NCS-5502	
+</td><td>
+$ 480,000.00		
+</td><td>
+NCS5502 Fixed 48x100G chassis	
+</td></tr>
+<tr><td>
+NCS-5502-SE	
+</td><td>
+$ 720,000.00		
+</td><td>
+NCS5502 - 48x100G Scale Chassis
+</td></tr>
+</table>
+
+
+
+<!--
+     FILE ARCHIVED ON 01:07:00 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:29:02 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.596
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.009
+  esindex: 0.011
+  cdx.remote: 147.381
+  LoadShardBlock: 506.277 (3)
+  PetaboxLoader3.datanode: 119.35 (4)
+  load_resource: 17.0
+-->

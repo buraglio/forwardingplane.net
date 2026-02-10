@@ -1,0 +1,106 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/cat3850","20260106010733","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661653");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="600">
+<tr><td>
+Introduced in January 2013, the Catalyst 3850 is a step along the 
+path of 1 RU access switches and the successor to the 3750X.
+<p>
+<img src="https://web.archive.org/web/20260106010733im_/https://people.ucsc.edu/~warner/Bufs/3850-int.JPG">
+<p>
+It is powered by the new <b>UADP ASIC</b>. 
+UADP stands for Unified Access Data Plane. What is <i>unified</i> is 
+that in addition to a shared memory switch function, the silicon runs 
+the CAPWAP protocol in hardware to give really fast WiFi performance. 
+Three of the UADP ASICs are used in the 5760 Wireless Lan Controller
+to provide 60 Gb/s of WiFi capacity. In the 3850 switches, an ASIC 
+is used to host 24 ports. A 48 port switch has two UADP ASICs.
+The same ASIC runs the 3650, a version without the stacking
+capability.
+<p>
+It is remarkably difficult to get hard info on buffer allocations for
+this switch, although it appears to be available to those with a big
+checkbook:
+<p>
+<table width="600" border="1">
+<tr><td>
+<b>End-to-End QoS Network Design: Quality of Service for Rich-Media &amp; Cloud Networks, 2nd Edition</b>
+</td></tr><tr><td>
+By Tim Szigeti, Christina Hattingh, Robert Barton, Kenneth Briley
+Published Nov 26, 2013 by Cisco Press. Part of the Networking Technology series.</td></tr>
+</table>
+<p>
+In unrestricted public information Cisco has the following table that shows,
+from 20,000 ft, the progression of ASICs.
+<p>
+<img src="https://web.archive.org/web/20260106010733im_/https://people.ucsc.edu/~warner/Bufs/3850.JPG">
+<p>
+Above, <i>Buffers/48 port</i> means <i>buffers in the 48 port switch</i>. 
+Twenty-four port models have half the packet buffers. A per-ASIC view of
+the 3850 ASIC buffer resources shows this:
+<p>
+<img src="https://web.archive.org/web/20260106010733im_/https://people.ucsc.edu/~warner/Bufs/3850-pie.jpg">
+</p>
+While this slide is in the deck for BRKARC-3438, in the recorded video this 
+image did not appear. Discussing queue allocation may be the kind of thing that
+can turn a 90 minute talk into a two hour marathon.
+Based on discussions of <i>queue borrowing</i> in the catalyst 3560E, it 
+is likely that UADP can be configured to treat a portion of the egress
+queue as a pool that can be dynamicly allocated. To verify this, I would
+need to buy the book.
+<p>
+</td></tr>
+</table>
+<a name="code3850">
+<table width="600">
+<tr><td></td></tr>
+<tr><td>
+<p>
+<h2>Catalyst C3850-12XS and C3850-24XS</h2>
+<p>
+The 12- and 24-port SFP+ variants of the Catalyst 3850 were introduced in June 2015 at the San Diego Networkers.
+The slide deck from the Networkers breakout session makes it explicit how many ports
+are hosted on an ASIC or core. Terminology is slightly strained; ASICs with dual cores behave like 
+two independent ASICs. One core can serve six 10 Gb/s ports on the front panel and two 10 Gb/s ports on the 
+uplink module. The packet memory pie chart for the other 3850 models [above] applies to the XS models, too.
+<p>
+There will be a 48 port version of the XS switch, but it will not be orderable for a while.
+<p>
+<img src="https://web.archive.org/web/20260106010733im_/https://people.ucsc.edu/~warner/Bufs/3850-chart.png" alt="table shows ports per switch ASIC">
+<p>
+Catalyst 3850 switches can accept <i>uplink</i> modules with both SFP and SFP+ ports:
+<p>
+<img src="https://web.archive.org/web/20260106010733im_/https://people.ucsc.edu/~warner/Bufs/3850-uplink.jpg" alt="uplink module photos">
+</td></tr>
+</table>
+
+<!--
+     FILE ARCHIVED ON 01:07:33 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:36:28 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.719
+  exclusion.robots: 0.023
+  exclusion.robots.policy: 0.01
+  esindex: 0.014
+  cdx.remote: 23.606
+  LoadShardBlock: 137.479 (3)
+  PetaboxLoader3.datanode: 102.588 (4)
+  PetaboxLoader3.resolve: 107.128 (2)
+  load_resource: 77.166
+-->

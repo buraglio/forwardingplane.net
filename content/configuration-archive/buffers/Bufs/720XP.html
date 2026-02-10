@@ -1,0 +1,84 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/720XP.html","20260106010612","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661572");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Arista 720XP access switches</h2>
+<p>
+<b>Introduced June 4, 2019</b>
+<p>
+<h2>Arista 720xp-48zc2</h2>
+<img src="https://web.archive.org/web/20260106010612im_/https://people.ucsc.edu/~warner/Bufs/720xp-48zc2.png" alt "front panel 1 ru switch">
+   <br><br>
+<h2>Arista 720xp-24zy4</h2>
+<img src="https://web.archive.org/web/20260106010612im_/https://people.ucsc.edu/~warner/Bufs/720xp-24zy4.png" alt "front panel 1 ru switch">
+   <br><br>
+<h2>Arista 720xp-48y6</h2>
+<img src="https://web.archive.org/web/20260106010612im_/https://people.ucsc.edu/~warner/Bufs/720xp-48y6.png" alt "front panel 1 ru switch">
+   <br><br>
+<h2>Arista 720xp-24y6</h2>
+<img src="https://web.archive.org/web/20260106010612im_/https://people.ucsc.edu/~warner/Bufs/720xp-24y6.png" alt "front panel 1 ru switch">
+<br><br>
+<p>
+<p>
+In the second part of the model number:
+<ul>
+<li><b>C</b> means 100 Gb/s QSFP port</li>
+<li><b>Y</b> means 25 Gb/s SFP port</li>
+<li><b>Z</b> means multispeed tw-pr ports</li>
+<li>No letter means 1 Gb/s Tw-pr port</li>
+</ul>
+<p>
+
+Michael Francini from Arista said something about the
+packet processor for this switch in an introductory youtube video.
+https://www.youtube.com/embed/LBY0DfQandQ?rel=0&wmode;=transparent.
+Unfortunately when he talked about the packet processor he could
+have said X3 or XP -- since they sound very much the same when
+spoken. As an update to this description [Nov 2021] this is
+a Trident X3 and that matches the buffer size in the datasheet.
+An early [2019] version of the datasheet says the packet buffer size
+is 6 MB, but the <a href="https://web.archive.org/web/20260106010612/https://people.ucsc.edu/~warner/Bufs/CCS-720XP-Datasheet-2021.pdf">
+ current version</a> says 8 MB.
+<p>
+To add the overall picture, the X3 has stacking ports. And ASICs
+with stacking ports allocate buffer to serve the stack. Sometimes
+the stack ports can be disabled and their buffer reclaimed. Broadcom
+and Arista are not explaining this.
+<p>
+The detailed port characteristics of each model are slightly confusing
+and the best reference is the <a href="https://web.archive.org/web/20260106010612/https://people.ucsc.edu/~warner/Bufs/CCS-720XP-Datasheet.pdf">data sheet</a>.
+Most tw-pr ports have 30W PoE, but some have 60 W PoE, and this is
+not reflected in the model number. And most tw-pr mGig ports top
+at 2.5 Gb/s but some can run at 5 Gb/s.
+
+
+<!--
+     FILE ARCHIVED ON 01:06:12 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:22:55 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.683
+  exclusion.robots: 0.028
+  exclusion.robots.policy: 0.013
+  esindex: 0.013
+  cdx.remote: 40.606
+  LoadShardBlock: 238.741 (3)
+  PetaboxLoader3.datanode: 300.338 (4)
+  load_resource: 95.358
+-->

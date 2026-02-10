@@ -1,0 +1,77 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/S4148.html","20260106010625","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661585");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Dell S4100-ON</h2>
+<p>
+<img src="https://web.archive.org/web/20260106010625im_/https://people.ucsc.edu/~warner/Bufs/4100-ON.jpg" alt="Five 1 RU switches stacked together for the photo. These are independent switches">
+<p>
+<b>Introduced May 2017</b>
+<p>
+Actually a <a href="https://web.archive.org/web/20260106010625/https://people.ucsc.edu/~warner/Bufs/dell-S4100.pdf"> 
+family of four</a> (or five) switches with either 28 or 48 access ports and either SFP+ or Tw-pair.
+There is a fifth varient that includes fiber channel and 48 SFP+ access ports. Cumulusnetworks says in 
+their hardware compatibility matrix that this is a <b>Broadcom Maverick</b>.
+<p>
+These switches are the topic of an Oct 2017 Tolly report at
+<a href="https://web.archive.org/web/20260106010625/http://tolly.com/DocDetail.aspx?DocNumber=217126">
+http://tolly.com/DocDetail.aspx?DocNumber=217126</a> that contains
+some useful information. Quoting the relevant parts:
+<ul>
+<b>Port Buffering</b>
+<p>
+The Dell EMC switches use a common packet buffer that is 
+shared across all ports of a given switch on a dynamic basis.
+These buffers can be used to prevent packet loss by buffering
+packets where an output port is momentarily oversubscribed.
+Tolly engineers determined that the port buffer capacity of 
+each of the switches was eight MB.
+<p>
+<i>and at the end of the report</i>
+<p>
+<b> Port Buffering</b>
+<p>
+To saturate the switch port buffers, engineers configured Ixia to provide
+one line-rate traffic stream destined for a single port. Engineers 
+created a separatge traffic burst destined to this fully-loaded port, and
+verified that after traffic was stopped, that all packets were received.
+</ul>
+Maverick has 12 MB of packet memory and 8 MB is available to absorb a single
+microburst. That tells us that Maverick is a single core design. Contrast
+with Tomahawk's four core design.
+<p>
+<b>12 port family members</b>
+<p>
+In <b>January 2019</b> Dell added two S4112 12-port switches to the product line. The family data sheet has been revised to cover the new entries.
+
+
+<!--
+     FILE ARCHIVED ON 01:06:25 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:25:03 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.426
+  exclusion.robots: 0.014
+  exclusion.robots.policy: 0.006
+  esindex: 0.008
+  cdx.remote: 104.417
+  LoadShardBlock: 220.914 (3)
+  PetaboxLoader3.datanode: 164.207 (4)
+  load_resource: 26.071
+-->

@@ -1,0 +1,70 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Arista7060CX2.html","20260106010604","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661564");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Arista 7060CX2-32S</h2>
+<p>
+<a href="https://web.archive.org/web/20260106010604/https://people.ucsc.edu/~warner/Bufs/7060X_7260X_DS.pdf">Data sheet</a> date is 15 December 2016
+<p>
+The evidence so far that the Tomahawk<b>+</b> exists is buried in the "X2" in the model
+number. Compare with 7050X2 switches.
+The most prominent distinguishing feature is that buffer memory is 22 MByte.
+That is 4.5 MB per core. UCSC has one of these switches, so:
+<p>
+<pre>
+scidmz-core#sh platform trident l3 summ
+Front panel chip model: bcm56965
+</pre>
+<p>
+<b>From Q&A;</b> (November 2016)
+<p>
+What are the advantages of buffer allocation on the 7060X series?
+<p>
+<ul>The 7060X/7260X series provides a best of both worlds approach to buffering. Combining a shared/dynamic
+buffer architecture with a small segment size, which together are designed to ensure maximum efficiency by
+minimizing ‘unusable’ buffer space. In addition the 7060CX and 7260CX switches have 133% of total buffer
+compared with the 7050X platforms. The 7060X2 series expand this resource by a further 40% to 22MB to
+enhance the buffer capabilities in lossless networks, for example IP storage.
+</ul>
+One year later, the same FAQ document added a single sentence to the
+2016 response:
+<ul>
+The 7260X3 series expands the
+packet buffer by 2X to 42MB while maintaining the consistent buffer architecture delivering high performance,
+high density and low latency switching.
+</ul>
+Speculation: The <b>CX2</b> is a Tomahawk+ while the <b>CX3</b> 
+is a Tomahawk-II. If that is true, the <b>CX3</b> has a single
+switch ASIC behind all the ports in the 2RU chassis.
+
+
+<!--
+     FILE ARCHIVED ON 01:06:04 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:27:05 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.793
+  exclusion.robots: 0.021
+  exclusion.robots.policy: 0.01
+  esindex: 0.012
+  cdx.remote: 39.256
+  LoadShardBlock: 185.265 (3)
+  PetaboxLoader3.datanode: 178.376 (4)
+  load_resource: 21.922
+-->

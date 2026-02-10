@@ -1,0 +1,62 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Cisco-6001","20260106010549","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661549");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+Cisco introduced the Nexus 6001 and 6004 in February, 2013. They use a new switch chip that is custom 
+designed to plant a foot firmly on the turf of 40 Gb/s switching and to feed the financial market's
+desire for cut through switching and its ultra low latency.
+<p>
+Internally the 600x is built with modules that can host 12-ports at 10 Gb/s or -- by running pathways
+in parallel -- 3-ports at 40 Gb/s. The 6004 has 48 fixed ports and 4 empty slots that can take 12 port
+expansion modules. The 6001 is a fixed configuration that has 48 10 Gb/s ports and 4 QSFP ports.
+<p>
+<img src="https://web.archive.org/web/20260106010549im_/https://people.ucsc.edu/~warner/Bufs/nexus6001.png">
+<p>
+The relationship between the 6001 and 6004 requires some imagination and extrapolation. It is a good
+guess that they're using the same technology and ASICs and therefore have very similar buffer characteristics.
+<p>
+<img src="https://web.archive.org/web/20260106010549im_/https://people.ucsc.edu/~warner/Bufs/nexus6004-arch.png">
+<p>
+Each ASIC has 25 MBytes of packet buffers that is split between 16 MByte of VoQ input buffers and 9 Mbyte of output buffers.
+Some of the input buffers are dedicated per port, setting a max of 13.2 Mbytes in the shared pool when the ASIC is running
+in 10 Gb/s mode and somewhat more when in 40 Gb/s mode -- because there are fewer ports.
+Cisco exposes a knob that permits the size of the shared pool to be adjusted down from the maximum.
+<p>
+<img src="https://web.archive.org/web/20260106010549im_/https://people.ucsc.edu/~warner/Bufs/nexus6004.png">
+<p>
+Some industry pundits believe that ASIC is a souped up version of the chip running in the 3548. They lament that Cisco
+won't release even the code name for the IC. It seems likely that the packet memory associated with each ASIC is integrated
+on the chip. But we don't know that for sure.
+</td></tr>
+</table>
+<!--
+     FILE ARCHIVED ON 01:05:49 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:39:50 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.651
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.007
+  esindex: 0.016
+  cdx.remote: 18.215
+  LoadShardBlock: 322.523 (3)
+  PetaboxLoader3.resolve: 151.075 (3)
+  PetaboxLoader3.datanode: 323.143 (4)
+  load_resource: 171.593
+-->

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/7060CX.html","20260106010607","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661567");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+
+<style>
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Arista 7060CX-32 and 7260CX-64</h2>
+<p>
+<table width="800">
+<tr><td>
+Introduced Sept 14 2015
+<p>
+Arista becomes third to announce products based on Broadcom's Tomahawk switch chip. The 7060 and 7260 
+Tomahawk products have 25 Gb/s SERDES that can run at 25 or 10 Gb/s and therefore supporting port speeds
+of 10, 25, 40, 50 and 100 Gb/s. Not sure what the <b>QX</b> is. The 7260 appears to be made from four Tomahawks
+with half the ports used to support chip-to-chip interconnect. Note that 1 Gb/s is not a legal speed for
+the SFP+ ports. There are two SFP+ ports that can run downspeed.
+<p>
+</table>
+
+<table width="800">&gt;
+<tr><th> </th>
+<th>7060CX-32</th>
+<th>7260QX-64</th>
+<th>7260CX-64</th></tr>
+
+<tr><th>Switch Height</th>
+<td>1RU</td>
+<td>2RU</td>
+<td>2RU</td>
+</tr>
+<tr><th>Ports</th>
+<td>32 x QSFP100<br/> 2 x SFP+</td>
+<td>64 x QSFP+<br/> 2 x SFP+</td>
+<td>64 x QSFP100<br/> 2 x SFP+</td>
+</tr>
+<tr><th>Max. 10GbE Density</th>
+<td>130</td>
+<td>2</td>
+<td>258</td>
+</tr>
+<tr><th>Max. 25GbE Density</th>
+<td>128</td>
+<td>--</td>
+<td>256</td>
+</tr>
+<tr><th>Max. 40GbE Density</th>
+<td>32</td>
+<td>64</td>
+<td>64</td>
+</tr>
+<tr><th>Max. 50GbE Density</th>
+<td>64</td>
+<td>--</td>
+<td>128</td>
+</tr>
+<tr><th>Max. 100GbE Density</th>
+<td>32</td>
+<td>--</td>
+<td>64</td>
+</tr>
+<tr><th>Max. I/O Rate (Tbps)</th>
+<td>6.4Tbps</td>
+<td>5.12Tbps</td>
+<td>12.8Tbps</td>
+</tr>
+<tr><th>Max. Forwarding Rate</th>
+<td>3.3Bpps</td>
+<td>3.3Bpps</td>
+<td>9.52Bpps</td>
+</tr>
+<tr><th>Latency</th>
+<td>450ns</td>
+<td>550ns</td>
+<td>550 to 1500ns</td>
+</tr>
+<tr><th>Packet Buffer Memory</th>
+<td colspan="2">16MB</td>
+<td>64MB</td>
+</tr>
+<tr><th>Airflow Direction</th>
+<td colspan="3">Front-to-Back or Back-to-Front</td>
+</tr>
+</tbody>
+</table>
+<table width="800">
+<tr><td>
+As noted elsewhere, Tomahawk has four switch cores, each with a lookup engine and each with its own 4 MByte memory buffer pool.
+Dynamic buffering happens within the domain of a single core. Buffers cannot be loaned to other cores. So for bursty best effort
+traffic, the most buffer that can be claimed by a single core is 3 MByte -- 
+depending on how much is reserved for dedicated port buffers.
+<p>
+Arista has published a 
+<a href="https://web.archive.org/web/20260106010607/https://www.arista.com/assets/data/pdf/7060X_7260X_QA.pdf"> QandA doc</a> for the new switches. Since we are particularly interested in buffers:
+<blockquote>
+<p>
+<b>What are the advantages of buffer allocation on the 7060X series?</b>
+<p>
+The 7060X/7260X series provides a best of both worlds approach to buffering. Combining a shared/dynamic
+buffer architecture with a small segment size, which together are designed to ensure maximum efficiency by
+minimizing ‘unusable’ buffer space. In addition the 7060CX and 7260CX switches have 133% of total buffer
+compared with the 7050X platforms.
+</blockquote>
+It is not clear that <i>best of both worlds</i> is anything new. 
+Arista's Martin Hull described a similar system in a 
+<a href="https://web.archive.org/web/20260106010607/https://people.ucsc.edu/~warner/Bufs/Arista_7050X_Switch_Architecture.pdf">2013 paper</a>
+that accompanied introduction of Trident II products.
+What Tomahawk 
+promises to bring is <i>more buffer</i> and, for highly bursty data
+transfers, the allocation of this memory to cores puts Arista's claims
+in the <i>disingenuous</i> category.  Note that depending on the location
+of the input and output ports, a packet might touch a single switch core
+or it might touch two cores. It is possible that it might <i>taste</i> of
+two memory pools. If the internal connections between the cores are 
+flow-controlled, perhaps the effective buffer size might be 4+4 = 8 MByte.
+No one has said this yet, and we'll be watching. In any case, this is
+still less buffer than the single core trident+ and trident2.
+
+</td></tr>
+</table>
+
+<!--
+     FILE ARCHIVED ON 01:06:07 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:25:38 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.805
+  exclusion.robots: 0.03
+  exclusion.robots.policy: 0.011
+  esindex: 0.016
+  cdx.remote: 42.374
+  LoadShardBlock: 197.317 (3)
+  PetaboxLoader3.datanode: 202.581 (4)
+  load_resource: 17.628
+-->

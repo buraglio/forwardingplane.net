@@ -1,0 +1,56 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Miercom-4500","20260106010605","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661565");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+This number -- 14 Mbytes -- comes from the Miercom report. Miercom limited their testing to
+packet sizes below 1500. They did not test jumbo frames. Their results seem to indicate that
+buffer size is limited by packet count, so a better showing might be expected for 9000 byte
+frames.
+<p>
+All the switches that Miercom has tested use a buffer particle architecture that chains
+together fixed length chunks to store large frames. Give or take one buffer particle --
+typically 300 bytes -- only the amount of memory needed is used for each packet.  If Miercom 
+results are to be believed,
+none of the manufacturers tested (Broadcom, HP, Cisco, Arista) can successfully use chained
+buffers to hold packets without wasting memory. Either that, or there is something wrong with the design of
+Mierom's tests. 
+<p>
+Miercom competes with Tolly in the <i>for-hire</i> testing business. Tolly's tests that include
+microburst capability come to generally a different result.  See <a href="https://web.archive.org/web/20260106010605/https://people.ucsc.edu/~warner/Bufs/IBM_G8264">
+IBM 8264</a> review for references.
+<p>
+Other tests performed by the <i>for-hire</i> community follow test plans laid out in
+standards RFCs. But there is no guidance on how testers should measure microburst 
+</td></tr>
+
+<!--
+     FILE ARCHIVED ON 01:06:05 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:38:59 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.63
+  exclusion.robots: 0.022
+  exclusion.robots.policy: 0.01
+  esindex: 0.013
+  cdx.remote: 9.542
+  LoadShardBlock: 192.234 (3)
+  PetaboxLoader3.datanode: 129.621 (4)
+  PetaboxLoader3.resolve: 70.934 (2)
+  load_resource: 51.551
+-->

@@ -1,0 +1,207 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/queue-monitor.html","20260106010556","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661556");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+<h2>Monitoring buffer queues</h2>
+<p>
+Switch ASICs need to monitor buffer pointers and free lists at
+wire speed -- assuming the switch is wire speed. So information
+about buffer occupancy is <i>in there somewhere.</i>
+Packet buffers are used and released far too quickly to be managed by
+the system processor.
+The challenge is how to report it. An SNMP-style poll of
+a gauge that changes slowly like <i>air inlet temperature</i> works fine.
+But for something that can have important events that begin and end
+within 100 mS, polling cannot run fast enough.
+<p>
+One commonly adopted solution is water mark analysis. The switch
+is programmed with a threshold. When buffer occupancy exceeds
+the threshold (aka water mark) a report is generated. When the water
+goes back down, another report is generated. Or perhaps there are
+two thresholds to provide some hysteresis and avoid chattering
+when the water bumps above and below the mark at high speed.
+<p>
+Another approach is for the switch to stream buffer info
+directly to a collection system without a poll/response cycle.
+This is the same approach adopted by S-flow. 
+<p>
+Cisco does it differently in their Nexus 3500.
+As the market leader, Cisco works to differentiate from the crowd of 
+ankle biters that would help Cisco with their lunch. One way they do 
+this is to sing the praises of custom ASICs, most recently in a 
+<a href="https://web.archive.org/web/20260106010556/https://people.ucsc.edu/~warner/Bufs/custom-silicon.pdf">blog.</a> A lot has been written about
+this. It amounts to a rat race with ever increasing costs against 
+merchant silicon competitors that show ever increasing capabilities.
+The link to Cisco's blog should not be read as an endorsement of its
+contents.
+<p>
+One of the areas where Cisco has applied custom technology is buffer
+queue monitoring. This has been covered here in the 
+<a href="https://web.archive.org/web/20260106010556/https://people.ucsc.edu/~warner/Bufs/Nexus3548">write up on the 3548</a>. The particular
+approach used by Cisco requires tight integration between the 
+switch ASIC and the control processor. The approach is not friendly
+to a disaggregated system where hardware and software meet at an API.
+<p>
+Arista with their <b>lanz</b> latency analyser program lead the
+way to commercial availability of buffer occupancy reports. Arista proudly
+proclaims that all their products run the same EOS switch software.
+If the implication is that they all have the same capabilities, well,
+not so much. The EOS software running on the control processor 
+can only expose features that were placed in the switch silicon
+when it was manufactured. The stuff that Cisco [<a href="https://web.archive.org/web/20260106010556/https://people.ucsc.edu/~warner/Bufs/Nexus3548">
+Nexus 3548</a>],
+Arista [<a href="https://web.archive.org/web/20260106010556/https://people.ucsc.edu/~warner/Bufs/arista_7150">7150S</a>] and Broadcom [Trident-2 and later] put into their
+silicon are unlikely to be the same. Arista actually claims that LANZ buffer reporting
+is available on four switch systems: Intel FM6000, Broadcom Trident II, Broadcom Dune and
+Cavium Xpliant.
+<p>
+The <a href="https://web.archive.org/web/20260106010556/https://people.ucsc.edu/~warner/Bufs/Arista_LANZ_Overview_TechBulletin_0213.pdf">original description</a> 
+of <i>LANZ</i> was written in 2013 when the FM6000 was
+the only switch silicon supporting granular buffer reporting.
+<ul>
+<i>This unique event
+driven model, allows congestion periods as short as a few 100ns to be detected and
+reported.</i>
+</ul>
+The report goes on to claim that the only limitation on latency measurement is that
+switch accounting is done by counting allocated 480 byte buffer blocks. The last block of 
+each packet might be full or it might contain only a single byte. The uncertainty depends
+on the line speed; at 1 Gb/s it amounts to 4 uSec.
+<p>
+Arista has pointed out, a shared memory switch like the
+FM6000 based 7150S deals with buffers in a different way than a
+Broadcom DUNE switch that queues packets on its input ports. 
+
+<p>
+<a href="https://web.archive.org/web/20260106010556/https://www.youtube.com/watch?v=KZX86Cu6K1U">
+<img src="https://web.archive.org/web/20260106010556im_/https://people.ucsc.edu/~warner/Bufs/lanz7500.png" border="2"> </a>
+<p>
+What this says is that the switch system processor reads buffer stats from the
+switch chip every second. I was told on a trade show floor that the buffer
+state represents the peak value during the interval between <i>reads</i>
+and it is cleared after each read.
+Water mark events are detected at the system processor level and report
+generation follows. Peak latching will catch microbursts. It will not
+give detailed information about their shape. An that is probably OK.
+<p>
+<h2>Broadcom</h2>
+<p>
+Broadcom introduced <b>Buffer Statistics Tracking (BST)</b> in March 2015 about 2 years
+after the <i>LANZ</i> paper. The feature first appeared for the Trident-II and
+is available in subsequent XGS products (Trident-II+, Tomahawk) as well as
+the most recent Dune products (Jericho and Qumran). When equipment manufacturers
+use Broadcom ASICs, they use the BST feature set to access buffer data. There simply 
+is no other way to get buffer data. BST is part of <a href="https://web.archive.org/web/20260106010556/https://people.ucsc.edu/~warner/Bufs/BroadView-TB201-RDS.pdf">
+<b>Broadview</b></a> that includes other monitoring and debug features. 
+<p>
+<h2><a href="https://web.archive.org/web/20260106010556/https://people.ucsc.edu/~warner/Bufs/mellanox-spectrum">Spectrum</a></h2>
+<p>
+At announcement in June 2015, I was told that fine grain monitoring was
+in the silicon and accessible via the SDK. But Mellanox had not integrated
+access into their software. Fast forward to March 2017: "It took a while,
+but we're there now." And in a Cumulus webinar a week later, fine grain
+monitoring was demonstrated -- using Cumulus Linux. So, it is real.
+David Iles from Mellanox pointed out that Mellanox has histograms for
+buffer occupancy bins while Broadcom shows a single peak occupancy for each
+port in each measurement interval. 
+Iles says that Mellanox is better than Broadcom. 
+<p>
+<h2>Cumulus Example</h2>
+<p>
+This example was part of a webinar on March 14, 2017. It shows access to 
+watermark data in a switch running cumulus linux.
+Here we are looking at the results of two simultaneous  10 second iperf
+tests that passed through this port. The high waternark values were cleared
+ahead of the run. The units are buffer particles. Particle size for
+Mellanox Spectrum ASICs is 96 bytes.
+<p>
+What is in the tools directory:
+<ul>
+<pre>
+cumulus@oob-mgmt-server:$ ls tools/
+buffers* clear: etherstats* get* helpers/ ipmi* packets*
+</pre>
+</ul>
+So, <b>clear</b>, run 10 second iperf tests in another window, <b>get</b> results
+<ul>
+<pre>
+cumulus@oob-mgmt-server:$ tools/clear
+cumulus@oob-mgmt-server:$ tools/get
+Select ethtools stats for exit01: swp1s0
+HwIfOutDiscards           :                    0
+HwIfOutQDrops             :                24010
+HwIfOutUcastPkts          :             19440865
+
+Select packet stats for leaf01, lead03, spine01, and exit01
+        Iface        RX_OK         TX_OK
+leaf01  swp1s0     9009782        457066
+        swp15       457066       9009782
+leaf03  swp1s0    10471863        418962
+        swp15       418963      10471863
+spineo1 swp1       9009782        457066
+        swp3      10471863        418963
+        spr         780669      19481720
+exito1  swplso      780669      19440956
+        swp15     19464966        780669
+
+Buffer usage for exit01: swpls0
+Reserved + shared buffer counters for port ox11900
+items: 20
+ingress pool [0]: 0 watermark 10
+ingress pool [1]: 0 watermark 0
+ingress pool [2]: 0 watermark 0
+ingress pool [3]: 0 watermark 0
+priority_group [0]: 0 watermark 10
+priority-group [1]: 0 watermark 0
+priority_group [2]: 0 watermark 0
+priority-group [3]: 0 watermark 0
+priority_group [4]: 0 watermark 0
+priority-group [5]: 0 watermark 0
+priority_group [6]: 0 watermark 0
+priority_group [7]: 0 watermark 0
+traffic class [0]: 0 watermark 5424
+traffic class [1]: 0 watermark 0
+traffic class [2]: 0 watermark 0
+traffic class [3]: 0 watermark 0
+traffic class [4]: 0 watermark 0
+traffic class [5]: 0 watermark 0
+traffic class [6]: 0 watermark 0
+traffic class [7]: 0 watermark 0
+</pre>
+</ul>
+Cumulus documentation on buffer and queue management is at:
+<p>
+<a href="https://web.archive.org/web/20260106010556/https://docs.cumulusnetworks.com/display/DOCS/Buffer+and+Queue+Management">https://docs.cumulusnetworks.com/display/DOCS/Buffer+and+Queue+Management</a>
+<p>
+
+<!--
+     FILE ARCHIVED ON 01:05:56 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:18:33 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.566
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.008
+  esindex: 0.012
+  cdx.remote: 8.436
+  LoadShardBlock: 118.49 (3)
+  PetaboxLoader3.resolve: 72.439 (3)
+  PetaboxLoader3.datanode: 99.195 (4)
+  load_resource: 92.233
+-->

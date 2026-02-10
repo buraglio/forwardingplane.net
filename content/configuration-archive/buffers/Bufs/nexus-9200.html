@@ -1,0 +1,189 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/nexus-9200.html","20260106010556","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661556");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+<b>Introduced March 1, 2016</b>
+<p>
+<table width="750" border="1">
+<tr><td>
+Model
+</td><td>
+ASIC
+</td><td>
+Throughput
+</td><td>
+1 GE
+</td><td>
+10 GE
+</td><td>
+25 GE
+</td><td>
+40 GE
+</td><td>
+100 GE
+</td><td>
+Slice Buffer
+</td></tr>
+<tr><td>
+92160YC-X
+</td><td>
+ASE3
+</td><td align="center">
+3.2 Tb/s
+</td><td>
+64
+</td><td>
+56
+</td><td>
+56
+</td><td>
+6
+</td><td>
+4
+</td><td>
+10 MB
+</td></tr>
+<tr><td>
+9272Q
+</td><td>
+ASE2
+</td><td align="center">
+5.76 Tb/s
+</td><td>
+-
+</td><td>
+140
+</td><td>
+-
+</td><td>
+72
+</td><td>
+-
+</td><td>
+5 MB
+</td></tr>
+<tr><td>
+92304QC
+</td><td>
+ASE2
+</td><td align="center">
+6.08 Tb/s
+</td><td>
+-
+</td><td>
+64
+</td><td>
+-
+</td><td>
+64
+</td><td>
+8
+</td><td>
+5 MB
+</td></tr>
+<tr><td>
+9236C
+</td><td>
+ASE2
+</td><td align="center">
+7.2 Tb/s
+</td><td>
+-
+</td><td>
+144
+</td><td>
+144
+</td><td>
+36
+</td><td>
+36
+</td><td>
+5 MB
+</td></tr>
+<tr><td>
+92300YC
+</td><td>
+ASE2
+</td><td align="center">
+6.0 Tb/s
+</td><td>
+-
+</td><td>
+48
+</td><td>
+48
+</td><td>
+18
+</td><td>
+18
+</td><td>
+5 MB
+</td></tr>
+</table>
+<p>
+ASE = Application Spine Engine
+<p>
+Cisco did a raft of announcements that included 9200s. Previous version
+used a trident-2 along with Cisco custom ALE-2 ASIC that fixed warts
+in the trident-2. The new 92xx switches are full custom: ASE-2 and ASE-3. 
+Date of first publication of the hardware installation guide is 
+Feb 8, 2016. Since
+this web page is primarily about buffering:
+<p>
+<img src="https://web.archive.org/web/20260106010556im_/https://people.ucsc.edu/~warner/Bufs/ASE.png">
+<p>
+This was copied out of <a href="https://web.archive.org/web/20260106010556/https://people.ucsc.edu/~warner/Bufs/nexus-9200-arch.pdf">
+architecture paper</a>. The <i>newer</i> 9200 claims to have less
+memory than the <i>older</i> 9300. That is because the 9300 was a
+warts-on-a-pig product.
+<p>
+Note that the ASICs are built in <i>slices</i> with memory belonging
+to each slice.  This is perhaps the first silicon designed to address
+Elephant versus Mice flows. The ASE claims to find the elephants 
+on the fly and decrease their priority to keep the world safe for 
+mice. Sadly, the architecture paper does not disclose the number
+of elephants and mice that can be active in the ASE ASIC at one time.
+<p>
+This is good for the data center, and probably not good for big
+science in the wide area. In a world of 100 uS RTT, elephants 
+can rapidly climb to fill all buffers. This starves the mice. But
+it is not clear this happens in WAN networking.
+<p>
+The Nexus 9200 shares the same bug as the first generation of
+Broadcom Tomahawk ASICs. In both cases, the ASIC design was committed
+before the 25 Gb/s specification was written. In both cases, this
+means that while 25 Gb/s ports can be used for direct attach copper
+cables, they cannot be used with optic modules. Neither Cisco
+nor Broadcom explain this, but the difference between the Nexus 9300
+which does not have the problem and the 9200 is clear from the 
+<a href="https://web.archive.org/web/20260106010556/https://people.ucsc.edu/~warner/Bufs/Cisco&#32;25-G-compatibility.pdf">25 Gb/s compatibility matrix</a>.
+<!--
+     FILE ARCHIVED ON 01:05:56 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:37:00 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.531
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.007
+  esindex: 0.012
+  cdx.remote: 13.297
+  LoadShardBlock: 94.415 (3)
+  PetaboxLoader3.datanode: 87.111 (4)
+  load_resource: 12.488
+-->

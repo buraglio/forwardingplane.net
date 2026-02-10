@@ -1,0 +1,84 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/VoQ.html","20260106010656","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661616");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="700">
+<tr><td>
+Juniper has a <a href="https://web.archive.org/web/20260106010656/https://people.ucsc.edu/~warner/Bufs/juniper-VoQ.pdf"> good description of a Virtual Output Port</a> 
+queued switch. There are also some references <a href="https://web.archive.org/web/20260106010656/https://people.ucsc.edu/~warner/Bufs/crossbar.html"> here</a>. Wikipedia
+also has an entry for VoQ switching. Output port buffered switches are rare in new 
+designs. Cisco <a href="https://web.archive.org/web/20260106010656/https://people.ucsc.edu/~warner/Bufs/catalyst6500">Cisco Catalyst 6500</a> and HP 4000Ms have 
+substantial output port buffers.
+<p>
+The main theme for the buffer page is <i>How much buffer is there for a single flow?</i> Packet
+buffers for a single <i>queue</i> is essentially the same thing.
+This question is easier in a shared memory architecture. In VoQ, we would need to know the switch policies
+for dynamic buffer assignment. If the switch has 100 output ports and 8 queues per port, it could be that
+buffers are permanently allocated to the 100 x 8 = 800 port-queues. If 12 ports are sharing a single
+input ASIC and its 4 GByte packet buffer and
+there are 800 port-queues per input port, there is on average about a 0.5 Mbyte per queue.  Pretty whimpy.
+<p>
+
+It would be very unlikely that buffer
+from one ASIC could be loaned to another ASIC, so sharing on the input side probably can't happen.  On
+the other hand, if an output port is oversubscribed by traffic 
+coming in from more than one input, VoQ memory on the several
+input ports could contribute to virtual output port buffer capacity.
+<p>
+Whether dynamic or fixed allocations on each input buffer are used will be implementation dependent. Arista
+seems to favor dynamic allocation with a cap of 50 mS for any one queue. Whether or not that is exactly
+what Arista has done, at least they have <i>said something.</i> Juniper sets the maximum for
+the QFX10000 at 100 mS per port. Pretty generous. Sadly, this sort of information rarely populates
+data sheets. [added June 2020] The question <i>dynamic vs static</i> is answered for Broadcom in
+an <a href="https://web.archive.org/web/20260106010656/https://people.ucsc.edu/~warner/Bufs/Arista7800R3SwitchArchitectureWP.pdf">Arista architecture white paper</a>. Buffer
+allocation is <b>dynamic</b>. Quoting:
+<br>
+<blockquote>
+. . . the majority of the buffer is allocated in a
+dynamic manner wherever it is required across potentially millions of VoQs per system:
+<li> ~30% buffer reserved for traffic per Traffic Class per Output Port
+<li> ~15% buffer for multi-destination traffic
+<li> ~55% available as a dynamic buffer pool
+<p>
+<table width="700">
+<tr><td>Output Port Characteristic</td><td>Max Packet Buffer Depth</td><td>Max Packet Buffer Depth (msec)</td></tr>
+<tr><td>10 Gb/s output port</td><td>50 MByte</td><td>40 msec</td></tr>
+<tr><td>25 Gb/s output port</td><td>125 MByte</td><td>40 msec</td></tr>
+<tr><td>40 Gb/s output port</td><td>200 MByte</td><td>40 msec</td></tr>
+<tr><td>50 Gb/s output port</td><td>250 MByte</td><td>40 msec</td></tr>
+<tr><td>100 Gb/s output port</td><td>500 MByte</td><td>40 msec</td></tr>
+<tr><td>400 Gb/s output port</td><td>500 MByte</td><td>10 msec</td></tr>
+</table>
+</blovkquote>
+
+
+
+<!--
+     FILE ARCHIVED ON 01:06:56 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:29:09 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 2.339
+  exclusion.robots: 0.022
+  exclusion.robots.policy: 0.011
+  esindex: 0.015
+  cdx.remote: 82.573
+  LoadShardBlock: 191.865 (3)
+  PetaboxLoader3.datanode: 208.682 (4)
+  PetaboxLoader3.resolve: 47.234
+  load_resource: 139.888
+-->

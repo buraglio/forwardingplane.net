@@ -1,0 +1,113 @@
+<html>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Nexus3548","20260106010747","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1767661667");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+<table width="750">
+<tr><td>
+<li> <b>Nexus 3548</b> introduced Sept 2012
+<li> <b>Nexus 3548X</b> introduced March 2015
+<p>
+<img src="https://web.archive.org/web/20260106010747im_/https://people.ucsc.edu/~warner/Bufs/3548.png" alt="picture of a 1 RU switch">
+<p>
+The 3548 is a strange bird.At introduction this switch does not support IPv6. 
+This is Cisco custom switch on a chip silicon. 
+It has 3 pools of buffers that support 16 ports each. So 1/3 of the total RAM (5 MB) is available to an output port.
+</td></tr><tr><td>
+<p>
+<img src="https://web.archive.org/web/20260106010747im_/https://people.ucsc.edu/~warner/Bufs/nexus3548-buffer.PNG" alt="diagram of a 3 core switch">
+</td></tr><tr><td>
+<p>
+Cisco has a nice <a href="https://web.archive.org/web/20260106010747/https://people.ucsc.edu/~warner/Bufs/nexus-3548-architecture.pdf">architecture review</a> that
+includes this figure and explains what they are doing.  The Nexus 3548 includes the
+ability to do fine grained reporting on packet buffer utilization. The reports are
+similar to Arista LANZ. 
+</td></tr><tr><td>
+<p>
+The <a href="https://web.archive.org/web/20260106010747/http://lippisreport.com/">Lippis Report</a>
+published a commissioned review <i>Cisco Nexus 3548 Top-of-Rack Switch
+Performance and Power Test</i> with a cover date of July, 2013.  
+Registration is required to get a copy of the report. 
+Like many Lippis reviews they conclude:
+<p>
+<i>The Cisco Nexus 3548 represents a
+new breed of data center ToR switches. . .</i>
+<p>
+They use those words a lot. Lippis does not cover microburst capability or packet buffering.
+These are covered in the architecture paper. 
+<p>
+----------------------------------------------------------------
+<p>
+A deep dive on buffer monitoring was presented at CiscoLive! in July 2016.
+Here, in each one-second interval buffer occupancy was measured 250 
+times and the count of hits on each bucket are reported.  In this example, 
+a slug of traffic loads the buffers which then drain over several seconds.
+Note bene, the oldest reports are at the bottom and time increases toward 
+the top of the display.
+<pre>
+
+Slide 28 from BRKDCN-3020
+
+Nexus3548# show hardware profile buffer monitor interface ethernet 1/4 detail
+Detail CLI issued at: 09/10/2015 22:15:42
+
+KBytes               384 768 1152 1536 1920 2304 2688 3072 3456 3840 ... 6144
+us @ 10Gbps          307 614  921 1228 1535 1842 2149 2456 2763 3070 
+----------------------------------------------------------------
+09/10/2015 22:15:41    0   0    0    0    0    0    0    0    0    0
+09/10/2015 22:15:40    0   0    0    0    0    0    0    0    0    0
+09/10/2015 22:15:39    0   0    0    0    0    0    0    0    0    0
+09/10/2015 22:15:38    0   0    0    0    0    0    0    0    0    0
+09/10/2015 22:15:37   34   0    0    0    0    0    0    0    0    0
+09/10/2015 22:15:36  139 111    0    0    0    0    0    0    0    0
+09/10/2015 22:15:35    0  67  179    4    0    0    0    0    0    0
+09/10/2015 22:15:34    0   0    0  174   76    0    0    0    0    0
+09/10/2015 22:15:33    0   0    0    0  102  148    0    0    0    0
+09/10/2015 22:15:32    0   0    0    0    0   30  178   43    0    0
+09/10/2015 22:15:31    0   0    1    0    0    1    0  208    0    0
+09/10/2015 22:15:30    0   0    0    0    0    0    0    0    0    0
+
+====================================================================
+
+</pre>
+Ivan Pepeinjak commented on the Nexus 3548 in a 
+<a href="https://web.archive.org/web/20260106010747/http://blog.ipspace.net/2012/09/cisco-nexus-3548-victory-for-custom.html">blog post</a> 
+comparing it directly with the Arista 7150S.
+<p>
+Cisco has rolled the silicon in the 3548 and produced a new model March 2015. Quoting:
+<ul>
+The Cisco Nexus 3548x and 3524x Switches (Figure 4) are the next generation of the Cisco Nexus 3500 platform. Like the previous generation, these switches are compact 1RU form-factor 10 Gigabit Ethernet switches and provide line-rate Layer 2 and 3 switching with ultra-low latency. In addition, they consume 25% less power. This new generation introduces powerful hardware-based multicast NAT and latency monitoring capabilities and a second USB port for easier manageability.
+</ul>
+The 3548 has reached End-of-Life, announced April 2016. 
+Still no support for IPv6. The 3548X can combine four 10G ports into a single
+40 Gb/s port using a reverse breakout cable.
+</td></tr>
+</html>
+
+<!--
+     FILE ARCHIVED ON 01:07:47 Jan 06, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:39:04 Feb 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.605
+  exclusion.robots: 0.022
+  exclusion.robots.policy: 0.01
+  esindex: 0.013
+  cdx.remote: 52.988
+  LoadShardBlock: 153.543 (3)
+  PetaboxLoader3.datanode: 132.428 (4)
+  load_resource: 18.118
+-->

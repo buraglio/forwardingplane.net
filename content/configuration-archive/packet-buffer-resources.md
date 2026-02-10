@@ -11,15 +11,13 @@ tags:
     - switching
 ---
 
-<table border="1" cellpadding="3" cellspacing="0" id="wp9001370table4000024">
-<tr align="left" valign="top">
-<td colspan="7" rowspan="1"><a name="wp9001552"></a>
-<p style="font-style: normal; font-variant: normal;  margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">Information here is by <b>rumor, innuendo and extrapolation</b>. Manufacturers used to leave info on packet buffers out of their data sheets. This situation is now much improved. Readers -- be sure to let your suppliers know that you want this info.  There are some <a href="../buffers/Bufs/summary"><b>summary thoughts</b></a></p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td colspan="7" rowspan="1"><a name="wp9001552"></a>
-<p style="font-style: normal; font-variant: normal;  margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">
+## Background 
+
+This page is a curated archive of resources related to packet buffer sizing in network equipment. Much of this information is derived from [Jim Warner’s packet buffer page](https://web.archive.org/web/20260106162119/https://people.ucsc.edu/~warner/buffer.html) at UCSC, which notes that “information here is by rumor, innuendo and extrapolation.” Manufacturers historically left buffer information out of their data sheets, though this situation has improved significantly.
+
+
+Information here is by <b>rumor, innuendo and extrapolation</b>. Manufacturers used to leave info on packet buffers out of their data sheets. This situation is now much improved. Readers -- be sure to let your suppliers know that you want this info.  There are some <a href="../buffers/Bufs/summary"><b>summary thoughts</b></a>
+
 The <i>buffer size</i> question discussed in 2012 on the
 <a href="../buffers/Bufs/nanog-thread">nanog list</a> and is reproduced. 
 <a href="../buffers/Bufs/buffer-requirements"><b>Buffer requirements</b></a> 
@@ -34,65 +32,35 @@ can improve buffer effectiveness by making TCP less bursty. Cisco wrote a
 Geoff Huston wrote <a href="https://blog.apnic.net/2019/12/12/sizing-the-buffer/"><i>Sizing the Buffer</i></a>,
 a review published as a blog entry in 2019.
 
-</td></tr>
-<tr align="left" valign="top">
-<td colspan="7" rowspan="1"><a name="wp9001552"></a>
-<p style="font-style: normal; font-variant: normal;  margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">
 Packet buffers and switch performance have shown steady improvement. This <a href="../buffers/Bufs/buf-hist.html"><b>table</b></a> attempts to show this for ASICs with integrated packet buffers and why using crufty old stuff is at your peril.
-</td>
-</tr>
 
-<tr align="left" valign="top">
-<td colspan="7" rowspan="1"><a name="wp9001552"></a>
-<p style="font-style: normal; font-variant: normal;  margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">
 <a href="../buffers/Bufs/incast.html"><b>Incast</b></a> is a buffer exhaustion phenomena that is one consequence of running out of packet memory.
-</td>
-</tr>
 
-<tr align="left" valign="top">
-<td colspan="7" rowspan="1"><a name="wp9001552"></a>
-<p style="font-style: normal; font-variant: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">
+
 <b>Shared memory</b> means that the hardware permits buffers to be used by any port that needs them.
 An <a href="../buffers/Bufs/intel-memory-efficiency-paper.pdf">intel white paper</a> 
 compares shared memory with other architectures.
 In a shared memory design it is not possible to let ALL the memory go to queued packets.  
 There would be no room for new arrivals which would lead to head of line blocking. The other major option for a switch fabric is a 
 <a href="../buffers/Bufs/crossbar.html"><b>crossbar matrix</b></a>.</p>
-</td>
-</tr>
 
-<tr align="left" valign="top">
-<td colspan="7" rowspan="1"><a name="wp9001552"></a>
-<p style="font-style: normal; font-variant: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">
+
+
 <b>Buffer queue depth monitoring</b> cannot be done directly with SNMP MIB-II polling of the current occupancy of the buffer. 
 Even if a buffer depth SNMP poll object existed it would not possible to interrogate it  on a time scale short enough to catch microbursts.  A burst that would fill a 4 MByte buffer would completely
 drain in 3.2 mS at 10 Gb/s. You could hope for indirect evidence of buffer exhaustion by monitoring packet drops. 
 Bursts too short to cause drops can nonetheless be long enough to affect performance.  <a href="../buffers/Bufs/queue-monitor.html">Direct queue monitoring</a> can thus add valuable information.
-</td>
-</tr>
 
-<tr align="left" valign="top">
-<td colspan="7" rowspan="1"><a name="wp9001552"></a>
-<p style="font-style: normal; font-variant: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">
 The switch entries below are organized by switch ASIC families. A Packet Pushers <a href="https://www.youtube.com/watch?v=Ti3t9OAZL3g"> video blog by Pete Lumbis</a> from October 2018 gives a refreshing overview of the evoluton of switch ASICs.
-</td>
-</tr>
 
-<tr align="left" valign="top">
-<td colspan="7" rowspan="1"><a name="wp9001552"></a>
-<p style="font-style: normal; font-variant: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">Some switches have multiple switch ICs that each manage their own memory pool.  Examples are the Brocade FCX648S and the Cisco 3750-48.  Memory from one IC can be shared among the ports in that IC's group but cannot be loaned out to ports controlled by other switch chips. Here we are interested in queue resources that can be claimed by a single flow for burst absorption -- not the total RAM in the system.</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td colspan="7" rowspan="1"><a name="wp9001552"></a>
-<p style="font-style: normal; font-variant: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">Tolly (tolly.com) occasionally reports on the ability of switches to sustain <a href="../buffers/Bufs/microburst"><b>microbursts</b></a> in his reports on data center switches.  These measurements relate directly to output port buffering. See esp the IBM G8264 below.</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td colspan="7" rowspan="1"><a name="wp9001552"></a>
-<p style="font-style: normal; font-variant: normal; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-decoration: none; text-indent: 0pt; text-transform: none" class="pChart_subheadCMT">Max buffer queue depth requires that all packet memory can be put into a single queue. QoS schemes divide buffer resources among defined queues. As such, I am not interested in the QoS descriptions and these are even less reliable than the rest of this doc.</p>
-</td>
-</tr>
+
+Some switches have multiple switch ICs that each manage their own memory pool.  Examples are the Brocade FCX648S and the Cisco 3750-48.  Memory from one IC can be shared among the ports in that IC's group but cannot be loaned out to ports controlled by other switch chips. Here we are interested in queue resources that can be claimed by a single flow for burst absorption -- not the total RAM in the system.
+
+[Tolly](tolly.com) occasionally reports on the ability of switches to sustain <a href="../buffers/Bufs/microburst"><b>microbursts</b></a> in his reports on data center switches.  These measurements relate directly to output port buffering. See esp the IBM G8264 below.
+
+Max buffer queue depth requires that all packet memory can be put into a single queue. QoS schemes divide buffer resources among defined queues. As such, I am not interested in the QoS descriptions and these are even less reliable than the rest of this doc.
+
+
 <tr align="left" valign="top">
 <td><a name="wp9001370"></a>
 <p style="font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-indent: 0pt; text-transform: none" class="pChart_headCMT">Model</p>

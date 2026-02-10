@@ -61,6 +61,7 @@ Some switches have multiple switch ICs that each manage their own memory pool.  
 Max buffer queue depth requires that all packet memory can be put into a single queue. QoS schemes divide buffer resources among defined queues. As such, I am not interested in the QoS descriptions and these are even less reliable than the rest of this doc.
 
 
+<table border="1" cellpadding="3" cellspacing="0">
 <tr align="left" valign="top">
 <td><a name="wp9001370"></a>
 <p style="font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 3pt; margin-left: 3pt; margin-right: 3pt; margin-top: 3pt; text-align: left; text-indent: 0pt; text-transform: none" class="pChart_headCMT">Model</p>

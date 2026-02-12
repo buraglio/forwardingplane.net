@@ -1,39 +1,6 @@
-<html>
-<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
-<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
-<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
-<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
-<script type="text/javascript">
-    __wm.init("https://web.archive.org/web");
-  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/Cisco-5K","20260106010740","https://web.archive.org/","web","https://web-static.archive.org/_static/",
-	      "1767661660");
-</script>
-<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
-<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
-<!-- End Wayback Rewrite JS Include -->
 <table width="600">
 <tr><td>
 A switch design optimized for a particular use may be a very bad fit when pressed into service for something different.  The Nexus 5000 was designed to allow Ethernet to have the loss characteristics and latency of fiber channel for use in the data center as a storage fabric.  That application needs to guarantee packet delivery under conditions that are far from long RTT file transfer.  Deep buffers available to a single flow are not useful for DAS and SAN.  Instead, per port performance needs to be uncoupled from activity on other ports.  The Nexus 5K has lots of buffer, but it is carved into appetizer size chunks and dedicated to individual ports. As indicated in the table, the most a single flow can get is about 0.5 Mbyte. In a shared memory switch, most of the buffers can be claimed by a single flow -- if that is needed -- and typical scientific work loads work better with this sort of <i>deployable buffer</i> scheme. 
 <p>
 Cisco has a nice <a href="https://web.archive.org/web/20260106010740/https://people.ucsc.edu/~warner/Bufs/nexus-5K-arch.pdf">architecture review</a> that explains what they are doing. This switch is <i>generation 1</i> within the Nexus 5000 family. It has reached end of sale.
 </html>
-<!--
-     FILE ARCHIVED ON 01:07:40 Jan 06, 2026 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 15:39:41 Feb 10, 2026.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
--->
-<!--
-playback timings (ms):
-  captures_list: 0.639
-  exclusion.robots: 0.024
-  exclusion.robots.policy: 0.011
-  esindex: 0.013
-  cdx.remote: 17.226
-  LoadShardBlock: 153.499 (3)
-  PetaboxLoader3.resolve: 136.78 (3)
-  PetaboxLoader3.datanode: 72.088 (4)
-  load_resource: 63.413
--->

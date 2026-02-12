@@ -1,16 +1,3 @@
-<html>
-<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
-<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
-<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
-<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
-<script type="text/javascript">
-    __wm.init("https://web.archive.org/web");
-  __wm.wombat("https://people.ucsc.edu/~warner/Bufs/2960X","20260106010659","https://web.archive.org/","web","https://web-static.archive.org/_static/",
-	      "1767661619");
-</script>
-<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
-<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
-<!-- End Wayback Rewrite JS Include -->
 <table width="700">
 <tr><td>
 <img src="https://web.archive.org/web/20260106010659im_/https://people.ucsc.edu/~warner/Bufs/2960X.JPG" alt="beauty shot shows 4 MB buffer">
@@ -29,26 +16,3 @@ memory is actually two 1 MB pools. In any case, the new 2960-X has
 more. It is likely that some of the memory is dedicated to the 
 stacking ports. Details on how much memory is in the dynamic pool
 available to payload packets is not known.
-
-
-
-<!--
-     FILE ARCHIVED ON 01:06:59 Jan 06, 2026 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 15:38:48 Feb 10, 2026.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
--->
-<!--
-playback timings (ms):
-  captures_list: 13.515
-  exclusion.robots: 0.017
-  exclusion.robots.policy: 0.008
-  esindex: 0.01
-  cdx.remote: 184.618
-  LoadShardBlock: 134.586 (3)
-  PetaboxLoader3.datanode: 161.21 (4)
-  load_resource: 99.383
-  PetaboxLoader3.resolve: 65.069
--->

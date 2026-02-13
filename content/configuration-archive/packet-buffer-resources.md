@@ -15,7 +15,7 @@ tags:
 
 ## Background 
 
-This page is a curated archive of resources related to packet buffer sizing in network equipment. Much of this information is derived from [Jim Warner’s packet buffer page](https://web.archive.org/web/20260106162119/https://people.ucsc.edu/~warner/buffer.html) at UCSC, which notes that “information here is by rumor, innuendo and extrapolation.” Manufacturers historically left buffer information out of their data sheets, though this situation has improved significantly. A lot of this is fairly old at this point, but as we all know, network equipment tends to have zombie-like lifespans and gets repurposed for years after it's intended lifecycle. Having copies of this data, which for many years was "The Buffer Bible", painstakingly archived by Jim, may help someone somewhere, someday. 
+This page is a curated archive of resources related to packet buffer sizing in network equipment. Much of this information is derived from [Jim Warner’s packet buffer page](https://web.archive.org/web/20260106162119/https://people.ucsc.edu/~warner/buffer.html) at UCSC. A lot of this is fairly old at this point, but as we all know, network equipment tends to have zombie-like lifespans and gets repurposed for years after it's intended lifecycle. Having copies of this data, which for many years was "The Buffer Bible", painstakingly archived by Jim, may help someone somewhere, someday. 
 
 
 Information here is by <b>rumor, innuendo and extrapolation</b>. Manufacturers used to leave info on packet buffers out of their data sheets. This situation is now much improved. Readers -- be sure to let your suppliers know that you want this info.  There are some <a href="../buffers/Bufs/summary"><b>summary thoughts</b></a>

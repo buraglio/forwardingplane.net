@@ -66,8 +66,8 @@ Or, with `fq_codel`
 add kind=fq-codel name=fq-codel
 /queue interface
 set sfp-sfpplus1 queue=fq-codel
-
 ```
+
 ### Disable fasttrack for the wireguard interface
 
 ```
@@ -96,6 +96,3 @@ MSS = MTU - 40
 Setting MSS to 1400 ensures that when TCP adds its 40-byte header, the total packet size (1440 bytes) stays safely below the effective path MTU, preventing fragmentation. However, since WireGuard itself adds ~80 bytes of encapsulation overhead, the outer packet must be smaller — therefor setting the WireGuard interface MTU to **1420**. 
 
 This combination avoids fragmentation and packet drops, especially on paths with lower MTU or blocked ICMP (which breaks Path MTU Discovery).
-
-
-#routerOS #blog 

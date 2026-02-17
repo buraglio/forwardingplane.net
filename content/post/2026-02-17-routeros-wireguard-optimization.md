@@ -14,7 +14,7 @@ tags:
     - vpn
 ---
 
-Most modern mikrotik can handle reasonable wireguard performance, but it is a CPU based encryption model, so there are some tweaks that can be made to improve performance. The following can be used to optimize for better wireguard behavior. 
+Most modern mikrotik can handle reasonable wireguard performance, but it is a CPU based encryption model, so there are some tweaks that can be made to improve performance. The following can be used to optimize for better wireguard behavior. However, it should be noted that unlike the IPSec capabilities that are measured and reported on the Mikrotik product pages for each platform, wireguard limits are not published for any mikrotik platform. This can be translated into "you get what you get", essentially, and as stated, wireguard is all CPU based, so perfornmance and scale will be limited by CPU.
 
 ### Set the queuing for the WAN interface to `fq-codel` or `cake`
 

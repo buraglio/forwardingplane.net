@@ -16,7 +16,7 @@ tags:
 
 [Linkwarden(https://github.com/linkwarden/linkwarden) is a tool for better managing bookmarks. If you're nything like me, you keep 1000 browser tabs open across a series of profiles, with full intention of revisiting them later, and then never do. A colleague shpoed me linkwarden and I was interested straight away. I did have a few hangups, however: 
 
-- I don't want to rely on a cloud service if I don't have tolly
+- I don't want to rely on a cloud service if I don't have to
 - I prefer to control my own content
 - I am not a big fan of docker, which is required for self hosting
 

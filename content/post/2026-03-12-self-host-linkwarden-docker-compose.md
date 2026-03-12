@@ -1,3 +1,4 @@
+---
 title: Linkwarden with docker compose and nginx proxy manager
 date: 2026-03-12
 author: Nick Buraglio

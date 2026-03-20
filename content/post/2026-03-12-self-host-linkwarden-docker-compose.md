@@ -20,7 +20,7 @@ tags:
 - I prefer to control my own content
 - I am not a big fan of docker, which is required for self hosting
 
-I god over the docker hangup since it wasn't really an option to do any other way and got straight to it. Very quickly I ran into the near-universal issues I have with docker:
+I got over the docker hangup since it wasn't really an option to do any other way and got straight to it. Very quickly I ran into the near-universal issues I have with docker:
 
 - poor understanding or lack of attention of networking by the developers (this needs to run over IPv6 for me to use it)
 - spotty documentation for running this securely via a SSL enabled web service

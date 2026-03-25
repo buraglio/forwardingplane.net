@@ -1,8 +1,0 @@
-<table width="750">
-<tr><td>
-Accton is an ODM in Taiwann. That stands for <b>Original Device Manufacturer.</b> You can read about ODMs on the Wikipedia page. It means that Accton is an actual manufacturer.
-They are also likely the source for several of the other products in this table, although some of those products may be running customized versions of the switch software.
-The <a href="https://web.archive.org/web/20260106010735/https://people.ucsc.edu/~warner/Bufs/Accton5652.pdf">data sheet</a> shows this is a generic trident+ implementation. I found a copy of the <a href="https://web.archive.org/web/20260106010735/https://people.ucsc.edu/~warner/Bufs/ES5652BT1_Administrators_Guide.pdf">
-Administrator's manual</a> online.  This is probably <b>not</b> the most current manual.
-</td></tr>
-</table>

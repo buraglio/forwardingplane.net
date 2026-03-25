@@ -1,16 +1,6 @@
 ---
-title: Packet Buffer Resources
-date: 2026-02-10
-author: Nick Buraglio
-layout: page
-categories:
-    - configuration
-    - routing
-    - buffers
-tags:
-    - networking
-    - buffers
-    - switching
+title: "Port Buffers"
+date: 2024-01-01
 redirect_to: "https://port-buffers.forwardingplane.net/"
 ---
 

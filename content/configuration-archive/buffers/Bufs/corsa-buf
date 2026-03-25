@@ -1,9 +1,0 @@
-<table width="600">
-<tr><td>
-Corsa switches are built on FPGAs. This makes them cousins to the 
-Brocade MLXe. Buffer allocation profiles cover cases like
-<i>dedicated per-port</i> and <i>shared buffer pool</i>. 
-It seems like you select a buffer profile and (re)boot the 
-switch and it initializes to those parameters. Or something
-like that. As such, buffering is outside the scope of control
-of SDN.

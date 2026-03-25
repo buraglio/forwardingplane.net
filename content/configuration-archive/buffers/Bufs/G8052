@@ -1,6 +1,0 @@
-<table width="700">
-<tr><td>
-IBM has a very nice <a href="https://web.archive.org/web/20260106010550/https://people.ucsc.edu/~warner/Bufs/IBM_G8052.pdf">data sheet</a> for this switch. Its switch chip has 4 MBytes of shared buffer. 
-The switch is OpenFlow capable.
-</td></tr>
-</table>

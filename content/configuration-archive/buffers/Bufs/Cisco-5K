@@ -1,6 +1,0 @@
-<table width="600">
-<tr><td>
-A switch design optimized for a particular use may be a very bad fit when pressed into service for something different.  The Nexus 5000 was designed to allow Ethernet to have the loss characteristics and latency of fiber channel for use in the data center as a storage fabric.  That application needs to guarantee packet delivery under conditions that are far from long RTT file transfer.  Deep buffers available to a single flow are not useful for DAS and SAN.  Instead, per port performance needs to be uncoupled from activity on other ports.  The Nexus 5K has lots of buffer, but it is carved into appetizer size chunks and dedicated to individual ports. As indicated in the table, the most a single flow can get is about 0.5 Mbyte. In a shared memory switch, most of the buffers can be claimed by a single flow -- if that is needed -- and typical scientific work loads work better with this sort of <i>deployable buffer</i> scheme. 
-<p>
-Cisco has a nice <a href="https://web.archive.org/web/20260106010740/https://people.ucsc.edu/~warner/Bufs/nexus-5K-arch.pdf">architecture review</a> that explains what they are doing. This switch is <i>generation 1</i> within the Nexus 5000 family. It has reached end of sale.
-</html>

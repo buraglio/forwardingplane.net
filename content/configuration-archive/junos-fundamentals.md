@@ -36,7 +36,10 @@ A practical curriculum for network engineers learning Juniper JunOS, with emphas
 
 JunOS separates the control plane (Routing Engine, RE) from the forwarding plane (Packet Forwarding Engine, PFE). This separation is reflected in the CLI: you are always on the RE, and `show pfe` commands query the PFE directly.
 
-JunOS runs on FreeBSD. You can drop to a Unix shell with `start shell` and use standard Unix tools (`grep`, `awk`, `tail -f`, etc.) against log files in `/var/log/`.
+JunOS runs on FreeBSD. You can drop to a Unix shell with `start shell` and use standard Unix tools (`grep`, `awk`, `tail -f`, etc.) against log files in `/var/log/`, although this is 
+generally avoided as there are more appropriate and analogous tools within the JunOS CLI to accomplish the same tasks. Like many other modern routers, most juniper platforms run a "bootstrap" Linux ([Wind River Linux](https://www.windriver.com/products/embedded/linux) is commonly utilized for this), and boots the JunOS system as a hyper-customized "Virtual Machine" with hardware access. Other platforms that operate this way include Cisco (IOS-XR/IOS-XE on x86), Nokia SR OS (SR Linux/SReX on x86), Arista EOS (vEOS/cEOS/cEOS-XR), and several whitebox/ODM NOSes like SONiC and Cumulus Linux.
+This is largely transparent to an end user and is really only important in the context of doing upgrades. 
+ 
 
 ### Operational vs. Configuration Mode
 

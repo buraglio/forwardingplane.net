@@ -40,7 +40,7 @@ googleAnalytics = "G-TVRH5QV4ET"
 
   [[params.navlinks]]
   name = "mastodon/"
-  url = "https://dial.modem.show/@forwardingplane#"
+  url = "https://social.ipv6.army/@forwardingplane#"
 
   [[params.navlinks]]
   name = "publications/"

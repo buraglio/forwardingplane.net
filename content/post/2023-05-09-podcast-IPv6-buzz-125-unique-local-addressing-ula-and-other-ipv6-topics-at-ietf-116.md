@@ -31,7 +31,7 @@ Give it a listen here or in your favorite podcatcher.
 
 <!-- /wp:paragraph -->
 
-<iframe width="320" height="30" src="https://packetpushers.net/?powerpress_embed=55196-podcast&powerpress_player=mediaelement-audio" title="Blubrry Podcast Player" frameborder="0" scrolling="no"></iframe>
+<audio controls preload="none" style="width: 100%;" src="https://media.blubrry.com/packetpushers/content.blubrry.com/packetpushers/IPv6_Buzz_125_Unique_Local_Addressing_ULA_And_Other_IPv6_Topics_At_IETF_116.mp3"></audio>
 <!-- /wp:embed -->
 
 <!-- wp:paragraph -->

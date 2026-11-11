@@ -74,7 +74,7 @@ I was asked to talk about some of the more recent efforts in deploying IPv6-only
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->
-<iframe width="320" height="30" src="https://packetpushers.net/?powerpress_embed=50294-podcast&powerpress_player=mediaelement-audio" frameborder="0" scrolling="no"></iframe>
+<audio controls preload="none" style="width: 100%;" src="https://media.blubrry.com/packetpushers/content.blubrry.com/packetpushers/IPv6_Buzz_068_Addressing_The_New_Federal_IPv6-Only_Mandate.mp3"></audio>
 <!-- /wp:html -->
 
 <!-- wp:paragraph -->
